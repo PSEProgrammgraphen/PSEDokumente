@@ -5,11 +5,21 @@
 \usepackage[T1]{fontenc}
 \usepackage[titletoc]{appendix}
 \usepackage{ae}
-\usepackage{glossaries}
 \usepackage[bookmarks,bookmarksnumbered]{hyperref}
 
+\usepackage[toc,acronym]{glossaries}
 \makeglossaries
 
+\usepackage{xparse}
+\DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m } {
+  \newglossaryentry{gls-#3}{name={#5},text={#5\glsadd{#3}},
+    description={#6},#1
+  }
+  \makeglossaries
+  \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
+}
+
+\loadglsentries{glossary.tex}
 \begin{document}
 
 \title{Pflichtenheft\\
@@ -30,6 +40,7 @@ Graph von Ansicht}
 \tableofcontents
 
 \chapter{Zielbestimmung}
+
 \section{Musskriterien}
 
 \section{Wunschkriterien}
@@ -37,18 +48,13 @@ Graph von Ansicht}
 \section{Abgrenzungskriterien}
 
 \chapter{Produkteinsatz}
-
 \section{Anwendungsbereiche}
 
 \section{Zielgruppen}
 
 \section{Betriebsbedingungen}
 
-\chapter{Produktumgebung}
-
-\section{Software}
-
-\section{Hardware}
+\input{produktumgebung}
 
 \chapter{Produktfunktionen}
 
@@ -62,8 +68,10 @@ Graph von Ansicht}
 
 \chapter{Qualitätsbestimmungen}
 
-\begin{appendices}
-\end{appendices}
+
+\clearpage
+\printglossary[type=\acronymtype]
+\printglossary
 
 \listoffigures
 
