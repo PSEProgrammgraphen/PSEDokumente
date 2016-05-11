@@ -1,12 +1,25 @@
 \chapter{Produktumgebung}
+\label{ch:umgebung}
 
 \section{Software}
-Das Programm muss in aktuellen Versionen (Stand Sommer 2016) von Linux und Windows ausführbar und wie im restlichen Dokument beschrieben benutzbar sein.
+Das Produkt muss in folgenden Desktop-Systemen ausführbar und wie im restlichen Dokument beschrieben benutzbar sein:
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item Linux Fedora 22/23 % nochmal die Versionen in der ATIS nachsehen und abgleichen.
+  \item Linux Ubuntu 15.10/16.04 LTS
+  \item Windows 7 und höher
+\end{itemize}
 Zur Programmierung wird die Programmiersprache Java benutzt. Daher ist eine Installation der \gls{jre} 8+ zur Ausführung notwendig.
 
 \section{Hardware}
-Graph von Ansicht ist als \gls{jfx} Anwendung zur Ausführung auf Desktop-Systemen konzipiert.
-Durch die Verwendung von Java ist Graph von Ansicht unabhängig von der unterliegende Hardware, sofern diese in der Lage ist die benötigte \gls{jre} (siehe oben) auszuführen.
-Bei der Visualisierung von größeren Graphen, kann die Leistung des Systems stark beeinträchtigt werden.
+Das Produkt ist als \gls{jfx}-Anwendung zur Ausführung auf Desktop-Systemen konzipiert.
+Durch die Verwendung von Java ist das Produkt unabhängig von Details der unterliegenden Hardware, sofern diese in der Lage ist die benötigte \gls{jre} (siehe oben) auszuführen.
+Um die in Kapitel~\ref{ch:leistungen} beschriebenen nichtfunktionalen Anforderungen einhalten zu können, sind folgende Mindestanforderungen an das System, auf dem das Produkt ausgeführt soll, notwendig:
 
-%Konkretisierung: Linux/Windows Distributionen/Versionen?; Wie stark beeinträchtig?; HW-Mindestanfordungen?
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item Arbeitsspeicher: 4 GB
+  \item Prozessor: Intel Core i5-4210U %Jonas F. Prozessor; vlt. durch gleichwertigen Desktopprozessor ersetzen.
+  \item Festplattenspeicher: 100 MB
+  \item Display: 1280x960
+\end{itemize}
