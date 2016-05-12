@@ -1,0 +1,155 @@
+\chapter{Produktfunktionen}
+\label{ch:funktionen}
+
+\newcounter{fanr}[chapter]
+\setcounter{fanr}{10}
+\newcommand{\fano}[1]{\subsection{#1}\addtocounter{fanr}{10}}
+\newcommand{\subfano}[1]{\subsubsection{#1}\addtocounter{fanr}{1}}
+\renewcommand\thesubsection{/FA\ifnum\value{fanr}<10 000\else\ifnum\value{fanr}<100 00\else\ifnum\value{fanr}<1000 0\fi\fi\fi\arabic{fanr}/}
+\renewcommand\thesubsubsection{/FA\ifnum\value{fanr}<10 000\else\ifnum\value{fanr}<100 00\else\ifnum\value{fanr}<1000 0\fi\fi\fi\arabic{fanr}/}
+
+\section{Muss-Funktionen} %TODO: Evtl. Umbennen
+
+\fano{Graph aus Graph-Datei laden}\label{fa:laden}
+\textbf{Ziel:} Der in der Graph-Datei beschriebene Graph soll visuell dargestellt werden. \\
+\textbf{Kategorie:} \gls{io} \\
+\textbf{Vorbedingung:} Der Nutzer hat eine korrekte Graph-Datei in seinem Dateissystem, auf welche zugegriffen werden kann. \\ % TODO: 'korrekt' vlt. in einem anderen Abschnitt definieren (GraphML)
+\textbf{Nachbedingung (Erfolg):} Der Graph wird dargestellt. \\
+\textbf{Nachbedingung (Fehlschlag):}
+Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graph beschreibt. \\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Nutzer ruft das Programm auf und übergibt den Pfad zur Graph-Datei als Argument.
+  \item Der Nutzer wählt die Graph-Datei über das Menü aus, nachdem das Programm geöffnet wurde.
+\end{enumerate}
+\textbf{Beschreibung:}
+\begin{enumerate}[nolistsep]
+  \item (a) Nutzer öffnet das Programm mit dem Pfad zur Graph-Datei als Argument.
+  \item (a) Das Programm öffnet sich.
+  \item Ein Fenster mit Präferenzmöglichkeiten bzgl. der Darstellung und Interpretation des Graphen öffnet sich.
+  \item Der Nutzer wählt die gewünschten Einstellungen und bestätigt diese.
+  \item Die Darstellung des Graphen wird berechnet und schließlich angezeigt.
+\end{enumerate}
+\textbf{Alternativen:}
+\begin{enumerate}[nolistsep]
+  \item (b) Der Nutzer wählt die Funktion Datei-->Öffnen.. aus dem Menübalken aus. %TODO: Pfeil schöner
+  \item (b) Der Nutzer wählt die Graph-Datei über ein Dateiverzeichnis-Menü aus.%TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
+\end{enumerate}
+
+
+
+\fano{Sichtfeld verschieben}\label{fa:ziehen} %Ref GUI Sichtfeld
+\textbf{Ziel:} Das Sichtfeld soll verschoben werden. \\
+\textbf{Kategorie:} Navigation \\
+\textbf{Vorbedingung:} Ein Graph wurde geladen und das Sichtfeld deckt nicht alle Elemente des Graphens ab. \\
+\textbf{Nachbedingung (Erfolg):}  Das Sichtfeld deckt nun einen anderen Teil des Graphen ab.\\
+\textbf{Nachbedingung (Fehlschlag):} Das Sichtfeld deckt einen Randabschnitt ab und es wurde versucht das Sichtfeld über den Rand hinaus zu bewegen. \\
+Das Sichtfeld wird nicht über den Rand bewegt. Keine Fehlermeldung. \\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Nutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich des Sichtfeldes.
+  \item Der Nutzer betätigt eine der zum Verschieben des Sichtfeldes designierten Tasten (siehe FAXXXX). %TODO: Referenz auf Tasten Auswahl funktion
+  \item Der Nutzer bewegt die Scroll-Balken am Rand des Sichtfeldes. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
+\end{enumerate}
+\textbf{Beschreibung:}
+\begin{enumerate}[nolistsep]
+  \item (a) Der Nutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich des Sichtfeldes.
+  \item (a) Das Sichtfeld verschiebt sich entgegen der Richtung, in welche die Maus bewegt wird.
+\end{enumerate}
+\textbf{Alternativen:}
+\begin{enumerate}[nolistsep]
+  \item (b) Eine Navigationstaste wird betätigt.
+  \item (b) Das Sichtfeld bewegt sich um eine feste Länge (in Abhängigkeit vom Zoom-Grad) in die entsprechende Richtung.
+\end{enumerate}
+\begin{enumerate}[nolistsep]
+  \item (c) Einer der beiden Scroll-Balken (horizontal/vertikal) wird bewegt.
+  \item (c) Das Sichtfeld bewegt sich relativ zur Größe des gesamten Graphen um das gleiche Maß wie der Scroll-Balken zur Länge seiner Fahrbahn in die entsprechende Richtung.
+\end{enumerate}
+
+\fano{Zoom-Grad ändern}\label{fa:zoomen}
+\textbf{Ziel:} Den Zoom-Grad des Sichtfeldes soll vergrößert bzw. verkleinert werden. \\
+\textbf{Kategorie:} Navigation \\
+\textbf{Vorbedingung:} Ein Graph wurde geladen. \\
+\textbf{Nachbedingung (Erfolg):} Der Zoom-Grad hat sich geändert. \\
+\textbf{Nachbedingung (Fehlschlag):} Der Zoom-Grad bleibt gleich, falls ein Maximum/Minimum erreicht wurde. Keine Fehlermeldung. \\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Nutzer dreht am Mausrad.
+  \item Der Nutzer betätigt die zum Zoomen designierten Tasten. (siehe FAXXXX). %TODO: Referenz auf Tasten Auswahl funktion
+\end{enumerate}
+\textbf{Beschreibung:}
+\begin{enumerate}[nolistsep]
+  \item (a) Der Zoom-Grad ändert sich mit dem Drehen. Die Richtung kann sich abhängig vom Betriebssystem ändern.
+  \item Falls das Maximum/Minimum erreicht wurde, wird dieses nicht überschritten.
+\end{enumerate}
+\textbf{Alternativen:}
+\begin{enumerate}[nolistsep]
+  \item (b) Der Zoom-Grad ändert sich um einen in Abhängigkeit zum derzeitigen Zoom-Grad festen Wert.
+\end{enumerate}
+
+\fano{Knoten selektieren}\label{fa:selekt_knoten}
+\textbf{Ziel:} Ein oder mehrere Knoten sollen der Auswahl hinzugefügt werden. \\
+\textbf{Kategorie:} Auswahl \\
+\textbf{Vorbedingung:} Ein Graph wurde geladen. \\
+\textbf{Nachbedingung (Erfolg):} Ein oder mehrere Knoten wurden der Auswahl hinzugefügt. \\
+\textbf{Nachbedingung (Fehlschlag):} - \\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Nutzer klickt mit der linken Maustaste auf einen Knoten.
+  \item Der Nutzer klickt mit der linken Maustaste in einen leeren Bereich des Sichtfeldes und zieht die Maus nach rechts unten.
+  \item Der Nutzer klickt mit der linken Maustaste in einen leeren Bereich des Sichtfeldes und zieht die Maus nach links oben.
+\end{enumerate}
+\textbf{Beschreibung:}
+\begin{enumerate}[nolistsep]
+  \item Falls die Shift-Taste nicht gedrückt ist werden alle Knoten von der Auswahl entfernt.
+  \item (a) Der Knoten wird der Auswahl hinzugefügt.
+\end{enumerate}
+\textbf{Alternativen:}
+\begin{enumerate}[nolistsep]
+  \setcounter{enumi}{1}
+  \item (b) Es wird eine Auswahlbox vom Startpunkt bis zur jetztigen Position des Mauszeigers gezeichnet.
+  \item (b) Der Nutzer lässt die linke Maustaste los, oder drückt eine andere Taste.
+  \item (b) Alle Knoten, die in der Auswahlbox komplett enthalten, sind werden selektiert.
+\end{enumerate}
+\begin{enumerate}[nolistsep]
+  \setcounter{enumi}{1}
+  \item (c) Es wird eine Auswahlbox vom Startpunkt bis zur jetztigen Position des Mauszeigers gezeichnet.
+  \item (c) Der Nutzer lässt die linke Maustaste los, oder drückt eine andere Taste.
+  \item (c) Alle Knoten, die in der Auswahlbox enthalten sind oder von ihr geschnitten werden, werden selektiert.
+\end{enumerate}
+
+\fano{Export als Bilddatei}\label{fa:export_img}
+\textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden. \\
+\textbf{Kategorie:} \gls{io} \\
+\textbf{Vorbedingung:} Ein Graph wurde geladen.  \\
+\textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateissystem erstellt, welche ein Abbild des derzeit angezeigten Graphens enthält. \\
+\textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben. \\
+\textbf{Auslösendes Ereignis:}
+Der Nutzer wählt die Exportfunktion im Menübalken aus.
+\textbf{Beschreibung:}
+\begin{enumerate}[nolistsep]
+  \item Der Nutzer wählt die Exportfunktion im Menübalken unter Datei-->Export--><Dateiformat> aus. Wobei <Dateiformat> durch das gewünschte Bilddatei-Format zu ersetzen ist. Unterstützt werden mindestens das \gls{svg}- und \gls{jpg}-Format. %TODO: Referenz auf Dateiformate und Erweiterbarkeit durch Plugins
+  \item Der Nutzer gibt über ein Dateisystem-Menü den gewünschten Pfad zum Abspeichern der Bilddatei an.
+  \item Eventuell wird der Nutzer nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG)
+  \item Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.
+\end{enumerate}
+\textbf{Alternativen:} -
+
+%\fano{<++>}\label{fa:<++>}
+%\textbf{Ziel:} <++> \\
+%\textbf{Kategorie:} <++> \\
+%\textbf{Vorbedingung:} <++> \\
+%\textbf{Nachbedingung (Erfolg):} <++> \\
+%\textbf{Nachbedingung (Fehlschlag):} <++> \\
+%\textbf{Auslösende Ereignisse:}
+%\begin{enumerate}[nolistsep, label=(\alph*)]
+%  \item <++>
+%\end{enumerate}
+%\textbf{Beschreibung:}
+%\begin{enumerate}[nolistsep]
+%  \item <++>
+%\end{enumerate}
+%\textbf{Alternativen:}
+%\begin{enumerate}[nolistsep]
+%  \item <++>
+%\end{enumerate}
