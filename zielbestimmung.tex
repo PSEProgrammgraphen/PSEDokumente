@@ -1,19 +1,22 @@
 \chapter{Zielbestimmung}
 
-Graph von Ansicht soll Programmgraphen von externen Analyse Programmen visualisieren. Hierbei soll Graph von Ansicht eine übersichtliche Darstellung der Abhängigkeiten und des Steuerflusses eines Programmes anzeigen.
+Graph von Ansicht soll Programmgraphen von externen Analyse Programmen visualisieren. Dafür wird eine bereits vorhandene Graphdatei importiert und ausgewertet. Der Benutzer verschiedene Constraints einstellen, welche im weiteren Dokument näher erläutert werden. 
+%TODO: Verweis einfügen zu den konkreten Erläuterungen
+Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und des Steuerflusses eines Programmes anzeigen und dem Benutzer die Möglichkeit zu bieten den Programmfluss besser analysieren zu können.
 
 \section{Pflichtkriterien}
 
 \begin{itemize}
 \item Schnittstellen
 \begin{itemize}
-\item Import von generischen Graphen im GraphML Format
-\item Export der visualisierten Graphen im SVG Format
+\item Import von generischen Graphen im GraphML-Format
+\item Export der visualisierten Graphen im SVG-Format
 \item Erweiterbarkeit des Programmes durch Plugin Schnittstellen
 \end{itemize}
 \item User interface
 \begin{itemize}
 \item Navigation mittels Zoom und Translation
+\item Selektieren von einzelnen oder mehreren Knoten
 \item Einstellen von Constraints
 \item Kollabieren und Ausklappen von Gruppen und Teilgraphen
 \item Filter für Knoten- und Kantentypen
@@ -22,7 +25,9 @@ Graph von Ansicht soll Programmgraphen von externen Analyse Programmen visualisi
 \item Visualisierung
 \begin{itemize}
 \item Hierarchisches Layout mit dem Framework von Sugiyama
+\item Kanten werden durch Bézierkurve dargestellt
 \item Informationsanzeige von Knoten und Kanten
+\item Weitere Layoutalgorithmen sollen leicht integrierbar sein 
 \end{itemize}
 \end{itemize}
 
@@ -31,7 +36,7 @@ Graph von Ansicht soll Programmgraphen von externen Analyse Programmen visualisi
 \begin{itemize}
 \item Schnittstellen
 \begin{itemize}
-\item Export der visualisierten Graphen im Bitmap und GraphML Format
+\item Export der visualisierten Graphen im Bitmap- und GraphML-Format
 \item Library-Calls zu JOANA
 \end{itemize}
 \item User interface
@@ -44,13 +49,15 @@ Graph von Ansicht soll Programmgraphen von externen Analyse Programmen visualisi
 \begin{itemize}
 \item Fortschrittsbalken bei Berechnung der Visualisierung des Graphen mithilfe einer Zeitabschätzung
 \item Minimap bzw. Übersicht des Graphens
+\item Algorithmus zur Erreichbarkeit eines Knoten
 \end{itemize}
 \end{itemize}
 
 \section{Abgrenzungskriterien}
 
 \begin{itemize}
-\item Das Programm ist kein Graph Editor und unterstützt nicht das manuelle Zeichnen/Hinzufügen von neuen Kanten und Knoten.
+\item Das Produkt ist kein Graph Editor und unterstützt nicht das manuelle Zeichnen/Hinzufügen von neuen Kanten und Knoten.
 \item Die GUI wird nicht von Grund auf neu entwickelt, sondern verwendet Bibliotheken um die Entwicklung zu erleichtern. 
-\item Das Zeichnen der Graphen wird nicht selbst implementiert, sondern wird mithilfe von Bibliotheken umgesetzt.
+\item Das Zeichnen einzelner Kanten und Knoten wird nicht selbst implementiert, sondern wird mithilfe von Bibliotheken umgesetzt.
+\item Das Produkt ist kein Analysetool für Programme, sondern dient lediglich zur Visualisierung von bereits vorhandenen Graphdateien.
 \end{itemize}
