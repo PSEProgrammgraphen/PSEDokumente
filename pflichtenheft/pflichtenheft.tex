@@ -8,6 +8,13 @@
 \usepackage{enumitem}
 \usepackage[bookmarks,bookmarksnumbered]{hyperref}
 
+\makeatletter
+\def\namedlabel#1#2{\begingroup
+   #2%
+   \def\@currentlabel{#2}%
+   \label{#1}\endgroup
+}
+
 % Inhaltsverzeichnis Ebenen definieren, zB bis zu Subsection
 \setcounter{tocdepth}{1}
 
@@ -23,6 +30,7 @@
   \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
 }
 
+\makeatother
 \loadglsentries{glossary.tex}
 \begin{document}
 
@@ -49,7 +57,7 @@ Graph von Ansicht}
 
 \input{produktumgebung}
 
-\input{produktfunktionen}
+\input{funktionaleanforderungen}
 
 \input{produktdaten}
 

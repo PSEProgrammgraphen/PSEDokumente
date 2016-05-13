@@ -3,15 +3,11 @@
 
 \newcounter{nfanr}[chapter]
 \setcounter{nfanr}{10}
-\newcommand{\nfano}[1]{\subsection{#1}\addtocounter{nfanr}{10}}
-\newcommand{\nsubfano}[1]{\subsubsection{#1}\addtocounter{nfanr}{1}}
-\renewcommand\thesubsection{/NFA\ifnum\value{nfanr}<10 000\else\ifnum\value{nfanr}<100 00\else\ifnum\value{nfanr}<1000 0\fi\fi\fi\arabic{nfanr}/}
+\newcommand{\nfano}{\ifnum\value{nfanr}<10 00\else\ifnum\value{nfanr}<100 0\fi\fi\arabic{nfanr}\addtocounter{nfanr}{10}}
 \renewcommand\thesubsubsection{/NFA\ifnum\value{nfanr}<10 000\else\ifnum\value{nfanr}<100 00\else\ifnum\value{nfanr}<1000 0\fi\fi\fi\arabic{nfanr}/}
+\newcommand\nfa[2]{\namedlabel{nfa:#1}{\textbf{/NFA\nfano/}}: & #2 \\}
 
-
-\nfano{Maximale Knotenzahl in einem Layout darstellbar}\label{nfa:max_knoten_}
-Zu jedem Zeitpunkt können nicht mehr als 10.000 Knoten gleichzeitig gelayoutet und dargestellt werden. Dies entspricht nicht der maximalen Knotenzahl von SDGs die unterstützt werden.
-
-\nfano{Maximale Knotenzahl eines SDGs}\label{nfa:max_knoten_total}
-Es werden Graphen mit nicht mehr als 1.000.000 Knoten insgesamt unterstützt.
-
+\begin{tabular}{lp{0.9\linewidth}}
+  \nfa{maxknoten}{Zu jedem Zeitpunkt können nicht mehr als 10.000 Knoten gleichzeitig gelayoutet und dargestellt werden. Dies entspricht nicht der maximalen Knotenzahl von SDGs die unterstützt werden.}
+  \nfa{maxknotentotal}{Es werden Graphen mit nicht mehr als 1.000.000 Knoten insgesamt unterstützt.}
+\end{tabular}
