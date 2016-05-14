@@ -18,14 +18,14 @@
   \nfa{algowechsel}{Der Algorithmus welcher das Graphlayout entwirft soll einfach auswechselbar sein.}
 \end{tabular}
 
-\section{Graphlayout für JOANA}
+\section{Graphlayout für \gls{joana}}
 
 \begin{tabular}{lp{0.9\linewidth}}
-  \nfa{graphsicht}{Es existieren zwei Graphansichten. Einmal ein Callgraph welcher die Abhängigkeiten der Methoden darstellt und ein Methodengraph welcher den Steuer- und Datenfluss innerhalb einer Methode visualisiert.} %TODO: Methodengraph und Callgraph umnennen und ins glossar hinzufügen
-  \nfa{layerspecs}{Bei einem Methodengraph soll der Entry-Knoten auf dem obersten Layer dargestellt werden, und ein Layer darunter die Parameter für die Methode in fester Reihenfolge.}
+  \nfa{graphsicht}{Es existieren zwei Graphansichten. Einmal ein \gls{callgraph} welcher die Abhängigkeiten der Methoden darstellt und ein \gls{methgraph} welcher den Steuer- und Datenfluss innerhalb einer Methode visualisiert.}
+  \nfa{layerspecs}{Bei einem \gls{methgraph} soll der Entry-Knoten auf dem obersten Layer dargestellt werden, und ein Layer darunter die Parameter für die Methode in fester Reihenfolge.}
   \nfa{methaufrufe}{Bei einem Knoten welcher einen Methodenaufruf darstellt, sollen die dazugehörigen Knoten (Parameter und Rückgabewert) ein Layer unter dem Methodenaufruf stehen.}
-  \nfa{feldzugr}{Feldzugriffe werden bei JOANA immer gleich dargestellt. Diese Zugriffe sollen erkannt werden und die dazugehörigen Knoten sollen automatisch immer im gleichen Muster angezeigt werden.}
-  \nfa{callkanten}{Kanten im Callgraph sollen nicht direkt übereinander liegen, sonder immer mit einem gewissen Mindestabstand nebeneinander.}
+  \nfa{feldzugr}{Feldzugriffe werden bei \gls{joana} immer gleich dargestellt. Diese Zugriffe sollen erkannt werden und die dazugehörigen Knoten sollen automatisch immer im gleichen Muster angezeigt werden.}
+  \nfa{callkanten}{Kanten im \gls{callgraph} sollen nicht direkt übereinander liegen, sonder immer mit einem gewissen Mindestabstand nebeneinander.}
   
   
 
