@@ -1,38 +1,44 @@
 \chapter{Zielbestimmung}
 
-Graph von Ansicht soll Programmgraphen von externen Analyse-Programmen visualisieren. Dafür wird eine bereits vorhandene Graphdatei importiert und ausgewertet. Der Benutzer kann verschiedene Constraints einstellen, welche im weiteren Dokument näher erläutert werden. 
+Graph von Ansicht soll Programmgraphen von externen Analyse-Programmen visualisieren. Dafür wird eine bereits vorhandene Graphdatei importiert und ausgewertet. Der Benutzer kann verschiedene Constraints einstellen, welche im weiteren Dokument näher erläutert werden.
 %TODO: Verweis einfügen zu den konkreten Erläuterungen
 Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und des Steuerflusses eines Programmes zeigen, das dem Benutzer die Möglichkeit bietet, den Programmfluss besser analysieren zu können.
 
 \section{Pflichtkriterien}
 
 \begin{itemize}
-\item Schnittstellen
-\begin{itemize}
-\item Import von generischen Graphen im \gls{graphml}-Format
-\item Export der visualisierten Graphen im \gls{svg}-Format
-\end{itemize}
-\item User interface
-\begin{itemize}
-\item Navigation mittels Zoom und Translation
-\item Selektieren von einzelnen oder mehreren Knoten
-\item Einstellen von Constraints
-\item Kollabieren und Ausklappen von Gruppen und Teilgraphen
-\item Filter für Knoten- und Kantentypen
-\item Ausblendung selektierter Knoten
-\end{itemize}
-\item Visualisierung
-\begin{itemize}
-\item Hierarchisches Layout mit dem \gls{sugiyama}
-\item Kanten werden durch \gls{bezier} dargestellt
-\item Informationsanzeige von Knoten und Kanten
-\item Weitere Layoutalgorithmen sollen leicht integrierbar und austauschbar sein
-\end{itemize}
-\item Layout
-\begin{itemize}
-	\item Sprungpunkte (aka "Knubbel", wie bei yComp) etc...
-	%evtl. genauer, anders, besser, mehr ... ;)
-\end{itemize}
+  \item Eingabe/Ausgabe
+  \begin{itemize}
+    \item Import von generischen Graphen im \gls{graphml}-Format (siehe \ref{ch:daten})
+    \item Export der visualisierten Graphen im \gls{svg}-Format
+  \end{itemize}
+  \item User interface
+  \begin{itemize}
+    \item Navigation mittels Zoom und Verschieben \ref{fa:zoom} \ref{fa:verschieben}
+    \item Selektieren von einzelnen oder mehreren Knoten \ref{fa:selekt_knoten}
+    \item Einstellen von Constraints
+    \item Kollabieren und Ausklappen von Teilgraphen % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
+    \item Filter für Knoten- und Kantentypen
+    \item Ausblendung selektierter Knoten
+    \item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graph-Datei und Layoutalgorithmus für ein schnelles Starten.
+  \end{itemize}
+  \item Visualisierung
+  \begin{itemize}
+    \item Hierarchisches Layout mit dem \gls{sugiyama}
+    \item Kanten werden durch \gls{bezier} dargestellt
+    \item Informationsanzeige von Knoten und Kanten
+    \item Weitere Layoutalgorithmen sollen leicht integrierbar und austauschbar sein
+  \end{itemize}
+  \item Pluginschnittstellen
+  \begin{itemize}
+    \item Schnittstelle für weiterer Import- und Export-Funktionen. %TODO: Referenz auf Plugin Chapter
+    \item Schnittstelle für weitere Layoutalgorithmen und Darstellungsoptionen.
+  \end{itemize}
+  \item Layout
+  \begin{itemize}
+    \item Sprungpunkte (aka "Knubbel", wie bei yComp) etc...
+    %evtl. genauer, anders, besser, mehr ... ;)
+  \end{itemize}
 \end{itemize}
 
 \section{Wunschkriterien}
@@ -61,7 +67,7 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
 
 \begin{itemize}
 \item Das Produkt ist kein Graph Editor und unterstützt nicht das manuelle Zeichnen/Hinzufügen von neuen Kanten und Knoten.
-\item Die GUI wird nicht von Grund auf neu entwickelt, es werden Bibliotheken verwendet, um die Entwicklung zu erleichtern. 
+\item Die GUI wird nicht von Grund auf neu entwickelt, es werden Bibliotheken verwendet, um die Entwicklung zu erleichtern.
 \item Das Darstellen von Kanten und Knoten selbst wird mithilfe von Bibliotheken umgesetzt.
 \item Das Produkt ist kein Analysetool für Programme, sondern dient lediglich zur Visualisierung von bereits vorhandenen Graphdateien.
 \end{itemize}
