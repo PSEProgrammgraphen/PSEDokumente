@@ -1,7 +1,16 @@
 \chapter{Produktdaten}
 
 \begin{itemize}
-\item Seit Programmstart gesetzte Einstellungen (z.B. Speicherort der zuletzt exportierten Datei oder Größe des Fensters) werden mithilfe der \gls{prefapi} von Java gespeichert.
-\item Als Inputformat für die zu zeichnenden Graphen wird das \gls{graphml}-Format unterstützt.
-\item Das Produkt wird den resultierenden Graphen als \gls{svg}-Format exportieren können.
+  \item Seit Programmstart gesetzte Einstellungen (z.B. Speicherort der zuletzt exportierten Datei oder Größe des Fensters) werden mithilfe der \gls{prefapi} von Java gespeichert.
+  \item Als Inputformat für die zu zeichnenden Graphen wird das \gls{graphml}-Format unterstützt.\\
+    Das GraphML-Format ist so aufgebaut, dass nicht alle Konstrukte welche mit GraphML beschrieben werden können (wie z.B. \gls{hyperkante}),
+    von einer Applikation unterstützt werden müssen.
+    Nicht unterstützte Konstrukte können ignoriert werden, ohne strukturelle Informationen des restlichen Graphens zu verlieren.\\
+    Wir listen hier die GraphML-Konstrukte, welche von dem Produkt unterstützt werden müssen und für welche eventuell eine Unterstützung später hinzugefügt wird, auf:
+    \begin{itemize}
+      \item Muss-Konstrukte: graph, node, edge, port, desc, key, data, default % Ist Port ein Musskriterium? Beim ersten Treffen wurde es erwähnt
+      \item Kann-Konstrukte: hyperedge, endpoint, Hierarchische/Geschachtelte Graphen,  Multi-Graphen
+    \end{itemize}
+    Für den Fall das ein Kann-Konstrukt nicht unterstützt wird, wird es, wie in der GraphML Spezifikation vorgeschrieben, behandelt.
+  \item Das Produkt wird den resultierenden Graphen als \gls{svg}-Format exportieren können.
 \end{itemize}
