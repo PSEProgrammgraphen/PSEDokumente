@@ -19,11 +19,11 @@
 Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graph beschreibt.\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer wählt die Import-Funktion über das Menüband aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüband in GUI
+  \item Der Benutzer wählt die Import-Funktion über das Menüleiste aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüleiste in GUI
   \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument. %TODO: Benutzerschnittstelle Kommandozeile
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Menüband (a): Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
+Menüleiste (a): Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
 Der Benutzer wählt die zu importierende Datei aus.
 Der in der Datei beschriebene Graph wird im Graph-Fenster dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
 Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Graph-Fenster dargestellt.
@@ -95,7 +95,7 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
 \textbf{Nachbedingung (Erfolg):} Es wurden Knoten und Kanten eines bestimmten Types ein-/ausgeblendet.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
-Der Benutzer wählt die Filter-Funktion aus dem Menüband aus.\\
+Der Benutzer wählt die Filter-Funktion aus dem Menüleiste aus.\\
 \textbf{Beschreibung:}
 Der Benutzer kann aus einer Reihe von Filtern auswählen.
 Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
@@ -112,9 +112,9 @@ Die Kanten werden entsprechend aus- oder eingeblendet.\\
 Der Graph wird neugezeichnet um kompakter zu werden oder um Platz für neue Kanten zu machen.
 
 \fano{Wechsel zwischen Graphen}\label{fa:graphwechsel}
-\textbf{Ziel:} Der in der Graph-Ansicht angezeigte Graph wurde ausgetauscht. \\
+\textbf{Ziel:} Der in der Graphansicht angezeigte Graph wurde ausgetauscht. \\
 \textbf{Vorbedingung:} Eine Graphdatei wurde geladen.\\
-\textbf{Nachbedingung (Erfolg):} Der ausgewählte Graph wird in der Graph-Ansicht angzeigt.\\
+\textbf{Nachbedingung (Erfolg):} Der ausgewählte Graph wird in der Graphansicht angzeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 Der Benutzer wählt über die Graph-Übersicht einen anderen Graphen aus.\\
@@ -131,7 +131,7 @@ Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\\
 \textbf{Beschreibung:}
 Vom Benutzer ausführbare Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
-Die Tastenkürzel werden hinter dem Funktionsnamen im Menüband oder Kontextmenü angezeigt.
+Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
 
 \subsection{JOANA}
 

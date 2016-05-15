@@ -8,7 +8,7 @@
 \newcommand\nfa[2]{\namedlabel{nfa:#1}{\textbf{/NFA\nfano/}}: & #2 \\ [1ex] }
 
 %TODO: Durchlesen und alle unklaren Begriffe/Fachwörter ins Glossar hinzufügen
-\section{Allgemein}
+\section{Allgemein}\label{sec:nfaallgemein}
 
 \begin{tabular}{lp{0.9\linewidth}}
   \nfa{maxknoten}{Es werden Graphen mit bis zu 10.000 Knoten unterstützt. Dies entspricht nicht der maximalen Knotenzahl in einer unterstützten Graphdateien.}
@@ -16,10 +16,9 @@
   \nfa{berechzeit}{Die Berechnung eines Graphlayouts dauert höchstens 2 min.}
   \nfa{sprachwechsel}{Das Programm soll so entworfen werden dass ein einfacher Sprachwechsel der GUI möglich ist.}
   \nfa{algowechsel}{Der Algorithmus welcher das Graphlayout entwirft soll einfach auswechselbar sein.}
-  %TODO: Ein testbares Maß für maximale Kantenkreuzungen finden.
 \end{tabular}
 
-\section{Graphlayout für \gls{joana}}
+\section{Graphlayout für \gls{joana}}\label{sec:nfajoana}
 
 \begin{tabular}{lp{0.9\linewidth}}
   \nfa{graphsicht}{Es existieren zwei Graphansichten. Einmal ein \gls{callgraph} welcher die Abhängigkeiten der Methoden darstellt und ein \gls{methgraph} welcher den Steuer- und Datenfluss innerhalb einer Methode visualisiert.}
@@ -30,4 +29,5 @@
   \nfa{cutknotenknoten}{Die graphische Darstellung eines Knoten, darf sich nicht mit der eines anderen Knoten überschneiden, so dass Teile eines Knoten verdeckt sind.}
   \nfa{cutknotenkante}{Kanten dürfen nicht durch Knoten verlaufen.}
   \nfa{cuttext}{Beschriftungen von Knoten oder Kanten dürfen sich nicht mit anderen Objekten überschneiden, sodass Teile der Beschriftung verdeckt/unkenntlich werden.}
+  %TODO: Ein testbares Maß für maximale Kantenkreuzungen finden.
 \end{tabular}

@@ -1,12 +1,35 @@
 \chapter{Globale Testfälle}
 
-\begin{itemize}
-	\item Import von Graph-ML Dateien
-	\item Visualisierung der importierten Datei
-	\item Zoomen, Zoom ändern
-	\item Constraints ändern
-	\item Über Knotenauswahl die nötigen Informationen zu Knoten angezeigt bekommen
-	\item Teilgraphen einklappen
-	\item Export der Visualisierung im SVG-Format
-	%sollte man noch bisschen schöner aufschreiben, evtl noch ausweiten und mehr punkte erwähnen, bzw. manche evtl zusammenfassen oder entfernen.
-\end{itemize}
+\newcounter{tnr}[chapter]
+\setcounter{tnr}{10}
+\newcommand{\testno}{\ifnum\value{tnr}<10 00\else\ifnum\value{tnr}<100 0\fi\fi\arabic{tnr}\addtocounter{tnr}{10}}
+\newcommand\test[2]{\namedlabel{test:#1}{\textbf{/T\testno/}}: & #2 \\ [1ex] }
+\newcommand\etest[3]{\namedlabel{test:#1}{\textbf{/T\testno/}}: & #2 \\ & Erweiterung: #3 \\ [1ex] }
+
+\begin{tabular}{lp{0.9\linewidth}}
+  \test{start}{Das Programm wird vom Tester gestartet.
+    Es wird überprüft, ob sich die GUI öffnet und, wie in \ref{ch:gui} beschrieben, dargestellt wird.}
+  \etest{startcmd}{Das Programm wird vom Tester über die Kommandozeile geöffnet.
+    Die Graphdatei wird als Argument mitübergeben.
+    Wie in \ref{test:start} wird die korrekte Darstellung der GUI überprüft.
+    Zusätzlich wird getestet ob der(die) Graph(en) aus der Graphdatei korrekt geladen werden. \ref{fa:import}}
+    {Alle möglichen validen Kombinationen von zusätzlichen Argumenten, beschrieben in \ref{sec:uicmd}, werden ausprobiert.
+    Außerdem werden auch invalide Argumente übergeben und überprüft \ref{nfa:gracefulexit} eingehalten wird.}
+  \test{import}{Der Tester wählt über die Menüleiste eine Import-Möglichkeit aus.
+    Es wird überprüft ob die GUI die Anfrage, wie in \ref{fa:import} beschrieben,
+    behandelt und ob die Graphen in der Graphdatei in der Graph-Übersicht gelistet werden.}
+  \test{export}{Ein Graph ist in der Graphansicht geladen.
+    Der Tester wählt über die Menüleiste eine Export-Möglichkeit.
+    Es wird überprüft ob die GUI die Anfrage, wie in \ref{fa:export_img} beschrieben,
+    behandelt und ob die exportierte Bilddatei mit der in der Graphansicht dargestellten Visualisierung des Graphen übereinstimmt.}
+  \test{layouten}{Der Tester wählt über die Menüleiste eine Layout-Möglichkeit aus.
+    Es wird überprüft ob das Layout auf den Graphen umgesetzt wird \ref{fa:layout}
+    und die Zeitbedingungen \ref{nfa:berechzeit} eingehalten werden.
+    Für den Fall, dass JOANA-Layout ausgewählt wurde,
+    werden zusätzlich alle Nichtfunktionalen Anforderungen für das \nameref{sec:nfajoana} überprüft.}
+  \test{navigation}{Der Tester führt alle in \ref{fa:zoom} \ref{fa:verschieben} beschriebene Navigationsaktionen aus
+    und überprüft ob das Produkt sich wie in den Anforderungen beschrieben verhält.}
+  \test{filter}{Ein Graph ist in der Graphansicht geladen.
+    Der Tester wählt eine Filter-Funktion aus der Menüleiste aus.
+    Es wird überprüft ob genau die Knoten ausgeblendet bzw. wieder eingeblendet werden, welche das Filterkriterium erfüllen.}
+\end{tabular}
