@@ -8,40 +8,7 @@
 %\renewcommand\thesubsection{/FA\ifnum\value{fanr}<10 00\else\ifnum\value{fanr}<100 0\fi\fi\arabic{fanr}/}
 \renewcommand\thesubsubsection{/FA\ifnum\value{fanr}<10 00\else\ifnum\value{fanr}<100 0\fi\fi\arabic{fanr}/}
 
-\section{Muss-Funktionen}
-\subsection{\gls{io}}
-
-\fano{Graph aus Datei importieren}\label{fa:import}
-\textbf{Ziel:} Der in der Graphdatei beschriebene Graph soll visuell dargestellt werden.\\
-\textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
-\textbf{Nachbedingung (Erfolg):} Der Graph wird dargestellt.\\
-\textbf{Nachbedingung (Fehlschlag):}
-Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graph beschreibt.\\
-\textbf{Auslösende Ereignisse:}
-\begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer wählt die Import-Funktion über das Menüband aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüband in GUI
-  \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument. %TODO: Benutzerschnittstelle Kommandozeile
-\end{enumerate}
-\textbf{Beschreibung:}\\
-Menüband (a): Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
-Der Benutzer wählt die zu importierende Datei aus.
-Der in der Datei beschriebene Graph wird im Graph-Fenster dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
-Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Graph-Fenster dargestellt.
-
-\fano{Export als Bilddatei}\label{fa:export_img}
-\textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen. \\
-\textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateissystem erstellt, welche ein Abbild des derzeit angezeigten Graphens enthält.\\
-\textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
-\textbf{Auslösendes Ereignis:}
-Der Benutzer wählt die Exportfunktion im Menübalken aus.\\
-\textbf{Beschreibung:}\\
-Der Benutzer wählt die Exportfunktion im Menübalken unter Datei-->Export--><Dateiformat> aus. Wobei <Dateiformat> durch das gewünschte Bilddatei-Format zu ersetzen ist. Unterstützt wird mindestens das \gls{svg}-Format. %TODO: Referenz auf Dateiformate und Erweiterbarkeit durch Plugins
-Es erscheint ein Dateisystem-Menü indem, der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.
-Eventuell wird der Benutzer nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG) %TODO: Durch Beispiel in SVG ersetzten
-Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
-
-\subsection{User Interface}
+\section{Graph von Ansicht}
 
 \fano{Sichtfeld verschieben}\label{fa:verschieben}
 \textbf{Ziel:} Das Sichtfeld soll verschoben werden.\\
@@ -133,7 +100,43 @@ Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\
 Vom Benutzer ausführbare Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüband oder Kontextmenü angezeigt.
 
-\subsection{JOANA}
+\section{\gls{graphml}-Plugin}
+
+\fano{Graph aus Datei importieren}\label{fa:import}
+\textbf{Ziel:} Der in der Graphdatei beschriebene Graph soll visuell dargestellt werden.\\
+\textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
+\textbf{Nachbedingung (Erfolg):} Der Graph wird dargestellt.\\
+\textbf{Nachbedingung (Fehlschlag):}
+Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graph beschreibt.\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Benutzer wählt die Import-Funktion über das Menüband aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüband in GUI
+  \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument. %TODO: Benutzerschnittstelle Kommandozeile
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Menüband (a): Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
+Der Benutzer wählt die zu importierende Datei aus.
+Der in der Datei beschriebene Graph wird im Graph-Fenster dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
+Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Graph-Fenster dargestellt.
+
+\section{\gls{svg}-Plugin}
+
+\fano{Export als Bilddatei}\label{fa:export_img}
+\textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde geladen. \\
+\textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateissystem erstellt, welche ein Abbild des derzeit angezeigten Graphens enthält.\\
+\textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
+\textbf{Auslösendes Ereignis:}
+Der Benutzer wählt die Exportfunktion im Menübalken aus.\\
+\textbf{Beschreibung:}\\
+Der Benutzer wählt die Exportfunktion im Menübalken unter Datei-->Export--><Dateiformat> aus. Wobei <Dateiformat> durch das gewünschte Bilddatei-Format zu ersetzen ist. Unterstützt wird mindestens das \gls{svg}-Format. %TODO: Referenz auf Dateiformate und Erweiterbarkeit durch Plugins
+Es erscheint ein Dateisystem-Menü indem, der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.
+Eventuell wird der Benutzer nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG) %TODO: Durch Beispiel in SVG ersetzten
+Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
+
+\section{\gls{joana}-Plugin}
+
+
 
 %\fano{<++>}\label{fa:<++>}
 %\textbf{Ziel:} <++>\\

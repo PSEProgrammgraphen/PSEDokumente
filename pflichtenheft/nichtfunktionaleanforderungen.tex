@@ -8,20 +8,20 @@
 \newcommand\nfa[2]{\namedlabel{nfa:#1}{\textbf{/NFA\nfano/}}: & #2 \\ [1ex] }
 
 %TODO: Durchlesen und alle unklaren Begriffe/Fachwörter ins Glossar hinzufügen
-\section{Allgemein}
+\section{Graph von Ansicht}
 
 \begin{tabular}{lp{0.9\linewidth}}
   \nfa{maxknoten}{Es werden Graphen mit bis zu 10.000 Knoten unterstützt. Dies entspricht nicht der maximalen Knotenzahl in einer unterstützten Graphdateien.}
   \nfa{maxknotentotal}{Es werden Graphdateien mit nicht mehr als 1.000.000 Knoten insgesamt unterstützt.}
-  \nfa{berechzeit}{Die Berechnung eines Graphlayouts dauert höchstens 2 min.}
   \nfa{sprachwechsel}{Das Programm soll so entworfen werden dass ein einfacher Sprachwechsel der GUI möglich ist.}
   \nfa{algowechsel}{Der Algorithmus welcher das Graphlayout entwirft soll einfach auswechselbar sein.}
   %TODO: Ein testbares Maß für maximale Kantenkreuzungen finden.
 \end{tabular}
 
-\section{Graphlayout für \gls{joana}}
+\section{\gls{joana}-Plugin}
 
 \begin{tabular}{lp{0.9\linewidth}}
+  \nfa{berechzeit}{Die Berechnung eines Graphlayouts dauert höchstens 2 min.}
   \nfa{graphsicht}{Es existieren zwei Graphansichten. Einmal ein \gls{callgraph} welcher die Abhängigkeiten der Methoden darstellt und ein \gls{methgraph} welcher den Steuer- und Datenfluss innerhalb einer Methode visualisiert.}
   \nfa{layerspecs}{Bei einem \gls{methgraph} soll der Entry-Knoten auf dem obersten Layer dargestellt werden, und ein Layer darunter die Parameter für die Methode in fester Reihenfolge.}
   \nfa{methaufrufe}{Bei einem Knoten welcher einen Methodenaufruf darstellt, sollen die dazugehörigen Knoten (Parameter und Rückgabewert) ein Layer unter dem Methodenaufruf stehen.}
