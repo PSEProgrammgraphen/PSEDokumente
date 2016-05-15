@@ -13,7 +13,7 @@
 
 \fano{Graph aus Datei importieren}\label{fa:import}
 \textbf{Ziel:} Der in der Graphdatei beschriebene Graph soll visuell dargestellt werden.\\
-\textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten} in seinem Dateissystem, auf welche zugegriffen werden kann.\\
+\textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
 \textbf{Nachbedingung (Erfolg):} Der Graph wird dargestellt.\\
 \textbf{Nachbedingung (Fehlschlag):}
 Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graph beschreibt.\\
@@ -52,7 +52,7 @@ Das Sichtfeld wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausg
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich des Graph-Fenster.
-  \item Der Benutzer betätigt eine der zum Verschieben des Sichtfeldes designierten Tasten (siehe FAXXXX). %TODO: Referenz auf Tasten Auswahl funktion
+  \item Der Benutzer betätigt eine der zum Verschieben des Sichtfeldes designierten Tasten \ref{fa:hotkey}
   \item Der Benutzer bewegt die Scroll-Balken am Rand des Sichtfeldes. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
 \end{enumerate}
 \textbf{Beschreibung:}\\
@@ -68,7 +68,7 @@ Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Gr
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer dreht am Mausrad.
-  \item Der Benutzer betätigt die zum Zoomen designierten Tasten. (siehe FAXXXX). %TODO: Referenz auf Tasten Auswahl funktion
+  \item Der Benutzer betätigt die zum Zoomen designierten Tasten. \ref{fa:hotkey}
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Mausrad (a): Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
@@ -88,13 +88,6 @@ Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen in Abhängigkeit zum derzei
 Der Benutzer kann Knoten mit der Maus zur Auswahl hinzufügen.
 Auf eine Auswahl von Knoten können verschiedene Funktionen ausgeführt werden. %TODO: Referenz auf Funktionen auf Knotenmengen/Teilgraphen
 Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
-%\begin{itemize}
-%    \item Falls während der Auswahl die Shift-Taste gedrückt gehalten wird, werden die Knoten einer evtl. schon vorhandenen Auswahl hinzugefügt.
-%    \item Falls während der Auswahl die Strg-Taste gedrückt gehalten wird, werden die Knoten, falls in sie schon ausgewählt sind, von der Auswahl entfernt.
-%    \item Falls keine der beiden Tasten gedrückt gehalten wird, werden nur diese Knoten ausgewählt. Zuvor ausgewählte Knoten sind nun nicht mehr in der Auswahl.
-%\end{itemize}
-%Klick (a): Der Knoten wird der Auswahl hinzugefügt.
-%Auswahlbereich (b): Es wird ein Rechteck um die Auswahl gezeichnet. Wenn die linke Maustaste losgelassen wird, werden alle im Rechteck enthaltenen Knoten der Auswahl hinzugefügt.
 
 \fano{Knoten und Kanten filtern}\label{fa:filter}
 \textbf{Ziel:} Knoten und Kanten können bezüglich ihres Types gefiltert werden.\\
@@ -117,6 +110,17 @@ Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
 Die Kanten werden entsprechend aus- oder eingeblendet.\\
 \textbf{Alternative:}
 Der Graph wird neugezeichnet um kompakter zu werden oder um Platz für neue Kanten zu machen.
+
+\fano{Steuerung über Tastaturkürzel}\label{fa:hotkey}
+\textbf{Ziel:} Häufig verwendete Funktionen können über Tastaturkürzel ausgeführt werden.\\
+\textbf{Vorbedingung:} -\\
+\textbf{Nachbedingung (Erfolg):} Die dem Tastaturkürzel zugeordnete Funktion wurde ausgeführt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\\
+\textbf{Beschreibung:}
+Vom Benutzer ausführbare Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
+Die Tastenkürzel werden hinter dem Funktionsnamen im Menüband oder Kontextmenü angezeigt.
 
 \subsection{JOANA}
 
