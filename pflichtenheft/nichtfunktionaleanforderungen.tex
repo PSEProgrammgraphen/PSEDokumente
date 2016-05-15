@@ -7,15 +7,16 @@
 \renewcommand\thesubsubsection{/NFA\ifnum\value{nfanr}<10 000\else\ifnum\value{nfanr}<100 00\else\ifnum\value{nfanr}<1000 0\fi\fi\fi\arabic{nfanr}/}
 \newcommand\nfa[2]{\namedlabel{nfa:#1}{\textbf{/NFA\nfano/}}: & #2 \\ [1ex] }
 
-%TODO: Durchlesen und alle unklaren Begriffe/Fachwörter ins Glossar hinzufügen 
+%TODO: Durchlesen und alle unklaren Begriffe/Fachwörter ins Glossar hinzufügen
 \section{Allgemein}
 
 \begin{tabular}{lp{0.9\linewidth}}
-  \nfa{maxknoten}{Zu jedem Zeitpunkt können nicht mehr als 10.000 Knoten gleichzeitig gelayoutet und dargestellt werden. Dies entspricht nicht der maximalen Knotenzahl von SDGs die unterstützt werden.}
-  \nfa{maxknotentotal}{Es werden Graphen mit nicht mehr als 1.000.000 Knoten insgesamt unterstützt.}
+  \nfa{maxknoten}{Es werden Graphen mit bis zu 10.000 Knoten unterstützt. Dies entspricht nicht der maximalen Knotenzahl in einer unterstützten Graphdateien.}
+  \nfa{maxknotentotal}{Es werden Graphdateien mit nicht mehr als 1.000.000 Knoten insgesamt unterstützt.}
   \nfa{berechzeit}{Die Berechnung eines Graphlayouts dauert höchstens 2 min.}
   \nfa{sprachwechsel}{Das Programm soll so entworfen werden dass ein einfacher Sprachwechsel der GUI möglich ist.}
   \nfa{algowechsel}{Der Algorithmus welcher das Graphlayout entwirft soll einfach auswechselbar sein.}
+  %TODO: Ein testbares Maß für maximale Kantenkreuzungen finden.
 \end{tabular}
 
 \section{Graphlayout für \gls{joana}}
@@ -25,8 +26,8 @@
   \nfa{layerspecs}{Bei einem \gls{methgraph} soll der Entry-Knoten auf dem obersten Layer dargestellt werden, und ein Layer darunter die Parameter für die Methode in fester Reihenfolge.}
   \nfa{methaufrufe}{Bei einem Knoten welcher einen Methodenaufruf darstellt, sollen die dazugehörigen Knoten (Parameter und Rückgabewert) ein Layer unter dem Methodenaufruf stehen.}
   \nfa{feldzugr}{Feldzugriffe werden bei \gls{joana} immer gleich dargestellt. Diese Zugriffe sollen erkannt werden und die dazugehörigen Knoten sollen automatisch immer im gleichen Muster angezeigt werden.}
-  \nfa{callkanten}{Kanten im \gls{callgraph} sollen nicht direkt übereinander liegen, sonder immer mit einem gewissen Mindestabstand nebeneinander.}
-  
-  
-
+  \nfa{kantenabstand}{Kanten sollen nicht direkt übereinander liegen, sondern immer mit einem gewissen Mindestabstand nebeneinander.}
+  \nfa{cutknotenknoten}{Die graphische Darstellung eines Knoten, darf sich nicht mit der eines anderen Knoten überschneiden, so dass Teile eines Knoten verdeckt sind.}
+  \nfa{cutknotenkante}{Kanten dürfen nicht durch Knoten verlaufen.}
+  \nfa{cuttext}{Beschriftungen von Knoten oder Kanten dürfen sich nicht mit anderen Objekten überschneiden, sodass Teile der Beschriftung verdeckt/unkenntlich werden.}
 \end{tabular}
