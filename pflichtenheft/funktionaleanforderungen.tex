@@ -56,7 +56,7 @@ Das Sichtfeld wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausg
   \item Der Benutzer bewegt die Scroll-Balken am Rand des Sichtfeldes. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Klicken und Ziehen (a): Das Sichtfeld bewegt sich entgegen der Richtung, in welche der Mauszeiger bewegt wird. Es entsteht somit ein intuitives Verschieben des Graphens.\\
+Klicken und Ziehen (a): Das Sichtfeld bewegt sich entgegen der Richtung, in welche der Mauszeiger bewegt wird. Es entsteht somit ein intuitives Verschieben des Graphen.\\
 Navigationstasten (b): Das Sichtfeld verschiebt sich um eine feste Länge (in Abhängigkeit des Zoom-Grades) in die entsprechnde Richtung.\\
 Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Graphen um das gleiche Maß wie der Scroll-Balken zur Länge seiner Fahrbahn in die entsprechende Richtung (Horizontal/Vertikal).\\
 
@@ -110,6 +110,17 @@ Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
 Die Kanten werden entsprechend aus- oder eingeblendet.\\
 \textbf{Alternative:}
 Der Graph wird neugezeichnet um kompakter zu werden oder um Platz für neue Kanten zu machen.
+
+\fano{Wechsel zwischen Graphen}\label{fa:graphwechsel}
+\textbf{Ziel:} Der in der Graph-Ansicht angezeigte Graph wurde ausgetauscht. \\
+\textbf{Vorbedingung:} Eine Graphdatei wurde geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der ausgewählte Graph wird in der Graph-Ansicht angzeigt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+Der Benutzer wählt über die Graph-Übersicht einen anderen Graphen aus.\\
+\textbf{Beschreibung:}
+Das Produkt unterstützt Graphdateien, welche mehr als einen Graphen beschreiben.
+Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 
 \fano{Steuerung über Tastaturkürzel}\label{fa:hotkey}
 \textbf{Ziel:} Häufig verwendete Funktionen können über Tastaturkürzel ausgeführt werden.\\
