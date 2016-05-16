@@ -5,7 +5,6 @@
 \setcounter{fanr}{10}
 \newcommand{\fano}[1]{\subsubsection{#1}\addtocounter{fanr}{10}}
 \newcommand{\subfano}[1]{\subsubsection{#1}\addtocounter{fanr}{1}}
-%\renewcommand\thesubsection{/FA\ifnum\value{fanr}<10 00\else\ifnum\value{fanr}<100 0\fi\fi\arabic{fanr}/}
 \renewcommand\thesubsubsection{/FA\ifnum\value{fanr}<10 00\else\ifnum\value{fanr}<100 0\fi\fi\arabic{fanr}/}
 
 \section{Graph von Ansicht}
@@ -28,10 +27,9 @@ Auswahl (b): Der ausgewählte Graph in der Graphansicht angezeigt.
 
 
 \fano{Anzeige von geschachtelten Graphen}\label{fa:hierarchgraph}
-\textbf{Ziel:} Falls ein Graph einen geschachtelten Graphen enthält, soll dieser angezeigt werden.\\ %TODO: Enthält oder repräsentiert? GraphML Knoten enthalten Graphen
+\textbf{Ziel:} Falls ein Graph einen geschachtelten Graphen enthält, soll dieser angezeigt werden.\\
 \textbf{Vorbedingung:} Eine Graphdatei mit geschachtelten Graphen wurde importiert.\\
 \textbf{Nachbedingung (Erfolg):} Der geschachtelte Graph wird in der Graphansicht angezeigt.\\
-%Falls er zuvor nicht gehöffnet wurde, wird er der Struckturansicht hinzugefügt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
@@ -54,19 +52,19 @@ Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level-''Graph be
 \textbf{Auslösende Ereignisse:}
 Der Benutzer wählt über die Menüleiste ein Layout aus.\\
 \textbf{Beschreibung:}\\
-Nach der Auswahl das Layout berechnet. Hierbei kann es zu Verzögerungen kommen. (siehe \ref{nfa:berechzeit})% TODO: Crashed bei mir.
-Nach der Berechnung wird der Graph neugezeichnet.
-Dem Produkt wird ein hierarchisches Layout zur Darstellung von, von \gls{joana} berechneten, SDGs mitgeliefert.
-Dieses Layout muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
+Nach der Auswahl wird das Layout berechnet. Hierbei kann es zu Verzögerungen kommen. (siehe \ref{nfa:berechzeit})
+Nach der Berechnung wird der Graph neugezeichnet. Layouts sind nicht in Graph von Ansicht enthalten und können durch Plugins hinzugefügt werden.
+Dem Produkt werden über das JOANA-Plugin Layout zur Darstellung von, von \gls{joana} berechneten, SDGs mitgeliefert.
+Diese Layouts muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
 
 \subsection{User Interface}
 \setcounter{fanr}{100}
 
 \fano{Sichtfeld verschieben}\label{fa:verschieben}
 \textbf{Ziel:} Das Sichtfeld soll verschoben werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen und das Sichtfeld deckt nicht alle Elemente des Graphens ab.\\
-\textbf{Nachbedingung (Erfolg):}  Das Sichtfeld deckt nun einen den gewünschten Teil des Graphen ab.\\
-\textbf{Nachbedingung (Fehlschlag):} Das Sichtfeld deckt einen Randabschnitt ab und es wurde versucht das Sichtfeld über den Rand hinaus zu bewegen.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen und das Sichtfeld deckt nicht alle Elemente des Graphens ab.\\
+\textbf{Nachbedingung (Erfolg):}  Das Sichtfeld deckt nun den gewünschten Teil des Graphen ab.\\
+\textbf{Nachbedingung (Fehlschlag):} Das Sichtfeld deckte einen Randabschnitt ab und es wurde versucht das Sichtfeld über den Rand hinaus zu bewegen.\\
 Das Sichtfeld wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausgegeben.\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
@@ -81,7 +79,7 @@ Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Gr
 
 \fano{Zoom-Grad ändern}\label{fa:zoom}
 \textbf{Ziel:} Der Zoom-Grad des Sichtfeldes soll vergrößert bzw. verkleinert werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen.\\
+\textbf{Vorbedingung:} Ein Graph wurde geladen in die Graphansicht.\\
 \textbf{Nachbedingung (Erfolg):} Der Zoom-Grad wurde angepasst.\\
 \textbf{Nachbedingung (Fehlschlag):} Der Zoom-Grad bleibt gleich, falls ein Maximum/Minimum erreicht wurde. Es wird keine Fehlermeldung ausgegeben.\\
 \textbf{Auslösende Ereignisse:}
@@ -95,7 +93,7 @@ Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen in Abhängigkeit zum derzei
 
 \fano{Knoten selektieren}\label{fa:selekt_knoten}
 \textbf{Ziel:} Ein oder mehrere Knoten sollen der Auswahl hinzugefügt werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Ein oder mehrere Knoten wurden der Auswahl hinzugefügt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
