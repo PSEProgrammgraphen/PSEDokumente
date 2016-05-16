@@ -35,7 +35,7 @@ Auswahl (b): Der ausgewählte Graph in der Graphansicht angezeigt.
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer wählt den geschachtelten Graphen aus der Struckturansicht aus.
   \item Ein Graph mit einem geschachtelten Graphen wird in der Graphansicht angezeigt.
-    Der Benutzer wählt die Funktion über das Kontextmenü des Knotens, der den geschachtelten Graphen enthält, aus oder löst sie durch ein Tastenkürzel aus.
+  Der Benutzer wählt die Funktion über das Kontextmenü des Knotens, der den geschachtelten Graphen enthält, aus oder löst sie durch ein Tastenkürzel aus.
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Geschachtelte Graphen werden in der Graphansicht als Knoten dargestellt.
@@ -80,8 +80,59 @@ Die Kanten werden entsprechend aus- oder eingeblendet.\\
 \textbf{Alternative:}
 Der Graph wird neugezeichnet um kompakter zu werden oder um Platz für neue Kanten zu machen.
 
-\subsection{Steuerung}
+\subsection{Input/Output}
 \setcounter{fanr}{100}
+
+\fano{Graph aus Datei importieren}\label{fa:import}
+\textbf{Ziel:} Der/Die in der Graphdatei beschriebene Graph(en) soll(en) visuell dargestellt werden.\\
+\textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
+\textbf{Nachbedingung (Erfolg):} Die Graphen werden in der Strukturübersicht aufgelistet. Der zuerst beschriebene Graph wird dargestellt.\\
+\textbf{Nachbedingung (Fehlschlag):}
+Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graphen beschreibt.\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Benutzer wählt die Import-Funktion über die Menüleiste aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüleiste in GUI
+  \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument. (siehe \ref{sec:uicmd})
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Menüleiste (a):
+Es öffnet sich ein Fenster, indem der Benutzer den Typ des Graphen auswählt, welcher importiert werden soll. %TODO: Ref gui
+Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
+Der Benutzer wählt die zu importierende Datei aus.
+Der in der Datei beschriebene Graph wird in der Graphansicht dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
+Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Graphansicht dargestellt. \\
+
+%\begin{figure}[ht]
+%  \centering
+%  \includegraphics[scale=0.4]{resourcen/fa-import.1}
+%  \caption{Import}
+%  \label{fig:import}
+%\end{figure} %TODO: Outdated
+
+\fano{Export als Bilddatei}\label{fa:export_img}
+\textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. \\
+\textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateissystem erstellt, welche ein Abbild des derzeit angezeigten Graphens enthält.\\
+\textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
+\textbf{Auslösendes Ereignis:}
+Der Benutzer wählt die Exportfunktion im Menüleiste aus.\\
+\textbf{Beschreibung:}\\
+Der Benutzer wählt die Exportfunktion im Menübalken aus.
+Es erscheint ein Dateisystem-Menü indem, der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.
+Export-Optionen werden durch Plugins bereitgestellt.
+Mit dem Produkt wird ein \gls{svg}-Plugin, zum Exportieren in das \gls{svg}-Dateiformat, mitgeliefert.
+Eventuell wird der Benutzer noch durch das Plugin nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG) %TODO: Durch Beispiel in SVG ersetzten
+Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.4]{resourcen/fa-export.1}
+  \caption{Export}
+  \label{fig:export}
+\end{figure}
+
+\subsection{Steuerung}
+\setcounter{fanr}{200}
 
 \fano{Sichtfeld verschieben}\label{fa:verschieben}
 \textbf{Ziel:} Das Sichtfeld soll verschoben werden.\\
@@ -102,7 +153,7 @@ Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Gr
 
 \fano{Zoom-Grad ändern}\label{fa:zoom}
 \textbf{Ziel:} Der Zoom-Grad des Sichtfeldes soll vergrößert bzw. verkleinert werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen in die Graphansicht.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Zoom-Grad wurde angepasst.\\
 \textbf{Nachbedingung (Fehlschlag):} Der Zoom-Grad bleibt gleich, falls ein Maximum/Minimum erreicht wurde. Es wird keine Fehlermeldung ausgegeben.\\
 \textbf{Auslösende Ereignisse:}
@@ -126,9 +177,8 @@ Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen in Abhängigkeit zum derzei
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Der Benutzer kann Knoten mit der Maus zur Auswahl hinzufügen.
-Auf eine Auswahl von Knoten können verschiedene Funktionen ausgeführt werden. %TODO: Referenz auf Funktionen auf Knotenmengen/Teilgraphen
+Auf eine Auswahl von Knoten können verschiedene Operationen ausgeführt werden. %TODO: Referenz auf Funktionen auf Knotenmengen/Teilgraphen
 Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
-
 
 \fano{Wechsel zwischen Graphen}\label{fa:graphwechsel}
 \textbf{Ziel:} Der in der Graphansicht angezeigte Graph wurde ausgetauscht. \\
@@ -137,7 +187,7 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 Der Benutzer wählt über die Graph-Übersicht einen anderen Graphen aus.\\
-\textbf{Beschreibung:}
+\textbf{Beschreibung:}\\
 Das Produkt unterstützt Graphdateien, welche mehr als einen Graphen beschreiben.
 Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 
@@ -148,58 +198,23 @@ Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\\
-\textbf{Beschreibung:}
+\textbf{Beschreibung:}\\
 Vom Benutzer ausführbare Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
 
 \section{\gls{graphml}-Plugin}
 
-\fano{Graph aus Datei importieren}\label{fa:import}
-\textbf{Ziel:} Der in der Graphdatei beschriebene Graph soll visuell dargestellt werden.\\
-\textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
-\textbf{Nachbedingung (Erfolg):} Der Graph wird dargestellt.\\
-\textbf{Nachbedingung (Fehlschlag):}
-Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graph beschreibt.\\
-\textbf{Auslösende Ereignisse:}
-\begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer wählt die Import-Funktion über das Menüband aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüband in GUI
-  \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument. %TODO: Benutzerschnittstelle Kommandozeile
-\end{enumerate}
-\textbf{Beschreibung:}\\
-Menüband (a): Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
-Der Benutzer wählt die zu importierende Datei aus.
-Der in der Datei beschriebene Graph wird im Graph-Fenster dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
-Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Graph-Fenster dargestellt. \\
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.4]{resourcen/fa-import.1}
-  \caption{Import}
-  \label{fig:import}
-\end{figure}
-
+\fano{GraphML importieren}\label{fa:importgraphml}
+\textbf{Ziel:} Eine \gls{graphml}-Datei soll in das Programm zur Ansicht geladen werden.\\
+\textbf{Vorbedingung:} Eine korrekte und unterstützte (siehe \ref{ch:daten}) GraphML-Datei befindet sich auf dem System.\\
+\textbf{Nachbedingung (Erfolg):} Die in der Datei beschriebenen Graphen werden an Graph von Ansicht zurückgegeben.\\
+\textbf{Nachbedingung (Fehlschlag):} Falls die Datei nicht unterstützt wird oder Fehler enthält, wird eine Fehlermeldung an Graph von Ansicht zur Darstellung zurückgegeben.\\
+\textbf{Auslösende Ereignisse:} Beim Importieren wird ein Typ ausgewählt, welcher das \gls{graphml}-Plugin als Importer beschreibt.\\
+\textbf{Beschreibung:}
+Die GraphML-Datei wird eingelesen und in die interne Repräsentation von Graphen überführt.
 
 \section{\gls{svg}-Plugin}
 
-\fano{Export als Bilddatei}\label{fa:export_img}
-\textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen. \\
-\textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateissystem erstellt, welche ein Abbild des derzeit angezeigten Graphens enthält.\\
-\textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
-\textbf{Auslösendes Ereignis:}
-Der Benutzer wählt die Exportfunktion im Menübalken aus.\\
-\textbf{Beschreibung:}\\
-Der Benutzer wählt die Exportfunktion im Menübalken unter Datei-->Export--><Dateiformat> aus. Wobei <Dateiformat> durch das gewünschte Bilddatei-Format zu ersetzen ist. Unterstützt wird mindestens das \gls{svg}-Format. %TODO: Referenz auf Dateiformate und Erweiterbarkeit durch Plugins
-Es erscheint ein Dateisystem-Menü indem, der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.
-Eventuell wird der Benutzer nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG) %TODO: Durch Beispiel in SVG ersetzten
-Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.4]{resourcen/fa-export.1}
-  \caption{Export}
-  \label{fig:export}
-\end{figure}
 
 \section{\gls{joana}-Plugin}
 
