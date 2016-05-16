@@ -1,0 +1,17 @@
+\chapter{Plugin-Schnittstellen}
+\label{ch:plugschnitt}
+
+\newcounter{psnr}[chapter]
+\setcounter{psnr}{10}
+\newcommand{\psno}{\ifnum\value{psnr}<10 00\else\ifnum\value{psnr}<100 0\fi\fi\arabic{psnr}\addtocounter{psnr}{10}}
+\renewcommand\thesubsubsection{/S\ifnum\value{psnr}<10 000\else\ifnum\value{psnr}<100 00\else\ifnum\value{psnr}<1000 0\fi\fi\fi\arabic{psnr}/}
+\newcommand\ps[2]{\namedlabel{s:#1}{\textbf{/S\psno/}}: & #2 \\ [1ex] }
+
+\begin{tabular}{lp{0.9\linewidth}}
+  \ps{import}{\textit{Import-Schnittstelle:} Ein Plugin welches auf diese Schnittstelle zugreift, kann ein neuen Datentyp implementieren, welcher danach bei der Importfunktion von Graph von Ansicht zur Verfügung steht. Das Plugin soll in der Lage sein den neuen Datentyp zu parsen und an Graph von Ansicht weiterzuleiten.}
+  \ps{export}{\textit{Export-Schnittstelle:} Graph von Ansicht sendet interne Daten über den gezeichneten Graphen an diese Schnittstelle. Das Plugin welches auf diese Schnittstelle zugreift soll in der Lage sein aus diesen Daten einen neuen Datentyp zu erstellen und abzuspeichern. Der Datentyp erscheint dann auch beim Speicherdialog}
+  \ps{layoutalgo}{\textit{Layoutalgorithmen-Schnittstelle:} Bei dieser Schnittstelle kann ein neuer Algorithmus implementiert werden, auf welchen dann beim zeichnen des Layouts zugegriffen werden kann.}
+  \ps{filter}{\textit{Filter-Schnittstelle:} Es können neue Filter für spezielle Knoten- und Kantentypen hinzugefügt werden, welche bei den Filteroptionen von Graph von Ansicht automatisch hinzugefügt werden. Diese Filter bestehen darin, dass sie Kanten oder Knoten nach bestimmten Eigenschaften ausblenden.}
+  \ps{darstellung}{\textit{Darstellungs-Schnittstelle:} Es können einzelnen Knoten- und Kantentypen Eigenschaften zugeordnet werden, wie zum Beispiel die Farbe für das Layout oder die Form.}
+  \ps{operationen}{\textit{Operation-Schnittstelle für Knoten und Kanten:} Es können neue Operationen auf Knoten und Kanten ausgeführt werden, wie das Kollabieren von bereits definierten Teilgraphen (z.B. Feldzugriffe bei JOANA).}
+\end{tabular}

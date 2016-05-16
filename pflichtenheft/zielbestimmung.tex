@@ -6,69 +6,66 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
 
 \section{Pflichtkriterien}
 
-\begin{itemize}
-  \item Eingabe/Ausgabe
-  \begin{itemize}
-    \item Import von generischen Graphen im \gls{graphml}-Format (siehe \ref{ch:daten})
-    \item Export der visualisierten Graphen im \gls{svg}-Format
-  \end{itemize}
-  \item User interface
+\subsection{Graph von Ansicht (Graphviewer)}
   \begin{itemize}
     \item Navigation mittels Zoom und Verschieben \ref{fa:zoom} \ref{fa:verschieben}
     \item Selektieren von einzelnen oder mehreren Knoten \ref{fa:selekt_knoten}
     \item Kollabieren und Ausklappen von Teilgraphen % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
-    \item Filter für Knoten- und Kantentypen \ref{fa:filter}
     \item Ausblendung selektierter Knoten
     \item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten.
-  \end{itemize}
-  \item Visualisierung
-  \begin{itemize}
-    \item Hierarchisches Layout mit dem \gls{sugiyama}
+    \item Schnittstellen für Plugins anbieten in den Bereichen Import, Export, Layoutalgorithmen, Darstellungsoptionen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
     \item Kanten werden durch \gls{bezier} dargestellt
     \item Informationsanzeige von Knoten und Kanten
-    \item Weitere Layoutalgorithmen sollen leicht integrierbar und austauschbar sein
   \end{itemize}
-  \item Pluginschnittstellen
+  
+\subsection{Plugins}
   \begin{itemize}
-    \item Schnittstelle für weitere Import- und Export-Funktionen. %TODO: Referenz auf Plugin Chapter
-    \item Schnittstelle für weitere Layoutalgorithmen und Darstellungsoptionen.
-    \item Schnittstelle für Operationen auf einzelne Knoten, Kanten und Teilgraphen sowie den ganzen Graphen.
-    \item Schnittstelle für weitere Knoten- und Kantenfilter \ref{fa:filter}.
+    \item \gls{graphml}-Plugin welches den Import von generischen Graphen im \gls{graphml}-Format unterstützt (siehe \ref{ch:daten})
+    \item \gls{svg}-Plugin welches den Export der visualisierten Graphen im \gls{svg}-Format unterstützt
   \end{itemize}
-  \item Layout
-  \begin{itemize}
-    \item Sprungpunkte (aka "Knubbel", wie bei yComp) etc...
-    %evtl. genauer, anders, besser, mehr ... ;)
-  \end{itemize}
-\end{itemize}
+  
+  \subsubsection{JOANA-Plugin}
+    \begin{itemize}
+      \item Hierarchisches Layout mit dem \gls{sugiyama}   
+      \item Filter für Knoten- und Kantentypen aus \gls{joana} \ref{fa:filter}
+      \item Ein \gls{callgraph}-Layout welcher übersichtlich die Abhängigkeiten der Methoden darstellt
+      \item Ein \gls{methgraph}-Layout welcher die Abhängigkeiten innerhalb einer Methode - mithilfe von vorgegebenen Constraints, siehe \ref{ch:nfa} - darstellt 
+    \end{itemize}
+  
 
 \section{Wunschkriterien}
 
-\begin{itemize}
-\item Schnittstellen
-\begin{itemize}
-\item Export der visualisierten Graphen im \gls{jpg}- und \gls{graphml}-Format
-\item Erweiterbarkeit des Programmes durch Plugin Schnittstellen
-\end{itemize}
-\item User interface
-\begin{itemize}
-\item Muster Definition mittels "GraphRegex"
-\item Benutzerdefinierte Hotkeys
-\end{itemize}
-\item Visualisierung
-\begin{itemize}
-\item Fortschrittsbalken bei Berechnung der Visualisierung des Graphen mithilfe einer Zeitabschätzung
-\item Minimap bzw. Übersicht des Graphens
-\item Algorithmus zur Erreichbarkeit eines Knoten
-\item Die visuelle Darstellung von Kanten kann geändert werden (\gls{bezier}, orthogonale Kanten oder direkte Kanten)
-\end{itemize}
-\end{itemize}
+\subsection{Graph von Ansicht (Graphviewer)}
+  \begin{itemize}
+    \item Muster Definition mittels "GraphRegex"
+    \item Benutzerdefinierte Hotkeys
+    \item Fortschrittsbalken bei Berechnung der Visualisierung des Graphen mithilfe einer Zeitabschätzung
+    \item Minimap bzw. Übersicht des Graphens
+    \item Algorithmus zur Erreichbarkeit eines Knoten
+    \item Die visuelle Darstellung von Kanten kann geändert werden (\gls{bezier}, orthogonale Kanten oder direkte Kanten)
+  \end{itemize}
+
+\subsection{Plugins}
+  \begin{itemize}
+    \item weitere Export-Plugins im \gls{jpg}- und \gls{graphml}-Format
+  \end{itemize}
+  
+  \subsubsection{JOANA-Plugin}
+  \begin{itemize}
+    \item Zeitabschätzung des Layoutalgorithmus zur Darstellung des Fortschrittsbalken
+  \end{itemize}
+
 
 \section{Abgrenzungskriterien}
 
-\begin{itemize}
-\item Das Produkt ist kein Graph Editor und unterstützt nicht das manuelle Zeichnen/Hinzufügen von neuen Kanten und Knoten.
-\item Die GUI wird nicht von Grund auf neu entwickelt, es werden Bibliotheken verwendet, um die Entwicklung zu erleichtern.
-\item Das Darstellen von Kanten und Knoten selbst wird mithilfe von Bibliotheken umgesetzt.
-\item Das Produkt ist kein Analysetool für Programme, sondern dient lediglich zur Visualisierung von bereits vorhandenen Graphdateien.
-\end{itemize}
+\subsection{Graph von Ansicht (Graphviewer)}
+  \begin{itemize}
+    \item Das Produkt ist kein Graph Editor und unterstützt nicht das manuelle Zeichnen/Hinzufügen von neuen Kanten und Knoten.
+    \item Die GUI wird nicht von Grund auf neu entwickelt, es werden Bibliotheken verwendet, um die Entwicklung zu erleichtern.
+    \item Das Darstellen von Kanten und Knoten selbst wird mithilfe von Bibliotheken umgesetzt.
+    \item Das Produkt ist kein Analysetool für Programme, sondern dient lediglich zur Visualisierung von bereits vorhandenen Graphdateien.
+  \end{itemize}
+\subsection{Plugins}
+  \begin{itemize}
+    \item Die Plugins können nur auf die vorhandenen Schnittstellen zugreifen %TODO: verweis auf Plugins Kapitel
+  \end{itemize}
