@@ -59,7 +59,30 @@ Nach der Berechnung wird der Graph neugezeichnet.
 Dem Produkt wird ein hierarchisches Layout zur Darstellung von, von \gls{joana} berechneten, SDGs mitgeliefert.
 Dieses Layout muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
 
-\subsection{User Interface}
+
+\fano{Knoten und Kanten filtern}\label{fa:filter}
+\textbf{Ziel:} Knoten und Kanten können bezüglich ihres Types gefiltert werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde geladen.\\
+\textbf{Nachbedingung (Erfolg):} Es wurden Knoten und Kanten eines bestimmten Types ein-/ausgeblendet.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+Der Benutzer wählt die Filter-Funktion aus dem Menüleiste aus.\\
+\textbf{Beschreibung:}
+Der Benutzer kann aus einer Reihe von Filtern auswählen.
+Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
+\begin{itemize}[nolistsep]
+  \item Kontrollfluss
+  \item Kontrollabhängigkeit
+  \item Datenabhängigkeit
+  \item Heap-Abhängigkeiten
+  \item Parameterstruktur
+  \item Threadinterferenzen
+\end{itemize}
+Die Kanten werden entsprechend aus- oder eingeblendet.\\
+\textbf{Alternative:}
+Der Graph wird neugezeichnet um kompakter zu werden oder um Platz für neue Kanten zu machen.
+
+\subsection{Steuerung}
 \setcounter{fanr}{100}
 
 \fano{Sichtfeld verschieben}\label{fa:verschieben}
@@ -108,27 +131,6 @@ Der Benutzer kann Knoten mit der Maus zur Auswahl hinzufügen.
 Auf eine Auswahl von Knoten können verschiedene Funktionen ausgeführt werden. %TODO: Referenz auf Funktionen auf Knotenmengen/Teilgraphen
 Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
 
-\fano{Knoten und Kanten filtern}\label{fa:filter}
-\textbf{Ziel:} Knoten und Kanten können bezüglich ihres Types gefiltert werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen.\\
-\textbf{Nachbedingung (Erfolg):} Es wurden Knoten und Kanten eines bestimmten Types ein-/ausgeblendet.\\
-\textbf{Nachbedingung (Fehlschlag):} -\\
-\textbf{Auslösende Ereignisse:}
-Der Benutzer wählt die Filter-Funktion aus dem Menüleiste aus.\\
-\textbf{Beschreibung:}
-Der Benutzer kann aus einer Reihe von Filtern auswählen.
-Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
-\begin{itemize}[nolistsep]
-  \item Kontrollfluss
-  \item Kontrollabhängigkeit
-  \item Datenabhängigkeit
-  \item Heap-Abhängigkeiten
-  \item Parameterstruktur
-  \item Threadinterferenzen
-\end{itemize}
-Die Kanten werden entsprechend aus- oder eingeblendet.\\
-\textbf{Alternative:}
-Der Graph wird neugezeichnet um kompakter zu werden oder um Platz für neue Kanten zu machen.
 
 \fano{Wechsel zwischen Graphen}\label{fa:graphwechsel}
 \textbf{Ziel:} Der in der Graphansicht angezeigte Graph wurde ausgetauscht. \\
@@ -169,7 +171,15 @@ Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte
 Menüband (a): Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
 Der Benutzer wählt die zu importierende Datei aus.
 Der in der Datei beschriebene Graph wird im Graph-Fenster dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
-Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Graph-Fenster dargestellt.
+Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Graph-Fenster dargestellt. \\
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.4]{resourcen/fa-import.1}
+  \caption{Import}
+  \label{fig:import}
+\end{figure}
+
 
 \section{\gls{svg}-Plugin}
 
@@ -185,6 +195,13 @@ Der Benutzer wählt die Exportfunktion im Menübalken unter Datei-->Export--><Da
 Es erscheint ein Dateisystem-Menü indem, der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.
 Eventuell wird der Benutzer nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG) %TODO: Durch Beispiel in SVG ersetzten
 Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.4]{resourcen/fa-export.1}
+  \caption{Export}
+  \label{fig:export}
+\end{figure}
 
 \section{\gls{joana}-Plugin}
 

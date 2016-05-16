@@ -7,6 +7,16 @@
 \usepackage{ae}
 \usepackage{enumitem}
 \usepackage[bookmarks,bookmarksnumbered]{hyperref}
+\usepackage{graphicx}
+
+\graphicspath{{resourcen/}}
+
+%Used for including MetaUML diagrams
+\usepackage{emp}
+\usepackage{ifpdf}
+\ifpdf
+\DeclareGraphicsRule{.1}{mps}{*}{}
+\fi
 
 \makeatletter
 \def\namedlabel#1#2{\begingroup
@@ -48,6 +58,9 @@ Graph von Ansicht}
   \and Jonas Meier      \\ Meierjonas96@web.de
   \and Lucas Steinmann  \\ ucemp@student.kit.edu
 }
+
+\titlehead{\includegraphics[width=150pt]{resourcen/GAns.png}}
+
 \maketitle
 
 % Ich denke einen Abstract brauchen wir nicht aber hier ist mal ein Template einfach die Kommentarzeichen wegmachen
@@ -74,7 +87,7 @@ Graph von Ansicht}
 
 \input{globaletestfaelle}
 
-\chapter{Systemmodelle}
+\input{systemmodelle}
 
 \clearpage
 \printglossary[type=\acronymtype]
