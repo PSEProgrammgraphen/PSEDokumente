@@ -1,7 +1,6 @@
 \chapter{Funktionale Anforderungen}
 \label{ch:funktionen}
 
-\newcounter{fanr}[chapter]
 \setcounter{fanr}{10}
 \newcommand{\fano}[1]{\subsubsection{#1}\addtocounter{fanr}{10}}
 \newcommand{\subfano}[1]{\subsubsection{#1}\addtocounter{fanr}{1}}
@@ -9,17 +8,67 @@
 \renewcommand\thesubsubsection{/FA\ifnum\value{fanr}<10 00\else\ifnum\value{fanr}<100 0\fi\fi\arabic{fanr}/}
 
 \section{Muss-Funktionen}
-\subsection{\gls{io}}
+
+\subsection{Allgemein}
+
+\fano{Anzeige von Graphen}\label{fa:graphen}
+\textbf{Ziel:} Ein Graph soll in der Graphansicht angezeigt werden.\\
+\textbf{Vorbedingung:} -\\
+\textbf{Nachbedingung (Erfolg):} Der Graph ist in der Graphansicht sichtbar.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Eine Graphdatei wird importiert.
+  \item Ein Graph wird aus der Struckturansicht ausgewählt.
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Importieren (a): Der in der Graphdatei zuerst beschriebene Graph, wird in der Graphansicht angezeigt.\\
+Auswahl (b): Der ausgewählte Graph in der Graphansicht angezeigt.
+
+
+\fano{Anzeige von geschachtelten Graphen}\label{fa:hierarchgraph}
+\textbf{Ziel:} Falls ein Graph einen geschachtelten Graphen enthält, soll dieser angezeigt werden.\\ %TODO: Enthält oder repräsentiert? GraphML Knoten enthalten Graphen
+\textbf{Vorbedingung:} Eine Graphdatei mit geschachtelten Graphen wurde importiert.\\
+\textbf{Nachbedingung (Erfolg):} Der geschachtelte Graph wird in der Graphansicht angezeigt.\\
+%Falls er zuvor nicht gehöffnet wurde, wird er der Struckturansicht hinzugefügt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Benutzer wählt den geschachtelten Graphen aus der Struckturansicht aus.
+  \item Ein Graph mit einem geschachtelten Graphen wird in der Graphansicht angezeigt.
+    Der Benutzer wählt die Funktion über das Kontextmenü des Knotens, der den geschachtelten Graphen enthält, aus oder löst sie durch ein Tastenkürzel aus.
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Geschachtelte Graphen werden in der Graphansicht als Knoten dargestellt.
+Wenn der Benutzer einer der Ereignisse auslöst wird der Graph in der Graphansicht angezeigt.
+Ein geschachtelter Graph wird in der Struckturansicht als Kind des Graphen dargestellt, der in enthält. Für ein Beispiel siehe hier:\\ %TODO: Referenz von GUI Bild mit Struckturansicht
+Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level-''Graph behandelt.
+
+
+\fano{Graphen layouten}\label{fa:layout}
+\textbf{Ziel:} Ein Graph soll nach bestimmten Vorgaben bzw. einem bestimmten Muster angeordnet werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet. Kanten wurden feste Züge zugewiesen.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+Der Benutzer wählt über die Menüleiste ein Layout aus.\\
+\textbf{Beschreibung:}\\
+Nach der Auswahl das Layout berechnet. Hierbei kann es zu Verzögerungen kommen. (siehe \ref{nfa:berechzeit})% TODO: Crashed bei mir.
+Nach der Berechnung wird der Graph neugezeichnet.
+Dem Produkt wird ein hierarchisches Layout zur Darstellung von, von \gls{joana} berechneten, SDGs mitgeliefert.
+Dieses Layout muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
+
+\subsection{Input/Output}
 
 \fano{Graph aus Datei importieren}\label{fa:import}
 \textbf{Ziel:} Der in der Graphdatei beschriebene Graph soll visuell dargestellt werden.\\
 \textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
-\textbf{Nachbedingung (Erfolg):} Der Graph wird dargestellt.\\
+\textbf{Nachbedingung (Erfolg):} Die in der Datei beschriebenen Graphen werden in der Strukturübersicht angezeigt. Der in dargestellt.\\
 \textbf{Nachbedingung (Fehlschlag):}
 Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graph beschreibt.\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer wählt die Import-Funktion über das Menüleiste aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüleiste in GUI
+  \item Der Benutzer wählt die Import-Funktion über die Menüleiste aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüleiste in GUI
   \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument. %TODO: Benutzerschnittstelle Kommandozeile
 \end{enumerate}
 \textbf{Beschreibung:}\\
@@ -30,7 +79,7 @@ Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Grap
 
 \fano{Export als Bilddatei}\label{fa:export_img}
 \textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen. \\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. \\
 \textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateissystem erstellt, welche ein Abbild des derzeit angezeigten Graphens enthält.\\
 \textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
 \textbf{Auslösendes Ereignis:}
@@ -42,6 +91,7 @@ Eventuell wird der Benutzer nach weiteren, zur Abspeicherung relevanten, Details
 Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
 
 \subsection{User Interface}
+\setcounter{fanr}{100}
 
 \fano{Sichtfeld verschieben}\label{fa:verschieben}
 \textbf{Ziel:} Das Sichtfeld soll verschoben werden.\\
@@ -133,8 +183,15 @@ Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\
 Vom Benutzer ausführbare Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
 
-\subsection{JOANA}
 
+%Fehlende Anforderungen:
+% Es gibt eine GUI
+% Kontextmenü
+%
+%
+%
+
+\subsection{JOANA}
 %\fano{<++>}\label{fa:<++>}
 %\textbf{Ziel:} <++>\\
 %\textbf{Kategorie:} <++>\\

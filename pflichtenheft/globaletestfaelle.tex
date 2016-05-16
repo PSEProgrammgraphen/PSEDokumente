@@ -1,6 +1,5 @@
 \chapter{Globale Testfälle}
 
-\newcounter{tnr}[chapter]
 \setcounter{tnr}{10}
 \newcommand{\testno}{\ifnum\value{tnr}<10 00\else\ifnum\value{tnr}<100 0\fi\fi\arabic{tnr}\addtocounter{tnr}{10}}
 \newcommand\test[2]{\namedlabel{test:#1}{\textbf{/T\testno/}}: & #2 \\ [1ex] }
