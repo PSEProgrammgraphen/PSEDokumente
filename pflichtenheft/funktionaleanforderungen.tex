@@ -54,8 +54,7 @@ Der Benutzer wählt über die Menüleiste ein Layout aus.\\
 \textbf{Beschreibung:}\\
 Nach der Auswahl wird das Layout berechnet. Hierbei kann es zu Verzögerungen kommen. (siehe \ref{nfa:berechzeit})
 Nach der Berechnung wird der Graph neugezeichnet. Layouts sind nicht in Graph von Ansicht enthalten und können durch Plugins hinzugefügt werden.
-Dem Produkt werden über das JOANA-Plugin Layout zur Darstellung von, von \gls{joana} berechneten, SDGs mitgeliefert.
-Diese Layouts muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
+Dem Produkt werden über das JOANA-Plugin Layout zur Darstellung von, von \gls{joana} berechneten, \gls{pdg}s mitgeliefert.
 
 \fano{Constraints auswählen}\label{fa:constraints}
 \textbf{Ziel:} Der Nutzer kann Constraints auswählen die auf den Subgraph beim \ref{fa:layout} verwendet werden.\\
@@ -94,7 +93,7 @@ Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 Der Benutzer wählt die Filter-Funktion aus dem Menüleiste aus.\\
-\textbf{Beschreibung:}
+\textbf{Beschreibung:}\\
 Der Benutzer kann aus einer Reihe von Filtern auswählen.
 Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
 \begin{itemize}[nolistsep]
@@ -147,12 +146,13 @@ Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Grap
 Der Benutzer wählt die Exportfunktion im Menüleiste aus.\\
 \textbf{Beschreibung:}\\
 Der Benutzer wählt die Exportfunktion im Menübalken aus.
-Es erscheint ein Dateisystem-Menü indem, der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.
+Es erscheint ein Dateisystem-Menü indem der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.\\
 Export-Optionen werden durch Plugins bereitgestellt.
-Mit dem Produkt wird ein \gls{svg}-Plugin, zum Exportieren in das \gls{svg}-Dateiformat, mitgeliefert.
-Eventuell wird der Benutzer noch durch das Plugin nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG) %TODO: Durch Beispiel in SVG ersetzten
+Mit dem Produkt wird ein \gls{svg}-Plugin zum Exportieren in das \gls{svg}-Dateiformat mitgeliefert.\\
+Eventuell wird der Benutzer noch durch das Plugin nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
 Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
 
+%TODO: Wird nicht direkt unter dem Text angezeigt
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.4]{resourcen/fa-export.1}
@@ -215,7 +215,7 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
 \textbf{Nachbedingung (Erfolg):} Der ausgewählte Graph wird in der Graphansicht angzeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
-Der Benutzer wählt über die Graph-Übersicht einen anderen Graphen aus.\\
+Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus.\\
 \textbf{Beschreibung:}\\
 Das Produkt unterstützt Graphdateien, welche mehr als einen Graphen beschreiben.
 Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
@@ -231,27 +231,96 @@ Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\
 Vom Benutzer ausführbare Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
 
+\fano{TODO: Abspeichern als Graph}\label{fa:speichern}
+\fano{TODO: Import von vorher abgespeicherten Graphen}\label{fa:laden}
+
 \section{\gls{graphml}-Plugin}
+\setcounter{fanr}{300}
 
 \fano{GraphML importieren}\label{fa:importgraphml}
 \textbf{Ziel:} Eine \gls{graphml}-Datei soll in das Programm zur Ansicht geladen werden.\\
-\textbf{Vorbedingung:} Eine korrekte und unterstützte (siehe \ref{ch:daten}) GraphML-Datei befindet sich auf dem System.\\
+\textbf{Vorbedingung:} Eine korrekte und unterstützte (siehe \nameref{ch:daten}) GraphML-Datei befindet sich auf dem System.\\
 \textbf{Nachbedingung (Erfolg):} Die in der Datei beschriebenen Graphen werden an Graph von Ansicht zurückgegeben.\\
-\textbf{Nachbedingung (Fehlschlag):} Falls die Datei nicht unterstützt wird oder Fehler enthält, wird eine Fehlermeldung an Graph von Ansicht zur Darstellung zurückgegeben.\\
+\textbf{Nachbedingung (Fehlschlag):} Falls die Datei nicht unterstützt wird oder Fehler enthält, wird eine Fehlermeldung an Graph von Ansicht zurückgegeben.\\
 \textbf{Auslösende Ereignisse:} Beim Importieren wird ein Typ ausgewählt, welcher das \gls{graphml}-Plugin als Importer beschreibt.\\
-\textbf{Beschreibung:}
-Die GraphML-Datei wird eingelesen und in die interne Repräsentation von Graphen überführt.
+\textbf{Beschreibung:}\\
+Die GraphML-Datei wird eingelesen und in die interne Repräsentation von Graphen überführt und an Graph von Ansicht zur Darstellung zurückgegeben.
 
 \section{\gls{svg}-Plugin}
+\setcounter{fanr}{400}
 
+\fano{Graph als \gls{svg}-Datei exportieren}\label{fa:export_svg}
+\textbf{Ziel:} Der in der Graphansicht angezeigte Graph soll als \gls{svg}-Format abgespeichert werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der Graph wurde abgespeichert.\\
+\textbf{Nachbedingung (Fehlschlag):} Der Graph konnte nicht abgespeichert werden. Es wird eine Fehlermeldung an Graph von Ansicht zurückgegeben.\\
+\textbf{Auslösende Ereignisse:} Die SVG-Exportoption wird aus dem Menü wie in \ref{fa:export_img} beschrieben ausgewählt.\\
+\textbf{Beschreibung:}\\
+Es wird versucht die derzeitige Darstellung des Graphen in der Graphansicht in das SVG-Format zu überführen.
 
 \section{\gls{joana}-Plugin}
+\setcounter{fanr}{500}
+
+\fano{Callgraph-View}\label{fa:callview}
+\textbf{Ziel:} \gls{callgraph} in \gls{joana}-Graphdateien werden speziell dargestellt und behandelt.\\
+\textbf{Vorbedingung:} -\\
+\textbf{Nachbedingung (Erfolg):} Der Callgraph wurde wie unten beschrieben dargestellt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Eine Graphdatei wird als JOANA-Graph importiert.\\
+\textbf{Beschreibung:}\\
+Beim Importieren wird der Callgraph zuerst in der Graphansicht geöffnet.\\
+Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandelt.
+\textit{Weitere Eigenschaften folgen nach Absprache.}
+%TODO: Nach Gespräch weitere Eigenschaften des Callgraphen auflisten. Gruppierung von Java-Methoden etc aus E-Mail
+
+\fano{Methoden-View}\label{fa:methview}
+\textbf{Ziel:} \gls{methgraph} in \gls{joana}-Graphdateien werden, um die Betrachtung als \gls{pdg} zu erleichtern, speziell behandelt und dargestellt werden.\\
+\textbf{Vorbedingung:} -\\
+\textbf{Nachbedingung (Erfolg):} Der Methodengraph wird wie unten beschrieben behandelt. \\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Eine Graphdatei wird als JOANA-Graph importiert.\\
+\textbf{Beschreibung:}\\
+Ein Methodengraph kann als Teilgraph des \gls{callgraph}, wie in \ref{fa:hierarchgraph} beschrieben, geöffnet werden.
+Er wird beim Laden in die Graphansicht automatisch durch das in \ref{fa:joanalayout} definierte Layout gelayoutet.
+Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandelt.
+
+\fano{\gls{joana}-Layout}\label{fa:joanalayout}
+\textbf{Ziel:} Ein Graph soll zur Betrachtung als \gls{pdg} sinnvoll gelayoutet werden.\\ %TODO: Bei mir wird PDG nicht dem Glossar hinzugefügt. Funktioniert das bei anderen? Falls wie kann man das fixen?
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der Graph wurde wie unten beschrieben gelayoutet.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Ein Methodengraph wird zum ersten mal in die Graphansicht geladen. \ref{fa:methview}
+  \item Über die Menüleiste wird das JOANA-Layout als Layout ausgewählt. \ref{fa:layout}
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Das JOANA-Layout ist eine hierarchisches Layout zur Ansicht von PDGs.
+Diese Layouts muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
+
+\fano{Darstellung von \gls{joana}-Graphen}\label{fa:joanaview}
+\textbf{Ziel:} Elemente in JOANA-Graphen bekommen basierend auf ihrem Typ eine spezielle Darstellung.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der Graph wurde wie unten beschrieben dargestellt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Nutzer wählt über das Darstellungsmenü aus der Menüleiste die Darstellung als JOANA-Graphen aus.
+  \item Der Graph wird als JOANA-Graph geladen
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Knoten und Kanten gleichen Types in Call- und Methodengraphen werden in gleichen Farben dargestellt.\\
+Für Beispiele von Kantentypen siehe \ref{fa:filter}.
+Kanten werden als \gls{bezier} dargestellt.\\
+Das Zeichnen der Elemente wird nicht von dem JOANA-Plugin übernommen, sondern ist Teil von Graph von Ansicht. %TODO: Referenz auf Visualisierungsmöglichkeiten.
+Es wird lediglich die Darstellung festgelegt. (siehe \ref{s:darstellung})
 
 
+\fano{TODO: Definition des JOANA-Graphtypes}\label{fa:joanatyp}
+\section{Kann-Funktionen}
 
 %\fano{<++>}\label{fa:<++>}
 %\textbf{Ziel:} <++>\\
-%\textbf{Kategorie:} <++>\\
 %\textbf{Vorbedingung:} <++>\\
 %\textbf{Nachbedingung (Erfolg):} <++>\\
 %\textbf{Nachbedingung (Fehlschlag):} <++>\\
