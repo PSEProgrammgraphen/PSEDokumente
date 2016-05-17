@@ -19,11 +19,11 @@
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Eine Graphdatei wird importiert.
-  \item Ein Graph wird aus der Struckturansicht ausgewählt.
+  \item Ein Graph wird aus der Strukturansicht ausgewählt.
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Importieren (a): Der in der Graphdatei zuerst beschriebene Graph, wird in der Graphansicht angezeigt.\\
-Auswahl (b): Der ausgewählte Graph in der Graphansicht angezeigt.
+Importieren (a): Der in der Graphdatei zuerst beschriebene Graph wird in der Graphansicht angezeigt.\\
+Auswahl (b): Der ausgewählte Graph wird in der Graphansicht angezeigt.
 
 
 \fano{Anzeige von geschachtelten Graphen}\label{fa:hierarchgraph}
@@ -33,21 +33,21 @@ Auswahl (b): Der ausgewählte Graph in der Graphansicht angezeigt.
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer wählt den geschachtelten Graphen aus der Struckturansicht aus.
+  \item Der Benutzer wählt den geschachtelten Graphen aus der Strukturansicht aus.
   \item Ein Graph mit einem geschachtelten Graphen wird in der Graphansicht angezeigt.
   Der Benutzer wählt die Funktion über das Kontextmenü des Knotens, der den geschachtelten Graphen enthält, aus oder löst sie durch ein Tastenkürzel aus.
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Geschachtelte Graphen werden in der Graphansicht als Knoten dargestellt.
 Wenn der Benutzer einer der Ereignisse auslöst wird der Graph in der Graphansicht angezeigt.
-Ein geschachtelter Graph wird in der Struckturansicht als Kind des Graphen dargestellt, der in enthält. Für ein Beispiel siehe hier:\\ %TODO: Referenz von GUI Bild mit Struckturansicht
-Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level-''Graph behandelt.
+Ein geschachtelter Graph wird in der Struckturansicht als Kind des Graphen dargestellt, der ihn enthält. Für ein Beispiel siehe hier:\\ %TODO: Referenz von GUI Bild mit Struckturansicht
+Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level''-Graph behandelt.
 
 
 \fano{Graphen layouten}\label{fa:layout}
 \textbf{Ziel:} Ein Graph soll nach bestimmten Vorgaben bzw. einem bestimmten Muster angeordnet werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet. Kanten wurden feste Züge zugewiesen.\\
+\textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet, Kanten wurden feste Züge zugewiesen.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 Der Benutzer wählt über die Menüleiste ein Layout aus.\\
@@ -69,7 +69,7 @@ Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die
   \item Positionierung
   \begin{itemize}[nolistsep]
     \item positioniere \textit{Subgraph 1} über \textit{Subgraph 2}
-    \item positioniere \textit{Subgraph 1} drunter \textit{Subgraph 2}
+    \item positioniere \textit{Subgraph 1} unter \textit{Subgraph 2}
     \item positioniere \textit{Subgraph 1} links \textit{Subgraph 2}
     \item positioniere \textit{Subgraph 1} rechts \textit{Subgraph 2}
     \item positioniere \textit{Subgraph} an fester Position
@@ -106,7 +106,7 @@ Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
 \end{itemize}
 Die Kanten werden entsprechend aus- oder eingeblendet.\\
 \textbf{Alternative:}
-Der Graph wird neugezeichnet um kompakter zu werden oder um Platz für neue Kanten zu machen.
+Der Graph wird neu gezeichnet um kompakter zu werden, oder um Platz für neue Kanten zu machen.
 
 \subsection{Input/Output}
 \setcounter{fanr}{100}
@@ -124,7 +124,7 @@ Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Menüleiste (a):
-Es öffnet sich ein Fenster, indem der Benutzer den Typ des Graphen auswählt, welcher importiert werden soll. %TODO: Ref gui
+Es öffnet sich ein Fenster, in dem der Benutzer den Typ des Graphen auswählt, welcher importiert werden soll. %TODO: Ref gui
 Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
 Der Benutzer wählt die zu importierende Datei aus.
 Der in der Datei beschriebene Graph wird in der Graphansicht dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
@@ -140,16 +140,16 @@ Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Grap
 \fano{Export als Bilddatei}\label{fa:export_img}
 \textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. \\
-\textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateissystem erstellt, welche ein Abbild des derzeit angezeigten Graphens enthält.\\
+\textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateisystem erstellt, welche ein Abbild des derzeit angezeigten Graphen enthält.\\
 \textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
 \textbf{Auslösendes Ereignis:}
 Der Benutzer wählt die Exportfunktion im Menüleiste aus.\\
 \textbf{Beschreibung:}\\
 Der Benutzer wählt die Exportfunktion im Menübalken aus.
-Es erscheint ein Dateisystem-Menü indem der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.\\
+Es erscheint ein Dateisystem-Menü in dem der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.\\
 Export-Optionen werden durch Plugins bereitgestellt.
 Mit dem Produkt wird ein \gls{svg}-Plugin zum Exportieren in das \gls{svg}-Dateiformat mitgeliefert.\\
-Eventuell wird der Benutzer noch durch das Plugin nach weiteren, zur Abspeicherung relevanten, Details abgefagt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
+Eventuell wird der Benutzer noch durch das Plugin nach weiteren, zur Abspeicherung relevanten, Details gefagt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
 Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
 
 %TODO: Wird nicht direkt unter dem Text angezeigt
@@ -172,12 +172,12 @@ Das Sichtfeld wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausg
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich des Graph-Fenster.
-  \item Der Benutzer betätigt eine der zum Verschieben des Sichtfeldes designierten Tasten \ref{fa:hotkey}
+  \item Der Benutzer betätigt eine der zum Verschieben des Sichtfeldes designierten Tasten \ref{fa:hotkey}.
   \item Der Benutzer bewegt die Scroll-Balken am Rand des Sichtfeldes. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Klicken und Ziehen (a): Das Sichtfeld bewegt sich entgegen der Richtung, in welche der Mauszeiger bewegt wird. Es entsteht somit ein intuitives Verschieben des Graphen.\\
-Navigationstasten (b): Das Sichtfeld verschiebt sich um eine feste Länge (in Abhängigkeit des Zoom-Grades) in die entsprechnde Richtung.\\
+Navigationstasten (b): Das Sichtfeld verschiebt sich um eine feste Länge (in Abhängigkeit des Zoom-Grades) in die entsprechende Richtung.\\
 Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Graphen um das gleiche Maß wie der Scroll-Balken zur Länge seiner Fahrbahn in die entsprechende Richtung (Horizontal/Vertikal).\\
 
 \fano{Zoom-Grad ändern}\label{fa:zoom}
@@ -188,7 +188,7 @@ Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Gr
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer dreht am Mausrad.
-  \item Der Benutzer betätigt die zum Zoomen designierten Tasten. \ref{fa:hotkey}
+  \item Der Benutzer betätigt die zum Zoomen designierten Tasten \ref{fa:hotkey}.
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Mausrad (a): Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
@@ -244,7 +244,7 @@ Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextme
 \textbf{Nachbedingung (Fehlschlag):} Falls die Datei nicht unterstützt wird oder Fehler enthält, wird eine Fehlermeldung an Graph von Ansicht zurückgegeben.\\
 \textbf{Auslösende Ereignisse:} Beim Importieren wird ein Typ ausgewählt, welcher das \gls{graphml}-Plugin als Importer beschreibt.\\
 \textbf{Beschreibung:}\\
-Die GraphML-Datei wird eingelesen und in die interne Repräsentation von Graphen überführt und an Graph von Ansicht zur Darstellung zurückgegeben.
+Die GraphML-Datei wird eingelesen, in die interne Repräsentation von Graphen überführt und an Graph von Ansicht zur Darstellung zurückgegeben.
 
 \section{\gls{svg}-Plugin}
 \setcounter{fanr}{400}
