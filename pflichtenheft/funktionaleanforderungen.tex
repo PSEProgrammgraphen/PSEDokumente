@@ -57,6 +57,35 @@ Nach der Berechnung wird der Graph neugezeichnet. Layouts sind nicht in Graph vo
 Dem Produkt werden über das JOANA-Plugin Layout zur Darstellung von, von \gls{joana} berechneten, SDGs mitgeliefert.
 Diese Layouts muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
 
+\fano{Constraints auswählen}\label{fa:constraints}
+\textbf{Ziel:} Der Nutzer kann Constraints auswählen die auf den Subgraph beim \ref{fa:layout} verwendet werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde geladen.\\
+\textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
+\textbf{Nachbedingungen (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt in der Hauptansicht auf Constraint hinzufügen.\\
+\textbf{Beschreibung: }
+Der Benutzer legt eine Anzahl von Constraints für einen Subgraphen aus die für das \ref{fa:layout} verwendet werden
+Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die funktionalität geliefert wird
+\begin{itemize}[nolistsep]
+  \item Positionierung
+  \begin{itemize}[nolistsep]
+    \item positioniere \textit{Subgraph 1} über \textit{Subgraph 2}
+    \item positioniere \textit{Subgraph 1} drunter \textit{Subgraph 2}
+    \item positioniere \textit{Subgraph 1} links \textit{Subgraph 2}
+    \item positioniere \textit{Subgraph 1} rechts \textit{Subgraph 2}
+    \item positioniere \textit{Subgraph} an fester Position
+  \end{itemize}
+  \item Proximität
+  \begin{itemize}[nolistsep]
+    \item gruppiere \textit{Subgraph}
+    \item trenne \textit{Subgraph}
+  \end{itemize}
+  \item Lage
+  \begin{itemize}[nolistsep]
+    \item \textit{Subgraph} in einer Reihe
+    \item \textit{Subgraph} in einer Spalte
+  \end{itemize}
+\end{itemize}
 
 \fano{Knoten und Kanten filtern}\label{fa:filter}
 \textbf{Ziel:} Knoten und Kanten können bezüglich ihres Types gefiltert werden.\\
