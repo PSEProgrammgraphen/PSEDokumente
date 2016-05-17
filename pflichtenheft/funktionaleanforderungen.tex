@@ -64,7 +64,7 @@ Dem Produkt werden über das JOANA-Plugin Layout zur Darstellung von, von \gls{j
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 Der Benutzer wählt die Filter-Funktion aus dem Menüleiste aus.\\
-\textbf{Beschreibung:}
+\textbf{Beschreibung:}\\
 Der Benutzer kann aus einer Reihe von Filtern auswählen.
 Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
 \begin{itemize}[nolistsep]
@@ -202,7 +202,11 @@ Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\
 Vom Benutzer ausführbare Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
 
+\fano{TODO: Abspeichern als Graph}\label{fa:speichern}
+\fano{TODO: Import von vorher abgespeicherten Graphen}\label{fa:laden}
+
 \section{\gls{graphml}-Plugin}
+\setcounter{fanr}{300}
 
 \fano{GraphML importieren}\label{fa:importgraphml}
 \textbf{Ziel:} Eine \gls{graphml}-Datei soll in das Programm zur Ansicht geladen werden.\\
@@ -214,6 +218,7 @@ Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextme
 Die GraphML-Datei wird eingelesen und in die interne Repräsentation von Graphen überführt und an Graph von Ansicht zur Darstellung zurückgegeben.
 
 \section{\gls{svg}-Plugin}
+\setcounter{fanr}{400}
 
 \fano{Graph als \gls{svg}-Datei exportieren}\label{fa:export_svg}
 \textbf{Ziel:} Der in der Graphansicht angezeigte Graph soll als \gls{svg}-Format abgespeichert werden.\\
@@ -225,6 +230,7 @@ Die GraphML-Datei wird eingelesen und in die interne Repräsentation von Graphen
 Es wird versucht die derzeitige Darstellung des Graphen in der Graphansicht in das SVG-Format zu überführen.
 
 \section{\gls{joana}-Plugin}
+\setcounter{fanr}{500}
 
 \fano{Callgraph-View}\label{fa:callview}
 \textbf{Ziel:} \gls{callgraph} in \gls{joana}-Graphdateien werden speziell dargestellt und behandelt.\\
@@ -234,22 +240,23 @@ Es wird versucht die derzeitige Darstellung des Graphen in der Graphansicht in d
 \textbf{Auslösende Ereignisse:} Eine Graphdatei wird als JOANA-Graph importiert.\\
 \textbf{Beschreibung:}\\
 Beim Importieren wird der Callgraph zuerst in der Graphansicht geöffnet.\\
+Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandelt.
 \textit{Weitere Eigenschaften folgen nach Absprache.}
 %TODO: Nach Gespräch weitere Eigenschaften des Callgraphen auflisten. Gruppierung von Java-Methoden etc aus E-Mail
 
 \fano{Methoden-View}\label{fa:methview}
-\textbf{Ziel:} \gls{methgraph} in \gls{joana}-Graphdateien werden speziell dargestellt.\\
+\textbf{Ziel:} \gls{methgraph} in \gls{joana}-Graphdateien werden, um die Betrachtung als \gls{pdg} zu erleichtern, speziell behandelt und dargestellt werden.\\
 \textbf{Vorbedingung:} -\\
-\textbf{Nachbedingung (Erfolg):} Der Methodengraph wurde wie unten beschrieben dargestellt. \\
+\textbf{Nachbedingung (Erfolg):} Der Methodengraph wird wie unten beschrieben behandelt. \\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Eine Graphdatei wird als JOANA-Graph importiert.\\
 \textbf{Beschreibung:}\\
-Ein Methodengraph kann als Teilgraph des \gls{callgraph} wie in \ref{fa:hierarchgraph} beschrieben geöffnet werden.
+Ein Methodengraph kann als Teilgraph des \gls{callgraph}, wie in \ref{fa:hierarchgraph} beschrieben, geöffnet werden.
 Er wird beim Laden in die Graphansicht automatisch durch das in \ref{fa:joanalayout} definierte Layout gelayoutet.
-%TODO: Auf Darstellungsfunktion von JOANA Plugin
+Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandelt.
 
 \fano{\gls{joana}-Layout}\label{fa:joanalayout}
-\textbf{Ziel:} Ein Graph soll zur Betrachtung als \gls{pdg} sinnvoll gelayoutet werden.\\
+\textbf{Ziel:} Ein Graph soll zur Betrachtung als \gls{pdg} sinnvoll gelayoutet werden.\\ %TODO: Bei mir wird PDG nicht dem Glossar hinzugefügt. Funktioniert das bei anderen? Falls wie kann man das fixen?
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Graph wurde wie unten beschrieben gelayoutet.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
@@ -258,9 +265,30 @@ Er wird beim Laden in die Graphansicht automatisch durch das in \ref{fa:joanalay
   \item Ein Methodengraph wird zum ersten mal in die Graphansicht geladen. \ref{fa:methview}
   \item Über die Menüleiste wird das JOANA-Layout als Layout ausgewählt. \ref{fa:layout}
 \end{enumerate}
-\textbf{Beschreibung:}
+\textbf{Beschreibung:}\\
 Das JOANA-Layout ist eine hierarchisches Layout zur Ansicht von PDGs.
 Diese Layouts muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
+
+\fano{Darstellung von \gls{joana}-Graphen}\label{fa:joanaview}
+\textbf{Ziel:} Elemente in JOANA-Graphen bekommen basierend auf ihrem Typ eine spezielle Darstellung.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der Graph wurde wie unten beschrieben dargestellt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Nutzer wählt über das Darstellungsmenü aus der Menüleiste die Darstellung als JOANA-Graphen aus.
+  \item Der Graph wird als JOANA-Graph geladen
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Knoten und Kanten gleichen Types in Call- und Methodengraphen werden in gleichen Farben dargestellt.\\
+Für Beispiele von Kantentypen siehe \ref{fa:filter}.
+Kanten werden als \gls{bezier} dargestellt.\\
+Das Zeichnen der Elemente wird nicht von dem JOANA-Plugin übernommen, sondern ist Teil von Graph von Ansicht. %TODO: Referenz auf Visualisierungsmöglichkeiten.
+Es wird lediglich die Darstellung festgelegt. (siehe \ref{s:darstellung})
+
+
+\fano{TODO: Definition des JOANA-Graphtypes}\label{fa:joanatyp}
+\section{Kann-Funktionen}
 
 %\fano{<++>}\label{fa:<++>}
 %\textbf{Ziel:} <++>\\
