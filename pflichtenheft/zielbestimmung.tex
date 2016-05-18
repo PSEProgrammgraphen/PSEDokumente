@@ -10,25 +10,24 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
   \begin{itemize}
     \item Navigation mittels Zoom und Verschieben (siehe \ref{fa:zoom} und \ref{fa:verschieben})
     \item Selektieren von einzelnen oder mehreren Knoten (siehe \ref{fa:selekt_knoten})
-    \item Kollabieren und Ausklappen von Subgraphen % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
+    \item Kollabieren und Ausklappen von \gls{Subgraph}en % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
 %    \item Ausblendung selektierter Knoten (wie ist das gemeint? Wie kann man Knoten wieder einblenden?)
     \item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten (siehe \ref{sec:uicmd})
     \item Schnittstellen für Plugins anbieten in den Bereichen Import, Export, Layoutalgorithmen, Darstellungsoptionen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
     \item Informationsanzeige von Knoten und Kanten
-    \item Kanten können durch \gls{bezier} dargestellt \ref{fa:joanaview}
   \end{itemize}
   
 \subsection{Plugins}
   \begin{itemize}
     \item \gls{graphml}-Plugin welches den Import von generischen Graphen im \gls{graphml}-Format unterstützt (siehe \ref{ch:daten})
-    \item \gls{svg}-Plugin, welches den Export der visualisierten Graphen im \gls{svg}-Format unterstützt
+    \item \gls{svg}-Plugin, welches den Export der visualisierten Graphen im \gls{svg}-Format unterstützt (siehe \ref{fa:export_svg})
   \end{itemize}
   
   \subsubsection{JOANA-Plugin}
     \begin{itemize}
-      \item Hierarchisches Layout mit dem \gls{sugiyama} \ref{fa:joanalayout}
-      \item Filter für Knoten- und Kantentypen aus \gls{joana} \ref{fa:filter}
-      \item Ein \gls{callgraph}-Layout welcher übersichtlich die Abhängigkeiten der Methoden darstellt \ref{fa:callview}
+      \item Hierarchisches Layout mit dem \gls{sugiyama} (siehe \ref{fa:joanalayout})
+      \item Filter für Knoten- und Kantentypen aus \gls{joana} (siehe \ref{fa:filter})
+      \item Ein \gls{callgraph}-Layout, welches übersichtlich die Abhängigkeiten der Methoden darstellt (siehe \ref{fa:callview})
       \item Ein \gls{methgraph}-Layout, welches die Abhängigkeiten innerhalb einer Methode - mithilfe von vorgegebenen Constraints, (siehe \ref{fa:constraints}) - darstellt (siehe \ref{fa:methview} und \ref{fa:joanalayout})
     \end{itemize}
   
@@ -45,7 +44,7 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
     \item Minimap bzw. Übersicht des Graphens
     \item Algorithmus zur Erreichbarkeit eines Knoten
     \item Die visuelle Darstellung von Kanten kann geändert werden (\gls{bezier}, orthogonale Kanten oder direkte Kanten)
-    \item Anzeige von Statistiken über den Graphen und Subgraphen (Anzahl Knoten, Kanten ...)
+    \item Anzeige von Statistiken über den Graphen und \gls{Subgraph}en (Anzahl Knoten, Kanten ...)
     \item Reload-Funktion (rückgängig machen der letzten Änderung am Graphen)
   \end{itemize}
 

@@ -11,6 +11,7 @@
 
 \subsection{Allgemein}
 
+%TODO Anzeige unterscheiden: direkt nach Import(nicht gelayouted), nach layout(gelayouted).
 \fano{Anzeige von Graphen}\label{fa:graphen}
 \textbf{Ziel:} Ein Graph soll in der Graphansicht angezeigt werden.\\
 \textbf{Vorbedingung:} -\\
@@ -25,7 +26,7 @@
 Importieren (a): Der in der Graphdatei zuerst beschriebene Graph wird in der Graphansicht angezeigt.\\
 Auswahl (b): Der ausgewählte Graph wird in der Graphansicht angezeigt.
 
-
+%TODO Definition in Glossar, bzw. nötig?
 \fano{Anzeige von geschachtelten Graphen}\label{fa:hierarchgraph}
 \textbf{Ziel:} Falls ein Graph einen geschachtelten Graphen enthält, soll dieser angezeigt werden.\\
 \textbf{Vorbedingung:} Eine Graphdatei mit geschachtelten Graphen wurde importiert.\\
@@ -41,29 +42,33 @@ Auswahl (b): Der ausgewählte Graph wird in der Graphansicht angezeigt.
 Geschachtelte Graphen werden in der Graphansicht als Knoten dargestellt.
 Wenn der Benutzer eines der Ereignisse auslöst, wird der Graph in der Graphansicht angezeigt.
 Ein geschachtelter Graph wird in der Strukturansicht als Kind des Graphen dargestellt, der ihn enthält. Für ein Beispiel siehe hier:\\ %TODO: Referenz von GUI Bild mit Struckturansicht
-Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level''-Graph behandelt.
+Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level''-Graph behandelt. %TODO Top-Level in Glossar
 
 
 \fano{Graphen layouten}\label{fa:layout}
 \textbf{Ziel:} Ein Graph soll nach bestimmten Vorgaben bzw. einem bestimmten Muster angeordnet werden.\\
+%TODO Muster beziehen sich vlt auf constrains/bzw. auf die parametriesierung möglicher anderer Layoutalgos
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet, Kanten wurden feste Züge zugewiesen.\\
+\textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet, Kanten wurden feste Verläufe zugewiesen.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
+%TODO wird ein popup vor dem layouten geöffnet
 Der Benutzer wählt über die Menüleiste ein Layout aus.\\
+%TODO keine generischen graphen werden unterstützt
 \textbf{Beschreibung:}\\
 Nach der Auswahl wird das Layout berechnet. Hierbei kann es zu Verzögerungen kommen. (siehe \ref{nfa:berechzeit})
 Nach der Berechnung wird der Graph neugezeichnet. Layouts sind nicht in Graph von Ansicht enthalten und können durch Plugins hinzugefügt werden.
 Dem Produkt werden über das JOANA-Plugin Layout zur Darstellung von, von \gls{joana} berechneten, \gls{pdg}s mitgeliefert.
 
+%TODO wie wird der Subgraph gewählt? Wie werden Constrains gewählt? Dialog?
 \fano{Constraints auswählen}\label{fa:constraints}
-\textbf{Ziel:} Der Nutzer kann Constraints auswählen die auf den Subgraph beim \ref{fa:layout} verwendet werden.\\
+\textbf{Ziel:} Der Nutzer kann Constraints auswählen die auf den \gls{Subgraph} beim \ref{fa:layout} verwendet werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde geladen.\\
 \textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
 \textbf{Nachbedingungen (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Benutzer klickt in der Hauptansicht auf Constraint hinzufügen.\\
-\textbf{Beschreibung: }
-Der Benutzer legt eine Anzahl von Constraints für einen Subgraphen aus die für das \ref{fa:layout} verwendet werden
+\textbf{Beschreibung: } \\
+Der Benutzer legt eine Anzahl von Constraints für einen \gls{Subgraph}en aus die für das layouten verwendet werden (siehe \ref{fa:layout}).
 Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die funktionalität geliefert wird
 \begin{itemize}[nolistsep]
   \item Positionierung
@@ -106,11 +111,12 @@ Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
 \end{itemize}
 Die Kanten werden entsprechend aus- oder eingeblendet.\\
 \textbf{Alternative:}
-Der Graph wird neu gezeichnet um kompakter zu werden, oder um Platz für neue Kanten zu machen.
+Der Graph wird neu gezeichnet um kompakter zu werden, oder um Platz für neue Kanten zu schaffen.
 
 \subsection{Input/Output}
 \setcounter{fanr}{100}
 
+%TODO Internes Format definieren und einsetzen.
 \fano{Graph aus Datei importieren}\label{fa:import}
 \textbf{Ziel:} Der/Die in der Graphdatei beschriebene Graph(en) soll(en) visuell dargestellt werden.\\
 \textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
@@ -143,16 +149,14 @@ Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Grap
 \textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateisystem erstellt, welche ein Abbild des derzeit angezeigten Graphen enthält.\\
 \textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
 \textbf{Auslösendes Ereignis:}
-Der Benutzer wählt die Exportfunktion im Menüleiste aus.\\
+Der Benutzer wählt die Exportfunktion aus der Menüleiste aus.\\
 \textbf{Beschreibung:}\\
-Der Benutzer wählt die Exportfunktion im Menübalken aus.
-Es erscheint ein Dateisystem-Menü in dem der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.\\
+Der Benutzer wählt die Exportfunktion aus der Menüleiste aus.
+Es erscheint ein Dateisystem-Menü, in welchem der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.\\
 Export-Optionen werden durch Plugins bereitgestellt.
 Mit dem Produkt wird ein \gls{svg}-Plugin zum Exportieren in das \gls{svg}-Dateiformat mitgeliefert.\\
 Eventuell wird der Benutzer noch durch das Plugin nach weiteren, zur Abspeicherung relevanten, Details gefagt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
-Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
-
-%TODO: Wird nicht direkt unter dem Text angezeigt
+Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.4]{resourcen/fa-export.1}
@@ -165,7 +169,7 @@ Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.\\
 
 \fano{Sichtfeld verschieben}\label{fa:verschieben}
 \textbf{Ziel:} Das Sichtfeld soll verschoben werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen und das Sichtfeld deckt nicht alle Elemente des Graphens ab.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen und das Sichtfeld deckt nicht alle Elemente des Graphen ab.\\
 \textbf{Nachbedingung (Erfolg):}  Das Sichtfeld deckt nun den gewünschten Teil des Graphen ab.\\
 \textbf{Nachbedingung (Fehlschlag):} Das Sichtfeld deckte einen Randabschnitt ab und es wurde versucht das Sichtfeld über den Rand hinaus zu bewegen.\\
 Das Sichtfeld wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausgegeben.\\
@@ -194,6 +198,7 @@ Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Gr
 Mausrad (a): Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
 Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen in Abhängigkeit zum derzeitigen Zoom-Grad festen Wert.\\
 
+%TODO Wie Deselektieren, shift/strg Selektieren mehrerer Knoten, welche Knoten werden beim Ziehen ausgewählt.
 \fano{Knoten selektieren}\label{fa:selekt_knoten}
 \textbf{Ziel:} Ein oder mehrere Knoten sollen der Auswahl hinzugefügt werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
@@ -220,6 +225,7 @@ Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus.\\
 Das Produkt unterstützt Graphdateien, welche mehr als einen Graphen beschreiben.
 Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 
+%TODO in WunschFunktionen
 \fano{Steuerung über Tastaturkürzel}\label{fa:hotkey}
 \textbf{Ziel:} Häufig verwendete Funktionen können über Tastaturkürzel ausgeführt werden.\\
 \textbf{Vorbedingung:} -\\
@@ -228,20 +234,24 @@ Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 \textbf{Auslösende Ereignisse:}
 Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\\
 \textbf{Beschreibung:}\\
-Vom Benutzer ausführbare Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
+Häufig verwendete Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
 
 \fano{TODO: Abspeichern als Graph}\label{fa:speichern}
 \fano{TODO: Import von vorher abgespeicherten Graphen}\label{fa:laden}
+\fano{TODO: Informationen zu Knoten/Subgraphen anzeigen}\label{fa:laden}
 
 \section{\gls{graphml}-Plugin}
 \setcounter{fanr}{300}
 
+%TODO siehe datei importieren
 \fano{GraphML importieren}\label{fa:importgraphml}
 \textbf{Ziel:} Eine \gls{graphml}-Datei soll in das Programm zur Ansicht geladen werden.\\
-\textbf{Vorbedingung:} Eine korrekte und unterstützte (siehe \nameref{ch:daten}) GraphML-Datei befindet sich auf dem System.\\
+\textbf{Vorbedingung:} Eine korrekte und unterstützte (siehe \nameref{ch:daten}) GraphML-Datei befindet sich im Dateisystem.\\
+%TODO Daten zu Produktdaten
 \textbf{Nachbedingung (Erfolg):} Die in der Datei beschriebenen Graphen werden an Graph von Ansicht zurückgegeben.\\
 \textbf{Nachbedingung (Fehlschlag):} Falls die Datei nicht unterstützt wird oder Fehler enthält, wird eine Fehlermeldung an Graph von Ansicht zurückgegeben.\\
+%TODO Hässlich
 \textbf{Auslösende Ereignisse:} Beim Importieren wird ein Typ ausgewählt, welcher das \gls{graphml}-Plugin als Importer beschreibt.\\
 \textbf{Beschreibung:}\\
 Die GraphML-Datei wird eingelesen, in die interne Repräsentation von Graphen überführt und an Graph von Ansicht zur Darstellung zurückgegeben.
@@ -253,6 +263,7 @@ Die GraphML-Datei wird eingelesen, in die interne Repräsentation von Graphen ü
 \textbf{Ziel:} Der in der Graphansicht angezeigte Graph soll als \gls{svg}-Format abgespeichert werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Graph wurde abgespeichert.\\
+%TODO nur IO fehler
 \textbf{Nachbedingung (Fehlschlag):} Der Graph konnte nicht abgespeichert werden. Es wird eine Fehlermeldung an Graph von Ansicht zurückgegeben.\\
 \textbf{Auslösende Ereignisse:} Die SVG-Exportoption wird aus dem Menü wie in \ref{fa:export_img} beschrieben ausgewählt.\\
 \textbf{Beschreibung:}\\
@@ -264,6 +275,7 @@ Es wird versucht die derzeitige Darstellung des Graphen in der Graphansicht in d
 \fano{Callgraph-View}\label{fa:callview}
 \textbf{Ziel:} \gls{callgraph} in \gls{joana}-Graphdateien werden speziell dargestellt und behandelt.\\
 \textbf{Vorbedingung:} -\\
+%TODO unten beschrieben, direkte referenz auf beschreibung
 \textbf{Nachbedingung (Erfolg):} Der Callgraph wurde wie unten beschrieben dargestellt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Eine Graphdatei wird als JOANA-Graph importiert.\\
@@ -280,10 +292,12 @@ Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandel
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Eine Graphdatei wird als JOANA-Graph importiert.\\
 \textbf{Beschreibung:}\\
-Ein Methodengraph kann als Subgraph des \gls{callgraph}, wie in \ref{fa:hierarchgraph} beschrieben, geöffnet werden.
+Ein Methodengraph kann als \gls{Subgraph} des \gls{callgraph}, wie in \ref{fa:hierarchgraph} beschrieben, geöffnet werden.
 Er wird beim Laden in die Graphansicht automatisch durch das in \ref{fa:joanalayout} definierte Layout gelayoutet.
 Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandelt.
 
+
+%TODO die zwei anforderungen besser(neu) beschreiben/voneinander trennen.
 \fano{\gls{joana}-Layout}\label{fa:joanalayout}
 \textbf{Ziel:} Ein Graph soll zur Betrachtung als \gls{pdg} sinnvoll gelayoutet werden.\\ %TODO: Bei mir wird PDG nicht dem Glossar hinzugefügt. Funktioniert das bei anderen? Falls wie kann man das fixen?
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
@@ -310,14 +324,13 @@ Diese Layouts muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfülle
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Knoten und Kanten gleichen Types in Call- und Methodengraphen werden in gleichen Farben dargestellt.\\
-Für Beispiele von Kantentypen siehe \ref{fa:filter}.
-Kanten werden als \gls{bezier} dargestellt.\\
+Für Beispiele von Kantentypen siehe \ref{fa:filter}.\\
 Das Zeichnen der Elemente wird nicht von dem JOANA-Plugin übernommen, sondern ist Teil von Graph von Ansicht. %TODO: Referenz auf Visualisierungsmöglichkeiten.
 Es wird lediglich die Darstellung festgelegt. (siehe \ref{s:darstellung})
 
 
 \fano{TODO: Definition des JOANA-Graphtypes}\label{fa:joanatyp}
-\section{Kann-Funktionen}
+\section{Wunsch-Funktionen}
 
 %\fano{<++>}\label{fa:<++>}
 %\textbf{Ziel:} <++>\\
