@@ -1,8 +1,8 @@
 \chapter{Zielbestimmung}
 
-Graph von Ansicht soll Programmgraphen von externen Analyse-Programmen visualisieren. Dafür wird eine bereits vorhandene Graphdatei importiert und ausgewertet. Der Benutzer kann verschiedene Constraints einstellen, welche im weiteren Dokument näher erläutert werden.
+Graph von Ansicht soll Programmgraphen von externen Analyse-Programmen visualisieren. Dafür wird eine bereits vorhandene Graphdatei importiert und ausgewertet. Der Benutzer kann verschiedene Constraints einstellen \ref{fa:constraints}, welche im weiteren Dokument näher erläutert werden.
 %TODO: Verweis einfügen zu den konkreten Erläuterungen
-Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und des Steuerflusses eines Programmes zeigen, das dem Benutzer die Möglichkeit bietet, das Programm besser analysieren zu können.
+Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und des Steuerflusses eines Programmes zeigen, das dem Benutzer die Möglichkeit bietet, das Programm besser verstehen zu können.
 
 \section{Pflichtkriterien}
 
@@ -13,13 +13,15 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
     \item Kollabieren und Ausklappen von \gls{Subgraph}en % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
 %    \item Ausblendung selektierter Knoten (wie ist das gemeint? Wie kann man Knoten wieder einblenden?)
     \item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten (siehe \ref{sec:uicmd})
-    \item Schnittstellen für Plugins anbieten in den Bereichen Import, Export, Layoutalgorithmen, Darstellungsoptionen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
-    \item Informationsanzeige von Knoten und Kanten
+    \item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
+    \item Informationsanzeige zu einzelnen Knoten und Kanten
+    \item Anzeige von Statistiken über den Graphen und \gls{Subgraph}en (Anzahl Knoten, Kanten ...)
   \end{itemize}
   
 \subsection{Plugins}
   \begin{itemize}
-    \item \gls{graphml}-Plugin welches den Import von generischen Graphen im \gls{graphml}-Format unterstützt (siehe \ref{ch:daten})
+    \item Es gibt ein Pluginmanagement-System, welches externe Plugins laden und verwalten kann. (siehe \nameref{ch:plugschnitt})
+    \item \gls{graphml}-Plugin welches den Import von generischen Graphen im \gls{graphml}-Format (beschrieben in \nameref{ch:daten}) unterstützt (siehe \ref{fa:importgraphml})
     \item \gls{svg}-Plugin, welches den Export der visualisierten Graphen im \gls{svg}-Format unterstützt (siehe \ref{fa:export_svg})
   \end{itemize}
   
@@ -36,16 +38,15 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
 
 \subsection{Graph von Ansicht (Graphviewer)}
   \begin{itemize}
-    \item Muster Definition mittels "GraphRegex"
-    \item Hotkeys
-    \item Benutzerdefinierte Hotkeys
-    \item Layout Constraints die vom Nutzer angepasst werden
-    \item Fortschrittsbalken bei Berechnung der Visualisierung des Graphen mithilfe einer Zeitabschätzung
-    \item Minimap bzw. Übersicht des Graphens
-    \item Algorithmus zur Erreichbarkeit eines Knoten
-    \item Die visuelle Darstellung von Kanten kann geändert werden (\gls{bezier}, orthogonale Kanten oder direkte Kanten)
-    \item Anzeige von Statistiken über den Graphen und \gls{Subgraph}en (Anzahl Knoten, Kanten ...)
-    \item Reload-Funktion (rückgängig machen der letzten Änderung am Graphen)
+    \item Muster Definition mittels "GraphRegex" %TODO: zugehörige FA Sven
+    \item Layout Constraints die vom Nutzer angepasst werden \ref{fa:constraints} %TODO: zugehörige FA Sven
+    \item Tastaturkürzel (evtl. benutzerdefiniert) \ref{fa:hotkey}
+    \item Fortschrittsbalken bei der Berechnung des Layouts des Graphen %TODO: zugehörige FA Jonas M.
+    \item Übersicht des angezeigten Graphen %TODO: zugehörige FA  Jonas F.
+    \item Algorithmus zur Erreichbarkeit eines Knoten %TODO: zugehörige FA Sven
+    \item Die Darstellung von Kanten kann geändert werden (\gls{bezier}, orthogonale Kanten oder direkte Kanten) %TODO: zugehörige FA Jonas F.
+    \item Reload-Funktion  %TODO: zugehörige FA Lucas
+    \item Rückgängig machen der letzten Änderung am Graphen %TODO: zugehörige FA Lucas
   \end{itemize}
 
 \subsection{Plugins}
@@ -53,22 +54,17 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
     \item weitere Export-Plugins im \gls{jpg}- und \gls{graphml}-Format
   \end{itemize}
   
-  \subsubsection{JOANA-Plugin}
-  \begin{itemize}
-    \item Zeitabschätzung des Layoutalgorithmus zur Darstellung des Fortschrittsbalken
-  \end{itemize}
-
-
 \section{Abgrenzungskriterien}
 
 \subsection{Graph von Ansicht (Graphviewer)}
   \begin{itemize}
-    \item Das Produkt ist kein Graph Editor und unterstützt nicht das manuelle Zeichnen/Hinzufügen/Löschen/Verschieben von Kanten und Knoten.
+    \item Das Produkt ist kein Graph Editor und unterstützt deshalb nicht die Manipulation des Graphen nicht.
     \item Das \gls{gui} wird nicht von Grund auf neu entwickelt, es werden Bibliotheken verwendet, um die Entwicklung zu erleichtern.
-    \item Das Darstellen von Kanten und Knoten hinsichtlich Form und Größe wird mithilfe von Bibliotheken umgesetzt.
+    \item Das Darstellen von Kanten und Knoten mit primitiven geometrischen Objekten wird mithilfe von Bibliotheken umgesetzt. %TODO: Referenz zu benutzten Bibliotheken
     \item Das Produkt ist kein Analysetool für Programme, sondern dient lediglich zur Visualisierung von bereits vorhandenen Graphdateien.
   \end{itemize}
 \subsection{Plugins}
   \begin{itemize}
-    \item Die Plugins können nur auf die vorhandenen Schnittstellen zugreifen %TODO: verweis auf Plugins Kapitel
+    \item Die Plugins können nur auf die in Kapitel \ref{ch:plugschnitt} beschriebenen Schnittstellen zugreifen %TODO: verweis auf Plugins Kapitel
+    \item Neue Plugins können nicht zur Laufzeit hinzugefügt werden, sondern müssen beim Programmstart vorhanden um genutzt werden können.
   \end{itemize}
