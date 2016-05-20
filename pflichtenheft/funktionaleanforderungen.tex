@@ -168,24 +168,24 @@ Es wird versucht, die Bilddatei am ausgewählten Ort abzuspeichern.
 \setcounter{fanr}{200}
 
 \fano{Sichtfeld verschieben}\label{fa:verschieben}
-\textbf{Ziel:} Das \ref{sichtfeld} soll verschoben werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen und das \ref{sichtfeld} deckt nicht alle Elemente des Graphen ab.\\
-\textbf{Nachbedingung (Erfolg):}  Das \ref{sichtfeld} deckt nun den gewünschten Teil des Graphen ab.\\
-\textbf{Nachbedingung (Fehlschlag):} Das \ref{sichtfeld} deckte einen Randabschnitt ab und es wurde versucht das \ref{sichtfeld} über den Rand hinaus zu bewegen.\\
-Das \ref{sichtfeld} wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausgegeben.\\
+\textbf{Ziel:} Das \gls{sichtfeld} soll verschoben werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen und das \gls{sichtfeld} deckt nicht alle Elemente des Graphen ab.\\
+\textbf{Nachbedingung (Erfolg):}  Das \gls{sichtfeld} deckt nun den gewünschten Teil des Graphen ab.\\
+\textbf{Nachbedingung (Fehlschlag):} Das \gls{sichtfeld} deckte einen Randabschnitt ab und es wurde versucht das \gls{sichtfeld} über den Rand hinaus zu bewegen.\\
+Das \gls{sichtfeld} wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausgegeben.\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich des Graph-Fenster.
-  \item Der Benutzer betätigt eine der zum Verschieben des \ref{sichtfeld}es designierten Tasten (siehe \ref{fa:hotkey}).
-  \item Der Benutzer bewegt die Scroll-Balken am Rand des \ref{sichtfeld}es. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
+  \item Der Benutzer betätigt eine der zum Verschieben des \gls{sichtfeld}es designierten Tasten (siehe \ref{fa:hotkey}).
+  \item Der Benutzer bewegt die Scroll-Balken am Rand des \gls{sichtfeld}es. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Klicken und Ziehen (a): Das \ref{sichtfeld} bewegt sich entgegen der Richtung, in welche der Mauszeiger bewegt wird. Es entsteht somit ein intuitives Verschieben des Graphen.\\
-Navigationstasten (b): Das \ref{sichtfeld} verschiebt sich um eine feste Länge (in Abhängigkeit des Zoom-Grades) in die entsprechende Richtung.\\
-Scroll-Balken (c): Das \ref{sichtfeld} bewegt sich relativ zur Größe des gesamten Graphen um das gleiche Maß wie der Scroll-Balken zur Länge seiner Fahrbahn in die entsprechende Richtung (Horizontal/Vertikal).\\
+Klicken und Ziehen (a): Das \gls{sichtfeld} bewegt sich entgegen der Richtung, in welche der Mauszeiger bewegt wird. Es entsteht somit ein intuitives Verschieben des Graphen.\\
+Navigationstasten (b): Das \gls{sichtfeld} verschiebt sich um eine feste Länge (in Abhängigkeit des Zoom-Grades) in die entsprechende Richtung.\\
+Scroll-Balken (c): Das \gls{sichtfeld} bewegt sich relativ zur Größe des gesamten Graphen um das gleiche Maß wie der Scroll-Balken zur Länge seiner Fahrbahn in die entsprechende Richtung (Horizontal/Vertikal).\\
 
 \fano{Zoom-Grad ändern}\label{fa:zoom}
-\textbf{Ziel:} Der Zoom-Grad des \ref{sichtfeld}es soll vergrößert bzw. verkleinert werden.\\
+\textbf{Ziel:} Der Zoom-Grad des \gls{sichtfeld}es soll vergrößert bzw. verkleinert werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Zoom-Grad wurde angepasst.\\
 \textbf{Nachbedingung (Fehlschlag):} Der Zoom-Grad bleibt gleich, falls ein Maximum/Minimum erreicht wurde. Es wird keine Fehlermeldung ausgegeben.\\
@@ -207,7 +207,7 @@ Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen, in Abhängigkeit zum derze
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer klickt mit der linken Maustaste auf einen Knoten.
-  \item Der Benutzer klickt mit der linken Maustaste in einen leeren Bereich des \ref{sichtfeld}es und zieht den Mauszeiger.
+  \item Der Benutzer klickt mit der linken Maustaste in einen leeren Bereich des \gls{sichtfeld}es und zieht den Mauszeiger.
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Der Benutzer kann Knoten mit der Maus zur Auswahl hinzufügen.
@@ -295,7 +295,7 @@ Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandel
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Ein \ref{methgraph} wird zum ersten mal in die Graphansicht geladen (siehe \ref{fa:methview}).
+  \item Ein \gls{methgraph} wird zum ersten mal in die Graphansicht geladen (siehe \ref{fa:methview}).
   \item Über die Menüleiste wird das JOANA-Layout als Layout ausgewählt (siehe \ref{fa:layout}).
 \end{enumerate}
 \textbf{Beschreibung:}\\

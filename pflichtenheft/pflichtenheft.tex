@@ -20,11 +20,10 @@
 
 \makeatletter
 \def\namedlabel#1#2{\begingroup
-   #2%
    \def\@currentlabel{#2}%
-   \label{#1}\endgroup
+   \phantomsection#2\label{#1}\endgroup
 }
-
+\makeatother
 % Inhaltsverzeichnis Ebenen definieren, zB bis zu Subsection
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{1}

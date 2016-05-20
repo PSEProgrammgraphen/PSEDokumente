@@ -4,9 +4,8 @@
 %TODO Plugin Architektur erklären, vlt Graph von Whiteboard
 
 \setcounter{psnr}{10}
-\newcommand{\psno}{\ifnum\value{psnr}<10 00\else\ifnum\value{psnr}<100 0\fi\fi\arabic{psnr}\addtocounter{psnr}{10}}
-\renewcommand\thesubsubsection{/S\ifnum\value{psnr}<10 000\else\ifnum\value{psnr}<100 00\else\ifnum\value{psnr}<1000 0\fi\fi\fi\arabic{psnr}/}
-\newcommand\ps[2]{\namedlabel{s:#1}{\textbf{/S\psno/}}: & #2 \\ [1ex] }
+\newcommand{\psno}{\ifnum\value{psnr}<10 00\else\ifnum\value{psnr}<100 0\fi\fi\arabic{psnr}}
+\newcommand\ps[2]{\namedlabel{s:#1}{/S\psno/}\addtocounter{psnr}{10}: & #2 \\ [1ex] }
 
 \begin{tabular}{lp{0.9\linewidth}}
   \ps{graphtyp}{\textit{Graphtypen-Schnittstelle:} Plugins sind in der Lage neue Graphtypen zu definieren. Alle von Plugins definierten Graphtypen sind dem Benutzer beim Importieren zur Auswahl gestellt. Das Plugin kann dann mit einem Graphtyp bestimmte Import-Möglichkeiten, Layoutalgorithmen und Darstellungsoptionen verbinden, sodass der Benutzer diese nicht bei jedem Öffnen eines Graphen neu festlegen muss und gleichzeitig eine Importfunktion für ein Datenformat von mehreren Plugins wiedervewendet werden können.}

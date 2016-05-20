@@ -3,8 +3,8 @@
 
 
 \setcounter{nfanr}{10}
-\newcommand{\nfano}{\ifnum\value{nfanr}<10 00\else\ifnum\value{nfanr}<100 0\fi\fi\arabic{nfanr}\addtocounter{nfanr}{10}}
-\newcommand\nfa[2]{\namedlabel{nfa:#1}{\textbf{/NFA\nfano/}}: & #2 \\ [1ex] }
+\newcommand{\nfano}{\ifnum\value{nfanr}<10 00\else\ifnum\value{nfanr}<100 0\fi\fi\arabic{nfanr}}
+\newcommand\nfa[2]{\namedlabel{nfa:#1}{/NFA\nfano/}\addtocounter{nfanr}{10}: & #2 \\ [1ex] }
 
 %TODO: Durchlesen und alle unklaren Begriffe/Fachwörter ins Glossar hinzufügen
 \section{Graph von Ansicht}
@@ -19,7 +19,7 @@
 \section{User Interface}\label{sec:nfaui}
 \setcounter{nfanr}{100}
 \begin{tabular}{lp{0.9\linewidth}}
-  \nfa{sprachwechsel}{Das Programm soll so entworfen werden, dass ein einfacher Sprachwechsel der \ref{gui} möglich ist.}
+  \nfa{sprachwechsel}{Das Programm soll so entworfen werden, dass ein einfacher Sprachwechsel der \gls{gui} möglich ist.}
   \nfa{cmdfehler}{Falls das Programm über die Kommandozeile gestartet wird und falsche Parameter übergeben werden, stürzt das Programm nicht ab. Es wird eine informative Fehlermeldung zurückgegeben.} %TODO: Ähnliche Definition für GUI?
 \end{tabular}
 
