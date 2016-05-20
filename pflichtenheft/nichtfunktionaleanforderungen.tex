@@ -19,7 +19,7 @@
 \section{User Interface}\label{sec:nfaui}
 \setcounter{nfanr}{100}
 \begin{tabular}{lp{0.9\linewidth}}
-  \nfa{sprachwechsel}{Das Programm soll so entworfen werden, dass ein einfacher Sprachwechsel der GUI möglich ist.}
+  \nfa{sprachwechsel}{Das Programm soll so entworfen werden, dass ein einfacher Sprachwechsel der \ref{gui} möglich ist.}
   \nfa{cmdfehler}{Falls das Programm über die Kommandozeile gestartet wird und falsche Parameter übergeben werden, stürzt das Programm nicht ab. Es wird eine informative Fehlermeldung zurückgegeben.} %TODO: Ähnliche Definition für GUI?
 \end{tabular}
 
@@ -34,7 +34,6 @@
   \nfa{feldzugr}{Feldzugriffe werden bei \gls{joana} immer gleich dargestellt. Diese Zugriffe sollen erkannt werden und die dazugehörigen Knoten sollen automatisch immer im gleichen Muster angezeigt werden.}
   \nfa{kantenabstand}{Kanten sollen nicht direkt übereinander liegen, sondern immer mit einem gewissen Mindestabstand nebeneinander.}
   \nfa{cutknotenknoten}{Die graphische Darstellung eines Knoten darf sich nicht mit der eines anderen Knoten überschneiden, so dass Teile eines Knoten verdeckt wären.}
-  \nfa{cutknotenkante}{Kanten dürfen nicht durch Knoten verlaufen.}
-  \nfa{cuttext}{Beschriftungen von Knoten oder Kanten dürfen sich nicht mit anderen Objekten überschneiden, sodass Teile der Beschriftung verdeckt/unkenntlich werden.}
+  \nfa{cuttext}{Beschriftungen von Knoten dürfen sich nicht mit anderen Objekten überschneiden, sodass Teile der Beschriftung verdeckt/unkenntlich werden.}
   %TODO: Ein testbares Maß für maximale Kantenkreuzungen finden.
 \end{tabular}
