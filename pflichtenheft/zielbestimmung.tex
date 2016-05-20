@@ -10,12 +10,12 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
   \begin{itemize}
     \item Navigation mittels Zoom und Verschieben (siehe \ref{fa:zoom} und \ref{fa:verschieben})
     \item Selektieren von einzelnen oder mehreren Knoten (siehe \ref{fa:selekt_knoten})
-    \item Kollabieren und Ausklappen von \gls{Subgraph}en % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
+    \item Kollabieren und Ausklappen von \gls{subgraph}en % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
 %    \item Ausblendung selektierter Knoten (wie ist das gemeint? Wie kann man Knoten wieder einblenden?)
     \item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten (siehe \ref{sec:uicmd})
     \item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
-    \item Informationsanzeige zu einzelnen Knoten und Kanten
-    \item Anzeige von Statistiken über den Graphen und \gls{Subgraph}en (Anzahl Knoten, Kanten ...)
+    \item Informationsanzeige zu einzelnen Knoten und Kanten %TODO: FA
+    \item Anzeige von Statistiken über den Graphen und \gls{subgraph}en (Anzahl Knoten, Kanten ...) %TODO FA
   \end{itemize}
   
 \subsection{Plugins}
@@ -30,7 +30,7 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
       \item Hierarchisches Layout mit dem \gls{sugiyama} (siehe \ref{fa:joanalayout})
       \item Filter für Knoten- und Kantentypen aus \gls{joana} (siehe \ref{fa:filter})
       \item Ein \gls{callgraph}-Layout, welches übersichtlich die Abhängigkeiten der Methoden darstellt (siehe \ref{fa:callview})
-      \item Ein \gls{methgraph}-Layout, welches die Abhängigkeiten innerhalb einer Methode - mithilfe von vorgegebenen Constraints, (siehe \ref{fa:constraints}) - darstellt (siehe \ref{fa:methview} und \ref{fa:joanalayout})
+      \item Ein \gls{methgraph}-Layout, welches die Abhängigkeiten innerhalb einer Methode - unter Beachtung von vorgegebenen Constraints, (siehe \ref{fa:constraints}) - darstellt (siehe \ref{fa:methview} und \ref{fa:joanalayout})
     \end{itemize}
   
 
@@ -51,20 +51,20 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
 
 \subsection{Plugins}
   \begin{itemize}
-    \item weitere Export-Plugins im \gls{jpg}- und \gls{graphml}-Format
+    \item weitere Export-Plugins im \gls{jpg}- und \gls{graphml}-Format %TODO Unterschied zur importierten GraphML-Datei
   \end{itemize}
   
 \section{Abgrenzungskriterien}
 
 \subsection{Graph von Ansicht (Graphviewer)}
   \begin{itemize}
-    \item Das Produkt ist kein Graph Editor und unterstützt deshalb nicht die Manipulation des Graphen nicht.
+    \item Das Produkt ist kein Graph-Editor und unterstützt deshalb die Manipulation des Graphen hinsichtlich seiner Struktur (z.B. Kanten entfernen) nicht.
     \item Das \gls{gui} wird nicht von Grund auf neu entwickelt, es werden Bibliotheken verwendet, um die Entwicklung zu erleichtern.
-    \item Das Darstellen von Kanten und Knoten mit primitiven geometrischen Objekten wird mithilfe von Bibliotheken umgesetzt. %TODO: Referenz zu benutzten Bibliotheken
+    \item Das Zeichnen der Kanten und Knoten mit primitiven geometrischen Objekten wird mithilfe von Bibliotheken umgesetzt. %TODO: Referenz zu benutzten Bibliotheken
     \item Das Produkt ist kein Analysetool für Programme, sondern dient lediglich zur Visualisierung von bereits vorhandenen Graphdateien.
   \end{itemize}
 \subsection{Plugins}
   \begin{itemize}
     \item Die Plugins können nur auf die in Kapitel \ref{ch:plugschnitt} beschriebenen Schnittstellen zugreifen %TODO: verweis auf Plugins Kapitel
-    \item Neue Plugins können nicht zur Laufzeit hinzugefügt werden, sondern müssen beim Programmstart vorhanden um genutzt werden können.
+    \item Neue Plugins können nicht zur Laufzeit hinzugefügt werden, sondern müssen beim Programmstart vorhanden sein um genutzt werden können.
   \end{itemize}
