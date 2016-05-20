@@ -62,21 +62,21 @@ Dem Produkt werden über das JOANA-Plugin Layout zur Darstellung von, von \gls{j
 
 %TODO wie wird der Subgraph gewählt? Wie werden Constrains gewählt? Dialog?
 \fano{Constraints auswählen}\label{fa:constraints}
-\textbf{Ziel:} Der Nutzer kann Constraints auswählen die auf den \gls{Subgraph} beim \ref{fa:layout} verwendet werden.\\
+\textbf{Ziel:} Der Nutzer kann Constraints auswählen, die auf den \gls{Subgraph}en beim layouten (siehe \ref{fa:layout}) verwendet werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde geladen.\\
 \textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
 \textbf{Nachbedingungen (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Benutzer klickt in der Hauptansicht auf Constraint hinzufügen.\\
 \textbf{Beschreibung: } \\
-Der Benutzer legt eine Anzahl von Constraints für einen \gls{Subgraph}en aus die für das layouten verwendet werden (siehe \ref{fa:layout}).
+Der Benutzer legt eine Anzahl von Constraints für einen \gls{Subgraph}en aus, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}).
 Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die funktionalität geliefert wird
 \begin{itemize}[nolistsep]
   \item Positionierung
   \begin{itemize}[nolistsep]
     \item positioniere \textit{Subgraph 1} über \textit{Subgraph 2}
     \item positioniere \textit{Subgraph 1} unter \textit{Subgraph 2}
-    \item positioniere \textit{Subgraph 1} links \textit{Subgraph 2}
-    \item positioniere \textit{Subgraph 1} rechts \textit{Subgraph 2}
+    \item positioniere \textit{Subgraph 1} links von \textit{Subgraph 2}
+    \item positioniere \textit{Subgraph 1} rechts von \textit{Subgraph 2}
     \item positioniere \textit{Subgraph} an fester Position
   \end{itemize}
   \item Proximität
@@ -97,7 +97,7 @@ Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die
 \textbf{Nachbedingung (Erfolg):} Es wurden Knoten und Kanten eines bestimmten Types ein-/ausgeblendet.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
-Der Benutzer wählt die Filter-Funktion aus dem Menüleiste aus.\\
+Der Benutzer wählt die Filter-Funktion aus der Menüleiste aus.\\
 \textbf{Beschreibung:}\\
 Der Benutzer kann aus einer Reihe von Filtern auswählen.
 Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
@@ -134,7 +134,7 @@ Es öffnet sich ein Fenster, in dem der Benutzer den Typ des Graphen auswählt, 
 Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
 Der Benutzer wählt die zu importierende Datei aus.
 Der in der Datei beschriebene Graph wird in der Graphansicht dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
-Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart im Graphansicht dargestellt. \\
+Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart in der Graphansicht dargestellt. \\
 
 %\begin{figure}[ht]
 %  \centering
@@ -156,7 +156,7 @@ Es erscheint ein Dateisystem-Menü, in welchem der Pfad zum Abspeichern der Bild
 Export-Optionen werden durch Plugins bereitgestellt.
 Mit dem Produkt wird ein \gls{svg}-Plugin zum Exportieren in das \gls{svg}-Dateiformat mitgeliefert.\\
 Eventuell wird der Benutzer noch durch das Plugin nach weiteren, zur Abspeicherung relevanten, Details gefagt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
-Es wird versucht die Bilddatei am ausgewählten Ort abzuspeichern.
+Es wird versucht, die Bilddatei am ausgewählten Ort abzuspeichern.
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.4]{resourcen/fa-export.1}
@@ -176,7 +176,7 @@ Das Sichtfeld wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausg
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich des Graph-Fenster.
-  \item Der Benutzer betätigt eine der zum Verschieben des Sichtfeldes designierten Tasten \ref{fa:hotkey}.
+  \item Der Benutzer betätigt eine der zum Verschieben des Sichtfeldes designierten Tasten (siehe \ref{fa:hotkey}).
   \item Der Benutzer bewegt die Scroll-Balken am Rand des Sichtfeldes. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
 \end{enumerate}
 \textbf{Beschreibung:}\\
@@ -196,7 +196,7 @@ Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Gr
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Mausrad (a): Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
-Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen in Abhängigkeit zum derzeitigen Zoom-Grad festen Wert.\\
+Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen, in Abhängigkeit zum derzeitigen Zoom-Grad, festen Wert.\\
 
 %TODO Wie Deselektieren, shift/strg Selektieren mehrerer Knoten, welche Knoten werden beim Ziehen ausgewählt.
 \fano{Knoten selektieren}\label{fa:selekt_knoten}
@@ -260,14 +260,14 @@ Die GraphML-Datei wird eingelesen, in die interne Repräsentation von Graphen ü
 \setcounter{fanr}{400}
 
 \fano{Graph als \gls{svg}-Datei exportieren}\label{fa:export_svg}
-\textbf{Ziel:} Der in der Graphansicht angezeigte Graph soll als \gls{svg}-Format abgespeichert werden.\\
+\textbf{Ziel:} Der in der Graphansicht angezeigte Graph soll im \gls{svg}-Format abgespeichert werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Graph wurde abgespeichert.\\
 %TODO nur IO fehler
 \textbf{Nachbedingung (Fehlschlag):} Der Graph konnte nicht abgespeichert werden. Es wird eine Fehlermeldung an Graph von Ansicht zurückgegeben.\\
 \textbf{Auslösende Ereignisse:} Die SVG-Exportoption wird aus dem Menü wie in \ref{fa:export_img} beschrieben ausgewählt.\\
 \textbf{Beschreibung:}\\
-Es wird versucht die derzeitige Darstellung des Graphen in der Graphansicht in das SVG-Format zu überführen.
+Es wird versucht, die derzeitige Darstellung des Graphen in der Graphansicht in das SVG-Format zu überführen.
 
 \section{\gls{joana}-Plugin}
 \setcounter{fanr}{500}
@@ -286,7 +286,7 @@ Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandel
 %TODO: Nach Gespräch weitere Eigenschaften des Callgraphen auflisten. Gruppierung von Java-Methoden etc aus E-Mail
 
 \fano{Methoden-View}\label{fa:methview}
-\textbf{Ziel:} \gls{methgraph} in \gls{joana}-Graphdateien werden, um die Betrachtung als \gls{pdg} zu erleichtern, speziell behandelt und dargestellt werden.\\
+\textbf{Ziel:} \gls{methgraph} in \gls{joana}-Graphdateien werden, um die Betrachtung als \gls{pdg} zu erleichtern, speziell behandelt und dargestellt.\\
 \textbf{Vorbedingung:} -\\
 \textbf{Nachbedingung (Erfolg):} Der Methodengraph wird wie unten beschrieben behandelt. \\
 \textbf{Nachbedingung (Fehlschlag):} -\\
@@ -305,8 +305,8 @@ Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandel
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Ein Methodengraph wird zum ersten mal in die Graphansicht geladen. \ref{fa:methview}
-  \item Über die Menüleiste wird das JOANA-Layout als Layout ausgewählt. \ref{fa:layout}
+  \item Ein Methodengraph wird zum ersten mal in die Graphansicht geladen (siehe \ref{fa:methview}).
+  \item Über die Menüleiste wird das JOANA-Layout als Layout ausgewählt (siehe \ref{fa:layout}).
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Das JOANA-Layout ist eine hierarchisches Layout zur Ansicht von PDGs.
