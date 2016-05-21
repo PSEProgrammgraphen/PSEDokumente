@@ -15,10 +15,12 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
   \begin{itemize}
     \item Navigation mittels Zoom und Verschieben (siehe \ref{fa:zoom} und \ref{fa:verschieben})
     \item Selektieren von einzelnen oder mehreren Knoten (siehe \ref{fa:selekt_knoten})
-    \item Kollabieren und Ausklappen von \gls{subgraph}en % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
+    \item Kollabieren und Ausklappen von \gls{subgraph}en %TODO zugehörige FA: Lucas
+    \item Tabs für geöffnete Graphen %TODO zugehörige FA
+     % und Gruppen (wenn mir jemand erklärt was der unterschied ist kann ers wieder unkommentieren :).
 %    \item Ausblendung selektierter Knoten (wie ist das gemeint? Wie kann man Knoten wieder einblenden?)
     \item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten (siehe \ref{sec:uicmd})
-    \item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
+    \item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten (siehe \ref{ch:plugschnitt})
     \item Informationsanzeige zu einzelnen Knoten und Kanten (siehe \ref{fa:infoanzeige})
     \item Anzeige von Statistiken über den Graphen und \gls{subgraph}en (siehe \ref{fa:statistik})
   \end{itemize}
@@ -35,7 +37,7 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
       \item Hierarchisches Layout mit dem \gls{sugiyama} (siehe \ref{fa:joanalayout})
       \item Filter für Knoten- und Kantentypen aus \gls{joana} (siehe \ref{fa:filter})
       \item Ein \gls{callgraph}-Layout, welches übersichtlich die Abhängigkeiten der Methoden darstellt (siehe \ref{fa:callview})
-      \item Ein \gls{methgraph}-Layout, welches die Abhängigkeiten innerhalb einer Methode - mithilfe von vorgegebenen Constraints, (siehe \ref{fa:constraints}) - darstellt (siehe \ref{fa:methview} und \ref{fa:joanalayout})
+      \item Ein \gls{methgraph}-Layout, welches die Abhängigkeiten innerhalb einer Methode - mithilfe von vorgegebenen Constraints (siehe \ref{fa:constraints}) - darstellt (siehe \ref{fa:methview} und \ref{fa:joanalayout})
     \end{itemize}
   
 
@@ -56,7 +58,7 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
 
 \subsection{Plugins}
   \begin{itemize}
-    \item weitere Export-Plugins im \gls{jpg}- und \gls{graphml}-Format (mit Koordinaten der Knoten und Kanten des aktuellen Layouts)
+    \item weitere Export-Plugins im \gls{jpg}- und \gls{graphml}-Format (mit Koordinaten der Knoten und Kanten des aktuellen Layouts) (vgl. \ref{fa:export_img} )
   \end{itemize}
   
 \section{Abgrenzungskriterien}
