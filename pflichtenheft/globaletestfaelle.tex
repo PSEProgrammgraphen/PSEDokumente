@@ -1,35 +1,43 @@
 \chapter{Globale Testfälle}\label{ch:test}
 
+\newcounter{stnr}
 \setcounter{tnr}{10}
-\newcommand{\testno}{\ifnum\value{tnr}<10 00\else\ifnum\value{tnr}<100 0\fi\fi\arabic{tnr}}
-\newcommand\test[2]{\namedlabel{test:#1}{/T\testno/}\addtocounter{tnr}{10}: & #2 \\ [1ex] }
-\newcommand\etest[3]{\namedlabel{test:#1}{/T\testno/}\addtocounter{tnr}{10}: & #2 \\ & Erweiterung: #3 \\ [1ex] }
 
-%TODO: Siehe im Tips Dokument für Beispiel für richtige Testfälle. Die Wichtigsten Funkt. anforderungen testen.
-\begin{tabular}{lp{0.9\linewidth}}
-  \test{start}{Das Programm wird vom Tester gestartet.
-    Es wird überprüft, ob sich die GUI öffnet und, wie in \ref{ch:gui} beschrieben, dargestellt wird.}
-  \etest{startcmd}{Das Programm wird vom Tester über die Kommandozeile geöffnet.
-    Die Graphdatei wird als Argument mitübergeben.
-    Wie in \ref{test:start} wird die korrekte Darstellung der GUI überprüft.
-    Zusätzlich wird getestet, ob der(die) Graph(en) aus der Graphdatei korrekt geladen werden. \ref{fa:import}}
-    {Alle möglichen validen Kombinationen von zusätzlichen Argumenten, beschrieben in \ref{sec:uicmd}, werden ausprobiert.
-    Außerdem werden auch invalide Argumente übergeben und überprüft \ref{nfa:gracefulexit} eingehalten wird.}
-  \test{import}{Der Tester wählt über die Menüleiste eine Import-Möglichkeit aus.
-    Es wird überprüft ob, die GUI die Anfrage, wie in \ref{fa:import} beschrieben,
-    behandelt und, ob die Graphen in der Graphdatei in der Graph-Übersicht gelistet werden.}
-  \test{export}{Ein Graph ist in der Graphansicht geladen.
-    Der Tester wählt über die Menüleiste eine Export-Möglichkeit.
-    Es wird überprüft, ob die GUI die Anfrage, wie in \ref{fa:export_img} beschrieben,
-    behandelt und ob die exportierte Bilddatei mit der in der Graphansicht dargestellten Visualisierung des Graphen übereinstimmt.}
-  \test{layouten}{Der Tester wählt über die Menüleiste eine Layout-Möglichkeit aus.
-    Es wird überprüft, ob das Layout auf den Graphen umgesetzt wird \ref{fa:layout}
-    und die Zeitbedingungen \ref{nfa:berechzeit} eingehalten werden.
-    Für den Fall, dass JOANA-Layout ausgewählt wurde,
-    werden zusätzlich alle Nichtfunktionalen Anforderungen für das \nameref{sec:nfajoana} überprüft.}
-  \test{navigation}{Der Tester führt alle in \ref{fa:zoom} \ref{fa:verschieben} beschriebene Navigationsaktionen aus
-    und überprüft, ob das Produkt sich wie in den Anforderungen beschrieben verhält.}
-  \test{filter}{Ein Graph ist in der Graphansicht geladen.
-    Der Tester wählt eine Filter-Funktion aus der Menüleiste aus.
-    Es wird überprüft, ob genau die Knoten ausgeblendet bzw. wieder eingeblendet werden, welche das Filterkriterium erfüllen.}
+\newcommand{\testno}{\ifnum\value{tnr}<10 00\else\ifnum\value{tnr}<100 0\fi\fi\arabic{tnr}}
+\newcommand\test[2]{\namedlabel{test:#1}{\textbf{/T\testno/}}\addtocounter{tnr}{10}\setcounter{stnr}{1} \hspace*{0.003\linewidth} \textbf{#2} \\ \\}
+
+\newcommand\subtest[3]{\textbf{\arabic{stnr}}\addtocounter{stnr}{1}. & \textbf{Stand:} & #1 \\ & \textbf{Aktion:} & #2 \\ & \textbf{Reaktion:} & #3 \\ [1ex] }
+
+\test{importJOANA}{Import und Darstellung von einem JOANA Graphen} 
+\begin{tabular}{llp{0.9\linewidth}}
+	\subtest{Graph von Ansicht ist gestartet und es wird kein Graph dargestellt}{Den Menüeintrag Datei->Import auswählen}{Es öffnet sich ein Dateiauwahldialog.}
+	\subtest{Eine von JOANA exportierte Datei wurde im Dateisystem ausgewählt}{Button zum Laden der ausgewählten Datei drücken}{Der Dateiauswahldialog schließt sich und ein Dialog zur Auswahl des Layoutalgorithmus öffnet sich.}
+	\subtest{Der Dialog zur Auswahl des Layoutalgorithmus wird angezeigt}{Der JOANA-Algorithmus wird ausgewählt und Ok gedrückt}{Der Dialog schließt sich und der Callgraph der geladen Datei wird im passenden Layout (siehe \ref{sec:nfajoana}) angezeigt.}
+\end{tabular}
+\\ \\ \\
+\test{openmethod}{Öffnen eines JOANA-Methodengraphen}
+\begin{tabular}{llp{0.89\linewidth}}
+	\subtest{Ein JOANA-Graph wurde importiert und der Callgraph wird angezeigt (siehe \ref{test:importJOANA}).}{Doppelklick auf einen Callknoten in der Strukturansicht.}{Ein neuer Tab öffnet sich, in dem der Methodengraph auf den der Knoten verweist in passendem Layout dargestellt wird.}
+	\subtest{Ein Methodengraph wird dargestellt.}{In der Tableiste über der Graphansicht den ursprünglichen Callgraphen auswählen.}{Der Callgraph des JOANA-Imports wird wieder angezeigt.}
+	\subtest{Der Callgraph wird angezeigt.}{Rechte Maustaste auf einen Callknoten.}{Das Kontextmenü für den selektierten Knoten öffnet sich.}
+	\subtest{Das Kontextmenü für den Knoten wird angezeigt.}{Den Menüeintrag Öffnen auswählen.}{Ein neuer Tab öffnet sich, oder bei selber Auswahl wie in Schritt 1. wird zu dem bereits offenen Tab gewechselt, in dem der Methodengraph auf den der Knoten verweist in passendem Layout dargestellt wird.}
+\end{tabular}
+\\ \\ \\
+\test{inform}{Statistiken und Informationen zu gesamten oder Subgraphen anzeigen}
+\begin{tabular}{llp{0.89\linewidth}}
+	\subtest{Ein JOANA-Graph wurde importiert und einer der enthaltenen Methoden- oder Callgraphen wird angezeigt.}{Selektieren eines Subgraphen, durch ziehen oder einzelnem Selektieren.}{Unter der Strukturansicht werden die Informationen zu den selektierten Knoten und Kanten angezeigt.}
+\end{tabular}
+\\ \\ \\
+\test{constraint}{Constraint zu Knoten eines geladenen Graphen hinzufügen}
+\begin{tabular}{llp{0.89\linewidth}}
+	\subtest{Ein Graph wurde importiert und gelayoutet angezeigt (siehe \ref{test:importJOANA}).}{Selektieren von mindestens zwei Knoten.}{Die Knoten sind selektiert und visuell leicht hervorgehoben.}
+	\subtest{Eine Menge von Knoten ist selektiert.}{Rechte Maustaste auf einen der selektierten Knoten.}{Das Kontextmenü für die selektierten Knoten öffnet sich.}
+	\subtest{Kontextmenü wird angezeigt.}{Den Menüeintrag "Constraint hinzufügen" auswählen.}{Dialog oder wie?!}
+	\subtest{Dialog?! ist offe}{Constraint auswählen}{Der Graph wird neu gelayoutet und die zuvor selektierten Knoten werden nebeneinander in der gleichen Zeile dargestellt}
+\end{tabular}
+\\ \\ \\
+\test{exportSVG}{Export von einem geladenen JOANA-Graphen als SVG}
+\begin{tabular}{llp{0.89\linewidth}}
+	\subtest{Ein JOANA-Graph wurde importiert und entweder der Callgraph oder ein Methodengraph wird angezeigt (siehe \ref{test:importJOANA}, \ref{test:openmethod}).}{Den Menüeintrag Datei->Export->SVG auswählen.}{Es öffnet sich ein Dateiauswahldialog.}
+	\subtest{Speicherort und Name der zu exportierenden Datei wurde im Dialog angegeben.}{Button zum Exportieren drücken.}{Der Dateiauswahldialog wird geschlossen und eine Datei mit dem angegebenen Namen wurde am ausgewählten Ort erstellt.}
 \end{tabular}
