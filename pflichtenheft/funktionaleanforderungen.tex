@@ -41,7 +41,7 @@ Auswahl (b): Der ausgewählte Graph wird in der Graphansicht angezeigt.
 \textbf{Beschreibung:}\\
 Geschachtelte Graphen werden in der Graphansicht als Knoten dargestellt.
 Wenn der Benutzer eines der Ereignisse auslöst, wird der Graph in der Graphansicht angezeigt.
-Ein geschachtelter Graph wird in der Strukturansicht als Kind des Graphen dargestellt, der ihn enthält. Für ein Beispiel siehe hier:\\ %TODO: Referenz von GUI Bild mit Struckturansicht
+Ein geschachtelter Graph wird in der Strukturansicht als Kind des Graphen dargestellt, der ihn enthält. Für ein Beispiel siehe hier:\\ %TODO: Referenz von GUI Bild mit Strukturansicht
 Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level''-Graph behandelt. %TODO Top-Level in Glossar
 
 
@@ -311,7 +311,7 @@ Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandel
 
 %TODO die zwei anforderungen besser(neu) beschreiben/voneinander trennen.
 \fano{\gls{joana}-Layout}\label{fa:joanalayout}
-\textbf{Ziel:} Ein Graph soll zur Betrachtung als \gls{pdg} sinnvoll gelayoutet werden.\\ %TODO: Bei mir wird PDG nicht dem Glossar hinzugefügt. Funktioniert das bei anderen? Falls wie kann man das fixen?
+\textbf{Ziel:} Ein Graph soll zur Betrachtung als \gls{pdg} sinnvoll gelayoutet werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Graph wurde wie unten beschrieben gelayoutet.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
@@ -327,6 +327,7 @@ Diese Layouts muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfülle
 \fano{Darstellung von \gls{joana}-Graphen}\label{fa:joanaview}
 \textbf{Ziel:} Elemente in JOANA-Graphen bekommen basierend auf ihrem Typ eine spezielle Darstellung.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+%TODO was ist unten?
 \textbf{Nachbedingung (Erfolg):} Der Graph wurde wie unten beschrieben dargestellt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
@@ -356,13 +357,35 @@ Häufig verwendete Funktionen (wie z.B. Navigation im Graphen) und Menüs sind T
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
 
 \fano{Fortschrittsbalken bei Berechnung}\label{fa:fortschritt}
-\textbf{Ziel:} Während das Programm das Graphlayout berechnet, wird ein Fortschrittsbalken angezeigt.\\
+\textbf{Ziel:} Während das Produkt das Graphlayout berechnet, wird ein Fortschrittsbalken angezeigt.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Während der Layoutberechnung wurde ein Fortschrittsbalken angezeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Benutzer wählt über die Menüleiste ein Layout aus.\\
 \textbf{Beschreibung:}\\
 Der Fortschrittsbalken dient dazu dem Benutzer anzuzeigen, wie weit das Programm bisher mit dem Layouten des Graphen ist, und bietet ihm somit die Möglichkeit der Zeitabschätzung bei der Berechnung eines Graphlayoutes.
+
+\fano{Eine Übersicht des angezeigten Graphen}\label{fa:uebersicht}
+\textbf{Ziel:} Es soll ein kleines Bild des kompletten Graphen angezeigt werden \\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Die Übersicht wird korrekt (mit dem aktuell ausgewählten Layout) angezeigt \\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Ein Graph wird in die Graphansicht geladen.
+  \item Ein Graph wird neu gelayoutet.
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Diese Übersicht besteht aus einem Bild des kompletten Graphen und zeigt an in welchem Teil des Graphen das aktuelle \gls{sichtfeld} liegt. Somit sieht der Benutzer, mit einem Blick, in welchem Teil des Graphen das \gls{sichtfeld} liegt und kann sich besser orientieren.
+
+\fano{Änderung der Darstellung von Kanten}\label{fa:darst-kanten}
+\textbf{Ziel:} Der Nutzer kann auswählen in welcher Form die Kanten des Graphen gezeichnet werden. \\
+\textbf{Vorbedingung:} -\\
+\textbf{Nachbedingung (Erfolg):} Die neu gezeichneten Graphen werden mit der ausgewählten Darstellung für Kanten gezeichnet \\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Nutzer wählt in den Einstellungen die gewünschte Darstellung der Kanten.
+\textbf{Beschreibung:}\\
+Es kann ausgewählt werden ob die Kanten als \gls{bezier}, orthogonale Kanten oder als direkte Kanten dargestellt werden. Alle Graphen welche neu gelayoutet werden, besitzen diese Darstellung der Kanten. Für bereits gelayoutete Graphen wird diese Einstellung nicht automatisch übernommen.
 
 
 %\fano{<++>}\label{fa:<++>}
