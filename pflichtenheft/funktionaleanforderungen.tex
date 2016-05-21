@@ -225,6 +225,28 @@ Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus.\\
 Das Produkt unterstützt Graphdateien, welche mehr als einen Graphen beschreiben.
 Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 
+\fano{Informationsanzeige zu einzelnen Knoten und Kanten}\label{fa:infoanzeige}
+\textbf{Ziel:} Zu einem ausgewählten Knoten oder einer Kanten wird Information angezeigt.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} In der Strukturansicht wird die Information zu dem ausgewählten Knoten oder der Kante angezeigt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Benutzer wählt einen Knoten oder eine Kante aus.\\
+\textbf{Beschreibung:}\\
+Die Information eines über einen per Mausklick ausgewählten Knoten oder einer Kante wird in der Strukturansicht angezeigt. Diese Information ist abhängig von der importierten Graph-Datei (siehe \ref{fa:import}) und des ausgewählten Graphlayouts (siehe \ref{fa:layout}).
+
+\fano{Statistiken zu Graphen}\label{fa:statistik}
+\textbf{Ziel:} Zu ausgewählten Graphen und \gls{subgraph}en wird eine Statistik angezeigt.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} In der Strukturansicht wird eine Statistik zu dem ausgewählten Graphen oder \gls{subgraph}en angezeigt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Benutzer wählt einen Graphen oder \gls{subgraph}en über die Graphansicht aus.
+  \item Die Auswahl erfolgt über die Strukturansicht.
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Die in der Strukturansicht angezeigte Statistik über einen Graphen oder \gls{subgraph}en enthält zum Beispiel Informationen über die Knoten- und Kantenzahl.
+
 
 \fano{TODO: Abspeichern als Graph}\label{fa:speichern}
 \fano{TODO: Import von vorher abgespeicherten Graphen}\label{fa:laden}
@@ -332,6 +354,17 @@ Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\
 \textbf{Beschreibung:}\\
 Häufig verwendete Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
+
+\fano{Fortschrittsbalken bei Berechnung}\label{fa:fortschritt}
+\textbf{Ziel:} Während das Programm das Graphlayout berechnet, wird ein Fortschrittsbalken angezeigt.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Während der Layoutberechnung wurde ein Fortschrittsbalken angezeigt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Benutzer wählt über die Menüleiste ein Layout aus.\\
+\textbf{Beschreibung:}\\
+Der Fortschrittsbalken dient dazu dem Benutzer anzuzeigen, wie weit das Programm bisher mit dem Layouten des Graphen ist, und bietet ihm somit die Möglichkeit der Zeitabschätzung bei der Berechnung eines Graphlayoutes.
+
+
 %\fano{<++>}\label{fa:<++>}
 %\textbf{Ziel:} <++>\\
 %\textbf{Vorbedingung:} <++>\\
@@ -349,3 +382,14 @@ Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextme
 %\begin{enumerate}[nolistsep]
 %  \item <++>
 %\end{enumerate}
+
+
+%etwas kürzer, falls keine enumerations verwendet werden ;)
+%\fano{}\label{fa:}
+%\textbf{Ziel:} \\
+%\textbf{Vorbedingung:} \\
+%\textbf{Nachbedingung (Erfolg):} \\
+%\textbf{Nachbedingung (Fehlschlag):} \\
+%\textbf{Auslösende Ereignisse:} \\
+%\textbf{Beschreibung:}\\
+%
