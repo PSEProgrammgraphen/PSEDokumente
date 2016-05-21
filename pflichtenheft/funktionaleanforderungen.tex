@@ -176,7 +176,6 @@ Das \gls{sichtfeld} wird nicht über den Rand bewegt. Es wird keine Fehlermeldun
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich des Graph-Fenster.
-  \item Der Benutzer betätigt eine der zum Verschieben des \gls{sichtfeld}es designierten Tasten (siehe \ref{fa:hotkey}).
   \item Der Benutzer bewegt die Scroll-Balken am Rand des \gls{sichtfeld}es. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
 \end{enumerate}
 \textbf{Beschreibung:}\\
@@ -189,11 +188,7 @@ Scroll-Balken (c): Das \gls{sichtfeld} bewegt sich relativ zur Größe des gesam
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Zoom-Grad wurde angepasst.\\
 \textbf{Nachbedingung (Fehlschlag):} Der Zoom-Grad bleibt gleich, falls ein Maximum/Minimum erreicht wurde. Es wird keine Fehlermeldung ausgegeben.\\
-\textbf{Auslösende Ereignisse:}
-\begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer dreht am Mausrad.
-  \item Der Benutzer betätigt die zum Zoomen designierten Tasten \ref{fa:hotkey}.
-\end{enumerate}
+\textbf{Auslösende Ereignisse:} Der Benutzer dreht am Mausrad, während der Mauszeiger innerhalb der Graphansicht liegt.
 \textbf{Beschreibung:}\\
 Mausrad (a): Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
 Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen, in Abhängigkeit zum derzeitigen Zoom-Grad, festen Wert.\\
@@ -387,6 +382,16 @@ Diese Übersicht besteht aus einem Bild des kompletten Graphen und zeigt an in w
 \textbf{Beschreibung:}\\
 Es kann ausgewählt werden ob die Kanten als \gls{bezier}, orthogonale Kanten oder als direkte Kanten dargestellt werden. Alle Graphen welche neu gelayoutet werden, besitzen diese Darstellung der Kanten. Für bereits gelayoutete Graphen wird diese Einstellung nicht automatisch übernommen.
 
+\fano{Reload-Funktion}\label{fa:reload}
+\textbf{Ziel:} Änderungen, welche an der importierten Graphdatei vorgenommen wurden, können durch die Reload-Funktion übernommen werden.\\
+\textbf{Vorbedingung:} Eine Graphdatei wurde importiert und ist weiterhin an der selben Stelle im Dateisystem vorhanden und zugreifbar.\\
+\textbf{Nachbedingung (Erfolg):} Die aktuelle Version des Graphen aus der Datei wurde importiert.\\
+\textbf{Nachbedingung (Fehlschlag):} Auf die Datei konnte nicht zugegriffen werden oder enthält ungültige Informationen. Keine Graphdatei ist geladen. Es wird ein Fehler ausgegeben.\\
+\textbf{Auslösende Ereignisse:} Der Nutzer wählt die Reload-Funktion über die Menüleiste.\\
+\textbf{Beschreibung:}\\
+Die Reload-Funktion ermöglicht einen schnellen erneuten Import einer zuvor schon importierten Graphdatei.
+Falls der derzeitig in der Graphansicht geladene Graph in der neuen Datei vorhanden ist, wird er aktualisiert in die Graphansicht geladen.
+Layout und andere Darstellungsoption, wie etwaige aktivierte Knoten- und Kantenfilter werden übernommen.
 
 %\fano{<++>}\label{fa:<++>}
 %\textbf{Ziel:} <++>\\

@@ -3,7 +3,7 @@
 \begin{itemize}
   \item Gesetzte Einstellungen (z.B. Speicherort der zuletzt exportierten Datei oder Größe des Fensters) werden mithilfe der \gls{prefapi} von Java gespeichert.
   \item Als Inputformat für die zu zeichnenden Graphen wird das \gls{graphml}-Format unterstützt.\\
-    Das GraphML-Format ist so aufgebaut, dass nicht alle Konstrukte welche mit GraphML beschrieben werden können (wie z.B. \gls{hyperkante}),
+    Das GraphML-Format\cite{Brandes2002} ist so aufgebaut, dass nicht alle Konstrukte welche mit GraphML beschrieben werden können (wie z.B. \gls{hyperkante}),
     von einer Applikation unterstützt werden müssen.
     Nicht unterstützte Konstrukte können ignoriert werden, ohne strukturelle Informationen des restlichen Graphen zu verlieren.\\
     Im Folgenden werden die GraphML-Konstrukte, welche durch das Produkt unterstützt werden müssen und können, aufgelistet:
@@ -11,6 +11,6 @@
       \item Muss-Konstrukte: graph, node, edge, desc, key, data, default, hierarchische/geschachtelte Graphen  % Ist Port ein Musskriterium? Beim ersten Treffen wurde es erwähnt
       \item Kann-Konstrukte: hyperedge, port, endpoint, Multi-Graphen
     \end{itemize}
-    Für den Fall das ein Kann-Konstrukt nicht unterstützt wird, wird es, wie in der GraphML Spezifikation vorgeschrieben, behandelt.
+    Für den Fall das ein Kann-Konstrukt nicht unterstützt wird, wird es, wie in der GraphML-Spezifikation\cite{GraphMLSpecs} vorgeschrieben, behandelt.
   \item Das Produkt wird den resultierenden Graphen als \gls{svg}-Format exportieren können.
 \end{itemize}
