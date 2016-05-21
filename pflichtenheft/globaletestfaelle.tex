@@ -16,7 +16,7 @@
 \end{tabular}
 \\ \\ \\
 \test{openmethod}{Öffnen eines JOANA-Methodengraphen}
-\begin{tabular}{llp{0.89\linewidth}}
+\begin{tabular}{llp{0.9\linewidth}}
 	\subtest{Ein JOANA-Graph wurde importiert und der Callgraph wird angezeigt (siehe \ref{test:importJOANA}).}{Doppelklick auf einen Callknoten in der Strukturansicht.}{Ein neuer Tab öffnet sich, in dem der Methodengraph auf den der Knoten verweist in passendem Layout dargestellt wird.}
 	\subtest{Ein Methodengraph wird dargestellt.}{In der Tableiste über der Graphansicht den ursprünglichen Callgraphen auswählen.}{Der Callgraph des JOANA-Imports wird wieder angezeigt.}
 	\subtest{Der Callgraph wird angezeigt.}{Rechte Maustaste auf einen Callknoten.}{Das Kontextmenü für den selektierten Knoten öffnet sich.}
@@ -24,12 +24,12 @@
 \end{tabular}
 \\ \\ \\
 \test{inform}{Statistiken und Informationen zu gesamten oder Subgraphen anzeigen}
-\begin{tabular}{llp{0.89\linewidth}}
+\begin{tabular}{llp{0.9\linewidth}}
 	\subtest{Ein JOANA-Graph wurde importiert und einer der enthaltenen Methoden- oder Callgraphen wird angezeigt.}{Selektieren eines Subgraphen, durch ziehen oder einzelnem Selektieren.}{Unter der Strukturansicht werden die Informationen zu den selektierten Knoten und Kanten angezeigt.}
 \end{tabular}
 \\ \\ \\
 \test{constraint}{Constraint zu Knoten eines geladenen Graphen hinzufügen}
-\begin{tabular}{llp{0.89\linewidth}}
+\begin{tabular}{llp{0.9\linewidth}}
 	\subtest{Ein Graph wurde importiert und gelayoutet angezeigt (siehe \ref{test:importJOANA}).}{Selektieren von mindestens zwei Knoten.}{Die Knoten sind selektiert und visuell leicht hervorgehoben.}
 	\subtest{Eine Menge von Knoten ist selektiert.}{Rechte Maustaste auf einen der selektierten Knoten.}{Das Kontextmenü für die selektierten Knoten öffnet sich.}
 	\subtest{Kontextmenü wird angezeigt.}{Den Menüeintrag "Constraint hinzufügen" auswählen.}{Dialog oder wie?!}
@@ -37,7 +37,7 @@
 \end{tabular}
 \\ \\ \\
 \test{exportSVG}{Export von einem geladenen JOANA-Graphen als SVG}
-\begin{tabular}{llp{0.89\linewidth}}
+\begin{tabular}{llp{0.9\linewidth}}
 	\subtest{Ein JOANA-Graph wurde importiert und entweder der Callgraph oder ein Methodengraph wird angezeigt (siehe \ref{test:importJOANA}, \ref{test:openmethod}).}{Den Menüeintrag Datei->Export->SVG auswählen.}{Es öffnet sich ein Dateiauswahldialog.}
 	\subtest{Speicherort und Name der zu exportierenden Datei wurde im Dialog angegeben.}{Button zum Exportieren drücken.}{Der Dateiauswahldialog wird geschlossen und eine Datei mit dem angegebenen Namen wurde am ausgewählten Ort erstellt.}
 \end{tabular}
