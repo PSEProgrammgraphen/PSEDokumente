@@ -40,6 +40,13 @@
   \makeglossaries
   \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
 }
+\DeclareDocumentCommand{\newpluraldualentry}{ O{} O{} m m m m m m} {
+  \newglossaryentry{gls-#3}{name={#5},text={#5\glsadd{#3},plural={#7}},
+    description={#6},#1
+  }
+  \makeglossaries
+  \newacronym[longplural={#7},see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
+}
 
 \newcounter{psnr}
 \newcounter{nfanr}
