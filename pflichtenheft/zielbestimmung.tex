@@ -14,8 +14,8 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
 %    \item Ausblendung selektierter Knoten (wie ist das gemeint? Wie kann man Knoten wieder einblenden?)
     \item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten (siehe \ref{sec:uicmd})
     \item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
-    \item Informationsanzeige zu einzelnen Knoten und Kanten %TODO: FA
-    \item Anzeige von Statistiken über den Graphen und \gls{subgraph}en (Anzahl Knoten, Kanten ...) %TODO FA
+    \item Informationsanzeige zu einzelnen Knoten und Kanten (siehe \ref{fa:infoanzeige})
+    \item Anzeige von Statistiken über den Graphen und \gls{subgraph}en (siehe \ref{fa:statistik})
   \end{itemize}
   
 \subsection{Plugins}
@@ -39,9 +39,9 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
 \subsection{Graph von Ansicht (Graphviewer)}
   \begin{itemize}
     \item Muster Definition mittels "GraphRegex" %TODO: zugehörige FA Sven
-    \item Layout Constraints die vom Nutzer angepasst werden \ref{fa:constraints} %TODO: zugehörige FA Sven
-    \item Tastaturkürzel (evtl. benutzerdefiniert) \ref{fa:hotkey}
-    \item Fortschrittsbalken bei der Berechnung des Layouts des Graphen %TODO: zugehörige FA Jonas M.
+    \item Layout Constraints, die vom Nutzer angepasst werden (siehe \ref{fa:constraints}) %TODO: zugehörige FA Sven
+    \item Tastaturkürzel (evtl. benutzerdefiniert) (siehe \ref{fa:hotkey})
+    \item Fortschrittsbalken bei der Berechnung des Layouts des Graphen (siehe \ref{fa:fortschritt})
     \item Eine Übersicht des angezeigten Graphen. Diese Übersicht besteht aus einem Bild des kompletten Graphen und zeigt an in welchem Teil des Graphen das aktuelle \gls{sichtfeld} liegt.  %TODO: zugehörige FA  Jonas F.
     \item Algorithmus zur Erreichbarkeit eines Knoten %TODO: zugehörige FA Sven
     \item Die Darstellung von Kanten kann geändert werden (\gls{bezier}, orthogonale Kanten oder direkte Kanten) %TODO: zugehörige FA Jonas F.
@@ -58,7 +58,7 @@ Das Endergebnis soll eine übersichtliche Darstellung der Abhängigkeiten und de
 
 \subsection{Graph von Ansicht (Graphviewer)}
   \begin{itemize}
-    \item Das Produkt ist kein Graph-Editor und unterstützt deshalb die Manipulation des Graphen hinsichtlich seiner Struktur (z.B. Kanten entfernen) nicht.
+    \item Das Produkt ist kein Graph-Editor und unterstützt deshalb die Manipulation des Graphen hinsichtlich seiner Struktur (z.B. Kanten entfernen, Knoten hinzufügen/löschen) nicht.
     \item Das \gls{gui} wird nicht von Grund auf neu entwickelt, es werden Bibliotheken verwendet, um die Entwicklung zu erleichtern.
     \item Das Zeichnen der Kanten und Knoten mit primitiven geometrischen Objekten wird mithilfe von Bibliotheken umgesetzt. %TODO: Referenz zu benutzten Bibliotheken
     \item Das Produkt ist kein Analysetool für Programme, sondern dient lediglich zur Visualisierung von bereits vorhandenen Graphdateien.
