@@ -1,11 +1,16 @@
 \chapter{Plugin-Schnittstellen}
 \label{ch:plugschnitt}
 
-%TODO Plugin Architektur erklären, vlt Graph von Whiteboard
-
 \setcounter{psnr}{10}
 \newcommand{\psno}{\ifnum\value{psnr}<10 00\else\ifnum\value{psnr}<100 0\fi\fi\arabic{psnr}}
 \newcommand\ps[2]{\namedlabel{s:#1}{/S\psno/}\addtocounter{psnr}{10}: & #2 \\ [1ex] }
+
+Das Produkt enthält einen Plugin-Manager, welcher beim Programmstart Plugins aus einem dedizierten Ordner liest.
+Zudem können Plugins direkt mit dem Produkt verpackt werden um eines abgeschlossenes Programm zu erhalten.
+Dies ist der Fall bei den Plugins zur Unterstützung von JOANA-Graphen, GraphML und SVG.
+
+Um die Zusammenarbeit von Plugins zu erleichtern und dem Nutzer zu ersparen Layout, Darstellung und weitere,
+dem Graph spezifische Einstellung vorzunehmen, wird das Konzept eine Arbeitsplatzumgebung eingeführt.
 
 \begin{tabular}{lp{0.9\linewidth}}
   \ps{graphtyp}{\textit{Graphtypen-Schnittstelle:} Plugins sind in der Lage neue Graphtypen zu definieren. Alle von Plugins definierten Graphtypen sind dem Benutzer beim Importieren zur Auswahl gestellt. Das Plugin kann dann mit einem Graphtyp bestimmte Import-Möglichkeiten, Layoutalgorithmen und Darstellungsoptionen verbinden, sodass der Benutzer diese nicht bei jedem Öffnen eines Graphen neu festlegen muss und gleichzeitig eine Importfunktion für ein Datenformat von mehreren Plugins wiedervewendet werden können.}
