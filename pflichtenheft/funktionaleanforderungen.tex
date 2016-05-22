@@ -149,7 +149,7 @@ veränderte Struktur der Darstellung des Graphen anzupassen.\\
 \textbf{Vorbedingung:} Eine Graphdatei wurde importiert (siehe \ref{fa:import})\\
 \textbf{Nachbedingung (Erfolg):} Alle durch die Arbeitsumgebung automatisierten Aktionen wurden ausgeführt.\\
 \textbf{Nachbedingung (Fehlschlag):} Der Nutzer wählt eine Graphdatei mit Graphen, für welche die Arbeitsumgebung nicht bestimmt ist. Es kann sein, dass manche Aktionen nicht ausgeführt werden können, bzw. manche Aktionen unerwünschte Auswirkungen auf die Visualisierung des Graphen haben.\\
-\textbf{Auslösende Ereignisse:} Nach dem Import wählt der Nutzer eine Arbeitsumgebung aus einem Auswahlfenster aus.\\ %TODO: Ref GUI
+\textbf{Auslösende Ereignisse:} Nach dem Import wählt der Nutzer eine Arbeitsumgebung aus einem Auswahlfenster aus (siehe \ref{fig:gui_window_chooseWorkspace}).\\
 \textbf{Beschreibung:}\\
 Um die Zusammenarbeit von Plugins zu erleichtern und dem Nutzer zu ersparen Layout, Darstellung und weitere,
  Graph-spezifische Einstellung vornehmen zu müssen, wird das Konzept einer \gls{arbeitsumgebung} eingeführt:\\
@@ -196,7 +196,7 @@ Ein kollabierter \gls{subgraph} kann wieder ausgeklappt werden (siehe \ref{fa:au
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Knoten, der den Graphen dargestellt hat wird entfernt. Die im \glspl{subgraph} enthaltenen Knoten werden wie vor dem Kollabieren wieder eingezeichnet.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
-\textbf{Auslösende Ereignisse:} Der Nutzer wählt die Ausklapp-Funktion aus dem Kontextmenü eines Knotens, der einen eingeklappten Graphen repräsentiert.\\ %TODO: Verweis auf GUI-Bild mit eingeklapptem Graphen ?
+\textbf{Auslösende Ereignisse:} Der Nutzer wählt die Ausklapp-Funktion aus dem Kontextmenü eines Knotens, der einen eingeklappten Graphen repräsentiert.\\
 \textbf{Beschreibung:}\\
 Die ausgeklappten Knoten werden an der Position, die sie vor dem Kollabieren einnahmen,  wieder eingezeichnet.
 Kanten zwischen den Knoten des \glspl{subgraph} werden wie vor dem Kollabieren eingezeichnet.
@@ -216,14 +216,13 @@ Ist das der Fall, kann der Nutzer über die Layout-Funktion den Graphen neu layo
 Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graphen beschreibt.\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer wählt die Import-Funktion über die Menüleiste aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüleiste in GUI
+  \item Der Benutzer wählt die Import-Funktion über die Menüleiste (siehe \ref{fig:gui_view_filemenu}) aus, nachdem das Programm geöffnet wurde.
   \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument (siehe \autoref{sec:uicmd}).
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Es wird das \gls{graphml}-Format als Import-Format unterstützt. Für eine genauere Beschreibung der Unterstützung des \gls{graphml}-Formates siehe \autoref{ch:daten}.\\
 %Es öffnet sich ein Fenster, in dem der Benutzer den Typ des Graphen auswählt, welcher importiert werden soll. %TODO: Ref gui
-Falls der Benutzer die Import-Funktion über die Menüleiste ausführt öffnet sich zuerst ein Dateiverzeichnis-Menü.
-%TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
+Falls der Benutzer die Import-Funktion über die Menüleiste ausführt, öffnet sich zuerst ein Dateiverzeichnis-Menü.
 Der Benutzer wählt die zu importierende Datei aus.\\
 Falls die Datei beim Programmstart als Argument angegeben wurde startet der Import-Vorgang automatisch.
 Die in der Graphdatei beschriebene Graphen werden in eine interne Repräsentation, welche unabhängig vom importierten Dateiformat ist, überführt. %TODO: Referenz zu Grafik mit Repräsentationen
@@ -270,7 +269,7 @@ Das \gls{sichtfeld} wird nicht über den Rand bewegt. Es wird keine Fehlermeldun
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich der Graphansichansichtt.
-  \item Der Benutzer bewegt die Scroll-Balken an dem rechten bzw. unteren Rand der Graphansicht. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
+  \item Der Benutzer bewegt die Scroll-Balken an dem rechten bzw. unteren Rand der Graphansicht.
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Klicken und Ziehen (a): Das \gls{sichtfeld} bewegt sich entgegen der Richtung, in welche der Mauszeiger bewegt wird. Es entsteht somit ein intuitives Verschieben des Graphen.\\
@@ -341,8 +340,8 @@ Eine vorhandene \gls{gruppe} wird vom Benutzer gelöscht.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus.
-  \item Der Benutzer wählt über die Tabansicht einen bereits geöffneten Graphen. %TODO: GUI Referenz 
+  \item Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus (siehe \ref{fig:gui_view_treeview}).
+  \item Der Benutzer wählt über die Tabansicht einen bereits geöffneten Graphen (siehe\ref{fig:gui_view_treeview}).
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Das Produkt unterstützt Graphdateien, welche mehr als einen Graphen beschreiben.
