@@ -10,34 +10,91 @@
 
 \test{importJOANA}{Import und Darstellung von einem JOANA Graphen} 
 \begin{tabular}{llp{0.9\linewidth}}
-	\subtest{Graph von Ansicht ist gestartet und es wird kein Graph dargestellt}{Den Menüeintrag Datei->Import auswählen}{Es öffnet sich ein Dateiauwahldialog.}
-	\subtest{Eine von JOANA exportierte Datei wurde im Dateisystem ausgewählt}{Button zum Laden der ausgewählten Datei drücken}{Der Dateiauswahldialog schließt sich und ein Dialog zur Auswahl des Layoutalgorithmus öffnet sich.}
-	\subtest{Der Dialog zur Auswahl des Layoutalgorithmus wird angezeigt}{Der JOANA-Algorithmus wird ausgewählt und Ok gedrückt}{Der Dialog schließt sich und der Callgraph der geladen Datei wird im passenden Layout (siehe \ref{sec:nfajoana}) angezeigt.}
+	\subtest
+		{Graph von Ansicht ist gestartet und es wird kein Graph dargestellt}
+		{Den Menüeintrag Datei->Import auswählen}
+		{Ein Dateiauswahldialog wird geöffnet.}
+	\subtest
+		{Eine von JOANA exportierte Datei wurde im Dateisystem ausgewählt}
+		{Button zum Laden der ausgewählten Datei drücken}
+		{Der Dateiauswahldialog schließt sich und ein Dialog zur Auswahl des Layoutalgorithmus öffnet sich.}
+	\subtest
+		{Der Dialog zur Auswahl des Layoutalgorithmus wird angezeigt}
+		{Der JOANA-Algorithmus wird ausgewählt und Ok gedrückt}
+		{Der Dialog schließt sich und der \gls{callgraph} der geladen Datei wird im passenden Layout (siehe \ref{fa:layout}) angezeigt.}
 \end{tabular}
 \\ \\ \\
 \test{openmethod}{Öffnen eines JOANA-Methodengraphen}
 \begin{tabular}{llp{0.9\linewidth}}
-	\subtest{Ein JOANA-Graph wurde importiert und der Callgraph wird angezeigt (siehe \ref{test:importJOANA}).}{Doppelklick auf einen Callknoten in der Strukturansicht.}{Ein neuer Tab öffnet sich, in dem der Methodengraph auf den der Knoten verweist in passendem Layout dargestellt wird.}
-	\subtest{Ein Methodengraph wird dargestellt.}{In der Tableiste über der Graphansicht den ursprünglichen Callgraphen auswählen.}{Der Callgraph des JOANA-Imports wird wieder angezeigt.}
-	\subtest{Der Callgraph wird angezeigt.}{Rechte Maustaste auf einen Callknoten.}{Das Kontextmenü für den selektierten Knoten öffnet sich.}
-	\subtest{Das Kontextmenü für den Knoten wird angezeigt.}{Den Menüeintrag Öffnen auswählen.}{Ein neuer Tab öffnet sich, oder bei selber Auswahl wie in Schritt 1. wird zu dem bereits offenen Tab gewechselt, in dem der Methodengraph auf den der Knoten verweist in passendem Layout dargestellt wird.}
+	\subtest
+		{Ein JOANA-Graph wurde importiert, der \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}).}
+		{Doppelklick auf einen Callknoten in der Strukturansicht.}
+		{Ein neuer Tab öffnet sich, in dem der \gls{methgraph} auf den der Knoten verweist in passendem Layout dargestellt wird.}
+	\subtest
+		{Ein \gls{methgraph} wird dargestellt.}
+		{In der Tableiste über der Graphansicht den ursprünglichen \glspl{callgraph} aus Schritt 1. auswählen.}
+		{Der \gls{callgraph} des JOANA-Imports aus Schritt 1. wird wieder angezeigt.}
+	\subtest
+		{Der \gls{callgraph} wird angezeigt.}
+		{Rechte Maustaste auf einen Callknoten.}
+		{Das Kontextmenü für den selektierten Knoten öffnet sich.}
+	\subtest
+		{Das Kontextmenü für den Knoten wird angezeigt.}
+		{Den Menüeintrag Öffnen auswählen.}
+		{Ein neuer Tab öffnet sich, oder bei selber Auswahl wie in Schritt 1. wird zu dem bereits offenen Tab gewechselt, in dem der \gls{methgraph} auf den der Knoten verweist in passendem Layout dargestellt wird.}
 \end{tabular}
 \\ \\ \\
-\test{inform}{Statistiken und Informationen zu gesamten oder Subgraphen anzeigen}
+\test{navigation}{Navigation und Zoom}
 \begin{tabular}{llp{0.9\linewidth}}
-	\subtest{Ein JOANA-Graph wurde importiert und einer der enthaltenen Methoden- oder Callgraphen wird angezeigt.}{Selektieren eines Subgraphen durch ziehen oder einzelnes Selektieren.}{Unter der Strukturansicht werden die Informationen zu den selektierten Knoten und Kanten angezeigt.}
+	\subtest
+		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \glspl{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}).}
+		{Den Menüeintrag Ansicht->Zoom->Erhöhen auswählen.}
+		{Der Mauszeiger ändert sich zu einer Lupe mit einem Plus in der Linse.}
+	\subtest
+		{Der Mauszeiger zeigt eine Lupe und befindet sich über der Graphansicht.}
+		{Linksklick innerhalb der Graphansicht, in die nähe eines \glspl{subgraph}}
+		{Das vorherige Sichtifeld wurde, in Richtung der Knoten und Kanten die in der Nähe des Mauszeigers beim Klick waren, herangezoomt.}
+	\subtest
+		{Der angezeigte Graph wird leicht herangezoomt dargestellt.}
+		{Mittlere Maustaste in einem leeren Bereich der Graphansicht drücken und halten und ziehen des Mauszeigers.}
+		{Das Sichtfeld wird, wenn nicht der Rand des Graphen erreicht wurde entgegen der Richtung in die der Mauszeiger bewegt wird, verschoben.}
+%	\subtest{herauszoomen}
+%	\subtest{kollabieren}
+%	\subtest{ausklappen}
+\end{tabular}
+\\ \\ \\
+\test{select}{Selektieren mehrerer Knoten und Kanten}
+\begin{tabular}{llp{0.9\linewidth}}
+	\subtest
+	{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \glspl{callgraph} wird angezeigt.}
+	{Selektieren eines \glspl{subgraph}, durch ziehen oder einzelnem Auswählen.}
+	{Die ausgewählten Knoten und Kanten sind selektiert und visuell leicht hervorgehoben. Unter der Strukturansicht werden Informationen und Statistiken zu den selektierten Knoten und Kanten angezeigt.}
 \end{tabular}
 \\ \\ \\
 \test{constraint}{Constraint zu Knoten eines geladenen Graphen hinzufügen}
 \begin{tabular}{llp{0.9\linewidth}}
-	\subtest{Ein Graph wurde importiert und gelayoutet angezeigt (siehe \ref{test:importJOANA}).}{Selektieren von mindestens zwei Knoten.}{Die Knoten sind selektiert und visuell leicht hervorgehoben.}
-	\subtest{Eine Menge von Knoten ist selektiert.}{Rechte Maustaste auf einen der selektierten Knoten.}{Das Kontextmenü für die selektierten Knoten öffnet sich.}
-	\subtest{Kontextmenü wird angezeigt.}{Den Menüeintrag "Constraint hinzufügen" auswählen.}{Dialog oder wie?!}
-	\subtest{Dialog?! ist offe}{Constraint auswählen}{Der Graph wird neu gelayoutet und die zuvor selektierten Knoten werden nebeneinander in der gleichen Zeile dargestellt}
+	\subtest
+		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \glspl{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}). Mindestens zwei Knoten auf unterschiedlichen Ebenen wurden selektiert (siehe Test \ref{test:select})}
+		{Rechte Maustaste auf einen der selektierten Knoten.}
+		{Das Kontextmenü für die selektierten Knoten öffnet sich.}
+	\subtest
+		{Kontextmenü wird angezeigt.}
+		{Den Menüeintrag Constraint hinzufügen auswählen.}
+		{Ein Dialog öffnet sich.}
+	\subtest
+		{Der Dialog zum Hinzufügen neuer Constraints ist geöffnet.}
+		{Auswählen des Constraints zum nebeneinander Darstellen der Knoten und bestätigen des Dialogs.}
+		{Der Dialog schließt sich. Der Graph wird neu gelayoutet und die zuvor selektierten Knoten werden nebeneinander in der gleichen Zeile dargestellt.}
 \end{tabular}
 \\ \\ \\
 \test{exportSVG}{Export von einem geladenen JOANA-Graphen als SVG}
 \begin{tabular}{llp{0.9\linewidth}}
-	\subtest{Ein JOANA-Graph wurde importiert und entweder der Callgraph oder ein Methodengraph wird angezeigt (siehe \ref{test:importJOANA}, \ref{test:openmethod}).}{Den Menüeintrag Datei->Export->SVG auswählen.}{Es öffnet sich ein Dateiauswahldialog.}
-	\subtest{Speicherort und Name der zu exportierenden Datei wurde im Dialog angegeben.}{Button zum Exportieren drücken.}{Der Dateiauswahldialog wird geschlossen und eine Datei mit dem angegebenen Namen wurde am ausgewählten Ort erstellt.}
+	\subtest
+		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \glspl{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}).}
+		{Den Menüeintrag Datei->Export->\gls{svg} auswählen.}
+		{Es öffnet sich ein Dateiauswahldialog.}
+	\subtest
+		{Speicherort und Name der zu exportierenden Datei wurde im Dialog angegeben.}
+		{Button zum Exportieren drücken.}
+		{Der Dateiauswahldialog wird geschlossen, eine \gls{svg}-Datei mit dem angegebenen Namen wurde am ausgewählten Ort erstellt und sie enthält die visuelle Repräsentation des gesamten Graphen wie in der Graphansicht dargestellt wurde.}
 \end{tabular}
