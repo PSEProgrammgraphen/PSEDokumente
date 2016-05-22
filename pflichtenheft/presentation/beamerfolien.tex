@@ -21,6 +21,8 @@
 \usepackage{templates/beamerthemekit}
 % \usepackage{templates/beamerthemekitwide}
 
+\usepackage{graphicx}
+
 %% TITLE PICTURE
 
 % if a custom picture is to be used on the title page, copy it into the 'logos'
@@ -59,6 +61,7 @@
 % Bibliography
 
 \bibliographystyle{plain}
+\graphicspath{{resourcen/}}
 %\usepackage[citestyle=authoryear,bibstyle=numeric,hyperref,backend=biber]{biblatex}
 %\addbibresource{templates/example.bib}
 %\bibhang1em
@@ -82,15 +85,54 @@
 \section{Einleitung/Zielbestimmung}
 \begin{frame}{Ziele}
 \begin{itemize}
-\item Bullet point 1
+\item anpassbare Visualierung von Graphen
 \pause
-\item Bullet point 2
-\item \dots
+\item Betrachtung und Analyse visualisierter Graphen.
+\pause
+\item Erweiterbarkeit durch Plugins (Bsph Joana)
+\pause
+\item laden und Speichern gängiger Dateiformate (Bsph SVG und GML)
+\pause
+\item eine an Joana angepasste Visualisierung (als Plugin)
 \end{itemize}
 \end{frame}
 
 \section{Benutzerschnittstellen}
 \begin{frame}{Benutzerschnittstellen}
+\begin{tabular}{cc}
+
+    \begin{minipage}{0.45\textwidth}
+    Kommandozeile \\
+    \raisebox{-.5\height}{\includegraphics[width=150pt]{resourcen/cmd.png}}
+
+    \begin{itemize}
+      \item schnelle Möglichkeit Graphen zu layouten
+      \pause
+      \item Massenverarbeitung von Dateien
+      \pause
+    \end{itemize}
+    
+    \end{minipage}
+  \pause
+  &
+
+    \begin{minipage}{0.45\textwidth}
+     GUI \\
+    \raisebox{-.5\height}{\includegraphics[width=150pt]{resourcen/gui.png}}
+
+    \begin{itemize}
+      \item interaktives Interface
+      \pause
+      \item Darstellung der Graphen
+      \pause
+      \item höhere Anpassbarkeit (ohne ein Plugin zu programmieren)
+      \pause
+    \end{itemize}
+
+    \end{minipage}
+  \\
+
+\end{tabular}
 \end{frame}
 
 \section{Szenario}
@@ -99,6 +141,26 @@
 
 \section{Weitere Funktionen}
 \begin{frame}{Funktionsübersicht}
+\begin{itemize}
+\item Graph Visualisierung mittels Sugiyama Framework
+\pause
+\item Callgraph Layout
+\pause
+\item Navigation in der Darstellung des Graphen
+\pause
+\item anpassbare Einstellung der Darstellung
+\pause
+\item Graph Visualisierung mittels Sugiyama Framework
+\pause
+\item Informationsanzeige zu Knoten und Kanten
+\pause
+\item Statistiken des Graphen
+\pause
+\item filtern bestimmter Knoten und Kanten in der Ansicht
+\pause
+\item Mehrere Graphen gleichzeitig betrachtbar
+\pause
+\end{itemize}
 \end{frame}
 
 \section{Erweiterbarkeit}
