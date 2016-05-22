@@ -63,10 +63,10 @@ Ein Methodengraph kann als \gls{subgraph} des Callgraphen geöffnet werden.
 \textbf{Auslösende Ereignisse:}
 Der Benutzer wählt über die Menüleiste ein Layout aus.\\
 \textbf{Beschreibung:}\\
-Nach der Auswahl des Layouts, öffnet sich ein Fenster zur Parametriesierung des Layout-Algorithmus.
+Nach der Auswahl des Layouts öffnet sich ein Fenster zur Parametrisierung des Layout-Algorithmus.
 Beispiele für Parameter sind die Ebenenanzahl oder die maximale Anzahl an Knoten auf jeder Ebene bei einem hierarchischen Layout.
-Nachdem der Benutzer seine gewünschten Einstellungen bestätigt hat, wird das Layout berechnet. Hierbei kann es zu Verzögerungen kommen. (siehe \ref{nfa:berechzeit})
-Nach der Berechnung wird der Graph neugezeichnet.
+Nachdem der Benutzer seine gewünschten Einstellungen bestätigt hat, wird das Layout berechnet. Hierbei kann es zu Verzögerungen kommen (siehe \ref{nfa:berechzeit}).
+Nach der Berechnung wird der Graph neu gezeichnet.
 Graph von Ansicht enthält zwei hierarchische Layouts:
 \begin{itemize}
   \item \textbf{\gls{callgraph}-Layout:} Für das Layouten von \glspl{callgraph} gedacht. Beinhaltet folgende spezielle Regeln:
@@ -170,7 +170,7 @@ Kanten zwischen den Knoten des \glspl{subgraph} werden wie vor dem Kollabieren e
 Kanten zwischen Knoten des \glspl{subgraph} und anderen Knoten werden nicht wie vor dem Kollabieren gezeichnet,
 falls sich die Position des anderen Knotens seit dem Kollabieren geändert hat, z.B. wenn er kollabiert wurde oder der Graph neu gelayoutet wurde.
 Nach dem Ausklappen kann es bei der Darstellung zu Überlagerungen kommen.
-Ist das der Fall kann der Nutzer über die Layout-Funktion den Graphen neu layouten. (siehe \ref{fa:layout})
+Ist das der Fall kann der Nutzer über die Layout-Funktion den Graphen neu layouten (siehe \ref{fa:layout}).
 
 \subsection{Input/Output}
 \setcounter{fanr}{100}
@@ -184,7 +184,7 @@ Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer wählt die Import-Funktion über die Menüleiste aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüleiste in GUI
-  \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument. (siehe \ref{sec:uicmd})
+  \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument (siehe \ref{sec:uicmd}).
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Es wird das \gls{graphml}-Format als Import-Format unterstützt. Für eine genauere Beschreibung der Unterstützung des \gls{graphml}-Formates siehe \ref{ch:daten}.\\
@@ -248,9 +248,9 @@ Scroll-Balken (b): Das \gls{sichtfeld} bewegt sich relativ zur Größe des gesam
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Zoom-Grad wurde angepasst.\\
 \textbf{Nachbedingung (Fehlschlag):} Der Zoom-Grad bleibt gleich, falls ein Maximum/Minimum erreicht wurde. Es wird keine Fehlermeldung ausgegeben.\\
-\textbf{Auslösende Ereignisse:} Der Benutzer dreht am Mausrad, während der Mauszeiger innerhalb der Graphansicht liegt.
+\textbf{Auslösende Ereignisse:} Der Benutzer dreht am Mausrad, während der Mauszeiger innerhalb der Graphansicht liegt.\\
 \textbf{Beschreibung:}\\
-Mausrad (a): Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
+Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
 
 %TODO Wie Deselektieren, shift/strg Selektieren mehrerer Knoten, welche Knoten werden beim Ziehen ausgewählt.
 \fano{Knoten selektieren}\label{fa:selekt_knoten}
@@ -369,9 +369,9 @@ Diese Übersicht besteht aus einem Bild des kompletten Graphen und zeigt an in w
 \textbf{Vorbedingung:} -\\
 \textbf{Nachbedingung (Erfolg):} Die neu gezeichneten Graphen werden mit der ausgewählten Darstellung für Kanten gezeichnet \\
 \textbf{Nachbedingung (Fehlschlag):} -\\
-\textbf{Auslösende Ereignisse:} Der Nutzer wählt in den Einstellungen die gewünschte Darstellung der Kanten.
+\textbf{Auslösende Ereignisse:} Der Nutzer wählt in den Einstellungen die gewünschte Darstellung der Kanten.\\
 \textbf{Beschreibung:}\\
-Es kann ausgewählt werden ob die Kanten als \gls{bezier}, orthogonale Kanten oder als direkte Kanten dargestellt werden. Alle Graphen welche neu gelayoutet werden, besitzen diese Darstellung der Kanten. Für bereits gelayoutete Graphen wird diese Einstellung nicht automatisch übernommen.
+Es kann ausgewählt werden, ob die Kanten als \gls{bezier}, orthogonale Kanten oder als direkte Kanten dargestellt werden. Alle Graphen, welche neu gelayoutet werden, besitzen diese Darstellung der Kanten. Für bereits gelayoutete Graphen wird diese Einstellung nicht automatisch übernommen.
 
 \fano{Reload-Funktion}\label{fa:reload}
 \textbf{Ziel:} Änderungen, welche an der importierten Graphdatei vorgenommen wurden, können durch die Reload-Funktion übernommen werden.\\
