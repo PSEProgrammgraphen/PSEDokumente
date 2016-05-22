@@ -89,13 +89,13 @@ Weitere Layouts können durch Plugins hinzugefügt werden (siehe \ref{s:layoutal
 
 %TODO wie wird der Subgraph gewählt? Wie werden Constrains gewählt? Dialog?
 \fano{Constraints auswählen}\label{fa:constraints}
-\textbf{Ziel:} Der Nutzer kann Constraints auswählen, die auf den \gls{subgraph}en beim layouten (siehe \ref{fa:layout}) verwendet werden.\\
+\textbf{Ziel:} Der Nutzer kann Constraints auswählen, die auf den \glspl{subgraph} beim layouten (siehe \ref{fa:layout}) verwendet werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde geladen.\\
 \textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
 \textbf{Nachbedingungen (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Benutzer klickt in der Hauptansicht auf Constraint hinzufügen.\\
 \textbf{Beschreibung: } \\
-Der Benutzer legt eine Anzahl von Constraints für einen \gls{subgraph}en aus, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}).
+Der Benutzer legt eine Anzahl von Constraints für einen \glspl{subgraph} aus, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}).
 Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die funktionalität geliefert wird
 \begin{itemize}[nolistsep]
   \item Positionierung
@@ -149,11 +149,11 @@ veränderte Struktur der Darstellung des Graphen anzupassen.\\
 \textbf{Auslösende Ereignisse:} Der Nutzer hat einen \glspl{subgraph} selektiert (siehe \ref{fa:selekt_knoten}).
 Über das Kontextmenü wählt er die Layout-Funktion für das Kollabieren von \glspl{subgraph}.\\
 \textbf{Beschreibung:}\\
-Alle Kanten mit genau einem Knoten, der nicht in dem \gls{subgraph} liegt, werden als Kanten zwischen dem entstandenen Knoten und dem Knoten außerhalb der Menge gezeichnet.\\
+Alle Kanten mit genau einem Knoten, der nicht in dem \glspl{subgraph} liegt, werden als Kanten zwischen dem entstandenen Knoten und dem Knoten außerhalb der Menge gezeichnet.\\
 Die Darstellung des neuen Knotens überschneidet keine andere Knoten.\\
-Da sich aber beim Kollabieren von größeren \gls{subgraph} das Bild des gesamten Graphen stark ändert, wird nicht garantiert,
-dass es nicht zu überdurschnittlichen vielen Kantenkreuzungen oder langen Kanten kommt.\\
-Der Benutzer kann dann bei Bedarf den Layoutalgorithmus ein weiteres Mal ausführen (siehe \ref{fa:layout}) um das Layout auf die
+Da sich aber beim Kollabieren von größeren \glspl{subgraph} das Bild des gesamten Graphen stark ändert, wird nicht garantiert,
+dass es nicht zu überdurchschnittlich vielen Kantenkreuzungen oder langen Kanten kommt.\\
+Der Benutzer kann dann bei Bedarf den Layoutalgorithmus ein weiteres Mal ausführen (siehe \ref{fa:layout}), um das Layout auf die
 veränderte Struktur der Darstellung des Graphen anzupassen.\\
 Ein kollabierter \gls{subgraph} kann wieder ausgeklappt werden (siehe \ref{fa:ausklappen}).
 
@@ -161,7 +161,7 @@ Ein kollabierter \gls{subgraph} kann wieder ausgeklappt werden (siehe \ref{fa:au
 \fano{Ausklappen von kollabierten \glspl{subgraph}}\label{fa:ausklappen}
 \textbf{Ziel:} Eingeklappte \glspl{subgraph} können bei Bedarf wieder ausgeklappt werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} Der Knoten, der den Graphen dargestellt hat wird entfernt. Die im \gls{subgraph} enthaltenen Knoten werden wie vor dem Kollabieren wieder eingezeichnet.\\
+\textbf{Nachbedingung (Erfolg):} Der Knoten, der den Graphen dargestellt hat wird entfernt. Die im \glspl{subgraph} enthaltenen Knoten werden wie vor dem Kollabieren wieder eingezeichnet.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Nutzer wählt die Ausklapp-Funktion aus dem Kontextmenü eines Knotens, der einen eingeklappten Graphen repräsentiert.\\
 \textbf{Beschreibung:}\\
@@ -326,7 +326,6 @@ Diese Operationen werden dann im jeweiligen Kontextmenü dargestellt.
 
 
 \fano{TODO: Abspeichern als Graph}\label{fa:speichern}
-\fano{TODO: Import von vorher abgespeicherten Graphen}\label{fa:laden}
 
 \fano{TODO: Definition des JOANA-Graphtypes}\label{fa:joanatyp}
 \section{Wunsch-Funktionen}

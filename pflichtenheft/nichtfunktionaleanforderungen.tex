@@ -28,10 +28,7 @@
 \setcounter{nfanr}{200}
 
 \begin{tabular}{lp{0.9\linewidth}}
-  \nfa{berechzeit}{Die Berechnung eines Graphlayouts dauert höchstens 2 Minuten.}
-  \nfa{layerspecs}{Bei einem \gls{methgraph} soll der Entry-Knoten auf dem obersten Layer dargestellt werden, und ein Layer darunter die Parameter für die Methode in fester Reihenfolge.}
-  \nfa{methaufrufe}{Bei einem Knoten, welcher einen Methodenaufruf darstellt, sollen die dazugehörigen Knoten (Parameter und Rückgabewert) ein Layer unter dem Methodenaufruf stehen.}
-  \nfa{feldzugr}{Feldzugriffe werden bei \gls{joana} immer gleich dargestellt. Diese Zugriffe sollen erkannt werden und die dazugehörigen Knoten sollen automatisch immer im gleichen Muster angezeigt werden.}
+  \nfa{berechzeit}{Die Berechnung eines Graphlayouts ist abhängig von der Knoten- und Kantenzahl und überschreitet bei einer Anzahl von 1000 Knoten und 4000 Kanten 2 Minuten nicht. Bei einer Knotenzahl von 500 und einer Kantenzahl von 2000 wird bei der Berechnung eine Minute nicht überschritten.}
   \nfa{kantenabstand}{Kanten sollen nicht direkt übereinander liegen, sondern immer mit einem gewissen Mindestabstand nebeneinander.}
   \nfa{cutknotenknoten}{Die graphische Darstellung eines Knoten darf sich nicht mit der eines anderen Knoten überschneiden, so dass Teile eines Knoten verdeckt wären.}
   \nfa{cuttext}{Beschriftungen von Knoten dürfen sich nicht mit anderen Objekten überschneiden, sodass Teile der Beschriftung verdeckt/unkenntlich werden.}
