@@ -87,36 +87,36 @@ Graph von Ansicht enthält zwei hierarchische Layouts:
 Beide Layouts müssen alle in \ref{sec:nfajoana} beschriebenen Anforderungen erfüllen.
 Weitere Layouts können durch Plugins hinzugefügt werden (siehe \ref{s:layoutalgo})
 
-%TODO wie wird der Subgraph gewählt? Wie werden Constrains gewählt? Dialog?
-\fano{Constraints auswählen}\label{fa:constraints}
-\textbf{Ziel:} Der Nutzer kann Constraints auswählen, die auf den \glspl{subgraph} beim layouten (siehe \ref{fa:layout}) verwendet werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde geladen.\\
+\fano{Constraints hinzufügen}\label{fa:constraints}
+\textbf{Ziel:} Ein Layout-spezifisches Constraints kann hinzugefügt werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde geladen. Ein Layoutalgorithmus wurde ausgewählt.\\
 \textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
 \textbf{Nachbedingungen (Fehlschlag):} -\\
-\textbf{Auslösende Ereignisse:} Der Benutzer klickt in der Hauptansicht auf Constraint hinzufügen.\\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt in der \ref{gui:layoutsetting} auf Constraint hinzufügen.\\
 \textbf{Beschreibung: } \\
-Der Benutzer legt eine Anzahl von Constraints für einen \glspl{subgraph} aus, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}).
-Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die funktionalität geliefert wird
+Der Benutzer legt eine Anzahl von Constraints für einen Layoutalgorithmus fest, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}). Hierfür wählt er zunächst ein Constraint aus einer Menge an verfügbaren Constraints aus. Diese Constraints werden vom jeweiligen Layoutplugin geliefert und implementieren vom Produkt vorgegebene Interfaces. Vom Produkt werden folgende Interfaces vorgegeben:
 \begin{itemize}[nolistsep]
-  \item Positionierung
-  \begin{itemize}[nolistsep]
-    \item positioniere \textit{Subgraph 1} über \textit{Subgraph 2}
-    \item positioniere \textit{Subgraph 1} unter \textit{Subgraph 2}
-    \item positioniere \textit{Subgraph 1} links von \textit{Subgraph 2}
-    \item positioniere \textit{Subgraph 1} rechts von \textit{Subgraph 2}
-    \item positioniere \textit{Subgraph} an fester Position
-  \end{itemize}
-  \item Proximität
-  \begin{itemize}[nolistsep]
-    \item gruppiere \textit{Subgraph}
-    \item trenne \textit{Subgraph}
-  \end{itemize}
-  \item Lage
-  \begin{itemize}[nolistsep]
-    \item \textit{Subgraph} in einer Reihe
-    \item \textit{Subgraph} in einer Spalte
-  \end{itemize}
+  \item \textbf{relative Positionierung} positioniert eine \gls{gruppe} relativ zu einer anderen \gls{gruppe}.
+  \item \textbf{absolute Positionierung} positioniert eine \gls{gruppe} absolut im Layout.
+  \item \textbf{Proximität} positioniert die Elemente einer \gls{gruppe} in festgelegter Nähe zueinander.
+  \item \textbf{Lage} positioniert die Elemente einer \gls{gruppe} in Layoutspezifischen Positionen.
 \end{itemize}
+
+\fano{Constraint bearbeiten}\label{fa:constraintsettings}
+\textbf{Ziel:} Die Parameter eines Constraints können verändert werden \\
+\textbf{Vorbedingung:} Ein Graph wurde geladen. Ein Layoutalgorithmus wurde ausgewählt. Ein Constraint wurde hinzugefügt. \\
+\textbf{Nachbedingung (Erfolg):} Die Parameter eines Constraints wurden verändert. \\
+\textbf{Nachbedingung (Fehlschlag):} Ein Parameter wurde auf einen fehlerhaften Wert gesetzt. Es wird eine Fehlermeldung ausgegeben. \\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf die veränderlichen Parameter eines Constraints. \\
+\textbf{Beschreibung:} Für ein spezifisches Constraint können die Parameter, wie die \gls{gruppe} die das Constraint betrifft nach der Erstellung geändert werden.\\
+
+\fano{Constraint löschen}\label{fa:deleteconstraint}
+\textbf{Ziel:} Ein Constraint kann gelöscht werden \\
+\textbf{Vorbedingung:} Ein Graph wurde geladen. Ein Layoutalgorithmus wurde ausgewählt. Ein Constraint wurde hinzugefügt. \\
+\textbf{Nachbedingung (Erfolg):} Das Constraint wurde gelöscht. \\
+\textbf{Nachbedingung (Fehlschlag):} - \\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf den Löschen Knopf eines Constraints. \\
+\textbf{Beschreibung:} Ein Constraint kann vom Nutzer gelöscht werden.\\
 
 \fano{Knoten und Kanten filtern}\label{fa:filter}
 \textbf{Ziel:} Knoten und Kanten können bezüglich ihres Types gefiltert werden.\\
@@ -267,6 +267,22 @@ Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung 
 Der Benutzer kann Knoten mit der Maus zur Auswahl hinzufügen.
 Auf eine Auswahl von Knoten können verschiedene Operationen ausgeführt werden. %TODO: Referenz auf Funktionen auf Knotenmengen/Subgraphen
 Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
+
+\fano{Knoten einer \gls{gruppe} hinzufügen}\label{fa:gruppe}
+\textbf{Ziel:} Einer oder mehrere Knoten können zu einer \gls{gruppe} hinzugefügt werden \\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Einer oder mehrere Knoten wurden selektiert. \\
+\textbf{Nachbedingung (Erfolg):} Die ausgewählten Knoten wurden einer \gls{gruppe} hinzugefügt \\
+\textbf{Nachbedingung (Fehlschlag):} - \\
+\textbf{Auslösende Ereignisse:} Der Benutzer wählt im Kontextmenü aus, dass die Knoten zu einer \gls{gruppe} hinzugefügt werden sollen. \\
+\textbf{Beschreibung:} Eine selektierte Menge von Knoten kann zu einer \gls{gruppe} hinzugefügt werden. Diese können dann beispielsweise für die \ref{fa:constraint_settings} verwendet werden.\\
+
+\fano{Gruppe löschen}\label{fa:deletegruppe}
+\textbf{Ziel:} Eine \gls{gruppe} entfernen \\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Es existiert eine \gls{gruppe}.\\
+\textbf{Nachbedingung (Erfolg):} Die \gls{gruppe} wurde gelöscht\\
+\textbf{Nachbedingung (Fehlschlag):} - \\
+\textbf{Auslösende Ereignisse:} Der Benutzer wählt im Kontextmenü aus, dass die \gls{gruppe} gelöscht wird. \\
+\textbf{Beschreibung:} Eine vorhandene \gls{gruppe} wird vom Benutzer gelöscht.\\
 
 \fano{Wechsel zwischen Graphen}\label{fa:graphwechsel}
 \textbf{Ziel:} Der in der Graphansicht angezeigte Graph wurde ausgetauscht. \\
