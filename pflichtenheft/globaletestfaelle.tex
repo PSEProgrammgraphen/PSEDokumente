@@ -17,29 +17,29 @@
 	\subtest
 		{Eine von JOANA exportierte Datei wurde im Dateisystem ausgewählt.}
 		{Button zum Laden der ausgewählten Datei drücken.}
-		{Der Dateiauswahldialog schließt sich und ein Dialog zur Auswahl des Layoutalgorithmus öffnet sich.}
+		{Der Dateiauswahldialog schließt sich und ein Dialog zur Auswahl der \gls{arbeitsumgebung} öffnet sich.}
 	\subtest
-		{Der Dialog zur Auswahl des Layoutalgorithmus wird angezeigt.}
-		{Der JOANA-Algorithmus wird ausgewählt und Ok gedrückt.}
-		{Der Dialog schließt sich und der \gls{callgraph} der geladen Datei wird im passenden Layout (siehe \ref{fa:layout}) angezeigt.}
+		{Der Dialog zur Auswahl der \gls{arbeitsumgebung} wird angezeigt (siehe \ref{fa:umgebung}).}
+		{Die JOANA-Umgebung wird ausgewählt und bestätigt.}
+		{Der Dialog schließt sich und der \gls{callgraph}, der geladen Datei, wird im passenden Layout (siehe \ref{fa:layout}) angezeigt.}
 \end{tabular}
 \\ \\ \\
 \test{openmethod}{Öffnen eines JOANA-Methodengraphen}
 \begin{tabular}{llp{0.9\linewidth}}
 	\subtest
 		{Ein JOANA-Graph wurde importiert, der \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}).}
-		{Doppelklick auf einen Callknoten in der Strukturansicht.}
+		{Doppelklick auf einen Callknoten in der \hyperref[gui:strukturansicht]{Strukturansicht}.}
 		{Ein neuer Tab öffnet sich, in dem der \gls{methgraph}, auf den der Knoten verweist, in passendem Layout dargestellt wird.}
 	\subtest
 		{Ein \gls{methgraph} wird dargestellt.}
-		{In der Tableiste (siehe \ref{gui:tableiste}) wird der ursprüngliche \gls{callgraph} aus Schritt 1. ausgewählt.}
+		{In der \hyperref[gui:tableiste]{Tableiste} (siehe \ref{gui:tableiste}) wird der ursprüngliche \gls{callgraph} aus Schritt 1. ausgewählt.}
 		{Der \gls{callgraph} des JOANA-Imports aus Schritt 1. wird wieder angezeigt.}
 	\subtest
 		{Der \gls{callgraph} wird angezeigt.}
 		{Rechte Maustaste auf einen Knoten eines \glspl{callgraph}.}
 		{Das Kontextmenü für den selektierten Knoten öffnet sich.}
 	\subtest
-		{Das Kontextmenü für den Knoten wird angezeigt.}
+		{Das Kontextmenü (siehe \ref{fa:kontextmenü}) für den Knoten wird angezeigt.}
 		{Den Menüeintrag Öffnen auswählen.}
 		{Ein neuer Tab öffnet sich, oder bei selber Auswahl wie in Schritt 1. wird zu dem bereits offenen Tab gewechselt, in dem der \gls{methgraph}, auf den der Knoten verweist, in passendem Layout dargestellt wird.}
 \end{tabular}
@@ -49,29 +49,29 @@
 	\subtest
 	{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt.}
 	{Selektieren eines \glspl{subgraph} durch ziehen Mit gedrückt gehaltener Maus oder einzelnem Auswählen.}
-	{Die ausgewählten Knoten und Kanten sind selektiert und visuell leicht hervorgehoben. Unter der Strukturansicht werden Informationen und Statistiken zu den selektierten Knoten und Kanten angezeigt.}
+	{Die ausgewählten Knoten und Kanten sind selektiert und visuell leicht hervorgehoben. In der \hyperref[gui:informationsansicht]{Informationsansicht} werden Informationen und Statistiken zu den selektierten Knoten und Kanten angezeigt.}
 \end{tabular}
 \\ \\ \\
 \test{navigation}{Navigation}
 \begin{tabular}{llp{0.9\linewidth}}
 	\subtest
-		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}). Der Mauszeiger befindet sich in der Graphansicht.}
+		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}). Der Mauszeiger befindet sich in der \hyperref[gui:graphansicht]{Graphansicht}.}
 		{Halten der Strg-Taste und Mausrad von sich weg schieben.}
-		{Das vorherige Sichtfeld wurde, in Richtung der Position des Mauszeigers, herangezoomt.}
+		{Das Sichtfeld wurde, in Richtung der Position des Mauszeigers, herangezoomt.}
 	\subtest
 		{Der angezeigte Graph wird leicht herangezoomt dargestellt.}
-		{Mittlere Maustaste in einem leeren Bereich der Graphansicht drücken, die Taste gedrückt halten und ziehen des Mauszeigers.}
+		{Mittlere Maustaste in einem leeren Bereich der \hyperref[gui:graphansicht]{Graphansicht} drücken, die Taste gedrückt halten und ziehen des Mauszeigers.}
 		{Das Sichtfeld wird, wenn nicht der Rand des Graphen erreicht wurde, entgegen der Richtung in die der Mauszeiger bewegt wird, verschoben.}
 	\subtest
 		{Der angezeigte Graph wurde herangezoomt und die Ansicht leicht verschoben.}
 		{Halten der Strg-Taste und Mausrad zu sich ziehen.}
 		{Das vorherige Sichtfeld wurde, in Richtung der Position des Mauszeigers, herausgezoomt.}
 	\subtest
-		{Der Graph wird in der Graphansicht angezeigt.}
+		{Der Graph wird in der \hyperref[gui:graphansicht]{Graphansicht} angezeigt.}
 		{Selektieren eines \glspl{subgraph}, durch ziehen oder einzelnem Auswählen. Rechte Maustaste auf einen der selektierten Knoten.}
 		{Das Kontextmenü für den \glspl{subgraph} öffnet sich.}
 	\subtest
-		{Das Kontextmenü wird angezeigt.}
+		{Das Kontextmenü (siehe \ref{fa:kontextmenü}) wird angezeigt.}
 		{Menüpunkt Kollabieren auswählen.}
 		{Der selektierte Subgraph wird wie in \ref{fa:kollabieren} beschrieben kollabiert und als einzelner Knoten dargestellt.}
 	\subtest
@@ -91,23 +91,52 @@
 		{Rechte Maustaste auf einen der selektierten Knoten.}
 		{Das Kontextmenü für die selektierten Knoten öffnet sich.}
 	\subtest
-		{Kontextmenü wird angezeigt.}
-		{Den Menüeintrag Constraint hinzufügen auswählen.}
+		{Kontextmenü (siehe \ref{fa:kontextmenü}) wird angezeigt.}
+		{Den Menüeintrag zu Gruppe hinzufügen auswählen.}
 		{Ein Dialog öffnet sich.}
 	\subtest
-		{Der Dialog zum Hinzufügen neuer Constraints ist geöffnet.}
-		{Auswählen des Constraints zum nebeneinander Darstellen der Knoten und bestätigen des Dialogs.}
-		{Der Dialog schließt sich. Der Graph wird neu gelayoutet und die zuvor selektierten Knoten werden nebeneinander in der gleichen Zeile dargestellt.}
+		{Der Dialog zum neuen hinzufügen einer Gruppe ist geöffnet.}
+		{Neue Gruppe hinzufügen auswählen und als Namen ''Gruppe 007'' angeben.}
+		{Die neue Gruppe erscheint im Dropdown-Menü zur Auswahl.}
+	\subtest
+		{Die neue Gruppe wird im Dropdownmenü angezeigt.}
+		{Die neu erstellte Gruppe auswählen und den Dialog bestätigen.}
+		{Der Dialog schließt sich und die selektierten Knoten sind in einer Gruppe gespeichert.}
+	\subtest
+		{Es wurden Knoten zu einer Gruppe hinzugefügt (Es existiert mind. die neu erstellte Gruppe).}
+		{Wechseln zu Einstellungen des Layoutalgorithmus und Scrollen.}
+		{Die Ansicht wechselt zu Einstellungen der Layout Constraints (siehe \ref{fig:gui_layoutsettings_constraints}).}
+	\subtest
+		{Die Ansicht Einstellungen der Layout Constraints wird angezeigt.}
+		{Hinzufügen des Constraints zum nebeneinander Darstellen für die Gruppe ''Gruppe 007'' aus Schritt 4..}
+		{Ein neuer Constraint für die Gruppe wurde in der Constraintsliste hinzugefügt.}
+	\subtest
+		{Ein neuer Constraint wurde hinzugefügt.}
+		{Anwenden der Änderungen auf den Graphen auswählen.}
+		{Die Ansicht wechselt zur \hyperref[gui:graphansicht]{Graphansicht}. Der Graph wird neu gelayoutet und die zuvor selektierten Knoten aus der Gruppe werden nebeneinander in der gleichen Zeile dargestellt. }
+\end{tabular}
+\newpage
+\test{filter}{Filtern von Kanten}
+\begin{tabular}{llp{0.9\linewidth}}
+	\subtest
+		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}).}
+		{Den Menüeintrag ''Editieren->Filter anpassen'' auswählen.}
+		{Es öffnet sich ein Dialog.}
+	\subtest
+		{Der Dialog zum Editieren der Filter wird angezeigt.}
+		{Auwählen von ''Joana'', entfernen einer der Haken aus den Checkboxen von Kantentypen und schließen des Dialogs.}
+		{Der Dialog wird geschlossen und im Graph wird er ausgewählte Kantentyp nicht mehr angezeigt.}
 \end{tabular}
 \\ \\ \\
 \test{exportSVG}{Export von einem geladenen JOANA-Graphen als SVG}
 \begin{tabular}{llp{0.9\linewidth}}
 	\subtest
 		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}).}
-		{Den Menüeintrag Datei->Export->\gls{svg} auswählen.}
+		{Den Menüeintrag ''Datei->Export->\gls{svg}'' auswählen.}
 		{Es öffnet sich ein Dateiauswahldialog.}
 	\subtest
-		{Speicherort und Name der zu exportierenden Datei wurde im Dialog angegeben.}
-		{Button zum Exportieren drücken.}
-		{Der Dateiauswahldialog wird geschlossen, eine \gls{svg}-Datei mit dem angegebenen Namen wurde am ausgewählten Ort erstellt und sie enthält die visuelle Repräsentation des gesamten Graphen, wie in der Graphansicht dargestellt.}
+		{Der Dateiauswahldialog ist geöffnet.}
+		{Den Pfad ''C:'' und den Namen ''testSVG'' angeben. Button zum Exportieren drücken.}
+		{Der Dateiauswahldialog wird geschlossen, die \gls{svg}-Datei mit dem angegebenen Namen wurde am ausgewählten Ort erstellt und sie enthält die visuelle Repräsentation des gesamten Graphen, wie in der \hyperref[gui:graphansicht]{Graphansicht} dargestellt.}
 \end{tabular}
+

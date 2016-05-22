@@ -281,11 +281,10 @@ Scroll-Balken (b): Das \gls{sichtfeld} bewegt sich relativ zur Größe des gesam
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Zoom-Grad wurde angepasst.\\
 \textbf{Nachbedingung (Fehlschlag):} Der Zoom-Grad bleibt gleich, falls ein Maximum/Minimum erreicht wurde. Es wird keine Fehlermeldung ausgegeben.\\
-\textbf{Auslösende Ereignisse:} Der Benutzer dreht am Mausrad, während der Mauszeiger innerhalb der Graphansicht liegt.\\
+\textbf{Auslösende Ereignisse:} Der Benutzer drückt STRG und dreht am Mausrad, während der Mauszeiger innerhalb der Graphansicht liegt.\\
 \textbf{Beschreibung:}\\
 Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
 
-%TODO Wie Deselektieren, shift/strg Selektieren mehrerer Knoten, welche Knoten werden beim Ziehen ausgewählt.
 \fano{Knoten selektieren}\label{fa:selekt_knoten}
 \textbf{Ziel:} Ein oder mehrere Knoten sollen der Auswahl hinzugefügt werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
@@ -297,9 +296,27 @@ Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung 
   \item Der Benutzer klickt mit der linken Maustaste in einen leeren Bereich des \gls{sichtfeld}es und zieht den Mauszeiger.
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Der Benutzer kann Knoten mit der Maus zur Auswahl hinzufügen.
-Auf eine Auswahl von Knoten können verschiedene Operationen ausgeführt werden. %TODO: Referenz auf Funktionen auf Knotenmengen/Subgraphen
+Der Benutzer kann Knoten mit der Maus zur Auswahl hinzufügen. Durch klicken und ziehen mit der linken Maustaste werden die Knoten, die innerhalb der Auswahlfläche liegen, zur Auswahl hinzugefügt.
+Auf eine Auswahl von Knoten können verschiedene Operationen ausgeführt werden.
 Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
+%TODO: Referenz auf Funktionen auf Knotenmengen/Subgraphen
+
+\fano{Knoten deselektieren}\label{fa:deselekt_knoten}
+\textbf{Ziel:} Ein oder mehrere ausgewählte Knoten sollen aus der Auswahl entfernt werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen, ein oder mehrere Knoten sind zur Auswahl hinzugefügt worden (siehe \ref{fa:selekt_knoten}).\\
+\textbf{Nachbedingung (Erfolg):} Ein oder mehrere zuvor selektierte Knoten sind deselektiert worden.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+	\item Der Benutzer klickt mit der linken Maustaste auf einen derzeit nicht selektierten Knoten.
+	\item Der Benutzer klickt mit der linken Maustaste in einen leeren Bereich des \gls{sichtfeld}es.
+\end{enumerate}
+\textbf{Beschreibung:}\\
+\begin{enumerate}[nolistsep, label=(\alph*)]
+	\item Mit dem einfachen Klicken mit der linken Maustaste auf einen derzeit nicht ausgewählten Knoten wird dieser zur Auswahl hinzugefügt (siehe \ref{fa:selekt_knoten}) und die zuvor ausgewählten Knoten werden aus der Auswahl entfernt. 
+	\item Mit dem einfachen Klicken mit der linken Maustaste in einen leeren Bereich des \gls{sichtfeld}es werden die sich momentan in der Auswahl befindlichen Knoten aus dieser entfernt.
+\end{enumerate}
+
 
 \fano{Knoten einer \gls{gruppe} hinzufügen}\label{fa:gruppe}
 \textbf{Ziel:} Einer oder mehrere Knoten können zu einer \gls{gruppe} hinzugefügt werden. \\
