@@ -11,16 +11,16 @@
 \test{importJOANA}{Import und Darstellung von einem JOANA Graphen} 
 \begin{tabular}{llp{0.9\linewidth}}
 	\subtest
-		{Graph von Ansicht ist gestartet und es wird kein Graph dargestellt}
-		{Den Menüeintrag Datei->Import auswählen}
+		{Graph von Ansicht ist gestartet und es wird kein Graph dargestellt.}
+		{Den Menüeintrag Datei->Import auswählen.}
 		{Ein Dateiauswahldialog wird geöffnet.}
 	\subtest
-		{Eine von JOANA exportierte Datei wurde im Dateisystem ausgewählt}
-		{Button zum Laden der ausgewählten Datei drücken}
+		{Eine von JOANA exportierte Datei wurde im Dateisystem ausgewählt.}
+		{Button zum Laden der ausgewählten Datei drücken.}
 		{Der Dateiauswahldialog schließt sich und ein Dialog zur Auswahl des Layoutalgorithmus öffnet sich.}
 	\subtest
-		{Der Dialog zur Auswahl des Layoutalgorithmus wird angezeigt}
-		{Der JOANA-Algorithmus wird ausgewählt und Ok gedrückt}
+		{Der Dialog zur Auswahl des Layoutalgorithmus wird angezeigt.}
+		{Der JOANA-Algorithmus wird ausgewählt und Ok gedrückt.}
 		{Der Dialog schließt sich und der \gls{callgraph} der geladen Datei wird im passenden Layout (siehe \ref{fa:layout}) angezeigt.}
 \end{tabular}
 \\ \\ \\
@@ -29,26 +29,26 @@
 	\subtest
 		{Ein JOANA-Graph wurde importiert, der \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}).}
 		{Doppelklick auf einen Callknoten in der Strukturansicht.}
-		{Ein neuer Tab öffnet sich, in dem der \gls{methgraph} auf den der Knoten verweist in passendem Layout dargestellt wird.}
+		{Ein neuer Tab öffnet sich, in dem der \gls{methgraph}, auf den der Knoten verweist, in passendem Layout dargestellt wird.}
 	\subtest
 		{Ein \gls{methgraph} wird dargestellt.}
-		{In der Tableiste über der Graphansicht den ursprünglichen \glspl{callgraph} aus Schritt 1. auswählen.}
+		{In der Tableiste (siehe \ref{gui:tableiste}) wird der ursprüngliche \gls{callgraph} aus Schritt 1. ausgewählt.}
 		{Der \gls{callgraph} des JOANA-Imports aus Schritt 1. wird wieder angezeigt.}
 	\subtest
 		{Der \gls{callgraph} wird angezeigt.}
-		{Rechte Maustaste auf einen Callknoten.}
+		{Rechte Maustaste auf einen Knoten eines \glspl{callgraph}.}
 		{Das Kontextmenü für den selektierten Knoten öffnet sich.}
 	\subtest
 		{Das Kontextmenü für den Knoten wird angezeigt.}
 		{Den Menüeintrag Öffnen auswählen.}
-		{Ein neuer Tab öffnet sich, oder bei selber Auswahl wie in Schritt 1. wird zu dem bereits offenen Tab gewechselt, in dem der \gls{methgraph} auf den der Knoten verweist in passendem Layout dargestellt wird.}
+		{Ein neuer Tab öffnet sich, oder bei selber Auswahl wie in Schritt 1. wird zu dem bereits offenen Tab gewechselt, in dem der \gls{methgraph}, auf den der Knoten verweist, in passendem Layout dargestellt wird.}
 \end{tabular}
 \\ \\ \\
 \test{select}{Selektieren mehrerer Knoten und Kanten}
 \begin{tabular}{llp{0.9\linewidth}}
 	\subtest
 	{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt.}
-	{Selektieren eines \glspl{subgraph}, durch ziehen oder einzelnem Auswählen.}
+	{Selektieren eines \glspl{subgraph} durch ziehen Mit gedrückt gehaltener Maus oder einzelnem Auswählen.}
 	{Die ausgewählten Knoten und Kanten sind selektiert und visuell leicht hervorgehoben. Unter der Strukturansicht werden Informationen und Statistiken zu den selektierten Knoten und Kanten angezeigt.}
 \end{tabular}
 \\ \\ \\
@@ -57,7 +57,7 @@
 	\subtest
 		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}). Der Mauszeiger befindet sich in der Graphansicht.}
 		{Halten der Strg-Taste und Mausrad von sich weg schieben.}
-		{Das vorherige Sichtifeld wurde, in Richtung der Position des Mauszeigers, herangezoomt.}
+		{Das vorherige Sichtfeld wurde, in Richtung der Position des Mauszeigers, herangezoomt.}
 	\subtest
 		{Der angezeigte Graph wird leicht herangezoomt dargestellt.}
 		{Mittlere Maustaste in einem leeren Bereich der Graphansicht drücken, die Taste gedrückt halten und ziehen des Mauszeigers.}
@@ -65,7 +65,7 @@
 	\subtest
 		{Der angezeigte Graph wurde herangezoomt und die Ansicht leicht verschoben.}
 		{Halten der Strg-Taste und Mausrad zu sich ziehen.}
-		{Das vorherige Sichtifeld wurde, in Richtung der Position des Mauszeigers, herausgezoomt.}
+		{Das vorherige Sichtfeld wurde, in Richtung der Position des Mauszeigers, herausgezoomt.}
 	\subtest
 		{Der Graph wird in der Graphansicht angezeigt.}
 		{Selektieren eines \glspl{subgraph}, durch ziehen oder einzelnem Auswählen. Rechte Maustaste auf einen der selektierten Knoten.}
@@ -109,5 +109,5 @@
 	\subtest
 		{Speicherort und Name der zu exportierenden Datei wurde im Dialog angegeben.}
 		{Button zum Exportieren drücken.}
-		{Der Dateiauswahldialog wird geschlossen, eine \gls{svg}-Datei mit dem angegebenen Namen wurde am ausgewählten Ort erstellt und sie enthält die visuelle Repräsentation des gesamten Graphen wie in der Graphansicht dargestellt wurde.}
+		{Der Dateiauswahldialog wird geschlossen, eine \gls{svg}-Datei mit dem angegebenen Namen wurde am ausgewählten Ort erstellt und sie enthält die visuelle Repräsentation des gesamten Graphen, wie in der Graphansicht dargestellt.}
 \end{tabular}
