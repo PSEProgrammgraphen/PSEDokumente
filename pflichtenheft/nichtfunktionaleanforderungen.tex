@@ -1,12 +1,10 @@
 \chapter{Nichtfunktionale Anforderungen}
 \label{ch:nfa}
 
-
 \setcounter{nfanr}{10}
 \newcommand{\nfano}{\ifnum\value{nfanr}<10 00\else\ifnum\value{nfanr}<100 0\fi\fi\arabic{nfanr}}
 \newcommand\nfa[2]{\namedlabel{nfa:#1}{/NFA\nfano/}\addtocounter{nfanr}{10}: & #2 \\ [1ex] }
 
-%TODO: Durchlesen und alle unklaren Begriffe/Fachwörter ins Glossar hinzufügen
 \section{Graph von Ansicht}
 
 \begin{tabular}{lp{0.9\linewidth}}
@@ -20,10 +18,9 @@
 \setcounter{nfanr}{100}
 \begin{tabular}{lp{0.9\linewidth}}
   \nfa{sprachwechsel}{Das Programm soll so entworfen werden, dass ein einfacher Sprachwechsel der \gls{gui} möglich ist.}
-  \nfa{cmdfehler}{Falls das Programm über die Kommandozeile gestartet wird und falsche Parameter übergeben werden, stürzt das Programm nicht ab. Es wird eine informative Fehlermeldung zurückgegeben.} %TODO: Ähnliche Definition für GUI?
+  \nfa{cmdfehler}{Falls das Programm über die Kommandozeile gestartet wird und falsche Parameter übergeben werden, stürzt das Programm nicht ab. Es wird eine informative Fehlermeldung zurückgegeben.}
 \end{tabular}
 
-%TODO: alle NFA durchgehen und die, die eher funktional sind, zu funktionalen hinzufügen. Auf wunsch/pflicht achten!!!
 \section{Graphlayout für \gls{joana}}\label{sec:nfajoana}
 \setcounter{nfanr}{200}
 
@@ -32,5 +29,5 @@
   \nfa{kantenabstand}{Kanten sollen nicht direkt übereinander liegen, sondern immer mit einem gewissen Mindestabstand nebeneinander.}
   \nfa{cutknotenknoten}{Die graphische Darstellung eines Knoten darf sich nicht mit der eines anderen Knoten überschneiden, so dass Teile eines Knoten verdeckt wären.}
   \nfa{cuttext}{Beschriftungen von Knoten dürfen sich nicht mit anderen Objekten überschneiden, sodass Teile der Beschriftung verdeckt/unkenntlich werden.}
-  %TODO: Ein testbares Maß für maximale Kantenkreuzungen finden.
+  \nfa{kantekreuz}{Die Anzahl der sich kreuzenden Kanten übersteigt nicht das Vierfache des optimalen Werts.}
 \end{tabular}
