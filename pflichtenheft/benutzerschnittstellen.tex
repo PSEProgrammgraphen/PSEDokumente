@@ -27,6 +27,8 @@ Die graphische Oberfläche bietet dem Benutzer ein interaktives Interface und ei
 
 \subsection{Entwürfe}
 
+Bemerkungen zu den folgenden Entwurfsabbildungen: Die Funktionalität weicht in der Implementierung eventuell von der Darstellung hier ab. Die Darstellung dient lediglich einer generellen Übersicht der GUI und ist als solche als Prototyp zu verstehen.
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=380pt]{resourcen/gui_view_treeview.png}
@@ -146,3 +148,17 @@ Die graphische Oberfläche bietet dem Benutzer ein interaktives Interface und ei
   \caption{Übersichtsanzeige des aktuellen Graphen}
   \label{fig:gui_view_minimap}
 \end{figure}
+
+\begin{table}[!h]
+  \caption{\gls{gui} Komponenten Referenzen}
+  \begin{tabular}{lll}
+    GUI Komponente & Abbildung & Referenznummer\\
+    Graphansicht\label{gui:graphansicht} & \ref{fig:gui_view_treeview} & 1 \\
+    Strukturansicht\label{gui:strukturansicht} & \ref{fig:gui_view_treeview} & 2 \\
+    Tableiste\label{gui:tableiste} & \ref{fig:gui_view_treeview} & 3\\
+    Menüleiste\label{gui:menuleiste} & \ref{fig:gui_view_treeview} & 4\\
+    Hauptansicht(Fenster)\label{gui:hauptansicht} & \ref{fig:gui_view_treeview} & 5\\
+    Informationsansicht\label{gui:informationsansicht} & \ref{fig:gui_view_showInfoInProperties_node} & 1 \\
+  \end{tabular}
+  \label{tab:guicomponents}
+\end{table}
