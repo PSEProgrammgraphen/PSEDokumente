@@ -44,37 +44,50 @@
 		{Ein neuer Tab öffnet sich, oder bei selber Auswahl wie in Schritt 1. wird zu dem bereits offenen Tab gewechselt, in dem der \gls{methgraph} auf den der Knoten verweist in passendem Layout dargestellt wird.}
 \end{tabular}
 \\ \\ \\
-\test{navigation}{Navigation und Zoom}
-\begin{tabular}{llp{0.9\linewidth}}
-	\subtest
-		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \glspl{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}).}
-		{Den Menüeintrag Ansicht->Zoom->Erhöhen auswählen.}
-		{Der Mauszeiger ändert sich zu einer Lupe mit einem Plus in der Linse.}
-	\subtest
-		{Der Mauszeiger zeigt eine Lupe und befindet sich über der Graphansicht.}
-		{Linksklick innerhalb der Graphansicht, in die nähe eines \glspl{subgraph}}
-		{Das vorherige Sichtifeld wurde, in Richtung der Knoten und Kanten die in der Nähe des Mauszeigers beim Klick waren, herangezoomt.}
-	\subtest
-		{Der angezeigte Graph wird leicht herangezoomt dargestellt.}
-		{Mittlere Maustaste in einem leeren Bereich der Graphansicht drücken und halten und ziehen des Mauszeigers.}
-		{Das Sichtfeld wird, wenn nicht der Rand des Graphen erreicht wurde entgegen der Richtung in die der Mauszeiger bewegt wird, verschoben.}
-%	\subtest{herauszoomen}
-%	\subtest{kollabieren}
-%	\subtest{ausklappen}
-\end{tabular}
-\\ \\ \\
 \test{select}{Selektieren mehrerer Knoten und Kanten}
 \begin{tabular}{llp{0.9\linewidth}}
 	\subtest
-	{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \glspl{callgraph} wird angezeigt.}
+	{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt.}
 	{Selektieren eines \glspl{subgraph}, durch ziehen oder einzelnem Auswählen.}
 	{Die ausgewählten Knoten und Kanten sind selektiert und visuell leicht hervorgehoben. Unter der Strukturansicht werden Informationen und Statistiken zu den selektierten Knoten und Kanten angezeigt.}
+\end{tabular}
+\\ \\ \\
+\test{navigation}{Navigation}
+\begin{tabular}{llp{0.9\linewidth}}
+	\subtest
+		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}). Der Mauszeiger befindet sich in der Graphansicht.}
+		{Halten der Strg-Taste und Mausrad von sich weg schieben.}
+		{Das vorherige Sichtifeld wurde, in Richtung der Position des Mauszeigers, herangezoomt.}
+	\subtest
+		{Der angezeigte Graph wird leicht herangezoomt dargestellt.}
+		{Mittlere Maustaste in einem leeren Bereich der Graphansicht drücken, die Taste gedrückt halten und ziehen des Mauszeigers.}
+		{Das Sichtfeld wird, wenn nicht der Rand des Graphen erreicht wurde, entgegen der Richtung in die der Mauszeiger bewegt wird, verschoben.}
+	\subtest
+		{Der angezeigte Graph wurde herangezoomt und die Ansicht leicht verschoben.}
+		{Halten der Strg-Taste und Mausrad zu sich ziehen.}
+		{Das vorherige Sichtifeld wurde, in Richtung der Position des Mauszeigers, herausgezoomt.}
+	\subtest
+		{Der Graph wird in der Graphansicht angezeigt.}
+		{Selektieren eines \glspl{subgraph}, durch ziehen oder einzelnem Auswählen. Rechte Maustaste auf einen der selektierten Knoten.}
+		{Das Kontextmenü für den \glspl{subgraph} öffnet sich.}
+	\subtest
+		{Das Kontextmenü wird angezeigt.}
+		{Menüpunkt Kollabieren auswählen.}
+		{Der selektierte Subgraph wird wie in \ref{fa:kollabieren} beschrieben kollabiert und als einzelner Knoten dargestellt.}
+	\subtest
+		{Ein Subgraph wurde im Graph kollabiert.}
+		{Rechte Maustaste auf den Knoten der den \glspl{subgraph} darstellt.}
+		{Das Kontextmenü für den Knoten öffnet sich.}
+	\subtest
+		{Das Kontextmenü wird angezeigt.}
+		{Menüpunkt Ausklappen auswählen.}
+		{Der Knoten wird wie in \ref{fa:ausklappen} beschrieben ausgeklappt und wieder als \gls{subgraph} dargestellt. Die gesamte Ansicht und Layout ähnelt der aus Schritt 4..}
 \end{tabular}
 \\ \\ \\
 \test{constraint}{Constraint zu Knoten eines geladenen Graphen hinzufügen}
 \begin{tabular}{llp{0.9\linewidth}}
 	\subtest
-		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \glspl{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}). Mindestens zwei Knoten auf unterschiedlichen Ebenen wurden selektiert (siehe Test \ref{test:select})}
+		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}). Mindestens zwei Knoten auf unterschiedlichen Ebenen wurden selektiert (siehe Test \ref{test:select})}
 		{Rechte Maustaste auf einen der selektierten Knoten.}
 		{Das Kontextmenü für die selektierten Knoten öffnet sich.}
 	\subtest
@@ -90,7 +103,7 @@
 \test{exportSVG}{Export von einem geladenen JOANA-Graphen als SVG}
 \begin{tabular}{llp{0.9\linewidth}}
 	\subtest
-		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \glspl{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}).}
+		{Ein JOANA-Graph wurde importiert und einer der enthaltenen \glspl{methgraph} oder \gls{callgraph} wird angezeigt (siehe Test \ref{test:importJOANA}, \ref{test:openmethod}).}
 		{Den Menüeintrag Datei->Export->\gls{svg} auswählen.}
 		{Es öffnet sich ein Dateiauswahldialog.}
 	\subtest
