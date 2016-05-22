@@ -225,16 +225,9 @@ Es wird das \gls{graphml}-Format als Import-Format unterstützt. Für eine genau
 Falls der Benutzer die Import-Funktion über die Menüleiste ausführt, öffnet sich zuerst ein Dateiverzeichnis-Menü.
 Der Benutzer wählt die zu importierende Datei aus.\\
 Falls die Datei beim Programmstart als Argument angegeben wurde startet der Import-Vorgang automatisch.
-Die in der Graphdatei beschriebene Graphen werden in eine interne Repräsentation, welche unabhängig vom importierten Dateiformat ist, überführt. %TODO: Referenz zu Grafik mit Repräsentationen
+Die in der Graphdatei beschriebene Graphen werden in eine interne Repräsentation, welche unabhängig vom importierten Dateiformat ist, überführt (siehe \ref{fig:aufbaudatenfluss}).
 Die Graphen werden nach Abschluss des Imports, wie in \ref{fa:graphen} beschrieben, dargestellt.\\
 Weitere Import-Optionen können durch Plugins bereitgestellt werden (siehe \ref{s:import}).
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.4]{resourcen/fa-import.1}
-  \caption{Import}
-  \label{fig:import}
-\end{figure} %TODO: Outdated
 
 \fano{Export als Bilddatei}\label{fa:export_img}
 \textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden.\\
@@ -249,13 +242,6 @@ Es erscheint ein Dateisystem-Menü, in welchem der Pfad zum Abspeichern der Bild
 Eventuell wird der Benutzer noch nach weiteren, zur Abspeicherung relevanten, Details gefragt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
 Es wird versucht, die Bilddatei am ausgewählten Ort abzuspeichern.
 Weitere Export-Optionen können durch Plugins bereitgestellt werden (siehe \ref{s:export}).
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.4]{resourcen/fa-export.1}
-  \caption{Export}
-  \label{fig:export}
-\end{figure}
 
 \subsection{Steuerung}
 \setcounter{fanr}{200}
