@@ -7,7 +7,7 @@
 \newcommand{\subfano}[1]{\subsubsection{#1}\addtocounter{fanr}{1}}
 \renewcommand\thesubsubsection{/FA\ifnum\value{fanr}<10 00\else\ifnum\value{fanr}<100 0\fi\fi\arabic{fanr}/}
 
-\section{Graph von Ansicht}
+\section{Pflichtfunktionen}
 
 \subsection{Allgemein}
 
@@ -274,7 +274,10 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
 \textbf{Nachbedingung (Erfolg):} Der ausgewählte Graph wird in der Graphansicht angezeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
-Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus.\\
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus.
+  \item Der Benutzer wählt über die Tabansicht einen bereits geöffneten Graphen %TODO: GUI Referenz 
+\end{enumerate}\\
 \textbf{Beschreibung:}\\
 Das Produkt unterstützt Graphdateien, welche mehr als einen Graphen beschreiben.
 Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
