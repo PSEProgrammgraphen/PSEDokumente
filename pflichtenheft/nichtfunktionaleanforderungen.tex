@@ -3,38 +3,37 @@
 
 
 \setcounter{nfanr}{10}
-\newcommand{\nfano}{\ifnum\value{nfanr}<10 00\else\ifnum\value{nfanr}<100 0\fi\fi\arabic{nfanr}\addtocounter{nfanr}{10}}
-\newcommand\nfa[2]{\namedlabel{nfa:#1}{\textbf{/NFA\nfano/}}: & #2 \\ [1ex] }
+\newcommand{\nfano}{\ifnum\value{nfanr}<10 00\else\ifnum\value{nfanr}<100 0\fi\fi\arabic{nfanr}}
+\newcommand\nfa[2]{\namedlabel{nfa:#1}{/NFA\nfano/}\addtocounter{nfanr}{10}: & #2 \\ [1ex] }
 
 %TODO: Durchlesen und alle unklaren Begriffe/Fachwörter ins Glossar hinzufügen
 \section{Graph von Ansicht}
 
 \begin{tabular}{lp{0.9\linewidth}}
-  \nfa{maxknoten}{Es werden Graphen mit bis zu 1000 Knoten unterstützt. Dies entspricht nicht der maximalen Knotenzahl in einer unterstützten Graphdateien.}
+  \nfa{maxknoten}{Es werden Graphen mit bis zu 1000 Knoten unterstützt. Dies entspricht nicht der maximalen Knotenzahl in einer unterstützten Graphdateien (siehe dafür \ref{nfa:maxknotentotal}).}
   \nfa{maxknotentotal}{Es werden Graphdateien mit nicht mehr als 10.000 Knoten insgesamt unterstützt.}
-  \nfa{maxkanten}{Die maximal unterstützte Kantenanzahl pro Graph entspricht der 3-4 fachen Knotenzahl.}
-  \nfa{algowechsel}{Der Algorithmus, welcher das Graphlayout bestimmt, soll einfach auswechselbar sein.}
+  \nfa{maxkanten}{Die maximal unterstützte Kantenanzahl pro Graph entspricht der 3-4 fachen Knotenzahl aus \ref{nfa:maxknoten} und \ref{nfa:maxknotentotal}.}
+  \nfa{algowechsel}{Der Algorithmus, welcher das Graphlayout berechnet, soll einfach auswechselbar sein.}
 \end{tabular}
 
 \section{User Interface}\label{sec:nfaui}
 \setcounter{nfanr}{100}
 \begin{tabular}{lp{0.9\linewidth}}
-  \nfa{sprachwechsel}{Das Programm soll so entworfen werden, dass ein einfacher Sprachwechsel der GUI möglich ist.}
+  \nfa{sprachwechsel}{Das Programm soll so entworfen werden, dass ein einfacher Sprachwechsel der \gls{gui} möglich ist.}
   \nfa{cmdfehler}{Falls das Programm über die Kommandozeile gestartet wird und falsche Parameter übergeben werden, stürzt das Programm nicht ab. Es wird eine informative Fehlermeldung zurückgegeben.} %TODO: Ähnliche Definition für GUI?
 \end{tabular}
 
+%TODO: alle NFA durchgehen und die, die eher funktional sind, zu funktionalen hinzufügen. Auf wunsch/pflicht achten!!!
 \section{Graphlayout für \gls{joana}}\label{sec:nfajoana}
 \setcounter{nfanr}{200}
 
 \begin{tabular}{lp{0.9\linewidth}}
   \nfa{berechzeit}{Die Berechnung eines Graphlayouts dauert höchstens 2 Minuten.}
-  \nfa{graphsicht}{Es existieren zwei Graphansichten. Einmal ein \gls{callgraph} welcher die Abhängigkeiten der Methoden darstellt und ein \gls{methgraph} welcher den Steuer- und Datenfluss innerhalb einer Methode visualisiert.}
   \nfa{layerspecs}{Bei einem \gls{methgraph} soll der Entry-Knoten auf dem obersten Layer dargestellt werden, und ein Layer darunter die Parameter für die Methode in fester Reihenfolge.}
   \nfa{methaufrufe}{Bei einem Knoten, welcher einen Methodenaufruf darstellt, sollen die dazugehörigen Knoten (Parameter und Rückgabewert) ein Layer unter dem Methodenaufruf stehen.}
   \nfa{feldzugr}{Feldzugriffe werden bei \gls{joana} immer gleich dargestellt. Diese Zugriffe sollen erkannt werden und die dazugehörigen Knoten sollen automatisch immer im gleichen Muster angezeigt werden.}
   \nfa{kantenabstand}{Kanten sollen nicht direkt übereinander liegen, sondern immer mit einem gewissen Mindestabstand nebeneinander.}
   \nfa{cutknotenknoten}{Die graphische Darstellung eines Knoten darf sich nicht mit der eines anderen Knoten überschneiden, so dass Teile eines Knoten verdeckt wären.}
-  \nfa{cutknotenkante}{Kanten dürfen nicht durch Knoten verlaufen.}
-  \nfa{cuttext}{Beschriftungen von Knoten oder Kanten dürfen sich nicht mit anderen Objekten überschneiden, sodass Teile der Beschriftung verdeckt/unkenntlich werden.}
+  \nfa{cuttext}{Beschriftungen von Knoten dürfen sich nicht mit anderen Objekten überschneiden, sodass Teile der Beschriftung verdeckt/unkenntlich werden.}
   %TODO: Ein testbares Maß für maximale Kantenkreuzungen finden.
 \end{tabular}

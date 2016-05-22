@@ -7,11 +7,10 @@
 \newcommand{\subfano}[1]{\subsubsection{#1}\addtocounter{fanr}{1}}
 \renewcommand\thesubsubsection{/FA\ifnum\value{fanr}<10 00\else\ifnum\value{fanr}<100 0\fi\fi\arabic{fanr}/}
 
-\section{Graph von Ansicht}
+\section{Pflichtfunktionen}
 
 \subsection{Allgemein}
 
-%TODO Anzeige unterscheiden: direkt nach Import(nicht gelayouted), nach layout(gelayouted).
 \fano{Anzeige von Graphen}\label{fa:graphen}
 \textbf{Ziel:} Ein Graph soll in der Graphansicht angezeigt werden.\\
 \textbf{Vorbedingung:} -\\
@@ -24,7 +23,16 @@
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Importieren (a): Der in der Graphdatei zuerst beschriebene Graph wird in der Graphansicht angezeigt.\\
-Auswahl (b): Der ausgewählte Graph wird in der Graphansicht angezeigt.
+Auswahl (b): Der ausgewählte Graph wird in der Graphansicht angezeigt.\\
+Das Anzeigen eines Graphen beinhaltet das Zeichnen der Knoten an den ihnen zugeordneten Positionen und den Kanten
+nach den ihnen zugeordneten Kurven.
+Die Zuordnung der Positionen und Kurven erfolgt über die Layout-Funktion (siehe \ref{fa:layout}).\\
+Das Erscheinungsbild von Knoten (z.B. Farbe und Größe) und Kanten (z.B. Farbe und Breite) kann nach Typ des
+Knoten oder der Kante variieren, ist aber nicht vom Benutzer manuell anpassbar.
+Für Beispiele von Kantentypen siehe \ref{fa:filter}. Beispiele für Knotentypen sind Entry-Knoten, Actual-in-Knoten, Actual-out-Knoten, etc..\\
+Knoten und Kanten gleichen Types in Call- und Methodengraphen werden in gleichen Farben dargestellt.\\
+Weitere Zuordungen von Knoten- und Kantentypen mit dem Erscheinungsbild der jeweiligen Elemente können von
+Plugins hinzugefügt werden (siehe \ref{s:darstellung}).
 
 %TODO Definition in Glossar, bzw. nötig?
 \fano{Anzeige von geschachtelten Graphen}\label{fa:hierarchgraph}
@@ -41,34 +49,53 @@ Auswahl (b): Der ausgewählte Graph wird in der Graphansicht angezeigt.
 \textbf{Beschreibung:}\\
 Geschachtelte Graphen werden in der Graphansicht als Knoten dargestellt.
 Wenn der Benutzer eines der Ereignisse auslöst, wird der Graph in der Graphansicht angezeigt.
-Ein geschachtelter Graph wird in der Strukturansicht als Kind des Graphen dargestellt, der ihn enthält. Für ein Beispiel siehe hier:\\ %TODO: Referenz von GUI Bild mit Struckturansicht
+Ein geschachtelter Graph wird in der Strukturansicht als Kind des Graphen dargestellt, der ihn enthält. Für ein Beispiel siehe hier:\\ %TODO: Referenz von GUI Bild mit Strukturansicht
 Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level''-Graph behandelt. %TODO Top-Level in Glossar
+Ein Methodengraph kann als \gls{subgraph} des Callgraphen geöffnet werden.
 
 
 \fano{Graphen layouten}\label{fa:layout}
 \textbf{Ziel:} Ein Graph soll nach bestimmten Vorgaben bzw. einem bestimmten Muster angeordnet werden.\\
 %TODO Muster beziehen sich vlt auf constrains/bzw. auf die parametriesierung möglicher anderer Layoutalgos
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet, Kanten wurden feste Verläufe zugewiesen.\\
+\textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet, Kanten wurden feste Kurven zugewiesen.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
-%TODO wird ein popup vor dem layouten geöffnet
 Der Benutzer wählt über die Menüleiste ein Layout aus.\\
-%TODO keine generischen graphen werden unterstützt
 \textbf{Beschreibung:}\\
-Nach der Auswahl wird das Layout berechnet. Hierbei kann es zu Verzögerungen kommen. (siehe \ref{nfa:berechzeit})
-Nach der Berechnung wird der Graph neugezeichnet. Layouts sind nicht in Graph von Ansicht enthalten und können durch Plugins hinzugefügt werden.
-Dem Produkt werden über das JOANA-Plugin Layout zur Darstellung von, von \gls{joana} berechneten, \gls{pdg}s mitgeliefert.
+Nach der Auswahl des Layouts öffnet sich ein Fenster zur Parametrisierung des Layout-Algorithmus.
+Beispiele für Parameter sind die Ebenenanzahl oder die maximale Anzahl an Knoten auf jeder Ebene bei einem hierarchischen Layout.
+Nachdem der Benutzer seine gewünschten Einstellungen bestätigt hat, wird das Layout berechnet. Hierbei kann es zu Verzögerungen kommen (siehe \ref{nfa:berechzeit}).
+Nach der Berechnung wird der Graph neu gezeichnet.
+Graph von Ansicht enthält zwei hierarchische Layouts:
+\begin{itemize}
+  \item \textbf{\gls{callgraph}-Layout:} Für das Layouten von \glspl{callgraph} gedacht. Beinhaltet folgende spezielle Regeln:
+    \begin{itemize}
+      \item Mehrere Instanzen der selben Java-Methode werden gruppiert.
+    \end{itemize}
+  \item \textbf{\gls{methgraph}-Layout:} Für das Layouten von \glspl{methgraph} gedacht. Beinhaltet folgende spezielle Regeln:
+    \begin{itemize}
+      \item Auf Layer 0 (dem obersten Layer) wird nur der Entry-Knoten der Methode platziert.
+      \item Auf Layer 1 werden nur die Knoten der Parameter der Methode platziert.
+      \item Zu einem Methodenaufruf gehörende Knoten (z.B. Actual-in und Actual-out) werden auf dem Layer direkt unter dem Layer des Call-Knoten platziert.
+      \item Zu einem Methodenaufruf gehörende Knoten (Actual-in, Actual-out etc.) werden direkt nebeneinander und in der Reihenfolge der Parameter der Methode platziert.
+      \item Der Call-Knoten wird in dem Bereich oberhalb der Parameter platziert.
+      \item Knoten die einen Feldzugriff darstellen, werden immer nahe beieinander und in einem einheitlichen Muster platziert. %TODO: Beispielbilder aus E-Mail einfügen?
+      \item Feldzugriffskanten werden senkrecht gezeichnet.
+    \end{itemize}
+\end{itemize}
+Beide Layouts müssen alle in \ref{sec:nfajoana} beschriebenen Anforderungen erfüllen.
+Weitere Layouts können durch Plugins hinzugefügt werden (siehe \ref{s:layoutalgo})
 
 %TODO wie wird der Subgraph gewählt? Wie werden Constrains gewählt? Dialog?
 \fano{Constraints auswählen}\label{fa:constraints}
-\textbf{Ziel:} Der Nutzer kann Constraints auswählen, die auf den \gls{Subgraph}en beim layouten (siehe \ref{fa:layout}) verwendet werden.\\
+\textbf{Ziel:} Der Nutzer kann Constraints auswählen, die auf den \gls{subgraph}en beim layouten (siehe \ref{fa:layout}) verwendet werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde geladen.\\
 \textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
 \textbf{Nachbedingungen (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Benutzer klickt in der Hauptansicht auf Constraint hinzufügen.\\
 \textbf{Beschreibung: } \\
-Der Benutzer legt eine Anzahl von Constraints für einen \gls{Subgraph}en aus, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}).
+Der Benutzer legt eine Anzahl von Constraints für einen \gls{subgraph}en aus, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}).
 Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die funktionalität geliefert wird
 \begin{itemize}[nolistsep]
   \item Positionierung
@@ -99,8 +126,8 @@ Dem Produkt mitgeliefert werden folgende Constraints: %TODO: spezifizeren wo die
 \textbf{Auslösende Ereignisse:}
 Der Benutzer wählt die Filter-Funktion aus der Menüleiste aus.\\
 \textbf{Beschreibung:}\\
-Der Benutzer kann aus einer Reihe von Filtern auswählen.
-Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
+Der Benutzer kann aus einer Reihe von Filtern auswählen.\\
+Folgende Filter für JOANA-Methodengraphen sind im Produkt enthalten:
 \begin{itemize}[nolistsep]
   \item Kontrollfluss
   \item Kontrollabhängigkeit
@@ -110,53 +137,87 @@ Mitgeliefert werden über das JOANA-Plugin folgende Filter: % Referenz Plugin
   \item Threadinterferenzen
 \end{itemize}
 Die Kanten werden entsprechend aus- oder eingeblendet.\\
-\textbf{Alternative:}
-Der Graph wird neu gezeichnet um kompakter zu werden, oder um Platz für neue Kanten zu schaffen.
+Der Graph wird nicht automatisch neugezeichnet. Eine weitläufige Darstellung beim Ausblenden oder viele Kantenkreuzungen beim Einblenden können vorkommen.
+Der Benutzer kann dann bei Bedarf den Layoutalgorithmus ein weiteres Mal ausführen (siehe \ref{fa:layout}) um das Layout auf die
+veränderte Struktur der Darstellung des Graphen anzupassen.\\
+
+\fano{Kollabieren von \glspl{subgraph}}\label{fa:kollabieren}
+\textbf{Ziel:} \glspl{subgraph} können zur Übersicht eingeklappt (kollabiert) werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der zuvor selektierte Subgraph wurde in einen Knoten kollabiert.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Nutzer hat einen \glspl{subgraph} selektiert (siehe \ref{fa:selekt_knoten}).
+Über das Kontextmenü wählt er die Layout-Funktion für das Kollabieren von \glspl{subgraph}.\\
+\textbf{Beschreibung:}\\
+Alle Kanten mit genau einem Knoten, der nicht in dem \gls{subgraph} liegt, werden als Kanten zwischen dem entstandenen Knoten und dem Knoten außerhalb der Menge gezeichnet.\\
+Die Darstellung des neuen Knotens überschneidet keine andere Knoten.\\
+Da sich aber beim Kollabieren von größeren \gls{subgraph} das Bild des gesamten Graphen stark ändert, wird nicht garantiert,
+dass es nicht zu überdurschnittlichen vielen Kantenkreuzungen oder langen Kanten kommt.\\
+Der Benutzer kann dann bei Bedarf den Layoutalgorithmus ein weiteres Mal ausführen (siehe \ref{fa:layout}) um das Layout auf die
+veränderte Struktur der Darstellung des Graphen anzupassen.\\
+Ein kollabierter \gls{subgraph} kann wieder ausgeklappt werden (siehe \ref{fa:ausklappen}).
+
+
+\fano{Ausklappen von kollabierten \glspl{subgraph}}\label{fa:ausklappen}
+\textbf{Ziel:} Eingeklappte \glspl{subgraph} können bei Bedarf wieder ausgeklappt werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der Knoten, der den Graphen dargestellt hat wird entfernt. Die im \gls{subgraph} enthaltenen Knoten werden wie vor dem Kollabieren wieder eingezeichnet.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Nutzer wählt die Ausklapp-Funktion aus dem Kontextmenü eines Knotens, der einen eingeklappten Graphen repräsentiert.\\
+\textbf{Beschreibung:}\\
+Die ausgeklappten Knoten werden an der Position, die sie vor dem Kollabieren einnahmen,  wieder eingezeichnet.
+Kanten zwischen den Knoten des \glspl{subgraph} werden wie vor dem Kollabieren eingezeichnet.
+Kanten zwischen Knoten des \glspl{subgraph} und anderen Knoten werden nicht wie vor dem Kollabieren gezeichnet,
+falls sich die Position des anderen Knotens seit dem Kollabieren geändert hat, z.B. wenn er kollabiert wurde oder der Graph neu gelayoutet wurde.
+Nach dem Ausklappen kann es bei der Darstellung zu Überlagerungen kommen.
+Ist das der Fall kann der Nutzer über die Layout-Funktion den Graphen neu layouten (siehe \ref{fa:layout}).
 
 \subsection{Input/Output}
 \setcounter{fanr}{100}
 
-%TODO Internes Format definieren und einsetzen.
 \fano{Graph aus Datei importieren}\label{fa:import}
-\textbf{Ziel:} Der/Die in der Graphdatei beschriebene Graph(en) soll(en) visuell dargestellt werden.\\
+\textbf{Ziel:} Die in der Graphdatei beschriebene Graphen sollen visuell dargestellt werden.\\
 \textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
-\textbf{Nachbedingung (Erfolg):} Die Graphen werden in der Strukturübersicht aufgelistet. Der zuerst beschriebene Graph wird dargestellt.\\
+\textbf{Nachbedingung (Erfolg):} Die Graphen werden in der Strukturansicht aufgelistet. Der zuerst beschriebene Graph wird dargestellt.\\
 \textbf{Nachbedingung (Fehlschlag):}
 Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graphen beschreibt.\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer wählt die Import-Funktion über die Menüleiste aus, nachdem das Programm geöffnet wurde. %TODO: Referenz zu Menüleiste in GUI
-  \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument. (siehe \ref{sec:uicmd})
+  \item Der Benutzer ruft das Programm auf und übergibt den Pfad zur Graphdatei als Argument (siehe \ref{sec:uicmd}).
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Menüleiste (a):
-Es öffnet sich ein Fenster, in dem der Benutzer den Typ des Graphen auswählt, welcher importiert werden soll. %TODO: Ref gui
-Ein Dateiverzeichnis-Menü öffnet sich. %TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
-Der Benutzer wählt die zu importierende Datei aus.
-Der in der Datei beschriebene Graph wird in der Graphansicht dargestellt.\\%TODO: % Referenz zur GUI (Graph-Fenster)
-Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart in der Graphansicht dargestellt. \\
+Es wird das \gls{graphml}-Format als Import-Format unterstützt. Für eine genauere Beschreibung der Unterstützung des \gls{graphml}-Formates siehe \ref{ch:daten}.\\
+%Es öffnet sich ein Fenster, in dem der Benutzer den Typ des Graphen auswählt, welcher importiert werden soll. %TODO: Ref gui
+Falls der Benutzer die Import-Funktion über die Menüleiste ausführt öffnet sich zuerst ein Dateiverzeichnis-Menü.
+%TODO: Dateiverzeichnis-Menü auch in GUI-Entwurf oder klar?
+Der Benutzer wählt die zu importierende Datei aus.\\
+Falls die Datei beim Programmstart als Argument angegeben wurde startet der Import-Vorgang automatisch.
+Die in der Graphdatei beschriebene Graphen werden in eine interne Repräsentatition, welche unabhängig vom importierten Dateiformat ist, überführt.%TODO: Referenz zu Grafik mit Repräsentationen
+Die Graphen werden nach Abschluss des Imports, wie in \ref{fa:graphen} beschrieben, dargestellt.\\
+Weitere Import-Optionen können durch Plugins bereitgestellt werden (siehe \ref{s:import}).
 
-%\begin{figure}[ht]
-%  \centering
-%  \includegraphics[scale=0.4]{resourcen/fa-import.1}
-%  \caption{Import}
-%  \label{fig:import}
-%\end{figure} %TODO: Outdated
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.4]{resourcen/fa-import.1}
+  \caption{Import}
+  \label{fig:import}
+\end{figure} %TODO: Outdated
 
 \fano{Export als Bilddatei}\label{fa:export_img}
 \textbf{Ziel:} Der Graph soll in seiner aktuellen Darstellung als Bilddatei exportiert werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. \\
 \textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateisystem erstellt, welche ein Abbild des derzeit angezeigten Graphen enthält.\\
-\textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
+\textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte wegen eines Fehlers beim Schreiben in die Datei nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
 \textbf{Auslösendes Ereignis:}
 Der Benutzer wählt die Exportfunktion aus der Menüleiste aus.\\
 \textbf{Beschreibung:}\\
-Der Benutzer wählt die Exportfunktion aus der Menüleiste aus.
+Es wird das Exportieren von Graphen in das \gls{svg}-Dateiformat unterstützt.\\
 Es erscheint ein Dateisystem-Menü, in welchem der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.\\
-Export-Optionen werden durch Plugins bereitgestellt.
-Mit dem Produkt wird ein \gls{svg}-Plugin zum Exportieren in das \gls{svg}-Dateiformat mitgeliefert.\\
-Eventuell wird der Benutzer noch durch das Plugin nach weiteren, zur Abspeicherung relevanten, Details gefagt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
+Eventuell wird der Benutzer noch nach weiteren, zur Abspeicherung relevanten, Details gefragt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
 Es wird versucht, die Bilddatei am ausgewählten Ort abzuspeichern.
+Weitere Export-Optionen können durch Plugins bereitgestellt werden (siehe \ref{s:export}).
+
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.4]{resourcen/fa-export.1}
@@ -168,35 +229,28 @@ Es wird versucht, die Bilddatei am ausgewählten Ort abzuspeichern.
 \setcounter{fanr}{200}
 
 \fano{Sichtfeld verschieben}\label{fa:verschieben}
-\textbf{Ziel:} Das Sichtfeld soll verschoben werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen und das Sichtfeld deckt nicht alle Elemente des Graphen ab.\\
-\textbf{Nachbedingung (Erfolg):}  Das Sichtfeld deckt nun den gewünschten Teil des Graphen ab.\\
-\textbf{Nachbedingung (Fehlschlag):} Das Sichtfeld deckte einen Randabschnitt ab und es wurde versucht das Sichtfeld über den Rand hinaus zu bewegen.\\
-Das Sichtfeld wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausgegeben.\\
+\textbf{Ziel:} Das \gls{sichtfeld} soll verschoben werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen und das \gls{sichtfeld} deckt nicht alle Elemente des Graphen ab.\\
+\textbf{Nachbedingung (Erfolg):}  Das \gls{sichtfeld} deckt nun den gewünschten Teil des Graphen ab.\\
+\textbf{Nachbedingung (Fehlschlag):} Das \gls{sichtfeld} deckte einen Randabschnitt der Zeichenfläche, auf der sich der Graph befindet, ab und es wurde versucht das \gls{sichtfeld} über den Rand hinaus zu bewegen.\\
+Das \gls{sichtfeld} wird nicht über den Rand bewegt. Es wird keine Fehlermeldung ausgegeben.\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich des Graph-Fenster.
-  \item Der Benutzer betätigt eine der zum Verschieben des Sichtfeldes designierten Tasten (siehe \ref{fa:hotkey}).
-  \item Der Benutzer bewegt die Scroll-Balken am Rand des Sichtfeldes. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
+  \item Der Benutzer klickt und zieht mit der mittleren Maustaste in einem leeren Bereich der Graphansichansichtt.
+  \item Der Benutzer bewegt die Scroll-Balken an dem rechten bzw. unteren Rand der Graphansicht. % TODO: Referenzt auf GUI Entwurf, wo scrollbalken sichtbar sind
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Klicken und Ziehen (a): Das Sichtfeld bewegt sich entgegen der Richtung, in welche der Mauszeiger bewegt wird. Es entsteht somit ein intuitives Verschieben des Graphen.\\
-Navigationstasten (b): Das Sichtfeld verschiebt sich um eine feste Länge (in Abhängigkeit des Zoom-Grades) in die entsprechende Richtung.\\
-Scroll-Balken (c): Das Sichtfeld bewegt sich relativ zur Größe des gesamten Graphen um das gleiche Maß wie der Scroll-Balken zur Länge seiner Fahrbahn in die entsprechende Richtung (Horizontal/Vertikal).\\
+Klicken und Ziehen (a): Das \gls{sichtfeld} bewegt sich entgegen der Richtung, in welche der Mauszeiger bewegt wird. Es entsteht somit ein intuitives Verschieben des Graphen.\\
+Scroll-Balken (b): Das \gls{sichtfeld} bewegt sich relativ zur Größe des gesamten Graphen um das gleiche Maß wie der Scroll-Balken zur Länge seiner Fahrbahn in die entsprechende Richtung (Horizontal/Vertikal).\\
 
 \fano{Zoom-Grad ändern}\label{fa:zoom}
-\textbf{Ziel:} Der Zoom-Grad des Sichtfeldes soll vergrößert bzw. verkleinert werden.\\
+\textbf{Ziel:} Der Zoom-Grad des \gls{sichtfeld}es soll vergrößert bzw. verkleinert werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der Zoom-Grad wurde angepasst.\\
 \textbf{Nachbedingung (Fehlschlag):} Der Zoom-Grad bleibt gleich, falls ein Maximum/Minimum erreicht wurde. Es wird keine Fehlermeldung ausgegeben.\\
-\textbf{Auslösende Ereignisse:}
-\begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer dreht am Mausrad.
-  \item Der Benutzer betätigt die zum Zoomen designierten Tasten \ref{fa:hotkey}.
-\end{enumerate}
+\textbf{Auslösende Ereignisse:} Der Benutzer dreht am Mausrad, während der Mauszeiger innerhalb der Graphansicht liegt.\\
 \textbf{Beschreibung:}\\
-Mausrad (a): Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
-Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen, in Abhängigkeit zum derzeitigen Zoom-Grad, festen Wert.\\
+Der Zoom-Grad ändert sich mit dem Drehen des Mausrades. Die Änderungsrichtung kann sich in Abhängigkeit vom Betriebssystem ändern.\\
 
 %TODO Wie Deselektieren, shift/strg Selektieren mehrerer Knoten, welche Knoten werden beim Ziehen ausgewählt.
 \fano{Knoten selektieren}\label{fa:selekt_knoten}
@@ -207,7 +261,7 @@ Zoom-Tasten (b): Der Zoom-Grad ändert sich um einen, in Abhängigkeit zum derze
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
   \item Der Benutzer klickt mit der linken Maustaste auf einen Knoten.
-  \item Der Benutzer klickt mit der linken Maustaste in einen leeren Bereich des Sichtfeldes und zieht den Mauszeiger.
+  \item Der Benutzer klickt mit der linken Maustaste in einen leeren Bereich des \gls{sichtfeld}es und zieht den Mauszeiger.
 \end{enumerate}
 \textbf{Beschreibung:}\\
 Der Benutzer kann Knoten mit der Maus zur Auswahl hinzufügen.
@@ -217,15 +271,66 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
 \fano{Wechsel zwischen Graphen}\label{fa:graphwechsel}
 \textbf{Ziel:} Der in der Graphansicht angezeigte Graph wurde ausgetauscht. \\
 \textbf{Vorbedingung:} Eine Graphdatei wurde geladen.\\
-\textbf{Nachbedingung (Erfolg):} Der ausgewählte Graph wird in der Graphansicht angzeigt.\\
+\textbf{Nachbedingung (Erfolg):} Der ausgewählte Graph wird in der Graphansicht angezeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
-Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus.\\
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Benutzer wählt über die Strukturansicht einen anderen Graphen aus.
+  \item Der Benutzer wählt über die Tabansicht einen bereits geöffneten Graphen %TODO: GUI Referenz 
+\end{enumerate}
 \textbf{Beschreibung:}\\
 Das Produkt unterstützt Graphdateien, welche mehr als einen Graphen beschreiben.
 Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 
-%TODO in WunschFunktionen
+\fano{Informationsanzeige zu einzelnen Knoten und Kanten}\label{fa:infoanzeige}
+\textbf{Ziel:} Zu einem ausgewählten Knoten oder einer Kanten wird Information angezeigt.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} In der Informationsansicht wird die Information zu dem ausgewählten Knoten oder der Kante angezeigt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Benutzer wählt einen Knoten oder eine Kante aus.\\
+\textbf{Beschreibung:}\\
+Die Information eines über einen per Mausklick ausgewählten Knoten oder einer Kante wird in der Informationsansicht angezeigt. Diese Information ist abhängig von der importierten Graphdatei (siehe \ref{fa:import}) und des ausgewählten Graphlayouts (siehe \ref{fa:layout}).
+
+\fano{Statistiken zu Graphen}\label{fa:statistik}
+\textbf{Ziel:} Zu ausgewählten Graphen und \glspl{subgraph} wird eine Statistik angezeigt.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} In der Informationsansicht wird eine Statistik zu dem ausgewählten Graphen oder \glspl{subgraph} angezeigt.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:}
+\begin{enumerate}[nolistsep, label=(\alph*)]
+  \item Der Benutzer wählt einen \glspl{subgraph} über die Graphansicht aus.
+  \item Der Benutzer wählt einen Graphen über die Strukturansicht aus.
+\end{enumerate}
+\textbf{Beschreibung:}\\
+Die in der Informationsansicht angezeigte Statistik über einen Graphen oder \glspl{subgraph} enthält zum Beispiel Informationen über die Knoten- und Kantenzahl.
+
+\fano{Kontextmenü}\label{fa:kontextmenü}
+\textbf{Ziel:} Dem Benutzer werden Funktion, welche auf seine derzeitige Auswahl ausführbar sind, zur Verfügung gestellt.\\
+%TODO: Referenz zu GUI Entwurf mit sichtbaren Kontextmenü
+\textbf{Vorbedingung:} -\\
+\textbf{Nachbedingung (Erfolg):} Es erscheint ein Kontextmenü mit Funktionen, die auf die derzeit ausgewählten Elementen ausgeführt werden können.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt mit der rechten Maustaste auf
+\begin{itemize}[nolistsep]
+  \item einen beliebiegen Knoten im derzeit angezeigten Graphen.
+  \item einen Knoten in einer selektierten Knotenmenge im derzeit angezeigten Graphen.
+  \item einen Namen eines Graphen in der Strukturansicht.
+\end{itemize}
+\textbf{Beschreibung:}\\
+Das Kontextmenü bietet einen schnellen Zugriff auf Funktionen die auf eine Auswahl ausgeführt werden können.
+Abhängig von den ausgewählten Elementen können sich die zur Verfügung stehenden Funktionen ändern.
+Selektierte \glspl{subgraph} können über das Kontexmenü kollabiert werden (siehe \ref{fa:kollabieren}).
+Ein kollabierter \gls{subgraph} kann durch das Kontextmenü des repräsentierenden Knoten wieder ausgeklappt werden (siehe \ref{fa:ausklappen}).
+Plugins können Operationen auf Knoten, Teilgraphen und Graphen, wie in \ref{s:operationen} beschrieben, registrieren.
+Diese Operationen werden dann im jeweiligen Kontextmenü dargestellt.
+
+
+\fano{TODO: Abspeichern als Graph}\label{fa:speichern}
+\fano{TODO: Import von vorher abgespeicherten Graphen}\label{fa:laden}
+
+\fano{TODO: Definition des JOANA-Graphtypes}\label{fa:joanatyp}
+\section{Wunsch-Funktionen}
+
 \fano{Steuerung über Tastaturkürzel}\label{fa:hotkey}
 \textbf{Ziel:} Häufig verwendete Funktionen können über Tastaturkürzel ausgeführt werden.\\
 \textbf{Vorbedingung:} -\\
@@ -237,115 +342,53 @@ Ein Benutzer aktiviert ein Tastenkürzel, welchem eine Funktion zugeordnet ist.\
 Häufig verwendete Funktionen (wie z.B. Navigation im Graphen) und Menüs sind Tastaturkürzel zugeordnet.
 Die Tastenkürzel werden hinter dem Funktionsnamen im Menüleiste oder Kontextmenü angezeigt.
 
-\fano{TODO: Abspeichern als Graph}\label{fa:speichern}
-\fano{TODO: Import von vorher abgespeicherten Graphen}\label{fa:laden}
-\fano{TODO: Informationen zu Knoten/Subgraphen anzeigen}\label{fa:laden}
-
-\section{\gls{graphml}-Plugin}
-\setcounter{fanr}{300}
-
-%TODO siehe datei importieren
-\fano{GraphML importieren}\label{fa:importgraphml}
-\textbf{Ziel:} Eine \gls{graphml}-Datei soll in das Programm zur Ansicht geladen werden.\\
-\textbf{Vorbedingung:} Eine korrekte und unterstützte (siehe \nameref{ch:daten}) GraphML-Datei befindet sich im Dateisystem.\\
-%TODO Daten zu Produktdaten
-\textbf{Nachbedingung (Erfolg):} Die in der Datei beschriebenen Graphen werden an Graph von Ansicht zurückgegeben.\\
-\textbf{Nachbedingung (Fehlschlag):} Falls die Datei nicht unterstützt wird oder Fehler enthält, wird eine Fehlermeldung an Graph von Ansicht zurückgegeben.\\
-%TODO Hässlich
-\textbf{Auslösende Ereignisse:} Beim Importieren wird ein Typ ausgewählt, welcher das \gls{graphml}-Plugin als Importer beschreibt.\\
-\textbf{Beschreibung:}\\
-Die GraphML-Datei wird eingelesen, in die interne Repräsentation von Graphen überführt und an Graph von Ansicht zur Darstellung zurückgegeben.
-
-\section{\gls{svg}-Plugin}
-\setcounter{fanr}{400}
-
-\fano{Graph als \gls{svg}-Datei exportieren}\label{fa:export_svg}
-\textbf{Ziel:} Der in der Graphansicht angezeigte Graph soll im \gls{svg}-Format abgespeichert werden.\\
+\fano{Fortschrittsbalken bei Berechnung}\label{fa:fortschritt}
+\textbf{Ziel:} Während das Produkt das Graphlayout berechnet, wird ein Fortschrittsbalken angezeigt.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} Der Graph wurde abgespeichert.\\
-%TODO nur IO fehler
-\textbf{Nachbedingung (Fehlschlag):} Der Graph konnte nicht abgespeichert werden. Es wird eine Fehlermeldung an Graph von Ansicht zurückgegeben.\\
-\textbf{Auslösende Ereignisse:} Die SVG-Exportoption wird aus dem Menü wie in \ref{fa:export_img} beschrieben ausgewählt.\\
-\textbf{Beschreibung:}\\
-Es wird versucht, die derzeitige Darstellung des Graphen in der Graphansicht in das SVG-Format zu überführen.
-
-\section{\gls{joana}-Plugin}
-\setcounter{fanr}{500}
-
-\fano{Callgraph-View}\label{fa:callview}
-\textbf{Ziel:} \gls{callgraph} in \gls{joana}-Graphdateien werden speziell dargestellt und behandelt.\\
-\textbf{Vorbedingung:} -\\
-%TODO unten beschrieben, direkte referenz auf beschreibung
-\textbf{Nachbedingung (Erfolg):} Der Callgraph wurde wie unten beschrieben dargestellt.\\
+\textbf{Nachbedingung (Erfolg):} Während der Layoutberechnung wurde ein Fortschrittsbalken angezeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
-\textbf{Auslösende Ereignisse:} Eine Graphdatei wird als JOANA-Graph importiert.\\
+\textbf{Auslösende Ereignisse:} Der Benutzer wählt über die Menüleiste ein Layout aus.\\
 \textbf{Beschreibung:}\\
-Beim Importieren wird der Callgraph zuerst in der Graphansicht geöffnet.\\
-Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandelt.
-\textit{Weitere Eigenschaften folgen nach Absprache.}
-%TODO: Nach Gespräch weitere Eigenschaften des Callgraphen auflisten. Gruppierung von Java-Methoden etc aus E-Mail
+Der Fortschrittsbalken dient dazu dem Benutzer anzuzeigen, wie weit das Programm bisher mit dem Layouten des Graphen ist, und bietet ihm somit die Möglichkeit der Zeitabschätzung bei der Berechnung eines Graphlayoutes.
 
-\fano{Methoden-View}\label{fa:methview}
-\textbf{Ziel:} \gls{methgraph} in \gls{joana}-Graphdateien werden, um die Betrachtung als \gls{pdg} zu erleichtern, speziell behandelt und dargestellt.\\
-\textbf{Vorbedingung:} -\\
-\textbf{Nachbedingung (Erfolg):} Der Methodengraph wird wie unten beschrieben behandelt. \\
-\textbf{Nachbedingung (Fehlschlag):} -\\
-\textbf{Auslösende Ereignisse:} Eine Graphdatei wird als JOANA-Graph importiert.\\
-\textbf{Beschreibung:}\\
-Ein Methodengraph kann als \gls{Subgraph} des \gls{callgraph}, wie in \ref{fa:hierarchgraph} beschrieben, geöffnet werden.
-Er wird beim Laden in die Graphansicht automatisch durch das in \ref{fa:joanalayout} definierte Layout gelayoutet.
-Die Elemente des Graphen werden, wie in \ref{fa:joanaview} beschrieben, behandelt.
-
-
-%TODO die zwei anforderungen besser(neu) beschreiben/voneinander trennen.
-\fano{\gls{joana}-Layout}\label{fa:joanalayout}
-\textbf{Ziel:} Ein Graph soll zur Betrachtung als \gls{pdg} sinnvoll gelayoutet werden.\\ %TODO: Bei mir wird PDG nicht dem Glossar hinzugefügt. Funktioniert das bei anderen? Falls wie kann man das fixen?
+\fano{Eine Übersicht des angezeigten Graphen}\label{fa:uebersicht}
+\textbf{Ziel:} Es soll ein kleines Bild des kompletten Graphen angezeigt werden \\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} Der Graph wurde wie unten beschrieben gelayoutet.\\
+\textbf{Nachbedingung (Erfolg):} Die Übersicht wird korrekt (mit dem aktuell ausgewählten Layout) angezeigt \\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Ein Methodengraph wird zum ersten mal in die Graphansicht geladen (siehe \ref{fa:methview}).
-  \item Über die Menüleiste wird das JOANA-Layout als Layout ausgewählt (siehe \ref{fa:layout}).
+  \item Ein Graph wird in die Graphansicht geladen.
+  \item Ein Graph wird neu gelayoutet.
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Das JOANA-Layout ist eine hierarchisches Layout zur Ansicht von PDGs.
-Diese Layouts muss alle Anforderungen beschrieben in \ref{sec:nfajoana} erfüllen.
+Diese Übersicht besteht aus einem Bild des kompletten Graphen und zeigt an in welchem Teil des Graphen das aktuelle \gls{sichtfeld} liegt. Somit sieht der Benutzer, mit einem Blick, in welchem Teil des Graphen das \gls{sichtfeld} liegt und kann sich besser orientieren.
 
-\fano{Darstellung von \gls{joana}-Graphen}\label{fa:joanaview}
-\textbf{Ziel:} Elemente in JOANA-Graphen bekommen basierend auf ihrem Typ eine spezielle Darstellung.\\
-\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} Der Graph wurde wie unten beschrieben dargestellt.\\
+\fano{Änderung der Darstellung von Kanten}\label{fa:darst-kanten}
+\textbf{Ziel:} Der Nutzer kann auswählen in welcher Form die Kanten des Graphen gezeichnet werden. \\
+\textbf{Vorbedingung:} -\\
+\textbf{Nachbedingung (Erfolg):} Die neu gezeichneten Graphen werden mit der ausgewählten Darstellung für Kanten gezeichnet \\
 \textbf{Nachbedingung (Fehlschlag):} -\\
-\textbf{Auslösende Ereignisse:}
-\begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Nutzer wählt über das Darstellungsmenü aus der Menüleiste die Darstellung als JOANA-Graphen aus.
-  \item Der Graph wird als JOANA-Graph geladen
-\end{enumerate}
+\textbf{Auslösende Ereignisse:} Der Nutzer wählt in den Einstellungen die gewünschte Darstellung der Kanten.\\
 \textbf{Beschreibung:}\\
-Knoten und Kanten gleichen Types in Call- und Methodengraphen werden in gleichen Farben dargestellt.\\
-Für Beispiele von Kantentypen siehe \ref{fa:filter}.\\
-Das Zeichnen der Elemente wird nicht von dem JOANA-Plugin übernommen, sondern ist Teil von Graph von Ansicht. %TODO: Referenz auf Visualisierungsmöglichkeiten.
-Es wird lediglich die Darstellung festgelegt. (siehe \ref{s:darstellung})
+Es kann ausgewählt werden, ob die Kanten als \gls{bezier}, orthogonale Kanten oder als direkte Kanten dargestellt werden. Alle Graphen, welche neu gelayoutet werden, besitzen diese Darstellung der Kanten. Für bereits gelayoutete Graphen wird diese Einstellung nicht automatisch übernommen.
 
+\fano{Reload-Funktion}\label{fa:reload}
+\textbf{Ziel:} Änderungen, welche an der importierten Graphdatei vorgenommen wurden, können durch die Reload-Funktion übernommen werden.\\
+\textbf{Vorbedingung:} Eine Graphdatei wurde importiert und ist weiterhin an der selben Stelle im Dateisystem vorhanden und zugreifbar.\\
+\textbf{Nachbedingung (Erfolg):} Die aktuelle Version des Graphen aus der Datei wurde importiert.\\
+\textbf{Nachbedingung (Fehlschlag):} Auf die Datei konnte nicht zugegriffen werden oder enthält ungültige Informationen. Keine Graphdatei ist geladen. Es wird ein Fehler ausgegeben.\\
+\textbf{Auslösende Ereignisse:} Der Nutzer wählt die Reload-Funktion über die Menüleiste.\\
+\textbf{Beschreibung:}\\
+Die Reload-Funktion ermöglicht einen schnellen erneuten Import einer zuvor schon importierten Graphdatei.
+Falls der derzeitig in der Graphansicht geladene Graph in der neuen Datei vorhanden ist, wird er aktualisiert in die Graphansicht geladen.
+Layout und andere Darstellungsoption, wie etwaige aktivierte Knoten- und Kantenfilter werden übernommen.
 
-\fano{TODO: Definition des JOANA-Graphtypes}\label{fa:joanatyp}
-\section{Wunsch-Funktionen}
-
-%\fano{<++>}\label{fa:<++>}
-%\textbf{Ziel:} <++>\\
-%\textbf{Vorbedingung:} <++>\\
-%\textbf{Nachbedingung (Erfolg):} <++>\\
-%\textbf{Nachbedingung (Fehlschlag):} <++>\\
-%\textbf{Auslösende Ereignisse:}
-%\begin{enumerate}[nolistsep, label=(\alph*)]
-%  \item <++>
-%\end{enumerate}
-%\textbf{Beschreibung:}
-%\begin{enumerate}[nolistsep]
-%  \item <++>
-%\end{enumerate}
-%\textbf{Alternativen:}
-%\begin{enumerate}[nolistsep]
-%  \item <++>
-%\end{enumerate}
+%\fano{}\label{fa:}
+%\textbf{Ziel:} \\
+%\textbf{Vorbedingung:} \\
+%\textbf{Nachbedingung (Erfolg):} \\
+%\textbf{Nachbedingung (Fehlschlag):} \\
+%\textbf{Auslösende Ereignisse:} \\
+%\textbf{Beschreibung:}\\
+%

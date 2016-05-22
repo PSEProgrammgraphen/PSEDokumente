@@ -26,17 +26,18 @@
 \newdualentry{sdg}
   {SDG}
   {System Dependency Graph}
-  {Ein System Dependency Graph (engl. für Systemabhänghigkeitsgraph) bildet eine Darstellungmöglichkeit von prozedurübergreifenden Abhängigkeiten in einem Programm.}
+  {Ein System Dependency Graph (engl. für Systemabhänghigkeitsgraph) bildet eine Darstellungsmöglichkeit von prozedurübergreifenden Abhängigkeiten in einem Programm.}
 
-\newdualentry{pdg}
+\newpluraldualentry{pdg}
   {PDG}
-  {Program Dependency Graph}
-  {In einem Program Dependency Graph (engl. für Programmabhängigkeitsgraph) werden Kontrollfluss und Datenabhängigkeiten innerhalb einer Prozedur angezeigt.}
+  {Programmabhängigkeitsgraph}
+  {In einem Program Dependency Graph (engl. für Programmabhängigkeitsgraph) werden Kontrollfluss- und Datenabhängigkeiten innerhalb einer Prozedur angezeigt.}
+  {Programmabhängigkeitsgraphen}
 
 \newglossaryentry{jfx}
 {
   name=JavaFX,
-  description={JavaFX ist eine Java Bibliothek die ein Framework zur Erstellung von GUI-Schnittstellen für Java Anwendungen bereitstellt}
+  description={JavaFX ist eine Java Bibliothek, die ein Framework zur Erstellung von GUI-Schnittstellen für Java Anwendungen bereitstellt}
 }
 
 \newglossaryentry{svg}
@@ -54,19 +55,19 @@
 \newglossaryentry{prefapi}
 {
   name=Preferences API,
-  description={Das java.util.prefs Paket bietet Funktionen an welche Nutzereinstellungen und Daten persistent speichert. (\url{http://docs.oracle.com/javase/1.5.0/docs/guide/preferences/index.html})}
+  description={Das java.util.prefs Paket bietet Funktionen an, welche Nutzereinstellungen und Daten persistent speichert. (\url{http://docs.oracle.com/javase/1.5.0/docs/guide/preferences/index.html})}
 }
 
 \newglossaryentry{graphml}
 {
   name=GraphML,
-  description={GraphML ist ein XML-basiertes Dateiformat welches benutzt wird um Graphen und ihre Struktur zu speichern}
+  description={GraphML ist ein XML-basiertes Dateiformat welches benutzt wird, um Graphen und ihre Struktur zu speichern}
 }
 
 \newglossaryentry{sugiyama}
 {
   name=Framework von Sugiyama,
-  description={Das Framework von Sugiyama beschreibt eine Vorgehensweise um einen Graphen hierarchisch darzustellen}
+  description={Das Framework von Sugiyama beschreibt eine Vorgehensweise, um einen Graphen hierarchisch darzustellen}
 }
 
 \newglossaryentry{bezier}
@@ -78,13 +79,15 @@
 \newglossaryentry{callgraph}
 {
   name=Callgraph,
-  description={Der Callgraph bezeichnet die Graphdarstellung eines Programms, bei welchem nur die Abhängigkeiten der Methoden dargestellt wird und nicht die Abhängigkeiten innerhalb einer Methode}
+  description={Der Callgraph bezeichnet die Graphdarstellung eines Programms, bei welchem nur die Abhängigkeiten der Methoden dargestellt wird und nicht die Abhängigkeiten innerhalb einer Methode},
+  plural=Callgraphen
 }
 
 \newglossaryentry{methgraph}
 {
   name=Methodengraph,
-  description={Der Methodengraph bezeichnet die Graphdarstellung einer einzigen Methode. Es werden nur der Steuerfluss und die Datenabhängigkeiten innerhalb einer einzigen Methode angezeigt}
+  description={Der Methodengraph bezeichnet die Graphdarstellung einer einzigen Methode. Es werden nur der Steuerfluss und die Datenabhängigkeiten innerhalb einer einzigen Methode angezeigt},
+  plural=Methodengraphen
 }
 
 \newglossaryentry{joana}
@@ -99,12 +102,18 @@
   description={Hyperkanten sind Kanten in einem Graphen, welche zwei oder mehr Knoten miteinander verbinden. Ein Graph der Hyperkanten enthält wird als Hypergraph bezeichnet.}
 }
 
-\newglossaryentry{Subgraph}
+\newglossaryentry{subgraph}
 {
-	name=Subgraph,
-	description={Der durch mindestens einen selektierten Knoten induzierten Graph}
+  name=Subgraph,
+  description={Der durch mindestens einen selektierten Knoten induzierte Graph},
+  plural=Subgraphen
 }
 
+\newglossaryentry{sichtfeld}
+{
+	name=Sichtfeld,
+	description={Das Sichtfeld beschreibt den Bildschirmausschnitt des Graphen, welcher der Nutzer momentan sieht}
+}
 %\newglossaryentry{<++>}
 %{
 %  name=<++>,
@@ -115,3 +124,9 @@
 %  {<++>}
 %  {<++>}
 %  {<++>}
+
+%\newpluraldualentry{<++>}
+%  {<++>}
+%  {<++>}
+%  {<++>}
+%  {<++>} % Plural ausgeschrieben

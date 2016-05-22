@@ -9,6 +9,7 @@
 \usepackage[bookmarks,bookmarksnumbered]{hyperref}
 \usepackage{graphicx}
 
+\bibliographystyle{plain}
 \graphicspath{{resourcen/}}
 
 %Used for including MetaUML diagrams
@@ -20,11 +21,10 @@
 
 \makeatletter
 \def\namedlabel#1#2{\begingroup
-   #2%
    \def\@currentlabel{#2}%
-   \label{#1}\endgroup
+   \phantomsection#2\label{#1}\endgroup
 }
-
+\makeatother
 % Inhaltsverzeichnis Ebenen definieren, zB bis zu Subsection
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{1}
@@ -39,6 +39,13 @@
   }
   \makeglossaries
   \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
+}
+\DeclareDocumentCommand{\newpluraldualentry}{ O{} O{} m m m m m} {
+  \newglossaryentry{gls-#3}{name={#5},text={#5\glsadd{#3},plural={#7}},
+    description={#6},#1
+  }
+  \makeglossaries
+  \newacronym[longplural={#7},see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
 }
 
 \newcounter{psnr}
@@ -95,5 +102,5 @@ Graph von Ansicht}
 \printglossary[title=Glossar,toctitle=Glossar]
 
 \listoffigures
-
+\bibliography{referenzen}
 \end{document}
