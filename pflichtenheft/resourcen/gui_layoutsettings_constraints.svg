@@ -285,9 +285,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="556.1457"
-     inkscape:cy="514.1123"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="661.69424"
+     inkscape:cy="499.20188"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -305,7 +305,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1017,5 +1017,38 @@
        id="path5593"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="20.203051"
+       y="700.8291"
+       id="text4388"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4390"
+         x="20.203051"
+         y="700.8291">Actions</tspan></text>
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4413"
+       width="323.24881"
+       height="44.446712"
+       x="20.203051"
+       y="709.92047" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:27.75557899px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="19.802372"
+       y="741.82129"
+       id="text4841-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="19.802372"
+         y="741.82129"
+         id="tspan4891-8"> apply Layout to Graph</tspan><tspan
+         sodipodi:role="line"
+         x="19.802372"
+         y="776.51575"
+         id="tspan4873-7" /></text>
   </g>
 </svg>
