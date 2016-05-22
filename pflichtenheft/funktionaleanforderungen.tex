@@ -113,6 +113,37 @@ Die Kanten werden entsprechend aus- oder eingeblendet.\\
 \textbf{Alternative:}
 Der Graph wird neu gezeichnet um kompakter zu werden, oder um Platz für neue Kanten zu schaffen.
 
+\fano{Kollabieren von \glspl{subgraph}}\label{fa:kollabieren}
+\textbf{Ziel:} \glspl{subgraph} können zur Übersicht eingeklappt (kollabiert) werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der zuvor selektierte Subgraph wurde in einen Knoten kollabiert.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Nutzer hat einen \glspl{subgraph} selektiert (siehe \ref{fa:selekt_knoten}).
+Über das Kontextmenü wählt er die Layout-Funktion für das Kollabieren von \glspl{subgraph}.\\
+\textbf{Beschreibung:}\\
+Alle Kanten mit genau einem Knoten, der nicht in dem \gls{subgraph} liegt, werden als Kanten zwischen dem entstandenen Knoten und dem Knoten außerhalb der Menge gezeichnet.\\
+Die Darstellung des neuen Knotens überschneidet keine andere Knoten.\\
+Da sich aber beim Kollabieren von größeren \gls{subgraph} das Bild des gesamten Graphen stark ändert, wird nicht garantiert,
+dass es nicht zu überdurschnittlichen vielen Kantenkreuzungen oder langen Kanten kommt.\\
+Der Benutzer kann dann bei Bedarf den Layoutalgorithmus ein weiteres Mal ausführen (siehe \ref{fa:layout}) um das Layout auf die
+veränderte Struktur der Darstellung des Graphen anzupassen.\\
+Ein kollabierter \gls{subgraph} kann wieder ausgeklappt werden (siehe \ref{fa:ausklappen}).
+
+
+\fano{Ausklappen von kollabierten \glspl{subgraph}}\label{fa:ausklappen}
+\textbf{Ziel:} Eingeklappte \glspl{subgraph} können bei Bedarf wieder ausgeklappt werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Der Knoten, der den Graphen dargestellt hat wird entfernt. Die im \gls{subgraph} enthaltenen Knoten werden wie vor dem Kollabieren wieder eingezeichnet.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Nutzer wählt die Ausklapp-Funktion aus dem Kontextmenü eines Knotens, der einen eingeklappten Graphen repräsentiert.\\
+\textbf{Beschreibung:}\\
+Die ausgeklappten Knoten werden an der Position, die sie vor dem Kollabieren einnahmen,  wieder eingezeichnet.
+Kanten zwischen den Knoten des \glspl{subgraph} werden wie vor dem Kollabieren eingezeichnet.
+Kanten zwischen Knoten des \glspl{subgraph} und anderen Knoten werden nicht wie vor dem Kollabieren gezeichnet,
+falls sich die Position des anderen Knotens seit dem Kollabieren geändert hat, z.B. wenn er kollabiert wurde oder der Graph neu gelayoutet wurde.
+Nach dem Ausklappen kann es bei der Darstellung zu Überlagerungen kommen.
+Ist das der Fall kann der Nutzer über die Layout-Funktion den Graphen neu layouten. (siehe \ref{fa:layout})
+
 \subsection{Input/Output}
 \setcounter{fanr}{100}
 
@@ -120,7 +151,7 @@ Der Graph wird neu gezeichnet um kompakter zu werden, oder um Platz für neue Ka
 \fano{Graph aus Datei importieren}\label{fa:import}
 \textbf{Ziel:} Der/Die in der Graphdatei beschriebene Graph(en) soll(en) visuell dargestellt werden.\\
 \textbf{Vorbedingung:} Der Benutzer hat eine unterstützte Graphdatei (siehe \ref{ch:daten}) in seinem Dateissystem, auf welche zugegriffen werden kann.\\
-\textbf{Nachbedingung (Erfolg):} Die Graphen werden in der Strukturübersicht aufgelistet. Der zuerst beschriebene Graph wird dargestellt.\\
+\textbf{Nachbedingung (Erfolg):} Die Graphen werden in der Strukturansicht aufgelistet. Der zuerst beschriebene Graph wird dargestellt.\\
 \textbf{Nachbedingung (Fehlschlag):}
 Eine Fehlermeldung wird ausgegeben, dass die Datei nicht geöffnet werden konnte, bzw. dass die Datei keinen korrekten Graphen beschreibt.\\
 \textbf{Auslösende Ereignisse:}
@@ -149,7 +180,7 @@ Kommandozeilenargument (b): Der Graph wird gleich nach dem Programmstart in der 
 \textbf{Nachbedingung (Erfolg):} Es wurde eine Bilddatei an einer gewünschten, schreibbaren Stelle im Dateisystem erstellt, welche ein Abbild des derzeit angezeigten Graphen enthält.\\
 \textbf{Nachbedingung (Fehlschlag):} Die Bilddatei konnte nicht erstellt werden. Es wird eine Fehlermeldung ausgegeben.\\
 \textbf{Auslösendes Ereignis:}
-Der Benutzer wählt die Exportfunktion aus der Menüleiste aus.\\
+Der Benutzer wählt die Exportfunktion aus der Menüleiste aus oder wählt die Exportfunktion aus dem Kontextmenü (siehe \ref{fa:kontextmenü}) nach einem Rechtsklick auf den Graphen in der Strukturansicht.\\
 \textbf{Beschreibung:}\\
 Der Benutzer wählt die Exportfunktion aus der Menüleiste aus.
 Es erscheint ein Dateisystem-Menü, in welchem der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.\\
@@ -223,24 +254,45 @@ Mit dieser Funktion kann der Benutzer die Ansicht zwischen den Graphen wechseln.
 \fano{Informationsanzeige zu einzelnen Knoten und Kanten}\label{fa:infoanzeige}
 \textbf{Ziel:} Zu einem ausgewählten Knoten oder einer Kanten wird Information angezeigt.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} In der Strukturansicht wird die Information zu dem ausgewählten Knoten oder der Kante angezeigt.\\
+\textbf{Nachbedingung (Erfolg):} In der Informationsansicht wird die Information zu dem ausgewählten Knoten oder der Kante angezeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Benutzer wählt einen Knoten oder eine Kante aus.\\
 \textbf{Beschreibung:}\\
-Die Information eines über einen per Mausklick ausgewählten Knoten oder einer Kante wird in der Strukturansicht angezeigt. Diese Information ist abhängig von der importierten Graph-Datei (siehe \ref{fa:import}) und des ausgewählten Graphlayouts (siehe \ref{fa:layout}).
+Die Information eines über einen per Mausklick ausgewählten Knoten oder einer Kante wird in der Informationsansicht angezeigt. Diese Information ist abhängig von der importierten Graphdatei (siehe \ref{fa:import}) und des ausgewählten Graphlayouts (siehe \ref{fa:layout}).
 
 \fano{Statistiken zu Graphen}\label{fa:statistik}
-\textbf{Ziel:} Zu ausgewählten Graphen und \gls{subgraph}en wird eine Statistik angezeigt.\\
+\textbf{Ziel:} Zu ausgewählten Graphen und \glspl{subgraph} wird eine Statistik angezeigt.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
-\textbf{Nachbedingung (Erfolg):} In der Strukturansicht wird eine Statistik zu dem ausgewählten Graphen oder \gls{subgraph}en angezeigt.\\
+\textbf{Nachbedingung (Erfolg):} In der Informationsansicht wird eine Statistik zu dem ausgewählten Graphen oder \glspl{subgraph} angezeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
 \begin{enumerate}[nolistsep, label=(\alph*)]
-  \item Der Benutzer wählt einen Graphen oder \gls{subgraph}en über die Graphansicht aus.
-  \item Die Auswahl erfolgt über die Strukturansicht.
+  \item Der Benutzer wählt einen \glspl{subgraph} über die Graphansicht aus.
+  \item Der Benutzer wählt einen Graphen über die Strukturansicht aus.
 \end{enumerate}
 \textbf{Beschreibung:}\\
-Die in der Strukturansicht angezeigte Statistik über einen Graphen oder \gls{subgraph}en enthält zum Beispiel Informationen über die Knoten- und Kantenzahl.
+Die in der Informationsansicht angezeigte Statistik über einen Graphen oder \glspl{subgraph} enthält zum Beispiel Informationen über die Knoten- und Kantenzahl.
+
+\fano{Kontextmenü}\label{fa:kontextmenü}
+\textbf{Ziel:} Dem Benutzer werden Funktion, welche auf seine derzeitige Auswahl ausführbar sind, zur Verfügung gestellt.\\
+%TODO: Referenz zu GUI Entwurf mit sichtbaren Kontextmenü
+\textbf{Vorbedingung:} -\\
+\textbf{Nachbedingung (Erfolg):} Es erscheint ein Kontextmenü mit Funktionen, die auf die derzeit ausgewählten Elementen ausgeführt werden können.\\
+\textbf{Nachbedingung (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt mit der rechten Maustaste auf
+\begin{itemize}[nolistsep]
+  \item einen beliebiegen Knoten im derzeit angezeigten Graphen.
+  \item einen Knoten in einer selektierten Knotenmenge im derzeit angezeigten Graphen.
+  \item einen Namen eines Graphen in der Strukturansicht.
+\end{itemize}
+\textbf{Beschreibung:}\\
+Das Kontextmenü bietet einen schnellen Zugriff auf Funktionen die auf eine Auswahl ausgeführt werden können.
+Abhängig von den ausgewählten Elementen können sich die zur Verfügung stehenden Funktionen ändern.
+Die Exportfunktion für einzelen Graphen (siehe \ref{fa:export_img}) ist durch das Kontextmenü erreichbar.
+Selektierte \glspl{subgraph} können über das Kontexmenü kollabiert werden (siehe \ref{fa:kollabieren}).
+Ein kollabierter \gls{subgraph} kann durch das Kontextmenü des repräsentierenden Knoten wieder ausgeklappt werden (siehe \ref{fa:ausklappen}).
+Plugins können Operationen auf Knoten, Teilgraphen und Graphen, wie in \ref{s:operationen} beschrieben, registrieren.
+Diese Operationen werden dann im jeweiligen Kontextmenü dargestellt.
 
 
 \fano{TODO: Abspeichern als Graph}\label{fa:speichern}
@@ -392,26 +444,6 @@ Die Reload-Funktion ermöglicht einen schnellen erneuten Import einer zuvor scho
 Falls der derzeitig in der Graphansicht geladene Graph in der neuen Datei vorhanden ist, wird er aktualisiert in die Graphansicht geladen.
 Layout und andere Darstellungsoption, wie etwaige aktivierte Knoten- und Kantenfilter werden übernommen.
 
-%\fano{<++>}\label{fa:<++>}
-%\textbf{Ziel:} <++>\\
-%\textbf{Vorbedingung:} <++>\\
-%\textbf{Nachbedingung (Erfolg):} <++>\\
-%\textbf{Nachbedingung (Fehlschlag):} <++>\\
-%\textbf{Auslösende Ereignisse:}
-%\begin{enumerate}[nolistsep, label=(\alph*)]
-%  \item <++>
-%\end{enumerate}
-%\textbf{Beschreibung:}
-%\begin{enumerate}[nolistsep]
-%  \item <++>
-%\end{enumerate}
-%\textbf{Alternativen:}
-%\begin{enumerate}[nolistsep]
-%  \item <++>
-%\end{enumerate}
-
-
-%etwas kürzer, falls keine enumerations verwendet werden ;)
 %\fano{}\label{fa:}
 %\textbf{Ziel:} \\
 %\textbf{Vorbedingung:} \\
