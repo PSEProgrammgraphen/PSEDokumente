@@ -49,7 +49,7 @@ Plugins hinzugefügt werden (siehe \ref{s:darstellung}).
 \textbf{Beschreibung:}\\
 Geschachtelte Graphen werden in der Graphansicht als Knoten dargestellt.
 Wenn der Benutzer eines der Ereignisse auslöst, wird der Graph in der Graphansicht angezeigt.
-Ein geschachtelter Graph wird in der Strukturansicht als Kind des Graphen dargestellt, der ihn enthält (siehe \ref{gui:strukturansicht}).\\
+Ein geschachtelter Graph wird in der Strukturansicht als Kind dargestellt, der ihn enthält (siehe \ref{gui:strukturansicht}).\\ des Graphen
 Ein geschachtelter Graph wird in der Graphansicht wie ein ``Top-Level''-Graph behandelt. %TODO Top-Level in Glossar
 Ein Methodengraph kann als \gls{subgraph} des \glspl{callgraph} geöffnet werden.
 
@@ -61,7 +61,7 @@ Ein Methodengraph kann als \gls{subgraph} des \glspl{callgraph} geöffnet werden
 \textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet, Kanten wurden feste Kurven zugewiesen.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
-Der Benutzer wählt über die Menüleiste ein Layout aus und bestätigt es.\\
+Der Benutzer wählt über die Menüleiste ein Layout aus.\\
 \textbf{Beschreibung:}\\
 Nach der Auswahl des Layouts öffnet sich ein Fenster zur Parametrisierung des Layout-Algorithmus.
 Beispiele für Parameter sind die Ebenenanzahl oder die maximale Anzahl an Knoten auf jeder Ebene bei einem hierarchischen Layout.
@@ -143,6 +143,36 @@ Die Kanten werden entsprechend aus- oder eingeblendet.\\
 Der Graph wird nicht automatisch neu gezeichnet. Eine weitläufige Darstellung beim Ausblenden oder viele Kantenkreuzungen beim Einblenden können vorkommen.
 Der Benutzer kann dann bei Bedarf den Layoutalgorithmus ein weiteres Mal ausführen (siehe \ref{fa:layout}) um das Layout auf die
 veränderte Struktur der Darstellung des Graphen anzupassen.\\
+
+\fano{Anwendung einer \gls{arbeitsumgebung}}\label{fa:umgebung}
+\textbf{Ziel:} Durch automatisierte Einstellungen und Operationen werden dem Nutzer wiederkehrende Aufgaben nach dem Importieren einer Graphdatei abgenommen.\\
+\textbf{Vorbedingung:} Eine Graphdatei wurde importiert (siehe \ref{fa:import})\\
+\textbf{Nachbedingung (Erfolg):} Alle durch die Arbeitsumgebung automatisierten Aktionen wurden ausgeführt.\\
+\textbf{Nachbedingung (Fehlschlag):} Der Nutzer wählt eine Graphdatei mit Graphen, für welche die Arbeitsumgebung nicht bestimmt ist. Es kann sein, dass manche Aktionen nicht ausgeführt werden können, bzw. manche Aktionen unerwünschte Auswirkungen auf die Visualisierung des Graphen haben.\\
+\textbf{Auslösende Ereignisse:} Nach dem Import wählt der Nutzer eine Arbeitsumgebung aus einem Auswahlfenster aus.\\ %TODO: Ref GUI
+\textbf{Beschreibung:}\\
+Um die Zusammenarbeit von Plugins zu erleichtern und dem Nutzer zu ersparen Layout, Darstellung und weitere,
+ Graph-spezifische Einstellung vornehmen zu müssen, wird das Konzept einer \gls{arbeitsumgebung} eingeführt:\\
+Eine \gls{arbeitsumgebung} nimmt nach dem Importieren der Datei (siehe \ref{fa:import}) automatisierte Einstellungen vor.
+Beispiele für automatisierte Einstellungen sind:
+\begin{itemize}
+  \item Das Auswählen eines Layouts für die Graphen.
+    Ein Layout auswählen bedeutet nicht, dass der Graph automatisch gelayoutet wird.
+    Das eigentlich Berechnen des Layouts wird erst beim ersten Öffnen des Graphen ausgeführt, um lange Verzögerungen
+    beim Importieren von großen Dateien zu verhindern.
+  \item Anpassungen von Attributen von Graphen und Graphelementen (z.B. Name, Farbe von Knoten, etc.)
+\end{itemize}
+Eine Umgebung für \gls{joana}-Graphen ist schon enthalten. Folgende Einstellung werden nach der Auswahl dieser Umgebung ausgeführt:
+\begin{itemize}
+  \item Für den \gls{callgraph} wird das Callgraph-Layout ausgewählt.
+  \item Für alle \glspl{methgraph} wird das Methodengraph-Layout ausgewählt
+  \item Der Name eines Graphen wird auf die Bezeichnung der zugehörigen Java-Methode mit Paket- und Klassennamen gesetzt.
+    Diese werden aus den Attributen des Entry-Knoten bestimmt.
+  \item Weitere Informationen (siehe \ref{fa:infoanzeige}) zu einem Methodengraphen werden beigefügt und formatiert. Alle Informationen werden aus Attributen der Knoten oder der Struktur des Graphen bestimmt (z.B. Parameter der Funktion).
+\end{itemize}
+Umgebungen sind immer gebunden an eine bestimmte Art von Graphen und können zu unerwünschten Ergebnissen führen, falls sie auf Graphen angewendet werden, für welche die Umgebung nicht gedacht ist.\\
+Neue \glspl{arbeitsumgebung} können von Plugins registriert werden und werden dann auch in dem Auswahlfenster aufgelistet (siehe \ref{s:umgebung}).
+
 
 \fano{Kollabieren von \glspl{subgraph}}\label{fa:kollabieren}
 \textbf{Ziel:} \glspl{subgraph} können zur Übersicht eingeklappt (kollabiert) werden.\\
@@ -277,8 +307,7 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben.\\
 \textbf{Nachbedingung (Erfolg):} Die ausgewählten Knoten wurden einer \gls{gruppe} hinzugefügt \\
 \textbf{Nachbedingung (Fehlschlag):} - \\
 \textbf{Auslösende Ereignisse:} Der Benutzer wählt im Kontextmenü aus, dass die Knoten zu einer \gls{gruppe} hinzugefügt werden sollen. \\
-\textbf{Beschreibung:}\\
-Eine selektierte Menge von Knoten kann zu einer \gls{gruppe} hinzugefügt werden. Diese können dann beispielsweise für die \ref{fa:constraintsettings} verwendet werden.\\
+\textbf{Beschreibung:}\\ Eine selektierte Menge von Knoten kann zu einer \gls{gruppe} hinzugefügt werden. Diese können dann beispielsweise für die Einstellung der Constraints als Parameter verwendet werden(siehe \ref{fa:constraintsettings}).\\
 
 \fano{Gruppe löschen}\label{fa:deletegruppe}
 \textbf{Ziel:} Eine \gls{gruppe} entfernen \\
