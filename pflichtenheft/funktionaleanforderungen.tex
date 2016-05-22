@@ -384,6 +384,22 @@ Die Reload-Funktion ermöglicht einen schnellen erneuten Import einer zuvor scho
 Falls der derzeitig in der Graphansicht geladene Graph in der neuen Datei vorhanden ist, wird er aktualisiert in die Graphansicht geladen.
 Layout und andere Darstellungsoption, wie etwaige aktivierte Knoten- und Kantenfilter werden übernommen.
 
+\fano{Automatisierte Subgraph Auswahl}\label{fa:gpm}
+\textbf{Ziel:} Die automatisierte Selektion von \glspl{subgraph} in einem Graphen \\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Nachbedingung (Erfolg):} Es wurden alle \glspl{subgraph} ausgewählt, die mit dem \gls{pattern} übereinstimmen.\\
+\textbf{Nachbedingung (Fehlschlag):} - \\
+\textbf{Auslösende Ereignisse:} Der User erstellt ein Selektor\\
+\textbf{Beschreibung:} Die automatisierte Selektion von Subgraphen ermöglicht es automatisch Gruppen zu erstellen, die mit einem bestimmtem \gls{pattern} übereinstimmen. Dies kann beispielsweise genutzt werden, um in größeren Graphen schneller Constraints erstellen.\\
+
+\fano{Testen von Erreichbarkeit von Knoten}\label{fa:erreichbarkeit}
+\textbf{Ziel:} Der Benutzer kann überprüfen ob ein Knoten von einem anderen erreichbar ist. \\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Ein Knoten wurde selektiert. \\
+\textbf{Nachbedingung (Erfolg):} Der Pfad zwischen den Knoten wird selektiert. \\
+\textbf{Nachbedingung (Fehlschlag):} Ausgabe: "kein Pfad gefunden." \\
+\textbf{Auslösende Ereignisse:} Der User öffnet das Kontextmenü eines zweiten Knotens und wählt: "finde Pfad zu" aus.\\
+\textbf{Beschreibung:} Die Funktion zum Testen von Erreichbarkeit von Knoten ermöglicht es Pfade zwischen Knoten zu betrachten oder sie zu einer Gruppe hinzu zu fügen.\\
+
 %\fano{}\label{fa:}
 %\textbf{Ziel:} \\
 %\textbf{Vorbedingung:} \\
