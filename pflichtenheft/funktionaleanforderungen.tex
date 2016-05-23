@@ -95,7 +95,7 @@ Weitere Layouts können durch Plugins hinzugefügt werden (siehe \ref{s:layoutal
 \textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
 \textbf{Nachbedingungen (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Benutzer klickt in der \ref{gui:layoutsetting} auf Constraint hinzufügen.\\
-\textbf{Beschreibung: } \\
+\textbf{Beschreibung: }\\
 Der Benutzer legt eine Anzahl von Constraints für einen Layoutalgorithmus fest, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}). Hierfür wählt er zunächst ein Constraint aus einer Menge an verfügbaren Constraints aus. Diese Constraints werden vom jeweiligen Layoutplugin geliefert und implementieren vom Produkt vorgegebene Interfaces. Vom Produkt werden folgende Interfaces vorgegeben:
 \begin{itemize}[nolistsep]
   \item \textbf{Relative Positionierung} positioniert eine \gls{gruppe} relativ zu einer anderen \gls{gruppe}.
@@ -106,20 +106,20 @@ Der Benutzer legt eine Anzahl von Constraints für einen Layoutalgorithmus fest,
 \end{itemize}
 
 \fano{Constraint bearbeiten}\label{fa:constraintsettings}
-\textbf{Ziel:} Die Parameter eines Constraints können verändert werden. \\
+\textbf{Ziel:} Die Parameter eines Constraints können verändert werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in Graphansicht geladen. Ein Layoutalgorithmus wurde ausgewählt und bestätigt. Ein Constraint wurde hinzugefügt. \\
-\textbf{Nachbedingung (Erfolg):} Die Parameter eines Constraints wurden verändert. \\
+\textbf{Nachbedingung (Erfolg):} Die Parameter eines Constraints wurden verändert.\\
 \textbf{Nachbedingung (Fehlschlag):} Ein Parameter wurde auf einen fehlerhaften Wert gesetzt. Es wird eine Fehlermeldung ausgegeben. \\
-\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf die veränderlichen Parameter eines Constraints. \\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf die veränderlichen Parameter eines Constraints.\\
 \textbf{Beschreibung:}\\
 Für ein spezifisches Constraint können die Parameter, wie die \gls{gruppe} die das Constraint betrifft nach der Erstellung geändert werden.\\
 
 \fano{Constraint löschen}\label{fa:deleteconstraint}
 \textbf{Ziel:} Ein Constraint kann gelöscht werden. \\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Ein Layoutalgorithmus wurde ausgewählt und bestätigt. Ein Constraint wurde hinzugefügt. \\
-\textbf{Nachbedingung (Erfolg):} Das Constraint wurde gelöscht. \\
+\textbf{Nachbedingung (Erfolg):} Das Constraint wurde gelöscht.\\
 \textbf{Nachbedingung (Fehlschlag):} - \\
-\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf den Löschen Knopf eines Constraints. \\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf den Löschen Knopf eines Constraints.\\
 \textbf{Beschreibung:}\\
 Ein Constraint kann vom Nutzer gelöscht werden.\\
 
@@ -305,15 +305,15 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben (siehe \ref{fa:k
 
 
 \fano{Knoten einer \gls{gruppe} hinzufügen}\label{fa:gruppe}
-\textbf{Ziel:} Einer oder mehrere Knoten können zu einer \gls{gruppe} hinzugefügt werden. \\
+\textbf{Ziel:} Einer oder mehrere Knoten können zu einer \gls{gruppe} hinzugefügt werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Einer oder mehrere Knoten wurden selektiert. \\
-\textbf{Nachbedingung (Erfolg):} Die ausgewählten Knoten wurden einer \gls{gruppe} hinzugefügt. \\
+\textbf{Nachbedingung (Erfolg):} Die ausgewählten Knoten wurden einer \gls{gruppe} hinzugefügt.\\
 \textbf{Nachbedingung (Fehlschlag):} - \\
 \textbf{Auslösende Ereignisse:} Der Benutzer wählt im Kontextmenü aus, dass die Knoten zu einer \gls{gruppe} hinzugefügt werden sollen. \\
 \textbf{Beschreibung:}\\ Eine selektierte Menge von Knoten kann zu einer \gls{gruppe} hinzugefügt werden. Diese können dann beispielsweise für die Einstellung der Constraints als Parameter verwendet werden (siehe \ref{fa:constraintsettings}).\\
 
 \fano{Gruppe löschen}\label{fa:deletegruppe}
-\textbf{Ziel:} Eine \gls{gruppe} entfernen \\
+\textbf{Ziel:} Eine \gls{gruppe} entfernen\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Es existiert eine \gls{gruppe}.\\
 \textbf{Nachbedingung (Erfolg):} Die \gls{gruppe} wurde gelöscht.\\
 \textbf{Nachbedingung (Fehlschlag):} - \\
@@ -322,7 +322,7 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben (siehe \ref{fa:k
 Eine vorhandene \gls{gruppe} wird vom Benutzer gelöscht.\\
 
 \fano{Wechsel zwischen Graphen}\label{fa:graphwechsel}
-\textbf{Ziel:} Der in der Graphansicht angezeigte Graph wurde ausgetauscht. \\
+\textbf{Ziel:} Der in der Graphansicht angezeigte Graph wurde ausgetauscht.\\
 \textbf{Vorbedingung:} Eine Graphdatei wurde geladen.\\
 \textbf{Nachbedingung (Erfolg):} Der ausgewählte Graph wird in der Graphansicht angezeigt.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
@@ -364,22 +364,19 @@ Die in der Informationsansicht angezeigte Statistik über einen Graphen oder \gl
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:} Der Benutzer klickt mit der rechten Maustaste auf
 \begin{itemize}[nolistsep]
-  \item einen beliebiegen Knoten im derzeit angezeigten Graphen.
+  \item einen beliebigen Knoten im derzeit angezeigten Graphen.
   \item einen Knoten in einer selektierten Knotenmenge im derzeit angezeigten Graphen.
   \item einen Namen eines Graphen in der Strukturansicht.
 \end{itemize}
 \textbf{Beschreibung:}\\
 Das Kontextmenü bietet einen schnellen Zugriff auf Funktionen die auf eine Auswahl ausgeführt werden können.
 Abhängig von den ausgewählten Elementen können sich die zur Verfügung stehenden Funktionen ändern.
-Selektierte \glspl{subgraph} können über das Kontexmenü kollabiert werden (siehe \ref{fa:kollabieren}).
+Selektierte \glspl{subgraph} können über das Kontextmenü kollabiert werden (siehe \ref{fa:kollabieren}).
 Ein kollabierter \gls{subgraph} kann durch das Kontextmenü des repräsentierenden Knoten wieder ausgeklappt werden (siehe \ref{fa:ausklappen}).
 Plugins können Operationen auf Knoten, Teilgraphen und Graphen, wie in \ref{s:operationen} beschrieben, registrieren.
 Diese Operationen werden dann im jeweiligen Kontextmenü dargestellt.
 
 
-\fano{TODO: Abspeichern als Graph}\label{fa:speichern}
-
-\fano{TODO: Definition des JOANA-Graphtypes}\label{fa:joanatyp}
 \section{Wunsch-Funktionen}
 
 \fano{Steuerung über Tastaturkürzel}\label{fa:hotkey}
@@ -416,7 +413,7 @@ Der Fortschrittsbalken dient dazu dem Benutzer anzuzeigen, wie weit das Programm
 Diese Übersicht besteht aus einem Bild des kompletten Graphen und zeigt an in welchem Teil des Graphen das aktuelle \gls{sichtfeld} liegt. Somit sieht der Benutzer, mit einem Blick, in welchem Teil des Graphen das \gls{sichtfeld} liegt und kann sich besser orientieren.
 
 \fano{Änderung der Darstellung von Kanten}\label{fa:darst-kanten}
-\textbf{Ziel:} Der Nutzer kann auswählen in welcher Form die Kanten des Graphen gezeichnet werden. \\
+\textbf{Ziel:} Der Nutzer kann auswählen in welcher Form die Kanten des Graphen gezeichnet werden.\\
 \textbf{Vorbedingung:} -\\
 \textbf{Nachbedingung (Erfolg):} Die neu gezeichneten Graphen werden mit der ausgewählten Darstellung für Kanten gezeichnet. \\
 \textbf{Nachbedingung (Fehlschlag):} -\\
@@ -436,7 +433,7 @@ Falls der derzeitig in der Graphansicht geladene Graph in der neuen Datei vorhan
 Layout und andere Darstellungsoption, wie etwaige aktivierte Knoten- und Kantenfilter werden übernommen.
 
 \fano{Automatisierte Subgraph Auswahl}\label{fa:gpm}
-\textbf{Ziel:} Die automatisierte Selektion von \glspl{subgraph} in einem Graphen \\
+\textbf{Ziel:} Die automatisierte Selektion von \glspl{subgraph} in einem Graphen.\\
 \textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
 \textbf{Nachbedingung (Erfolg):} Es wurden alle \glspl{subgraph} ausgewählt, die mit dem \gls{pattern} übereinstimmen.\\
 \textbf{Nachbedingung (Fehlschlag):} - \\
@@ -445,10 +442,10 @@ Layout und andere Darstellungsoption, wie etwaige aktivierte Knoten- und Kantenf
 Die automatisierte Selektion von Subgraphen ermöglicht es automatisch Gruppen zu erstellen, die mit einem bestimmtem \gls{pattern} übereinstimmen. Dies kann beispielsweise genutzt werden, um in größeren Graphen schneller Constraints erstellen.\\
 
 \fano{Testen von Erreichbarkeit von Knoten}\label{fa:erreichbarkeit}
-\textbf{Ziel:} Der Benutzer kann überprüfen, ob ein Knoten von einem anderen erreichbar ist. \\
-\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Ein Knoten wurde selektiert. \\
-\textbf{Nachbedingung (Erfolg):} Der Pfad zwischen den Knoten wird selektiert. \\
-\textbf{Nachbedingung (Fehlschlag):} Ausgabe: ''kein Pfad gefunden.'' \\
+\textbf{Ziel:} Der Benutzer kann überprüfen, ob ein Knoten von einem anderen erreichbar ist.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Ein Knoten wurde selektiert.\\
+\textbf{Nachbedingung (Erfolg):} Der Pfad zwischen den Knoten wird selektiert.\\
+\textbf{Nachbedingung (Fehlschlag):} Ausgabe: ''kein Pfad gefunden.''\\
 \textbf{Auslösende Ereignisse:} Der Benutzer öffnet das Kontextmenü eines zweiten Knotens und wählt: ''finde Pfad zu'' aus.\\
 \textbf{Beschreibung:}\\
 Die Funktion zum Testen von Erreichbarkeit von Knoten ermöglicht es, Pfade zwischen Knoten zu betrachten oder sie zu einer Gruppe hinzu zu fügen.\\
