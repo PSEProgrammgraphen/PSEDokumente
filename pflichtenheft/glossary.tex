@@ -67,7 +67,7 @@
 \newglossaryentry{sugiyama}
 {
   name=Framework von Sugiyama,
-  description={Das Framework von Sugiyama beschreibt eine Vorgehensweise, um einen Graphen hierarchisch darzustellen}
+  description={Das Framework von Sugiyama\cite{4308636} beschreibt eine Vorgehensweise, um einen Graphen hierarchisch darzustellen}
 }
 
 \newglossaryentry{bezier}
@@ -100,7 +100,7 @@
 \newglossaryentry{joana}
 {
   name=JOANA,
-  description={JOANA ist ein Analyse Tool des KIT, welches Java Programme analysiert und eine Graphdatei zurückgibt}
+  description={JOANA ist ein Analyse Tool des KIT, welches Java Programme analysiert und eine Graphdatei zurückgibt (\url{http://pp.ipd.kit.edu/projects/joana/})}
 }
 
 \newglossaryentry{hyperkante}
@@ -161,9 +161,15 @@
 \newglossaryentry{toplevel}
 {
   name=''Top-Level''-Graph,
-  description={Ein Top-Level Graph ist ein Graph, welcher nicht in einem geschachtelten Graphen enthalten ist. Beispielsweise ist der JOANA-Callgraph ein Top-Level Graph.}
+  description={Ein Top-Level Graph ist ein Graph, welcher nicht in einem \gls{hierarchgraph} enthalten ist. Beispielsweise ist der JOANA-Callgraph ein Top-Level Graph.}
 }
 
+
+\newglossaryentry{hierarchgraph}
+{
+  name={Hierarchischer Graph},
+  description={Ein hierarchischer/geschachtelter Graph beschreibt einen Graphen, der in einen anderen Graphen eingebettet wurde. Der geschachtelte Graph wird in dem darüberliegenden Graphen als Knoten behandelt.}
+}
 
 %\newglossaryentry{<++>}
 %{
