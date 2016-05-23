@@ -29,148 +29,7 @@ Die graphische Oberfläche bietet dem Benutzer ein interaktives Interface und ei
 
 Bemerkungen zu den folgenden Entwurfsabbildungen: Die Funktionalität und das Aussehen wird in der Implementierung von der Darstellung hier abweichen. Die Darstellung dient lediglich einer generellen Konzeptionierung der GUI und ist als solche als Prototyp zu verstehen.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_treeview.png}
-  \caption{Hauptansicht}
-  \label{fig:gui_view_treeview}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInView_node.png}
-  \caption{Knoteninformation anzeigen}
-  \label{fig:gui_view_showInfoInView_node}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInView_node_multi.png}
-  \caption{Mehrere Knoteninformationen anzeigen}
-  \label{fig:gui_view_showInfoInView_node_multi}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInView_edge.png}
-  \caption{Kanteninformation Anzeigen}
-  \label{fig:gui_view_showInfoInView_edge}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInView_edge_all.png}
-  \caption{Anzeige aller Kantennamen}
-  \label{fig:gui_view_showInfoInView_edge_all}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInProperties_node.png}
-  \caption{Eigenschaftenansicht von Knoten}
-  \label{fig:gui_view_showInfoInProperties_node}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInProperties_multi.png}
-  \caption{Eigenschaftenansicht von mehreren Knoten}
-  \label{fig:gui_view_showInfoInProperties_multi}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInProperties_edge.png}
-  \caption{Eigenschaftenansicht von Ecken}
-  \label{fig:gui_view_showInfoInProperties_edge}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_nodeMenu.png}
-  \caption{Kontextmenü Knoten}
-  \label{fig:gui_view_nodeMenu}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_group.png}
-  \caption{Gruppe von Knoten}
-  \label{fig:gui_view_group}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_filemenu.png}
-  \caption{Dateimenü}
-  \label{fig:gui_view_filemenu}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_layoutmenu.png}
-  \caption{Layoutmenü}
-  \label{fig:gui_view_layoutmenu}
-\end{figure}
-
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_drawSelection.png}
-  \caption{Auswahl mehrer Knoten und Kanten}
-  \label{fig:gui_view_drawSelection}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_layoutsettings_settings.png}
-  \caption{Einstellungen des Layoutalgorithmus}
-  \label{fig:gui_layoutsettings_settings}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_layoutsettings_constraints.png}
-  \caption{Einstellungen der Layout Constraints}
-  \label{fig:gui_layoutsettings_constraints}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_layoutsettings_constraints_new.png}
-  \caption{neues Constraint hinzufügen}
-  \label{fig:gui_layoutsettings_constraints_new}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_view_minimap.png}
-  \caption{Übersichtsanzeige des aktuellen Graphen}
-  \label{fig:gui_view_minimap}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_window_filters.png}
-  \caption{Filtereinstellungen}
-  \label{fig:gui_window_filters}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_window_import.png}
-  \caption{Importieren einer Datei}
-  \label{fig:gui_window_import}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=380pt]{resourcen/gui_window_chooseWorkspace.png}
-  \caption{Arbeitsbereich auswählen}
-  \label{fig:gui_window_chooseWorkspace}
-\end{figure}
-
-\begin{table}
+\begin{table}[ht]
   \caption{\gls{gui} Komponenten Referenzen}
   \begin{tabular}{lll}
     GUI Komponente & Abbildung & Referenznummer\\
@@ -184,3 +43,148 @@ Bemerkungen zu den folgenden Entwurfsabbildungen: Die Funktionalität und das Au
   \end{tabular}
   \label{tab:guicomponents}
 \end{table}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_treeview.png}
+  \caption{Hauptansicht}
+  \label{fig:gui_view_treeview}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInView_node.png}
+  \caption{Knoteninformation anzeigen}
+  \label{fig:gui_view_showInfoInView_node}
+\end{figure}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInView_node_multi.png}
+  \caption{Mehrere Knoteninformationen anzeigen}
+  \label{fig:gui_view_showInfoInView_node_multi}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInView_edge.png}
+  \caption{Kanteninformation Anzeigen}
+  \label{fig:gui_view_showInfoInView_edge}
+\end{figure}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInView_edge_all.png}
+  \caption{Anzeige aller Kantennamen}
+  \label{fig:gui_view_showInfoInView_edge_all}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInProperties_node.png}
+  \caption{Eigenschaftenansicht von Knoten}
+  \label{fig:gui_view_showInfoInProperties_node}
+\end{figure}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInProperties_multi.png}
+  \caption{Eigenschaftenansicht von mehreren Knoten}
+  \label{fig:gui_view_showInfoInProperties_multi}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_showInfoInProperties_edge.png}
+  \caption{Eigenschaftenansicht von Ecken}
+  \label{fig:gui_view_showInfoInProperties_edge}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_nodeMenu.png}
+  \caption{Kontextmenü Knoten}
+  \label{fig:gui_view_nodeMenu}
+\end{figure}
+
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_group.png}
+  \caption{Gruppe von Knoten}
+  \label{fig:gui_view_group}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_filemenu.png}
+  \caption{Dateimenü}
+  \label{fig:gui_view_filemenu}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_layoutmenu.png}
+  \caption{Layoutmenü}
+  \label{fig:gui_view_layoutmenu}
+\end{figure}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_drawSelection.png}
+  \caption{Auswahl mehrer Knoten und Kanten}
+  \label{fig:gui_view_drawSelection}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_layoutsettings_settings.png}
+  \caption{Einstellungen des Layoutalgorithmus}
+  \label{fig:gui_layoutsettings_settings}
+\end{figure}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_layoutsettings_constraints.png}
+  \caption{Einstellungen der Layout Constraints}
+  \label{fig:gui_layoutsettings_constraints}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_layoutsettings_constraints_new.png}
+  \caption{neues Constraint hinzufügen}
+  \label{fig:gui_layoutsettings_constraints_new}
+\end{figure}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_view_minimap.png}
+  \caption{Übersichtsanzeige des aktuellen Graphen}
+  \label{fig:gui_view_minimap}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_window_filters.png}
+  \caption{Filtereinstellungen}
+  \label{fig:gui_window_filters}
+\end{figure}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_window_import.png}
+  \caption{Importieren einer Datei}
+  \label{fig:gui_window_import}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=380pt]{resourcen/gui_window_chooseWorkspace.png}
+  \caption{Arbeitsbereich auswählen}
+  \label{fig:gui_window_chooseWorkspace}
+\end{figure}
+

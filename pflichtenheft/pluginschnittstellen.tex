@@ -2,8 +2,9 @@
 \label{ch:plugschnitt}
 
 \setcounter{psnr}{10}
-\newcommand{\psno}{\ifnum\value{psnr}<10 00\else\ifnum\value{psnr}<100 0\fi\fi\arabic{psnr}}
-\newcommand\ps[2]{\namedlabel{s:#1}{/S\psno/}\addtocounter{psnr}{10}: & #2 \\ [1ex] }
+%\newcommand\ps[2]{\namedlabel{s:#1}{/S\psno/}\addtocounter{psnr}{10}: & #2 \\ [1ex] }
+\newcommand{\psno}[1]{\subsubsection{#1}\addtocounter{psnr}{10}}
+\renewcommand\thesubsubsection{/S\ifnum\value{psnr}<10 00\else\ifnum\value{psnr}<100 0\fi\fi\arabic{psnr}/}
 
 \section{Allgemein}
 
@@ -19,19 +20,57 @@ werden von Graph von Ansicht selbst ausgeführt.\\
 
 \section{Schnittstellen}
 In folgender Tabelle sind alle Schnittstellen spezifiziert, welche ein Plugin implementieren kann.
+Wenn im Folgenden von der Registrierung eines Dienstes gesprochen wird, ist damit gemeint, dass ein Plugin dem Kernprogramm zuerst nur mitteilt, dass es diesen Dienst anbietet und welchen Namen er besitzt. Graph von Ansicht kann dann den Namen des Dienstes in der \gls{gui} anzeigen.
 
-\begin{tabular}{lp{0.9\linewidth}}
-  \ps{umgebung}{\textit{\gls{arbeitsumgebung}-Schnittstelle:} Plugins sind in der Lage neue Graphtypen zu definieren. Alle von Plugins definierten Graphtypen sind dem Benutzer beim Importieren zur Auswahl gestellt. Das Plugin kann dann mit einem Graphtyp bestimmte Import-Möglichkeiten, Layoutalgorithmen und Darstellungsoptionen verbinden, sodass der Benutzer diese nicht bei jedem Öffnen eines Graphen neu festlegen muss und gleichzeitig eine Importfunktion für ein Datenformat von mehreren Plugins wiedervewendet werden können.}
-  \ps{import}{\textit{Import-Schnittstelle:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann ein Dateiformat registrieren, für welches es eine Importfunktion implementiert. Das Format steht dann in der Importfunktion (siehe \ref{fa:import}) von Graph von Ansicht zur Auswahl.\\ &
-  Aufgabe: Das Plugin bekommt einen \gls{datenstrom} einer Datei in dem registrierten Format. Die in der Datei beschriebenen Graphen sollen in die in Graph von Ansicht benutzte interne Repräsentation überführt werden. Falls durch Fehler in der Datei die Graphen nicht überführt wurden konnten, muss eine Fehlermeldung zurückgegeben werden.}
-  \ps{export}{\textit{Export-Schnittstelle:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann ein Dateiformat registrieren, für welches es eine Exportfunktion implementiert. Das Format steht dann in der Exportfunktion für Graphen (siehe \ref{fa:export_img}).\\ &
-  Aufgabe: Graph von Ansicht sendet den zu exportierenden Graphen in der internen Repräsentation des Programmes an Plugins dieser Schnittstelle. Das Plugin soll diese Daten in das registrierte Dateiformat überführen und als \gls{datenstrom} an Graph von Ansicht zurückgeben.}
-  \ps{layoutalgo}{\textit{Layoutalgorithmen-Schnittstelle:} Ein Plugin, welches auf dese Schnittstelle zugreift, kann einen Layoutalgorithmus registrieren. Dieser Algorithmus wird dann in der Menüleiste unter dem Menüpunkt Layout aufgelistet. Zu dem Algorithmus kann es eine Reihe von Parametern definieren, welche dann nach der Auswahl des Layouts in einem Dialog zur Auswahl stehen\\ & %TODO: Ref GUI
-   Aufgabe: Das Plugin bekommt eine interne Repräsentation des Graphen und soll jedem Knoten eine Koordinate zuordnen. Außerdem sollen die Verläufe von Kanten festgelegt werden.}
-  \ps{filter}{\textit{Filter-Schnittstelle:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann neue Filter für spezielle Knoten- und Kantentypen definieren, welche bei den Filteroptionen von Graph von Ansicht dann zur Auswahl stehen.\\ &
-    Aufgabe: Das Plugin übergibt auf Anfrage von Graph von Ansicht eine Liste von Filter und Kriterien, welche Knoten und Kanten erfüllen müssen, um von diesen Filtern beinträchtigt zu werden.}
-    \ps{darstellung}{\textit{Darstellungs-Schnittstelle:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann neue Darstellungsoptionen für spezielle Knoten- und Kantentypen definieren. Diese stehen dann für Arbeitsumgebungen (siehe \ref{s:umgebung} und \ref{fa:arbeitsumgebung}) zur Auswahl. Es können einzelnen Knoten- und Kantentypen Eigenschaften zugeordnet werden, wie zum Beispiel die Farbe für das Layout, die Form oder zusätzliche Informationen, welche in der Informationsanzeige angezeigt werden.\\ &
-    Aufgabe: Das Plugin übergibt auf Anfrage von Graph von Ansicht eine Liste von Darstellungsoptionen und Kriterien, welche Knoten und Kanten erfüllen müssen, um von diesen Optionen beinträchtigt zu werden.}
-  \ps{operationen}{\textit{Operation-Schnittstelle für Knoten und Kanten:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann Operationen auf einzelne Knoten oder Kanten, auf \glspl{subgraph} und auf Graphen registrieren. Die Operationen werden dann im jeweiligen Kontextmenü aufgelistet.\\ &
-Aufgabe: Falls der Nutzer die Operation im Kontextmenü wählt, wird dem Plugin die ausgewählte Operation und das Ziel der Operation übergeben. Das Plugin muss die Operation dann ausführen. Dabei hat es vollen Schreib- und Lesezugriff auf die interne Repräsentation der Graphen.}
-\end{tabular}
+\psno{\gls{arbeitsumgebung}-Schnittstelle}\label{s:umgebung}
+\textbf{Ziel:} Plugins können neue \glspl{arbeitsumgebung} registrieren.\\
+\textbf{Aufgabe:}
+Registrierung einer \gls{arbeitsumgebung} und Implementierung der Anpassungen welche nach dem Import einer Datei vorgenommen werden sollen.\\
+\textbf{Beschreibung:}\\
+Diese werden dann als Auswahlsmöglichkeit nach dem Import einer Datei hinzugefügt (siehe \ref{fa:umgebung}).
+Falls der Benutzer die registrierte \gls{arbeitsumgebung} auswählt, bekommt das Plugin Zugang zu der internen Repräsentation der Graphen aus der gerade importierten Datei. Das Plugin kann dann Anpassungen wie in \ref{fa:umgebung} beschrieben machen.
+
+\psno{Import-Schnittstelle}\label{s:import}
+\textbf{Ziel:} Plugins können neue Dateiformate registrieren, für welche sie Importfunktionen implementieren.\\
+\textbf{Aufgabe:}
+Das Plugin bekommt einen \gls{datenstrom} einer Datei aus dem registrierten Format. Die in der Datei beschriebenen Graphen sollen in die in Graph von Ansicht benutzte interne Repräsentation überführt werden. Falls durch Fehler in der Datei die Graphen nicht überführt wurden konnten, muss eine Fehlermeldung zurückgegeben werden.\\
+\textbf{Beschreibung:}\\
+Das Format steht dann, wie in \ref{fa:import} als Importfunktion von Graph von Ansicht zur Auswahl.
+
+\psno{Export-Schnittstelle}\label{s:export}
+\textbf{Ziel:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann ein Dateiformat registrieren, für welches es eine Exportfunktion implementiert.\\
+\textbf{Aufgabe:}
+Graph von Ansicht übergibt den zu exportierenden Graphen in der internen Repräsentation des Programmes an Plugins dieser Schnittstelle. Diese sollen dann die Daten in das registrierte Dateiformat überführen und als \gls{datenstrom} an Graph von Ansicht zurückgeben.\\
+\textbf{Beschreibung:}\\
+Das Format steht dann, wie in \ref{fa:export_img} als Exportfunktion für Graphen zur Verfügung.
+
+\psno{Layoutalgorithmen-Schnittstelle}\label{layoutalgo}
+\textbf{Ziel:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann einen Layoutalgorithmus registrieren.\\
+\textbf{Aufgabe:}
+Das Plugin bekommt eine interne Repräsentation des Graphen und soll jedem Knoten eine Koordinate zuordnen. Außerdem sollen die Verläufe von Kanten festgelegt werden.\\
+\textbf{Beschreibung:}\\
+Der registrierte Algorithmus wird in der Menüleiste unter dem Menüpunkt Layout aufgelistet.
+Zu dem Algorithmus kann das Plugin eine Reihe von Parametern definieren, welche dann nach der Auswahl des Layouts in einem Dialog (siehe \ref{gui:layoutsetting}) zur Auswahl stehen.
+
+
+\psno{Filter-Schnittstelle}\label{s:filter}
+\textbf{Ziel:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann neue Filter für spezielle Knoten- und Kantentypen hinzufügen.\\
+\textbf{Aufgabe:}
+Das Plugin übergibt auf Anfrage von Graph von Ansicht eine Liste von Filter und Kriterien, welche Knoten und Kanten erfüllen müssen, um von diesen Filtern beinträchtigt zu werden.\\
+\textbf{Beschreibung:}\\
+Definierte Filter sind in den Filteroptionen (siehe \ref{fig:gui_window_filters}) von Graph von Ansicht zur Auswahl.
+
+\psno{Darstellungs-Schnittstelle}\label{s:darstellung}
+\textbf{Ziel:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann neue Darstellungsoptionen für spezielle Knoten- und Kantentypen definieren.\\
+\textbf{Aufgabe:}
+Das Plugin übergibt auf Anfrage von Graph von Ansicht eine Liste von Darstellungsoptionen und Kriterien, welche Knoten und Kanten erfüllen müssen, um von diesen Optionen beinträchtigt zu werden.\\
+\textbf{Beschreibung:}\\
+Definierte Optionen stehen Arbeitsumgebungen (siehe \ref{s:umgebung} und \ref{fa:umgebung}) zur Auswahl, während der automatisierten Anpassung zur Verfügung.
+
+\psno{Operation-Schnittstelle}\label{s:operationen}
+\textbf{Ziel:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann Operationen auf einzelne Knoten oder Kanten, auf \glspl{subgraph} und auf Graphen registrieren.\\
+\textbf{Aufgabe:}
+Falls der Nutzer die Operation auswählt, wird dem Plugin die ausgewählte Operation und das Ziel der Operation übergeben. Das Plugin muss die Operation dann ausführen.\\
+\textbf{Beschreibung:}\\
+Registrierte Operationen werden im jeweiligen Kontextmenü (siehe \ref{fa:kontextmenü}) aufgelistet.
+Bei der Ausführung des hat es vollen Schreib- und Lesezugriff auf die interne Repräsentation der Graphen.\\
