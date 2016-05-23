@@ -2,7 +2,6 @@
 \label{ch:plugschnitt}
 
 \setcounter{psnr}{10}
-%\newcommand\ps[2]{\namedlabel{s:#1}{/S\psno/}\addtocounter{psnr}{10}: & #2 \\ [1ex] }
 \newcommand{\psno}[1]{\subsubsection{#1}\addtocounter{psnr}{10}}
 \renewcommand\thesubsubsection{/S\ifnum\value{psnr}<10 00\else\ifnum\value{psnr}<100 0\fi\fi\arabic{psnr}/}
 
@@ -16,7 +15,7 @@ Falls beim Laden eines Plugins, ein Plugin auf das eine Abhängigkeit existiert,
 nicht geladen. Eine Fehlermeldung wird ausgegeben.
 Plugins können weder neue Threads öffnen, noch andere Programme starten. Plugins können keine \gls{io}-Operationen ausführen.
 Export- und Import-Plugins werden über \glspl{datenstrom} innerhalb des Programmes umgesetzt. Die eigentliche Schreiboperationen
-werden von Graph von Ansicht selbst ausgeführt.\\
+werden von Graph von Ansicht selbst ausgeführt. Fehlermeldungen und weitere Benutzerinteraktionen werden indirekt über das Kernprogramm dargestellt und ausgeführt. Den Zugriff auf die jeweiligen Repräsentation wird in \autoref{fig:aufbaudatenfluss} beschrieben.\\
 
 \section{Schnittstellen}
 In folgender Tabelle sind alle Schnittstellen spezifiziert, welche ein Plugin implementieren kann.
