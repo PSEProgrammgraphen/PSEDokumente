@@ -9,7 +9,7 @@ Folgende Parameter werden unterstützt:\\
   -layout <layout> & Legt einen Layout-Algorithmus fest, welcher beim Programmstart auf den ersten Graphen angewendet wird.\\
     & Dabei ist <layout> ein Kürzel, das vom jeweiligen Layout-Plugin definiert wird. Das Kürzel wird hinter der Layout-Option in der Menüleiste angezeigt.\\
   -in <datei> & Legt die zu öffnende Graphdatei fest. <datei> ist der relative oder absolute Pfad zu einer Graphdatei. Alternativ kann ``-in'' weggelassen werden, falls der Pfad als letztes Argument angegeben wird.\\
-  -type <typeid> & Legt den Typ des Graphen fest. Über den Typ des Graphen wird das Import-Plugin, sowie initiale Darstellungsoptionen festgelegt. Graphtypen können von Plugins definiert werden. (siehe \autoref{ch:plugschnitt})
+  -ws <typeid> & Legt den Typ des Graphen fest. Über den Typ des Graphen wird das Import-Plugin, sowie initiale Darstellungsoptionen festgelegt. Arbeitsbereiche können von Plugins definiert werden. (siehe \autoref{ch:plugschnitt})
 \end{tabular}
 
 \subsection{Kann-Argumente}
@@ -23,7 +23,7 @@ Folgende Parameter werden unterstützt:\\
 
 \section{GUI}\label{sec:uigui}
 
-Die graphische Oberfläche bietet dem Benutzer ein interaktives Interface und eine Anzeige für die gelayouteten Graphen. %TODO: gelayoutet ersetzen
+Die graphische Oberfläche bietet dem Benutzer ein interaktives Interface und eine Anzeige für die gelayouteten Graphen.
 
 \subsection{Entwürfe}
 
@@ -39,7 +39,7 @@ Bemerkungen zu den folgenden Entwurfsabbildungen: Die Funktionalität und das Au
     Menüleiste\label{gui:menuleiste} & \ref{fig:gui_view_treeview} & 4\\
     Hauptansicht(Fenster)\label{gui:hauptansicht} & \ref{fig:gui_view_treeview} & 5\\
     Informationsansicht\label{gui:informationsansicht} & \ref{fig:gui_view_showInfoInProperties_node} & 1 \\
-    Einstellungen des Layoutalgorithmus\label{gui:layoutsetting} & \ref{fig:gui_layoutsettings_settings} & 1 \\ %TODO: sinnvolle referenzen hinzufügen
+    Einstellungen des Layoutalgorithmus\label{gui:layoutsetting} & \ref{fig:gui_layoutsettings_settings} & 1 \\
   \end{tabular}
   \label{tab:guicomponents}
 \end{table}
@@ -50,8 +50,6 @@ Bemerkungen zu den folgenden Entwurfsabbildungen: Die Funktionalität und das Au
   \caption{Hauptansicht}
   \label{fig:gui_view_treeview}
 \end{figure}
-
-\FloatBarrier
 
 \begin{figure}[ht]
   \centering
@@ -115,8 +113,6 @@ Bemerkungen zu den folgenden Entwurfsabbildungen: Die Funktionalität und das Au
   \caption{Gruppe von Knoten}
   \label{fig:gui_view_group}
 \end{figure}
-
-\FloatBarrier
 
 \begin{figure}[hb]
   \centering
