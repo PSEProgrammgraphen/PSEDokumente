@@ -9,12 +9,12 @@
 \section{Allgemein}
 
 Das Produkt enthält einen Plugin-Manager, welcher beim Programmstart Plugins aus einem dedizierten Ordner liest.
-Zudem können Plugins direkt mit dem Produkt verpackt werden um eines abgeschlossenes Programm zu erhalten.
+Zudem können Plugins direkt mit dem Produkt verpackt werden, um ein abgeschlossenes Programm zu erhalten.
 Dies ist der Fall bei den Plugins zur Unterstützung von \gls{joana}-Graphen, \gls{graphml} und \gls{svg}.
-Plugins können Abhängigkeiten auf andere Plugins haben. Diese müssen von Plugins angegeben werden.
+Plugins können Abhängigkeiten auf andere Plugins haben, welche von Plugins angegeben werden müssen.
 Falls beim Laden eines Plugins, ein Plugin auf das eine Abhängigkeit existiert, nicht vorhanden ist, wird das Plugin
 nicht geladen. Eine Fehlermeldung wird ausgegeben.
-Plugins können keine neue Threads öffnen, noch andere Programme starten. Plugins können keine \gls{io}-Operationen ausführen.
+Plugins können weder neue Threads öffnen, noch andere Programme starten. Plugins können keine \gls{io}-Operationen ausführen.
 Export- und Import-Plugins werden über \glspl{datenstrom} innerhalb des Programmes umgesetzt. Die eigentliche Schreiboperationen
 werden von Graph von Ansicht selbst ausgeführt.\\
 
@@ -33,7 +33,7 @@ Falls der Benutzer die registrierte \gls{arbeitsumgebung} auswählt, bekommt das
 \psno{Import-Schnittstelle}\label{s:import}
 \textbf{Ziel:} Plugins können neue Dateiformate registrieren, für welche sie Importfunktionen implementieren.\\
 \textbf{Aufgabe:}
-Das Plugin bekommt einen \gls{datenstrom} einer Datei aus dem registrierten Format. Die in der Datei beschriebenen Graphen sollen in die in Graph von Ansicht benutzte interne Repräsentation überführt werden. Falls durch Fehler in der Datei die Graphen nicht überführt wurden konnten, muss eine Fehlermeldung zurückgegeben werden.\\
+Das Plugin bekommt einen \gls{datenstrom} einer Datei aus dem registrierten Format. Die in der Datei beschriebenen Graphen sollen in die in Graph von Ansicht benutzte interne Repräsentation überführt werden. Falls durch Fehler in der Datei die Graphen nicht überführt werden konnten, muss eine Fehlermeldung zurückgegeben werden.\\
 \textbf{Beschreibung:}\\
 Das Format steht dann, wie in \ref{fa:import} als Importfunktion von Graph von Ansicht zur Auswahl.
 
@@ -65,7 +65,7 @@ Definierte Filter sind in den Filteroptionen (siehe \ref{fig:gui_window_filters}
 \textbf{Aufgabe:}
 Das Plugin übergibt auf Anfrage von Graph von Ansicht eine Liste von Darstellungsoptionen und Kriterien, welche Knoten und Kanten erfüllen müssen, um von diesen Optionen beinträchtigt zu werden.\\
 \textbf{Beschreibung:}\\
-Definierte Optionen stehen Arbeitsumgebungen (siehe \ref{s:umgebung} und \ref{fa:umgebung}) zur Auswahl, während der automatisierten Anpassung zur Verfügung.
+Definierte Optionen stehen Arbeitsumgebungen (siehe \ref{s:umgebung} und \ref{fa:umgebung}) während der automatisierten Anpassung zur Verfügung.
 
 \psno{Operation-Schnittstelle}\label{s:operationen}
 \textbf{Ziel:} Ein Plugin, welches auf diese Schnittstelle zugreift, kann Operationen auf einzelne Knoten oder Kanten, auf \glspl{subgraph} und auf Graphen registrieren.\\
