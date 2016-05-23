@@ -55,17 +55,19 @@ Ein Methodengraph kann als \gls{subgraph} des \glspl{callgraph} geöffnet werden
 
 
 \fano{Graphen layouten}\label{fa:layout}
-\textbf{Ziel:} Ein Graph soll nach bestimmten Vorgaben bzw. einem bestimmten Muster angeordnet werden.\\
-%TODO Muster beziehen sich vlt auf constrains/bzw. auf die parametriesierung möglicher anderer Layoutalgos
-\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen.\\
+\textbf{Ziel:} Ein Graph soll anhand eines gewählten Layouts angeordnet werden.\\
+\textbf{Vorbedingung:} Eine Graphdatei wurde importiert.\\
 \textbf{Nachbedingung (Erfolg):} Allen Knoten wurden bestimmte Positionen zugeordnet, Kanten wurden feste Kurven zugewiesen.\\
 \textbf{Nachbedingung (Fehlschlag):} -\\
 \textbf{Auslösende Ereignisse:}
-Der Benutzer wählt über die Menüleiste ein Layout aus und bestätigt es.\\
+\begin{enumerate}[nolistsep, label=(\alph*)]
+	\item Der Benutzer wählt über einen Auswahldialog eine \gls{arbeitsumgebung} aus.
+	\item Der Benutzer wählt über einen Menüeintrag ein Layout aus.
+\end{enumerate}
 \textbf{Beschreibung:}\\
-Nach der Auswahl des Layouts öffnet sich ein Fenster zur Parametrisierung des Layout-Algorithmus.
-Beispiele für Parameter sind die Ebenenanzahl oder die maximale Anzahl an Knoten auf jeder Ebene bei einem hierarchischen Layout.
-Nachdem der Benutzer seine gewünschten Einstellungen bestätigt hat, wird das Layout berechnet. Hierbei kann es zu Verzögerungen kommen (siehe \ref{nfa:berechzeit}).
+Nachdem der Benutzer seine gewünschte Arbeitsumgebung gewählt hat, wird das Layout wie in der Arbeitsumgebung definiert ausgewählt.\\
+Wählt der Benutzer per Hand ein Layout aus, wird der angezeigte Graph in dem neuen Layout berechnet.\\
+Hierbei kann es zu Verzögerungen kommen (siehe \ref{nfa:berechzeit}).
 Nach der Berechnung wird der Graph neu gezeichnet.
 Graph von Ansicht enthält zwei hierarchische Layouts:
 \begin{itemize}
@@ -80,7 +82,7 @@ Graph von Ansicht enthält zwei hierarchische Layouts:
       \item Zu einem Methodenaufruf gehörende Knoten (z.B. Actual-in und Actual-out) werden auf dem Layer direkt unter dem Layer des Call-Knoten platziert.
       \item Zu einem Methodenaufruf gehörende Knoten (Actual-in, Actual-out etc.) werden direkt nebeneinander und in der Reihenfolge der Parameter der Methode platziert.
       \item Der Call-Knoten wird in dem Bereich oberhalb der Parameter platziert.
-      \item Knoten die einen Feldzugriff darstellen, werden immer nahe beieinander und in einem einheitlichen Muster platziert. %TODO: Beispielbilder aus E-Mail einfügen?
+      \item Knoten die einen Feldzugriff darstellen, werden immer nahe beieinander und in einem einheitlichen Muster platziert.
       \item Feldzugriffskanten werden senkrecht gezeichnet.
     \end{itemize}
 \end{itemize}
@@ -239,7 +241,7 @@ Der Benutzer wählt die Exportfunktion aus der Menüleiste aus.\\
 \textbf{Beschreibung:}\\
 Es wird das Exportieren von Graphen in das \gls{svg}-Dateiformat unterstützt.\\
 Es erscheint ein Dateisystem-Menü, in welchem der Pfad zum Abspeichern der Bilddatei ausgewählt werden kann.\\
-Eventuell wird der Benutzer noch nach weiteren, zur Abspeicherung relevanten, Details gefragt. (z.B. Stärke der Komprimierung bei JPEG)\\ %TODO: Durch Beispiel in SVG ersetzten
+Eventuell wird der Benutzer noch nach weiteren, zur Abspeicherung relevanten, Details gefragt. (z.B. Codestil der SVG-Datei)\\
 Es wird versucht, die Bilddatei am ausgewählten Ort abzuspeichern.
 Weitere Export-Optionen können durch Plugins bereitgestellt werden (siehe \ref{s:export}).
 
