@@ -89,40 +89,6 @@ Graph von Ansicht enthält zwei hierarchische Layouts:
 Beide Layouts müssen alle in \autoref{sec:nfajoana} beschriebenen Anforderungen erfüllen.
 Weitere Layouts können durch Plugins hinzugefügt werden (siehe \ref{s:layoutalgo})
 
-\fano{Constraints hinzufügen}\label{fa:constraints}
-\textbf{Ziel:} Ein Layout-spezifisches Constraint kann hinzugefügt werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Ein Layoutalgorithmus wurde angewendet.\\
-\textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
-\textbf{Nachbedingungen (Fehlschlag):} -\\
-\textbf{Auslösende Ereignisse:} Der Benutzer klickt in der \ref{gui:layoutsetting} auf Constraint hinzufügen.\\
-\textbf{Beschreibung: }\\
-Der Benutzer legt eine Anzahl von Constraints für einen Layoutalgorithmus fest, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}). Hierfür wählt er zunächst ein Constraint aus einer Menge an verfügbaren Constraints aus. Diese Constraints werden vom jeweiligen Layoutplugin geliefert und implementieren vom Produkt vorgegebene Interfaces. Vom Produkt werden folgende Interfaces vorgegeben:
-\begin{itemize}[nolistsep]
-  \item \textbf{Relative Positionierung} positioniert eine \gls{gruppe} relativ zu einer anderen \gls{gruppe}.
-  \item \textbf{Absolute Positionierung} positioniert eine \gls{gruppe} absolut im Layout.
-  \item \textbf{Proximität} positioniert die Elemente einer \gls{gruppe} in festgelegter Nähe zueinander.
-  \item \textbf{Lage} positioniert die Elemente einer \gls{gruppe} in Layoutspezifischen Positionen.
-  \item \textbf{Algorithmus anwenden} wendet beim Graphen layouten(siehe \ref{fa:layout}) einen, von diesem bereitgestellten Algorithmus, auf eine \gls{gruppe} an. 
-\end{itemize}
-
-\fano{Constraint bearbeiten}\label{fa:constraintsettings}
-\textbf{Ziel:} Die Parameter eines Constraints können verändert werden.\\
-\textbf{Vorbedingung:} Ein Graph wurde in Graphansicht geladen. Ein Layoutalgorithmus wurde ausgewählt und bestätigt. Ein Constraint wurde hinzugefügt. \\
-\textbf{Nachbedingung (Erfolg):} Die Parameter eines Constraints wurden verändert.\\
-\textbf{Nachbedingung (Fehlschlag):} Ein Parameter wurde auf einen fehlerhaften Wert gesetzt. Es wird eine Fehlermeldung ausgegeben. \\
-\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf die veränderlichen Parameter eines Constraints.\\
-\textbf{Beschreibung:}\\
-Für ein spezifisches Constraint können die Parameter, wie die \gls{gruppe} die das Constraint betrifft nach der Erstellung geändert werden.\\
-
-\fano{Constraint löschen}\label{fa:deleteconstraint}
-\textbf{Ziel:} Ein Constraint kann gelöscht werden. \\
-\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Ein Layoutalgorithmus wurde ausgewählt und bestätigt. Ein Constraint wurde hinzugefügt. \\
-\textbf{Nachbedingung (Erfolg):} Das Constraint wurde gelöscht.\\
-\textbf{Nachbedingung (Fehlschlag):} - \\
-\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf den Löschen Knopf eines Constraints.\\
-\textbf{Beschreibung:}\\
-Ein Constraint kann vom Nutzer gelöscht werden.\\
-
 \fano{Knoten und Kanten filtern}\label{fa:filter}
 \textbf{Ziel:} Knoten und Kanten können bezüglich ihres Types gefiltert werden.\\
 \textbf{Vorbedingung:} Ein Graph wurde geladen.\\
@@ -310,7 +276,7 @@ Die derzeit ausgewählten Knoten werden graphisch hervorgehoben (siehe \ref{fa:k
 \textbf{Nachbedingung (Erfolg):} Die ausgewählten Knoten wurden einer \gls{gruppe} hinzugefügt.\\
 \textbf{Nachbedingung (Fehlschlag):} - \\
 \textbf{Auslösende Ereignisse:} Der Benutzer wählt im Kontextmenü aus, dass die Knoten zu einer \gls{gruppe} hinzugefügt werden sollen. \\
-\textbf{Beschreibung:}\\ Eine selektierte Menge von Knoten kann zu einer \gls{gruppe} hinzugefügt werden. Diese können dann beispielsweise für die Einstellung der Constraints als Parameter verwendet werden (siehe \ref{fa:constraintsettings}).\\
+\textbf{Beschreibung:}\\ Eine selektierte Menge von Knoten kann zu einer \gls{gruppe} hinzugefügt werden.\\
 
 \fano{Gruppe löschen}\label{fa:deletegruppe}
 \textbf{Ziel:} Eine \gls{gruppe} entfernen\\
@@ -378,6 +344,42 @@ Diese Operationen werden dann im jeweiligen Kontextmenü dargestellt.
 
 
 \section{Wunschfunktionen}
+
+
+\fano{Constraints hinzufügen}\label{fa:constraints}
+\textbf{Ziel:} Ein Layout-spezifisches Constraint kann hinzugefügt werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Ein Layoutalgorithmus wurde angewendet.\\
+\textbf{Nachbedingungen (Erfolg):} Es wurde ein neuer Constraint hinzugefügt.\\
+\textbf{Nachbedingungen (Fehlschlag):} -\\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt in der \ref{gui:layoutsetting} auf Constraint hinzufügen.\\
+\textbf{Beschreibung: }\\
+Der Benutzer legt eine Anzahl von Constraints für einen Layoutalgorithmus fest, die für das layouten verwendet werden sollen (siehe \ref{fa:layout}). Hierfür wählt er zunächst ein Constraint aus einer Menge an verfügbaren Constraints aus. Diese Constraints werden vom jeweiligen Layoutplugin geliefert und implementieren vom Produkt vorgegebene Interfaces. Vom Produkt werden folgende Interfaces vorgegeben:
+\begin{itemize}[nolistsep]
+  \item \textbf{Relative Positionierung} positioniert eine \gls{gruppe} relativ zu einer anderen \gls{gruppe}.
+  \item \textbf{Absolute Positionierung} positioniert eine \gls{gruppe} absolut im Layout.
+  \item \textbf{Proximität} positioniert die Elemente einer \gls{gruppe} in festgelegter Nähe zueinander.
+  \item \textbf{Lage} positioniert die Elemente einer \gls{gruppe} in Layoutspezifischen Positionen.
+  \item \textbf{Algorithmus anwenden} wendet beim Graphen layouten(siehe \ref{fa:layout}) einen, von diesem bereitgestellten Algorithmus, auf eine \gls{gruppe} an. 
+\end{itemize}
+
+\fano{Constraint bearbeiten}\label{fa:constraintsettings}
+\textbf{Ziel:} Die Parameter eines Constraints können verändert werden.\\
+\textbf{Vorbedingung:} Ein Graph wurde in Graphansicht geladen. Ein Layoutalgorithmus wurde ausgewählt und bestätigt. Ein Constraint wurde hinzugefügt. \\
+\textbf{Nachbedingung (Erfolg):} Die Parameter eines Constraints wurden verändert.\\
+\textbf{Nachbedingung (Fehlschlag):} Ein Parameter wurde auf einen fehlerhaften Wert gesetzt. Es wird eine Fehlermeldung ausgegeben. \\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf die veränderlichen Parameter eines Constraints.\\
+\textbf{Beschreibung:}\\
+Für ein spezifisches Constraint können die Parameter, wie die \gls{gruppe} die das Constraint betrifft nach der Erstellung geändert werden.\\
+
+\fano{Constraint löschen}\label{fa:deleteconstraint}
+\textbf{Ziel:} Ein Constraint kann gelöscht werden. \\
+\textbf{Vorbedingung:} Ein Graph wurde in die Graphansicht geladen. Ein Layoutalgorithmus wurde ausgewählt und bestätigt. Ein Constraint wurde hinzugefügt. \\
+\textbf{Nachbedingung (Erfolg):} Das Constraint wurde gelöscht.\\
+\textbf{Nachbedingung (Fehlschlag):} - \\
+\textbf{Auslösende Ereignisse:} Der Benutzer klickt auf den Löschen Knopf eines Constraints.\\
+\textbf{Beschreibung:}\\
+Ein Constraint kann vom Nutzer gelöscht werden.\\
+
 
 \fano{Steuerung über Tastaturkürzel}\label{fa:hotkey}
 \textbf{Ziel:} Häufig verwendete Funktionen können über Tastaturkürzel ausgeführt werden.\\
