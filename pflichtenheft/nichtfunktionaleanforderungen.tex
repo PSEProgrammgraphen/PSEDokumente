@@ -7,10 +7,15 @@
 
 \section{Graph von Ansicht}
 
+Falls eine der in \ref{nfa:maxknoten}  und \ref{nfa:maxkanten} beschriebenen Anforderungen überschritten wird, kann es zu (polynomiell) längeren Berechnungszeiten kommen als in \ref{nfa:berechzeit} beschrieben. Falls es zusätzlich zu ein Mangel von Hardware-Resourcen kommen sollte, wird die derzeit ausgeführte Funktion abgebrochen und dem Nutzer eine Fehlermeldung ausgegeben.
+
+Alle in \ref{nfa:maxknoten}, \ref{nfa:maxknotentotal}, \ref{nfa:maxkanten} und \ref{nfa:berechzeit} beschriebenen Anforderungen gelten für die in \autoref{sec:hardware} aufgelisteten Hardware-Anforderungen. Bei Verwendung leistungstärkerer Hardware, kann erwartet werden, dass größere Graphen/Graphdateien verwendet werden können und die Berechnung des Layouts für Graphen gleicher Größe kürzer dauert.\\
+
+
 \begin{tabular}{lp{0.9\linewidth}}
-  \nfa{maxknoten}{Bei dem layouten werden Graphen mit bis zu 1000 Knoten unterstützt. Das layouten größerer Graphen kann jedoch (zum Beispiel durch bessere Hardware, vgl. \autoref{sec:hardware}) trotzdem funktionieren, jedoch gibt es weder für die Stabilität des Programmes hinsichtlich der Performanz, noch die in \ref{nfa:berechzeit} beschriebene Laufzeit Gewährleistungen. Dies entspricht nicht der maximalen Knotenzahl in einer unterstützten Graphdatei (siehe dafür \ref{nfa:maxknotentotal}).}
-  \nfa{maxknotentotal}{Es werden Graphdateien mit bis zu 100.000 Knoten insgesamt unterstützt. Bei Graphdateien mit einer höheren Knotenzahl, kann es zu starken Leistungsschwankungen kommen.}
-  \nfa{maxkanten}{Die maximal unterstützte Kantenanzahl pro Graph entspricht der 3-4 fachen Knotenzahl aus \ref{nfa:maxknoten} und \ref{nfa:maxknotentotal}.}
+  \nfa{maxknoten}{Beim Layouten werden mindestens Graphen mit bis zu 1000 Knoten unterstützt. Dies entspricht nicht der maximalen Knotenzahl in einer unterstützten Graphdatei (siehe dafür \ref{nfa:maxknotentotal}).}
+  \nfa{maxknotentotal}{Es werden mindestens Graphdateien mit bis zu 100.000 Knoten insgesamt unterstützt.}
+  \nfa{maxkanten}{Die maximal unterstützte Kantenanzahl pro Graph entspricht mindestens der 3-4 fachen Knotenzahl aus \ref{nfa:maxknoten} und \ref{nfa:maxknotentotal}.}
 
   \nfa{algowechsel}{Der Algorithmus, welcher das Graphlayout berechnet, soll einfach auswechselbar sein.}
   \nfa{heuristic}{Durch heuristische Methoden soll ein möglichst optimales Ergebnis bei der Einhaltung gegebener Constraints erreicht werden.}
