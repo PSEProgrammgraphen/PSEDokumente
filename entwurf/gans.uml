@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.gansmacher.gans</OriginalElement>
+  <nodes>
+    <node x="717.25" y="648.0">de.gansmacher.gans.selector.Matcher</node>
+    <node x="558.25" y="648.0">de.gansmacher.gans.FileImporter</node>
+    <node x="949.25" y="626.0">de.gansmacher.gans.selector.Graphex</node>
+    <node x="0.0" y="525.0">de.gansmacher.gans.RenderSettings</node>
+    <node x="270.0" y="0.0">de.gansmacher.gans.graph.Attribute</node>
+    <node x="308.75" y="124.0">de.gansmacher.gans.graph.Node</node>
+    <node x="326.5" y="869.0">de.gansmacher.gans.ParameterType</node>
+    <node x="943.8728070175439" y="514.0">de.gansmacher.gans.selector.Selector</node>
+    <node x="238.0" y="314.0">de.gansmacher.gans.graph.Edge</node>
+    <node x="0.0" y="993.0">de.gansmacher.gans.Main</node>
+    <node x="395.75" y="525.0">de.gansmacher.gans.graph.Graph</node>
+    <node x="215.25" y="648.0">de.gansmacher.gans.GraphLayouter</node>
+    <node x="399.25" y="648.0">de.gansmacher.gans.FileExporter</node>
+    <node x="692.75" y="772.0">de.gansmacher.gans.selector.GraphexMatcher</node>
+    <node x="206.0" y="949.0">de.gansmacher.gans.LayoutSettings</node>
+    <node x="10.25" y="637.0">de.gansmacher.gans.GraphRenderer</node>
+    <node x="17.0" y="869.0">de.gansmacher.gans.Plugin</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.gansmacher.gans.selector.Matcher" target="de.gansmacher.gans.graph.Graph">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.graph.Node" target="de.gansmacher.gans.graph.Attribute">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.GraphLayouter" target="de.gansmacher.gans.graph.Graph">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.selector.Graphex" target="de.gansmacher.gans.selector.Selector">
+      <point x="0.0" y="-48.0" />
+      <point x="1042.75" y="606.0" />
+      <point x="1017.3728070175439" y="606.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.selector.Matcher" target="de.gansmacher.gans.selector.Selector">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.graph.Edge" target="de.gansmacher.gans.graph.Attribute">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.graph.Graph" target="de.gansmacher.gans.graph.Node">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.selector.GraphexMatcher" target="de.gansmacher.gans.selector.Matcher">
+      <point x="0.0" y="-26.0" />
+      <point x="798.75" y="747.0" />
+      <point x="823.25" y="747.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.graph.Node" target="de.gansmacher.gans.graph.Edge">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.FileImporter" target="de.gansmacher.gans.graph.Graph">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.LayoutSettings" target="de.gansmacher.gans.ParameterType">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.graph.Edge" target="de.gansmacher.gans.graph.Node">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.selector.GraphexMatcher" target="de.gansmacher.gans.graph.Graph">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.selector.GraphexMatcher" target="de.gansmacher.gans.selector.Selector">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.GraphRenderer" target="de.gansmacher.gans.RenderSettings">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.Main" target="de.gansmacher.gans.Plugin">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.graph.Graph" target="de.gansmacher.gans.graph.Edge">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.FileExporter" target="de.gansmacher.gans.graph.Graph">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.gansmacher.gans.GraphRenderer" target="de.gansmacher.gans.graph.Graph">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="573.5" y="533.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
