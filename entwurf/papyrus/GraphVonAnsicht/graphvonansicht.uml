@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:java="http://www.eclipse.org/papyrus/JAVA/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_kbuR8ChcEeaXOuI3eacPrQ" name="graphvonansicht">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_sjl3UChkEeaXOuI3eacPrQ">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_X4-4MCheEeaXOuI3eacPrQ" name="plugin" URI="">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ywyoICheEeaXOuI3eacPrQ" name="FilterSet">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MGaPwChjEeaXOuI3eacPrQ" name="name" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_eYkN8ChiEeaXOuI3eacPrQ" name="getVertexfilter">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_rnoQQChiEeaXOuI3eacPrQ" name="vertexFilter" type="_zxtAoChgEeaXOuI3eacPrQ" isOrdered="true" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i4lnEChjEeaXOuI3eacPrQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i4ncQChjEeaXOuI3eacPrQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_pL2U4ChjEeaXOuI3eacPrQ" name="getEdgeFilter">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_wmQ4AChjEeaXOuI3eacPrQ" name="EdgeFilter" type="_Ui3woChhEeaXOuI3eacPrQ" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_y9As8ChjEeaXOuI3eacPrQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y9B7EChjEeaXOuI3eacPrQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_zxtAoChgEeaXOuI3eacPrQ" name="VertexFilter" isAbstract="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_DILbYChhEeaXOuI3eacPrQ" name="name" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Ui3woChhEeaXOuI3eacPrQ" name="EdgeFilter" isAbstract="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_lYTcsChhEeaXOuI3eacPrQ" name="name" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RaaVcChiEeaXOuI3eacPrQ" name="matches"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_370T0ChkEeaXOuI3eacPrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
+    </profileApplication>
+  </uml:Model>
+  <java:JavaProperty xmi:id="_Ib7QIChlEeaXOuI3eacPrQ" base_Property="_MGaPwChjEeaXOuI3eacPrQ"/>
+  <java:JavaMethod xmi:id="_JcLMMChlEeaXOuI3eacPrQ" base_Operation="_eYkN8ChiEeaXOuI3eacPrQ"/>
+  <java:JavaMethod xmi:id="_KR2P8ChlEeaXOuI3eacPrQ" base_Operation="_pL2U4ChjEeaXOuI3eacPrQ"/>
+  <java:JavaProperty xmi:id="_LY7z0ChlEeaXOuI3eacPrQ" base_Property="_DILbYChhEeaXOuI3eacPrQ"/>
+  <java:JavaProperty xmi:id="_Mf8fMChlEeaXOuI3eacPrQ" base_Property="_lYTcsChhEeaXOuI3eacPrQ"/>
+  <java:JavaMethod xmi:id="_NNStYChlEeaXOuI3eacPrQ" base_Operation="_RaaVcChiEeaXOuI3eacPrQ"/>
+  <java:JavaClass xmi:id="_Qyst0ChlEeaXOuI3eacPrQ" base_Classifier="_zxtAoChgEeaXOuI3eacPrQ"/>
+  <java:JavaClass xmi:id="_RfWYcChlEeaXOuI3eacPrQ" base_Classifier="_Ui3woChhEeaXOuI3eacPrQ"/>
+  <java:JavaClass xmi:id="_YVOrIChlEeaXOuI3eacPrQ" base_Classifier="_ywyoICheEeaXOuI3eacPrQ"/>
+</xmi:XMI>
