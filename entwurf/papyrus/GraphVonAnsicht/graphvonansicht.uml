@@ -6,8 +6,13 @@
     </packageImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_X4-4MCheEeaXOuI3eacPrQ" name="plugin" URI="">
       <packagedElement xmi:type="uml:Interface" xmi:id="_ywyoICheEeaXOuI3eacPrQ" name="FilterSet">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_MGaPwChjEeaXOuI3eacPrQ" name="name" visibility="private">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_fsfPECmCEeaNP6CnPM7pLA" name="filter" type="_Ui3woChhEeaXOuI3eacPrQ" aggregation="shared" association="_fsU3ACmCEeaNP6CnPM7pLA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_w5BzkCmCEeaNP6CnPM7pLA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_w5GFACmCEeaNP6CnPM7pLA" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_h7akwymCEeaNP6CnPM7pLA" name="filter" type="_zxtAoChgEeaXOuI3eacPrQ" aggregation="shared" association="_h7akwCmCEeaNP6CnPM7pLA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zH6tACmCEeaNP6CnPM7pLA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zH7UECmCEeaNP6CnPM7pLA" value="*"/>
         </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_eYkN8ChiEeaXOuI3eacPrQ" name="getVertexfilter">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_rnoQQChiEeaXOuI3eacPrQ" name="vertexFilter" type="_zxtAoChgEeaXOuI3eacPrQ" isOrdered="true" direction="return">
@@ -21,18 +26,92 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_y9B7EChjEeaXOuI3eacPrQ" value="*"/>
           </ownedParameter>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_rnWCECmDEeaNP6CnPM7pLA" name="getName">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_z85XwCmDEeaNP6CnPM7pLA" name="name" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_zxtAoChgEeaXOuI3eacPrQ" name="VertexFilter" isAbstract="true">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_DILbYChhEeaXOuI3eacPrQ" name="name" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sVNKoCmkEeaNP6CnPM7pLA" name="matches">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsaf4CmkEeaNP6CnPM7pLA" name="toMatch" type="_mHZ1UCmIEeaNP6CnPM7pLA"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_Ui3woChhEeaXOuI3eacPrQ" name="EdgeFilter" isAbstract="true">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_lYTcsChhEeaXOuI3eacPrQ" name="name" visibility="private">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedAttribute>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_RaaVcChiEeaXOuI3eacPrQ" name="matches"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_RaaVcChiEeaXOuI3eacPrQ" name="matches">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_q8cn8CmkEeaNP6CnPM7pLA" name="toMatch" type="_uYQRMCmIEeaNP6CnPM7pLA"/>
+        </ownedOperation>
       </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_a5VhwCmFEeaNP6CnPM7pLA" name="Impoter">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_TDr-sCmGEeaNP6CnPM7pLA" name="getName">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_rJHtoCmGEeaNP6CnPM7pLA" name="name" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_VeracCmGEeaNP6CnPM7pLA" name="getSupportedFileEndings">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jEz48CmGEeaNP6CnPM7pLA" name="String" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_LyYe0CmHEeaNP6CnPM7pLA" name="import">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_dHZp4CmHEeaNP6CnPM7pLA" name="filestream"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_p97QYCmHEeaNP6CnPM7pLA" name="graphModel" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_kCWD8CmhEeaNP6CnPM7pLA" name="Workspace">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ONjakCmkEeaNP6CnPM7pLA" name="getName">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_SupnMCmkEeaNP6CnPM7pLA" name="name" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_UAfCgCmkEeaNP6CnPM7pLA" name="initialize"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_bntSkCmkEeaNP6CnPM7pLA" name="getParameterSet"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_iAA4cCmkEeaNP6CnPM7pLA" name="getParameterDialog"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_fsU3ACmCEeaNP6CnPM7pLA" memberEnd="_fsfPECmCEeaNP6CnPM7pLA _fsf2ICmCEeaNP6CnPM7pLA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fseA8CmCEeaNP6CnPM7pLA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fseoACmCEeaNP6CnPM7pLA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_fsf2ICmCEeaNP6CnPM7pLA" name="set" type="_ywyoICheEeaXOuI3eacPrQ" association="_fsU3ACmCEeaNP6CnPM7pLA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_h7akwCmCEeaNP6CnPM7pLA" memberEnd="_h7akwymCEeaNP6CnPM7pLA _h7akxCmCEeaNP6CnPM7pLA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_h7akwSmCEeaNP6CnPM7pLA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h7akwimCEeaNP6CnPM7pLA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_h7akxCmCEeaNP6CnPM7pLA" name="set" type="_ywyoICheEeaXOuI3eacPrQ" association="_h7akwCmCEeaNP6CnPM7pLA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_XvetgCmIEeaNP6CnPM7pLA" name="graphmodel">
+      <packagedElement xmi:type="uml:Class" xmi:id="_gUuFACmIEeaNP6CnPM7pLA" name="Graph">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-OVZEymIEeaNP6CnPM7pLA" name="vertex" type="_mHZ1UCmIEeaNP6CnPM7pLA" aggregation="shared" association="_-OVZECmIEeaNP6CnPM7pLA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HAKbECmJEeaNP6CnPM7pLA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HALpMCmJEeaNP6CnPM7pLA" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZMAgcCmJEeaNP6CnPM7pLA" name="edge" type="_uYQRMCmIEeaNP6CnPM7pLA" aggregation="shared" association="_ZL_5YCmJEeaNP6CnPM7pLA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lw-c4CmJEeaNP6CnPM7pLA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lw_rACmJEeaNP6CnPM7pLA" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mHZ1UCmIEeaNP6CnPM7pLA" name="Vertex"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_uYQRMCmIEeaNP6CnPM7pLA" name="Edge"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_-OVZECmIEeaNP6CnPM7pLA" memberEnd="_-OVZEymIEeaNP6CnPM7pLA _-OWAICmIEeaNP6CnPM7pLA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-OVZESmIEeaNP6CnPM7pLA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-OVZEimIEeaNP6CnPM7pLA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_-OWAICmIEeaNP6CnPM7pLA" name="graph" type="_gUuFACmIEeaNP6CnPM7pLA" association="_-OVZECmIEeaNP6CnPM7pLA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ZL_5YCmJEeaNP6CnPM7pLA" memberEnd="_ZMAgcCmJEeaNP6CnPM7pLA _ZMAgcSmJEeaNP6CnPM7pLA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZL_5YSmJEeaNP6CnPM7pLA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZL_5YimJEeaNP6CnPM7pLA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ZMAgcSmJEeaNP6CnPM7pLA" name="graph" type="_gUuFACmIEeaNP6CnPM7pLA" association="_ZL_5YCmJEeaNP6CnPM7pLA"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_370T0ChkEeaXOuI3eacPrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -41,7 +120,6 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
     </profileApplication>
   </uml:Model>
-  <java:JavaProperty xmi:id="_Ib7QIChlEeaXOuI3eacPrQ" base_Property="_MGaPwChjEeaXOuI3eacPrQ"/>
   <java:JavaMethod xmi:id="_JcLMMChlEeaXOuI3eacPrQ" base_Operation="_eYkN8ChiEeaXOuI3eacPrQ"/>
   <java:JavaMethod xmi:id="_KR2P8ChlEeaXOuI3eacPrQ" base_Operation="_pL2U4ChjEeaXOuI3eacPrQ"/>
   <java:JavaProperty xmi:id="_LY7z0ChlEeaXOuI3eacPrQ" base_Property="_DILbYChhEeaXOuI3eacPrQ"/>
@@ -50,4 +128,8 @@
   <java:JavaClass xmi:id="_Qyst0ChlEeaXOuI3eacPrQ" base_Classifier="_zxtAoChgEeaXOuI3eacPrQ"/>
   <java:JavaClass xmi:id="_RfWYcChlEeaXOuI3eacPrQ" base_Classifier="_Ui3woChhEeaXOuI3eacPrQ"/>
   <java:JavaClass xmi:id="_YVOrIChlEeaXOuI3eacPrQ" base_Classifier="_ywyoICheEeaXOuI3eacPrQ"/>
+  <java:JavaMethod xmi:id="_3dRHMCmDEeaNP6CnPM7pLA" base_Operation="_rnWCECmDEeaNP6CnPM7pLA"/>
+  <java:JavaMethod xmi:id="_w18GgCmGEeaNP6CnPM7pLA" base_Operation="_TDr-sCmGEeaNP6CnPM7pLA"/>
+  <java:JavaMethod xmi:id="_1KP0UCmGEeaNP6CnPM7pLA" base_Operation="_VeracCmGEeaNP6CnPM7pLA"/>
+  <java:JavaClass xmi:id="__L8iwCmGEeaNP6CnPM7pLA" base_Classifier="_a5VhwCmFEeaNP6CnPM7pLA"/>
 </xmi:XMI>
