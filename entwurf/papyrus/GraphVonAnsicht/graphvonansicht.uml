@@ -113,6 +113,7 @@
       <packagedElement xmi:type="uml:Interface" xmi:id="_M-15ACnWEeaNP6CnPM7pLA" name="Edge"/>
       <packagedElement xmi:type="uml:Realization" xmi:id="_pI0bcCnWEeaNP6CnPM7pLA" client="_gUuFACmIEeaNP6CnPM7pLA" supplier="_NaZegCnUEeaNP6CnPM7pLA"/>
       <packagedElement xmi:type="uml:Realization" xmi:id="_qqN8wCnWEeaNP6CnPM7pLA" client="_uYQRMCmIEeaNP6CnPM7pLA" supplier="_M-15ACnWEeaNP6CnPM7pLA"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_fx2YsCpdEeax5YKBUQhNXg" name="GraphModel"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_-OVZECmIEeaNP6CnPM7pLA" memberEnd="_-OVZEymIEeaNP6CnPM7pLA _-OWAICmIEeaNP6CnPM7pLA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-OVZESmIEeaNP6CnPM7pLA" source="org.eclipse.papyrus">
@@ -125,6 +126,49 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZL_5YimJEeaNP6CnPM7pLA" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_ZMAgcSmJEeaNP6CnPM7pLA" name="graph" type="_gUuFACmIEeaNP6CnPM7pLA" association="_ZL_5YCmJEeaNP6CnPM7pLA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5pKcUCpaEeax5YKBUQhNXg" name="Joana">
+      <packagedElement xmi:type="uml:Class" xmi:id="_OFRUICpbEeax5YKBUQhNXg" name="JoanaWorkspace">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Gv4TkSpeEeax5YKBUQhNXg" name="model" type="_8xAhkCpbEeax5YKBUQhNXg" association="_Gv2eYCpeEeax5YKBUQhNXg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_UDOgUCpbEeax5YKBUQhNXg" client="_OFRUICpbEeax5YKBUQhNXg" supplier="_kCWD8CmhEeaNP6CnPM7pLA" contract="_kCWD8CmhEeaNP6CnPM7pLA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_bxDusCpbEeax5YKBUQhNXg" name="MethodenLayout">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_6wja0CpdEeax5YKBUQhNXg" client="_bxDusCpbEeax5YKBUQhNXg" supplier="_LDZGsCnbEeaNP6CnPM7pLA" contract="_LDZGsCnbEeaNP6CnPM7pLA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_euJK4CpbEeax5YKBUQhNXg" name="CallLayout">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_9V4eUCpdEeax5YKBUQhNXg" client="_euJK4CpbEeax5YKBUQhNXg" supplier="_LDZGsCnbEeaNP6CnPM7pLA" contract="_LDZGsCnbEeaNP6CnPM7pLA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_047LACpbEeax5YKBUQhNXg" name="MethodenGraph"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_3-OIACpbEeax5YKBUQhNXg" name="Callgraph"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_8xAhkCpbEeax5YKBUQhNXg" name="JoanaGraphModel">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_CjqAMypdEeax5YKBUQhNXg" name="graph" type="_047LACpbEeax5YKBUQhNXg" aggregation="shared" association="_CjqAMCpdEeax5YKBUQhNXg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FotsoCpdEeax5YKBUQhNXg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FowI4CpdEeax5YKBUQhNXg" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PD7C0CpdEeax5YKBUQhNXg" name="graph" type="_3-OIACpbEeax5YKBUQhNXg" association="_PD6bwCpdEeax5YKBUQhNXg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_oX9dcCpeEeax5YKBUQhNXg" client="_8xAhkCpbEeax5YKBUQhNXg" supplier="_fx2YsCpdEeax5YKBUQhNXg" contract="_fx2YsCpdEeax5YKBUQhNXg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_UX0v8CpeEeax5YKBUQhNXg" name="JoanaEdge">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_bmYoYCpeEeax5YKBUQhNXg" client="_UX0v8CpeEeax5YKBUQhNXg" supplier="_M-15ACnWEeaNP6CnPM7pLA" contract="_M-15ACnWEeaNP6CnPM7pLA"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_CjqAMCpdEeax5YKBUQhNXg" memberEnd="_CjqAMypdEeax5YKBUQhNXg _CjqnQCpdEeax5YKBUQhNXg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CjqAMSpdEeax5YKBUQhNXg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CjqAMipdEeax5YKBUQhNXg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_CjqnQCpdEeax5YKBUQhNXg" name="model" type="_8xAhkCpbEeax5YKBUQhNXg" association="_CjqAMCpdEeax5YKBUQhNXg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_PD6bwCpdEeax5YKBUQhNXg" memberEnd="_PD7C0CpdEeax5YKBUQhNXg _PD7C0SpdEeax5YKBUQhNXg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PD6bwSpdEeax5YKBUQhNXg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PD6bwipdEeax5YKBUQhNXg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_PD7C0SpdEeax5YKBUQhNXg" name="model" type="_8xAhkCpbEeax5YKBUQhNXg" association="_PD6bwCpdEeax5YKBUQhNXg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Gv2eYCpeEeax5YKBUQhNXg" memberEnd="_Gv4TkSpeEeax5YKBUQhNXg _Gv46oCpeEeax5YKBUQhNXg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Gv3sgCpeEeax5YKBUQhNXg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gv4TkCpeEeax5YKBUQhNXg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Gv46oCpeEeax5YKBUQhNXg" name="workspace" type="_OFRUICpbEeax5YKBUQhNXg" association="_Gv2eYCpeEeax5YKBUQhNXg"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_370T0ChkEeaXOuI3eacPrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
