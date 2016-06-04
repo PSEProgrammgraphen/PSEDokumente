@@ -38,6 +38,9 @@
         </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_sVNKoCmkEeaNP6CnPM7pLA" name="matches">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsaf4CmkEeaNP6CnPM7pLA" name="toMatch" type="_mHZ1UCmIEeaNP6CnPM7pLA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_wZcNYCmqEeaNP6CnPM7pLA" name="matches" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_Ui3woChhEeaXOuI3eacPrQ" name="EdgeFilter" isAbstract="true">
@@ -46,9 +49,12 @@
         </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_RaaVcChiEeaXOuI3eacPrQ" name="matches">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_q8cn8CmkEeaNP6CnPM7pLA" name="toMatch" type="_uYQRMCmIEeaNP6CnPM7pLA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_rrbmICmqEeaNP6CnPM7pLA" name="matches" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_a5VhwCmFEeaNP6CnPM7pLA" name="Impoter">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_a5VhwCmFEeaNP6CnPM7pLA" name="Importer">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_TDr-sCmGEeaNP6CnPM7pLA" name="getName">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_rJHtoCmGEeaNP6CnPM7pLA" name="name" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -74,6 +80,7 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_bntSkCmkEeaNP6CnPM7pLA" name="getParameterSet"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_iAA4cCmkEeaNP6CnPM7pLA" name="getParameterDialog"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_LDZGsCnbEeaNP6CnPM7pLA" name="LayoutAlgorithm"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_fsU3ACmCEeaNP6CnPM7pLA" memberEnd="_fsfPECmCEeaNP6CnPM7pLA _fsf2ICmCEeaNP6CnPM7pLA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fseA8CmCEeaNP6CnPM7pLA" source="org.eclipse.papyrus">
@@ -88,7 +95,7 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_h7akxCmCEeaNP6CnPM7pLA" name="set" type="_ywyoICheEeaXOuI3eacPrQ" association="_h7akwCmCEeaNP6CnPM7pLA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_XvetgCmIEeaNP6CnPM7pLA" name="graphmodel">
-      <packagedElement xmi:type="uml:Class" xmi:id="_gUuFACmIEeaNP6CnPM7pLA" name="Graph">
+      <packagedElement xmi:type="uml:Class" xmi:id="_gUuFACmIEeaNP6CnPM7pLA" name="DirectedGraph">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_-OVZEymIEeaNP6CnPM7pLA" name="vertex" type="_mHZ1UCmIEeaNP6CnPM7pLA" aggregation="shared" association="_-OVZECmIEeaNP6CnPM7pLA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HAKbECmJEeaNP6CnPM7pLA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HALpMCmJEeaNP6CnPM7pLA" value="*"/>
@@ -98,8 +105,14 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lw_rACmJEeaNP6CnPM7pLA" value="*"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_mHZ1UCmIEeaNP6CnPM7pLA" name="Vertex"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_uYQRMCmIEeaNP6CnPM7pLA" name="Edge"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mHZ1UCmIEeaNP6CnPM7pLA" name="DefaultVertex"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_uYQRMCmIEeaNP6CnPM7pLA" name="DirectedEdge"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_NaZegCnUEeaNP6CnPM7pLA" name="Graph"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_hdp8ACnVEeaNP6CnPM7pLA" name="Vertex"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_APJ6UCnWEeaNP6CnPM7pLA" client="_mHZ1UCmIEeaNP6CnPM7pLA" supplier="_hdp8ACnVEeaNP6CnPM7pLA"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_M-15ACnWEeaNP6CnPM7pLA" name="Edge"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_pI0bcCnWEeaNP6CnPM7pLA" client="_gUuFACmIEeaNP6CnPM7pLA" supplier="_NaZegCnUEeaNP6CnPM7pLA"/>
+      <packagedElement xmi:type="uml:Realization" xmi:id="_qqN8wCnWEeaNP6CnPM7pLA" client="_uYQRMCmIEeaNP6CnPM7pLA" supplier="_M-15ACnWEeaNP6CnPM7pLA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_-OVZECmIEeaNP6CnPM7pLA" memberEnd="_-OVZEymIEeaNP6CnPM7pLA _-OWAICmIEeaNP6CnPM7pLA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-OVZESmIEeaNP6CnPM7pLA" source="org.eclipse.papyrus">
@@ -127,9 +140,11 @@
   <java:JavaMethod xmi:id="_NNStYChlEeaXOuI3eacPrQ" base_Operation="_RaaVcChiEeaXOuI3eacPrQ"/>
   <java:JavaClass xmi:id="_Qyst0ChlEeaXOuI3eacPrQ" base_Classifier="_zxtAoChgEeaXOuI3eacPrQ"/>
   <java:JavaClass xmi:id="_RfWYcChlEeaXOuI3eacPrQ" base_Classifier="_Ui3woChhEeaXOuI3eacPrQ"/>
-  <java:JavaClass xmi:id="_YVOrIChlEeaXOuI3eacPrQ" base_Classifier="_ywyoICheEeaXOuI3eacPrQ"/>
   <java:JavaMethod xmi:id="_3dRHMCmDEeaNP6CnPM7pLA" base_Operation="_rnWCECmDEeaNP6CnPM7pLA"/>
   <java:JavaMethod xmi:id="_w18GgCmGEeaNP6CnPM7pLA" base_Operation="_TDr-sCmGEeaNP6CnPM7pLA"/>
   <java:JavaMethod xmi:id="_1KP0UCmGEeaNP6CnPM7pLA" base_Operation="_VeracCmGEeaNP6CnPM7pLA"/>
-  <java:JavaClass xmi:id="__L8iwCmGEeaNP6CnPM7pLA" base_Classifier="_a5VhwCmFEeaNP6CnPM7pLA"/>
+  <java:JavaMethod xmi:id="_Hgx7kCnbEeaNP6CnPM7pLA" base_Operation="_ONjakCmkEeaNP6CnPM7pLA"/>
+  <java:JavaMethod xmi:id="_IsMl0CnbEeaNP6CnPM7pLA" base_Operation="_UAfCgCmkEeaNP6CnPM7pLA"/>
+  <java:JavaMethod xmi:id="_JsQUoCnbEeaNP6CnPM7pLA" base_Operation="_bntSkCmkEeaNP6CnPM7pLA"/>
+  <java:JavaMethod xmi:id="_cN7ykCpIEeaNP6CnPM7pLA" base_Operation="_iAA4cCmkEeaNP6CnPM7pLA"/>
 </xmi:XMI>
