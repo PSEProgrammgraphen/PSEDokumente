@@ -98,15 +98,11 @@
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lw-c4CmJEeaNP6CnPM7pLA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lw_rACmJEeaNP6CnPM7pLA" value="*"/>
         </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_CbxlgCvcEeasJutITljjhA" client="_gUuFACmIEeaNP6CnPM7pLA" supplier="_2L5IQCvbEeasJutITljjhA" contract="_2L5IQCvbEeasJutITljjhA"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_mHZ1UCmIEeaNP6CnPM7pLA" name="DefaultVertex"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_uYQRMCmIEeaNP6CnPM7pLA" name="DirectedEdge"/>
-      <packagedElement xmi:type="uml:Interface" xmi:id="_NaZegCnUEeaNP6CnPM7pLA" name="Graph">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_yn_8cCtnEeaLxs00cEC_Hw" name="registerLayout">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_3eP5sCtnEeaLxs00cEC_Hw" name="layout" type="_LDZGsCnbEeaNP6CnPM7pLA"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_NPdGICu-Eeadg_GJlvJIkg" name="getRegisteredLayouts"/>
-      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_NaZegCnUEeaNP6CnPM7pLA" name="Graph"/>
       <packagedElement xmi:type="uml:Interface" xmi:id="_hdp8ACnVEeaNP6CnPM7pLA" name="Vertex"/>
       <packagedElement xmi:type="uml:Realization" xmi:id="_APJ6UCnWEeaNP6CnPM7pLA" client="_mHZ1UCmIEeaNP6CnPM7pLA" supplier="_hdp8ACnVEeaNP6CnPM7pLA"/>
       <packagedElement xmi:type="uml:Interface" xmi:id="_M-15ACnWEeaNP6CnPM7pLA" name="Edge"/>
@@ -154,6 +150,12 @@
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_DCPKAitXEeaLxs00cEC_Hw" name="info" type="_DCOi8CtXEeaLxs00cEC_Hw"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_LQFpUCtkEeaLxs00cEC_Hw" name="id" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_2L5IQCvbEeasJutITljjhA" name="Layoutable">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_NPdGICu-Eeadg_GJlvJIkg" name="getRegisteredLayouts" isStatic="true"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_yn_8cCtnEeaLxs00cEC_Hw" name="registerLayout" isStatic="true">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_3eP5sCtnEeaLxs00cEC_Hw" name="layout" type="_LDZGsCnbEeaNP6CnPM7pLA"/>
         </ownedOperation>
       </packagedElement>
     </packagedElement>
