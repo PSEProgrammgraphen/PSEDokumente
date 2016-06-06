@@ -131,13 +131,6 @@
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_DCMtwCtXEeaLxs00cEC_Hw" type="_NaZegCnUEeaNP6CnPM7pLA" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_XSHm0CwfEeaAmMV43X0AyA" name="newGraphAttribute" isAbstract="true">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_oA_-8CwfEeaAmMV43X0AyA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1eSqgCwfEeaAmMV43X0AyA" name="for" type="_8H8x4ispEeaqLZjhN-MabA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5f3pkCwfEeaAmMV43X0AyA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_zMxeYCwgEeaAmMV43X0AyA" name="type" type="_8H8x4ispEeaqLZjhN-MabA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_V957ACwhEeaAmMV43X0AyA" name="default" type="_8H8x4ispEeaqLZjhN-MabA"/>
-        </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_DCPKACtXEeaLxs00cEC_Hw" name="newVertex" visibility="public" isAbstract="true">
           <ownedComment xmi:type="uml:Comment" xmi:id="_DCPKAStXEeaLxs00cEC_Hw">
             <body>
@@ -189,6 +182,13 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_2EPPMCwqEeaAmMV43X0AyA" name="getGraphBuilder" isAbstract="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_AhOygCwrEeaAmMV43X0AyA" name="graphBuilder" type="_DCKRgCtXEeaLxs00cEC_Hw" direction="return"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_Snr6MCwuEeaAmMV43X0AyA" name="graphID" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_XSHm0CwfEeaAmMV43X0AyA" name="newGraphAttribute" isAbstract="true">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_oA_-8CwfEeaAmMV43X0AyA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1eSqgCwfEeaAmMV43X0AyA" name="for" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5f3pkCwfEeaAmMV43X0AyA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_zMxeYCwgEeaAmMV43X0AyA" name="type" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_V957ACwhEeaAmMV43X0AyA" name="default" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
       </packagedElement>
     </packagedElement>
@@ -380,14 +380,14 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_GIBd4CwVEeaHXuqN0dh6DA" name="show"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_KQywcCwdEeaAmMV43X0AyA" name="com">
-      <packagedElement xmi:type="uml:Package" xmi:id="_KQzXgCwdEeaAmMV43X0AyA" name="tinkerpop">
-        <packagedElement xmi:type="uml:Package" xmi:id="_KQzXgSwdEeaAmMV43X0AyA" name="blueprints">
-          <packagedElement xmi:type="uml:Package" xmi:id="_KQzXgiwdEeaAmMV43X0AyA" name="util">
-            <packagedElement xmi:type="uml:Package" xmi:id="_KQz-kCwdEeaAmMV43X0AyA" name="io">
-              <packagedElement xmi:type="uml:Package" xmi:id="_KQz-kSwdEeaAmMV43X0AyA" name="graphml">
-                <packagedElement xmi:type="uml:Class" xmi:id="_KQ1MsCwdEeaAmMV43X0AyA" name="GraphMLImporter" visibility="public">
-                  <ownedComment xmi:type="uml:Comment" xmi:id="_KQ1zwCwdEeaAmMV43X0AyA">
+    <packagedElement xmi:type="uml:Package" xmi:id="_0RbJkCwxEeaHXuqN0dh6DA" name="com">
+      <packagedElement xmi:type="uml:Package" xmi:id="_0RbJkSwxEeaHXuqN0dh6DA" name="tinkerpop">
+        <packagedElement xmi:type="uml:Package" xmi:id="_0RbJkiwxEeaHXuqN0dh6DA" name="blueprints">
+          <packagedElement xmi:type="uml:Package" xmi:id="_0RbJkywxEeaHXuqN0dh6DA" name="util">
+            <packagedElement xmi:type="uml:Package" xmi:id="_0RbJlCwxEeaHXuqN0dh6DA" name="io">
+              <packagedElement xmi:type="uml:Package" xmi:id="_0RbJlSwxEeaHXuqN0dh6DA" name="graphml">
+                <packagedElement xmi:type="uml:Class" xmi:id="_0RbJliwxEeaHXuqN0dh6DA" name="GraphMLImporter" visibility="public">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_0RbJlywxEeaHXuqN0dh6DA">
                     <body>
  * GraphMLReader writes the data from a GraphML stream to a graph.
  *
@@ -396,8 +396,8 @@
  * @author Joshua Shinavier (http://fortytwo.net)
  </body>
                   </ownedComment>
-                  <ownedOperation xmi:type="uml:Operation" xmi:id="_KQ4QASwdEeaAmMV43X0AyA" name="inputGraph" visibility="public" isStatic="true">
-                    <ownedComment xmi:type="uml:Comment" xmi:id="_KQ43ECwdEeaAmMV43X0AyA">
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_0RbJmCwxEeaHXuqN0dh6DA" name="inputGraph" visibility="public" isStatic="true">
+                    <ownedComment xmi:type="uml:Comment" xmi:id="_0RbJmSwxEeaHXuqN0dh6DA">
                       <body>
      * Input the GraphML stream data into the graph.
      * More control over how data is streamed is provided by this method.
@@ -411,19 +411,14 @@
      * @throws IOException thrown when the GraphML data is not correctly formatted
      </body>
                     </ownedComment>
-                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQ43ESwdEeaAmMV43X0AyA" name="builder" type="_KQ3o8SwdEeaAmMV43X0AyA"/>
-                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQ5eICwdEeaAmMV43X0AyA" name="graphMLInputStream" type="_KQ4QACwdEeaAmMV43X0AyA"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_0RbJmiwxEeaHXuqN0dh6DA" name="builder"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_0RbJmywxEeaHXuqN0dh6DA" name="graphMLInputStream" type="_KQ4QACwdEeaAmMV43X0AyA"/>
                   </ownedOperation>
                 </packagedElement>
               </packagedElement>
             </packagedElement>
           </packagedElement>
         </packagedElement>
-      </packagedElement>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Model" xmi:id="_KQZu4CwdEeaAmMV43X0AyA" name="blueprints">
-      <packagedElement xmi:type="uml:Package" xmi:id="_KQ3o8CwdEeaAmMV43X0AyA" name="graphmodel">
-        <packagedElement xmi:type="uml:Class" xmi:id="_KQ3o8SwdEeaAmMV43X0AyA" name="AbstractGraphBuilder"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
