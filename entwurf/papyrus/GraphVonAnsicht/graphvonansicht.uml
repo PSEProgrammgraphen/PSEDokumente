@@ -78,7 +78,7 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IzuggCukEeab3L3GjbSQTw" value="*"/>
           </ownedParameter>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_jmA8QCttEea_pY2hQbue8Q" name="getParameterDialog"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_jmA8QCttEea_pY2hQbue8Q" name="getParameterDialog" isStatic="true"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_IhQYoCtxEeab3L3GjbSQTw" name="initialize" isStatic="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_EbiYQCukEeab3L3GjbSQTw" name="parameters" type="_FkARoCujEeab3L3GjbSQTw">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-jaekCu0Eeadg_GJlvJIkg"/>
