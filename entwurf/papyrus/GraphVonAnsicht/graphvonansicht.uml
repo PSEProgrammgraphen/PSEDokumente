@@ -85,7 +85,7 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-jewACu0Eeadg_GJlvJIkg" value="*"/>
           </ownedParameter>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_cGad4Cu_Eeadg_GJlvJIkg" name="onLoad"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_cGad4Cu_Eeadg_GJlvJIkg" name="onLoad" isStatic="true"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_XvetgCmIEeaNP6CnPM7pLA" name="graphmodel">
@@ -284,6 +284,11 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_WLO_ECuiEeab3L3GjbSQTw" name="ParameterVisitor" visibility="public"/>
       <packagedElement xmi:type="uml:Package" xmi:id="_Fj_qkCujEeab3L3GjbSQTw" name="parameter"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_a8F4cCvCEeadg_GJlvJIkg" name="graphml">
+      <packagedElement xmi:type="uml:Class" xmi:id="_0Qzd8CvCEeadg_GJlvJIkg" name="GraphMLImporter">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_66tKICvCEeadg_GJlvJIkg" client="_0Qzd8CvCEeadg_GJlvJIkg" supplier="_a5VhwCmFEeaNP6CnPM7pLA" contract="_a5VhwCmFEeaNP6CnPM7pLA"/>
+      </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_370T0ChkEeaXOuI3eacPrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
