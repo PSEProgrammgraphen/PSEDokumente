@@ -122,7 +122,7 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_DCKRgCtXEeaLxs00cEC_Hw" name="AbstractGraphBuilder" visibility="public" isAbstract="true">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_DCLfoCtXEeaLxs00cEC_Hw" name="build" visibility="public">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_DCLfoCtXEeaLxs00cEC_Hw" name="build" visibility="public" isAbstract="true">
           <ownedComment xmi:type="uml:Comment" xmi:id="_DCMGsCtXEeaLxs00cEC_Hw">
             <body>
 	 * 
@@ -131,14 +131,14 @@
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_DCMtwCtXEeaLxs00cEC_Hw" type="_NaZegCnUEeaNP6CnPM7pLA" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_XSHm0CwfEeaAmMV43X0AyA" name="newGraphAttribute">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_XSHm0CwfEeaAmMV43X0AyA" name="newGraphAttribute" isAbstract="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oA_-8CwfEeaAmMV43X0AyA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_1eSqgCwfEeaAmMV43X0AyA" name="for" type="_8H8x4ispEeaqLZjhN-MabA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_5f3pkCwfEeaAmMV43X0AyA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_zMxeYCwgEeaAmMV43X0AyA" name="type" type="_8H8x4ispEeaqLZjhN-MabA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_V957ACwhEeaAmMV43X0AyA" name="default" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_DCPKACtXEeaLxs00cEC_Hw" name="newVertex" visibility="public">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_DCPKACtXEeaLxs00cEC_Hw" name="newVertex" visibility="public" isAbstract="true">
           <ownedComment xmi:type="uml:Comment" xmi:id="_DCPKAStXEeaLxs00cEC_Hw">
             <body>
 	 * 
@@ -147,14 +147,11 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_LQFpUCtkEeaLxs00cEC_Hw" name="id" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_yjQ8cCwiEeaAmMV43X0AyA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_VUyy8CwpEeaAmMV43X0AyA" name="getEdgeBuilder">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_VUyy8CwpEeaAmMV43X0AyA" name="getEdgeBuilder" isAbstract="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_b7zjMCwpEeaAmMV43X0AyA" name="edgeBuilder" type="_nxzWQCwoEeaAmMV43X0AyA" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_qCH9oCwpEeaAmMV43X0AyA" name="getVertexBuilder">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_qCH9oCwpEeaAmMV43X0AyA" name="getVertexBuilder" isAbstract="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_w3n10CwpEeaAmMV43X0AyA" name="vertexBuilder" type="_gNGZQCwpEeaAmMV43X0AyA" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_MHdZUCwsEeaAmMV43X0AyA" name="newGraph">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rvq_ACwsEeaAmMV43X0AyA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_2L5IQCvbEeasJutITljjhA" name="Layoutable">
@@ -179,7 +176,7 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_AqmmYCwqEeaAmMV43X0AyA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_gNGZQCwpEeaAmMV43X0AyA" name="AbstractVertexBuilder">
+      <packagedElement xmi:type="uml:Class" xmi:id="_gNGZQCwpEeaAmMV43X0AyA" name="AbstractVertexBuilder" isAbstract="true">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_jeOLwCwpEeaAmMV43X0AyA" name="newVertex" isAbstract="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_oJXsQCwpEeaAmMV43X0AyA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
@@ -187,11 +184,13 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_PaF5oCwqEeaAmMV43X0AyA" name="keyname" type="_8H8x4ispEeaqLZjhN-MabA"/>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_RmnbkCwqEeaAmMV43X0AyA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_2EPPMCwqEeaAmMV43X0AyA" name="getGraphBuilder">
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_8Bbw8CwrEeaAmMV43X0AyA" name="AbstractGraphModelBuilder" isAbstract="true">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_2EPPMCwqEeaAmMV43X0AyA" name="getGraphBuilder" isAbstract="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_AhOygCwrEeaAmMV43X0AyA" name="graphBuilder" type="_DCKRgCtXEeaLxs00cEC_Hw" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Snr6MCwuEeaAmMV43X0AyA" name="graphID" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_8Bbw8CwrEeaAmMV43X0AyA" name="AbstractGraphModelBuilder"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_-OVZECmIEeaNP6CnPM7pLA" memberEnd="_-OVZEymIEeaNP6CnPM7pLA _-OWAICmIEeaNP6CnPM7pLA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-OVZESmIEeaNP6CnPM7pLA" source="org.eclipse.papyrus">
