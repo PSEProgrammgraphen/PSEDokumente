@@ -87,6 +87,7 @@
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_cGad4Cu_Eeadg_GJlvJIkg" name="onLoad" isStatic="true"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_9wfzQC56Eea9cKDS7VT4aA" name="Constraint"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_XvetgCmIEeaNP6CnPM7pLA" name="graphmodel">
       <packagedElement xmi:type="uml:Class" xmi:id="_gUuFACmIEeaNP6CnPM7pLA" name="DirectedGraph" visibility="public">
@@ -338,6 +339,49 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_5bUB8i2ZEeatg6U_MxLsoQ" name="E"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_xr4x4C56Eea9cKDS7VT4aA" name="FastGraphAccessor" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_xr4x4S56Eea9cKDS7VT4aA">
+          <body>&#xD;
+ * Created by Sven on 09.06.2016.&#xD;
+ </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xr4x4i56Eea9cKDS7VT4aA" name="graph" visibility="private" type="_NaZegCnUEeaNP6CnPM7pLA" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xr5Y8C56Eea9cKDS7VT4aA" name="vertexValues" visibility="private" type="_DCOi8CtXEeaLxs00cEC_Hw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xr5Y8S56Eea9cKDS7VT4aA" name="edgeValues" visibility="private" type="_DCOi8CtXEeaLxs00cEC_Hw" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xr5Y8i56Eea9cKDS7VT4aA" name="update" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xr6AAC56Eea9cKDS7VT4aA" name="addVertexAttribute" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xr6AAS56Eea9cKDS7VT4aA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xsAGoC56Eea9cKDS7VT4aA" name="addEdgeAttribute" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsAGoS56Eea9cKDS7VT4aA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xsAtsC56Eea9cKDS7VT4aA" name="addVertexForAttribute" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsAtsS56Eea9cKDS7VT4aA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsAtsi56Eea9cKDS7VT4aA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsBUwC56Eea9cKDS7VT4aA" name="vertex" type="_hdp8ACnVEeaNP6CnPM7pLA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xsBUwS56Eea9cKDS7VT4aA" name="addEdgeForAttribute" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsB70C56Eea9cKDS7VT4aA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsDJ8C56Eea9cKDS7VT4aA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsDJ8S56Eea9cKDS7VT4aA" name="edge" type="_M-15ACnWEeaNP6CnPM7pLA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xsDxAC56Eea9cKDS7VT4aA" name="getVerticesByAttribute" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsDxAS56Eea9cKDS7VT4aA" type="_hdp8ACnVEeaNP6CnPM7pLA" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xsDxAi56Eea9cKDS7VT4aA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xsDxAy56Eea9cKDS7VT4aA" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsEYEC56Eea9cKDS7VT4aA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsEYES56Eea9cKDS7VT4aA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xsEYEi56Eea9cKDS7VT4aA" name="getEdgesByAttribute" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsEYEy56Eea9cKDS7VT4aA" type="_M-15ACnWEeaNP6CnPM7pLA" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xsEYFC56Eea9cKDS7VT4aA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xsE_IC56Eea9cKDS7VT4aA" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsE_IS56Eea9cKDS7VT4aA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xsE_Ii56Eea9cKDS7VT4aA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_5bVQEC2ZEeatg6U_MxLsoQ" name="V"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_5pKcUCpaEeax5YKBUQhNXg" name="joana" URI="">
@@ -615,6 +659,31 @@
     <packagedElement xmi:type="uml:Model" xmi:id="_-Yc4EC2eEeatg6U_MxLsoQ" name="datatype">
       <packagedElement xmi:type="uml:Package" xmi:id="_-Yc4ES2eEeatg6U_MxLsoQ" name="datatype">
         <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_-Yc4Ei2eEeatg6U_MxLsoQ" name="Integer"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_q9iAUC52Eea9cKDS7VT4aA" name="graphRegex">
+      <packagedElement xmi:type="uml:Class" xmi:id="_19ML0C52Eea9cKDS7VT4aA" name="Selector">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-9xmEC53Eea9cKDS7VT4aA" name="selectedSubgraphs" visibility="public" type="_NaZegCnUEeaNP6CnPM7pLA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LGwxIC54Eea9cKDS7VT4aA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LGwxIS54Eea9cKDS7VT4aA" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_NPPgkC54Eea9cKDS7VT4aA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_R_jN4C54Eea9cKDS7VT4aA" name="getValue">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_WVM_gC54Eea9cKDS7VT4aA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_bkMM4C54Eea9cKDS7VT4aA" name="getSubgraphs">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_hMocEC54Eea9cKDS7VT4aA" type="_NaZegCnUEeaNP6CnPM7pLA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifkDkC54Eea9cKDS7VT4aA" name="setSubgraphs">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_n_4RgC54Eea9cKDS7VT4aA" name="graphs" type="_NaZegCnUEeaNP6CnPM7pLA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7e-ZYC52Eea9cKDS7VT4aA" name="Engine">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_E5aTgC53Eea9cKDS7VT4aA" name="findSubgraphs">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_q9RFIC53Eea9cKDS7VT4aA" name="graph" type="_NaZegCnUEeaNP6CnPM7pLA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vZYrIC53Eea9cKDS7VT4aA" name="selector" type="_19ML0C52Eea9cKDS7VT4aA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5aC3wC53Eea9cKDS7VT4aA" type="_NaZegCnUEeaNP6CnPM7pLA" direction="return"/>
+        </ownedOperation>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
