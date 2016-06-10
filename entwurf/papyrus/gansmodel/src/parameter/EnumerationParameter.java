@@ -29,7 +29,6 @@ public class EnumerationParameter<T extends Enum> extends Parameter<EnumerationP
 
 	@Override
 	public void accept(ParameterVisitor visitor) {
-		// TODO Auto-generated method stub
-		
+		visitor.visit(this);
 	}
 }

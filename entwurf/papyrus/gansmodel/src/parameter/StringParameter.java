@@ -29,7 +29,6 @@ public class StringParameter extends Parameter<StringParameter, String> {
 
 	@Override
 	public void accept(ParameterVisitor visitor) {
-		// TODO Auto-generated method stub
-		
+		visitor.visit(this);
 	}
 }

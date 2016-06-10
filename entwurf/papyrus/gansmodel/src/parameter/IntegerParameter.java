@@ -27,7 +27,6 @@ public class IntegerParameter extends Parameter<IntegerParameter, Integer> {
 
 	@Override
 	public void accept(ParameterVisitor visitor) {
-		// TODO Auto-generated method stub
-		
+		visitor.visit(this);		
 	}
 }
