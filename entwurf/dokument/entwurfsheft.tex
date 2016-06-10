@@ -1,0 +1,73 @@
+\documentclass[a4paper]{scrreprt}
+
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[titletoc]{appendix}
+\usepackage{ae}
+\usepackage{enumitem}
+\usepackage[bookmarks,bookmarksnumbered]{hyperref}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{morefloats}
+
+\bibliographystyle{plain}
+\graphicspath{{resourcen/}}
+
+%Used for including MetaUML diagrams
+%\usepackage{emp}
+%\usepackage{ifpdf}
+%\ifpdf
+\DeclareGraphicsRule{.1}{mps}{*}{}
+%\fi
+
+\makeatletter
+\def\namedlabel#1#2{\begingroup
+   \def\@currentlabel{#2}%
+   \phantomsection#2\label{#1}\endgroup
+}
+\makeatother
+% Inhaltsverzeichnis Ebenen definieren, zB bis zu Subsection
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{1}
+
+\usepackage[toc,acronym]{glossaries}
+
+\usepackage{xparse}
+
+\makeatother
+\begin{document}
+
+\title{Entwurf\\
+Graph von Ansicht}
+\date{}
+\author{Nicolas Boltz   \\ uweaw@student.kit.edu
+  \and Jonas Fehrenbach \\ urdtk@student.kit.edu
+  \and Sven Kummetz     \\ kummetz.sven@gmail.com
+  \and Jonas Meier      \\ Meierjonas96@web.de
+  \and Lucas Steinmann  \\ ucemp@student.kit.edu
+}
+
+\titlehead{\includegraphics[width=150pt]{resourcen/GAns.png}}
+
+\maketitle
+
+% Same
+%\begin{abstract}
+%\end{abstract}
+{\small\tableofcontents}
+
+\input{einleitung}
+
+\input{klassendiagramme}
+
+\input{sequenzdiagramme}
+
+\input{paketeinteilung}
+
+\input{pflichtenheftdifferenzen}
+
+\clearpage
+
+%\bibliography{referenzen}
+\end{document}
