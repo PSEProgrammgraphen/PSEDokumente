@@ -1816,8 +1816,12 @@
             <element xmi:type="uml:ActionExecutionSpecification" href="graphvonansicht.uml#_kghLIC4qEeacv_6-DTc2kg"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kg1UMS4qEeacv_6-DTc2kg" x="96" y="77" width="16" height="60"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_dMYnYC70Eeap2MfqicjB5Q" type="3022">
+            <element xmi:type="uml:DestructionOccurrenceSpecification" href="graphvonansicht.uml#_dKns0C70Eeap2MfqicjB5Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMYnYS70Eeap2MfqicjB5Q"/>
+          </children>
           <element xmi:type="uml:Lifeline" href="graphvonansicht.uml#_W_fPEC4qEeacv_6-DTc2kg"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W_i5cS4qEeacv_6-DTc2kg" x="1861" y="1077" width="208" height="742"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W_i5cS4qEeacv_6-DTc2kg" x="1861" y="1077" width="208" height="327"/>
         </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ty6S1CwQEeaHXuqN0dh6DA"/>
       </children>
