@@ -1,4 +1,4 @@
-package gui;
+package objectproperty;
 
 /**
  * Einfache generische Klasse zum Speichern von verschiedenen Typen von

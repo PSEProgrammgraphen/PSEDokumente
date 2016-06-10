@@ -1,4 +1,4 @@
-package gui;
+package objectproperty;
 
 import javafx.beans.property.SimpleObjectProperty;
 

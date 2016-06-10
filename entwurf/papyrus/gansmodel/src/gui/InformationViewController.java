@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import objectproperty.GAnsProperty;
 
 /**
  * Der Controller für die InformationsAnsicht von GAns. Die View wird über
