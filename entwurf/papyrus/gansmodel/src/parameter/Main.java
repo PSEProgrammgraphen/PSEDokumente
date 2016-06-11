@@ -10,8 +10,8 @@ public class Main {
         settings = new Settings();
         settings.addParameter("one", new StringParameter("one", "yeah"));
         settings.addParameter("two", new EnumerationParameter("two", Enumeration.ONE));
-        settings.addParameter("three", new IntegerParameter("three", 3));
-        settings.addParameter("four", new IntegerParameter("four", 4));
+//        settings.addParameter("three", new IntegerParameter("three", 3));
+//        settings.addParameter("four", new IntegerParameter("four", 4));
 
         Parameter a = settings.get("three");
         Parameter b = settings.get("four");
@@ -19,13 +19,13 @@ public class Main {
 
         try {
             System.out.println(a.compareTo(b));
-        } catch (ClassCastException e) {
+        } catch (NullPointerException|ClassCastException e) {
             System.out.println("nono");
         }
 
         try {
             System.out.println(b.compareTo(c));
-        } catch (ClassCastException e) {
+        } catch (NullPointerException|ClassCastException e) {
             System.out.println("nono");
         }
     }

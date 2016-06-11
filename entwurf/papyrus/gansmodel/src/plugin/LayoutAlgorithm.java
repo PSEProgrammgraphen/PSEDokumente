@@ -1,9 +1,9 @@
 package plugin;
 
-import java.util.List;
-import parameter.Parameter;
+import graphmodel.Graph;
+import parameter.Settings;
 
-public interface LayoutAlgorithm {
+public interface LayoutAlgorithm<G extends Graph> {
 
 	/**
 	 * 
@@ -11,16 +11,35 @@ public interface LayoutAlgorithm {
 	public void getParameterDialog();
 
 	/**
-	 * 
+	 * Get the set of parameters for this instance of the algorithm.
 	 * @return 
+	 * 		The set of parameters
 	 */
-	public List<Parameter> getParameterSet();
-
-	public void initialize(List<Parameter> parameters);
+	public Settings getSettings();
 
 	/**
-	 * 
+	 * Layout the specified Graph.
+	 * @param graph
+	 * 		The graph to layout
 	 */
-	public void onLoad(); 
-
+	public void layout(G graph);
+	
+	/**
+	 * Get the full name of the layout.
+	 * @return
+	 * 		The full name of the layout.
+	 */
+	public String getName();
+	
+	/**
+	 * Get a acronym of the layout.
+	 * @return
+	 * 		The acronym of the layout.
+	 */
+	public String getID();
+	
+	/**
+	 * Register at LayoutAlgorithm for all supported Graphs
+	 */
+	public void onLoad();
 }
