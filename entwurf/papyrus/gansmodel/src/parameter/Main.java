@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         settings = new Settings();
         settings.addParameter("one", new StringParameter("one", "yeah"));
-        settings.addParameter("two", new EnumerationParameter("two", Enumeration.ONE));
+//        settings.addParameter("two", new EnumerationParameter("two", Enumeration.ONE));
 //        settings.addParameter("three", new IntegerParameter("three", 3));
 //        settings.addParameter("four", new IntegerParameter("four", 4));
 
