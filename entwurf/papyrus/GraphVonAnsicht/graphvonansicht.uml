@@ -437,6 +437,11 @@
         <packagedElement xmi:type="uml:Package" xmi:id="_ZDBrkSuiEeab3L3GjbSQTw" name="beans">
           <packagedElement xmi:type="uml:Class" xmi:id="_ZDBrkiuiEeab3L3GjbSQTw" name="EventHandler"/>
         </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_ku7X7jAdEeauWP8n0n92yQ" name="awt">
+          <packagedElement xmi:type="uml:Package" xmi:id="_ku7X7zAdEeauWP8n0n92yQ" name="event">
+            <packagedElement xmi:type="uml:Class" xmi:id="_ku7X8DAdEeauWP8n0n92yQ" name="ActionListener"/>
+          </packagedElement>
+        </packagedElement>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_FkA4siujEeab3L3GjbSQTw" name="javafx">
@@ -933,7 +938,7 @@
  * Created by Sven on 08.06.2016.
  </body>
           </ownedComment>
-          <generalization xmi:type="uml:Generalization" xmi:id="_YKew8i86Eea5c8WWEsgIIQ" general="_YKew8S86Eea5c8WWEsgIIQ"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_UG15UDAfEeauWP8n0n92yQ" general="_YKew8S86Eea5c8WWEsgIIQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_YKew8y86Eea5c8WWEsgIIQ" name="enumeration" visibility="private" type="_iOkwRC8zEeaW5pq-1rzVBQ" isUnique="false"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKfYAC86Eea5c8WWEsgIIQ" name="valueString" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKfYAS86Eea5c8WWEsgIIQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
@@ -952,40 +957,141 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_YKew8S86Eea5c8WWEsgIIQ" name="Parameter" visibility="public" isAbstract="true">
           <ownedComment xmi:type="uml:Comment" xmi:id="_YKrlQC86Eea5c8WWEsgIIQ">
             <body>
+ * An abstract parameter class.
  * Created by Sven on 08.06.2016.
  </body>
           </ownedComment>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_YKszYC86Eea5c8WWEsgIIQ" name="name" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
-          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YKsMUS86Eea5c8WWEsgIIQ" name="Parameter implements Comparable" client="_YKew8S86Eea5c8WWEsgIIQ" supplier="_YKsMUC86Eea5c8WWEsgIIQ" contract="_YKsMUC86Eea5c8WWEsgIIQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_YKszYC86Eea5c8WWEsgIIQ" name="name" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RC0kOjAeEeauWP8n0n92yQ" name="onChangeListener" visibility="private" type="_ku7X8DAdEeauWP8n0n92yQ" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RC0kOzAeEeauWP8n0n92yQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RC0kPDAeEeauWP8n0n92yQ" value="*"/>
+          </ownedAttribute>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YKsMUS86Eea5c8WWEsgIIQ" client="_YKew8S86Eea5c8WWEsgIIQ" supplier="_YKsMUC86Eea5c8WWEsgIIQ" contract="_YKsMUC86Eea5c8WWEsgIIQ"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKszYS86Eea5c8WWEsgIIQ" name="setName" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RC0kPTAeEeauWP8n0n92yQ">
+              <body>
+	 * Sets the name of the parameter.
+	 * @param name
+	 * 		The new name to set
+	 </body>
+            </ownedComment>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKszYi86Eea5c8WWEsgIIQ" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKtacC86Eea5c8WWEsgIIQ" name="getName" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RC0kPjAeEeauWP8n0n92yQ">
+              <body>
+	 * Returns the name of the parameter.
+	 * @return
+	 * 		The name of the parameter
+	 </body>
+            </ownedComment>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKtacS86Eea5c8WWEsgIIQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKtaci86Eea5c8WWEsgIIQ" name="valueString" visibility="public" isAbstract="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RC0kPzAeEeauWP8n0n92yQ">
+              <body>
+     * Returns the value of the parameter as a string.
+     * @return
+     * 		The value as a string
+     </body>
+            </ownedComment>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKtacy86Eea5c8WWEsgIIQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKtadC86Eea5c8WWEsgIIQ" name="getValue" visibility="public" isAbstract="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RC0kQDAeEeauWP8n0n92yQ">
+              <body>
+     * Returns the value of the parameter.
+     * @return
+     * 		The current value of the parameter
+     </body>
+            </ownedComment>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKuBgS86Eea5c8WWEsgIIQ" type="_YKuBgC86Eea5c8WWEsgIIQ" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKuBgi86Eea5c8WWEsgIIQ" name="accept" visibility="public" isAbstract="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RC0kQTAeEeauWP8n0n92yQ">
+              <body>
+     * Let the visitor visit this parameter.
+     * @param visitor
+     * 		The visitor to visit
+     </body>
+            </ownedComment>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKuBgy86Eea5c8WWEsgIIQ" name="visitor" type="_YKf_Ey86Eea5c8WWEsgIIQ"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKuokC86Eea5c8WWEsgIIQ" name="compareTo" visibility="public" isAbstract="true">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKuokS86Eea5c8WWEsgIIQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKuoki86Eea5c8WWEsgIIQ" name="o" type="_iOkwRC8zEeaW5pq-1rzVBQ"/>
           </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kQjAeEeauWP8n0n92yQ" name="addChangeListener" visibility="public">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RC0kQzAeEeauWP8n0n92yQ">
+              <body>
+     * Add a listener who gets triggered when a change of the value occurs.
+     * @param listener
+     * 		The listener to add
+     </body>
+            </ownedComment>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kRDAeEeauWP8n0n92yQ" name="listener" type="_ku7X8DAdEeauWP8n0n92yQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kRTAeEeauWP8n0n92yQ" name="getListener" visibility="protected">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RC0kRjAeEeauWP8n0n92yQ">
+              <body>
+     * Returns all listener listening to changes of this parameter.
+     * @return
+     * 		A list of listeners
+     </body>
+            </ownedComment>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kRzAeEeauWP8n0n92yQ" type="_ku7X8DAdEeauWP8n0n92yQ" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RC0kSDAeEeauWP8n0n92yQ"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RC0kSTAeEeauWP8n0n92yQ" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_YKf_Ey86Eea5c8WWEsgIIQ" name="ParameterVisitor" visibility="public" isAbstract="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_RDRQGDAeEeauWP8n0n92yQ">
+            <body>
+ * An abstract visitor class, as described in the Visitor-Pattern.
+ * Thought to give other elements access to a custom {@link Settings} and retrieve all informations
+ * of the specialized {@link Parameter} interfaces.
+ </body>
+          </ownedComment>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YK0vMC86Eea5c8WWEsgIIQ" name="visit" visibility="public" isAbstract="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RDRQGTAeEeauWP8n0n92yQ">
+              <body>
+	 * Visits the specified parameter and performs some by the subclass chosen actions on it.
+	 * @param parameter
+	 * 		The parameter to visit
+	 </body>
+            </ownedComment>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YK1WQC86Eea5c8WWEsgIIQ" name="parameter" type="_YKkQgC86Eea5c8WWEsgIIQ"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YK19UC86Eea5c8WWEsgIIQ" name="visit" visibility="public" isAbstract="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RDRQGjAeEeauWP8n0n92yQ">
+              <body>
+	 * Visits the specified parameter and performs some by the subclass chosen actions on it.
+	 * @param parameter
+	 * 		The parameter to visit
+	 </body>
+            </ownedComment>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YK2kYC86Eea5c8WWEsgIIQ" name="parameter" type="_YKeJ4C86Eea5c8WWEsgIIQ"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YK2kYS86Eea5c8WWEsgIIQ" name="visit" visibility="public" isAbstract="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RDRQGzAeEeauWP8n0n92yQ">
+              <body>
+	 * Visits the specified parameter and performs some by the subclass chosen actions on it.
+	 * @param parameter
+	 * 		The parameter to visit
+	 </body>
+            </ownedComment>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YK2kYi86Eea5c8WWEsgIIQ" name="parameter" type="_YKy6AS86Eea5c8WWEsgIIQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RDRQHDAeEeauWP8n0n92yQ" name="visit" visibility="public" isAbstract="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_RDRQHTAeEeauWP8n0n92yQ">
+              <body>
+	 * Visits the specified parameter and performs some by the subclass chosen actions on it.
+	 * @param parameter
+	 * 		The parameter to visit
+	 </body>
+            </ownedComment>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RDRQHjAeEeauWP8n0n92yQ" name="parameter" type="_RC0kIDAeEeauWP8n0n92yQ"/>
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_YKkQgC86Eea5c8WWEsgIIQ" name="IntegerParameter" visibility="public">
@@ -994,8 +1100,10 @@
  * Created by Sven on 08.06.2016.
  </body>
           </ownedComment>
-          <generalization xmi:type="uml:Generalization" xmi:id="_YKk3kS86Eea5c8WWEsgIIQ" general="_YKew8S86Eea5c8WWEsgIIQ"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_VjuHADAfEeauWP8n0n92yQ" general="_YKew8S86Eea5c8WWEsgIIQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_YKleoC86Eea5c8WWEsgIIQ" name="value" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RCraMDAeEeauWP8n0n92yQ" name="min" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RCraMTAeEeauWP8n0n92yQ" name="max" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKleoS86Eea5c8WWEsgIIQ" name="getValue" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKleoi86Eea5c8WWEsgIIQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
           </ownedOperation>
@@ -1009,17 +1117,34 @@
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKn64S86Eea5c8WWEsgIIQ" name="accept" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKn64i86Eea5c8WWEsgIIQ" name="visitor" type="_YKf_Ey86Eea5c8WWEsgIIQ"/>
           </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RCraMjAeEeauWP8n0n92yQ" name="setValue" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCraMzAeEeauWP8n0n92yQ" name="value" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RCraNDAeEeauWP8n0n92yQ" name="getMin" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCraNTAeEeauWP8n0n92yQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RCraNjAeEeauWP8n0n92yQ" name="setMin" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCraNzAeEeauWP8n0n92yQ" name="min" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RCraODAeEeauWP8n0n92yQ" name="getMax" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCraOTAeEeauWP8n0n92yQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RCraOjAeEeauWP8n0n92yQ" name="setMax" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RCraOzAeEeauWP8n0n92yQ" name="max" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_YKsMUC86Eea5c8WWEsgIIQ" name="Comparable"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_YKuBgC86Eea5c8WWEsgIIQ" name="V"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_YKxE0C86Eea5c8WWEsgIIQ" name="ParameterDialogGenerator" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_YKxr4C86Eea5c8WWEsgIIQ">
             <body>
+ * Generates a parameter dialog given a parent node and a set of parameters.
  * @author Lucas
- *
  </body>
           </ownedComment>
           <generalization xmi:type="uml:Generalization" xmi:id="_YKxr4S86Eea5c8WWEsgIIQ" general="_YKf_Ey86Eea5c8WWEsgIIQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RDRQFDAeEeauWP8n0n92yQ" name="parent" visibility="private" type="_RDRQEzAeEeauWP8n0n92yQ" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RDRQFTAeEeauWP8n0n92yQ" name="parameterCount" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKxr4i86Eea5c8WWEsgIIQ" name="visit" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKyS8C86Eea5c8WWEsgIIQ" name="parameter" type="_YKkQgC86Eea5c8WWEsgIIQ"/>
           </ownedOperation>
@@ -1029,6 +1154,9 @@
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YKy6Ai86Eea5c8WWEsgIIQ" name="visit" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YKy6Ay86Eea5c8WWEsgIIQ" name="parameter" type="_YKy6AS86Eea5c8WWEsgIIQ"/>
           </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RDRQFjAeEeauWP8n0n92yQ" name="visit" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RDRQFzAeEeauWP8n0n92yQ" name="parameter" type="_RC0kIDAeEeauWP8n0n92yQ"/>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_YKy6AS86Eea5c8WWEsgIIQ" name="StringParameter" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_YLD_wC86Eea5c8WWEsgIIQ">
@@ -1036,7 +1164,7 @@
  * Created by Sven on 08.06.2016.
  </body>
           </ownedComment>
-          <generalization xmi:type="uml:Generalization" xmi:id="_YLD_wS86Eea5c8WWEsgIIQ" general="_YKew8S86Eea5c8WWEsgIIQ"/>
+          <generalization xmi:type="uml:Generalization" xmi:id="_ThABUDAfEeauWP8n0n92yQ" general="_YKew8S86Eea5c8WWEsgIIQ"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_YLD_wi86Eea5c8WWEsgIIQ" name="value" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_YLEm0C86Eea5c8WWEsgIIQ" name="valueString" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YLF08C86Eea5c8WWEsgIIQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
@@ -1055,6 +1183,7 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_YK5nsC86Eea5c8WWEsgIIQ" name="Settings" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_YK5nsS86Eea5c8WWEsgIIQ">
             <body>
+ * A compound object to store parameters.
  * Created by Sven on 08.06.2016.
  </body>
           </ownedComment>
@@ -1099,6 +1228,50 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_YK5nsi86Eea5c8WWEsgIIQ" name="Map"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_YK-gMy86Eea5c8WWEsgIIQ" name="Collection"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_YK_HQi86Eea5c8WWEsgIIQ" name="Set"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_RC0kIDAeEeauWP8n0n92yQ" name="MultipleChoiceParameter" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_WRTlwDAfEeauWP8n0n92yQ" general="_YKew8S86Eea5c8WWEsgIIQ"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RC0kIjAeEeauWP8n0n92yQ" name="selected" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_RC0kIzAeEeauWP8n0n92yQ" name="values" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RC0kJDAeEeauWP8n0n92yQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RC0kJTAeEeauWP8n0n92yQ" value="*"/>
+          </ownedAttribute>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kJjAeEeauWP8n0n92yQ" name="valueString" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kJzAeEeauWP8n0n92yQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kKDAeEeauWP8n0n92yQ" name="getValue" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kKTAeEeauWP8n0n92yQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kKjAeEeauWP8n0n92yQ" name="getChoices" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kKzAeEeauWP8n0n92yQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RC0kLDAeEeauWP8n0n92yQ"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RC0kLTAeEeauWP8n0n92yQ" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kLjAeEeauWP8n0n92yQ" name="addChoice" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kLzAeEeauWP8n0n92yQ" name="choice" type="_8H8x4ispEeaqLZjhN-MabA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kMDAeEeauWP8n0n92yQ" name="index" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kMTAeEeauWP8n0n92yQ" name="remove" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kMjAeEeauWP8n0n92yQ" name="index" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kMzAeEeauWP8n0n92yQ" name="accept" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kNDAeEeauWP8n0n92yQ" name="visitor" type="_YKf_Ey86Eea5c8WWEsgIIQ"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kNTAeEeauWP8n0n92yQ" name="getSelectionIndex" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kNjAeEeauWP8n0n92yQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_RC0kNzAeEeauWP8n0n92yQ" name="compareTo" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kODAeEeauWP8n0n92yQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_RC0kOTAeEeauWP8n0n92yQ" name="o" type="_RC0kIDAeEeauWP8n0n92yQ"/>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_RDRQEDAeEeauWP8n0n92yQ" name="javafx">
+        <packagedElement xmi:type="uml:Package" xmi:id="_RDRQETAeEeauWP8n0n92yQ" name="scene">
+          <packagedElement xmi:type="uml:Package" xmi:id="_RDRQEjAeEeauWP8n0n92yQ" name="layout">
+            <packagedElement xmi:type="uml:Class" xmi:id="_RDRQEzAeEeauWP8n0n92yQ" name="GridPane"/>
+          </packagedElement>
+        </packagedElement>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_Cu_DQC87Eea5c8WWEsgIIQ" memberEnd="_CvBfgC87Eea5c8WWEsgIIQ _CvDUsC87Eea5c8WWEsgIIQ">

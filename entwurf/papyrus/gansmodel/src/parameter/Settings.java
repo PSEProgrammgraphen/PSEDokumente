@@ -4,6 +4,7 @@ package parameter;
 import java.util.*;
 
 /**
+ * A compound object to store parameters.
  * Created by Sven on 08.06.2016.
  */
 public class Settings {

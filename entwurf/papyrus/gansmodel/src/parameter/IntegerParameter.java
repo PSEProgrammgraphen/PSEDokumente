@@ -30,7 +30,7 @@ public class IntegerParameter extends Parameter<IntegerParameter, Integer> {
     public void setValue(int value)
     {
     	this.value = value;
-    	for (ActionListener listener: onChangeListener)
+    	for (ActionListener listener: this.getListener())
     	{
     		listener.actionPerformed(new ActionEvent(this, 0, "Value changed"));
     	}
