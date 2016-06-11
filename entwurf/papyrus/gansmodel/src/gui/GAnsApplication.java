@@ -21,11 +21,16 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import joana.MethodGraphLayout;
+import parameter.ParameterDialogGenerator;
+import parameter.Settings;
 
 /**
  * Main application of GAns.
@@ -44,6 +49,7 @@ public class GAnsApplication extends Application {
 	private LinkedList<GraphViewEventHandler> graphViewControllerList;
 
 	private File currentFile;
+	private MethodGraphLayout methodlayout = new MethodGraphLayout();
 
 	public static void main(String[] args) {
 		launch(args);
@@ -149,6 +155,16 @@ public class GAnsApplication extends Application {
 
 		Menu menuEdit = new Menu("Layout");
 		Menu changeLayoutItem = new Menu("Layout algorithms");
+		// Experimental ------
+        MenuItem methodGraph = new MenuItem("MethodGraphLayout");
+        changeLayoutItem.getItems().add(methodGraph);
+        changeLayoutItem.setOnAction(new EventHandler<ActionEvent>() {
+        	@Override public void handle(ActionEvent e) {
+        		openParameterDialog(methodlayout.getSettings());
+
+            }
+        });
+        // ------------
 		// TODO: In diesem Menü müssen die unterstützten Algorithmen eingfügt
 		// werden.
 		MenuItem layoutPropertiesItem = new MenuItem("Properties");
@@ -166,7 +182,21 @@ public class GAnsApplication extends Application {
 
 		menuBar.getMenus().addAll(menuFile, menuEdit, menuView);
 	}
-
+	private void openParameterDialog(Settings settings)
+	{
+		GridPane root = new GridPane();
+		ColumnConstraints c1 = new ColumnConstraints();
+		ColumnConstraints c2 = new ColumnConstraints();
+		c1.setPercentWidth(50);
+		c2.setPercentWidth(50);
+		root.getColumnConstraints().add(c1);
+		root.getColumnConstraints().add(c2);
+		new ParameterDialogGenerator(root, settings);
+		Stage stage = new Stage();
+		stage.setTitle("Settings");
+		stage.setScene(new Scene(root, 450, 450));
+		stage.show();
+	}
 	private void openTestDialog() {
 		Dialog<TestContainer> dialog = new Dialog<TestContainer>();
 		dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
