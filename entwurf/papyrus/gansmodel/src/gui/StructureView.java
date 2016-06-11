@@ -2,18 +2,19 @@ package gui;
 
 import java.util.HashMap;
 
+import javafx.event.EventHandler;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.input.MouseEvent;
 
 /**
- * Die StructureViewController-Klasse regelt den Zugriff und die Darstellung der
+ * Die StructureView-Klasse regelt den Zugriff und die Darstellung der
  * Elemente in der StrukturView der GUI von GAns.
  * 
  * @author Nicolas
  */
-public class StructureViewController {
+public class StructureView extends TreeView<String> {
 
-	private TreeView<String> view;
 	private HashMap<Integer, TreeItem<String>> itemMap;
 
 	/**
@@ -22,41 +23,23 @@ public class StructureViewController {
 	 * @param view
 	 *            Die View für die der Controller zuständig sein soll.
 	 */
-	public StructureViewController(TreeView<String> view) {
-		this.view = view;
+	public StructureView() {
 		itemMap = new HashMap<Integer, TreeItem<String>>();
 
 		TreeItem<String> root = new TreeItem<String>();
-		view.setRoot(root);
+		setRoot(root);
 		itemMap.put(-1, root);
-	}
-
-	/**
-	 * Fügt einen Eintrag in den Baum, unter das Item mit parentId ein. Für die
-	 * parentId -1 wird der RootKnoten eingefügt.
-	 * 
-	 * @param parentId
-	 * @param itemId
-	 * @param itemText
-	 */
-	public void addTreeItem(int parentId, int itemId, String itemText) {
-		TreeItem<String> item = new TreeItem<String>(itemText);
-		itemMap.put(itemId, item);
-		itemMap.get(parentId).getChildren().add(item);
-		view.refresh();
-	}
-
-	/**
-	 * Entfernt den Eintrag mit itemId aus dem Baum. Für die parentId -1 wird
-	 * der RootKnoten entfernt.
-	 * 
-	 * @param parentId
-	 * @param itemId
-	 */
-	public void removeTreeItem(int parentId, int itemId) {
-		TreeItem<String> item = itemMap.remove(itemId);
-		itemMap.get(parentId).getChildren().remove(item);
-		view.refresh();
+		
+		this.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		    @Override
+		    public void handle(MouseEvent mouseEvent)
+		    {            
+		        if(mouseEvent.getClickCount() == 2) {
+		            TreeItem<String> item = getSelectionModel().getSelectedItem();
+		            //TODO: Aufruf an die Applikation, die einen neuen Tab öffnet.
+		        }
+		    }
+		});
 	}
 
 	/**
@@ -67,12 +50,11 @@ public class StructureViewController {
 	 * @param graph
 	 *            Der Graph aus dem die Struktur aufgebaut werden soll.
 	 */
-	public void createTree(/* IGraph graph */) {
+	public void showTree(/* IGraph graph */) {
 		// Erstellen der TreeItems anhand des übergebenen Graphen in der
 		// internen Representation
 		TreeItem<String> root = new TreeItem<String>(/* Text des RootGraphen */);
 		// Erstellen der Items anhand der Subgraphen von graph.
-		view.setRoot(root);
-		view.refresh();
+		setRoot(root);
 	}
 }

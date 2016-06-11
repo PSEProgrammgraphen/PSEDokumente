@@ -6,27 +6,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import objectproperty.GAnsProperty;
 
-/**
- * Der Controller für die InformationsAnsicht von GAns. Die View wird über
- * PropertyValueFactories automatisch aufgebaut, wenn über setInformations eine
- * Liste mit Properties übergeben wird.
- * 
- * @author Nicolas
- */
-public class InformationViewController {
-
-	private TableView<GAnsProperty> view;
-
-	/**
-	 * Konstruktor. Setzt die View für die der Controller zuständig ist.
-	 * 
-	 * @param view
-	 *            Die View für die der Controller zuständig sein soll.
-	 */
-	public InformationViewController(TableView<GAnsProperty> view) {
-		this.view = view;
-	}
-
+public class InformationView extends TableView<GAnsProperty> {
+	
 	/**
 	 * Setzt die Informationen die in der InformationView dargestellt werden
 	 * sollen. Die übergebenen Properties werden durch eine interne Factory
@@ -38,7 +19,7 @@ public class InformationViewController {
 	 *            InformationsView angezeigt werden sollen.
 	 */
 	public void setInformations(ObservableList<GAnsProperty> informations) {
-		view.setItems(informations);
+		setItems(informations);
 		// Implementation in diesem Stil: (siehe
 		// https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableView.html)
 		TableColumn<GAnsProperty, String> propertyNameCol = new TableColumn<GAnsProperty, String>("Property");
@@ -47,8 +28,9 @@ public class InformationViewController {
 		propertyValueCol
 				.setCellValueFactory(new PropertyValueFactory<GAnsProperty, String>(GAnsProperty.valueAsString));
 
-		view.getColumns().setAll(propertyNameCol, propertyValueCol);
+		getColumns().setAll(propertyNameCol, propertyValueCol);
 
-		view.refresh();
+		refresh();
 	}
+
 }
