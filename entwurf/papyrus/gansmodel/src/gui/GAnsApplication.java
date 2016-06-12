@@ -98,8 +98,8 @@ public class GAnsApplication extends Application {
 		fileChooser.setTitle("Select a graph file");
 		currentFile = fileChooser.showOpenDialog(primaryStage);
 		addTab(currentFile.getName());
-		// TODO: Workspacedialog öffnen, Einlesen der Datei triggern, addTab mit
-		// neuem graphen öffnen
+		// TODO: Workspacedialog oeffnen, Einlesen der Datei triggern, addTab mit
+		// neuem graphen oeffnen
 	}
 
 	private void exportClicked() {
@@ -115,7 +115,7 @@ public class GAnsApplication extends Application {
 		GraphView graphView = new GraphView();
 
 		group.getChildren().add(graphView);
-		// Die Oberfläche die gezogen und gezoomed werden kann.
+		// Die Oberflaeche die gezogen und gezoomed werden kann.
 		Pane pane = new Pane(group);
 
 		GraphViewEventHandler graphViewEventHandler = new GraphViewEventHandler(graphView);
@@ -172,7 +172,7 @@ public class GAnsApplication extends Application {
 			}
 		});
 		// ------------
-		// TODO: In diesem Menü müssen die unterstützten Algorithmen eingfügt
+		// TODO: In diesem Menue muessen die unterstuetzten Algorithmen eingfuegt
 		// werden.
 		MenuItem layoutPropertiesItem = new MenuItem("Properties");
 		menuEdit.getItems().addAll(changeLayoutItem, layoutPropertiesItem);
@@ -224,7 +224,7 @@ public class GAnsApplication extends Application {
 
 		Optional<TestContainer> result = dialog.showAndWait();
 
-		// böse böse :D
+		// boese boese :D
 		Pane pane = ((Pane) graphViewTabPane.getSelectionModel().getSelectedItem().getContent());
 		Group group = ((Group) pane.getChildren().get(pane.getChildren().size() - 1));
 		((GraphView) group.getChildren().get(group.getChildren().size() - 1))

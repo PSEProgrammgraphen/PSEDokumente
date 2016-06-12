@@ -7,8 +7,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-//TODO: Muss vlt noch zusätzlich ein SelectionModel bekommen, welches die selection der Knoten per Maus überwacht.
-// Implementation großteils von http://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer
+//TODO: Muss vlt noch zusaetzlich ein SelectionModel bekommen, welches die selection der Knoten per Maus ueberwacht.
+// Implementation grossteils von http://stackoverflow.com/questions/29506156/javafx-8-zooming-relative-to-mouse-pointer
 // muss noch umgeschrieben und angepasst werden.
 
 /**
@@ -63,6 +63,7 @@ public class GraphView extends Pane {
 
 	/**
 	 * Returns the scale on which the GraphView currently is.
+	 * 
 	 * @return The scale of the GraphView.
 	 */
 	public double getScale() {
@@ -71,14 +72,18 @@ public class GraphView extends Pane {
 
 	/**
 	 * Sets the scale of the GraphView.
-	 * @param scale The scale of the GraphView.
+	 * 
+	 * @param scale
+	 *            The scale of the GraphView.
 	 */
 	public void setScale(double scale) {
 		myScale.set(scale);
 	}
 
 	/**
-	 * Sets the pivot so the scrolling follows the mouse position on the GraphView.
+	 * Sets the pivot so the scrolling follows the mouse position on the
+	 * GraphView.
+	 * 
 	 * @param x
 	 * @param y
 	 */
@@ -99,9 +104,13 @@ public class GraphView extends Pane {
 
 	/**
 	 * Adds a single vertex in the GraphView.
-	 * @param x The x position in the view.
-	 * @param y The y position in the view.
-	 * @param Text The text of the vertex.
+	 * 
+	 * @param x
+	 *            The x position in the view.
+	 * @param y
+	 *            The y position in the view.
+	 * @param Text
+	 *            The text of the vertex.
 	 */
 	public void addVertex(double x, double y, String text) {
 		VertexShape test = new VertexShape(text);

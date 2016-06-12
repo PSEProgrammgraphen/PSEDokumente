@@ -33,7 +33,7 @@ public class StructureView extends TreeView<String> {
 				if (mouseEvent.getClickCount() == 2) {
 					TreeItem<String> item = getSelectionModel().getSelectedItem();
 					// TODO: Aufruf an die Applikation, die einen neuen Tab
-					// öffnet.
+					// oeffnet.
 				}
 			}
 		});
@@ -48,7 +48,7 @@ public class StructureView extends TreeView<String> {
 	 *            The graph which should be represented.
 	 */
 	public void showTree(/* IGraph graph */) {
-		// Erstellen der TreeItems anhand des übergebenen Graphen in der
+		// Erstellen der TreeItems anhand des uebergebenen Graphen in der
 		// internen Representation
 		TreeItem<String> root = new TreeItem<String>(/* Text des RootGraphen */);
 		// Erstellen der Items anhand der Subgraphen von graph.
