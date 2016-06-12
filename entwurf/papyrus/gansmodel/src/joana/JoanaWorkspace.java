@@ -1,7 +1,7 @@
 package joana;
 
 import plugin.Workspace;
-import parameter.Parameter;
+import parameter.Settings;
 import graphmodel.AbstractGraphModelBuilder;
 import graphmodel.GraphModel;
 
@@ -9,13 +9,23 @@ public class JoanaWorkspace implements Workspace {
 
 	/**
 	 * 
-	 * @param parameters 
+	 */
+	public JoanaWorkspace() { }
+
+	/**
+	 * 
 	 * @return 
 	 */
-	public Workspace initialize(Parameter parameters) { 
+	public Settings getParameterSet() { 
 		// TODO Auto-generated method
 		return null;
 	 }
+
+	@Override
+	public void initialize(Settings parameters) {
+		// TODO Auto-generated method stub
+	} 
+
 
 	/**
 	 * 
@@ -50,14 +60,4 @@ public class JoanaWorkspace implements Workspace {
 		// TODO Auto-generated method
 		return null;
 	 }
-
-	/**
-	 * 
-	 * @return 
-	 */
-	public Parameter getParameterSet() { 
-		// TODO Auto-generated method
-		return null;
-	 } 
-
 }
