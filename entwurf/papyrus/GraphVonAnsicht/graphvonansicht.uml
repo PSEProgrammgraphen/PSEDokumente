@@ -2619,6 +2619,86 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_pjzVdDC0EeaNnucjRoyajA" name="gansobjectproperty" type="_U_Vy4TC0EeaNnucjRoyajA" association="_pjzVcDC0EeaNnucjRoyajA"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_pjzVczC0EeaNnucjRoyajA" name="gansobjectpropertyvalue" type="_U_Vy6jC0EeaNnucjRoyajA" association="_pjzVcDC0EeaNnucjRoyajA"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_iefP4DDFEeaZHpBEXCeEJQ" name="sugiyama">
+    <packagedElement xmi:type="uml:Package" xmi:id="_ieyK0DDFEeaZHpBEXCeEJQ" name="sugiyama">
+      <packagedElement xmi:type="uml:Class" xmi:id="_ie0AADDFEeaZHpBEXCeEJQ" name="CrossMinimization" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie1OIDDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie1OITDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie11MDDFEeaZHpBEXCeEJQ" name="minimizeCrossings" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie2cQDDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ie3qYDDFEeaZHpBEXCeEJQ" name="CycleRemoving" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie3qYTDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie4RcDDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie4RcTDFEeaZHpBEXCeEJQ" name="removeCycles" visibility="private">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie4RcjDFEeaZHpBEXCeEJQ" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie4RczDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ie5fkDDFEeaZHpBEXCeEJQ" name="EdgeDrawing" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie6GojDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_ie6GoTDFEeaZHpBEXCeEJQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie6GozDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie6tsDDFEeaZHpBEXCeEJQ" name="drawEdges" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie6tsTDFEeaZHpBEXCeEJQ" name="graph" type="_ie6GoTDFEeaZHpBEXCeEJQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie6tsjDFEeaZHpBEXCeEJQ" name="revertCycles" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie6tszDFEeaZHpBEXCeEJQ" name="cycles" type="_qAw_gC2ZEeatg6U_MxLsoQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ie8i4DDFEeaZHpBEXCeEJQ" name="LayerAssigning" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie8i4TDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie8i4jDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie8i4zDFEeaZHpBEXCeEJQ" name="assignLayers" visibility="private">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie8i5DDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie9J8DDFEeaZHpBEXCeEJQ" name="minimizeHeight" visibility="private">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9J8TDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9J8jDFEeaZHpBEXCeEJQ" name="height" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie9J8zDFEeaZHpBEXCeEJQ" name="minimizeEdgeLength" visibility="private">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9xADDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9xATDFEeaZHpBEXCeEJQ" name="edgeLength" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie9xAjDFEeaZHpBEXCeEJQ" name="minimizeWidth" visibility="private">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9xAzDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9xBDDFEeaZHpBEXCeEJQ" name="width" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ie-_IDDFEeaZHpBEXCeEJQ" name="SugiyamaLayoutAlgorithm" visibility="public">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ie_mMDDFEeaZHpBEXCeEJQ" name="SugiyamaLayoutAlgorithm implements LayoutAlgorithm" client="_ie-_IDDFEeaZHpBEXCeEJQ" supplier="_eu26QDC2EeaTGLGmcq2w7A" contract="_eu26QDC2EeaTGLGmcq2w7A"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie_mMTDFEeaZHpBEXCeEJQ" name="getParameterDialog" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie_mMjDFEeaZHpBEXCeEJQ" name="getSettings" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifANQDDFEeaZHpBEXCeEJQ" type="_ie_mNDDFEeaZHpBEXCeEJQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifANQjDFEeaZHpBEXCeEJQ" name="layout" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifANQzDFEeaZHpBEXCeEJQ" name="graph" type="_ifANQTDFEeaZHpBEXCeEJQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifANRDDFEeaZHpBEXCeEJQ" name="getName" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifANRjDFEeaZHpBEXCeEJQ" type="_ifANRTDFEeaZHpBEXCeEJQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifA0UDDFEeaZHpBEXCeEJQ" name="getID" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifA0UTDFEeaZHpBEXCeEJQ" type="_ifANRTDFEeaZHpBEXCeEJQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifA0UjDFEeaZHpBEXCeEJQ" name="onLoad" visibility="public"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ifANQTDFEeaZHpBEXCeEJQ" name="G"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ifCCcDDFEeaZHpBEXCeEJQ" name="VertexPositioning" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ifCCcTDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ifCCcjDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifCpgDDFEeaZHpBEXCeEJQ" name="positionVertices" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifCpgTDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ie6GoDDFEeaZHpBEXCeEJQ" name="sgraphmodel">
+      <packagedElement xmi:type="uml:Class" xmi:id="_ie6GoTDFEeaZHpBEXCeEJQ" name="DirectedGraph"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ie_mMzDFEeaZHpBEXCeEJQ" name="plugin">
+      <packagedElement xmi:type="uml:Class" xmi:id="_ie_mNDDFEeaZHpBEXCeEJQ" name="Settings"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ifANRTDFEeaZHpBEXCeEJQ" name="String"/>
+    </packagedElement>
+  </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_370T0ChkEeaXOuI3eacPrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
