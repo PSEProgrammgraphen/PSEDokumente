@@ -218,12 +218,12 @@ public class GAnsApplication extends Application {
 		TextField textField = new TextField();
 		layout.getChildren().addAll(xCoordinate, yCoordinate, textField);
 		dialog.getDialogPane().setContent(layout);
-		dialog.setResultConverter(dialogButton -> {
-		if (dialogButton == ButtonType.OK) {
-		return new TestContainer(xCoordinate.getText(),
-		yCoordinate.getText(), textField.getText());}
-		return null;
-		});
+//		dialog.setResultConverter(dialogButton -> {
+//		if (dialogButton == ButtonType.OK) {
+//		return new TestContainer(xCoordinate.getText(),
+//		yCoordinate.getText(), textField.getText());}
+//		return null;
+//		});
 
 		Optional<TestContainer> result = dialog.showAndWait();
 
