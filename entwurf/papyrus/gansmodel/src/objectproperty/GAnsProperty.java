@@ -3,7 +3,7 @@ package objectproperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-// Implementation ähnlich wie im Beispiel "Person" bei https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableView.html
+// Implementation aehnlich wie im Beispiel "Person" bei https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableView.html
 
 /**
  * The GAnsProperty is a single property of a vertex or an edge in GAns. The
@@ -23,8 +23,7 @@ public class GAnsProperty {
 
 	/**
 	 * A string with whoom, factories or other elements from the GUI, can
-	 * reference to the value. String über den von der GUI aus, Factories oder
-	 * Änliches, auf den Value verwiesen werden kann.
+	 * reference to the value.
 	 */
 	public final static String value = "propertyValue";
 
