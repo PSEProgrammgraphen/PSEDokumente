@@ -1,0 +1,1319 @@
+\section{Package parameter}{
+\label{parameter}\hskip -.05in
+\hbox to \hsize{\textit{ Package Contents\hfil Page}}
+\vskip .13in
+\hbox{{\bf  Classes}}
+\entityintro{Enumeration}{parameter.Enumeration}{Created by Sven on 08.06.2016.}
+\entityintro{EnumerationParameter}{parameter.EnumerationParameter}{Created by Sven on 08.06.2016.}
+\entityintro{IntegerParameter}{parameter.IntegerParameter}{Created by Sven on 08.06.2016.}
+\entityintro{Main}{parameter.Main}{}
+\entityintro{MultipleChoiceParameter}{parameter.MultipleChoiceParameter}{}
+\entityintro{Parameter}{parameter.Parameter}{An abstract parameter class.}
+\entityintro{ParameterDialogGenerator}{parameter.ParameterDialogGenerator}{Generates a parameter dialog given a parent node and a set of parameters.}
+\entityintro{ParameterVisitor}{parameter.ParameterVisitor}{An abstract visitor class, as described in the Visitor-Pattern.}
+\entityintro{Settings}{parameter.Settings}{A compound object to store parameters.}
+\entityintro{StringParameter}{parameter.StringParameter}{Created by Sven on 08.06.2016.}
+\vskip .1in
+\vskip .1in
+\subsection{\label{parameter.Enumeration}\index{Enumeration}Class Enumeration}{
+\vskip .1in 
+Created by Sven on 08.06.2016.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public final class Enumeration
+ extends java.lang.Enum\end{lstlisting}
+\subsubsection{Field summary}{
+\begin{verse}
+{\bf ONE} \\
+{\bf THREE} \\
+{\bf TWO} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf valueOf(String)} \\
+{\bf values()} \\
+\end{verse}
+}
+\subsubsection{Fields}{
+\begin{itemize}
+\item{
+\index{ONE}
+\label{parameter.Enumeration.ONE}\texttt{public static final Enumeration\ {\bf  ONE}}
+}
+\item{
+\index{TWO}
+\label{parameter.Enumeration.TWO}\texttt{public static final Enumeration\ {\bf  TWO}}
+}
+\item{
+\index{THREE}
+\label{parameter.Enumeration.THREE}\texttt{public static final Enumeration\ {\bf  THREE}}
+}
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{valueOf(String)}
+{\bf  valueOf}\\
+\begin{lstlisting}[frame=none]
+public static Enumeration valueOf(java.lang.String name)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{values()}
+{\bf  values}\\
+\begin{lstlisting}[frame=none]
+public static Enumeration[] values()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class Enum }{
+\texttt{java.lang.Enum} {\small 
+\refdefined{java.lang.Enum}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{protected final Object {\bf  clone}() throws CloneNotSupportedException
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final int {\bf  compareTo}(\texttt{Enum} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final boolean {\bf  equals}(\texttt{Object} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected final void {\bf  finalize}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final Class {\bf  getDeclaringClass}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final int {\bf  hashCode}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final String {\bf  name}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final int {\bf  ordinal}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  toString}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public static Enum {\bf  valueOf}(\texttt{Class} {\bf  arg0},
+\texttt{String} {\bf  arg1})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.EnumerationParameter}\index{EnumerationParameter}Class EnumerationParameter}{
+\vskip .1in 
+Created by Sven on 08.06.2016.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class EnumerationParameter
+ extends parameter.Parameter\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf EnumerationParameter(String, T)} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf accept(ParameterVisitor)} \\
+{\bf compareTo(EnumerationParameter)} \\
+{\bf getValue()} \\
+{\bf valueString()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{EnumerationParameter(String, T)}
+{\bf  EnumerationParameter}\\
+\begin{lstlisting}[frame=none]
+public EnumerationParameter(java.lang.String name,java.lang.Enum enumeration)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{accept(ParameterVisitor)}
+{\bf  accept}\\
+\begin{lstlisting}[frame=none]
+public abstract void accept(ParameterVisitor visitor)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Let the visitor visit this parameter.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{visitor} -- The visitor to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{compareTo(EnumerationParameter)}
+{\bf  compareTo}\\
+\begin{lstlisting}[frame=none]
+public int compareTo(EnumerationParameter o)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getValue()}
+{\bf  getValue}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.Object getValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Returns the value of the parameter.
+}
+\item{{\bf  Returns} -- 
+The current value of the parameter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{valueString()}
+{\bf  valueString}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.String valueString()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Returns the value of the parameter as a string.
+}
+\item{{\bf  Returns} -- 
+The value as a string 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class Parameter }{
+\texttt{parameter.Parameter} {\small 
+\refdefined{parameter.Parameter}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  accept}(\texttt{ParameterVisitor} {\bf  visitor})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addChangeListener}(\texttt{java.awt.event.ActionListener} {\bf  listener})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract int {\bf  compareTo}(\texttt{java.lang.Object} {\bf  o})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected List {\bf  getListener}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract Object {\bf  getValue}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setName}(\texttt{java.lang.String} {\bf  name})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract String {\bf  valueString}()
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.IntegerParameter}\index{IntegerParameter}Class IntegerParameter}{
+\vskip .1in 
+Created by Sven on 08.06.2016.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class IntegerParameter
+ extends parameter.Parameter\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf IntegerParameter(String, int, int, int)} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf accept(ParameterVisitor)} \\
+{\bf compareTo(IntegerParameter)} \\
+{\bf getMax()} \\
+{\bf getMin()} \\
+{\bf getValue()} \\
+{\bf setMax(int)} \\
+{\bf setMin(int)} \\
+{\bf setValue(int)} \\
+{\bf valueString()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{IntegerParameter(String, int, int, int)}
+{\bf  IntegerParameter}\\
+\begin{lstlisting}[frame=none]
+public IntegerParameter(java.lang.String name,int value,int min,int max)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{accept(ParameterVisitor)}
+{\bf  accept}\\
+\begin{lstlisting}[frame=none]
+public abstract void accept(ParameterVisitor visitor)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Let the visitor visit this parameter.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{visitor} -- The visitor to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{compareTo(IntegerParameter)}
+{\bf  compareTo}\\
+\begin{lstlisting}[frame=none]
+public int compareTo(IntegerParameter iw)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getMax()}
+{\bf  getMax}\\
+\begin{lstlisting}[frame=none]
+public int getMax()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getMin()}
+{\bf  getMin}\\
+\begin{lstlisting}[frame=none]
+public int getMin()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getValue()}
+{\bf  getValue}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.Object getValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Returns the value of the parameter.
+}
+\item{{\bf  Returns} -- 
+The current value of the parameter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setMax(int)}
+{\bf  setMax}\\
+\begin{lstlisting}[frame=none]
+public void setMax(int max)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{setMin(int)}
+{\bf  setMin}\\
+\begin{lstlisting}[frame=none]
+public void setMin(int min)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{setValue(int)}
+{\bf  setValue}\\
+\begin{lstlisting}[frame=none]
+public void setValue(int value)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{valueString()}
+{\bf  valueString}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.String valueString()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Returns the value of the parameter as a string.
+}
+\item{{\bf  Returns} -- 
+The value as a string 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class Parameter }{
+\texttt{parameter.Parameter} {\small 
+\refdefined{parameter.Parameter}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  accept}(\texttt{ParameterVisitor} {\bf  visitor})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addChangeListener}(\texttt{java.awt.event.ActionListener} {\bf  listener})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract int {\bf  compareTo}(\texttt{java.lang.Object} {\bf  o})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected List {\bf  getListener}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract Object {\bf  getValue}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setName}(\texttt{java.lang.String} {\bf  name})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract String {\bf  valueString}()
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.Main}\index{Main}Class Main}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class Main
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf Main()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf main(String\lbrack \rbrack )} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Main()}
+{\bf  Main}\\
+\begin{lstlisting}[frame=none]
+public Main()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{main(String\lbrack \rbrack )}
+{\bf  main}\\
+\begin{lstlisting}[frame=none]
+public static void main(java.lang.String[] args)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.MultipleChoiceParameter}\index{MultipleChoiceParameter}Class MultipleChoiceParameter}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class MultipleChoiceParameter
+ extends parameter.Parameter\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf MultipleChoiceParameter(String)} \\
+{\bf MultipleChoiceParameter(String, List, int)} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf accept(ParameterVisitor)} \\
+{\bf addChoice(String, int)} \\
+{\bf compareTo(MultipleChoiceParameter)} \\
+{\bf getChoices()} \\
+{\bf getSelectionIndex()} \\
+{\bf getValue()} \\
+{\bf remove(int)} \\
+{\bf valueString()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{MultipleChoiceParameter(String)}
+{\bf  MultipleChoiceParameter}\\
+\begin{lstlisting}[frame=none]
+public MultipleChoiceParameter(java.lang.String name)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{MultipleChoiceParameter(String, List, int)}
+{\bf  MultipleChoiceParameter}\\
+\begin{lstlisting}[frame=none]
+public MultipleChoiceParameter(java.lang.String name,java.util.List choices,int init)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{accept(ParameterVisitor)}
+{\bf  accept}\\
+\begin{lstlisting}[frame=none]
+public abstract void accept(ParameterVisitor visitor)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Let the visitor visit this parameter.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{visitor} -- The visitor to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addChoice(String, int)}
+{\bf  addChoice}\\
+\begin{lstlisting}[frame=none]
+public void addChoice(java.lang.String choice,int index)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{compareTo(MultipleChoiceParameter)}
+{\bf  compareTo}\\
+\begin{lstlisting}[frame=none]
+public int compareTo(MultipleChoiceParameter o)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getChoices()}
+{\bf  getChoices}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getChoices()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSelectionIndex()}
+{\bf  getSelectionIndex}\\
+\begin{lstlisting}[frame=none]
+public int getSelectionIndex()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getValue()}
+{\bf  getValue}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.Object getValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Returns the value of the parameter.
+}
+\item{{\bf  Returns} -- 
+The current value of the parameter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{remove(int)}
+{\bf  remove}\\
+\begin{lstlisting}[frame=none]
+public void remove(int index)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{valueString()}
+{\bf  valueString}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.String valueString()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Returns the value of the parameter as a string.
+}
+\item{{\bf  Returns} -- 
+The value as a string 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class Parameter }{
+\texttt{parameter.Parameter} {\small 
+\refdefined{parameter.Parameter}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  accept}(\texttt{ParameterVisitor} {\bf  visitor})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addChangeListener}(\texttt{java.awt.event.ActionListener} {\bf  listener})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract int {\bf  compareTo}(\texttt{java.lang.Object} {\bf  o})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected List {\bf  getListener}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract Object {\bf  getValue}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setName}(\texttt{java.lang.String} {\bf  name})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract String {\bf  valueString}()
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.Parameter}\index{Parameter}Class Parameter}{
+\vskip .1in 
+An abstract parameter class. Created by Sven on 08.06.2016.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class Parameter
+ extends java.lang.Object implements java.lang.Comparable\end{lstlisting}
+\subsubsection{All known subclasses}{StringParameter\small{\refdefined{parameter.StringParameter}}, MultipleChoiceParameter\small{\refdefined{parameter.MultipleChoiceParameter}}, IntegerParameter\small{\refdefined{parameter.IntegerParameter}}, EnumerationParameter\small{\refdefined{parameter.EnumerationParameter}}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf Parameter()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf accept(ParameterVisitor)} Let the visitor visit this parameter.\\
+{\bf addChangeListener(ActionListener)} Add a listener who gets triggered when a change of the value occurs.\\
+{\bf compareTo(T)} \\
+{\bf getListener()} Returns all listener listening to changes of this parameter.\\
+{\bf getName()} Returns the name of the parameter.\\
+{\bf getValue()} Returns the value of the parameter.\\
+{\bf setName(String)} Sets the name of the parameter.\\
+{\bf valueString()} Returns the value of the parameter as a string.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Parameter()}
+{\bf  Parameter}\\
+\begin{lstlisting}[frame=none]
+public Parameter()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{accept(ParameterVisitor)}
+{\bf  accept}\\
+\begin{lstlisting}[frame=none]
+public abstract void accept(ParameterVisitor visitor)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Let the visitor visit this parameter.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{visitor} -- The visitor to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addChangeListener(ActionListener)}
+{\bf  addChangeListener}\\
+\begin{lstlisting}[frame=none]
+public void addChangeListener(java.awt.event.ActionListener listener)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Add a listener who gets triggered when a change of the value occurs.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{listener} -- The listener to add}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{compareTo(T)}
+{\bf  compareTo}\\
+\begin{lstlisting}[frame=none]
+int compareTo(java.lang.Object arg0)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getListener()}
+{\bf  getListener}\\
+\begin{lstlisting}[frame=none]
+protected java.util.List getListener()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all listener listening to changes of this parameter.
+}
+\item{{\bf  Returns} -- 
+A list of listeners 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the name of the parameter.
+}
+\item{{\bf  Returns} -- 
+The name of the parameter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getValue()}
+{\bf  getValue}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.Object getValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the value of the parameter.
+}
+\item{{\bf  Returns} -- 
+The current value of the parameter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setName(String)}
+{\bf  setName}\\
+\begin{lstlisting}[frame=none]
+public void setName(java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the name of the parameter.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{name} -- The new name to set}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{valueString()}
+{\bf  valueString}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.String valueString()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the value of the parameter as a string.
+}
+\item{{\bf  Returns} -- 
+The value as a string 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.ParameterDialogGenerator}\index{ParameterDialogGenerator}Class ParameterDialogGenerator}{
+\vskip .1in 
+Generates a parameter dialog given a parent node and a set of parameters.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class ParameterDialogGenerator
+ extends parameter.ParameterVisitor\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf ParameterDialogGenerator(GridPane, Settings)} Constructs a new ParameterDialogGenerator and sets the parent, where all parameter GUI-Elements are placed in afterwards.\\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf visit(EnumerationParameter)} \\
+{\bf visit(IntegerParameter)} \\
+{\bf visit(MultipleChoiceParameter)} \\
+{\bf visit(StringParameter)} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{ParameterDialogGenerator(GridPane, Settings)}
+{\bf  ParameterDialogGenerator}\\
+\begin{lstlisting}[frame=none]
+public ParameterDialogGenerator(javafx.scene.layout.GridPane parent,Settings settings)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Constructs a new ParameterDialogGenerator and sets the parent, where all parameter GUI-Elements are placed in afterwards.
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{visit(EnumerationParameter)}
+{\bf  visit}\\
+\begin{lstlisting}[frame=none]
+public abstract void visit(EnumerationParameter parameter)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ParameterVisitor{\small \refdefined{parameter.ParameterVisitor}} }
+
+Visits the specified parameter and performs some by the subclass chosen actions on it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameter} -- The parameter to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{visit(IntegerParameter)}
+{\bf  visit}\\
+\begin{lstlisting}[frame=none]
+public abstract void visit(IntegerParameter parameter)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ParameterVisitor{\small \refdefined{parameter.ParameterVisitor}} }
+
+Visits the specified parameter and performs some by the subclass chosen actions on it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameter} -- The parameter to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{visit(MultipleChoiceParameter)}
+{\bf  visit}\\
+\begin{lstlisting}[frame=none]
+public abstract void visit(MultipleChoiceParameter parameter)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ParameterVisitor{\small \refdefined{parameter.ParameterVisitor}} }
+
+Visits the specified parameter and performs some by the subclass chosen actions on it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameter} -- The parameter to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{visit(StringParameter)}
+{\bf  visit}\\
+\begin{lstlisting}[frame=none]
+public abstract void visit(StringParameter parameter)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ParameterVisitor{\small \refdefined{parameter.ParameterVisitor}} }
+
+Visits the specified parameter and performs some by the subclass chosen actions on it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameter} -- The parameter to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class ParameterVisitor }{
+\texttt{parameter.ParameterVisitor} {\small 
+\refdefined{parameter.ParameterVisitor}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  visit}(\texttt{EnumerationParameter} {\bf  parameter})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  visit}(\texttt{IntegerParameter} {\bf  parameter})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  visit}(\texttt{MultipleChoiceParameter} {\bf  parameter})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  visit}(\texttt{StringParameter} {\bf  parameter})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.ParameterVisitor}\index{ParameterVisitor}Class ParameterVisitor}{
+\vskip .1in 
+An abstract visitor class, as described in the Visitor-Pattern. Thought to give other elements access to a custom \texttt{\small Settings}{\small 
+\refdefined{parameter.Settings}} and retrieve all informations of the specialized \texttt{\small Parameter}{\small 
+\refdefined{parameter.Parameter}} interfaces.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class ParameterVisitor
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{All known subclasses}{ParameterDialogGenerator\small{\refdefined{parameter.ParameterDialogGenerator}}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf ParameterVisitor()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf visit(EnumerationParameter)} Visits the specified parameter and performs some by the subclass chosen actions on it.\\
+{\bf visit(IntegerParameter)} Visits the specified parameter and performs some by the subclass chosen actions on it.\\
+{\bf visit(MultipleChoiceParameter)} Visits the specified parameter and performs some by the subclass chosen actions on it.\\
+{\bf visit(StringParameter)} Visits the specified parameter and performs some by the subclass chosen actions on it.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{ParameterVisitor()}
+{\bf  ParameterVisitor}\\
+\begin{lstlisting}[frame=none]
+public ParameterVisitor()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{visit(EnumerationParameter)}
+{\bf  visit}\\
+\begin{lstlisting}[frame=none]
+public abstract void visit(EnumerationParameter parameter)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Visits the specified parameter and performs some by the subclass chosen actions on it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameter} -- The parameter to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{visit(IntegerParameter)}
+{\bf  visit}\\
+\begin{lstlisting}[frame=none]
+public abstract void visit(IntegerParameter parameter)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Visits the specified parameter and performs some by the subclass chosen actions on it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameter} -- The parameter to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{visit(MultipleChoiceParameter)}
+{\bf  visit}\\
+\begin{lstlisting}[frame=none]
+public abstract void visit(MultipleChoiceParameter parameter)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Visits the specified parameter and performs some by the subclass chosen actions on it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameter} -- The parameter to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{visit(StringParameter)}
+{\bf  visit}\\
+\begin{lstlisting}[frame=none]
+public abstract void visit(StringParameter parameter)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Visits the specified parameter and performs some by the subclass chosen actions on it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameter} -- The parameter to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.Settings}\index{Settings}Class Settings}{
+\vskip .1in 
+A compound object to store parameters. Created by Sven on 08.06.2016.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class Settings
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf Settings()} \\
+{\bf Settings(Map)} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addParameter(String, Parameter)} \\
+{\bf containsKey(Object)} \\
+{\bf containsValue(Object)} \\
+{\bf entrySet()} \\
+{\bf get(Object)} \\
+{\bf isEmpty()} \\
+{\bf remove(Object)} \\
+{\bf size()} \\
+{\bf values()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Settings()}
+{\bf  Settings}\\
+\begin{lstlisting}[frame=none]
+public Settings()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{Settings(Map)}
+{\bf  Settings}\\
+\begin{lstlisting}[frame=none]
+public Settings(java.util.Map parameters)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addParameter(String, Parameter)}
+{\bf  addParameter}\\
+\begin{lstlisting}[frame=none]
+public void addParameter(java.lang.String string,Parameter parameter)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{containsKey(Object)}
+{\bf  containsKey}\\
+\begin{lstlisting}[frame=none]
+public boolean containsKey(java.lang.Object key)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{containsValue(Object)}
+{\bf  containsValue}\\
+\begin{lstlisting}[frame=none]
+public boolean containsValue(java.lang.Object value)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{entrySet()}
+{\bf  entrySet}\\
+\begin{lstlisting}[frame=none]
+public java.util.Set entrySet()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{get(Object)}
+{\bf  get}\\
+\begin{lstlisting}[frame=none]
+public Parameter get(java.lang.Object key)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{isEmpty()}
+{\bf  isEmpty}\\
+\begin{lstlisting}[frame=none]
+public boolean isEmpty()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{remove(Object)}
+{\bf  remove}\\
+\begin{lstlisting}[frame=none]
+public Parameter remove(java.lang.Object key)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{size()}
+{\bf  size}\\
+\begin{lstlisting}[frame=none]
+public int size()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{values()}
+{\bf  values}\\
+\begin{lstlisting}[frame=none]
+public java.util.Collection values()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{parameter.StringParameter}\index{StringParameter}Class StringParameter}{
+\vskip .1in 
+Created by Sven on 08.06.2016.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class StringParameter
+ extends parameter.Parameter\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf StringParameter(String, String)} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf accept(ParameterVisitor)} \\
+{\bf compareTo(StringParameter)} \\
+{\bf getValue()} \\
+{\bf valueString()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{StringParameter(String, String)}
+{\bf  StringParameter}\\
+\begin{lstlisting}[frame=none]
+public StringParameter(java.lang.String name,java.lang.String value)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{accept(ParameterVisitor)}
+{\bf  accept}\\
+\begin{lstlisting}[frame=none]
+public abstract void accept(ParameterVisitor visitor)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Let the visitor visit this parameter.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{visitor} -- The visitor to visit}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{compareTo(StringParameter)}
+{\bf  compareTo}\\
+\begin{lstlisting}[frame=none]
+public int compareTo(StringParameter o)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getValue()}
+{\bf  getValue}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.Object getValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Returns the value of the parameter.
+}
+\item{{\bf  Returns} -- 
+The current value of the parameter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{valueString()}
+{\bf  valueString}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.String valueString()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Parameter{\small \refdefined{parameter.Parameter}} }
+
+Returns the value of the parameter as a string.
+}
+\item{{\bf  Returns} -- 
+The value as a string 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class Parameter }{
+\texttt{parameter.Parameter} {\small 
+\refdefined{parameter.Parameter}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  accept}(\texttt{ParameterVisitor} {\bf  visitor})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addChangeListener}(\texttt{java.awt.event.ActionListener} {\bf  listener})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract int {\bf  compareTo}(\texttt{java.lang.Object} {\bf  o})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected List {\bf  getListener}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract Object {\bf  getValue}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setName}(\texttt{java.lang.String} {\bf  name})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract String {\bf  valueString}()
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+}
+\printindex

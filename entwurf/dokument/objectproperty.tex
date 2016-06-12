@@ -1,0 +1,571 @@
+\section{Package objectproperty}{
+\label{objectproperty}\hskip -.05in
+\hbox to \hsize{\textit{ Package Contents\hfil Page}}
+\vskip .13in
+\hbox{{\bf  Classes}}
+\entityintro{GAnsObjectProperty}{objectproperty.GAnsObjectProperty}{A JavaFX objectproperty which in toString() retuns the value from the toString() of the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}}.}
+\entityintro{GAnsObjectPropertyValue}{objectproperty.GAnsObjectPropertyValue}{A simple generic class made to save the different types of property values.}
+\entityintro{GAnsProperty}{objectproperty.GAnsProperty}{The GAnsProperty is a single property of a vertex or an edge in GAns.}
+\vskip .1in
+\vskip .1in
+\subsection{\label{objectproperty.GAnsObjectProperty}\index{GAnsObjectProperty}Class GAnsObjectProperty}{
+\vskip .1in 
+A JavaFX objectproperty which in toString() retuns the value from the toString() of the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}}.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class GAnsObjectProperty
+ extends javafx.beans.property.SimpleObjectProperty\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf GAnsObjectProperty(Object, String)} Constructor.\\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf toString()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{GAnsObjectProperty(Object, String)}
+{\bf  GAnsObjectProperty}\\
+\begin{lstlisting}[frame=none]
+public GAnsObjectProperty(java.lang.Object bean,java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Constructor.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{bean} -- Bean that will be given to the SimpleObjectProperty constructor.}
+   \item{
+\texttt{name} -- name that will be given to the SimpleObjectProperty constructor.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{toString()}
+{\bf  toString}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String toString()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class SimpleObjectProperty }{
+\texttt{javafx.beans.property.SimpleObjectProperty} {\small 
+\refdefined{javafx.beans.property.SimpleObjectProperty}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public Object {\bf  getBean}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class ObjectPropertyBase }{
+\texttt{javafx.beans.property.ObjectPropertyBase} {\small 
+\refdefined{javafx.beans.property.ObjectPropertyBase}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addListener}(\texttt{javafx.beans.value.ChangeListener} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addListener}(\texttt{javafx.beans.InvalidationListener} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  bind}(\texttt{javafx.beans.value.ObservableValue} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected void {\bf  fireValueChangedEvent}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Object {\bf  get}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected void {\bf  invalidated}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public boolean {\bf  isBound}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  removeListener}(\texttt{javafx.beans.value.ChangeListener} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  removeListener}(\texttt{javafx.beans.InvalidationListener} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  set}(\texttt{java.lang.Object} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  toString}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  unbind}()
+}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class ObjectProperty }{
+\texttt{javafx.beans.property.ObjectProperty} {\small 
+\refdefined{javafx.beans.property.ObjectProperty}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  bindBidirectional}(\texttt{Property} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setValue}(\texttt{java.lang.Object} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  toString}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  unbindBidirectional}(\texttt{Property} {\bf  arg0})
+}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class ReadOnlyObjectProperty }{
+\texttt{javafx.beans.property.ReadOnlyObjectProperty} {\small 
+\refdefined{javafx.beans.property.ReadOnlyObjectProperty}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  toString}()
+}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class ObjectExpression }{
+\texttt{javafx.beans.binding.ObjectExpression} {\small 
+\refdefined{javafx.beans.binding.ObjectExpression}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public StringBinding {\bf  asString}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public StringBinding {\bf  asString}(\texttt{java.util.Locale} {\bf  arg0},
+\texttt{java.lang.String} {\bf  arg1})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public StringBinding {\bf  asString}(\texttt{java.lang.String} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Object {\bf  getValue}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public BooleanBinding {\bf  isEqualTo}(\texttt{java.lang.Object} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public BooleanBinding {\bf  isEqualTo}(\texttt{javafx.beans.value.ObservableObjectValue} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public BooleanBinding {\bf  isNotEqualTo}(\texttt{java.lang.Object} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public BooleanBinding {\bf  isNotEqualTo}(\texttt{javafx.beans.value.ObservableObjectValue} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public BooleanBinding {\bf  isNotNull}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public BooleanBinding {\bf  isNull}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public static ObjectExpression {\bf  objectExpression}(\texttt{javafx.beans.value.ObservableObjectValue} {\bf  arg0})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{objectproperty.GAnsObjectPropertyValue}\index{GAnsObjectPropertyValue}Class GAnsObjectPropertyValue}{
+\vskip .1in 
+A simple generic class made to save the different types of property values. Is being used with \texttt{\small GAnsProperty}{\small 
+\refdefined{objectproperty.GAnsProperty}} to treat different kinds of properties in the same way in the GUI.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class GAnsObjectPropertyValue
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf GAnsObjectPropertyValue()} Constructor.\\
+{\bf GAnsObjectPropertyValue(T)} Constructor which directly sets the value.\\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getValue()} Returns the value.\\
+{\bf setValue(T)} Sets the value.\\
+{\bf toString()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{GAnsObjectPropertyValue()}
+{\bf  GAnsObjectPropertyValue}\\
+\begin{lstlisting}[frame=none]
+public GAnsObjectPropertyValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Constructor.
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{GAnsObjectPropertyValue(T)}
+{\bf  GAnsObjectPropertyValue}\\
+\begin{lstlisting}[frame=none]
+public GAnsObjectPropertyValue(java.lang.Object value)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Constructor which directly sets the value.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{value} -- The element which shall be stored in the GAnsObjectPropertyValue.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getValue()}
+{\bf  getValue}\\
+\begin{lstlisting}[frame=none]
+public java.lang.Object getValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the value.
+}
+\item{{\bf  Returns} -- 
+The value from the GAnsObjectPropertyValue. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setValue(T)}
+{\bf  setValue}\\
+\begin{lstlisting}[frame=none]
+public void setValue(java.lang.Object value)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the value.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{value} -- The value to be set.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{toString()}
+{\bf  toString}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String toString()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{objectproperty.GAnsProperty}\index{GAnsProperty}Class GAnsProperty}{
+\vskip .1in 
+The GAnsProperty is a single property of a vertex or an edge in GAns. The name and \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} of the property are being stored in JavaFX-Properties. The model consists out of vertices and edges which contain GAnsProperties, which are linked to the GUI-elements.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class GAnsProperty
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Field summary}{
+\begin{verse}
+{\bf name} A string with whoom, factories or other elements from the GUI, can reference to the name/identifier of the value.\\
+{\bf value} A string with whoom, factories or other elements from the GUI, can reference to the value.\\
+{\bf valueAsString} A string with whoom, factories or other elements from the GUI, can reference to the string-representation of the value.\\
+\end{verse}
+}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf GAnsProperty()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getPropertyName()} Returns the name/identifier of the GAnsProperty.\\
+{\bf getPropertyValue()} Returns the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} of the GAnsProperty.\\
+{\bf getPropertyValueAsString()} Returns the string-representation of the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} from the GAnsProperty.\\
+{\bf propertyNameProperty()} Ensures that the property which contains the name/identifier of the GAnsProperty is not null and always set with the right name.\\
+{\bf propertyValue()} Ensures that the property which contains the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} in the GAnsProperty is not null and always set with the right name.\\
+{\bf propertyValueAsString()} Ensures that the property which contains the string-representation of the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} in the GAnsProperty is not null and always set with the right name.\\
+{\bf setPropertyName(String)} Sets the name/identifier of the GAnsProperty.\\
+{\bf setPropertyValue(GAnsObjectPropertyValue)} Sets the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} and its string-representation of the GAnsProperty.\\
+\end{verse}
+}
+\subsubsection{Fields}{
+\begin{itemize}
+\item{
+\index{name}
+\label{objectproperty.GAnsProperty.name}\texttt{public static final java.lang.String\ {\bf  name}}
+\begin{itemize}
+\item{\vskip -.9ex 
+A string with whoom, factories or other elements from the GUI, can reference to the name/identifier of the value.}
+\end{itemize}
+}
+\item{
+\index{value}
+\label{objectproperty.GAnsProperty.value}\texttt{public static final java.lang.String\ {\bf  value}}
+\begin{itemize}
+\item{\vskip -.9ex 
+A string with whoom, factories or other elements from the GUI, can reference to the value. String über den von der GUI aus, Factories oder Änliches, auf den Value verwiesen werden kann.}
+\end{itemize}
+}
+\item{
+\index{valueAsString}
+\label{objectproperty.GAnsProperty.valueAsString}\texttt{public static final java.lang.String\ {\bf  valueAsString}}
+\begin{itemize}
+\item{\vskip -.9ex 
+A string with whoom, factories or other elements from the GUI, can reference to the string-representation of the value.}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{GAnsProperty()}
+{\bf  GAnsProperty}\\
+\begin{lstlisting}[frame=none]
+public GAnsProperty()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getPropertyName()}
+{\bf  getPropertyName}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getPropertyName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the name/identifier of the GAnsProperty.
+}
+\item{{\bf  Returns} -- 
+The name/identifier of the GAnsProperty. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getPropertyValue()}
+{\bf  getPropertyValue}\\
+\begin{lstlisting}[frame=none]
+public GAnsObjectPropertyValue getPropertyValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} of the GAnsProperty.
+}
+\item{{\bf  Returns} -- 
+The \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} of the GAnsProperty. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getPropertyValueAsString()}
+{\bf  getPropertyValueAsString}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getPropertyValueAsString()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the string-representation of the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} from the GAnsProperty.
+}
+\item{{\bf  Returns} -- 
+The string-representation of the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} from the GAnsProperty. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{propertyNameProperty()}
+{\bf  propertyNameProperty}\\
+\begin{lstlisting}[frame=none]
+public javafx.beans.property.StringProperty propertyNameProperty()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Ensures that the property which contains the name/identifier of the GAnsProperty is not null and always set with the right name.
+}
+\item{{\bf  Returns} -- 
+The StringProperty which contains the name/identifier of the GAnsProperty. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{propertyValue()}
+{\bf  propertyValue}\\
+\begin{lstlisting}[frame=none]
+public GAnsObjectProperty propertyValue()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Ensures that the property which contains the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} in the GAnsProperty is not null and always set with the right name.
+}
+\item{{\bf  Returns} -- 
+The property which contains the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} in the GAnsProperty. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{propertyValueAsString()}
+{\bf  propertyValueAsString}\\
+\begin{lstlisting}[frame=none]
+public javafx.beans.property.StringProperty propertyValueAsString()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Ensures that the property which contains the string-representation of the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} in the GAnsProperty is not null and always set with the right name.
+}
+\item{{\bf  Returns} -- 
+The StringProperty which contains the string-representation of the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} in the GAnsProperty. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setPropertyName(String)}
+{\bf  setPropertyName}\\
+\begin{lstlisting}[frame=none]
+public void setPropertyName(java.lang.String value)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the name/identifier of the GAnsProperty.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{value} -- The string which shall be set as the name of the GAnsProperty.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setPropertyValue(GAnsObjectPropertyValue)}
+{\bf  setPropertyValue}\\
+\begin{lstlisting}[frame=none]
+public void setPropertyValue(GAnsObjectPropertyValue value)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} and its string-representation of the GAnsProperty.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{value} -- The \texttt{\small GAnsObjectPropertyValue}{\small 
+\refdefined{objectproperty.GAnsObjectPropertyValue}} which shall be set in the GAnsProperty.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+}
+\printindex

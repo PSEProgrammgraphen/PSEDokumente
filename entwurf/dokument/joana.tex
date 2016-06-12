@@ -1,0 +1,1011 @@
+\section{Package joana}{
+\label{joana}\hskip -.05in
+\hbox to \hsize{\textit{ Package Contents\hfil Page}}
+\vskip .13in
+\hbox{{\bf  Classes}}
+\entityintro{Callgraph}{joana.Callgraph}{This is a specified graph representation for the Callgraph in Joana}
+\entityintro{FieldAccess}{joana.FieldAccess}{This specifies the representation of FieldAccesses in Joana}
+\entityintro{JoanaEdge}{joana.JoanaEdge}{This is the Joana specified Edge.}
+\entityintro{JoanaGraphModel}{joana.JoanaGraphModel}{This is the Joana specified Graphmodel.}
+\entityintro{JoanaPlugin}{joana.JoanaPlugin}{}
+\entityintro{JoanaPlugin.CallGraphLayoutRegister}{joana.JoanaPlugin.CallGraphLayoutRegister}{}
+\entityintro{JoanaPlugin.MethodGraphLayoutRegister}{joana.JoanaPlugin.MethodGraphLayoutRegister}{}
+\entityintro{JoanaVertex}{joana.JoanaVertex}{This is the Joana specified Vertex.}
+\entityintro{JoanaWorkspace}{joana.JoanaWorkspace}{The \texttt{\small JoanaWorkspace}{\small 
+\refdefined{joana.JoanaWorkspace}} is the workspace for Joana graphs It is used to define parameters, and also contains an AbstractGraphBuilder and a \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}}}
+\entityintro{MethodGraph}{joana.MethodGraph}{This is a specified graph representation for a Methodgraph in Joana}
+\entityintro{MethodGraphLayout}{joana.MethodGraphLayout}{}
+\vskip .1in
+\vskip .1in
+\subsection{\label{joana.Callgraph}\index{Callgraph}Class Callgraph}{
+\vskip .1in 
+This is a specified graph representation for the Callgraph in Joana\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class Callgraph
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf Callgraph()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Callgraph()}
+{\bf  Callgraph}\\
+\begin{lstlisting}[frame=none]
+public Callgraph()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class DirectedGraph }{
+\texttt{graphmodel.DirectedGraph} {\small 
+\refdefined{graphmodel.DirectedGraph}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addEdge}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addEdge}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addVertex}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  applyLayout}(\texttt{plugin.LayoutAlgorithm} {\bf  alg})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  edgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  getEdges}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  getEdgeSet}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  getRegisteredLayouts}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Graph.V {\bf  getSource}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Graph.V {\bf  getTarget}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  getVertexSet}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  incomingEdgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Integer {\bf  indegreeOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  outcomingEdgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Integer {\bf  outdegreeOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setEdgeSet}(\texttt{java.util.Set} {\bf  edge})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.FieldAccess}\index{FieldAccess}Class FieldAccess}{
+\vskip .1in 
+This specifies the representation of FieldAccesses in Joana\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class FieldAccess
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf FieldAccess()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{FieldAccess()}
+{\bf  FieldAccess}\\
+\begin{lstlisting}[frame=none]
+public FieldAccess()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class DirectedGraph }{
+\texttt{graphmodel.DirectedGraph} {\small 
+\refdefined{graphmodel.DirectedGraph}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addEdge}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addEdge}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addVertex}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  applyLayout}(\texttt{plugin.LayoutAlgorithm} {\bf  alg})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  edgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  getEdges}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  getEdgeSet}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  getRegisteredLayouts}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Graph.V {\bf  getSource}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Graph.V {\bf  getTarget}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  getVertexSet}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  incomingEdgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Integer {\bf  indegreeOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  outcomingEdgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Integer {\bf  outdegreeOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setEdgeSet}(\texttt{java.util.Set} {\bf  edge})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.JoanaEdge}\index{JoanaEdge}Class JoanaEdge}{
+\vskip .1in 
+This is the Joana specified Edge. It contains parameters which are only useful for Joana\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class JoanaEdge
+ extends graphmodel.DirectedEdge\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf JoanaEdge()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{JoanaEdge()}
+{\bf  JoanaEdge}\\
+\begin{lstlisting}[frame=none]
+public JoanaEdge()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class DirectedEdge }{
+\texttt{graphmodel.DirectedEdge} {\small 
+\refdefined{graphmodel.DirectedEdge}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public Integer {\bf  getID}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Graph.V {\bf  getSource}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Graph.V {\bf  getTarget}()
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.JoanaGraphModel}\index{JoanaGraphModel}Class JoanaGraphModel}{
+\vskip .1in 
+This is the Joana specified Graphmodel. It can only contain methodgraph and callgraph\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class JoanaGraphModel
+ extends graphmodel.GraphModel\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf JoanaGraphModel()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getCallgraph()} Getter of callgraph\\
+{\bf getCallGraph()} \\
+{\bf getGraphs()} Getter of graph\\
+{\bf getMethodgraphs()} Getter of methodgraphs\\
+{\bf getMethodGraphs()} Getter of graph\\
+{\bf setCallgraph(Callgraph)} Setter of callgraph\\
+{\bf setCallGraph(Callgraph)} \\
+{\bf setMethodGraph(List)} \\
+{\bf setMethodgraphs(List)} Setter of methodgraphs\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{JoanaGraphModel()}
+{\bf  JoanaGraphModel}\\
+\begin{lstlisting}[frame=none]
+public JoanaGraphModel()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getCallgraph()}
+{\bf  getCallgraph}\\
+\begin{lstlisting}[frame=none]
+public Callgraph getCallgraph()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of callgraph
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{getCallGraph()}
+{\bf  getCallGraph}\\
+\begin{lstlisting}[frame=none]
+public Callgraph getCallGraph()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getGraphs()}
+{\bf  getGraphs}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getGraphs()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of graph
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getMethodgraphs()}
+{\bf  getMethodgraphs}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getMethodgraphs()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of methodgraphs
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{getMethodGraphs()}
+{\bf  getMethodGraphs}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getMethodGraphs()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of graph
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setCallgraph(Callgraph)}
+{\bf  setCallgraph}\\
+\begin{lstlisting}[frame=none]
+public void setCallgraph(Callgraph callgraph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Setter of callgraph
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{setCallGraph(Callgraph)}
+{\bf  setCallGraph}\\
+\begin{lstlisting}[frame=none]
+public void setCallGraph(Callgraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setMethodGraph(List)}
+{\bf  setMethodGraph}\\
+\begin{lstlisting}[frame=none]
+public void setMethodGraph(java.util.List methodgraphs)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{setMethodgraphs(List)}
+{\bf  setMethodgraphs}\\
+\begin{lstlisting}[frame=none]
+public void setMethodgraphs(java.util.List methodgraphs)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Setter of methodgraphs
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class GraphModel }{
+\texttt{graphmodel.GraphModel} {\small 
+\refdefined{graphmodel.GraphModel}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public abstract List {\bf  getGraphs}()
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.JoanaPlugin}\index{JoanaPlugin}Class JoanaPlugin}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class JoanaPlugin
+ extends java.lang.Object implements plugin.Plugin\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf JoanaPlugin()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getCallGraphLayoutRegister()} \\
+{\bf getMethodGraphLayoutRegister()} \\
+{\bf getName()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{JoanaPlugin()}
+{\bf  JoanaPlugin}\\
+\begin{lstlisting}[frame=none]
+public JoanaPlugin()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getCallGraphLayoutRegister()}
+{\bf  getCallGraphLayoutRegister}\\
+\begin{lstlisting}[frame=none]
+public JoanaPlugin.CallGraphLayoutRegister getCallGraphLayoutRegister()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getMethodGraphLayoutRegister()}
+{\bf  getMethodGraphLayoutRegister}\\
+\begin{lstlisting}[frame=none]
+public JoanaPlugin.MethodGraphLayoutRegister getMethodGraphLayoutRegister()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.JoanaPlugin.CallGraphLayoutRegister}\index{JoanaPlugin.CallGraphLayoutRegister}Class JoanaPlugin.CallGraphLayoutRegister}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class JoanaPlugin.CallGraphLayoutRegister
+ extends java.lang.Object implements plugin.LayoutRegister\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf CallGraphLayoutRegister()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addLayoutOption(LayoutOption)} \\
+{\bf getLayoutOptions()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{CallGraphLayoutRegister()}
+{\bf  CallGraphLayoutRegister}\\
+\begin{lstlisting}[frame=none]
+public CallGraphLayoutRegister()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addLayoutOption(LayoutOption)}
+{\bf  addLayoutOption}\\
+\begin{lstlisting}[frame=none]
+void addLayoutOption(plugin.LayoutOption option)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getLayoutOptions()}
+{\bf  getLayoutOptions}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayoutOptions()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.JoanaPlugin.MethodGraphLayoutRegister}\index{JoanaPlugin.MethodGraphLayoutRegister}Class JoanaPlugin.MethodGraphLayoutRegister}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class JoanaPlugin.MethodGraphLayoutRegister
+ extends java.lang.Object implements plugin.LayoutRegister\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf MethodGraphLayoutRegister()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addLayoutOption(LayoutOption)} \\
+{\bf getLayoutOptions()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{MethodGraphLayoutRegister()}
+{\bf  MethodGraphLayoutRegister}\\
+\begin{lstlisting}[frame=none]
+public MethodGraphLayoutRegister()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addLayoutOption(LayoutOption)}
+{\bf  addLayoutOption}\\
+\begin{lstlisting}[frame=none]
+void addLayoutOption(plugin.LayoutOption option)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getLayoutOptions()}
+{\bf  getLayoutOptions}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayoutOptions()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.JoanaVertex}\index{JoanaVertex}Class JoanaVertex}{
+\vskip .1in 
+This is the Joana specified Vertex. It contains parameters which are only useful for Joana\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class JoanaVertex
+ extends graphmodel.DefaultVertex\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf JoanaVertex()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{JoanaVertex()}
+{\bf  JoanaVertex}\\
+\begin{lstlisting}[frame=none]
+public JoanaVertex()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class DefaultVertex }{
+\texttt{graphmodel.DefaultVertex} {\small 
+\refdefined{graphmodel.DefaultVertex}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public Integer {\bf  getID}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.JoanaWorkspace}\index{JoanaWorkspace}Class JoanaWorkspace}{
+\vskip .1in 
+The \texttt{\small JoanaWorkspace}{\small 
+\refdefined{joana.JoanaWorkspace}} is the workspace for Joana graphs It is used to define parameters, and also contains an AbstractGraphBuilder and a \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}}\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class JoanaWorkspace
+ extends java.lang.Object implements plugin.Workspace\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf JoanaWorkspace()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getGraphModel()} \\
+{\bf getGraphModelBuilder()} \\
+{\bf getName()} \\
+{\bf getParameterDialog()} \\
+{\bf getParameterSet()} \\
+{\bf initialize(Settings)} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{JoanaWorkspace()}
+{\bf  JoanaWorkspace}\\
+\begin{lstlisting}[frame=none]
+public JoanaWorkspace()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getGraphModel()}
+{\bf  getGraphModel}\\
+\begin{lstlisting}[frame=none]
+graphmodel.GraphModel getGraphModel()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getGraphModelBuilder()}
+{\bf  getGraphModelBuilder}\\
+\begin{lstlisting}[frame=none]
+graphmodel.AbstractGraphModelBuilder getGraphModelBuilder()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getParameterDialog()}
+{\bf  getParameterDialog}\\
+\begin{lstlisting}[frame=none]
+public void getParameterDialog()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getParameterSet()}
+{\bf  getParameterSet}\\
+\begin{lstlisting}[frame=none]
+parameter.Settings getParameterSet()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{initialize(Settings)}
+{\bf  initialize}\\
+\begin{lstlisting}[frame=none]
+void initialize(parameter.Settings parameters)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameters} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.MethodGraph}\index{MethodGraph}Class MethodGraph}{
+\vskip .1in 
+This is a specified graph representation for a Methodgraph in Joana\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class MethodGraph
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf MethodGraph()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getEntryVertex()} Get the entry vertex of a method\\
+{\bf getFieldAccesses()} Get a list of all FieldAcesses in a method\\
+{\bf getFormVertices()} \\
+{\bf getMethodCalls()} Get a list of all MethodCalls in a method\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{MethodGraph()}
+{\bf  MethodGraph}\\
+\begin{lstlisting}[frame=none]
+public MethodGraph()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getEntryVertex()}
+{\bf  getEntryVertex}\\
+\begin{lstlisting}[frame=none]
+public JoanaVertex getEntryVertex()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the entry vertex of a method
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getFieldAccesses()}
+{\bf  getFieldAccesses}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getFieldAccesses()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get a list of all FieldAcesses in a method
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getFormVertices()}
+{\bf  getFormVertices}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getFormVertices()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getMethodCalls()}
+{\bf  getMethodCalls}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getMethodCalls()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get a list of all MethodCalls in a method
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class DirectedGraph }{
+\texttt{graphmodel.DirectedGraph} {\small 
+\refdefined{graphmodel.DirectedGraph}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addEdge}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addEdge}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  addVertex}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  applyLayout}(\texttt{plugin.LayoutAlgorithm} {\bf  alg})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  edgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  getEdges}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  getEdgeSet}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public List {\bf  getRegisteredLayouts}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Graph.V {\bf  getSource}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Graph.V {\bf  getTarget}(\texttt{Graph.E} {\bf  edge})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  getVertexSet}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  incomingEdgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Integer {\bf  indegreeOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Set {\bf  outcomingEdgesOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Integer {\bf  outdegreeOf}(\texttt{Graph.V} {\bf  vertex})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setEdgeSet}(\texttt{java.util.Set} {\bf  edge})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.MethodGraphLayout}\index{MethodGraphLayout}Class MethodGraphLayout}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class MethodGraphLayout
+ extends java.lang.Object implements plugin.LayoutAlgorithm\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf MethodGraphLayout()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getID()} \\
+{\bf getName()} \\
+{\bf getParameterDialog()} \\
+{\bf getSettings()} \\
+{\bf layout(MethodGraph)} \\
+{\bf onLoad()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{MethodGraphLayout()}
+{\bf  MethodGraphLayout}\\
+\begin{lstlisting}[frame=none]
+public MethodGraphLayout()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getID()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
+
+Get a acronym of the layout.
+}
+\item{{\bf  Returns} -- 
+The acronym of the layout. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
+
+Get the full name of the layout.
+}
+\item{{\bf  Returns} -- 
+The full name of the layout. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getParameterDialog()}
+{\bf  getParameterDialog}\\
+\begin{lstlisting}[frame=none]
+void getParameterDialog()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSettings()}
+{\bf  getSettings}\\
+\begin{lstlisting}[frame=none]
+parameter.Settings getSettings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
+
+Get the set of parameters for this instance of the algorithm.
+}
+\item{{\bf  Returns} -- 
+The set of parameters 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{layout(MethodGraph)}
+{\bf  layout}\\
+\begin{lstlisting}[frame=none]
+public void layout(MethodGraph graph)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{onLoad()}
+{\bf  onLoad}\\
+\begin{lstlisting}[frame=none]
+void onLoad()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
+
+Register at LayoutAlgorithm for all supported Graphs
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+}
+\printindex

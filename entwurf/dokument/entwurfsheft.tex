@@ -11,6 +11,40 @@
 \usepackage{array}
 \usepackage{morefloats}
 
+%Preambel texdoclet
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage{makeidx}
+\usepackage{ifpdf}
+\usepackage[headings]{fullpage}
+\usepackage{listings}
+\lstset{language=Java,breaklines=true}
+
+\newcommand{\entityintro}[3]{%
+  \hbox to \hsize{%
+    \vbox{%
+      \hbox to .2in{}%
+    }%
+    {\bf  #1}%
+    \dotfill \pageref{#2}%
+  }
+  \makebox[\hsize]{%
+    \parbox{.4in}{}%
+    \parbox[l]{5in}{%
+      \vspace{1mm}%
+      #3%
+      \vspace{1mm}%
+    }%
+  }%
+}
+\newcommand{\refdefined}[1]{
+\expandafter\ifx\csname r@#1\endcsname\relax
+\relax\else
+{$($in \ref{#1}, page \pageref{#1}$)$}\fi}
+%\date{null}
+\chardef\textbackslash=`\\
+%\makeindex
+
 \bibliographystyle{plain}
 \graphicspath{{resourcen/}}
 
@@ -66,6 +100,8 @@ Graph von Ansicht}
 \input{paketeinteilung}
 
 \input{pflichtenheftdifferenzen}
+
+\input{entwurfsmuster}
 
 \clearpage
 

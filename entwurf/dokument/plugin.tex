@@ -1,0 +1,777 @@
+\section{Package plugin}{
+\label{plugin}\hskip -.05in
+\hbox to \hsize{\textit{ Package Contents\hfil Page}}
+\vskip .13in
+\hbox{{\bf  Interfaces}}
+\entityintro{Constraint}{plugin.Constraint}{}
+\entityintro{FilterSet}{plugin.FilterSet}{}
+\entityintro{Importer}{plugin.Importer}{}
+\entityintro{LayoutAlgorithm}{plugin.LayoutAlgorithm}{}
+\entityintro{LayoutRegister}{plugin.LayoutRegister}{Stores a collection of layouts applicable to a specific subclass of graph.}
+\entityintro{Plugin}{plugin.Plugin}{}
+\entityintro{Workspace}{plugin.Workspace}{}
+\vskip .13in
+\hbox{{\bf  Classes}}
+\entityintro{EdgeFilter}{plugin.EdgeFilter}{}
+\entityintro{EntryPointOption}{plugin.EntryPointOption}{}
+\entityintro{LayoutOption}{plugin.LayoutOption}{}
+\entityintro{PluginManager}{plugin.PluginManager}{}
+\entityintro{VertexFilter}{plugin.VertexFilter}{}
+\entityintro{WorkspaceOption}{plugin.WorkspaceOption}{}
+\vskip .1in
+\vskip .1in
+\subsection{\label{plugin.Constraint}\index{Constraint@\textit{ Constraint}}Interface Constraint}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Constraint
+\end{lstlisting}
+}
+\subsection{\label{plugin.FilterSet}\index{FilterSet@\textit{ FilterSet}}Interface FilterSet}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface FilterSet
+\end{lstlisting}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getEdgeFilter()} \\
+{\bf getName()} \\
+{\bf getVertexfilter()} \\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getEdgeFilter()}
+{\bf  getEdgeFilter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getEdgeFilter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexfilter()}
+{\bf  getVertexfilter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getVertexfilter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.Importer}\index{Importer@\textit{ Importer}}Interface Importer}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Importer
+\end{lstlisting}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getName()} \\
+{\bf getSupportedFileEndings()} \\
+{\bf importGraph(AbstractGraphModelBuilder, FileInputStream)} \\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSupportedFileEndings()}
+{\bf  getSupportedFileEndings}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getSupportedFileEndings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{importGraph(AbstractGraphModelBuilder, FileInputStream)}
+{\bf  importGraph}\\
+\begin{lstlisting}[frame=none]
+void importGraph(graphmodel.AbstractGraphModelBuilder builder,java.io.FileInputStream filestream)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{builder} -- }
+   \item{
+\texttt{filestream} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.LayoutAlgorithm}\index{LayoutAlgorithm@\textit{ LayoutAlgorithm}}Interface LayoutAlgorithm}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface LayoutAlgorithm
+\end{lstlisting}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getID()} Get a acronym of the layout.\\
+{\bf getName()} Get the full name of the layout.\\
+{\bf getParameterDialog()} \\
+{\bf getSettings()} Get the set of parameters for this instance of the algorithm.\\
+{\bf layout(G)} Layout the specified Graph.\\
+{\bf onLoad()} Register at LayoutAlgorithm for all supported Graphs\\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getID()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get a acronym of the layout.
+}
+\item{{\bf  Returns} -- 
+The acronym of the layout. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the full name of the layout.
+}
+\item{{\bf  Returns} -- 
+The full name of the layout. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getParameterDialog()}
+{\bf  getParameterDialog}\\
+\begin{lstlisting}[frame=none]
+void getParameterDialog()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSettings()}
+{\bf  getSettings}\\
+\begin{lstlisting}[frame=none]
+parameter.Settings getSettings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the set of parameters for this instance of the algorithm.
+}
+\item{{\bf  Returns} -- 
+The set of parameters 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{layout(G)}
+{\bf  layout}\\
+\begin{lstlisting}[frame=none]
+void layout(graphmodel.Graph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Layout the specified Graph.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- The graph to layout}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onLoad()}
+{\bf  onLoad}\\
+\begin{lstlisting}[frame=none]
+void onLoad()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Register at LayoutAlgorithm for all supported Graphs
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.LayoutRegister}\index{LayoutRegister@\textit{ LayoutRegister}}Interface LayoutRegister}{
+\vskip .1in 
+Stores a collection of layouts applicable to a specific subclass of graph.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface LayoutRegister
+\end{lstlisting}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addLayoutOption(LayoutOption)} \\
+{\bf getLayoutOptions()} \\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addLayoutOption(LayoutOption)}
+{\bf  addLayoutOption}\\
+\begin{lstlisting}[frame=none]
+void addLayoutOption(LayoutOption option)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getLayoutOptions()}
+{\bf  getLayoutOptions}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayoutOptions()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.Plugin}\index{Plugin@\textit{ Plugin}}Interface Plugin}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Plugin
+\end{lstlisting}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getName()} \\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.Workspace}\index{Workspace@\textit{ Workspace}}Interface Workspace}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Workspace
+\end{lstlisting}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getGraphModel()} \\
+{\bf getGraphModelBuilder()} \\
+{\bf getName()} \\
+{\bf getParameterSet()} \\
+{\bf initialize(Settings)} \\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getGraphModel()}
+{\bf  getGraphModel}\\
+\begin{lstlisting}[frame=none]
+graphmodel.GraphModel getGraphModel()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getGraphModelBuilder()}
+{\bf  getGraphModelBuilder}\\
+\begin{lstlisting}[frame=none]
+graphmodel.AbstractGraphModelBuilder getGraphModelBuilder()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getParameterSet()}
+{\bf  getParameterSet}\\
+\begin{lstlisting}[frame=none]
+parameter.Settings getParameterSet()\end{lstlisting} %end signature
+\begin{itemize}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{initialize(Settings)}
+{\bf  initialize}\\
+\begin{lstlisting}[frame=none]
+void initialize(parameter.Settings parameters)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{parameters} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.EdgeFilter}\index{EdgeFilter}Class EdgeFilter}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class EdgeFilter
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf EdgeFilter()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getName()} Getter of name\\
+{\bf matches(Edge)} \\
+{\bf setName(String)} Setter of name\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{EdgeFilter()}
+{\bf  EdgeFilter}\\
+\begin{lstlisting}[frame=none]
+public EdgeFilter()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of name
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{matches(Edge)}
+{\bf  matches}\\
+\begin{lstlisting}[frame=none]
+public boolean matches(graphmodel.Edge toMatch)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{toMatch} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setName(String)}
+{\bf  setName}\\
+\begin{lstlisting}[frame=none]
+public void setName(java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Setter of name
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.EntryPointOption}\index{EntryPointOption}Class EntryPointOption}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class EntryPointOption
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{All known subclasses}{WorkspaceOption\small{\refdefined{plugin.WorkspaceOption}}, LayoutOption\small{\refdefined{plugin.LayoutOption}}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf EntryPointOption()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getID()} \\
+{\bf getName()} \\
+{\bf onChoose()} \\
+{\bf setID(String)} \\
+{\bf setName(String)} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{EntryPointOption()}
+{\bf  EntryPointOption}\\
+\begin{lstlisting}[frame=none]
+public EntryPointOption()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getID()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getName()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{onChoose()}
+{\bf  onChoose}\\
+\begin{lstlisting}[frame=none]
+public abstract void onChoose()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{setID(String)}
+{\bf  setID}\\
+\begin{lstlisting}[frame=none]
+protected void setID(java.lang.String id)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{setName(String)}
+{\bf  setName}\\
+\begin{lstlisting}[frame=none]
+protected void setName(java.lang.String name)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.LayoutOption}\index{LayoutOption}Class LayoutOption}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class LayoutOption
+ extends plugin.EntryPointOption\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf LayoutOption()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{LayoutOption()}
+{\bf  LayoutOption}\\
+\begin{lstlisting}[frame=none]
+public LayoutOption()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class EntryPointOption }{
+\texttt{plugin.EntryPointOption} {\small 
+\refdefined{plugin.EntryPointOption}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getID}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  onChoose}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected void {\bf  setID}(\texttt{java.lang.String} {\bf  id})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected void {\bf  setName}(\texttt{java.lang.String} {\bf  name})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.PluginManager}\index{PluginManager}Class PluginManager}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class PluginManager
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addWorkspaceOption(WorkspaceOption)} \\
+{\bf getPluginManager()} \\
+{\bf getPlugins()} \\
+{\bf getWorkspaceOption()} \\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addWorkspaceOption(WorkspaceOption)}
+{\bf  addWorkspaceOption}\\
+\begin{lstlisting}[frame=none]
+public void addWorkspaceOption(WorkspaceOption option)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getPluginManager()}
+{\bf  getPluginManager}\\
+\begin{lstlisting}[frame=none]
+public static PluginManager getPluginManager()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getPlugins()}
+{\bf  getPlugins}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getPlugins()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getWorkspaceOption()}
+{\bf  getWorkspaceOption}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getWorkspaceOption()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.VertexFilter}\index{VertexFilter}Class VertexFilter}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class VertexFilter
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf VertexFilter()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getName()} Getter of name\\
+{\bf matches(Vertex)} \\
+{\bf setName(String)} Setter of name\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{VertexFilter()}
+{\bf  VertexFilter}\\
+\begin{lstlisting}[frame=none]
+public VertexFilter()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of name
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{matches(Vertex)}
+{\bf  matches}\\
+\begin{lstlisting}[frame=none]
+public boolean matches(graphmodel.Vertex toMatch)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{toMatch} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setName(String)}
+{\bf  setName}\\
+\begin{lstlisting}[frame=none]
+public void setName(java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Setter of name
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.WorkspaceOption}\index{WorkspaceOption}Class WorkspaceOption}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class WorkspaceOption
+ extends plugin.EntryPointOption\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf WorkspaceOption()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getInstance()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{WorkspaceOption()}
+{\bf  WorkspaceOption}\\
+\begin{lstlisting}[frame=none]
+public WorkspaceOption()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getInstance()}
+{\bf  getInstance}\\
+\begin{lstlisting}[frame=none]
+public abstract Workspace getInstance()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class EntryPointOption }{
+\texttt{plugin.EntryPointOption} {\small 
+\refdefined{plugin.EntryPointOption}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getID}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  getName}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public abstract void {\bf  onChoose}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected void {\bf  setID}(\texttt{java.lang.String} {\bf  id})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected void {\bf  setName}(\texttt{java.lang.String} {\bf  name})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+}
+\printindex

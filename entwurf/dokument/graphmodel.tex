@@ -1,0 +1,1672 @@
+\section{Package graphmodel}{
+\label{graphmodel}\hskip -.05in
+\hbox to \hsize{\textit{ Package Contents\hfil Page}}
+\vskip .13in
+\hbox{{\bf  Interfaces}}
+\entityintro{Edge}{graphmodel.Edge}{This edge interface specifies an edge.}
+\entityintro{Graph}{graphmodel.Graph}{This graph interface specifies a graph.}
+\entityintro{Layoutable}{graphmodel.Layoutable}{}
+\entityintro{Vertex}{graphmodel.Vertex}{This vertex interface specifies an vertex.}
+\vskip .13in
+\hbox{{\bf  Classes}}
+\entityintro{AbstractEdgeBuilder}{graphmodel.AbstractEdgeBuilder}{This is an abstract Interface which is used to build a concrete edge.}
+\entityintro{AbstractGraphBuilder}{graphmodel.AbstractGraphBuilder}{This is an abstract interface which is used to build a concrete graph.}
+\entityintro{AbstractGraphModelBuilder}{graphmodel.AbstractGraphModelBuilder}{This is an abstract interface, which builds a concrete graphmodel.}
+\entityintro{AbstractVertexBuilder}{graphmodel.AbstractVertexBuilder}{This is an abstract VertexBuilder which is used to build a concrete Vertex.}
+\entityintro{DefaultVertex}{graphmodel.DefaultVertex}{This is an DefaultVertex, which has basic functions and is provided by the mainapplication.}
+\entityintro{DirectedEdge}{graphmodel.DirectedEdge}{A \texttt{\small DirectedEdge}{\small 
+\refdefined{graphmodel.DirectedEdge}} is an edge htat has one source and one target vertex.}
+\entityintro{DirectedGraph}{graphmodel.DirectedGraph}{A \texttt{\small DirectedGraph}{\small 
+\refdefined{graphmodel.DirectedGraph}} is a specific Graph which contains just \texttt{\small DirectedEdge}{\small 
+\refdefined{graphmodel.DirectedEdge}} as edges}
+\entityintro{DirectedGraphLayoutRegister}{graphmodel.DirectedGraphLayoutRegister}{}
+\entityintro{FastGraphAccessor}{graphmodel.FastGraphAccessor}{Created by Sven on 09.06.2016.}
+\entityintro{Graph.E}{graphmodel.Graph.E}{}
+\entityintro{Graph.V}{graphmodel.Graph.V}{}
+\entityintro{GraphModel}{graphmodel.GraphModel}{A \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}} contains one or more graphs.}
+\vskip .1in
+\vskip .1in
+\subsection{\label{graphmodel.Edge}\index{Edge@\textit{ Edge}}Interface Edge}{
+\vskip .1in 
+This edge interface specifies an edge. An edge contains two vertices and needs an ID.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Edge
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{DirectedEdge\small{\refdefined{graphmodel.DirectedEdge}}}
+\subsubsection{All classes known to implement interface}{DirectedEdge\small{\refdefined{graphmodel.DirectedEdge}}}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getID()} Get the ID of this edge\\
+{\bf getName()} Get the name of this Edge\\
+{\bf getSource()} Get the vource vertex of this edge\\
+{\bf getTarget()} Get the target vertex of this edge\\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\begin{lstlisting}[frame=none]
+java.lang.Integer getID()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the ID of this edge
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the name of this Edge
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSource()}
+{\bf  getSource}\\
+\begin{lstlisting}[frame=none]
+Graph.V getSource()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the vource vertex of this edge
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getTarget()}
+{\bf  getTarget}\\
+\begin{lstlisting}[frame=none]
+Graph.V getTarget()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the target vertex of this edge
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.Graph}\index{Graph@\textit{ Graph}}Interface Graph}{
+\vskip .1in 
+This graph interface specifies a graph. A graph contains edges and vertices.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Graph
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}}
+\subsubsection{All classes known to implement interface}{DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addEdge()} Adds a new Edge to the graph\\
+{\bf addEdge(Graph.E)} Adds a new Edge to the graph\\
+{\bf addVertex(Graph.V)} Adds a new Vertex to the graph\\
+{\bf edgesOf(Graph.V)} get a list of all edges of a vertex\\
+{\bf getEdges()} Returns an list of edges.\\
+{\bf getEdgeSet()} Get a set of all Edges in this graph\\
+{\bf getSource(Graph.E)} Get the source vertex of an edge\\
+{\bf getTarget(Graph.E)} Get the target vertex of an edge\\
+{\bf getVertexSet()} Get a set of all vertices in this graph\\
+{\bf setEdgeSet(Set)} Set a Set of edges\\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addEdge()}
+{\bf  addEdge}\\
+\begin{lstlisting}[frame=none]
+void addEdge()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Adds a new Edge to the graph
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{addEdge(Graph.E)}
+{\bf  addEdge}\\
+\begin{lstlisting}[frame=none]
+void addEdge(Graph.E edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Adds a new Edge to the graph
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addVertex(Graph.V)}
+{\bf  addVertex}\\
+\begin{lstlisting}[frame=none]
+void addVertex(Graph.V vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Adds a new Vertex to the graph
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{edgesOf(Graph.V)}
+{\bf  edgesOf}\\
+\begin{lstlisting}[frame=none]
+java.util.List edgesOf(Graph.V vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+get a list of all edges of a vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdges()}
+{\bf  getEdges}\\
+\begin{lstlisting}[frame=none]
+java.util.List getEdges()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns an list of edges.
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdgeSet()}
+{\bf  getEdgeSet}\\
+\begin{lstlisting}[frame=none]
+java.util.Set getEdgeSet()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get a set of all Edges in this graph
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSource(Graph.E)}
+{\bf  getSource}\\
+\begin{lstlisting}[frame=none]
+Graph.V getSource(Graph.E edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the source vertex of an edge
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getTarget(Graph.E)}
+{\bf  getTarget}\\
+\begin{lstlisting}[frame=none]
+Graph.V getTarget(Graph.E edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the target vertex of an edge
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexSet()}
+{\bf  getVertexSet}\\
+\begin{lstlisting}[frame=none]
+java.util.Set getVertexSet()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get a set of all vertices in this graph
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setEdgeSet(Set)}
+{\bf  setEdgeSet}\\
+\begin{lstlisting}[frame=none]
+void setEdgeSet(java.util.Set edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Set a Set of edges
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.Layoutable}\index{Layoutable@\textit{ Layoutable}}Interface Layoutable}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Layoutable
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}}
+\subsubsection{All classes known to implement interface}{DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf applyLayout(LayoutAlgorithm)} \\
+{\bf getRegisteredLayouts()} \\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{applyLayout(LayoutAlgorithm)}
+{\bf  applyLayout}\\
+\begin{lstlisting}[frame=none]
+void applyLayout(plugin.LayoutAlgorithm alg)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getRegisteredLayouts()}
+{\bf  getRegisteredLayouts}\\
+\begin{lstlisting}[frame=none]
+java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.Vertex}\index{Vertex@\textit{ Vertex}}Interface Vertex}{
+\vskip .1in 
+This vertex interface specifies an vertex. An vertex contains an ID and a name\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Vertex
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{DefaultVertex\small{\refdefined{graphmodel.DefaultVertex}}}
+\subsubsection{All classes known to implement interface}{DefaultVertex\small{\refdefined{graphmodel.DefaultVertex}}}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getID()} Get the ID of the vertex\\
+{\bf getName()} Get the name of the vertex\\
+\end{verse}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\begin{lstlisting}[frame=none]
+java.lang.Integer getID()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the ID of the vertex
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the name of the vertex
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.AbstractEdgeBuilder}\index{AbstractEdgeBuilder}Class AbstractEdgeBuilder}{
+\vskip .1in 
+This is an abstract Interface which is used to build a concrete edge.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class AbstractEdgeBuilder
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf AbstractEdgeBuilder()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addData(String, String)} Add optional data to this edge.\\
+{\bf newEdge(String, String)} set source and target vertices of this edge\\
+{\bf setDirection(String)} set the direction of this edge\\
+{\bf setID(String)} set the ID of this edge\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{AbstractEdgeBuilder()}
+{\bf  AbstractEdgeBuilder}\\
+\begin{lstlisting}[frame=none]
+public AbstractEdgeBuilder()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addData(String, String)}
+{\bf  addData}\\
+\begin{lstlisting}[frame=none]
+public abstract void addData(java.lang.String keyname,java.lang.String value)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Add optional data to this edge. The EdgeBuilder needs to decide how to save the value.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{keyname} -- }
+   \item{
+\texttt{value} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{newEdge(String, String)}
+{\bf  newEdge}\\
+\begin{lstlisting}[frame=none]
+public abstract void newEdge(java.lang.String source,java.lang.String target)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+set source and target vertices of this edge
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{source} -- }
+   \item{
+\texttt{target} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setDirection(String)}
+{\bf  setDirection}\\
+\begin{lstlisting}[frame=none]
+public abstract void setDirection(java.lang.String direction)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+set the direction of this edge
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{direction} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setID(String)}
+{\bf  setID}\\
+\begin{lstlisting}[frame=none]
+public abstract void setID(java.lang.String id)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+set the ID of this edge
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{id} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.AbstractGraphBuilder}\index{AbstractGraphBuilder}Class AbstractGraphBuilder}{
+\vskip .1in 
+This is an abstract interface which is used to build a concrete graph.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class AbstractGraphBuilder
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf AbstractGraphBuilder()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf build()} This method is called, when the buildingprocess of the graph is finished.\\
+{\bf getEdgeBuilder()} Returns the EdgeBuilder which is specified for this graph.\\
+{\bf getVertexBuilder(String)} Returns the VertexBuilder which is specified for this graph.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{AbstractGraphBuilder()}
+{\bf  AbstractGraphBuilder}\\
+\begin{lstlisting}[frame=none]
+public AbstractGraphBuilder()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{build()}
+{\bf  build}\\
+\begin{lstlisting}[frame=none]
+public Graph build()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+This method is called, when the buildingprocess of the graph is finished. Then it builds the graph and returns it.
+}
+\item{{\bf  Returns} -- 
+Graph 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdgeBuilder()}
+{\bf  getEdgeBuilder}\\
+\begin{lstlisting}[frame=none]
+public abstract AbstractEdgeBuilder getEdgeBuilder()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the EdgeBuilder which is specified for this graph.
+}
+\item{{\bf  Returns} -- 
+AbstractEdgeBuilder 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexBuilder(String)}
+{\bf  getVertexBuilder}\\
+\begin{lstlisting}[frame=none]
+public abstract AbstractVertexBuilder getVertexBuilder(java.lang.String vertexID)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the VertexBuilder which is specified for this graph.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertexID} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+AbstractVertexBuilder 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.AbstractGraphModelBuilder}\index{AbstractGraphModelBuilder}Class AbstractGraphModelBuilder}{
+\vskip .1in 
+This is an abstract interface, which builds a concrete graphmodel. This Class is based on the Builder Pattern.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class AbstractGraphModelBuilder
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf AbstractGraphModelBuilder()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf build()} This method is called, when the buildingprocess of the graphmodel is finished.\\
+{\bf getGraphBuilder(String)} Returns a specific \texttt{\small AbstractGraphBuilder}{\small 
+\refdefined{graphmodel.AbstractGraphBuilder}} which belongs to the graphmodel.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{AbstractGraphModelBuilder()}
+{\bf  AbstractGraphModelBuilder}\\
+\begin{lstlisting}[frame=none]
+public AbstractGraphModelBuilder()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{build()}
+{\bf  build}\\
+\begin{lstlisting}[frame=none]
+public GraphModel build()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+This method is called, when the buildingprocess of the graphmodel is finished. It returns the finished graphmodel
+}
+\item{{\bf  Returns} -- 
+GraphModel 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getGraphBuilder(String)}
+{\bf  getGraphBuilder}\\
+\begin{lstlisting}[frame=none]
+public abstract AbstractGraphBuilder getGraphBuilder(java.lang.String graphID)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a specific \texttt{\small AbstractGraphBuilder}{\small 
+\refdefined{graphmodel.AbstractGraphBuilder}} which belongs to the graphmodel. It should also decide which graph should be builded with the help of the graphID.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graphID} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.AbstractVertexBuilder}\index{AbstractVertexBuilder}Class AbstractVertexBuilder}{
+\vskip .1in 
+This is an abstract VertexBuilder which is used to build a concrete Vertex.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class AbstractVertexBuilder
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf AbstractVertexBuilder()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addData(String, String)} Add Data to this Vertex.\\
+{\bf build()} This method builds the concrete Vertex and returns it.\\
+{\bf getGraphBuilder(String)} This method returns an specific GraphBuilder.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{AbstractVertexBuilder()}
+{\bf  AbstractVertexBuilder}\\
+\begin{lstlisting}[frame=none]
+public AbstractVertexBuilder()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addData(String, String)}
+{\bf  addData}\\
+\begin{lstlisting}[frame=none]
+public abstract void addData(java.lang.String value,java.lang.String keyname)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Add Data to this Vertex. The vertexBuilder decides which kind of data it is and where to save in the concrete Vertex.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{value} -- }
+   \item{
+\texttt{keyname} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{build()}
+{\bf  build}\\
+\begin{lstlisting}[frame=none]
+public Vertex build()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+This method builds the concrete Vertex and returns it.
+}
+\item{{\bf  Returns} -- 
+Vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getGraphBuilder(String)}
+{\bf  getGraphBuilder}\\
+\begin{lstlisting}[frame=none]
+public AbstractGraphBuilder getGraphBuilder(java.lang.String graphID)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+This method returns an specific GraphBuilder. This method is used to implement nested Graphs.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graphID} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.DefaultVertex}\index{DefaultVertex}Class DefaultVertex}{
+\vskip .1in 
+This is an DefaultVertex, which has basic functions and is provided by the mainapplication.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class DefaultVertex
+ extends java.lang.Object implements Vertex\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf DefaultVertex()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getID()} \\
+{\bf getName()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{DefaultVertex()}
+{\bf  DefaultVertex}\\
+\begin{lstlisting}[frame=none]
+public DefaultVertex()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\begin{lstlisting}[frame=none]
+java.lang.Integer getID()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Vertex{\small \refdefined{graphmodel.Vertex}} }
+
+Get the ID of the vertex
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Vertex{\small \refdefined{graphmodel.Vertex}} }
+
+Get the name of the vertex
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.DirectedEdge}\index{DirectedEdge}Class DirectedEdge}{
+\vskip .1in 
+A \texttt{\small DirectedEdge}{\small 
+\refdefined{graphmodel.DirectedEdge}} is an edge htat has one source and one target vertex. So the direction of the edge is specified.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class DirectedEdge
+ extends java.lang.Object implements Edge\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf DirectedEdge()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getID()} \\
+{\bf getName()} \\
+{\bf getSource()} \\
+{\bf getTarget()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{DirectedEdge()}
+{\bf  DirectedEdge}\\
+\begin{lstlisting}[frame=none]
+public DirectedEdge()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\begin{lstlisting}[frame=none]
+java.lang.Integer getID()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
+
+Get the ID of this edge
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
+
+Get the name of this Edge
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSource()}
+{\bf  getSource}\\
+\begin{lstlisting}[frame=none]
+Graph.V getSource()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
+
+Get the vource vertex of this edge
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getTarget()}
+{\bf  getTarget}\\
+\begin{lstlisting}[frame=none]
+Graph.V getTarget()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
+
+Get the target vertex of this edge
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.DirectedGraph}\index{DirectedGraph}Class DirectedGraph}{
+\vskip .1in 
+A \texttt{\small DirectedGraph}{\small 
+\refdefined{graphmodel.DirectedGraph}} is a specific Graph which contains just \texttt{\small DirectedEdge}{\small 
+\refdefined{graphmodel.DirectedEdge}} as edges\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class DirectedGraph
+ extends java.lang.Object implements Graph, Layoutable\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf DirectedGraph()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addEdge()} \\
+{\bf addEdge(Graph.E)} \\
+{\bf addVertex(Graph.V)} \\
+{\bf applyLayout(LayoutAlgorithm)} \\
+{\bf edgesOf(Graph.V)} \\
+{\bf getEdges()} \\
+{\bf getEdgeSet()} \\
+{\bf getRegisteredLayouts()} \\
+{\bf getSource(Graph.E)} \\
+{\bf getTarget(Graph.E)} \\
+{\bf getVertexSet()} \\
+{\bf incomingEdgesOf(Graph.V)} Get a set of all incoming edges of a vertex\\
+{\bf indegreeOf(Graph.V)} Get the indegree of a vertex\\
+{\bf outcomingEdgesOf(Graph.V)} Get a set of all outcoming edges of a vertex\\
+{\bf outdegreeOf(Graph.V)} Get the outdegree of a vertex\\
+{\bf setEdgeSet(Set)} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{DirectedGraph()}
+{\bf  DirectedGraph}\\
+\begin{lstlisting}[frame=none]
+public DirectedGraph()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addEdge()}
+{\bf  addEdge}\\
+\begin{lstlisting}[frame=none]
+void addEdge()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
+
+Adds a new Edge to the graph
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{addEdge(Graph.E)}
+{\bf  addEdge}\\
+\begin{lstlisting}[frame=none]
+public void addEdge(Graph.E edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addVertex(Graph.V)}
+{\bf  addVertex}\\
+\begin{lstlisting}[frame=none]
+public void addVertex(Graph.V vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{applyLayout(LayoutAlgorithm)}
+{\bf  applyLayout}\\
+\begin{lstlisting}[frame=none]
+void applyLayout(plugin.LayoutAlgorithm alg)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{edgesOf(Graph.V)}
+{\bf  edgesOf}\\
+\begin{lstlisting}[frame=none]
+public java.util.List edgesOf(Graph.V vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdges()}
+{\bf  getEdges}\\
+\begin{lstlisting}[frame=none]
+java.util.List getEdges()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
+
+Returns an list of edges.
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdgeSet()}
+{\bf  getEdgeSet}\\
+\begin{lstlisting}[frame=none]
+java.util.Set getEdgeSet()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
+
+Get a set of all Edges in this graph
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getRegisteredLayouts()}
+{\bf  getRegisteredLayouts}\\
+\begin{lstlisting}[frame=none]
+java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSource(Graph.E)}
+{\bf  getSource}\\
+\begin{lstlisting}[frame=none]
+public Graph.V getSource(Graph.E edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getTarget(Graph.E)}
+{\bf  getTarget}\\
+\begin{lstlisting}[frame=none]
+public Graph.V getTarget(Graph.E edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexSet()}
+{\bf  getVertexSet}\\
+\begin{lstlisting}[frame=none]
+java.util.Set getVertexSet()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
+
+Get a set of all vertices in this graph
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{incomingEdgesOf(Graph.V)}
+{\bf  incomingEdgesOf}\\
+\begin{lstlisting}[frame=none]
+public java.util.Set incomingEdgesOf(Graph.V vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get a set of all incoming edges of a vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{indegreeOf(Graph.V)}
+{\bf  indegreeOf}\\
+\begin{lstlisting}[frame=none]
+public java.lang.Integer indegreeOf(Graph.V vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the indegree of a vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{outcomingEdgesOf(Graph.V)}
+{\bf  outcomingEdgesOf}\\
+\begin{lstlisting}[frame=none]
+public java.util.Set outcomingEdgesOf(Graph.V vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get a set of all outcoming edges of a vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{outdegreeOf(Graph.V)}
+{\bf  outdegreeOf}\\
+\begin{lstlisting}[frame=none]
+public java.lang.Integer outdegreeOf(Graph.V vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the outdegree of a vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setEdgeSet(Set)}
+{\bf  setEdgeSet}\\
+\begin{lstlisting}[frame=none]
+public void setEdgeSet(java.util.Set edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.DirectedGraphLayoutRegister}\index{DirectedGraphLayoutRegister}Class DirectedGraphLayoutRegister}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class DirectedGraphLayoutRegister
+ extends java.lang.Object implements plugin.LayoutRegister\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf DirectedGraphLayoutRegister()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addLayoutOption(LayoutOption)} \\
+{\bf getLayoutOptions()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{DirectedGraphLayoutRegister()}
+{\bf  DirectedGraphLayoutRegister}\\
+\begin{lstlisting}[frame=none]
+public DirectedGraphLayoutRegister()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addLayoutOption(LayoutOption)}
+{\bf  addLayoutOption}\\
+\begin{lstlisting}[frame=none]
+void addLayoutOption(plugin.LayoutOption option)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getLayoutOptions()}
+{\bf  getLayoutOptions}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayoutOptions()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.FastGraphAccessor}\index{FastGraphAccessor}Class FastGraphAccessor}{
+\vskip .1in 
+Created by Sven on 09.06.2016.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class FastGraphAccessor
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf FastGraphAccessor()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf addEdgeAttribute(String)} \\
+{\bf addEdgeForAttribute(String, Edge, String)} \\
+{\bf addVertexAttribute(String)} \\
+{\bf addVertexForAttribute(Vertex, String, String)} \\
+{\bf getEdgesByAttribute(String, String)} \\
+{\bf getEdgeValues()} Getter of edgeValues\\
+{\bf getGraph()} Getter of graph\\
+{\bf getVertexValues()} Getter of vertexValues\\
+{\bf getVerticesByAttribute(String, String)} \\
+{\bf setEdgeValues(Map)} Setter of edgeValues\\
+{\bf setGraph(Graph)} Setter of graph\\
+{\bf setVertexValues(Map)} Setter of vertexValues\\
+{\bf update()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{FastGraphAccessor()}
+{\bf  FastGraphAccessor}\\
+\begin{lstlisting}[frame=none]
+public FastGraphAccessor()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addEdgeAttribute(String)}
+{\bf  addEdgeAttribute}\\
+\begin{lstlisting}[frame=none]
+public void addEdgeAttribute(java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{name} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addEdgeForAttribute(String, Edge, String)}
+{\bf  addEdgeForAttribute}\\
+\begin{lstlisting}[frame=none]
+public void addEdgeForAttribute(java.lang.String name,Edge edge,java.lang.String value)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{name} -- }
+   \item{
+\texttt{edge} -- }
+   \item{
+\texttt{value} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addVertexAttribute(String)}
+{\bf  addVertexAttribute}\\
+\begin{lstlisting}[frame=none]
+public void addVertexAttribute(java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{name} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{addVertexForAttribute(Vertex, String, String)}
+{\bf  addVertexForAttribute}\\
+\begin{lstlisting}[frame=none]
+public void addVertexForAttribute(Vertex vertex,java.lang.String value,java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- }
+   \item{
+\texttt{value} -- }
+   \item{
+\texttt{name} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdgesByAttribute(String, String)}
+{\bf  getEdgesByAttribute}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getEdgesByAttribute(java.lang.String value,java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{value} -- }
+   \item{
+\texttt{name} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdgeValues()}
+{\bf  getEdgeValues}\\
+\begin{lstlisting}[frame=none]
+public java.util.Map getEdgeValues()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of edgeValues
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{getGraph()}
+{\bf  getGraph}\\
+\begin{lstlisting}[frame=none]
+public Graph getGraph()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of graph
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexValues()}
+{\bf  getVertexValues}\\
+\begin{lstlisting}[frame=none]
+public java.util.Map getVertexValues()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of vertexValues
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{getVerticesByAttribute(String, String)}
+{\bf  getVerticesByAttribute}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getVerticesByAttribute(java.lang.String name,java.lang.String value)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{name} -- }
+   \item{
+\texttt{value} -- }
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setEdgeValues(Map)}
+{\bf  setEdgeValues}\\
+\begin{lstlisting}[frame=none]
+public void setEdgeValues(java.util.Map edgeValues)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Setter of edgeValues
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{setGraph(Graph)}
+{\bf  setGraph}\\
+\begin{lstlisting}[frame=none]
+public void setGraph(Graph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Setter of graph
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{setVertexValues(Map)}
+{\bf  setVertexValues}\\
+\begin{lstlisting}[frame=none]
+public void setVertexValues(java.util.Map vertexValues)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Setter of vertexValues
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{update()}
+{\bf  update}\\
+\begin{lstlisting}[frame=none]
+public void update()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.Graph.E}\index{Graph.E}Class Graph.E}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class Graph.E
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf E()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{E()}
+{\bf  E}\\
+\begin{lstlisting}[frame=none]
+public E()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.Graph.V}\index{Graph.V}Class Graph.V}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class Graph.V
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf V()} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{V()}
+{\bf  V}\\
+\begin{lstlisting}[frame=none]
+public V()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.GraphModel}\index{GraphModel}Class GraphModel}{
+\vskip .1in 
+A \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}} contains one or more graphs. It is used to save nested or hierachical graphs in one class\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class GraphModel
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructor summary}{
+\begin{verse}
+{\bf GraphModel()} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+{\bf getGraphs()} Getter of graph\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{GraphModel()}
+{\bf  GraphModel}\\
+\begin{lstlisting}[frame=none]
+public GraphModel()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getGraphs()}
+{\bf  getGraphs}\\
+\begin{lstlisting}[frame=none]
+public abstract java.util.List getGraphs()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Getter of graph
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+}
+\printindex
