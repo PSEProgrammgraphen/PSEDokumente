@@ -2700,6 +2700,2172 @@
       <packagedElement xmi:type="uml:Class" xmi:id="_ifANRTDFEeaZHpBEXCeEJQ" name="String"/>
     </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_QkJDADDtEeaerfpH0KeGRA" name="package graphmodel">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_QkJDATDtEeaerfpH0KeGRA" name="Edge" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDAjDtEeaerfpH0KeGRA" name="getSource" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDAzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDBDDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDBTDtEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDBjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDBzDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDCDDtEeaerfpH0KeGRA" name="getTarget" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDCTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDCjDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDCzDtEeaerfpH0KeGRA" name="getID" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDDDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDDTDtEeaerfpH0KeGRA" type="_RevLPDC6EeaTGLGmcq2w7A" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJDDjDtEeaerfpH0KeGRA" name="AbstractGraphModelBuilder" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDDzDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * This is an abstract interface, which builds a concrete graphmodel.&#xD;
+ * This Class is based on the Builder Pattern.&#xD;
+ *&#xD;
+ </body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDEDDtEeaerfpH0KeGRA" name="getGraphBuilder" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDETDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Returns a specific {@link AbstractGraphBuilder} which belongs to the graphmodel.&#xD;
+	 * It should also decide which graph should be builded with the help of the graphID.&#xD;
+	 * &#xD;
+	 * @param graphID &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDEjDtEeaerfpH0KeGRA" type="_QkJDtDDtEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDEzDtEeaerfpH0KeGRA" name="graphID" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDFDDtEeaerfpH0KeGRA" name="build" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDFTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * This method is called, when the buildingprocess of the graphmodel is finished.&#xD;
+	 * It returns the finished graphmodel&#xD;
+	 * &#xD;
+	 * @return GraphModel&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDFjDtEeaerfpH0KeGRA" type="_QkJDHjDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_QkJDFzDtEeaerfpH0KeGRA" name="Vertex" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDGDDtEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDGTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDGjDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDGzDtEeaerfpH0KeGRA" name="getID" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDHDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDHTDtEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJDHjDtEeaerfpH0KeGRA" name="GraphModel" visibility="public" isAbstract="true">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDHzDtEeaerfpH0KeGRA" name="getGraphs" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDIDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+		 * Getter of graph&#xD;
+		 &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDITDtEeaerfpH0KeGRA" type="_QkJDcTDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJDIjDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJDIzDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJDJDDtEeaerfpH0KeGRA" name="DirectedGraph" visibility="public">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkJDJTDtEeaerfpH0KeGRA" client="_QkJDJDDtEeaerfpH0KeGRA _QkJDJDDtEeaerfpH0KeGRA _QkJDJDDtEeaerfpH0KeGRA" supplier="_QkJDcTDtEeaerfpH0KeGRA" contract="_QkJDcTDtEeaerfpH0KeGRA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkJDJjDtEeaerfpH0KeGRA" client="_QkJDJDDtEeaerfpH0KeGRA _QkJDJDDtEeaerfpH0KeGRA _QkJDJDDtEeaerfpH0KeGRA" supplier="_QkJEEzDtEeaerfpH0KeGRA" contract="_QkJEEzDtEeaerfpH0KeGRA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDJzDtEeaerfpH0KeGRA" name="outdegreeOf" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDKDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDKTDtEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDKjDtEeaerfpH0KeGRA" name="vertex" type="_QkJDzjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDKzDtEeaerfpH0KeGRA" name="indegreeOf" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDLDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDLTDtEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDLjDtEeaerfpH0KeGRA" name="vertex" type="_QkJDzjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDLzDtEeaerfpH0KeGRA" name="incomingEdgesOf" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDMDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDMTDtEeaerfpH0KeGRA" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDMjDtEeaerfpH0KeGRA" name="vertex" type="_QkJDzjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDMzDtEeaerfpH0KeGRA" name="outcomingEdgesOf" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDNDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDNTDtEeaerfpH0KeGRA" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDNjDtEeaerfpH0KeGRA" name="vertex" type="_QkJDzjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDNzDtEeaerfpH0KeGRA" name="getEdges" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDODDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDOTDtEeaerfpH0KeGRA" type="_QkJDzzDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJDOjDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJDOzDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDPDDtEeaerfpH0KeGRA" name="addEdge" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDPTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDPjDtEeaerfpH0KeGRA" name="getVertexSet" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDPzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDQDDtEeaerfpH0KeGRA" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDQTDtEeaerfpH0KeGRA" name="setEdgeSet" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDQjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param edge &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDQzDtEeaerfpH0KeGRA" name="edge" type="_qAw_gC2ZEeatg6U_MxLsoQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDRDDtEeaerfpH0KeGRA" name="setVertex" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDRTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDRjDtEeaerfpH0KeGRA" name="vertex" type="_qAw_gC2ZEeatg6U_MxLsoQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDRzDtEeaerfpH0KeGRA" name="getSource" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDSDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param edge &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDSTDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDSjDtEeaerfpH0KeGRA" name="edge" type="_QkJDzzDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDSzDtEeaerfpH0KeGRA" name="getEdgeSet" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDTDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDTTDtEeaerfpH0KeGRA" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDTjDtEeaerfpH0KeGRA" name="addVertex" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDTzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDUDDtEeaerfpH0KeGRA" name="vertex" type="_QkJDzjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDUTDtEeaerfpH0KeGRA" name="addEdge" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDUjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param edge &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDUzDtEeaerfpH0KeGRA" name="edge" type="_QkJDzzDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDVDDtEeaerfpH0KeGRA" name="getTarget" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDVTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param edge &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDVjDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDVzDtEeaerfpH0KeGRA" name="edge" type="_QkJDzzDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDWDDtEeaerfpH0KeGRA" name="edgesOf" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDWTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDWjDtEeaerfpH0KeGRA" type="_QkJDzzDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJDWzDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJDXDDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDXTDtEeaerfpH0KeGRA" name="vertex" type="_QkJDzjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDXjDtEeaerfpH0KeGRA" name="getVertex" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDXzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDYDDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDYTDtEeaerfpH0KeGRA" name="getRegisteredLayouts" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDYjDtEeaerfpH0KeGRA" type="_AK4QBjC1EeaTGLGmcq2w7A" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJDYzDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJDZDDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDZTDtEeaerfpH0KeGRA" name="applyLayout" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDZjDtEeaerfpH0KeGRA" name="alg" type="_eu26QDC2EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJDZzDtEeaerfpH0KeGRA" name="DirectedEdge" visibility="public">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkJDaDDtEeaerfpH0KeGRA" client="_QkJDZzDtEeaerfpH0KeGRA _QkJDZzDtEeaerfpH0KeGRA _QkJDZzDtEeaerfpH0KeGRA" supplier="_QkJDATDtEeaerfpH0KeGRA" contract="_QkJDATDtEeaerfpH0KeGRA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDaTDtEeaerfpH0KeGRA" name="getSource" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDajDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDazDtEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDbDDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDbTDtEeaerfpH0KeGRA" name="getTarget" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDbjDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDbzDtEeaerfpH0KeGRA" name="getID" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDcDDtEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_QkJDcTDtEeaerfpH0KeGRA" name="Graph" visibility="public">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_QkJDcjDtEeaerfpH0KeGRA" name="E" visibility="public"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_QkJDczDtEeaerfpH0KeGRA" name="V" visibility="public"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDdDDtEeaerfpH0KeGRA" name="getEdges" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDdTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDdjDtEeaerfpH0KeGRA" type="_QkJDzzDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJDdzDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJDeDDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDeTDtEeaerfpH0KeGRA" name="addEdge" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDejDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDezDtEeaerfpH0KeGRA" name="getVertexSet" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDfDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDfTDtEeaerfpH0KeGRA" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDfjDtEeaerfpH0KeGRA" name="setEdgeSet" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDfzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param edge &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDgDDtEeaerfpH0KeGRA" name="edge" type="_qAw_gC2ZEeatg6U_MxLsoQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDgTDtEeaerfpH0KeGRA" name="setVertex" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDgjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDgzDtEeaerfpH0KeGRA" name="vertex" type="_qAw_gC2ZEeatg6U_MxLsoQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDhDDtEeaerfpH0KeGRA" name="getSource" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDhTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param edge &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDhjDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDhzDtEeaerfpH0KeGRA" name="edge" type="_QkJDzzDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDiDDtEeaerfpH0KeGRA" name="getEdgeSet" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDiTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDijDtEeaerfpH0KeGRA" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDizDtEeaerfpH0KeGRA" name="addVertex" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDjDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDjTDtEeaerfpH0KeGRA" name="vertex" type="_QkJDzjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDjjDtEeaerfpH0KeGRA" name="addEdge" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDjzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param edge &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDkDDtEeaerfpH0KeGRA" name="edge" type="_QkJDzzDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDkTDtEeaerfpH0KeGRA" name="getTarget" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDkjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param edge &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDkzDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDlDDtEeaerfpH0KeGRA" name="edge" type="_QkJDzzDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDlTDtEeaerfpH0KeGRA" name="edgesOf" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDljDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDlzDtEeaerfpH0KeGRA" type="_QkJDzzDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJDmDDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJDmTDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDmjDtEeaerfpH0KeGRA" name="vertex" type="_QkJDzjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDmzDtEeaerfpH0KeGRA" name="getVertex" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDnDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDnTDtEeaerfpH0KeGRA" type="_QkJDzjDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJDnjDtEeaerfpH0KeGRA" name="DefaultVertex" visibility="public">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkJDnzDtEeaerfpH0KeGRA" client="_QkJDnjDtEeaerfpH0KeGRA _QkJDnjDtEeaerfpH0KeGRA _QkJDnjDtEeaerfpH0KeGRA" supplier="_QkJDFzDtEeaerfpH0KeGRA" contract="_QkJDFzDtEeaerfpH0KeGRA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDoDDtEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDoTDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDojDtEeaerfpH0KeGRA" name="getID" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDozDtEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJDpDDtEeaerfpH0KeGRA" name="AbstractEdgeBuilder" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDpTDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * This is an abstract Interface which is used to build a concrete edge.&#xD;
+ * &#xD;
+ *&#xD;
+ </body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDpjDtEeaerfpH0KeGRA" name="setID" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDpzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * set the ID of this edge&#xD;
+	 * &#xD;
+	 * @param id &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDqDDtEeaerfpH0KeGRA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDqTDtEeaerfpH0KeGRA" name="setDirection" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDqjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * set the direction of this edge&#xD;
+	 * &#xD;
+	 * @param direction &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDqzDtEeaerfpH0KeGRA" name="direction" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDrDDtEeaerfpH0KeGRA" name="newEdge" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDrTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * set source and target vertices of this edge&#xD;
+	 * &#xD;
+	 * @param source &#xD;
+	 * @param target &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDrjDtEeaerfpH0KeGRA" name="source" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDrzDtEeaerfpH0KeGRA" name="target" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDsDDtEeaerfpH0KeGRA" name="addData" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDsTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Add optional data to this edge.&#xD;
+	 * The EdgeBuilder needs to decide how to save the value.&#xD;
+	 * &#xD;
+	 * @param keyname &#xD;
+	 * @param value &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDsjDtEeaerfpH0KeGRA" name="keyname" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDszDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJDtDDtEeaerfpH0KeGRA" name="AbstractGraphBuilder" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDtTDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * This is an abstract interface which is used to build a concrete graph.  &#xD;
+ *&#xD;
+ </body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDtjDtEeaerfpH0KeGRA" name="getEdgeBuilder" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDtzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Returns the EdgeBuilder which is specified for this graph.&#xD;
+	 * &#xD;
+	 * @return AbstractEdgeBuilder&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDuDDtEeaerfpH0KeGRA" type="_QkJDpDDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDuTDtEeaerfpH0KeGRA" name="getVertexBuilder" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDujDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Returns the VertexBuilder which is specified for this graph.&#xD;
+	 * &#xD;
+	 * @param vertexID &#xD;
+	 * @return AbstractVertexBuilder&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDuzDtEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDvDDtEeaerfpH0KeGRA" name="vertexID" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDvTDtEeaerfpH0KeGRA" name="build" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDvjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * This method is called, when the buildingprocess of the graph is finished.&#xD;
+	 * Then it builds the graph and returns it.&#xD;
+	 * 	 &#xD;
+	 * @return Graph&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDvzDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJDwDDtEeaerfpH0KeGRA" name="AbstractVertexBuilder" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDwTDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * This is an abstract VertexBuilder which is used to build a concrete Vertex.&#xD;
+ * &#xD;
+ </body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDwjDtEeaerfpH0KeGRA" name="addData" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDwzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Add Data to this Vertex. The vertexBuilder decides which kind of data it is and where to save in the concrete Vertex.&#xD;
+	 * &#xD;
+	 * &#xD;
+	 * @param value &#xD;
+	 * @param keyname &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDxDDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDxTDtEeaerfpH0KeGRA" name="keyname" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDxjDtEeaerfpH0KeGRA" name="build" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDxzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * This method builds the concrete Vertex and returns it.&#xD;
+	 * &#xD;
+	 * &#xD;
+	 * @return Vertex&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDyDDtEeaerfpH0KeGRA" type="_QkJDFzDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJDyTDtEeaerfpH0KeGRA" name="getGraphBuilder" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJDyjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * This method returns an specific GraphBuilder.&#xD;
+	 * This method is used to implement nested Graphs.&#xD;
+	 * &#xD;
+	 * @param graphID &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDyzDtEeaerfpH0KeGRA" type="_QkJDtDDtEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJDzDDtEeaerfpH0KeGRA" name="graphID" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_QkJDzTDtEeaerfpH0KeGRA" name="Graph">
+      <packagedElement xmi:type="uml:Class" xmi:id="_QkJDzjDtEeaerfpH0KeGRA" name="V"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_QkJDzzDtEeaerfpH0KeGRA" name="E"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJD0DDtEeaerfpH0KeGRA" name="DirectedGraphLayoutRegister" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD0TDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * @author Lucas&#xD;
+ *&#xD;
+ </body>
+      </ownedComment>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QkJD0jDtEeaerfpH0KeGRA" name="DirectedGraphLayoutRegister implements LayoutRegister" client="_QkJD0DDtEeaerfpH0KeGRA _QkJD0DDtEeaerfpH0KeGRA _QkJD0DDtEeaerfpH0KeGRA" supplier="_AK4QCTC1EeaTGLGmcq2w7A" contract="_AK4QCTC1EeaTGLGmcq2w7A"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD0zDtEeaerfpH0KeGRA" name="addLayoutOption" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD1DDtEeaerfpH0KeGRA" name="option" type="_AK4QBjC1EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD1TDtEeaerfpH0KeGRA" name="getLayoutOptions" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD1jDtEeaerfpH0KeGRA" type="_AK4QBjC1EeaTGLGmcq2w7A" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJD1zDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJD2DDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QkJD2TDtEeaerfpH0KeGRA" name="FastGraphAccessor" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD2jDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * &#xD;
+ * Created by Sven on 09.06.2016.&#xD;
+ &#xD;
+ * @author&#xD;
+ </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QkJD2zDtEeaerfpH0KeGRA" name="edgeValues" visibility="private" type="_DCOi8CtXEeaLxs00cEC_Hw" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD3DDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QkJD3TDtEeaerfpH0KeGRA" name="vertexValues" visibility="private" type="_DCOi8CtXEeaLxs00cEC_Hw" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD3jDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QkJD3zDtEeaerfpH0KeGRA" name="graph" visibility="private" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD4DDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD4TDtEeaerfpH0KeGRA" name="getEdgeValues" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD4jDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Getter of edgeValues&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD4zDtEeaerfpH0KeGRA" type="_DCOi8CtXEeaLxs00cEC_Hw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD5DDtEeaerfpH0KeGRA" name="setEdgeValues" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD5TDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setter of edgeValues&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD5jDtEeaerfpH0KeGRA" name="edgeValues" type="_DCOi8CtXEeaLxs00cEC_Hw"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD5zDtEeaerfpH0KeGRA" name="getVertexValues" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD6DDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Getter of vertexValues&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD6TDtEeaerfpH0KeGRA" type="_DCOi8CtXEeaLxs00cEC_Hw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD6jDtEeaerfpH0KeGRA" name="setVertexValues" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD6zDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setter of vertexValues&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD7DDtEeaerfpH0KeGRA" name="vertexValues" type="_DCOi8CtXEeaLxs00cEC_Hw"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD7TDtEeaerfpH0KeGRA" name="getGraph" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD7jDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Getter of graph&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD7zDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD8DDtEeaerfpH0KeGRA" name="setGraph" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD8TDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setter of graph&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD8jDtEeaerfpH0KeGRA" name="graph"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD8zDtEeaerfpH0KeGRA" name="getEdgesByAttribute" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD9DDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param value &#xD;
+	 * @param name &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD9TDtEeaerfpH0KeGRA" type="_QkJDATDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJD9jDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJD9zDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD-DDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD-TDtEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD-jDtEeaerfpH0KeGRA" name="addEdgeForAttribute" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJD-zDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param name &#xD;
+	 * @param edge &#xD;
+	 * @param value &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD_DDtEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD_TDtEeaerfpH0KeGRA" name="edge" type="_QkJDATDtEeaerfpH0KeGRA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJD_jDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJD_zDtEeaerfpH0KeGRA" name="getVerticesByAttribute" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJEADDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param name &#xD;
+	 * @param value &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJEATDtEeaerfpH0KeGRA" type="_QkJDFzDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJEAjDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJEAzDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJEBDDtEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJEBTDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJEBjDtEeaerfpH0KeGRA" name="addVertexAttribute" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJEBzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param name &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJECDDtEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJECTDtEeaerfpH0KeGRA" name="addVertexForAttribute" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJECjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param vertex &#xD;
+	 * @param value &#xD;
+	 * @param name &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJECzDtEeaerfpH0KeGRA" name="vertex" type="_QkJDFzDtEeaerfpH0KeGRA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJEDDDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJEDTDtEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJEDjDtEeaerfpH0KeGRA" name="addEdgeAttribute" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJEDzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param name &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJEEDDtEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJEETDtEeaerfpH0KeGRA" name="update" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJEEjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_QkJEEzDtEeaerfpH0KeGRA" name="Layoutable" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJEFDDtEeaerfpH0KeGRA" name="getRegisteredLayouts" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QkJEFTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJEFjDtEeaerfpH0KeGRA" type="_AK4QBjC1EeaTGLGmcq2w7A" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QkJEFzDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QkJEGDDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_QkJEGTDtEeaerfpH0KeGRA" name="applyLayout" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_QkJEGjDtEeaerfpH0KeGRA" name="alg" type="_eu26QDC2EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_V5G8kDDtEeaerfpH0KeGRA" name="package joana" URI="">
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5G8kTDtEeaerfpH0KeGRA" name="MethodGraph" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8kjDtEeaerfpH0KeGRA" name="getEntryVertex" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8kzDtEeaerfpH0KeGRA" type="_V5G8uTDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8lDDtEeaerfpH0KeGRA" name="getFieldAccesses" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8lTDtEeaerfpH0KeGRA" type="_V5G8ujDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5G8ljDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5G8lzDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8mDDtEeaerfpH0KeGRA" name="getFormVertices" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8mTDtEeaerfpH0KeGRA" type="_V5G8uTDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5G8mjDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5G8mzDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8nDDtEeaerfpH0KeGRA" name="getMethodCalls" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8nTDtEeaerfpH0KeGRA" type="_V5G8uTDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5G8njDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5G8nzDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5G8oDDtEeaerfpH0KeGRA" name="Callgraph"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5G8oTDtEeaerfpH0KeGRA" name="JoanaGraphModel" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_V5G8ojDtEeaerfpH0KeGRA" name="methodgraphs" visibility="private" type="_V5G8kTDtEeaerfpH0KeGRA" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_V5G8ozDtEeaerfpH0KeGRA">
+          <body>
+	 * 
+	 </body>
+        </ownedComment>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5G8pDDtEeaerfpH0KeGRA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5G8pTDtEeaerfpH0KeGRA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_V5G8pjDtEeaerfpH0KeGRA" name="callgraph" visibility="private" type="_V5G8oDDtEeaerfpH0KeGRA" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8pzDtEeaerfpH0KeGRA" name="getCallGraph" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8qDDtEeaerfpH0KeGRA" type="_V5G8oDDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8qTDtEeaerfpH0KeGRA" name="setCallGraph" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8qjDtEeaerfpH0KeGRA" name="graph" type="_V5G8oDDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8qzDtEeaerfpH0KeGRA" name="getMethodGraphs" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_V5G8rDDtEeaerfpH0KeGRA">
+          <body>
+	 * Getter of graph
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8rTDtEeaerfpH0KeGRA" type="_V5G8kTDtEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5G8rjDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5G8rzDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8sDDtEeaerfpH0KeGRA" name="setMethodGraph" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8sTDtEeaerfpH0KeGRA" name="methodgraphs" type="_V5G8kTDtEeaerfpH0KeGRA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5G8sjDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5G8szDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8tDDtEeaerfpH0KeGRA" name="getGraphs" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8tTDtEeaerfpH0KeGRA" name="graphs" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V5G8tjDtEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V5G8tzDtEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5G8uDDtEeaerfpH0KeGRA" name="JoanaEdge"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5G8uTDtEeaerfpH0KeGRA" name="JoanaVertex"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5G8ujDtEeaerfpH0KeGRA" name="FieldAccess" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8uzDtEeaerfpH0KeGRA" name="getRegisteredLayouts" visibility="public"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8vDDtEeaerfpH0KeGRA" name="registerLayout" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8vTDtEeaerfpH0KeGRA" name="layout"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5G8vjDtEeaerfpH0KeGRA" name="relativeLayerConstraint"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5G8vzDtEeaerfpH0KeGRA" name="JoanaWorkspace" visibility="public">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_V5G8wDDtEeaerfpH0KeGRA" name="JoanaWorkspace implements Workspace" client="_V5G8vzDtEeaerfpH0KeGRA _V5G8vzDtEeaerfpH0KeGRA _V5G8vzDtEeaerfpH0KeGRA" supplier="_3r6DIDC1EeaTGLGmcq2w7A" contract="_3r6DIDC1EeaTGLGmcq2w7A"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8wTDtEeaerfpH0KeGRA" name="getParameterSet" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_V5G8wjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8wzDtEeaerfpH0KeGRA" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8xDDtEeaerfpH0KeGRA" name="initialize" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8xTDtEeaerfpH0KeGRA" name="parameters" type="_YK5nsC86Eea5c8WWEsgIIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8xjDtEeaerfpH0KeGRA" name="getGraphModelBuilder" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_V5G8xzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8yDDtEeaerfpH0KeGRA" type="_AKvGFjC1EeaTGLGmcq2w7A" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8yTDtEeaerfpH0KeGRA" name="getGraphModel" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_V5G8yjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5G8yzDtEeaerfpH0KeGRA" type="_ALU8BzC1EeaTGLGmcq2w7A" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5G8zDDtEeaerfpH0KeGRA" name="getParameterDialog" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_V5G8zTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5HjoDDtEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_V5HjoTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5HjojDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V5HjozDtEeaerfpH0KeGRA" name="MethodGraphLayout" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5HjpDDtEeaerfpH0KeGRA" name="getParameterDialog" visibility="public"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5HjpTDtEeaerfpH0KeGRA" name="getSettings" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5HjpjDtEeaerfpH0KeGRA" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5HjpzDtEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5HjqDDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5HjqTDtEeaerfpH0KeGRA" name="getID" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5HjqjDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5HjqzDtEeaerfpH0KeGRA" name="onLoad" visibility="public"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_V5HjrDDtEeaerfpH0KeGRA" name="layout" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_V5HjrTDtEeaerfpH0KeGRA" name="graph" type="_PaCh0TC1EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_cwo1EDDtEeaerfpH0KeGRA" name="package objectproperty" URI="">
+    <packagedElement xmi:type="uml:Class" xmi:id="_cwo1ETDtEeaerfpH0KeGRA" name="GAnsObjectProperty" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1EjDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Ein JavaFX ObjectProperty welches bei toString() den Wert vom internen&#xD;
+ * GAnsPropertyValue zurückgibt.&#xD;
+ * &#xD;
+ * @author Nicolas&#xD;
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_cwo1EzDtEeaerfpH0KeGRA" general="_U_Vy5jC0EeaNnucjRoyajA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1FDDtEeaerfpH0KeGRA" name="toString" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1FTDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cwo1FjDtEeaerfpH0KeGRA" name="GAnsObjectPropertyValue" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1FzDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Einfache generische Klasse zum Speichern von verschiedenen Typen von&#xD;
+ * Properties. Wird mit {@link GAnsProperty} genutzt um verschiedene Klassen von&#xD;
+ * Eigenschaften in der GUI gleich zu behandeln.&#xD;
+ * &#xD;
+ * @author Nicolas&#xD;
+ *&#xD;
+ * @param &lt;T>&#xD;
+ *            Objekt das in dem PropertyValue gespeichert werden soll.&#xD;
+ </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1GDDtEeaerfpH0KeGRA" name="value" visibility="private" type="_cwo1ITDtEeaerfpH0KeGRA" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1GTDtEeaerfpH0KeGRA" name="getValue" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1GjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Gibt das Value zurück.&#xD;
+	 * &#xD;
+	 * @return Das Value des PropertyValues.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1GzDtEeaerfpH0KeGRA" type="_cwo1ITDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1HDDtEeaerfpH0KeGRA" name="setValue" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1HTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setzt das Value.&#xD;
+	 * &#xD;
+	 * @param value&#xD;
+	 *            Das zu setzende Value.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1HjDtEeaerfpH0KeGRA" name="value" type="_cwo1ITDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1HzDtEeaerfpH0KeGRA" name="toString" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1IDDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cwo1ITDtEeaerfpH0KeGRA" name="T"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cwo1IjDtEeaerfpH0KeGRA" name="GAnsProperty" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1IzDtEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Eine Eigenschaft eines Knoten oder einer Kante in GAns. Der Name und&#xD;
+ * {@link GAnsObjectPropertyValue} der Eigenschaft wird in JavaFX-Properties&#xD;
+ * gespeichert und darüber auch zugriff für die GUI gewährt. Das Model von GAns&#xD;
+ * besteht aus Knoten und Kanten welche GAnsProperties beinhalten, welche mit&#xD;
+ * der GUI gekoppelt sind.&#xD;
+ * &#xD;
+ * @author Nicolas&#xD;
+ </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1JDDtEeaerfpH0KeGRA" name="name" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1JTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * String über den von der GUI aus, Factories oder Änliches, auf den&#xD;
+	 * Namen/Bezeichner des Values verwiesen werden kann.&#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1JjDtEeaerfpH0KeGRA" name="value" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1JzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * String über den von der GUI aus, Factories oder Änliches, auf den Value&#xD;
+	 * verwiesen werden kann.&#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1KDDtEeaerfpH0KeGRA" name="valueAsString" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1KTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * String über den von der GUI aus, Factories oder Änliches, auf die&#xD;
+	 * Stringrepräsentation des Values verwiesen werden kann.&#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1KjDtEeaerfpH0KeGRA" name="propertyName" visibility="private" type="_U_fj8TC0EeaNnucjRoyajA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1KzDtEeaerfpH0KeGRA" name="propertyValue" visibility="private" type="_cwo1ETDtEeaerfpH0KeGRA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1LDDtEeaerfpH0KeGRA" name="propertyValueAsString" visibility="private" type="_U_fj8TC0EeaNnucjRoyajA" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1LTDtEeaerfpH0KeGRA" name="propertyNameProperty" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1LjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Stellt sicher das die Property die den Namen/Bezeichner der GAnsProperty&#xD;
+	 * enthält nie null ist und immer mit dem passenden Namen erstellt wird.&#xD;
+	 * &#xD;
+	 * @return Die StringProperty die den Namen/Bezeichner der GAnsProperty&#xD;
+	 *         enthält.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1LzDtEeaerfpH0KeGRA" type="_U_fj8TC0EeaNnucjRoyajA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1MDDtEeaerfpH0KeGRA" name="propertyValue" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1MTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Stellt sicher das die Property die den {@link GAnsObjectPropertyValue} der&#xD;
+	 * GAnsProperty enthält nie null ist und immer mit dem passenden Namen&#xD;
+	 * erstellt wird.&#xD;
+	 * &#xD;
+	 * @return Die Property die den {@link GAnsObjectPropertyValue} der GAnsProperty&#xD;
+	 *         enthält.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1MjDtEeaerfpH0KeGRA" type="_cwo1ETDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1MzDtEeaerfpH0KeGRA" name="propertyValueAsString" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1NDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Stellt sicher das die Property die den {@link GAnsObjectPropertyValue} der&#xD;
+	 * GAnsProperty als String enthält nie null ist und immer mit dem passenden&#xD;
+	 * Namen erstellt wird.&#xD;
+	 * &#xD;
+	 * @return Die StringProperty die den {@link GAnsObjectPropertyValue} der&#xD;
+	 *         GAnsProperty als String enthält.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1NTDtEeaerfpH0KeGRA" type="_U_fj8TC0EeaNnucjRoyajA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1NjDtEeaerfpH0KeGRA" name="setPropertyName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1NzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setzt den Namen/Bezeichner der GAnsProperty.&#xD;
+	 * &#xD;
+	 * @param value&#xD;
+	 *            Der String der als Name der GAnsProperty gesetzt werden soll.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1ODDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1OTDtEeaerfpH0KeGRA" name="getPropertyName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1OjDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Gibt den Namen/Bezeichner der GAnsProperty zurück.&#xD;
+	 * &#xD;
+	 * @return Der Name/Bezeichner der GAnsProperty.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1OzDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1PDDtEeaerfpH0KeGRA" name="setPropertyValue" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1PTDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setzt das {@link GAnsObjectPropertyValue} und die Stringrepräsentation des&#xD;
+	 * Werts der GAnsProperty.&#xD;
+	 * &#xD;
+	 * @param value&#xD;
+	 *            Der {@link GAnsObjectPropertyValue} der GAnsProperty die gesetzt&#xD;
+	 *            werden soll.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1PjDtEeaerfpH0KeGRA" name="value" type="_cwo1FjDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1PzDtEeaerfpH0KeGRA" name="getPropertyValue" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1QDDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Gibt das den {@link GAnsObjectPropertyValue} der GAnsProperty zurück.&#xD;
+	 * &#xD;
+	 * @return Der {@link GAnsObjectPropertyValue} der GAnsProperty.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1QTDtEeaerfpH0KeGRA" type="_cwo1FjDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1QjDtEeaerfpH0KeGRA" name="getPropertyValueAsString" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1QzDtEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Gibt die Stringrepräsentation des {@link GAnsObjectPropertyValue} der&#xD;
+	 * GAnsProperty zurück.&#xD;
+	 * &#xD;
+	 * @return Die Stringrepräsentation des {@link GAnsObjectPropertyValue} der&#xD;
+	 *         GAnsProperty.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1RDDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cwpcIDDtEeaerfpH0KeGRA" memberEnd="_cwpcJDDtEeaerfpH0KeGRA _cwpcIzDtEeaerfpH0KeGRA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cwpcITDtEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cwpcIjDtEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_cwpcIzDtEeaerfpH0KeGRA" name="gansobjectproperty" type="_cwo1ETDtEeaerfpH0KeGRA" association="_cwpcIDDtEeaerfpH0KeGRA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_cwpcJDDtEeaerfpH0KeGRA" name="gansobjectpropertyvalue" type="_cwo1FjDtEeaerfpH0KeGRA" association="_cwpcIDDtEeaerfpH0KeGRA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cwqDMDDtEeaerfpH0KeGRA" memberEnd="_cwqDNDDtEeaerfpH0KeGRA _cwqDMzDtEeaerfpH0KeGRA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cwqDMTDtEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cwqDMjDtEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_cwqDMzDtEeaerfpH0KeGRA" name="gansproperty" type="_cwo1IjDtEeaerfpH0KeGRA" association="_cwqDMDDtEeaerfpH0KeGRA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_cwqDNDDtEeaerfpH0KeGRA" name="gansobjectproperty" type="_cwo1ETDtEeaerfpH0KeGRA" association="_cwqDMDDtEeaerfpH0KeGRA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_kmCrEDDtEeaerfpH0KeGRA" name="package graphRegex">
+    <packagedElement xmi:type="uml:Class" xmi:id="_kmCrETDtEeaerfpH0KeGRA" name="Selector">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kmCrEjDtEeaerfpH0KeGRA" name="selectedSubgraphs" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kmCrEzDtEeaerfpH0KeGRA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kmCrFDDtEeaerfpH0KeGRA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kmCrFTDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kmCrFjDtEeaerfpH0KeGRA" name="getValue">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kmCrFzDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kmCrGDDtEeaerfpH0KeGRA" name="getSubgraphs">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kmCrGTDtEeaerfpH0KeGRA" name="graph"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kmCrGjDtEeaerfpH0KeGRA" name="setSubgraphs">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kmCrGzDtEeaerfpH0KeGRA" name="graphs"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kmCrHDDtEeaerfpH0KeGRA" name="Engine">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kmCrHTDtEeaerfpH0KeGRA" name="findSubgraphs">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kmCrHjDtEeaerfpH0KeGRA" name="graph"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kmCrHzDtEeaerfpH0KeGRA" name="selector" type="_kmCrETDtEeaerfpH0KeGRA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_kmCrIDDtEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_xeFUgDDtEeaerfpH0KeGRA" name="package sugiyama">
+    <packagedElement xmi:type="uml:Class" xmi:id="_xeFUgTDtEeaerfpH0KeGRA" name="CrossMinimization" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUgjDtEeaerfpH0KeGRA" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUgzDtEeaerfpH0KeGRA" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUhDDtEeaerfpH0KeGRA" name="minimizeCrossings" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUhTDtEeaerfpH0KeGRA" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xeFUhjDtEeaerfpH0KeGRA" name="CycleRemoving" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUhzDtEeaerfpH0KeGRA" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUiDDtEeaerfpH0KeGRA" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUiTDtEeaerfpH0KeGRA" name="removeCycles" visibility="private">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUijDtEeaerfpH0KeGRA" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUizDtEeaerfpH0KeGRA" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xeFUjDDtEeaerfpH0KeGRA" name="EdgeDrawing" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUjTDtEeaerfpH0KeGRA" name="graph" visibility="private" type="_ie6GoTDFEeaZHpBEXCeEJQ" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUjjDtEeaerfpH0KeGRA" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUjzDtEeaerfpH0KeGRA" name="drawEdges" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUkDDtEeaerfpH0KeGRA" name="graph" type="_ie6GoTDFEeaZHpBEXCeEJQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUkTDtEeaerfpH0KeGRA" name="revertCycles" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUkjDtEeaerfpH0KeGRA" name="cycles" type="_qAw_gC2ZEeatg6U_MxLsoQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xeFUkzDtEeaerfpH0KeGRA" name="LayerAssigning" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUlDDtEeaerfpH0KeGRA" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUlTDtEeaerfpH0KeGRA" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUljDtEeaerfpH0KeGRA" name="assignLayers" visibility="private">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUlzDtEeaerfpH0KeGRA" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUmDDtEeaerfpH0KeGRA" name="minimizeHeight" visibility="private">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUmTDtEeaerfpH0KeGRA" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUmjDtEeaerfpH0KeGRA" name="height" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUmzDtEeaerfpH0KeGRA" name="minimizeEdgeLength" visibility="private">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUnDDtEeaerfpH0KeGRA" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUnTDtEeaerfpH0KeGRA" name="edgeLength" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUnjDtEeaerfpH0KeGRA" name="minimizeWidth" visibility="private">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUnzDtEeaerfpH0KeGRA" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUoDDtEeaerfpH0KeGRA" name="width" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xeFUoTDtEeaerfpH0KeGRA" name="SugiyamaLayoutAlgorithm" visibility="public">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_xeFUojDtEeaerfpH0KeGRA" name="SugiyamaLayoutAlgorithm implements LayoutAlgorithm" client="_xeFUoTDtEeaerfpH0KeGRA _xeFUoTDtEeaerfpH0KeGRA _xeFUoTDtEeaerfpH0KeGRA" supplier="_eu26QDC2EeaTGLGmcq2w7A" contract="_eu26QDC2EeaTGLGmcq2w7A"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUozDtEeaerfpH0KeGRA" name="getParameterDialog" visibility="public"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUpDDtEeaerfpH0KeGRA" name="getSettings" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUpTDtEeaerfpH0KeGRA" type="_ie_mNDDFEeaZHpBEXCeEJQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUpjDtEeaerfpH0KeGRA" name="layout" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUpzDtEeaerfpH0KeGRA" name="graph" type="_xeFUrTDtEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUqDDtEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUqTDtEeaerfpH0KeGRA" type="_ifANRTDFEeaZHpBEXCeEJQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUqjDtEeaerfpH0KeGRA" name="getID" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUqzDtEeaerfpH0KeGRA" type="_ifANRTDFEeaZHpBEXCeEJQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUrDDtEeaerfpH0KeGRA" name="onLoad" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xeFUrTDtEeaerfpH0KeGRA" name="G"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_xeFUrjDtEeaerfpH0KeGRA" name="VertexPositioning" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUrzDtEeaerfpH0KeGRA" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xeFUsDDtEeaerfpH0KeGRA" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_xeFUsTDtEeaerfpH0KeGRA" name="positionVertices" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xeFUsjDtEeaerfpH0KeGRA" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JPHgwDDuEeaerfpH0KeGRA" memberEnd="_JPIu4zDuEeaerfpH0KeGRA _JPHgwzDuEeaerfpH0KeGRA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JPHgwTDuEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JPHgwjDuEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JPHgwzDuEeaerfpH0KeGRA" name="gansapplication" type="_JPIH3zDuEeaerfpH0KeGRA" association="_JPHgwDDuEeaerfpH0KeGRA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JPIH0DDuEeaerfpH0KeGRA" memberEnd="_JPIH6TDuEeaerfpH0KeGRA _JPIH0zDuEeaerfpH0KeGRA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JPIH0TDuEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JPIH0jDuEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JPIH0zDuEeaerfpH0KeGRA" name="gansapplication" type="_JPIH3zDuEeaerfpH0KeGRA" association="_JPIH0DDuEeaerfpH0KeGRA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JPIH1DDuEeaerfpH0KeGRA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JPIH1TDuEeaerfpH0KeGRA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JPIH1jDuEeaerfpH0KeGRA" memberEnd="_JPIu-DDuEeaerfpH0KeGRA _JPIH2TDuEeaerfpH0KeGRA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JPIH1zDuEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JPIH2DDuEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JPIH2TDuEeaerfpH0KeGRA" name="structureview" type="_JPIu9DDuEeaerfpH0KeGRA" association="_JPIH1jDuEeaerfpH0KeGRA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JPIH2jDuEeaerfpH0KeGRA" memberEnd="_JPIu4jDuEeaerfpH0KeGRA _JPIH3TDuEeaerfpH0KeGRA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JPIH2zDuEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JPIH3DDuEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JPIH3TDuEeaerfpH0KeGRA" name="gansapplication" type="_JPIH3zDuEeaerfpH0KeGRA" association="_JPIH2jDuEeaerfpH0KeGRA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_JPIH3jDuEeaerfpH0KeGRA" name="package gui">
+    <packagedElement xmi:type="uml:Class" xmi:id="_JPIH3zDuEeaerfpH0KeGRA" name="GAnsApplication" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JPIH4DDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Main application of GAns.&#xD;
+ * &#xD;
+ * @author Nicolas&#xD;
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_JPIH4TDuEeaerfpH0KeGRA" general="_4P90hS_bEea-R9zluysOZA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIH4jDuEeaerfpH0KeGRA" name="structureView" visibility="private" type="_JPIu9DDuEeaerfpH0KeGRA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIH4zDuEeaerfpH0KeGRA" name="informationView" visibility="private" type="_JPIu-zDuEeaerfpH0KeGRA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIH5DDuEeaerfpH0KeGRA" name="graphViewTabPane" visibility="private" type="_4QHlhC_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIH5TDuEeaerfpH0KeGRA" name="primaryStage" visibility="private" type="_4QHlhy_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIH5jDuEeaerfpH0KeGRA" name="menuBar" visibility="private" type="_4QHliS_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIH5zDuEeaerfpH0KeGRA" name="graphViewControllerList" visibility="private" type="_6hEq5y8zEeaW5pq-1rzVBQ" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIH6DDuEeaerfpH0KeGRA" name="currentFile" visibility="private" type="_6hEq6S8zEeaW5pq-1rzVBQ" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIH6TDuEeaerfpH0KeGRA" name="graphview" type="_JPIvADDuEeaerfpH0KeGRA" association="_JPIH0DDuEeaerfpH0KeGRA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JPIu4DDuEeaerfpH0KeGRA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JPIu4TDuEeaerfpH0KeGRA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIu4jDuEeaerfpH0KeGRA" name="informationview" type="_JPIu-zDuEeaerfpH0KeGRA" association="_JPIH2jDuEeaerfpH0KeGRA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIu4zDuEeaerfpH0KeGRA" name="structureview" type="_JPIu9DDuEeaerfpH0KeGRA" association="_JPHgwDDuEeaerfpH0KeGRA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu5DDuEeaerfpH0KeGRA" name="main" visibility="public" isStatic="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIu5TDuEeaerfpH0KeGRA" name="args" type="_8H8x4ispEeaqLZjhN-MabA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JPIu5jDuEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JPIu5zDuEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu6DDuEeaerfpH0KeGRA" name="start" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIu6TDuEeaerfpH0KeGRA" name="primaryStage" type="_4QHlhy_bEea-R9zluysOZA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu6jDuEeaerfpH0KeGRA" name="importClicked" visibility="private"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu6zDuEeaerfpH0KeGRA" name="exportClicked" visibility="private"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu7DDuEeaerfpH0KeGRA" name="addTab" visibility="private">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIu7TDuEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu7jDuEeaerfpH0KeGRA" name="setupMenuBar" visibility="private"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu7zDuEeaerfpH0KeGRA" name="openTestDialog" visibility="private"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_JPIu8DDuEeaerfpH0KeGRA" name="TestContainer" visibility="private">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIu8TDuEeaerfpH0KeGRA" name="x" visibility="public" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIu8jDuEeaerfpH0KeGRA" name="y" visibility="public" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIu8zDuEeaerfpH0KeGRA" name="text" visibility="public" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JPIu9DDuEeaerfpH0KeGRA" name="StructureView" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JPIu9TDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Die StructureView-Klasse regelt den Zugriff und die Darstellung der&#xD;
+ * Elemente in der StrukturView der GUI von GAns.&#xD;
+ * &#xD;
+ * @author Nicolas&#xD;
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_JPIu9jDuEeaerfpH0KeGRA" general="_4Q3MYi_bEea-R9zluysOZA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIu9zDuEeaerfpH0KeGRA" name="itemMap" visibility="private" type="_tfF_EC8vEeaW5pq-1rzVBQ" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIu-DDuEeaerfpH0KeGRA" name="gansapplication" type="_JPIH3zDuEeaerfpH0KeGRA" association="_JPIH1jDuEeaerfpH0KeGRA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu-TDuEeaerfpH0KeGRA" name="showTree" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JPIu-jDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Erstellt eine Baumrepräsentation aus dem übergebenen Graph und dessen&#xD;
+	 * Subgraphen. Sollte vor zuerst aufgerufen werden, ansonsten ist in der&#xD;
+	 * View potentiell ein dummy Root-Knoten enthalten um Fehler zu verhindern.&#xD;
+	 * &#xD;
+	 * @param graph&#xD;
+	 *            Der Graph aus dem die Struktur aufgebaut werden soll.&#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JPIu-zDuEeaerfpH0KeGRA" name="InformationView" visibility="public">
+      <generalization xmi:type="uml:Generalization" xmi:id="_JPIu_DDuEeaerfpH0KeGRA" general="_4QtbZy_bEea-R9zluysOZA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIu_TDuEeaerfpH0KeGRA" name="setInformations" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JPIu_jDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setzt die Informationen die in der InformationView dargestellt werden&#xD;
+	 * sollen. Die übergebenen Properties werden durch eine interne Factory&#xD;
+	 * automatisch in Tabelleneinträge umgewandelt. Die Funktion wird über&#xD;
+	 * Listener aus dem Model aufgerufen.&#xD;
+	 * &#xD;
+	 * @param informations&#xD;
+	 *            Liste mit den {@link GAnsProperty} Elementen die in der&#xD;
+	 *            InformationsView angezeigt werden sollen.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIu_zDuEeaerfpH0KeGRA" name="informations" type="_4Qtbai_bEea-R9zluysOZA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JPIvADDuEeaerfpH0KeGRA" name="GraphView" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvATDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Eine Oberfläche auf der Graphen gezeichnet/dargestellt werden können. Die&#xD;
+ * View bietet verschiedene Navigationsmöglichkeiten und einen Zoom.&#xD;
+ * &#xD;
+ * @author Nicolas&#xD;
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_JPIvAjDuEeaerfpH0KeGRA" general="_4QRWiC_bEea-R9zluysOZA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvAzDuEeaerfpH0KeGRA" name="myScale" type="_4QRWjC_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvBDDuEeaerfpH0KeGRA" name="addGrid" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvBTDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Add a grid to the canvas, send it to back&#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvBjDuEeaerfpH0KeGRA" name="getScale" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvBzDuEeaerfpH0KeGRA" type="_4QagcC_bEea-R9zluysOZA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvCDDuEeaerfpH0KeGRA" name="setScale" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvCTDuEeaerfpH0KeGRA" name="scale" type="_4QagcC_bEea-R9zluysOZA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvCjDuEeaerfpH0KeGRA" name="setPivot" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvCzDuEeaerfpH0KeGRA" name="x" type="_4QagcC_bEea-R9zluysOZA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvDDDuEeaerfpH0KeGRA" name="y" type="_4QagcC_bEea-R9zluysOZA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvDTDuEeaerfpH0KeGRA" name="setGraph" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvDjDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setzt den Graphen der in der View angezeigt werden soll und erstellt diesen.&#xD;
+	 * &#xD;
+	 * @param graph Der Graph der in der View dargestellt werden soll.&#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvDzDuEeaerfpH0KeGRA" name="setNode" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvEDDuEeaerfpH0KeGRA" name="x" type="_4QagcC_bEea-R9zluysOZA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvETDuEeaerfpH0KeGRA" name="y" type="_4QagcC_bEea-R9zluysOZA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvEjDuEeaerfpH0KeGRA" name="text" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JPIvEzDuEeaerfpH0KeGRA" name="GraphViewEventHandler" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvFDDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Listeners for making the scene's canvas draggable and zoomable&#xD;
+ </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvFTDuEeaerfpH0KeGRA" name="MAX_SCALE" visibility="private" isLeaf="true" isStatic="true" type="_4QagcC_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvFjDuEeaerfpH0KeGRA" name="MIN_SCALE" visibility="private" isLeaf="true" isStatic="true" type="_4QagcC_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvFzDuEeaerfpH0KeGRA" name="sceneDragContext" visibility="private" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvGDDuEeaerfpH0KeGRA" name="canvas" type="_JPIvADDuEeaerfpH0KeGRA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvGTDuEeaerfpH0KeGRA" name="onMousePressedEventHandler" visibility="private" type="_4QkReS_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvGjDuEeaerfpH0KeGRA" name="onMouseDraggedEventHandler" visibility="private" type="_4QkReS_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvGzDuEeaerfpH0KeGRA" name="onScrollEventHandler" visibility="private" type="_4QkReS_bEea-R9zluysOZA" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvHDDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Mouse wheel handler: zoom to pivot point&#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvHTDuEeaerfpH0KeGRA" name="getOnMousePressedEventHandler" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvHjDuEeaerfpH0KeGRA" type="_4QkReS_bEea-R9zluysOZA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvHzDuEeaerfpH0KeGRA" name="getOnMouseDraggedEventHandler" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvIDDuEeaerfpH0KeGRA" type="_4QkReS_bEea-R9zluysOZA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvITDuEeaerfpH0KeGRA" name="getOnScrollEventHandler" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvIjDuEeaerfpH0KeGRA" type="_4QkReS_bEea-R9zluysOZA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvIzDuEeaerfpH0KeGRA" name="clamp" visibility="public" isStatic="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvJDDuEeaerfpH0KeGRA" type="_4QagcC_bEea-R9zluysOZA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvJTDuEeaerfpH0KeGRA" name="value" type="_4QagcC_bEea-R9zluysOZA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvJjDuEeaerfpH0KeGRA" name="min" type="_4QagcC_bEea-R9zluysOZA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvJzDuEeaerfpH0KeGRA" name="max" type="_4QagcC_bEea-R9zluysOZA"/>
+      </ownedOperation>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_JPIvKDDuEeaerfpH0KeGRA" name="DragContext" visibility="private">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvKTDuEeaerfpH0KeGRA" name="mouseAnchorX" type="_4QagcC_bEea-R9zluysOZA" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvKjDuEeaerfpH0KeGRA" name="mouseAnchorY" type="_4QagcC_bEea-R9zluysOZA" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvKzDuEeaerfpH0KeGRA" name="translateAnchorX" type="_4QagcC_bEea-R9zluysOZA" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvLDDuEeaerfpH0KeGRA" name="translateAnchorY" type="_4QagcC_bEea-R9zluysOZA" isUnique="false"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JPIvLTDuEeaerfpH0KeGRA" name="VertexShape" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvLjDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Eine grafische Repräsentation eines Knotens in dem ein Text stehen kann.&#xD;
+ * &#xD;
+ * @author Nicolas&#xD;
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_JPIvLzDuEeaerfpH0KeGRA" general="_4RA9YC_bEea-R9zluysOZA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvMDDuEeaerfpH0KeGRA" name="rectangle" visibility="private" type="_4RA9Yy_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvMTDuEeaerfpH0KeGRA" name="text" visibility="private" type="_4RA9Zi_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvMjDuEeaerfpH0KeGRA" name="mindWidth" visibility="private" isStatic="true" type="_4QagcC_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPIvMzDuEeaerfpH0KeGRA" name="mindHeight" visibility="private" isStatic="true" type="_4QagcC_bEea-R9zluysOZA" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvNDDuEeaerfpH0KeGRA" name="setText" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvNTDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setzt den Text und passt die Größe des Rechtecks an die Größe des Texts&#xD;
+	 * an.&#xD;
+	 * &#xD;
+	 * @param text&#xD;
+	 *            Der Text der in dem Rechteck angezeigt werden soll.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvNjDuEeaerfpH0KeGRA" name="text" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvNzDuEeaerfpH0KeGRA" name="getText" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvODDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Gibt den Text des Rechtecks zurück.&#xD;
+	 * &#xD;
+	 * @return Der Text der in der Vertex angezeigt wird.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvOTDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_JPIvOjDuEeaerfpH0KeGRA" name="setColor" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JPIvOzDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setzt die Farbe des Rechtecks.&#xD;
+	 * &#xD;
+	 * @param color&#xD;
+	 *            Die Farbe die das Rechteck haben soll.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_JPIvPDDuEeaerfpH0KeGRA" name="color" type="_4RA9cS_bEea-R9zluysOZA"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JPKkEDDuEeaerfpH0KeGRA" memberEnd="_JPKkFjDuEeaerfpH0KeGRA _JPKkEzDuEeaerfpH0KeGRA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JPKkETDuEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JPKkEjDuEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JPKkEzDuEeaerfpH0KeGRA" name="graphview" type="_JPIvADDuEeaerfpH0KeGRA" association="_JPKkEDDuEeaerfpH0KeGRA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JPKkFDDuEeaerfpH0KeGRA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JPKkFTDuEeaerfpH0KeGRA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JPKkFjDuEeaerfpH0KeGRA" name="vertexshape" type="_JPIvLTDuEeaerfpH0KeGRA" aggregation="shared" association="_JPKkEDDuEeaerfpH0KeGRA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JPKkFzDuEeaerfpH0KeGRA" memberEnd="_JPKkGzDuEeaerfpH0KeGRA _JPKkGjDuEeaerfpH0KeGRA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JPKkGDDuEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JPKkGTDuEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JPKkGjDuEeaerfpH0KeGRA" name="graphvieweventhandler" type="_JPIvEzDuEeaerfpH0KeGRA" association="_JPKkFzDuEeaerfpH0KeGRA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JPKkGzDuEeaerfpH0KeGRA" name="graphview" type="_JPIvADDuEeaerfpH0KeGRA" association="_JPKkFzDuEeaerfpH0KeGRA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_PyHTsDDuEeaerfpH0KeGRA" name="package parameter">
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHTsTDuEeaerfpH0KeGRA" name="EnumerationParameter" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PyHTsjDuEeaerfpH0KeGRA">
+        <body>
+ * Created by Sven on 08.06.2016.
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_PyHTszDuEeaerfpH0KeGRA" general="_PyHTvjDuEeaerfpH0KeGRA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHTtDDuEeaerfpH0KeGRA" name="enumeration" visibility="private" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHTtTDuEeaerfpH0KeGRA" name="valueString" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHTtjDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHTtzDuEeaerfpH0KeGRA" name="getValue" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHTuDDuEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHTuTDuEeaerfpH0KeGRA" name="compareTo" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHTujDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHTuzDuEeaerfpH0KeGRA" name="o" type="_PyHTsTDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHTvDDuEeaerfpH0KeGRA" name="accept" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHTvTDuEeaerfpH0KeGRA" name="visitor" type="_PyHT3zDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHTvjDuEeaerfpH0KeGRA" name="Parameter" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PyHTvzDuEeaerfpH0KeGRA">
+        <body>
+ * An abstract parameter class.
+ * Created by Sven on 08.06.2016.
+ </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHTwDDuEeaerfpH0KeGRA" name="name" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHTwTDuEeaerfpH0KeGRA" name="onChangeListener" visibility="private" type="_ku7X8DAdEeauWP8n0n92yQ" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PyHTwjDuEeaerfpH0KeGRA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PyHTwzDuEeaerfpH0KeGRA" value="*"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_PyHTxDDuEeaerfpH0KeGRA" client="_PyHTvjDuEeaerfpH0KeGRA _PyHTvjDuEeaerfpH0KeGRA _PyHTvjDuEeaerfpH0KeGRA" supplier="_PyHUBjDuEeaerfpH0KeGRA" contract="_PyHUBjDuEeaerfpH0KeGRA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHTxTDuEeaerfpH0KeGRA" name="setName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHTxjDuEeaerfpH0KeGRA">
+          <body>
+	 * Sets the name of the parameter.
+	 * @param name
+	 * 		The new name to set
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHTxzDuEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHTyDDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHTyTDuEeaerfpH0KeGRA">
+          <body>
+	 * Returns the name of the parameter.
+	 * @return
+	 * 		The name of the parameter
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHTyjDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHTyzDuEeaerfpH0KeGRA" name="valueString" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHTzDDuEeaerfpH0KeGRA">
+          <body>
+     * Returns the value of the parameter as a string.
+     * @return
+     * 		The value as a string
+     </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHTzTDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHTzjDuEeaerfpH0KeGRA" name="getValue" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHTzzDuEeaerfpH0KeGRA">
+          <body>
+     * Returns the value of the parameter.
+     * @return
+     * 		The current value of the parameter
+     </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT0DDuEeaerfpH0KeGRA" type="_PyHUBzDuEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT0TDuEeaerfpH0KeGRA" name="accept" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT0jDuEeaerfpH0KeGRA">
+          <body>
+     * Let the visitor visit this parameter.
+     * @param visitor
+     * 		The visitor to visit
+     </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT0zDuEeaerfpH0KeGRA" name="visitor" type="_PyHT3zDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT1DDuEeaerfpH0KeGRA" name="compareTo" visibility="public" isAbstract="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT1TDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT1jDuEeaerfpH0KeGRA" name="o"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT1zDuEeaerfpH0KeGRA" name="addChangeListener" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT2DDuEeaerfpH0KeGRA">
+          <body>
+     * Add a listener who gets triggered when a change of the value occurs.
+     * @param listener
+     * 		The listener to add
+     </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT2TDuEeaerfpH0KeGRA" name="listener" type="_ku7X8DAdEeauWP8n0n92yQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT2jDuEeaerfpH0KeGRA" name="getListener" visibility="protected">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT2zDuEeaerfpH0KeGRA">
+          <body>
+     * Returns all listener listening to changes of this parameter.
+     * @return
+     * 		A list of listeners
+     </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT3DDuEeaerfpH0KeGRA" type="_ku7X8DAdEeauWP8n0n92yQ" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PyHT3TDuEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PyHT3jDuEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHT3zDuEeaerfpH0KeGRA" name="ParameterVisitor" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT4DDuEeaerfpH0KeGRA">
+        <body>
+ * An abstract visitor class, as described in the Visitor-Pattern.
+ * Thought to give other elements access to a custom {@link Settings} and retrieve all informations
+ * of the specialized {@link Parameter} interfaces.
+ </body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT4TDuEeaerfpH0KeGRA" name="visit" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT4jDuEeaerfpH0KeGRA">
+          <body>
+	 * Visits the specified parameter and performs some by the subclass chosen actions on it.
+	 * @param parameter
+	 * 		The parameter to visit
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT4zDuEeaerfpH0KeGRA" name="parameter" type="_PyHT7TDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT5DDuEeaerfpH0KeGRA" name="visit" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT5TDuEeaerfpH0KeGRA">
+          <body>
+	 * Visits the specified parameter and performs some by the subclass chosen actions on it.
+	 * @param parameter
+	 * 		The parameter to visit
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT5jDuEeaerfpH0KeGRA" name="parameter" type="_PyHTsTDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT5zDuEeaerfpH0KeGRA" name="visit" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT6DDuEeaerfpH0KeGRA">
+          <body>
+	 * Visits the specified parameter and performs some by the subclass chosen actions on it.
+	 * @param parameter
+	 * 		The parameter to visit
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT6TDuEeaerfpH0KeGRA" name="parameter" type="_PyHUFTDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT6jDuEeaerfpH0KeGRA" name="visit" visibility="public" isAbstract="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT6zDuEeaerfpH0KeGRA">
+          <body>
+	 * Visits the specified parameter and performs some by the subclass chosen actions on it.
+	 * @param parameter
+	 * 		The parameter to visit
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT7DDuEeaerfpH0KeGRA" name="parameter" type="_PyHUQjDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHT7TDuEeaerfpH0KeGRA" name="IntegerParameter" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PyHT7jDuEeaerfpH0KeGRA">
+        <body>
+ * Created by Sven on 08.06.2016.
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_PyHT7zDuEeaerfpH0KeGRA" general="_PyHTvjDuEeaerfpH0KeGRA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHT8DDuEeaerfpH0KeGRA" name="value" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHT8TDuEeaerfpH0KeGRA" name="min" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHT8jDuEeaerfpH0KeGRA" name="max" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT8zDuEeaerfpH0KeGRA" name="getValue" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT9DDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT9TDuEeaerfpH0KeGRA" name="valueString" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT9jDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT9zDuEeaerfpH0KeGRA" name="compareTo" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT-DDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT-TDuEeaerfpH0KeGRA" name="iw" type="_PyHT7TDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT-jDuEeaerfpH0KeGRA" name="accept" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT-zDuEeaerfpH0KeGRA" name="visitor" type="_PyHT3zDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT_DDuEeaerfpH0KeGRA" name="setValue" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT_TDuEeaerfpH0KeGRA" name="value" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHT_jDuEeaerfpH0KeGRA" name="getMin" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHT_zDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUADDuEeaerfpH0KeGRA" name="setMin" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUATDuEeaerfpH0KeGRA" name="min" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUAjDuEeaerfpH0KeGRA" name="getMax" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUAzDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUBDDuEeaerfpH0KeGRA" name="setMax" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUBTDuEeaerfpH0KeGRA" name="max" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_PyHUBjDuEeaerfpH0KeGRA" name="Comparable"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHUBzDuEeaerfpH0KeGRA" name="V"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHUCDDuEeaerfpH0KeGRA" name="ParameterDialogGenerator" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PyHUCTDuEeaerfpH0KeGRA">
+        <body>
+ * Generates a parameter dialog given a parent node and a set of parameters.
+ * @author Lucas
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_PyHUCjDuEeaerfpH0KeGRA" general="_PyHT3zDuEeaerfpH0KeGRA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHUCzDuEeaerfpH0KeGRA" name="parent" visibility="private" type="_RDRQEzAeEeauWP8n0n92yQ" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHUDDDuEeaerfpH0KeGRA" name="parameterCount" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUDTDuEeaerfpH0KeGRA" name="visit" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUDjDuEeaerfpH0KeGRA" name="parameter" type="_PyHT7TDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUDzDuEeaerfpH0KeGRA" name="visit" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUEDDuEeaerfpH0KeGRA" name="parameter" type="_PyHTsTDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUETDuEeaerfpH0KeGRA" name="visit" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUEjDuEeaerfpH0KeGRA" name="parameter" type="_PyHUFTDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUEzDuEeaerfpH0KeGRA" name="visit" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUFDDuEeaerfpH0KeGRA" name="parameter" type="_PyHUQjDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHUFTDuEeaerfpH0KeGRA" name="StringParameter" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PyHUFjDuEeaerfpH0KeGRA">
+        <body>
+ * Created by Sven on 08.06.2016.
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_PyHUFzDuEeaerfpH0KeGRA" general="_PyHTvjDuEeaerfpH0KeGRA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHUGDDuEeaerfpH0KeGRA" name="value" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUGTDuEeaerfpH0KeGRA" name="valueString" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUGjDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUGzDuEeaerfpH0KeGRA" name="getValue" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUHDDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUHTDuEeaerfpH0KeGRA" name="compareTo" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUHjDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUHzDuEeaerfpH0KeGRA" name="o" type="_PyHUFTDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUIDDuEeaerfpH0KeGRA" name="accept" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUITDuEeaerfpH0KeGRA" name="visitor" type="_PyHT3zDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHUIjDuEeaerfpH0KeGRA" name="Settings" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_PyHUIzDuEeaerfpH0KeGRA">
+        <body>
+ * A compound object to store parameters.
+ * Created by Sven on 08.06.2016.
+ </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHUJDDuEeaerfpH0KeGRA" name="parameters" type="_PyHUPzDuEeaerfpH0KeGRA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHUJTDuEeaerfpH0KeGRA" name="parameter" type="_PyHTvjDuEeaerfpH0KeGRA" association="_PyHUXDDuEeaerfpH0KeGRA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PyHUJjDuEeaerfpH0KeGRA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PyHUJzDuEeaerfpH0KeGRA" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUKDDuEeaerfpH0KeGRA" name="addParameter" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUKTDuEeaerfpH0KeGRA" name="string" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUKjDuEeaerfpH0KeGRA" name="parameter" type="_PyHTvjDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUKzDuEeaerfpH0KeGRA" name="size" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHULDDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHULTDuEeaerfpH0KeGRA" name="isEmpty" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHULjDuEeaerfpH0KeGRA" type="_MY4yMS86Eea5c8WWEsgIIQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHULzDuEeaerfpH0KeGRA" name="containsKey" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUMDDuEeaerfpH0KeGRA" type="_MY4yMS86Eea5c8WWEsgIIQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUMTDuEeaerfpH0KeGRA" name="key" type="_MY6nYC86Eea5c8WWEsgIIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUMjDuEeaerfpH0KeGRA" name="containsValue" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUMzDuEeaerfpH0KeGRA" type="_MY4yMS86Eea5c8WWEsgIIQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUNDDuEeaerfpH0KeGRA" name="value" type="_MY6nYC86Eea5c8WWEsgIIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUNTDuEeaerfpH0KeGRA" name="get" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUNjDuEeaerfpH0KeGRA" type="_PyHTvjDuEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUNzDuEeaerfpH0KeGRA" name="key" type="_MY6nYC86Eea5c8WWEsgIIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUODDuEeaerfpH0KeGRA" name="remove" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUOTDuEeaerfpH0KeGRA" type="_PyHTvjDuEeaerfpH0KeGRA" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUOjDuEeaerfpH0KeGRA" name="key" type="_MY6nYC86Eea5c8WWEsgIIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUOzDuEeaerfpH0KeGRA" name="values" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUPDDuEeaerfpH0KeGRA" type="_PyHUQDDuEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUPTDuEeaerfpH0KeGRA" name="entrySet" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUPjDuEeaerfpH0KeGRA" type="_PyHUQTDuEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHUPzDuEeaerfpH0KeGRA" name="Map"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHUQDDuEeaerfpH0KeGRA" name="Collection"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHUQTDuEeaerfpH0KeGRA" name="Set"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PyHUQjDuEeaerfpH0KeGRA" name="MultipleChoiceParameter" visibility="public">
+      <generalization xmi:type="uml:Generalization" xmi:id="_PyHUQzDuEeaerfpH0KeGRA" general="_PyHTvjDuEeaerfpH0KeGRA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHURDDuEeaerfpH0KeGRA" name="selected" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PyHURTDuEeaerfpH0KeGRA" name="values" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PyHURjDuEeaerfpH0KeGRA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PyHURzDuEeaerfpH0KeGRA" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUSDDuEeaerfpH0KeGRA" name="valueString" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUSTDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUSjDuEeaerfpH0KeGRA" name="getValue" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUSzDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUTDDuEeaerfpH0KeGRA" name="getChoices" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUTTDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PyHUTjDuEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PyHUTzDuEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUUDDuEeaerfpH0KeGRA" name="addChoice" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUUTDuEeaerfpH0KeGRA" name="choice" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUUjDuEeaerfpH0KeGRA" name="index" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUUzDuEeaerfpH0KeGRA" name="remove" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUVDDuEeaerfpH0KeGRA" name="index" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUVTDuEeaerfpH0KeGRA" name="accept" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUVjDuEeaerfpH0KeGRA" name="visitor" type="_PyHT3zDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUVzDuEeaerfpH0KeGRA" name="getSelectionIndex" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUWDDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PyHUWTDuEeaerfpH0KeGRA" name="compareTo" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUWjDuEeaerfpH0KeGRA" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_PyHUWzDuEeaerfpH0KeGRA" name="o" type="_PyHUQjDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_PyHUXDDuEeaerfpH0KeGRA" memberEnd="_PyHUJTDuEeaerfpH0KeGRA _PyHUXzDuEeaerfpH0KeGRA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PyHUXTDuEeaerfpH0KeGRA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PyHUXjDuEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_PyHUXzDuEeaerfpH0KeGRA" name="settings" type="_PyHUIjDuEeaerfpH0KeGRA" association="_PyHUXDDuEeaerfpH0KeGRA"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Y3vbcDDuEeaerfpH0KeGRA" name="plugin">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Y3vbcTDuEeaerfpH0KeGRA" name="Constraint" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y3vbcjDuEeaerfpH0KeGRA" name="EdgeFilter" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y3vbczDuEeaerfpH0KeGRA" name="name" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbdDDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbdTDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbdjDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Getter of name&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbdzDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbeDDuEeaerfpH0KeGRA" name="setName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbeTDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setter of name&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbejDuEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbezDuEeaerfpH0KeGRA" name="matches" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbfDDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param toMatch &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbfTDuEeaerfpH0KeGRA" type="_MY4yMS86Eea5c8WWEsgIIQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbfjDuEeaerfpH0KeGRA" name="toMatch" type="_RevLMDC6EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y3vbfzDuEeaerfpH0KeGRA" name="EntryPointOption" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbgDDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * @author Lucas&#xD;
+ *&#xD;
+ </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y3vbgTDuEeaerfpH0KeGRA" name="name" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y3vbgjDuEeaerfpH0KeGRA" name="id" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbgzDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbhDDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbhTDuEeaerfpH0KeGRA" name="setName" visibility="protected">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbhjDuEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbhzDuEeaerfpH0KeGRA" name="getID" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbiDDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbiTDuEeaerfpH0KeGRA" name="setID" visibility="protected">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbijDuEeaerfpH0KeGRA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbizDuEeaerfpH0KeGRA" name="onChoose" visibility="public" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Y3vbjDDuEeaerfpH0KeGRA" name="FilterSet" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbjTDuEeaerfpH0KeGRA" name="getVertexfilter" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbjjDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbjzDuEeaerfpH0KeGRA" type="_Y3vbtjDuEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3vbkDDuEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3vbkTDuEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbkjDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbkzDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vblDDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vblTDuEeaerfpH0KeGRA" name="getEdgeFilter" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbljDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vblzDuEeaerfpH0KeGRA" type="_Y3vbcjDuEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3vbmDDuEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3vbmTDuEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Y3vbmjDuEeaerfpH0KeGRA" name="Importer" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbmzDuEeaerfpH0KeGRA" name="getSupportedFileEndings" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbnDDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbnTDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbnjDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbnzDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vboDDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vboTDuEeaerfpH0KeGRA" name="importGraph" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbojDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param builder &#xD;
+	 * @param filestream &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbozDuEeaerfpH0KeGRA" name="builder" type="_AKvGFjC1EeaTGLGmcq2w7A"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbpDDuEeaerfpH0KeGRA" name="filestream" type="_8H9Y8ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y3vbpTDuEeaerfpH0KeGRA" name="G"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y3vbpjDuEeaerfpH0KeGRA" name="LayoutOption" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbpzDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * @author Lucas&#xD;
+ *&#xD;
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_Y3vbqDDuEeaerfpH0KeGRA" general="_Y3vbfzDuEeaerfpH0KeGRA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Y3vbqTDuEeaerfpH0KeGRA" name="LayoutRegister" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbqjDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * Stores a collection of layouts applicable to a specific subclass of graph.&#xD;
+ * @author Lucas&#xD;
+ </body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbqzDuEeaerfpH0KeGRA" name="addLayoutOption" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbrDDuEeaerfpH0KeGRA" name="option" type="_Y3vbpjDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbrTDuEeaerfpH0KeGRA" name="getLayoutOptions" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbrjDuEeaerfpH0KeGRA" type="_Y3vbpjDuEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3vbrzDuEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3vbsDDuEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y3vbsTDuEeaerfpH0KeGRA" name="WorkspaceOption" visibility="public" isAbstract="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbsjDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * @author Lucas&#xD;
+ *&#xD;
+ </body>
+      </ownedComment>
+      <generalization xmi:type="uml:Generalization" xmi:id="_Y3vbszDuEeaerfpH0KeGRA" general="_Y3vbfzDuEeaerfpH0KeGRA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbtDDuEeaerfpH0KeGRA" name="getInstance" visibility="public" isAbstract="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbtTDuEeaerfpH0KeGRA" type="_Y3vbwzDuEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y3vbtjDuEeaerfpH0KeGRA" name="VertexFilter" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y3vbtzDuEeaerfpH0KeGRA" name="name" visibility="private" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbuDDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbuTDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbujDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Getter of name&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbuzDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbvDDuEeaerfpH0KeGRA" name="setName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbvTDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Setter of name&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbvjDuEeaerfpH0KeGRA" name="name" type="_8H8x4ispEeaqLZjhN-MabA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbvzDuEeaerfpH0KeGRA" name="matches" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbwDDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param toMatch &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbwTDuEeaerfpH0KeGRA" type="_MY4yMS86Eea5c8WWEsgIIQ" direction="return"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbwjDuEeaerfpH0KeGRA" name="toMatch" type="_Rmxs4DC6EeaTGLGmcq2w7A"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Y3vbwzDuEeaerfpH0KeGRA" name="Workspace" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbxDDuEeaerfpH0KeGRA" name="initialize" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbxTDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @param parameters &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbxjDuEeaerfpH0KeGRA" name="parameters" type="_YK5nsC86Eea5c8WWEsgIIQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbxzDuEeaerfpH0KeGRA" name="getGraphModelBuilder" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbyDDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbyTDuEeaerfpH0KeGRA" type="_AKvGFjC1EeaTGLGmcq2w7A" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbyjDuEeaerfpH0KeGRA" name="getGraphModel" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbyzDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbzDDuEeaerfpH0KeGRA" type="_ALU8BzC1EeaTGLGmcq2w7A" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vbzTDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vbzjDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vbzzDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb0DDuEeaerfpH0KeGRA" name="getParameterSet" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb0TDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb0jDuEeaerfpH0KeGRA" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Y3vb0zDuEeaerfpH0KeGRA" name="LayoutAlgorithm" visibility="public">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb1DDuEeaerfpH0KeGRA" name="getParameterDialog" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb1TDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * &#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb1jDuEeaerfpH0KeGRA" name="getSettings" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb1zDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Get the set of parameters for this instance of the algorithm.&#xD;
+	 * @return &#xD;
+	 * 		The set of parameters&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb2DDuEeaerfpH0KeGRA" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb2TDuEeaerfpH0KeGRA" name="layout" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb2jDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Layout the specified Graph.&#xD;
+	 * @param graph&#xD;
+	 * 		The graph to layout&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb2zDuEeaerfpH0KeGRA" name="graph" type="_Y3vbpTDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb3DDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb3TDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Get the full name of the layout.&#xD;
+	 * @return&#xD;
+	 * 		The full name of the layout.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb3jDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb3zDuEeaerfpH0KeGRA" name="getID" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb4DDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Get a acronym of the layout.&#xD;
+	 * @return&#xD;
+	 * 		The acronym of the layout.&#xD;
+	 </body>
+        </ownedComment>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb4TDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb4jDuEeaerfpH0KeGRA" name="onLoad" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb4zDuEeaerfpH0KeGRA">
+          <body>&#xD;
+	 * Register at LayoutAlgorithm for all supported Graphs&#xD;
+	 </body>
+        </ownedComment>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Y3vb5DDuEeaerfpH0KeGRA" name="Plugin" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb5TDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * &#xD;
+ </body>
+      </ownedComment>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb5jDuEeaerfpH0KeGRA" name="getName" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb5zDuEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y3vb6DDuEeaerfpH0KeGRA" name="PluginManager" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Y3vb6TDuEeaerfpH0KeGRA">
+        <body>&#xD;
+ * @author Lucas&#xD;
+ *&#xD;
+ </body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y3vb6jDuEeaerfpH0KeGRA" name="wOptions" visibility="private" type="_Y3vbsTDuEeaerfpH0KeGRA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3vb6zDuEeaerfpH0KeGRA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3vb7DDuEeaerfpH0KeGRA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y3vb7TDuEeaerfpH0KeGRA" name="loader" visibility="private" type="_ALLyBjC1EeaTGLGmcq2w7A" isUnique="false"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y3vb7jDuEeaerfpH0KeGRA" name="mgr" visibility="private" isStatic="true" type="_Y3vb6DDuEeaerfpH0KeGRA" isUnique="false"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb7zDuEeaerfpH0KeGRA" name="getPluginManager" visibility="public" isStatic="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb8DDuEeaerfpH0KeGRA" type="_Y3vb6DDuEeaerfpH0KeGRA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb8TDuEeaerfpH0KeGRA" name="addWorkspaceOption" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb8jDuEeaerfpH0KeGRA" name="option" type="_Y3vbsTDuEeaerfpH0KeGRA"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb8zDuEeaerfpH0KeGRA" name="getWorkspaceOption" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb9DDuEeaerfpH0KeGRA" type="_Y3vbsTDuEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3vb9TDuEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3vb9jDuEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Y3vb9zDuEeaerfpH0KeGRA" name="getPlugins" visibility="public">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3vb-DDuEeaerfpH0KeGRA" type="_Y3vb5DDuEeaerfpH0KeGRA" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3vb-TDuEeaerfpH0KeGRA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3vb-jDuEeaerfpH0KeGRA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_Y3xQoDDuEeaerfpH0KeGRA" name="SugiyamaLayoutAlgorithm implements LayoutAlgorithm" client="_ie-_IDDFEeaZHpBEXCeEJQ" supplier="_Y3vb0zDuEeaerfpH0KeGRA" contract="_Y3vb0zDuEeaerfpH0KeGRA"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_370T0ChkEeaXOuI3eacPrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
