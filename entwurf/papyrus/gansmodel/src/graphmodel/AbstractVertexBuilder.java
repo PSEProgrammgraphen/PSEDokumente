@@ -1,14 +1,16 @@
 package graphmodel;
 
+/**
+ * This is an abstract VertexBuilder which is used to build a concrete Vertex.
+ * 
+ */
+
 public abstract class AbstractVertexBuilder {
 
-	/**
-	 * 
-	 * @param id 
-	 */
-	public abstract void newVertex(String id);
 
 	/**
+	 * Add Data to this Vertex. The vertexBuilder decides which kind of data it is and where to save in the concrete Vertex.
+	 * 
 	 * 
 	 * @param value 
 	 * @param keyname 
@@ -16,8 +18,10 @@ public abstract class AbstractVertexBuilder {
 	public abstract void addData(String value, String keyname);
 
 	/**
+	 * This method builds the concrete Vertex and returns it.
 	 * 
-	 * @return 
+	 * 
+	 * @return Vertex
 	 */
 	public Vertex build() { 
 		// TODO Auto-generated method
@@ -25,6 +29,8 @@ public abstract class AbstractVertexBuilder {
 	 }
 
 	/**
+	 * This method returns an specific GraphBuilder.
+	 * This method is used to implement nested Graphs.
 	 * 
 	 * @param graphID 
 	 * @return 
