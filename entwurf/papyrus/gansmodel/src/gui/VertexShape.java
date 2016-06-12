@@ -2,12 +2,11 @@ package gui;
 
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 /**
- * Eine grafische Repräsentation eines Knotens in dem ein Text stehen kann.
+ * A graphical representation of a node with a text inside of it.
  * 
  * @author Nicolas
  */
@@ -19,7 +18,7 @@ public class VertexShape extends StackPane {
 	private static double mindHeight = 5;
 
 	/**
-	 * Konstruktor
+	 * Constructor
 	 */
 	public VertexShape() {
 		rectangle = new Rectangle(mindWidth, mindHeight);
@@ -30,10 +29,10 @@ public class VertexShape extends StackPane {
 	}
 
 	/**
-	 * Konstruktor der direkt den Text setzt.
+	 * Constructor which directly sets the text.
 	 * 
 	 * @param text
-	 *            Der Text der in dem Rechteck angezeigt werden soll.
+	 *            The text that will be displayed in the vertex.
 	 */
 	public VertexShape(String text) {
 		this();
@@ -42,11 +41,11 @@ public class VertexShape extends StackPane {
 	}
 
 	/**
-	 * Setzt den Text und passt die Größe des Rechtecks an die Größe des Texts
-	 * an.
+	 * Sets the text and adjusts the size of the rectangle to the size of the
+	 * text.
 	 * 
 	 * @param text
-	 *            Der Text der in dem Rechteck angezeigt werden soll.
+	 *            The text that will be displayed in the vertex.
 	 */
 	public void setText(String text) {
 		this.text.setText(text);
@@ -63,19 +62,19 @@ public class VertexShape extends StackPane {
 	}
 
 	/**
-	 * Gibt den Text des Rechtecks zurück.
+	 * Returns the text shown in the vertex.
 	 * 
-	 * @return Der Text der in der Vertex angezeigt wird.
+	 * @return The text that is being displayed in the vertex.
 	 */
 	public String getText() {
 		return this.text.getText();
 	}
 
 	/**
-	 * Setzt die Farbe des Rechtecks.
+	 * Sets the color of the vertex
 	 * 
 	 * @param color
-	 *            Die Farbe die das Rechteck haben soll.
+	 *            The color the vertex will be.
 	 */
 	public void setColor(Color color) {
 		rectangle.setFill(color);

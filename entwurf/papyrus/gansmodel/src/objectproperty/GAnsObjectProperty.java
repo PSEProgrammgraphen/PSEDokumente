@@ -3,20 +3,22 @@ package objectproperty;
 import javafx.beans.property.SimpleObjectProperty;
 
 /**
- * Ein JavaFX ObjectProperty welches bei toString() den Wert vom internen
- * GAnsPropertyValue zurückgibt.
+ * A JavaFX objectproperty which in toString() retuns the value from the
+ * toString() of the {@link GAnsObjectPropertyValue}.
  * 
  * @author Nicolas
  */
 public class GAnsObjectProperty extends SimpleObjectProperty<GAnsObjectPropertyValue<?>> {
 
 	/**
-	 * Konstruktor.
+	 * Constructor.
 	 * 
 	 * @param bean
-	 *            Bean das an SimpleObjectProperty übergeben wird.
+	 *            Bean that will be given to the SimpleObjectProperty
+	 *            constructor.
 	 * @param name
-	 *            Name der an SimpleObjectProperty übergeben wird.
+	 *            name that will be given to the SimpleObjectProperty
+	 *            constructor.
 	 */
 	public GAnsObjectProperty(Object bean, String name) {
 		super(bean, name);

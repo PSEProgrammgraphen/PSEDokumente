@@ -6,17 +6,23 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import objectproperty.GAnsProperty;
 
+/**
+ * The InformationView shows a given set of properties from the selected
+ * vertices in the {@link GraphView}.
+ * 
+ * @author Nicolas
+ */
 public class InformationView extends TableView<GAnsProperty> {
-	
+
 	/**
-	 * Setzt die Informationen die in der InformationView dargestellt werden
-	 * sollen. Die übergebenen Properties werden durch eine interne Factory
-	 * automatisch in Tabelleneinträge umgewandelt. Die Funktion wird über
-	 * Listener aus dem Model aufgerufen.
+	 * Sets the properties which should be shown in the InformationView. The
+	 * {@link GAnsProperty} are being processed in an internal factory, which
+	 * automatically creates the tablecells. The function will be called
+	 * whenever the selection of the {@link GraphView} changes.
 	 * 
 	 * @param informations
-	 *            Liste mit den {@link GAnsProperty} Elementen die in der
-	 *            InformationsView angezeigt werden sollen.
+	 *            List with {@link GAnsProperty}-elements which define the
+	 *            content of the InformationView
 	 */
 	public void setInformations(ObservableList<GAnsProperty> informations) {
 		setItems(informations);

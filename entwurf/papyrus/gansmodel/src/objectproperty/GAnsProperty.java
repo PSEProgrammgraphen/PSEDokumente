@@ -6,31 +6,31 @@ import javafx.beans.property.StringProperty;
 // Implementation ähnlich wie im Beispiel "Person" bei https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableView.html
 
 /**
- * Eine Eigenschaft eines Knoten oder einer Kante in GAns. Der Name und
- * {@link GAnsObjectPropertyValue} der Eigenschaft wird in JavaFX-Properties
- * gespeichert und darüber auch zugriff für die GUI gewährt. Das Model von GAns
- * besteht aus Knoten und Kanten welche GAnsProperties beinhalten, welche mit
- * der GUI gekoppelt sind.
+ * The GAnsProperty is a single property of a vertex or an edge in GAns. The
+ * name and {@link GAnsObjectPropertyValue} of the property are being stored in
+ * JavaFX-Properties. The model consists out of vertices and edges which contain
+ * GAnsProperties, which are linked to the GUI-elements.
  * 
  * @author Nicolas
  */
 public class GAnsProperty {
 
 	/**
-	 * String über den von der GUI aus, Factories oder Änliches, auf den
-	 * Namen/Bezeichner des Values verwiesen werden kann.
+	 * A string with whoom, factories or other elements from the GUI, can
+	 * reference to the name/identifier of the value.
 	 */
 	public final static String name = "propertyName";
 
 	/**
-	 * String über den von der GUI aus, Factories oder Änliches, auf den Value
-	 * verwiesen werden kann.
+	 * A string with whoom, factories or other elements from the GUI, can
+	 * reference to the value. String über den von der GUI aus, Factories oder
+	 * Änliches, auf den Value verwiesen werden kann.
 	 */
 	public final static String value = "propertyValue";
 
 	/**
-	 * String über den von der GUI aus, Factories oder Änliches, auf die
-	 * Stringrepräsentation des Values verwiesen werden kann.
+	 * A string with whoom, factories or other elements from the GUI, can
+	 * reference to the string-representation of the value.
 	 */
 	public final static String valueAsString = "propertyValueAsString";
 
@@ -39,11 +39,11 @@ public class GAnsProperty {
 	private StringProperty propertyValueAsString;
 
 	/**
-	 * Stellt sicher das die Property die den Namen/Bezeichner der GAnsProperty
-	 * enthält nie null ist und immer mit dem passenden Namen erstellt wird.
+	 * Ensures that the property which contains the name/identifier of the
+	 * GAnsProperty is not null and always set with the right name.
 	 * 
-	 * @return Die StringProperty die den Namen/Bezeichner der GAnsProperty
-	 *         enthält.
+	 * @return The StringProperty which contains the name/identifier of the
+	 *         GAnsProperty.
 	 */
 	public StringProperty propertyNameProperty() {
 		if (propertyName == null)
@@ -52,12 +52,12 @@ public class GAnsProperty {
 	}
 
 	/**
-	 * Stellt sicher das die Property die den {@link GAnsObjectPropertyValue} der
-	 * GAnsProperty enthält nie null ist und immer mit dem passenden Namen
-	 * erstellt wird.
+	 * Ensures that the property which contains the
+	 * {@link GAnsObjectPropertyValue} in the GAnsProperty is not null and
+	 * always set with the right name.
 	 * 
-	 * @return Die Property die den {@link GAnsObjectPropertyValue} der GAnsProperty
-	 *         enthält.
+	 * @return The property which contains the {@link GAnsObjectPropertyValue}
+	 *         in the GAnsProperty.
 	 */
 	public GAnsObjectProperty propertyValue() {
 		if (propertyValue == null)
@@ -66,12 +66,12 @@ public class GAnsProperty {
 	}
 
 	/**
-	 * Stellt sicher das die Property die den {@link GAnsObjectPropertyValue} der
-	 * GAnsProperty als String enthält nie null ist und immer mit dem passenden
-	 * Namen erstellt wird.
+	 * Ensures that the property which contains the string-representation of the
+	 * {@link GAnsObjectPropertyValue} in the GAnsProperty is not null and
+	 * always set with the right name.
 	 * 
-	 * @return Die StringProperty die den {@link GAnsObjectPropertyValue} der
-	 *         GAnsProperty als String enthält.
+	 * @return The StringProperty which contains the string-representation of
+	 *         the {@link GAnsObjectPropertyValue} in the GAnsProperty.
 	 */
 	public StringProperty propertyValueAsString() {
 		if (propertyValueAsString == null) {
@@ -81,31 +81,31 @@ public class GAnsProperty {
 	}
 
 	/**
-	 * Setzt den Namen/Bezeichner der GAnsProperty.
+	 * Sets the name/identifier of the GAnsProperty.
 	 * 
 	 * @param value
-	 *            Der String der als Name der GAnsProperty gesetzt werden soll.
+	 *            The string which shall be set as the name of the GAnsProperty.
 	 */
 	public void setPropertyName(String value) {
 		propertyNameProperty().set(value);
 	}
 
 	/**
-	 * Gibt den Namen/Bezeichner der GAnsProperty zurück.
+	 * Returns the name/identifier of the GAnsProperty.
 	 * 
-	 * @return Der Name/Bezeichner der GAnsProperty.
+	 * @return The name/identifier of the GAnsProperty.
 	 */
 	public String getPropertyName() {
 		return propertyNameProperty().get();
 	}
 
 	/**
-	 * Setzt das {@link GAnsObjectPropertyValue} und die Stringrepräsentation des
-	 * Werts der GAnsProperty.
+	 * Sets the {@link GAnsObjectPropertyValue} and its string-representation of
+	 * the GAnsProperty.
 	 * 
 	 * @param value
-	 *            Der {@link GAnsObjectPropertyValue} der GAnsProperty die gesetzt
-	 *            werden soll.
+	 *            The {@link GAnsObjectPropertyValue} which shall be set in the
+	 *            GAnsProperty.
 	 */
 	public void setPropertyValue(GAnsObjectPropertyValue<?> value) {
 		propertyValue().setValue(value);
@@ -113,20 +113,20 @@ public class GAnsProperty {
 	}
 
 	/**
-	 * Gibt das den {@link GAnsObjectPropertyValue} der GAnsProperty zurück.
+	 * Returns the {@link GAnsObjectPropertyValue} of the GAnsProperty.
 	 * 
-	 * @return Der {@link GAnsObjectPropertyValue} der GAnsProperty.
+	 * @return The {@link GAnsObjectPropertyValue} of the GAnsProperty.
 	 */
 	public GAnsObjectPropertyValue<?> getPropertyValue() {
 		return propertyValue().getValue();
 	}
 
 	/**
-	 * Gibt die Stringrepräsentation des {@link GAnsObjectPropertyValue} der
-	 * GAnsProperty zurück.
+	 * Returns the string-representation of the {@link GAnsObjectPropertyValue}
+	 * from the GAnsProperty.
 	 * 
-	 * @return Die Stringrepräsentation des {@link GAnsObjectPropertyValue} der
-	 *         GAnsProperty.
+	 * @return The string-representation of the {@link GAnsObjectPropertyValue}
+	 *         from the GAnsProperty.
 	 */
 	public String getPropertyValueAsString() {
 		return propertyValueAsString().toString();

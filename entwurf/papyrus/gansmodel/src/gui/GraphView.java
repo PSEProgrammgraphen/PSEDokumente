@@ -12,8 +12,8 @@ import javafx.scene.paint.Color;
 // muss noch umgeschrieben und angepasst werden.
 
 /**
- * Eine Oberfläche auf der Graphen gezeichnet/dargestellt werden können. Die
- * View bietet verschiedene Navigationsmöglichkeiten und einen Zoom.
+ * A view used for showing and creating a graph in GAns. It supports zooming and
+ * other general navigation features.
  * 
  * @author Nicolas
  */
@@ -22,7 +22,7 @@ public class GraphView extends Pane {
 	DoubleProperty myScale = new SimpleDoubleProperty(1.0);
 
 	/**
-	 * Konstruktor.
+	 * Constructor.
 	 */
 	public GraphView() {
 		// setPrefSize(600, 600);
@@ -34,7 +34,7 @@ public class GraphView extends Pane {
 	}
 
 	/**
-	 * Add a grid to the canvas, send it to back
+	 * Adds a grid to the GraphView, on which the dragging can be mapped.
 	 */
 	public void addGrid() {
 		double w = getBoundsInLocal().getWidth();
@@ -61,29 +61,49 @@ public class GraphView extends Pane {
 		grid.toBack();
 	}
 
+	/**
+	 * Returns the scale on which the GraphView currently is.
+	 * @return The scale of the GraphView.
+	 */
 	public double getScale() {
 		return myScale.get();
 	}
 
+	/**
+	 * Sets the scale of the GraphView.
+	 * @param scale The scale of the GraphView.
+	 */
 	public void setScale(double scale) {
 		myScale.set(scale);
 	}
 
+	/**
+	 * Sets the pivot so the scrolling follows the mouse position on the GraphView.
+	 * @param x
+	 * @param y
+	 */
 	public void setPivot(double x, double y) {
 		setTranslateX(getTranslateX() - x);
 		setTranslateY(getTranslateY() - y);
 	}
-	
+
 	/**
-	 * Setzt den Graphen der in der View angezeigt werden soll und erstellt diesen.
+	 * Sets a graph. Every element in the graph will be generated and then
+	 * shown.
 	 * 
-	 * @param graph Der Graph der in der View dargestellt werden soll.
+	 * @param graph
+	 *            The graph to be visualized in the view.
 	 */
 	public void setGraph(/* IGraph graph */) {
 	}
 
-	//Testfunktion später private.
-	public void setNode(double x, double y, String text) {
+	/**
+	 * Adds a single vertex in the GraphView.
+	 * @param x The x position in the view.
+	 * @param y The y position in the view.
+	 * @param Text The text of the vertex.
+	 */
+	public void addVertex(double x, double y, String text) {
 		VertexShape test = new VertexShape(text);
 		test.relocate(x, y);
 		getChildren().add(test);
