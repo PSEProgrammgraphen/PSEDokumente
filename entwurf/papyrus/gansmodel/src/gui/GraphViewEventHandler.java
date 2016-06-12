@@ -5,14 +5,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 
 /**
- * Der Controller für eine GraphView von GAns. Der Contoller fungiert zusätzlich
- * als "GraphEngine", erstellt die einzelnen Knoten und Kanten die Angezeigt
- * werden und bietet Zugriff auf die Objekte (z.B. für einen Exporter)
+ * GraphViewEventHandler provides listeners for making the {@link GraphView}
+ * draggable and zoomable.
  * 
  * @author Nicolas
- */
-/**
- * Listeners for making the scene's canvas draggable and zoomable
  */
 public class GraphViewEventHandler {
 
@@ -20,25 +16,50 @@ public class GraphViewEventHandler {
 	private static final double MIN_SCALE = .1d;
 
 	private DragContext sceneDragContext = new DragContext();
+	private GraphView canvas;
 
-	GraphView canvas;
-
+	/**
+	 * Constructor.
+	 * 
+	 * @param canvas
+	 *            The {@link GraphView} which later on will get the EventHandler
+	 *            set.
+	 */
 	public GraphViewEventHandler(GraphView canvas) {
 		this.canvas = canvas;
 	}
 
+	/**
+	 * Returns an EventHandler which handles pressing the mouse inside the
+	 * {@link GraphView}.
+	 * 
+	 * @return An EventHandler which handles pressing the mouse.
+	 */
 	public EventHandler<MouseEvent> getOnMousePressedEventHandler() {
 		return onMousePressedEventHandler;
 	}
 
+	/**
+	 * Returns an EventHandler which handles dragging inside the
+	 * {@link GraphView}.
+	 * 
+	 * @return An EventHandler which handles dragging.
+	 */
 	public EventHandler<MouseEvent> getOnMouseDraggedEventHandler() {
 		return onMouseDraggedEventHandler;
 	}
 
+	/**
+	 * Returns an EventHandler which maps scrolling the mousewheel to zooming on
+	 * the {@link GraphView}.
+	 * 
+	 * @return An EventHandler which maps scrolling the mousewheel to zooming.
+	 */
 	public EventHandler<ScrollEvent> getOnScrollEventHandler() {
 		return onScrollEventHandler;
 	}
 
+	// Mouse pressed handler.
 	private EventHandler<MouseEvent> onMousePressedEventHandler = new EventHandler<MouseEvent>() {
 		public void handle(MouseEvent event) {
 			// right mouse button => panning
@@ -53,6 +74,7 @@ public class GraphViewEventHandler {
 		}
 	};
 
+	// Mouse drag handler.
 	private EventHandler<MouseEvent> onMouseDraggedEventHandler = new EventHandler<MouseEvent>() {
 		public void handle(MouseEvent event) {
 			// right mouse button => panning
@@ -66,9 +88,7 @@ public class GraphViewEventHandler {
 		}
 	};
 
-	/**
-	 * Mouse wheel handler: zoom to pivot point
-	 */
+	// Mouse wheel handler: zoom to pivot point.
 	private EventHandler<ScrollEvent> onScrollEventHandler = new EventHandler<ScrollEvent>() {
 		@Override
 		public void handle(ScrollEvent event) {
@@ -98,7 +118,7 @@ public class GraphViewEventHandler {
 		}
 	};
 
-	public static double clamp(double value, double min, double max) {
+	private static double clamp(double value, double min, double max) {
 		if (Double.compare(value, min) < 0)
 			return min;
 

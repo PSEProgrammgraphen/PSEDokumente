@@ -51,6 +51,12 @@ public class GAnsApplication extends Application {
 	private File currentFile;
 	private MethodGraphLayout methodlayout = new MethodGraphLayout();
 
+	/**
+	 * Main method.
+	 * 
+	 * @param args
+	 *            Arguments.
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -156,15 +162,16 @@ public class GAnsApplication extends Application {
 		Menu menuEdit = new Menu("Layout");
 		Menu changeLayoutItem = new Menu("Layout algorithms");
 		// Experimental ------
-        MenuItem methodGraph = new MenuItem("MethodGraphLayout");
-        changeLayoutItem.getItems().add(methodGraph);
-        changeLayoutItem.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override public void handle(ActionEvent e) {
-        		openParameterDialog(methodlayout.getSettings());
+		MenuItem methodGraph = new MenuItem("MethodGraphLayout");
+		changeLayoutItem.getItems().add(methodGraph);
+		changeLayoutItem.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				openParameterDialog(methodlayout.getSettings());
 
-            }
-        });
-        // ------------
+			}
+		});
+		// ------------
 		// TODO: In diesem Menü müssen die unterstützten Algorithmen eingfügt
 		// werden.
 		MenuItem layoutPropertiesItem = new MenuItem("Properties");
@@ -182,8 +189,8 @@ public class GAnsApplication extends Application {
 
 		menuBar.getMenus().addAll(menuFile, menuEdit, menuView);
 	}
-	private void openParameterDialog(Settings settings)
-	{
+
+	private void openParameterDialog(Settings settings) {
 		GridPane root = new GridPane();
 		ColumnConstraints c1 = new ColumnConstraints();
 		ColumnConstraints c2 = new ColumnConstraints();
@@ -197,6 +204,7 @@ public class GAnsApplication extends Application {
 		stage.setScene(new Scene(root, 450, 450));
 		stage.show();
 	}
+
 	private void openTestDialog() {
 		Dialog<TestContainer> dialog = new Dialog<TestContainer>();
 		dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
@@ -206,20 +214,21 @@ public class GAnsApplication extends Application {
 		TextField textField = new TextField();
 		layout.getChildren().addAll(xCoordinate, yCoordinate, textField);
 		dialog.getDialogPane().setContent(layout);
-//		dialog.setResultConverter(dialogButton -> {
-//			if (dialogButton == ButtonType.OK) {
-//				return new TestContainer(xCoordinate.getText(), yCoordinate.getText(), textField.getText());
-//			}
-//			return null;
-//		});
+		// dialog.setResultConverter(dialogButton -> {
+		// if (dialogButton == ButtonType.OK) {
+		// return new TestContainer(xCoordinate.getText(),
+		// yCoordinate.getText(), textField.getText());
+		// }
+		// return null;
+		// });
 
 		Optional<TestContainer> result = dialog.showAndWait();
 
-		//böse böse :D
+		// böse böse :D
 		Pane pane = ((Pane) graphViewTabPane.getSelectionModel().getSelectedItem().getContent());
 		Group group = ((Group) pane.getChildren().get(pane.getChildren().size() - 1));
 		((GraphView) group.getChildren().get(group.getChildren().size() - 1))
-				.setNode(Double.parseDouble(result.get().x), Double.parseDouble(result.get().y), result.get().text);
+				.addVertex(Double.parseDouble(result.get().x), Double.parseDouble(result.get().y), result.get().text);
 	}
 
 	private class TestContainer {
