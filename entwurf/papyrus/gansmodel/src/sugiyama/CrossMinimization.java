@@ -1,4 +1,4 @@
-package src.sugiyama;
+package sugiyama;
 
 import java.util.Set;
 
