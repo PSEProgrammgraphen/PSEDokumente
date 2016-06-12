@@ -6,7 +6,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 /**
- * A graphical representation of a node with a text inside of it.
+ * A visual representation of a vertex with a text inside of it.
  * 
  * @author Nicolas
  */
