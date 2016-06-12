@@ -1,38 +1,31 @@
 package graphmodel;
 
+/**
+ * This is an abstract interface which is used to build a concrete graph.  
+ *
+ */
 public abstract class AbstractGraphBuilder {
 
 	/**
+	 * Returns the EdgeBuilder which is specified for this graph.
 	 * 
-	 * @return 
+	 * @return AbstractEdgeBuilder
 	 */
 	public abstract AbstractEdgeBuilder getEdgeBuilder();
 
 	/**
-	 * 
-		 * 
-		 
-	 * @param id 
-	 * @return 
-	 */
-	public String newVertex(String id) { 
-		// TODO Auto-generated method
-		return null;
-	 }
-
-	/**
+	 * Returns the VertexBuilder which is specified for this graph.
 	 * 
 	 * @param vertexID 
-	 * @return 
+	 * @return AbstractVertexBuilder
 	 */
 	public abstract AbstractVertexBuilder getVertexBuilder(String vertexID);
 
 	/**
-	 * 
-		 * 
-		 * @return 
-		 
-	 * @return 
+	 * This method is called, when the buildingprocess of the graph is finished.
+	 * Then it builds the graph and returns it.
+	 * 	 
+	 * @return Graph
 	 */
 	public Graph build() { 
 		// TODO Auto-generated method
