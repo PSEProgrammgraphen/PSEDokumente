@@ -1,20 +1,16 @@
 package graphmodel;
 
+import java.util.List;
+
 import plugin.LayoutAlgorithm;
+import plugin.LayoutOption;
 
-public interface Layoutable {
+public interface Layoutable<G extends Graph> {
 
 	/**
 	 * 
 	 */
-	public static void getRegisteredLayouts() {
-	}
-
-	/**
-	 * 
-	 * @param layout 
-	 */
-	public static void registerLayout(LayoutAlgorithm layout) {
-	} 
-
+	public List<LayoutOption<G>> getRegisteredLayouts();
+	
+	public void applyLayout(LayoutAlgorithm<G> alg);
 }

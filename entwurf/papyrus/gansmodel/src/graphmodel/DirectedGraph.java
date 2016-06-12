@@ -4,9 +4,11 @@ import java.util.Set;
 import java.util.List;
 import graphmodel.Graph.E;
 import graphmodel.Graph.V;
+import joana.JoanaPlugin;
 import plugin.LayoutAlgorithm;
+import plugin.LayoutOption;
 
-public class DirectedGraph implements Graph, Layoutable {
+public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
 
 	/**
 	 * 
@@ -153,19 +155,13 @@ public class DirectedGraph implements Graph, Layoutable {
 		return null;
 	 }
 
-	/**
-	 * 
-	 */
-	public static void getRegisteredLayouts() { 
-		// TODO Auto-generated method
-	 }
+	@Override
+	public List<LayoutOption<DirectedGraph>> getRegisteredLayouts() {
+		return null;
+	}
 
-	/**
-	 * 
-	 * @param layout 
-	 */
-	public static void registerLayout(LayoutAlgorithm layout) { 
-		// TODO Auto-generated method
-	 } 
-
+	@Override
+	public void applyLayout(LayoutAlgorithm<DirectedGraph> alg) {
+		alg.layout(this);
+	}
 }

@@ -1,6 +1,6 @@
 package plugin;
 
-import parameter.Parameter;
+import parameter.Settings;
 import graphmodel.AbstractGraphModelBuilder;
 import graphmodel.GraphModel;
 
@@ -11,7 +11,7 @@ public interface Workspace {
 	 * @param parameters 
 	 * @return 
 	 */
-	public Workspace initialize(Parameter parameters);
+	public void initialize(Settings parameters);
 
 	/**
 	 * 
@@ -27,11 +27,6 @@ public interface Workspace {
 
 	/**
 	 * 
-	 */
-	public void getParameterDialog();
-
-	/**
-	 * 
 	 * @return 
 	 */
 	public String getName();
@@ -40,6 +35,6 @@ public interface Workspace {
 	 * 
 	 * @return 
 	 */
-	public Parameter getParameterSet(); 
+	public Settings getParameterSet(); 
 
 }
