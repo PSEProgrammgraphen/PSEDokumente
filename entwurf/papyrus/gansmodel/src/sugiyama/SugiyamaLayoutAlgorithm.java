@@ -1,8 +1,8 @@
 package sugiyama;
 
 import plugin.LayoutAlgorithm;
-import src.plugin.Settings;
-import src.plugin.String;
+import plugin.Settings;
+import plugin.String;
 
 public class SugiyamaLayoutAlgorithm implements LayoutAlgorithm{
 

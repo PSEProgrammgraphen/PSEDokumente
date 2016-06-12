@@ -2,8 +2,8 @@ package sugiyama;
 
 import java.util.Set;
 
-import src.graphmodel.DirectedGraph;
-import src.graphmodel.Vertex;
+import graphmodel.DirectedGraph;
+import graphmodel.Vertex;
 
 public class VertexPositioning {
 

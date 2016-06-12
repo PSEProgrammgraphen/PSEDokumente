@@ -2,8 +2,8 @@ package sugiyama;
 
 import java.util.Set;
 
-import src.graphmodel.DirectedGraph;
-import src.graphmodel.Vertex;
+import sgraphmodel.DirectedGraph;
+import graphmodel.Vertex;
 
 public class EdgeDrawing {
 
