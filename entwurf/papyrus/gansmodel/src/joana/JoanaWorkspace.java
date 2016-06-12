@@ -5,6 +5,11 @@ import parameter.Settings;
 import graphmodel.AbstractGraphModelBuilder;
 import graphmodel.GraphModel;
 
+/**
+ * The {@link JoanaWorkspace} is the workspace for Joana graphs
+ * It is used to define parameters, and also contains an {@link AbstractGraphBuilder} and a {@link GraphModel}
+ *
+ */
 public class JoanaWorkspace implements Workspace {
 
 	/**

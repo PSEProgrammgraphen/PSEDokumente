@@ -4,18 +4,22 @@ import graphmodel.GraphModel;
 import java.util.List;
 import graphmodel.Graph;
 
+/**
+ * This is the Joana specified Graphmodel.
+ * It can only contain {@link methodgraph} and {@link callgraph}
+ *
+ */
 public class JoanaGraphModel extends GraphModel {
 
 	/**
 	 * 
-		 * 
-		 
 	 */
 	private List<MethodGraph> methodgraphs;
 	/**
 	 * 
 	 */
 	private Callgraph callgraph;
+	
 	/**
 	 * Getter of methodgraphs
 	 */
@@ -44,9 +48,8 @@ public class JoanaGraphModel extends GraphModel {
 		// TODO Auto-generated method
 	 }
 	/**
+	 * Getter of graph 
 	 * 
-		 * Getter of graph
-		 
 	 * @return 
 	 */
 	public List<MethodGraph> getMethodGraphs() { 
@@ -54,9 +57,8 @@ public class JoanaGraphModel extends GraphModel {
 		return null;
 	 }
 	/**
-	 * 
-		 * Getter of graph
-		 
+	 * Getter of graph
+	 * 		 
 	 * @return 
 	 */
 	public List<Graph> getGraphs() { 
