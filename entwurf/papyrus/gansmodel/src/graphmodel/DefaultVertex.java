@@ -1,5 +1,10 @@
 package graphmodel;
 
+/**
+ * This is an DefaultVertex, which has basic functions and is provided by the mainapplication.
+ * 
+ *
+ */
 public class DefaultVertex implements Vertex {
 
 	@Override
