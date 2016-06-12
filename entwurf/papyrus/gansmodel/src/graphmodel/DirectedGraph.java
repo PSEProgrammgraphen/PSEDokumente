@@ -8,9 +8,15 @@ import joana.JoanaPlugin;
 import plugin.LayoutAlgorithm;
 import plugin.LayoutOption;
 
+/**
+ * A {@link DirectedGraph} is a specific Graph which contains just {@link DirectedEdge} as edges
+ * 
+ *
+ */
 public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
 
 	/**
+	 * Get the outdegree of a vertex
 	 * 
 	 * @param vertex 
 	 * @return 
@@ -21,6 +27,7 @@ public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
 	 }
 
 	/**
+	 * Get the indegree of a vertex
 	 * 
 	 * @param vertex 
 	 * @return 
@@ -31,6 +38,7 @@ public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
 	 }
 
 	/**
+	 * Get a set of all incoming edges of a vertex
 	 * 
 	 * @param vertex 
 	 * @return 
@@ -41,6 +49,7 @@ public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
 	 }
 
 	/**
+	 * Get a set of all outcoming edges of a vertex
 	 * 
 	 * @param vertex 
 	 * @return 
@@ -83,13 +92,6 @@ public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
 		// TODO Auto-generated method
 	 }
 
-	/**
-	 * 
-	 * @param vertex 
-	 */
-	public void setVertex(Set vertex) { 
-		// TODO Auto-generated method
-	 }
 
 	/**
 	 * 
@@ -146,14 +148,6 @@ public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
 		return null;
 	 }
 
-	/**
-	 * 
-	 * @return 
-	 */
-	public V getVertex() { 
-		// TODO Auto-generated method
-		return null;
-	 }
 
 	@Override
 	public List<LayoutOption<DirectedGraph>> getRegisteredLayouts() {
