@@ -8,7 +8,7 @@ import javafx.beans.property.SimpleObjectProperty;
  * 
  * @author Nicolas
  */
-public class GAnsObjectProperty extends SimpleObjectProperty<GAnsPropertyValue<?>> {
+public class GAnsObjectProperty extends SimpleObjectProperty<GAnsObjectPropertyValue<?>> {
 
 	/**
 	 * Konstruktor.

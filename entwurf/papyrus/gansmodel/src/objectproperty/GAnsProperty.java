@@ -7,7 +7,7 @@ import javafx.beans.property.StringProperty;
 
 /**
  * Eine Eigenschaft eines Knoten oder einer Kante in GAns. Der Name und
- * {@link GAnsPropertyValue} der Eigenschaft wird in JavaFX-Properties
+ * {@link GAnsObjectPropertyValue} der Eigenschaft wird in JavaFX-Properties
  * gespeichert und darüber auch zugriff für die GUI gewährt. Das Model von GAns
  * besteht aus Knoten und Kanten welche GAnsProperties beinhalten, welche mit
  * der GUI gekoppelt sind.
@@ -52,11 +52,11 @@ public class GAnsProperty {
 	}
 
 	/**
-	 * Stellt sicher das die Property die den {@link GAnsPropertyValue} der
+	 * Stellt sicher das die Property die den {@link GAnsObjectPropertyValue} der
 	 * GAnsProperty enthält nie null ist und immer mit dem passenden Namen
 	 * erstellt wird.
 	 * 
-	 * @return Die Property die den {@link GAnsPropertyValue} der GAnsProperty
+	 * @return Die Property die den {@link GAnsObjectPropertyValue} der GAnsProperty
 	 *         enthält.
 	 */
 	public GAnsObjectProperty propertyValue() {
@@ -66,11 +66,11 @@ public class GAnsProperty {
 	}
 
 	/**
-	 * Stellt sicher das die Property die den {@link GAnsPropertyValue} der
+	 * Stellt sicher das die Property die den {@link GAnsObjectPropertyValue} der
 	 * GAnsProperty als String enthält nie null ist und immer mit dem passenden
 	 * Namen erstellt wird.
 	 * 
-	 * @return Die StringProperty die den {@link GAnsPropertyValue} der
+	 * @return Die StringProperty die den {@link GAnsObjectPropertyValue} der
 	 *         GAnsProperty als String enthält.
 	 */
 	public StringProperty propertyValueAsString() {
@@ -100,32 +100,32 @@ public class GAnsProperty {
 	}
 
 	/**
-	 * Setzt das {@link GAnsPropertyValue} und die Stringrepräsentation des
+	 * Setzt das {@link GAnsObjectPropertyValue} und die Stringrepräsentation des
 	 * Werts der GAnsProperty.
 	 * 
 	 * @param value
-	 *            Der {@link GAnsPropertyValue} der GAnsProperty die gesetzt
+	 *            Der {@link GAnsObjectPropertyValue} der GAnsProperty die gesetzt
 	 *            werden soll.
 	 */
-	public void setPropertyValue(GAnsPropertyValue<?> value) {
+	public void setPropertyValue(GAnsObjectPropertyValue<?> value) {
 		propertyValue().setValue(value);
 		propertyValueAsString().set(value.toString());
 	}
 
 	/**
-	 * Gibt das den {@link GAnsPropertyValue} der GAnsProperty zurück.
+	 * Gibt das den {@link GAnsObjectPropertyValue} der GAnsProperty zurück.
 	 * 
-	 * @return Der {@link GAnsPropertyValue} der GAnsProperty.
+	 * @return Der {@link GAnsObjectPropertyValue} der GAnsProperty.
 	 */
-	public GAnsPropertyValue<?> getPropertyValue() {
+	public GAnsObjectPropertyValue<?> getPropertyValue() {
 		return propertyValue().getValue();
 	}
 
 	/**
-	 * Gibt die Stringrepräsentation des {@link GAnsPropertyValue} der
+	 * Gibt die Stringrepräsentation des {@link GAnsObjectPropertyValue} der
 	 * GAnsProperty zurück.
 	 * 
-	 * @return Die Stringrepräsentation des {@link GAnsPropertyValue} der
+	 * @return Die Stringrepräsentation des {@link GAnsObjectPropertyValue} der
 	 *         GAnsProperty.
 	 */
 	public String getPropertyValueAsString() {

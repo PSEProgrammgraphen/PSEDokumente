@@ -10,14 +10,14 @@ package objectproperty;
  * @param <T>
  *            Objekt das in dem PropertyValue gespeichert werden soll.
  */
-public class GAnsPropertyValue<T extends Object> {
+public class GAnsObjectPropertyValue<T extends Object> {
 
 	private T value;
 
 	/**
 	 * Konstruktor
 	 */
-	public GAnsPropertyValue() {
+	public GAnsObjectPropertyValue() {
 	}
 
 	/**
@@ -26,7 +26,7 @@ public class GAnsPropertyValue<T extends Object> {
 	 * @param value
 	 *            Das Element das in dem PropertyValue gespeichert werden soll
 	 */
-	public GAnsPropertyValue(T value) {
+	public GAnsObjectPropertyValue(T value) {
 		this.setValue(value);
 	}
 
