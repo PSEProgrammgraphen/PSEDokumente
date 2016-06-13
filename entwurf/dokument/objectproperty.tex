@@ -34,16 +34,6 @@ A JavaFX objectproperty which in toString() retuns the value from the toString()
 \begin{lstlisting}[frame=none]
 public class GAnsObjectProperty
  extends javafx.beans.property.SimpleObjectProperty\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf GAnsObjectProperty(Object, String)} Constructor.\\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf toString()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -82,172 +72,6 @@ public java.lang.String toString()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
-\subsubsection{Members inherited from class SimpleObjectProperty }{
-\texttt{javafx.beans.property.SimpleObjectProperty} {\small 
-\refdefined{javafx.beans.property.SimpleObjectProperty}}
-{\small 
-
-\vskip -2em
-\begin{itemize}
-\item{\vskip -1.5ex 
-\texttt{public Object {\bf  getBean}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public String {\bf  getName}()
-}%end signature
-}%end item
-\end{itemize}
-}
-\subsubsection{Members inherited from class ObjectPropertyBase }{
-\texttt{javafx.beans.property.ObjectPropertyBase} {\small 
-\refdefined{javafx.beans.property.ObjectPropertyBase}}
-{\small 
-
-\vskip -2em
-\begin{itemize}
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  addListener}(\texttt{javafx.beans.value.ChangeListener} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  addListener}(\texttt{javafx.beans.InvalidationListener} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  bind}(\texttt{javafx.beans.value.ObservableValue} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{protected void {\bf  fireValueChangedEvent}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public Object {\bf  get}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{protected void {\bf  invalidated}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public boolean {\bf  isBound}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  removeListener}(\texttt{javafx.beans.value.ChangeListener} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  removeListener}(\texttt{javafx.beans.InvalidationListener} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  set}(\texttt{java.lang.Object} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public String {\bf  toString}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  unbind}()
-}%end signature
-}%end item
-\end{itemize}
-}
-\subsubsection{Members inherited from class ObjectProperty }{
-\texttt{javafx.beans.property.ObjectProperty} {\small 
-\refdefined{javafx.beans.property.ObjectProperty}}
-{\small 
-
-\vskip -2em
-\begin{itemize}
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  bindBidirectional}(\texttt{Property} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  setValue}(\texttt{java.lang.Object} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public String {\bf  toString}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public void {\bf  unbindBidirectional}(\texttt{Property} {\bf  arg0})
-}%end signature
-}%end item
-\end{itemize}
-}
-\subsubsection{Members inherited from class ReadOnlyObjectProperty }{
-\texttt{javafx.beans.property.ReadOnlyObjectProperty} {\small 
-\refdefined{javafx.beans.property.ReadOnlyObjectProperty}}
-{\small 
-
-\vskip -2em
-\begin{itemize}
-\item{\vskip -1.5ex 
-\texttt{public String {\bf  toString}()
-}%end signature
-}%end item
-\end{itemize}
-}
-\subsubsection{Members inherited from class ObjectExpression }{
-\texttt{javafx.beans.binding.ObjectExpression} {\small 
-\refdefined{javafx.beans.binding.ObjectExpression}}
-{\small 
-
-\vskip -2em
-\begin{itemize}
-\item{\vskip -1.5ex 
-\texttt{public StringBinding {\bf  asString}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public StringBinding {\bf  asString}(\texttt{java.util.Locale} {\bf  arg0},
-\texttt{java.lang.String} {\bf  arg1})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public StringBinding {\bf  asString}(\texttt{java.lang.String} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public Object {\bf  getValue}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public BooleanBinding {\bf  isEqualTo}(\texttt{java.lang.Object} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public BooleanBinding {\bf  isEqualTo}(\texttt{javafx.beans.value.ObservableObjectValue} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public BooleanBinding {\bf  isNotEqualTo}(\texttt{java.lang.Object} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public BooleanBinding {\bf  isNotEqualTo}(\texttt{javafx.beans.value.ObservableObjectValue} {\bf  arg0})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public BooleanBinding {\bf  isNotNull}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public BooleanBinding {\bf  isNull}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public static ObjectExpression {\bf  objectExpression}(\texttt{javafx.beans.value.ObservableObjectValue} {\bf  arg0})
-}%end signature
-}%end item
-\end{itemize}
-}
 }
 \subsection{\label{objectproperty.GAnsObjectPropertyValue}\index{GAnsObjectPropertyValue}Class GAnsObjectPropertyValue}{
 \vskip .1in 
@@ -257,19 +81,6 @@ A simple generic class made to save the different types of property values. Is b
 \begin{lstlisting}[frame=none]
 public class GAnsObjectPropertyValue
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf GAnsObjectPropertyValue()} Constructor.\\
-{\bf GAnsObjectPropertyValue(T)} Constructor which directly sets the value.\\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getValue()} Returns the value.\\
-{\bf setValue(T)} Sets the value.\\
-{\bf toString()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -364,35 +175,6 @@ The GAnsProperty is a single property of a vertex or an edge in GAns. The name a
 \begin{lstlisting}[frame=none]
 public class GAnsProperty
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Field summary}{
-\begin{verse}
-{\bf name} A string with whoom, factories or other elements from the GUI, can reference to the name/identifier of the value.\\
-{\bf value} A string with whoom, factories or other elements from the GUI, can reference to the value.\\
-{\bf valueAsString} A string with whoom, factories or other elements from the GUI, can reference to the string-representation of the value.\\
-\end{verse}
-}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf GAnsProperty()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getPropertyName()} Returns the name/identifier of the GAnsProperty.\\
-{\bf getPropertyValue()} Returns the \texttt{\small GAnsObjectPropertyValue}{\small 
-\refdefined{objectproperty.GAnsObjectPropertyValue}} of the GAnsProperty.\\
-{\bf getPropertyValueAsString()} Returns the string-representation of the \texttt{\small GAnsObjectPropertyValue}{\small 
-\refdefined{objectproperty.GAnsObjectPropertyValue}} from the GAnsProperty.\\
-{\bf propertyNameProperty()} Ensures that the property which contains the name/identifier of the GAnsProperty is not null and always set with the right name.\\
-{\bf propertyValue()} Ensures that the property which contains the \texttt{\small GAnsObjectPropertyValue}{\small 
-\refdefined{objectproperty.GAnsObjectPropertyValue}} in the GAnsProperty is not null and always set with the right name.\\
-{\bf propertyValueAsString()} Ensures that the property which contains the string-representation of the \texttt{\small GAnsObjectPropertyValue}{\small 
-\refdefined{objectproperty.GAnsObjectPropertyValue}} in the GAnsProperty is not null and always set with the right name.\\
-{\bf setPropertyName(String)} Sets the name/identifier of the GAnsProperty.\\
-{\bf setPropertyValue(GAnsObjectPropertyValue)} Sets the \texttt{\small GAnsObjectPropertyValue}{\small 
-\refdefined{objectproperty.GAnsObjectPropertyValue}} and its string-representation of the GAnsProperty.\\
-\end{verse}
-}
 \subsubsection{Fields}{
 \begin{itemize}
 \item{

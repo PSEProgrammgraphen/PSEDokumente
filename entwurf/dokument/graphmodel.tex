@@ -62,14 +62,6 @@ public interface Edge
 \end{lstlisting}
 \subsubsection{All known subinterfaces}{DirectedEdge\small{\refdefined{graphmodel.DirectedEdge}}}
 \subsubsection{All classes known to implement interface}{DirectedEdge\small{\refdefined{graphmodel.DirectedEdge}}}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getID()} Get the ID of this edge\\
-{\bf getName()} Get the name of this Edge\\
-{\bf getSource()} Get the vource vertex of this edge\\
-{\bf getTarget()} Get the target vertex of this edge\\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -149,20 +141,6 @@ public interface Graph
 \end{lstlisting}
 \subsubsection{All known subinterfaces}{DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}}
 \subsubsection{All classes known to implement interface}{DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf addEdge()} Adds a new Edge to the graph\\
-{\bf addEdge(Graph.E)} Adds a new Edge to the graph\\
-{\bf addVertex(Graph.V)} Adds a new Vertex to the graph\\
-{\bf edgesOf(Graph.V)} get a list of all edges of a vertex\\
-{\bf getEdges()} Returns an list of edges.\\
-{\bf getEdgeSet()} Get a set of all Edges in this graph\\
-{\bf getSource(Graph.E)} Get the source vertex of an edge\\
-{\bf getTarget(Graph.E)} Get the target vertex of an edge\\
-{\bf getVertexSet()} Get a set of all vertices in this graph\\
-{\bf setEdgeSet(Set)} Set a Set of edges\\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -367,12 +345,6 @@ public interface Layoutable
 \end{lstlisting}
 \subsubsection{All known subinterfaces}{DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}}
 \subsubsection{All classes known to implement interface}{DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf applyLayout(LayoutAlgorithm)} \\
-{\bf getRegisteredLayouts()} \\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -400,12 +372,6 @@ public interface Vertex
 \end{lstlisting}
 \subsubsection{All known subinterfaces}{DefaultVertex\small{\refdefined{graphmodel.DefaultVertex}}}
 \subsubsection{All classes known to implement interface}{DefaultVertex\small{\refdefined{graphmodel.DefaultVertex}}}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getID()} Get the ID of the vertex\\
-{\bf getName()} Get the name of the vertex\\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -451,19 +417,6 @@ This is an abstract Interface which is used to build a concrete edge.\vskip .1in
 \begin{lstlisting}[frame=none]
 public abstract class AbstractEdgeBuilder
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf AbstractEdgeBuilder()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf addData(String, String)} Add optional data to this edge.\\
-{\bf newEdge(String, String)} set source and target vertices of this edge\\
-{\bf setDirection(String)} set the direction of this edge\\
-{\bf setID(String)} set the ID of this edge\\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -572,18 +525,6 @@ This is an abstract interface which is used to build a concrete graph.\vskip .1i
 \begin{lstlisting}[frame=none]
 public abstract class AbstractGraphBuilder
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf AbstractGraphBuilder()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf build()} This method is called, when the buildingprocess of the graph is finished.\\
-{\bf getEdgeBuilder()} Returns the EdgeBuilder which is specified for this graph.\\
-{\bf getVertexBuilder(String)} Returns the VertexBuilder which is specified for this graph.\\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -663,18 +604,6 @@ This is an abstract interface, which builds a concrete graphmodel. This Class is
 \begin{lstlisting}[frame=none]
 public abstract class AbstractGraphModelBuilder
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf AbstractGraphModelBuilder()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf build()} This method is called, when the buildingprocess of the graphmodel is finished.\\
-{\bf getGraphBuilder(String)} Returns a specific \texttt{\small AbstractGraphBuilder}{\small 
-\refdefined{graphmodel.AbstractGraphBuilder}} which belongs to the graphmodel.\\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -739,18 +668,6 @@ This is an abstract VertexBuilder which is used to build a concrete Vertex.\vski
 \begin{lstlisting}[frame=none]
 public abstract class AbstractVertexBuilder
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf AbstractVertexBuilder()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf addData(String, String)} Add Data to this Vertex.\\
-{\bf build()} This method builds the concrete Vertex and returns it.\\
-{\bf getGraphBuilder(String)} This method returns an specific GraphBuilder.\\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -836,17 +753,6 @@ This is an DefaultVertex, which has basic functions and is provided by the maina
 \begin{lstlisting}[frame=none]
 public class DefaultVertex
  extends java.lang.Object implements Vertex\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf DefaultVertex()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getID()} \\
-{\bf getName()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -904,19 +810,6 @@ A \texttt{\small DirectedEdge}{\small
 \begin{lstlisting}[frame=none]
 public class DirectedEdge
  extends java.lang.Object implements Edge\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf DirectedEdge()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getID()} \\
-{\bf getName()} \\
-{\bf getSource()} \\
-{\bf getTarget()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -1007,31 +900,6 @@ A \texttt{\small DirectedGraph}{\small
 \begin{lstlisting}[frame=none]
 public class DirectedGraph
  extends java.lang.Object implements Graph, Layoutable\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf DirectedGraph()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf addEdge()} \\
-{\bf addEdge(Graph.E)} \\
-{\bf addVertex(Graph.V)} \\
-{\bf applyLayout(LayoutAlgorithm)} \\
-{\bf edgesOf(Graph.V)} \\
-{\bf getEdges()} \\
-{\bf getEdgeSet()} \\
-{\bf getRegisteredLayouts()} \\
-{\bf getSource(Graph.E)} \\
-{\bf getTarget(Graph.E)} \\
-{\bf getVertexSet()} \\
-{\bf incomingEdgesOf(Graph.V)} Get a set of all incoming edges of a vertex\\
-{\bf indegreeOf(Graph.V)} Get the indegree of a vertex\\
-{\bf outcomingEdgesOf(Graph.V)} Get a set of all outcoming edges of a vertex\\
-{\bf outdegreeOf(Graph.V)} Get the outdegree of a vertex\\
-{\bf setEdgeSet(Set)} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -1319,17 +1187,6 @@ public void setEdgeSet(java.util.Set edge)\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public class DirectedGraphLayoutRegister
  extends java.lang.Object implements plugin.LayoutRegister\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf DirectedGraphLayoutRegister()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf addLayoutOption(LayoutOption)} \\
-{\bf getLayoutOptions()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -1366,28 +1223,6 @@ Created by Sven on 09.06.2016.\vskip .1in
 \begin{lstlisting}[frame=none]
 public class FastGraphAccessor
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf FastGraphAccessor()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf addEdgeAttribute(String)} \\
-{\bf addEdgeForAttribute(String, Edge, String)} \\
-{\bf addVertexAttribute(String)} \\
-{\bf addVertexForAttribute(Vertex, String, String)} \\
-{\bf getEdgesByAttribute(String, String)} \\
-{\bf getEdgeValues()} Getter of edgeValues\\
-{\bf getGraph()} Getter of graph\\
-{\bf getVertexValues()} Getter of vertexValues\\
-{\bf getVerticesByAttribute(String, String)} \\
-{\bf setEdgeValues(Map)} Setter of edgeValues\\
-{\bf setGraph(Graph)} Setter of graph\\
-{\bf setVertexValues(Map)} Setter of vertexValues\\
-{\bf update()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -1603,11 +1438,6 @@ public void update()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public static class Graph.E
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf E()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -1626,11 +1456,6 @@ public E()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public static class Graph.V
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf V()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -1651,16 +1476,6 @@ A \texttt{\small GraphModel}{\small
 \begin{lstlisting}[frame=none]
 public abstract class GraphModel
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf GraphModel()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getGraphs()} Getter of graph\\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}

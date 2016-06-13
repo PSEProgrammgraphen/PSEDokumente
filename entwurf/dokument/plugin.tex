@@ -56,13 +56,6 @@ public interface Constraint
 \begin{lstlisting}[frame=none]
 public interface FilterSet
 \end{lstlisting}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getEdgeFilter()} \\
-{\bf getName()} \\
-{\bf getVertexfilter()} \\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -108,13 +101,6 @@ java.util.List getVertexfilter()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public interface Importer
 \end{lstlisting}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getName()} \\
-{\bf getSupportedFileEndings()} \\
-{\bf importGraph(AbstractGraphModelBuilder, FileInputStream)} \\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -166,16 +152,6 @@ void importGraph(graphmodel.AbstractGraphModelBuilder builder,java.io.FileInputS
 \begin{lstlisting}[frame=none]
 public interface LayoutAlgorithm
 \end{lstlisting}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getID()} Get a acronym of the layout.\\
-{\bf getName()} Get the full name of the layout.\\
-{\bf getParameterDialog()} \\
-{\bf getSettings()} Get the set of parameters for this instance of the algorithm.\\
-{\bf layout(G)} Layout the specified Graph.\\
-{\bf onLoad()} Register at LayoutAlgorithm for all supported Graphs\\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -276,12 +252,6 @@ Stores a collection of layouts applicable to a specific subclass of graph.\vskip
 \begin{lstlisting}[frame=none]
 public interface LayoutRegister
 \end{lstlisting}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf addLayoutOption(LayoutOption)} \\
-{\bf getLayoutOptions()} \\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -306,11 +276,6 @@ java.util.List getLayoutOptions()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public interface Plugin
 \end{lstlisting}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getName()} \\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -329,15 +294,6 @@ java.lang.String getName()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public interface Workspace
 \end{lstlisting}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getGraphModel()} \\
-{\bf getGraphModelBuilder()} \\
-{\bf getName()} \\
-{\bf getParameterSet()} \\
-{\bf initialize(Settings)} \\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -412,18 +368,6 @@ void initialize(parameter.Settings parameters)\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public class EdgeFilter
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf EdgeFilter()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getName()} Getter of name\\
-{\bf matches(Edge)} \\
-{\bf setName(String)} Setter of name\\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -492,20 +436,6 @@ Setter of name
 public abstract class EntryPointOption
  extends java.lang.Object\end{lstlisting}
 \subsubsection{All known subclasses}{WorkspaceOption\small{\refdefined{plugin.WorkspaceOption}}, LayoutOption\small{\refdefined{plugin.LayoutOption}}}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf EntryPointOption()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getID()} \\
-{\bf getName()} \\
-{\bf onChoose()} \\
-{\bf setID(String)} \\
-{\bf setName(String)} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -559,11 +489,6 @@ protected void setName(java.lang.String name)\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public abstract class LayoutOption
  extends plugin.EntryPointOption\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf LayoutOption()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -575,35 +500,6 @@ public LayoutOption()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
-\subsubsection{Members inherited from class EntryPointOption }{
-\texttt{plugin.EntryPointOption} {\small 
-\refdefined{plugin.EntryPointOption}}
-{\small 
-
-\vskip -2em
-\begin{itemize}
-\item{\vskip -1.5ex 
-\texttt{public String {\bf  getID}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public String {\bf  getName}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public abstract void {\bf  onChoose}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{protected void {\bf  setID}(\texttt{java.lang.String} {\bf  id})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{protected void {\bf  setName}(\texttt{java.lang.String} {\bf  name})
-}%end signature
-}%end item
-\end{itemize}
-}
 }
 \subsection{\label{plugin.PluginManager}\index{PluginManager}Class PluginManager}{
 \vskip .1in 
@@ -611,14 +507,6 @@ public LayoutOption()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public class PluginManager
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf addWorkspaceOption(WorkspaceOption)} \\
-{\bf getPluginManager()} \\
-{\bf getPlugins()} \\
-{\bf getWorkspaceOption()} \\
-\end{verse}
-}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
@@ -655,18 +543,6 @@ public java.util.List getWorkspaceOption()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 public class VertexFilter
  extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf VertexFilter()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getName()} Getter of name\\
-{\bf matches(Vertex)} \\
-{\bf setName(String)} Setter of name\\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -734,16 +610,6 @@ Setter of name
 \begin{lstlisting}[frame=none]
 public abstract class WorkspaceOption
  extends plugin.EntryPointOption\end{lstlisting}
-\subsubsection{Constructor summary}{
-\begin{verse}
-{\bf WorkspaceOption()} \\
-\end{verse}
-}
-\subsubsection{Method summary}{
-\begin{verse}
-{\bf getInstance()} \\
-\end{verse}
-}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -763,35 +629,6 @@ public WorkspaceOption()\end{lstlisting} %end signature
 {\bf  getInstance}\\
 \begin{lstlisting}[frame=none]
 public abstract Workspace getInstance()\end{lstlisting} %end signature
-}%end item
-\end{itemize}
-}
-\subsubsection{Members inherited from class EntryPointOption }{
-\texttt{plugin.EntryPointOption} {\small 
-\refdefined{plugin.EntryPointOption}}
-{\small 
-
-\vskip -2em
-\begin{itemize}
-\item{\vskip -1.5ex 
-\texttt{public String {\bf  getID}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public String {\bf  getName}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{public abstract void {\bf  onChoose}()
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{protected void {\bf  setID}(\texttt{java.lang.String} {\bf  id})
-}%end signature
-}%end item
-\item{\vskip -1.5ex 
-\texttt{protected void {\bf  setName}(\texttt{java.lang.String} {\bf  name})
-}%end signature
 }%end item
 \end{itemize}
 }
