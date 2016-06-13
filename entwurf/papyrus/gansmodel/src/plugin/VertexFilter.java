@@ -2,11 +2,14 @@ package plugin;
 
 import graphmodel.Vertex;
 
+/**
+ * This Class represents a filter for vertex types. 
+ * The type of the vertex can be specified through different parameters.
+ * 
+ *
+ */
 public class VertexFilter {
 
-	/**
-	 * 
-	 */
 	private String name;
 
 	/**
@@ -24,9 +27,11 @@ public class VertexFilter {
 	}
 
 	/**
+	 * This method checks if an vertex matches this Filter.
+	 * It will compare specified parameters of the vertex with the defined parameters of this filter.
 	 * 
-	 * @param toMatch 
-	 * @return 
+	 * @param toMatch the vertex which should be checked
+	 * @return true if the edge matches this Filter, otherwise false
 	 */
 	public boolean matches(Vertex toMatch) { 
 		// TODO Auto-generated method
