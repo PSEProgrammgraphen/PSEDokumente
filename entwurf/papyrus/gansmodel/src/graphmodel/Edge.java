@@ -1,6 +1,5 @@
 package graphmodel;
 
-import graphmodel.Graph.V;
 import java.lang.Integer;
 
 /**
@@ -8,10 +7,10 @@ import java.lang.Integer;
  * An edge contains two vertices and needs an ID.
  *
  */
-public interface Edge {
+public interface Edge<V extends Vertex> {
 
 	/**
-	 * Get the vource vertex of this edge
+	 * Get the source vertex of this edge
 	 * 
 	 * @return 
 	 */

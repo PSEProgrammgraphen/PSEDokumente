@@ -4,16 +4,13 @@ package joana;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.omg.Dynamic.Parameter;
-
-import graphmodel.Graph;
 import parameter.IntegerParameter;
 import parameter.MultipleChoiceParameter;
 import parameter.Settings;
 import parameter.StringParameter;
-import plugin.LayoutAlgorithm;
+import sugiyama.SugiyamaLayoutAlgorithm;
 
-public class MethodGraphLayout implements LayoutAlgorithm<MethodGraph> {
+public class MethodGraphLayout extends SugiyamaLayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> {
 
 	@Override
 	public void getParameterDialog() { }
@@ -37,26 +34,16 @@ public class MethodGraphLayout implements LayoutAlgorithm<MethodGraph> {
 		return s;
 	}
 
-	@Override
-	public String getName() {
-		return "Methodgraph-Layout";
-	}
-
-	@Override
-	public String getID() {
-		return "mdg";
-	}
-
-	@Override
-	public void onLoad() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void layout(MethodGraph graph) {
-		// TODO Auto-generated method stub
+		System.out.println("Layouting MethodGraph!");
 		
 	}
 
+	public void layout(FieldAccess graph) {
+		System.out.println("Layouting FieldAccess!");
+	}
+	
+	public void layout(MethodCall graph) {
+		System.out.println("Layouting MethodCall!");
+	}
 }
