@@ -19,7 +19,9 @@ import javafx.scene.paint.Color;
  */
 public class GraphView extends Pane {
 
-	DoubleProperty myScale = new SimpleDoubleProperty(1.0);
+	private DoubleProperty myScale = new SimpleDoubleProperty(1.0);
+
+	private GraphViewSelectionModel selectionModel;
 
 	/**
 	 * Constructor.
@@ -116,5 +118,24 @@ public class GraphView extends Pane {
 		VertexShape test = new VertexShape(text);
 		test.relocate(x, y);
 		getChildren().add(test);
+	}
+
+	/**
+	 * Sets the selection model for the GraphView.
+	 * 
+	 * @param selectionModel
+	 *            The selection model for the GraphView.
+	 */
+	public void setSelectionModel(GraphViewSelectionModel selectionModel) {
+		this.selectionModel = selectionModel;
+	}
+
+	/**
+	 * Returns the selection model of the GraphView.
+	 * 
+	 * @return The selection model of the GraphView.
+	 */
+	public GraphViewSelectionModel getSelectionModel() {
+		return this.selectionModel;
 	}
 }

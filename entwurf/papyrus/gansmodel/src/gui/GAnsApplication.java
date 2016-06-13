@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Optional;
 
 import javafx.application.Application;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
@@ -46,7 +47,8 @@ public class GAnsApplication extends Application {
 	private MenuBar menuBar;
 
 	// Mapped TabId zum Controller.
-	private LinkedList<GraphViewEventHandler> graphViewControllerList;
+	private LinkedList<GraphViewEventHandler> graphViewEventHandler;
+	private GraphViewSelectionModel graphViewSelectionModel;
 
 	private File currentFile;
 	private MethodGraphLayout methodlayout = new MethodGraphLayout();
@@ -63,7 +65,7 @@ public class GAnsApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		graphViewControllerList = new LinkedList<GraphViewEventHandler>();
+		graphViewEventHandler = new LinkedList<GraphViewEventHandler>();
 
 		this.primaryStage = primaryStage;
 		primaryStage.setTitle("Graph von Ansicht - Graphviewer");
@@ -74,17 +76,24 @@ public class GAnsApplication extends Application {
 		menuBar = new MenuBar();
 		setupMenuBar();
 
-		SplitPane mainViewLayout = new SplitPane();
-		mainViewLayout.setDividerPosition(0, 0.75);
-		graphViewTabPane = new TabPane();
-		addTab("Test");
-
 		SplitPane treeInfoLayout = new SplitPane();
 		treeInfoLayout.setOrientation(Orientation.VERTICAL);
 		treeInfoLayout.setDividerPosition(0, 0.6);
 		structureView = new StructureView();
 		informationView = new InformationView();
 		treeInfoLayout.getItems().addAll(structureView, informationView);
+		
+		graphViewSelectionModel = new GraphViewSelectionModel();
+		graphViewSelectionModel.getSelectedItems().addListener(new ListChangeListener<GAnsGraphElement>() { 
+			public void onChanged(Change<? extends GAnsGraphElement> changedItem) {
+				informationView.setInformations(graphViewSelectionModel.getSelectedItemsProperties());
+			}
+		});
+		
+		SplitPane mainViewLayout = new SplitPane();
+		mainViewLayout.setDividerPosition(0, 0.75);
+		graphViewTabPane = new TabPane();
+		addTab("Test");
 
 		mainViewLayout.getItems().addAll(graphViewTabPane, treeInfoLayout);
 		rootLayout.getChildren().addAll(menuBar, mainViewLayout);
@@ -118,14 +127,16 @@ public class GAnsApplication extends Application {
 		// Die Oberflaeche die gezogen und gezoomed werden kann.
 		Pane pane = new Pane(group);
 
-		GraphViewEventHandler graphViewEventHandler = new GraphViewEventHandler(graphView);
-		pane.addEventFilter(MouseEvent.MOUSE_PRESSED, graphViewEventHandler.getOnMousePressedEventHandler());
-		pane.addEventFilter(MouseEvent.MOUSE_DRAGGED, graphViewEventHandler.getOnMouseDraggedEventHandler());
-		pane.addEventFilter(ScrollEvent.ANY, graphViewEventHandler.getOnScrollEventHandler());
+		GraphViewEventHandler eventHandler = new GraphViewEventHandler(graphView);
+		pane.addEventFilter(MouseEvent.MOUSE_PRESSED, eventHandler.getOnMousePressedEventHandler());
+		pane.addEventFilter(MouseEvent.MOUSE_DRAGGED, eventHandler.getOnMouseDraggedEventHandler());
+		pane.addEventFilter(ScrollEvent.ANY, eventHandler.getOnScrollEventHandler());
 
 		// TODO: kann vermutlich weg
-		graphViewControllerList.add(graphViewEventHandler);
+		graphViewEventHandler.add(eventHandler);
 
+		graphView.setSelectionModel(graphViewSelectionModel);
+		
 		Tab tab = new Tab(name);
 		tab.setContent(pane);
 		graphViewTabPane.getTabs().add(tab);
