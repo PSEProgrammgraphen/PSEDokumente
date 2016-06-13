@@ -1,20 +1,13 @@
 package sugiyama;
 
-import java.util.Set;
-
+import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public class VertexPositioning {
+public class VertexPositioning <G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
-	private DirectedGraph graph;
-	private Set<Vertex> cycles;
+	public VertexPositioning() { }
 
-	public VertexPositioning(DirectedGraph graph) {
-		this.graph = graph;
-		this.cycles = cycles;
-	}
-
-	public void positionVertices(DirectedGraph graph) {
+	public void positionVertices(G graph) {
 	}
 }

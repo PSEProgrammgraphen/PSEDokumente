@@ -2,22 +2,16 @@ package sugiyama;
 
 import java.util.Set;
 
-import sgraphmodel.DirectedGraph;
+import graphmodel.DirectedEdge;
+import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public class EdgeDrawing {
+public class EdgeDrawing<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
-	private DirectedGraph graph;
-	private Set<Vertex> cycles;
-
-	public EdgeDrawing(DirectedGraph graph) {
-		this.graph = graph;
-		this.cycles = cycles;
+	public EdgeDrawing() {
 	}
 
-	public void drawEdges(DirectedGraph graph) {
+	public void drawEdges(G graph, Set<E> removedEdges) {
 	}
 
-	public void revertCycles(Set<Vertex> cycles) {
-	}
 }
