@@ -1,9 +1,11 @@
 package plugin;
 
+import graphmodel.Edge;
 import graphmodel.Graph;
+import graphmodel.Vertex;
 import parameter.Settings;
 
-public interface LayoutAlgorithm<G extends Graph> {
+public interface LayoutAlgorithm<G extends Graph<V, E>, V extends Vertex, E extends Edge<V>> {
 
 	/**
 	 * 

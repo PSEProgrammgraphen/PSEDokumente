@@ -13,5 +13,5 @@ public interface Layoutable<G extends Graph<V, E>, V extends Vertex, E extends E
 	 */
 	public List<LayoutOption<G>> getRegisteredLayouts();
 	
-	public void applyLayout(LayoutAlgorithm<G> alg);
+	public void applyLayout(LayoutAlgorithm<G, V, E> alg);
 }

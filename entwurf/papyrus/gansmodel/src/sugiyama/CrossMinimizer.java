@@ -1,20 +1,12 @@
 package sugiyama;
 
-import java.util.Set;
-
+import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public class CrossMinimizer {
+public class CrossMinimizer<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
-	private DirectedGraph graph;
-	private Set<Vertex> cycles;
+	public CrossMinimizer() { }
 
-	public CrossMinimizer(DirectedGraph graph) {
-		this.graph = graph;
-		this.cycles = cycles;
-	}
-
-	public void minimizeCrossings() {
-	}
+	public void minimizeCrossings(DirectedGraph<G, V, E> graph ) { }
 }

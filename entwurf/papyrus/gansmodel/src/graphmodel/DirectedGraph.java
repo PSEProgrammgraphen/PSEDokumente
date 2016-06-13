@@ -135,7 +135,7 @@ public class DirectedGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E
 	}
 
 	@Override
-	public void applyLayout(LayoutAlgorithm<G> alg) {
+	public void applyLayout(LayoutAlgorithm<G, V, E> alg) {
 	}
 
 }

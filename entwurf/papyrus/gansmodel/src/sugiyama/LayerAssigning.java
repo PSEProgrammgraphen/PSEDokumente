@@ -1,30 +1,16 @@
 package sugiyama;
 
-import java.util.Set;
-
+import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public class LayerAssigning {
+public class LayerAssigning<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
-	private DirectedGraph graph;
-	private Set<Vertex> cycles;
+	public LayerAssigning() { }
 
-	public LayerAssigning(DirectedGraph graph, Set<Vertex> cycles) {
-		this.graph = graph;
-		this.cycles = cycles;
-		assignLayers(graph);
-	}
+	public void assignLayers(G graph) { }
 
-	private void assignLayers(DirectedGraph graph) {
-	}
+	public void setMaxHeight(int height) { }
 
-	private void minimizeHeight(DirectedGraph graph, int height) {
-	}
-
-	private void minimizeEdgeLength(DirectedGraph graph, int edgeLength) {
-	}
-
-	private void minimizeWidth(DirectedGraph graph, int width) {
-	}
+	public void setMaxWidth(int height) { }
 }

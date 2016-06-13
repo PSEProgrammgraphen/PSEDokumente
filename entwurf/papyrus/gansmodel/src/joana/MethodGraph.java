@@ -49,7 +49,7 @@ public class MethodGraph extends JoanaGraph<MethodGraph> {
 	 } 
 	
 	@Override
-	public void applyLayout(LayoutAlgorithm<MethodGraph> alg) {
+	public void applyLayout(LayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> alg) {
 		alg.layout(this);
 	}
 }
