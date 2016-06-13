@@ -38,12 +38,4 @@ public class MethodGraphLayout extends SugiyamaLayoutAlgorithm<MethodGraph, Joan
 		System.out.println("Layouting MethodGraph!");
 		
 	}
-
-	public void layout(FieldAccess graph) {
-		System.out.println("Layouting FieldAccess!");
-	}
-	
-	public void layout(MethodCall graph) {
-		System.out.println("Layouting MethodCall!");
-	}
 }
