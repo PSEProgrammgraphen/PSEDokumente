@@ -2,9 +2,6 @@ package graphmodel;
 
 import java.util.Set;
 import java.util.List;
-import graphmodel.Graph.E;
-import graphmodel.Graph.V;
-import joana.JoanaPlugin;
 import plugin.LayoutAlgorithm;
 import plugin.LayoutOption;
 
@@ -13,7 +10,8 @@ import plugin.LayoutOption;
  * 
  *
  */
-public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layoutable<G> {
+public class DirectedGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> 
+		implements Graph<V, E>, Layoutable<G, V, E> {
 
 	/**
 	 * Get the outdegree of a vertex
@@ -43,7 +41,7 @@ public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layouta
 	 * @param vertex 
 	 * @return 
 	 */
-	public Set incomingEdgesOf(V vertex) { 
+	public Set<E> incomingEdgesOf(V vertex) { 
 		// TODO Auto-generated method
 		return null;
 	 }
@@ -54,16 +52,7 @@ public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layouta
 	 * @param vertex 
 	 * @return 
 	 */
-	public Set outcomingEdgesOf(V vertex) { 
-		// TODO Auto-generated method
-		return null;
-	 }
-
-	/**
-	 * 
-	 * @return 
-	 */
-	public List<E> getEdges() { 
+	public Set<E> outcomingEdgesOf(V vertex) { 
 		// TODO Auto-generated method
 		return null;
 	 }
@@ -79,7 +68,16 @@ public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layouta
 	 * 
 	 * @return 
 	 */
-	public Set getVertexSet() { 
+	public Set<V> getVertexSet() { 
+		// TODO Auto-generated method
+		return null;
+	 }
+
+	/**
+	 * 
+	 * @return 
+	 */
+	public Set<E> getEdgeSet() { 
 		// TODO Auto-generated method
 		return null;
 	 }
@@ -88,7 +86,7 @@ public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layouta
 	 * 
 	 * @param edge 
 	 */
-	public void setEdgeSet(Set edge) { 
+	public void setEdgeSet(Set<E> edge) { 
 		// TODO Auto-generated method
 	 }
 
@@ -99,15 +97,6 @@ public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layouta
 	 * @return 
 	 */
 	public V getSource(E edge) { 
-		// TODO Auto-generated method
-		return null;
-	 }
-
-	/**
-	 * 
-	 * @return 
-	 */
-	public Set getEdgeSet() { 
 		// TODO Auto-generated method
 		return null;
 	 }
@@ -128,25 +117,17 @@ public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layouta
 		// TODO Auto-generated method
 	 }
 
-	/**
-	 * 
-	 * @param edge 
-	 * @return 
-	 */
-	public V getTarget(E edge) { 
-		// TODO Auto-generated method
-		return null;
-	 }
+	@Override
+	public void setVertexSet(Set<E> edge) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	/**
-	 * 
-	 * @param vertex 
-	 * @return 
-	 */
-	public List<E> edgesOf(V vertex) { 
-		// TODO Auto-generated method
+	@Override
+	public Set<E> edgesOf(V vertex) {
+		// TODO Auto-generated method stub
 		return null;
-	 }
+	}
 
 	@Override
 	public List<LayoutOption<G>> getRegisteredLayouts() {
@@ -156,4 +137,5 @@ public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layouta
 	@Override
 	public void applyLayout(LayoutAlgorithm<G> alg) {
 	}
+
 }

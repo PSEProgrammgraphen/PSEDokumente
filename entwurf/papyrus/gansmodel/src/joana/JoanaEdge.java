@@ -7,6 +7,6 @@ import graphmodel.DirectedEdge;
  * It contains parameters which are only useful for Joana
  * 
  */
-public class JoanaEdge extends DirectedEdge { 
+public class JoanaEdge extends DirectedEdge<JoanaVertex> { 
 
 }

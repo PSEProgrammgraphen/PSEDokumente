@@ -1,6 +1,5 @@
 package joana;
 
-import graphmodel.DirectedGraph;
 import plugin.LayoutAlgorithm;
 
 import java.util.List;
@@ -8,7 +7,7 @@ import java.util.List;
 /**
  * This is a specified graph representation for a MethodGraph in JOANA 
  */
-public class MethodGraph extends JoanaGraph {
+public class MethodGraph extends JoanaGraph<MethodGraph> {
 
 	/**
 	 * Get the entry vertex of a method
@@ -50,11 +49,7 @@ public class MethodGraph extends JoanaGraph {
 	 } 
 	
 	@Override
-	public void applyLayout(LayoutAlgorithm<JoanaGraph> alg) {
-		for (FieldAccess fa : getFieldAccesses())
-		{
-			alg.layout(fa);
-		}
+	public void applyLayout(LayoutAlgorithm<MethodGraph> alg) {
 		alg.layout(this);
 	}
 }

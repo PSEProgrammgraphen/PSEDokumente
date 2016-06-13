@@ -5,17 +5,16 @@ import java.util.Set;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public class CycleRemoving {
+public class CrossMinimizer {
 
 	private DirectedGraph graph;
 	private Set<Vertex> cycles;
 
-	public CycleRemoving(DirectedGraph graph) {
+	public CrossMinimizer(DirectedGraph graph) {
 		this.graph = graph;
-		this.cycles = this.removeCycles(graph);
+		this.cycles = cycles;
 	}
 
-	private Set<Vertex> removeCycles() {
-		return null;
+	public void minimizeCrossings() {
 	}
 }

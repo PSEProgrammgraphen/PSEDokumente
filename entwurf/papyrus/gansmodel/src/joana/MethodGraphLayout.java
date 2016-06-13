@@ -10,7 +10,7 @@ import parameter.Settings;
 import parameter.StringParameter;
 import sugiyama.SugiyamaLayoutAlgorithm;
 
-public class MethodGraphLayout extends SugiyamaLayoutAlgorithm {
+public class MethodGraphLayout extends SugiyamaLayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> {
 
 	@Override
 	public void getParameterDialog() { }

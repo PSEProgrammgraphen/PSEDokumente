@@ -6,7 +6,7 @@ import plugin.LayoutAlgorithm;
 import plugin.LayoutOption;
 
 
-public interface Layoutable<G extends Graph> {
+public interface Layoutable<G extends Graph<V, E>, V extends Vertex, E extends Edge<V>> {
 
 	/**
 	 * 

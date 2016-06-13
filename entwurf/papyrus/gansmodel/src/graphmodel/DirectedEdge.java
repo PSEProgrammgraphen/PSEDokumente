@@ -1,14 +1,12 @@
 package graphmodel;
 
-import graphmodel.Graph.V;
-
 
 /**
- * A {@link DirectedEdge} is an edge htat has one source and one target vertex.
+ * A {@link DirectedEdge} is an edge that has one source and one target vertex.
  * So the direction of the edge is specified.
  *
  */
-public class DirectedEdge implements Edge {
+public class DirectedEdge<V extends Vertex> implements Edge<V> {
 
 	@Override
 	public V getSource() {
