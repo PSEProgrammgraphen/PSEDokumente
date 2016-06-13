@@ -1,14 +1,14 @@
 package joana;
 
 import graphmodel.DirectedGraph;
+import plugin.LayoutAlgorithm;
+
 import java.util.List;
 
 /**
- * This is a specified graph representation for a Methodgraph in Joana
- * 
- *
+ * This is a specified graph representation for a MethodGraph in JOANA 
  */
-public class MethodGraph extends DirectedGraph {
+public class MethodGraph extends JoanaGraph {
 
 	/**
 	 * Get the entry vertex of a method
@@ -48,5 +48,13 @@ public class MethodGraph extends DirectedGraph {
 		// TODO Auto-generated method
 		return null;
 	 } 
-
+	
+	@Override
+	public void applyLayout(LayoutAlgorithm<JoanaGraph> alg) {
+		for (FieldAccess fa : getFieldAccesses())
+		{
+			alg.layout(fa);
+		}
+		alg.layout(this);
+	}
 }

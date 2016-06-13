@@ -13,7 +13,7 @@ import plugin.LayoutOption;
  * 
  *
  */
-public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
+public class DirectedGraph<G extends DirectedGraph<G>> implements Graph, Layoutable<G> {
 
 	/**
 	 * Get the outdegree of a vertex
@@ -148,14 +148,12 @@ public class DirectedGraph implements Graph, Layoutable<DirectedGraph> {
 		return null;
 	 }
 
-
 	@Override
-	public List<LayoutOption<DirectedGraph>> getRegisteredLayouts() {
+	public List<LayoutOption<G>> getRegisteredLayouts() {
 		return null;
 	}
 
 	@Override
-	public void applyLayout(LayoutAlgorithm<DirectedGraph> alg) {
-		alg.layout(this);
+	public void applyLayout(LayoutAlgorithm<G> alg) {
 	}
 }

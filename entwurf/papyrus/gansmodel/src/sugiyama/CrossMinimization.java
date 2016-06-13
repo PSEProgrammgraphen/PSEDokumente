@@ -15,6 +15,6 @@ public class CrossMinimization {
 		this.cycles = cycles;
 	}
 
-	public void minimizeCrossings(DirectedGraph graph) {
+	public void minimizeCrossings() {
 	}
 }

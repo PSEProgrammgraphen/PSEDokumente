@@ -15,7 +15,7 @@ public class CycleRemoving {
 		this.cycles = this.removeCycles(graph);
 	}
 
-	private Set<Vertex> removeCycles(DirectedGraph graph) {
+	private Set<Vertex> removeCycles() {
 		return null;
 	}
 }

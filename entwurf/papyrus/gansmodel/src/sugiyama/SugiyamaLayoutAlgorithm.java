@@ -1,20 +1,25 @@
 package sugiyama;
 
 import plugin.LayoutAlgorithm;
-import plugin.Settings;
-import plugin.String;
+import graphmodel.DirectedGraph;
 
-public class SugiyamaLayoutAlgorithm implements LayoutAlgorithm{
+import java.util.Set;
+
+import graphmodel.DirectedEdge;
+import parameter.Settings;
+
+public abstract class SugiyamaLayoutAlgorithm implements LayoutAlgorithm<DirectedGraph> {
+	
+	private Set<DirectedEdge> removedEdges;
+
+	public Set<DirectedEdge> getRemovedEdges(){return removedEdges;}
 
 	public void getParameterDialog(){}
-	
-	public Settings getSettings(){}
-	
-	public void layout(G graph){}
-	
-	public String getName(){}
-	
-	public String getID(){}
-	
-	public void onLoad(){}
+
+	public abstract Settings getSettings();
+
+	public void layout(DirectedGraph graph)
+	{
+		
+	}
 }
