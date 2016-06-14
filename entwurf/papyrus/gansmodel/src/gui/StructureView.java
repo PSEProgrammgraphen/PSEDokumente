@@ -2,6 +2,7 @@ package gui;
 
 import java.util.HashMap;
 
+import graphmodel.Graph;
 import javafx.event.EventHandler;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -47,7 +48,7 @@ public class StructureView extends TreeView<String> {
 	 * @param graph
 	 *            The graph which should be represented.
 	 */
-	public void showTree(/* IGraph graph */) {
+	public void showTree(Graph graph) {
 		// Erstellen der TreeItems anhand des uebergebenen Graphen in der
 		// internen Representation
 		TreeItem<String> root = new TreeItem<String>(/* Text des RootGraphen */);

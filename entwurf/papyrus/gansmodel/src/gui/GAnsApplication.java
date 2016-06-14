@@ -5,7 +5,10 @@ import java.util.LinkedList;
 import java.util.Optional;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
@@ -46,6 +49,7 @@ public class GAnsApplication extends Application {
 	private Stage primaryStage;
 	private MenuBar menuBar;
 
+	private GraphView currentGraphView;
 	// Mapped TabId zum Controller.
 	private LinkedList<GraphViewEventHandler> graphViewEventHandler;
 	private GraphViewSelectionModel graphViewSelectionModel;
@@ -82,17 +86,38 @@ public class GAnsApplication extends Application {
 		structureView = new StructureView();
 		informationView = new InformationView();
 		treeInfoLayout.getItems().addAll(structureView, informationView);
-		
+
 		graphViewSelectionModel = new GraphViewSelectionModel();
-		graphViewSelectionModel.getSelectedItems().addListener(new ListChangeListener<GAnsGraphElement>() { 
+		graphViewSelectionModel.getSelectedItems().addListener(new ListChangeListener<GAnsGraphElement>() {
 			public void onChanged(Change<? extends GAnsGraphElement> changedItem) {
-				informationView.setInformations(graphViewSelectionModel.getSelectedItemsProperties());
+				ObservableList<GAnsGraphElement> selectedItems = graphViewSelectionModel.getSelectedItems();
+				for (int i = 0; i < selectedItems.size(); i++) {
+					GAnsGraphElement element = selectedItems.get(i);
+					// TODO: Vertex oder Edge herausfinden und deren Properties
+					// passend in eine observable list und an informationView.
+				}
+				// TODO: holen der selectierten Items, ueber currentGraphView
+				// auf factory zugreifen
+				// Factory bietet zugriff auf map (GAnsGraphElement,Vertex/Edge)
+				// Properties der Vertex/Edge-Elemente speichern und an
+				// informationView uebergeben.
+
+				// informationView.setInformations(graphViewSelectionModel.getSelectedItems());
 			}
 		});
-		
+
 		SplitPane mainViewLayout = new SplitPane();
 		mainViewLayout.setDividerPosition(0, 0.75);
 		graphViewTabPane = new TabPane();
+		graphViewTabPane.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>() {
+			@Override
+			public void changed(ObservableValue<? extends Tab> observable, Tab oldValue, Tab newValue) {
+				//TODO: Boese :D
+				Pane pane = ((Pane) newValue.getContent());
+				Group group = ((Group) pane.getChildren().get(pane.getChildren().size() - 1));
+				currentGraphView = ((GraphView) group.getChildren().get(group.getChildren().size() - 1));
+			}
+		});
 		addTab("Test");
 
 		mainViewLayout.getItems().addAll(graphViewTabPane, treeInfoLayout);
@@ -107,7 +132,9 @@ public class GAnsApplication extends Application {
 		fileChooser.setTitle("Select a graph file");
 		currentFile = fileChooser.showOpenDialog(primaryStage);
 		addTab(currentFile.getName());
-		// TODO: Workspacedialog oeffnen, Einlesen der Datei triggern, addTab mit
+		openWorkspaceDialog();
+		// TODO: Workspacedialog oeffnen, Einlesen der Datei triggern, addTab
+		// mit
 		// neuem graphen oeffnen
 	}
 
@@ -136,7 +163,7 @@ public class GAnsApplication extends Application {
 		graphViewEventHandler.add(eventHandler);
 
 		graphView.setSelectionModel(graphViewSelectionModel);
-		
+
 		Tab tab = new Tab(name);
 		tab.setContent(pane);
 		graphViewTabPane.getTabs().add(tab);
@@ -183,7 +210,8 @@ public class GAnsApplication extends Application {
 			}
 		});
 		// ------------
-		// TODO: In diesem Menue muessen die unterstuetzten Algorithmen eingfuegt
+		// TODO: In diesem Menue muessen die unterstuetzten Algorithmen
+		// eingfuegt
 		// werden.
 		MenuItem layoutPropertiesItem = new MenuItem("Properties");
 		menuEdit.getItems().addAll(changeLayoutItem, layoutPropertiesItem);
@@ -193,16 +221,16 @@ public class GAnsApplication extends Application {
 		testItem.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				openTestDialog();
+//				openTestDialog();
 			}
 		});
 		menuView.getItems().add(testItem);
 
 		menuBar.getMenus().addAll(menuFile, menuEdit, menuView);
 	}
-	
+
 	private void openWorkspaceDialog() {
-		
+
 	}
 
 	private void openParameterDialog(Settings settings) {
@@ -220,40 +248,40 @@ public class GAnsApplication extends Application {
 		stage.show();
 	}
 
-	private void openTestDialog() {
-		Dialog<TestContainer> dialog = new Dialog<TestContainer>();
-		dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
-		HBox layout = new HBox();
-		TextField xCoordinate = new TextField();
-		TextField yCoordinate = new TextField();
-		TextField textField = new TextField();
-		layout.getChildren().addAll(xCoordinate, yCoordinate, textField);
-		dialog.getDialogPane().setContent(layout);
-//		dialog.setResultConverter(dialogButton -> {
-//		if (dialogButton == ButtonType.OK) {
-//		return new TestContainer(xCoordinate.getText(),
-//		yCoordinate.getText(), textField.getText());}
-//		return null;
-//		});
-
-		Optional<TestContainer> result = dialog.showAndWait();
-
-		// boese boese :D
-		Pane pane = ((Pane) graphViewTabPane.getSelectionModel().getSelectedItem().getContent());
-		Group group = ((Group) pane.getChildren().get(pane.getChildren().size() - 1));
-		((GraphView) group.getChildren().get(group.getChildren().size() - 1))
-				.addVertex(Double.parseDouble(result.get().x), Double.parseDouble(result.get().y), result.get().text);
-	}
-
-	private class TestContainer {
-		public TestContainer(String x, String y, String text) {
-			this.x = x;
-			this.y = y;
-			this.text = text;
-		}
-
-		public String x;
-		public String y;
-		public String text;
-	}
+//	private void openTestDialog() {
+//		Dialog<TestContainer> dialog = new Dialog<TestContainer>();
+//		dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+//		HBox layout = new HBox();
+//		TextField xCoordinate = new TextField();
+//		TextField yCoordinate = new TextField();
+//		TextField textField = new TextField();
+//		layout.getChildren().addAll(xCoordinate, yCoordinate, textField);
+//		dialog.getDialogPane().setContent(layout);
+//		// dialog.setResultConverter(dialogButton -> {
+//		// if (dialogButton == ButtonType.OK) {
+//		// return new TestContainer(xCoordinate.getText(),
+//		// yCoordinate.getText(), textField.getText());}
+//		// return null;
+//		// });
+//
+//		Optional<TestContainer> result = dialog.showAndWait();
+//
+//		// boese boese :D
+//		Pane pane = ((Pane) graphViewTabPane.getSelectionModel().getSelectedItem().getContent());
+//		Group group = ((Group) pane.getChildren().get(pane.getChildren().size() - 1));
+//		((GraphView) group.getChildren().get(group.getChildren().size() - 1))
+//				.addVertex(Double.parseDouble(result.get().x), Double.parseDouble(result.get().y), result.get().text);
+//	}
+//
+//	private class TestContainer {
+//		public TestContainer(String x, String y, String text) {
+//			this.x = x;
+//			this.y = y;
+//			this.text = text;
+//		}
+//
+//		public String x;
+//		public String y;
+//		public String text;
+//	}
 }

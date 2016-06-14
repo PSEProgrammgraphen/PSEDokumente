@@ -1,8 +1,5 @@
 package gui;
 
-import java.util.LinkedList;
-
-import javafx.beans.value.ChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.control.MultipleSelectionModel;
 import objectproperty.GAnsProperty;
@@ -14,8 +11,6 @@ import objectproperty.GAnsProperty;
  * @author Nicolas
  */
 public class GraphViewSelectionModel extends MultipleSelectionModel<GAnsGraphElement> {
-	
-	private LinkedList<ChangeListener<GAnsGraphElement> > listenerList;
 
 	/**
 	 * Returns the {@link GAnsProperty} of all selected items.
@@ -27,10 +22,6 @@ public class GraphViewSelectionModel extends MultipleSelectionModel<GAnsGraphEle
 		// des Selectionmodel hoert und übergibt diese liste an die
 		// informationview
 		return null;
-	}
-	
-	public void addListener(ChangeListener<GAnsGraphElement> listener) {
-		listenerList.add(listener);
 	}
 	
 	@Override

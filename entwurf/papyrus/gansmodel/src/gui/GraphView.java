@@ -1,5 +1,6 @@
 package gui;
 
+import graphmodel.Graph;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.canvas.Canvas;
@@ -21,7 +22,10 @@ public class GraphView extends Pane {
 
 	private DoubleProperty myScale = new SimpleDoubleProperty(1.0);
 
+	//TODO: selectionModel muss ueber EventHandler bei selektion aktualisiert werden.
 	private GraphViewSelectionModel selectionModel;
+	
+	private GraphViewGraphFactory graphFactory;
 
 	/**
 	 * Constructor.
@@ -101,24 +105,42 @@ public class GraphView extends Pane {
 	 * @param graph
 	 *            The graph to be visualized in the view.
 	 */
-	public void setGraph(/* IGraph graph */) {
+	public void setGraph(Graph<?, ?> graph) {
+		graphFactory = new GraphViewGraphFactory(graph);
+		
+		getChildren().addAll(graphFactory.getGraphicalElements());
+	}
+	
+	/**
+	 * Updates the shown graph.
+	 */
+	public void updateGraph() {
+		getChildren().addAll(graphFactory.getGraphicalElements());
+	}
+	
+	/**
+	 * Retruns the current {@link GraphViewGraphFactory} from the view.
+	 * @return The current {@link GraphViewGraphFactory}.
+	 */
+	public GraphViewGraphFactory getFactory() {
+		return graphFactory;
 	}
 
-	/**
-	 * Adds a single vertex in the GraphView.
-	 * 
-	 * @param x
-	 *            The x position in the view.
-	 * @param y
-	 *            The y position in the view.
-	 * @param Text
-	 *            The text of the vertex.
-	 */
-	public void addVertex(double x, double y, String text) {
-		VertexShape test = new VertexShape(text);
-		test.relocate(x, y);
-		getChildren().add(test);
-	}
+//	/**
+//	 * Adds a single vertex in the GraphView.
+//	 * 
+//	 * @param x
+//	 *            The x position in the view.
+//	 * @param y
+//	 *            The y position in the view.
+//	 * @param Text
+//	 *            The text of the vertex.
+//	 */
+//	public void addVertex(double x, double y, String text) {
+//		VertexShape test = new VertexShape(text);
+//		test.relocate(x, y);
+//		getChildren().add(test);
+//	}
 
 	/**
 	 * Sets the selection model for the GraphView.
