@@ -5,24 +5,28 @@ import graphmodel.Graph;
 import graphmodel.Vertex;
 import parameter.Settings;
 
+/**
+ * A implementations of LayoutAlgorithm take a graph.
+ * They assign its vertices absolute coordinates and assign its edges coordinates, they have to pass through.
+ * LayoutAlgorithms have to be registered with a {@link LayoutOption} at the {@link LayoutRegister} of the Graph.
+ * 
+ * @param <G> the type of directed graph which should be processed
+ * @param <V> the type of vertex used in the graph
+ * @param <E> the type of edge used in the graph
+ */
 public interface LayoutAlgorithm<G extends Graph<V, E>, V extends Vertex, E extends Edge<V>> {
 
 	/**
-	 * 
-	 */
-	public void getParameterDialog();
-
-	/**
 	 * Get the set of parameters for this instance of the algorithm.
-	 * @return 
-	 * 		The set of parameters
+	 * 
+	 * @return the set of parameters
 	 */
 	public Settings getSettings();
 
 	/**
 	 * Layout the specified Graph.
-	 * @param graph
-	 * 		The graph to layout
+	 * 
+	 * @param graph the graph to layout
 	 */
 	public void layout(G graph);
 }
