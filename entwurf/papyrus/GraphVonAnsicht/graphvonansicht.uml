@@ -162,6 +162,7 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_tfF_EC8vEeaW5pq-1rzVBQ" name="HashMap"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_6hEq5y8zEeaW5pq-1rzVBQ" name="LinkedList"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_ALLyBjC1EeaTGLGmcq2w7A" name="ServiceLoader"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_es7qUTH4EeaaiaiZK_IS2A" name="List"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_ZDBrkSuiEeab3L3GjbSQTw" name="beans">
         <packagedElement xmi:type="uml:Class" xmi:id="_ZDBrkiuiEeab3L3GjbSQTw" name="EventHandler"/>
@@ -1658,6 +1659,7 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_UyJLIDEGEeaY3srWKK0XCQ" name="E"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_es7DQDH4EeaaiaiZK_IS2A" name="DirectedGraph"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_PZAAADC1EeaTGLGmcq2w7A" name="joana">
       <packagedElement xmi:type="uml:Class" xmi:id="_PZAAATC1EeaTGLGmcq2w7A" name="Callgraph" visibility="public">
@@ -1927,7 +1929,6 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_B2IkOzDyEeaZHIc6rzlw_w" name="MethodGraphLayout" visibility="public">
-        <generalization xmi:type="uml:Generalization" xmi:id="_H2a7kDEGEeaY3srWKK0XCQ" general="_ie-_IDDFEeaZHpBEXCeEJQ"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H2a7kTEGEeaY3srWKK0XCQ" name="getParameterDialog" visibility="public"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H2bioDEGEeaY3srWKK0XCQ" name="getSettings" visibility="public">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_H2bioTEGEeaY3srWKK0XCQ" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
@@ -2844,85 +2845,698 @@
         <ownedEnd xmi:type="uml:Property" xmi:id="_6afAEjDzEeaZHIc6rzlw_w" name="gansobjectpropertyvalue" type="_iTrYIDDzEeaZHIc6rzlw_w" association="_6aeZADDzEeaZHIc6rzlw_w"/>
       </packagedElement>
     </packagedElement>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Model" xmi:id="_iefP4DDFEeaZHpBEXCeEJQ" name="sugiyama">
-    <packagedElement xmi:type="uml:Package" xmi:id="_ieyK0DDFEeaZHpBEXCeEJQ" name="sugiyama">
-      <packagedElement xmi:type="uml:Class" xmi:id="_ie0AADDFEeaZHpBEXCeEJQ" name="CrossMinimization" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie1OIDDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie1OITDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie11MDDFEeaZHpBEXCeEJQ" name="minimizeCrossings" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie2cQDDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_eslsEDH4EeaaiaiZK_IS2A" name="sugiyama">
+      <packagedElement xmi:type="uml:Class" xmi:id="_espWcDH4EeaaiaiZK_IS2A" name="CrossMinimizer" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_esp9gDH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a sugiyama graph and rearranges its vertices on each layer to minimize&#xD;
+ * the amount of edge crossings.&#xD;
+ * &#xD;
+ * @param &lt;G> the type of directed graph which should be minimized.&#xD;
+ * @param &lt;V> the type of vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_esrLoTH4EeaaiaiZK_IS2A" name="minimizeCrossings" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_esrLojH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Rearranges vertices in the graph argument in order to remove the amount of crosses of their edges.&#xD;
+	 * &#xD;
+	 * @param graph input graph&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_esrysDH4EeaaiaiZK_IS2A" name="graph" type="_esrLoDH4EeaaiaiZK_IS2A"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_ie3qYDDFEeaZHpBEXCeEJQ" name="CycleRemoving" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie3qYTDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie4RcDDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie4RcTDFEeaZHpBEXCeEJQ" name="removeCycles" visibility="private">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie4RcjDFEeaZHpBEXCeEJQ" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie4RczDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_esrLoDH4EeaaiaiZK_IS2A" name="SugiyamaGraph" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_es6cMDH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast acessability of&#xD;
+ * attributes and constructs needed during the computation of the hierarchical layout of a directed graph.&#xD;
+ * All vertices are assigned to a layer.&#xD;
+ *&#xD;
+ * @param &lt;G> the directed graph which is used as underlying representation&#xD;
+ * @param &lt;V> the vertex class used in the graph&#xD;
+ * @param &lt;E> the edge class used in the graph&#xD;
+ </body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_es7qUDH4EeaaiaiZK_IS2A" general="_es7DQDH4EeaaiaiZK_IS2A"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es7qUjH4EeaaiaiZK_IS2A" name="layers" visibility="private" type="_es7qUTH4EeaaiaiZK_IS2A" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_es8RYDH4EeaaiaiZK_IS2A"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_es8RYTH4EeaaiaiZK_IS2A" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es8RYjH4EeaaiaiZK_IS2A" name="vertexToLayer" visibility="private" type="_DCOi8CtXEeaLxs00cEC_Hw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es84cDH4EeaaiaiZK_IS2A" name="brokenCycleEdges" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es84cTH4EeaaiaiZK_IS2A" name="insertedVertices" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es84cjH4EeaaiaiZK_IS2A" name="graph" visibility="private" type="_xeFUrTDtEeaerfpH0KeGRA" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es9fgDH4EeaaiaiZK_IS2A" name="assignToLayer" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es9fgTH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Assigns the specified vertex to the specified layer.&#xD;
+	 * A vertex must only be assigned to one layer at the time.&#xD;
+	 * When assigned to a new layer the vertex will be removed from layer it was assigned before.&#xD;
+	 * &#xD;
+	 * @param vertex the vertex to assign to the layer&#xD;
+	 * @param layerN the index of the layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es9fgjH4EeaaiaiZK_IS2A" name="vertex" type="_PyHUBzDuEeaerfpH0KeGRA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es9fgzH4EeaaiaiZK_IS2A" name="layerN" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es-GkDH4EeaaiaiZK_IS2A" name="getLayer" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es-GkTH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns a copy of the layer specified by the index.&#xD;
+	 * @param layerN the index of the layer, which should be returned&#xD;
+	 * &#xD;
+	 * @return the layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es-GkjH4EeaaiaiZK_IS2A" type="_PyHUBzDuEeaerfpH0KeGRA" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_es-GkzH4EeaaiaiZK_IS2A"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_es-GlDH4EeaaiaiZK_IS2A" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es-toDH4EeaaiaiZK_IS2A" name="layerN" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es-toTH4EeaaiaiZK_IS2A" name="getLayers" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es-tojH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns a copy of all layers.&#xD;
+	 * &#xD;
+	 * @return the layers.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es-tozH4EeaaiaiZK_IS2A" type="_es7qUTH4EeaaiaiZK_IS2A" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_es-tpDH4EeaaiaiZK_IS2A"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_es_UsDH4EeaaiaiZK_IS2A" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es_UsjH4EeaaiaiZK_IS2A" name="reverseEdge" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es_UszH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Reverses the specified edge (u, v) by replacing it with an supplement edge (v, u)&#xD;
+	 * The action will be saved and can later be retrieved with {@code getInvertedEdges()} or&#xD;
+	 * restored with {@code restoreReversedEdges()} of the old state.&#xD;
+	 * While reversed the specified edge won't be part of the edge set and therefore not returned by {@code getEdgeSet()}&#xD;
+	 * &#xD;
+	 * @param edge the edge to reverse&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es_UtDH4EeaaiaiZK_IS2A" name="edge" type="_es_UsTH4EeaaiaiZK_IS2A"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es_UtTH4EeaaiaiZK_IS2A" name="getReversedEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es_UtjH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the set of all with {@code reverseEdge(E edge)} reversed edges.&#xD;
+	 * &#xD;
+	 * @return the set of all reversed edges.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es_7wDH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es_7wTH4EeaaiaiZK_IS2A" name="restoreReversedEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es_7wjH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Deletes the supplement edges, which have been created when an edge was reversed.&#xD;
+	 * Adds all reversed edges back to the set of edges and returns them.&#xD;
+	 * &#xD;
+	 * @return the set of edges which have been restored.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es_7wzH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es_7xDH4EeaaiaiZK_IS2A" name="replaceWithSupplementPath" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es_7xTH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Replaces the specified edge with a path of dummy vertices of the specified length.&#xD;
+	 * Replaced edges are removed from the set of edges but saved for later retrieval &#xD;
+	 * with {@code getReplacedEdges()} or restored with {@code restoreReplacedEdges}.&#xD;
+	 * &#xD;
+	 * @param edge the edge to be replaced&#xD;
+	 * @param length the length of the path which replaces the edge&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etAi0DH4EeaaiaiZK_IS2A" name="edge" type="_es_UsTH4EeaaiaiZK_IS2A"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etAi0TH4EeaaiaiZK_IS2A" name="length" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_etAi0jH4EeaaiaiZK_IS2A" name="getReplacedEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_etAi0zH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the set of replaced edges.&#xD;
+	 * &#xD;
+	 * @return the set of replaced edges&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etAi1DH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_etAi1TH4EeaaiaiZK_IS2A" name="restoreReplacedEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_etAi1jH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Deletes all dummy vertices and edges connecting dummy vertices.&#xD;
+	 * Adds the replaced edges back to set of edges.&#xD;
+	 * &#xD;
+	 * @return the set of edges, which has been restored&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etBJ4DH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_ie5fkDDFEeaZHpBEXCeEJQ" name="EdgeDrawing" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie6GojDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_ie6GoTDFEeaZHpBEXCeEJQ" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie6GozDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie6tsDDFEeaZHpBEXCeEJQ" name="drawEdges" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie6tsTDFEeaZHpBEXCeEJQ" name="graph" type="_ie6GoTDFEeaZHpBEXCeEJQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie6tsjDFEeaZHpBEXCeEJQ" name="revertCycles" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie6tszDFEeaZHpBEXCeEJQ" name="cycles" type="_qAw_gC2ZEeatg6U_MxLsoQ"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_ie8i4DDFEeaZHpBEXCeEJQ" name="LayerAssigning" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie8i4TDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ie8i4jDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie8i4zDFEeaZHpBEXCeEJQ" name="assignLayers" visibility="private">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie8i5DDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie9J8DDFEeaZHpBEXCeEJQ" name="minimizeHeight" visibility="private">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9J8TDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9J8jDFEeaZHpBEXCeEJQ" name="height" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie9J8zDFEeaZHpBEXCeEJQ" name="minimizeEdgeLength" visibility="private">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9xADDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9xATDFEeaZHpBEXCeEJQ" name="edgeLength" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie9xAjDFEeaZHpBEXCeEJQ" name="minimizeWidth" visibility="private">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9xAzDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ie9xBDDFEeaZHpBEXCeEJQ" name="width" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_estA0DH4EeaaiaiZK_IS2A" name="DAGMaker" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_estA0TH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a directed Graph G = (V, E) and removes a set of edges E_ &#xD;
+ * so that the resulting Graph G' = (V, E\E_) is a DAG(Directed Acyclic Graph).&#xD;
+ * &#xD;
+ * @param &lt;G> the type of the directed graph which should be transformed into a DAG&#xD;
+ * @param &lt;V> the type of the vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_estn4DH4EeaaiaiZK_IS2A" name="removeCycles" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_estn4TH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Searches for a acyclic subgraph in the graph argument and reversed the direction of the edges that&#xD;
+	 * are not part of this subgraph.&#xD;
+	 * &#xD;
+	 * @param  graph the input graph to remove cycles from&#xD;
+	 * @return       a set of edges whose direction has been reversed in order to remove cycles from the graph&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_esuO8DH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_esu2ADH4EeaaiaiZK_IS2A" name="graph" type="_esrLoDH4EeaaiaiZK_IS2A"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_ie-_IDDFEeaZHpBEXCeEJQ" name="SugiyamaLayoutAlgorithm" visibility="public">
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ie_mMDDFEeaZHpBEXCeEJQ" name="SugiyamaLayoutAlgorithm implements LayoutAlgorithm" client="_ie-_IDDFEeaZHpBEXCeEJQ" supplier="_eu26QDC2EeaTGLGmcq2w7A" contract="_eu26QDC2EeaTGLGmcq2w7A"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie_mMTDFEeaZHpBEXCeEJQ" name="getParameterDialog" visibility="public"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ie_mMjDFEeaZHpBEXCeEJQ" name="getSettings" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifANQDDFEeaZHpBEXCeEJQ" type="_ie_mNDDFEeaZHpBEXCeEJQ" direction="return"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_eswEIDH4EeaaiaiZK_IS2A" name="EdgeDrawing" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_eswEITH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a directed graph, as a {@link SugiyamaClass}.&#xD;
+ * It removes dummy vertices and reverses previously reversed edges.&#xD;
+ * Afterwards it assigns every edge points it must run through.&#xD;
+ * &#xD;
+ * @param &lt;G> the type of the directed graph&#xD;
+ * @param &lt;V> the type of the vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_eswEIjH4EeaaiaiZK_IS2A" name="drawEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eswEIzH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Draws the edges from the graph argument and reverses the edges, which have been reversed earlier,&#xD;
+	 * so they have now the correct direction.&#xD;
+	 * &#xD;
+	 * @param graph the input graph&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_eswrMDH4EeaaiaiZK_IS2A" name="graph" type="_esrLoDH4EeaaiaiZK_IS2A"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifANQjDFEeaZHpBEXCeEJQ" name="layout" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifANQzDFEeaZHpBEXCeEJQ" name="graph" type="_ifANQTDFEeaZHpBEXCeEJQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifANRDDFEeaZHpBEXCeEJQ" name="getName" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifANRjDFEeaZHpBEXCeEJQ" type="_ifANRTDFEeaZHpBEXCeEJQ" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifA0UDDFEeaZHpBEXCeEJQ" name="getID" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifA0UTDFEeaZHpBEXCeEJQ" type="_ifANRTDFEeaZHpBEXCeEJQ" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifA0UjDFEeaZHpBEXCeEJQ" name="onLoad" visibility="public"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_ifANQTDFEeaZHpBEXCeEJQ" name="G"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_ifCCcDDFEeaZHpBEXCeEJQ" name="VertexPositioning" visibility="public">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ifCCcTDFEeaZHpBEXCeEJQ" name="graph" visibility="private" type="_PZAAAjC1EeaTGLGmcq2w7A" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ifCCcjDFEeaZHpBEXCeEJQ" name="cycles" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_ifCpgDDFEeaZHpBEXCeEJQ" name="positionVertices" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifCpgTDFEeaZHpBEXCeEJQ" name="graph" type="_PZAAAjC1EeaTGLGmcq2w7A"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_esx5UDH4EeaaiaiZK_IS2A" name="LayerAssigning" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_esx5UTH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a directed graph and assigns every vertex in it a layer.&#xD;
+ * &#xD;
+ * @param &lt;G> the type of the directed graph&#xD;
+ * @param &lt;V> the type of the vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_esygYDH4EeaaiaiZK_IS2A" name="addConstraints" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_esygYTH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Assigns every vertex in the graph parameter e relative height.&#xD;
+	 * @param graph input graph &#xD;
+	 * &#xD;
+	public void assignLayers(SugiyamaGraph&lt;G, V, E> graph) { }&#xD;
+	&#xD;
+	/**&#xD;
+	 * Defines a set of constraints which should be considered by the algorithm.&#xD;
+	 * @param constraints relative layer constraints the algorithm should consider&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_esygYjH4EeaaiaiZK_IS2A" name="constraints" type="_PyHUQTDuEeaerfpH0KeGRA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_esygYzH4EeaaiaiZK_IS2A" name="setMaxHeight" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eszHcDH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Reassigns the layer of vertices whose layer is greater than the height parameter.&#xD;
+	 * @param height maximum height for vertices&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_eszHcTH4EeaaiaiZK_IS2A" name="height" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_eszHcjH4EeaaiaiZK_IS2A" name="setMaxWidth" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eszHczH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Reassigns the layer of vertices in case there are more than the width parameter in one layer.&#xD;
+	 * @param width maximum amount of vertices in one layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_eszHdDH4EeaaiaiZK_IS2A" name="width" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_es08oDH4EeaaiaiZK_IS2A" name="LayerConstraint" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_es1jsDH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * A relative constraint, regarding layer assignment, between to sets of vertices.&#xD;
+ * Can describe if one set of vertices should be on top of the other.&#xD;
+ * When the exact is set a layer distance can be set.&#xD;
+ * &#xD;
+ * @param &lt;V> the type of the vertices in the sets&#xD;
+ </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es1jsTH4EeaaiaiZK_IS2A" name="top" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es2KwDH4EeaaiaiZK_IS2A" name="bottom" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es2KwTH4EeaaiaiZK_IS2A" name="exact" visibility="private" type="_MY4yMS86Eea5c8WWEsgIIQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_es2x0DH4EeaaiaiZK_IS2A" name="distance" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es2x0TH4EeaaiaiZK_IS2A" name="isExact" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es2x0jH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns true if the constraints describes an exact distance between the two sets, false otherwise.&#xD;
+	 * @return true if exact&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es2x0zH4EeaaiaiZK_IS2A" type="_MY4yMS86Eea5c8WWEsgIIQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es3Y4DH4EeaaiaiZK_IS2A" name="getDistance" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es3Y4TH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the distance the two sets should be apart, if this constraint is exact.&#xD;
+	 * @return the number of layers between the sets&#xD;
+	 * @throws IllegalStateException if the set is not exact&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es3Y4jH4EeaaiaiZK_IS2A" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es3Y4zH4EeaaiaiZK_IS2A" name="topSet" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es3Y5DH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the set which should be on top.&#xD;
+	 * @return the top layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es3_8DH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_es3_8TH4EeaaiaiZK_IS2A" name="bottomSet" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_es3_8jH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the set which should be below.&#xD;
+	 * @return the bottom layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_es3_8zH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_es_UsTH4EeaaiaiZK_IS2A" name="E"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_etCYADH4EeaaiaiZK_IS2A" name="SugiyamaLayoutAlgorithm" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_etCYATH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class controls the collaboration between every single step of Sugiyama Layout.&#xD;
+ *&#xD;
+ * @param &lt;G> a directed graph&#xD;
+ * @param &lt;V> a vertex&#xD;
+ * @param &lt;E> a directed edge&#xD;
+ </body>
+        </ownedComment>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_etC_EDH4EeaaiaiZK_IS2A" name="SugiyamaLayoutAlgorithm implements LayoutAlgorithm" client="_etCYADH4EeaaiaiZK_IS2A" supplier="_eu26QDC2EeaTGLGmcq2w7A" contract="_eu26QDC2EeaTGLGmcq2w7A"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_etC_ETH4EeaaiaiZK_IS2A" name="getSettings" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etC_EjH4EeaaiaiZK_IS2A" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_etDmIDH4EeaaiaiZK_IS2A" name="layout" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etDmITH4EeaaiaiZK_IS2A" name="graph" type="_xeFUrTDtEeaerfpH0KeGRA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_etE0QDH4EeaaiaiZK_IS2A" name="VertexPositioning" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_etE0QTH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a directed graph and position its vertices in order to look more clearly. (e.g. position vertices in a row or column)&#xD;
+ *&#xD;
+ * @param &lt;G> the type of the directed graph&#xD;
+ * @param &lt;V> the type of the vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_etE0QjH4EeaaiaiZK_IS2A" name="positionVertices" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_etFbUDH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Position all vertices relatively to each other.&#xD;
+	 * &#xD;
+	 * @param graph input graph&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etFbUTH4EeaaiaiZK_IS2A" name="graph" type="_esrLoDH4EeaaiaiZK_IS2A"/>
         </ownedOperation>
       </packagedElement>
     </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_iefP4DDFEeaZHpBEXCeEJQ" name="sugiyama">
     <packagedElement xmi:type="uml:Package" xmi:id="_ie6GoDDFEeaZHpBEXCeEJQ" name="sgraphmodel">
       <packagedElement xmi:type="uml:Class" xmi:id="_ie6GoTDFEeaZHpBEXCeEJQ" name="DirectedGraph"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_ie_mMzDFEeaZHpBEXCeEJQ" name="plugin">
       <packagedElement xmi:type="uml:Class" xmi:id="_ie_mNDDFEeaZHpBEXCeEJQ" name="Settings"/>
       <packagedElement xmi:type="uml:Class" xmi:id="_ifANRTDFEeaZHpBEXCeEJQ" name="String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_sk9xIDH4EeaaiaiZK_IS2A" name="sugiyama">
+      <packagedElement xmi:type="uml:Class" xmi:id="_slANYDH4EeaaiaiZK_IS2A" name="CrossMinimizer" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_slA0cDH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a sugiyama graph and rearranges its vertices on each layer to minimize&#xD;
+ * the amount of edge crossings.&#xD;
+ * &#xD;
+ * @param &lt;G> the type of directed graph which should be minimized.&#xD;
+ * @param &lt;V> the type of vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slA0cjH4EeaaiaiZK_IS2A" name="minimizeCrossings" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slA0czH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Rearranges vertices in the graph argument in order to remove the amount of crosses of their edges.&#xD;
+	 * &#xD;
+	 * @param graph input graph&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slBbgDH4EeaaiaiZK_IS2A" name="graph" type="_slA0cTH4EeaaiaiZK_IS2A"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_slA0cTH4EeaaiaiZK_IS2A" name="SugiyamaGraph" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_slNBsDH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast acessability of&#xD;
+ * attributes and constructs needed during the computation of the hierarchical layout of a directed graph.&#xD;
+ * All vertices are assigned to a layer.&#xD;
+ *&#xD;
+ * @param &lt;G> the directed graph which is used as underlying representation&#xD;
+ * @param &lt;V> the vertex class used in the graph&#xD;
+ * @param &lt;E> the edge class used in the graph&#xD;
+ </body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_slNBsTH4EeaaiaiZK_IS2A" general="_es7DQDH4EeaaiaiZK_IS2A"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slNBsjH4EeaaiaiZK_IS2A" name="layers" visibility="private" type="_es7qUTH4EeaaiaiZK_IS2A" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_slNBszH4EeaaiaiZK_IS2A"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_slNowDH4EeaaiaiZK_IS2A" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slNowTH4EeaaiaiZK_IS2A" name="vertexToLayer" visibility="private" type="_DCOi8CtXEeaLxs00cEC_Hw" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slNowjH4EeaaiaiZK_IS2A" name="brokenCycleEdges" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slNowzH4EeaaiaiZK_IS2A" name="insertedVertices" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slOP0DH4EeaaiaiZK_IS2A" name="graph" visibility="private" type="_xeFUrTDtEeaerfpH0KeGRA" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slOP0TH4EeaaiaiZK_IS2A" name="assignToLayer" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slOP0jH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Assigns the specified vertex to the specified layer.&#xD;
+	 * A vertex must only be assigned to one layer at the time.&#xD;
+	 * When assigned to a new layer the vertex will be removed from layer it was assigned before.&#xD;
+	 * &#xD;
+	 * @param vertex the vertex to assign to the layer&#xD;
+	 * @param layerN the index of the layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slOP0zH4EeaaiaiZK_IS2A" name="vertex" type="_PyHUBzDuEeaerfpH0KeGRA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slOP1DH4EeaaiaiZK_IS2A" name="layerN" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slO24DH4EeaaiaiZK_IS2A" name="getLayer" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slO24TH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns a copy of the layer specified by the index.&#xD;
+	 * @param layerN the index of the layer, which should be returned&#xD;
+	 * &#xD;
+	 * @return the layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slO24jH4EeaaiaiZK_IS2A" type="_PyHUBzDuEeaerfpH0KeGRA" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_slO24zH4EeaaiaiZK_IS2A"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_slO25DH4EeaaiaiZK_IS2A" value="*"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slO25TH4EeaaiaiZK_IS2A" name="layerN" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slO25jH4EeaaiaiZK_IS2A" name="getLayers" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slO25zH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns a copy of all layers.&#xD;
+	 * &#xD;
+	 * @return the layers.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slPd8DH4EeaaiaiZK_IS2A" type="_es7qUTH4EeaaiaiZK_IS2A" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_slPd8TH4EeaaiaiZK_IS2A"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_slPd8jH4EeaaiaiZK_IS2A" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slPd9DH4EeaaiaiZK_IS2A" name="reverseEdge" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slPd9TH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Reverses the specified edge (u, v) by replacing it with an supplement edge (v, u)&#xD;
+	 * The action will be saved and can later be retrieved with {@code getInvertedEdges()} or&#xD;
+	 * restored with {@code restoreReversedEdges()} of the old state.&#xD;
+	 * While reversed the specified edge won't be part of the edge set and therefore not returned by {@code getEdgeSet()}&#xD;
+	 * &#xD;
+	 * @param edge the edge to reverse&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slPd9jH4EeaaiaiZK_IS2A" name="edge" type="_slPd8zH4EeaaiaiZK_IS2A"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slQFADH4EeaaiaiZK_IS2A" name="getReversedEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slQFATH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the set of all with {@code reverseEdge(E edge)} reversed edges.&#xD;
+	 * &#xD;
+	 * @return the set of all reversed edges.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slQFAjH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slQFAzH4EeaaiaiZK_IS2A" name="restoreReversedEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slQFBDH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Deletes the supplement edges, which have been created when an edge was reversed.&#xD;
+	 * Adds all reversed edges back to the set of edges and returns them.&#xD;
+	 * &#xD;
+	 * @return the set of edges which have been restored.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slQFBTH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slQsEDH4EeaaiaiZK_IS2A" name="replaceWithSupplementPath" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slQsETH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Replaces the specified edge with a path of dummy vertices of the specified length.&#xD;
+	 * Replaced edges are removed from the set of edges but saved for later retrieval &#xD;
+	 * with {@code getReplacedEdges()} or restored with {@code restoreReplacedEdges}.&#xD;
+	 * &#xD;
+	 * @param edge the edge to be replaced&#xD;
+	 * @param length the length of the path which replaces the edge&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slQsEjH4EeaaiaiZK_IS2A" name="edge" type="_slPd8zH4EeaaiaiZK_IS2A"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slQsEzH4EeaaiaiZK_IS2A" name="length" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slQsFDH4EeaaiaiZK_IS2A" name="getReplacedEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slRTIDH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the set of replaced edges.&#xD;
+	 * &#xD;
+	 * @return the set of replaced edges&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slRTITH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slRTIjH4EeaaiaiZK_IS2A" name="restoreReplacedEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slRTIzH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Deletes all dummy vertices and edges connecting dummy vertices.&#xD;
+	 * Adds the replaced edges back to set of edges.&#xD;
+	 * &#xD;
+	 * @return the set of edges, which has been restored&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slRTJDH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_slCpoDH4EeaaiaiZK_IS2A" name="DAGMaker" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_slCpoTH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a directed Graph G = (V, E) and removes a set of edges E_ &#xD;
+ * so that the resulting Graph G' = (V, E\E_) is a DAG(Directed Acyclic Graph).&#xD;
+ * &#xD;
+ * @param &lt;G> the type of the directed graph which should be transformed into a DAG&#xD;
+ * @param &lt;V> the type of the vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slCpojH4EeaaiaiZK_IS2A" name="removeCycles" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slCpozH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Searches for a acyclic subgraph in the graph argument and reversed the direction of the edges that&#xD;
+	 * are not part of this subgraph.&#xD;
+	 * &#xD;
+	 * @param  graph the input graph to remove cycles from&#xD;
+	 * @return       a set of edges whose direction has been reversed in order to remove cycles from the graph&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slCppDH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slDQsDH4EeaaiaiZK_IS2A" name="graph" type="_slA0cTH4EeaaiaiZK_IS2A"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_slD3wDH4EeaaiaiZK_IS2A" name="EdgeDrawing" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_slEe0DH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a directed graph, as a {@link SugiyamaClass}.&#xD;
+ * It removes dummy vertices and reverses previously reversed edges.&#xD;
+ * Afterwards it assigns every edge points it must run through.&#xD;
+ * &#xD;
+ * @param &lt;G> the type of the directed graph&#xD;
+ * @param &lt;V> the type of the vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slEe0TH4EeaaiaiZK_IS2A" name="drawEdges" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slEe0jH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Draws the edges from the graph argument and reverses the edges, which have been reversed earlier,&#xD;
+	 * so they have now the correct direction.&#xD;
+	 * &#xD;
+	 * @param graph the input graph&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slEe0zH4EeaaiaiZK_IS2A" name="graph" type="_slA0cTH4EeaaiaiZK_IS2A"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_slFs8DH4EeaaiaiZK_IS2A" name="LayerAssigning" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_slFs8TH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a directed graph and assigns every vertex in it a layer.&#xD;
+ * &#xD;
+ * @param &lt;G> the type of the directed graph&#xD;
+ * @param &lt;V> the type of the vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slFs8jH4EeaaiaiZK_IS2A" name="addConstraints" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slFs8zH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Assigns every vertex in the graph parameter e relative height.&#xD;
+	 * @param graph input graph &#xD;
+	 * &#xD;
+	public void assignLayers(SugiyamaGraph&lt;G, V, E> graph) { }&#xD;
+	&#xD;
+	/**&#xD;
+	 * Defines a set of constraints which should be considered by the algorithm.&#xD;
+	 * @param constraints relative layer constraints the algorithm should consider&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slGUADH4EeaaiaiZK_IS2A" name="constraints" type="_PyHUQTDuEeaerfpH0KeGRA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slGUATH4EeaaiaiZK_IS2A" name="setMaxHeight" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slGUAjH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Reassigns the layer of vertices whose layer is greater than the height parameter.&#xD;
+	 * @param height maximum height for vertices&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slGUAzH4EeaaiaiZK_IS2A" name="height" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slG7EDH4EeaaiaiZK_IS2A" name="setMaxWidth" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slG7ETH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Reassigns the layer of vertices in case there are more than the width parameter in one layer.&#xD;
+	 * @param width maximum amount of vertices in one layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slG7EjH4EeaaiaiZK_IS2A" name="width" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_slIJMDH4EeaaiaiZK_IS2A" name="LayerConstraint" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_slIwQDH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * A relative constraint, regarding layer assignment, between to sets of vertices.&#xD;
+ * Can describe if one set of vertices should be on top of the other.&#xD;
+ * When the exact is set a layer distance can be set.&#xD;
+ * &#xD;
+ * @param &lt;V> the type of the vertices in the sets&#xD;
+ </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slIwQTH4EeaaiaiZK_IS2A" name="top" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slIwQjH4EeaaiaiZK_IS2A" name="bottom" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slJXUDH4EeaaiaiZK_IS2A" name="exact" visibility="private" type="_MY4yMS86Eea5c8WWEsgIIQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_slJ-YDH4EeaaiaiZK_IS2A" name="distance" visibility="private" type="_tfGmIi8vEeaW5pq-1rzVBQ" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slJ-YTH4EeaaiaiZK_IS2A" name="isExact" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slJ-YjH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns true if the constraints describes an exact distance between the two sets, false otherwise.&#xD;
+	 * @return true if exact&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slKlcDH4EeaaiaiZK_IS2A" type="_MY4yMS86Eea5c8WWEsgIIQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slKlcTH4EeaaiaiZK_IS2A" name="getDistance" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slKlcjH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the distance the two sets should be apart, if this constraint is exact.&#xD;
+	 * @return the number of layers between the sets&#xD;
+	 * @throws IllegalStateException if the set is not exact&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slKlczH4EeaaiaiZK_IS2A" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slKldDH4EeaaiaiZK_IS2A" name="topSet" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slKldTH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the set which should be on top.&#xD;
+	 * @return the top layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slKldjH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slLMgDH4EeaaiaiZK_IS2A" name="bottomSet" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slLMgTH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Returns the set which should be below.&#xD;
+	 * @return the bottom layer&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slLMgjH4EeaaiaiZK_IS2A" type="_qAw_gC2ZEeatg6U_MxLsoQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_slPd8zH4EeaaiaiZK_IS2A" name="E"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_slTIUDH4EeaaiaiZK_IS2A" name="SugiyamaLayoutAlgorithm" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_slTIUTH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class controls the collaboration between every single step of Sugiyama Layout.&#xD;
+ *&#xD;
+ * @param &lt;G> a directed graph&#xD;
+ * @param &lt;V> a vertex&#xD;
+ * @param &lt;E> a directed edge&#xD;
+ </body>
+        </ownedComment>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_slTIUjH4EeaaiaiZK_IS2A" name="SugiyamaLayoutAlgorithm implements LayoutAlgorithm" client="_slTIUDH4EeaaiaiZK_IS2A" supplier="_eu26QDC2EeaTGLGmcq2w7A" contract="_eu26QDC2EeaTGLGmcq2w7A"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slTvYDH4EeaaiaiZK_IS2A" name="getSettings" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slTvYTH4EeaaiaiZK_IS2A" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slTvYjH4EeaaiaiZK_IS2A" name="layout" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slUWcDH4EeaaiaiZK_IS2A" name="graph" type="_xeFUrTDtEeaerfpH0KeGRA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_slVkkDH4EeaaiaiZK_IS2A" name="VertexPositioning" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_slWLoDH4EeaaiaiZK_IS2A">
+          <body>&#xD;
+ * This class takes a directed graph and position its vertices in order to look more clearly. (e.g. position vertices in a row or column)&#xD;
+ *&#xD;
+ * @param &lt;G> the type of the directed graph&#xD;
+ * @param &lt;V> the type of the vertices the graph contains&#xD;
+ * @param &lt;E> the type of the directed edges the graph contains&#xD;
+ </body>
+        </ownedComment>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_slWLoTH4EeaaiaiZK_IS2A" name="positionVertices" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_slWLojH4EeaaiaiZK_IS2A">
+            <body>&#xD;
+	 * Position all vertices relatively to each other.&#xD;
+	 * &#xD;
+	 * @param graph input graph&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_slWLozH4EeaaiaiZK_IS2A" name="graph" type="_slA0cTH4EeaaiaiZK_IS2A"/>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_cwo1EDDtEeaerfpH0KeGRA" name="package objectproperty" URI="">
@@ -4115,7 +4729,6 @@
       </ownedOperation>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_Y3xQoDDuEeaerfpH0KeGRA" name="SugiyamaLayoutAlgorithm implements LayoutAlgorithm" client="_ie-_IDDFEeaZHpBEXCeEJQ" supplier="_Y3vb0zDuEeaerfpH0KeGRA" contract="_Y3vb0zDuEeaerfpH0KeGRA"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_AK4QCTC1EeaTGLGmcq2w7A" name="LayoutRegister" visibility="public">
     <ownedComment xmi:type="uml:Comment" xmi:id="_AK4QCjC1EeaTGLGmcq2w7A">
       <body>&#xD;
