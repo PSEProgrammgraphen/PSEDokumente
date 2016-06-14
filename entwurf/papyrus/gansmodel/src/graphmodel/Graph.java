@@ -64,4 +64,12 @@ public interface Graph<V extends Vertex, E extends Edge<V>> {
 	 * @return 
 	 */
 	public Set<E> edgesOf(V vertex);
+
+	/**
+	 * adds this graph to a fastGraphAccessor
+	 * 
+	 * @param vertex 
+	 * @return 
+	 */
+	public void addToFastGraphAccessor(FastGraphAccessor fga);
 }

@@ -22,4 +22,10 @@ public interface Vertex {
 	 */
 	public Integer getID(); 
 
+	/**
+	 * Adds Values to FastGraphAccessor
+	 * 
+	 * @return 
+	 */
+	public void addToFastGraphAccessor(FastGraphAccessor fga);
 }
