@@ -9,30 +9,31 @@ package graphmodel;
 public abstract class AbstractEdgeBuilder {
 
 	/**
-	 * set the ID of this edge
+	 * sets the ID of the edge build by this.
 	 * 
-	 * @param id 
+	 * @param id value to which the id is set
 	 */
 	public abstract void setID(String id);
 
 	/**
-	 * set the direction of this edge
+	 * sets the direction of the edge build by this.
 	 * 
-	 * @param direction 
+	 * @param direction String representation of the direction. Can be one of
+	 * @TODO
 	 */
 	public abstract void setDirection(String direction);
 
 	/**
-	 * set source and target vertices of this edge
-	 * 
-	 * @param source 
-	 * @param target 
+	 * sets source and target vertices of the edge build by this.
+	 *
+	 * @param source String represantation of the source vertex
+	 * @param target String represantation of the target vertex
 	 */
 	public abstract void newEdge(String source, String target);
 
 	/**
-	 * Add optional data to this edge.
-	 * The EdgeBuilder needs to decide how to save the value.
+	 * Adds additional data to this edge.
+	 * The specific EdgeBuilder implementation needs to decide how to save the value for given edge type.
 	 * 
 	 * @param keyname 
 	 * @param value 
