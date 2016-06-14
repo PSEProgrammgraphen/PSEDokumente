@@ -3,12 +3,12 @@ package objectproperty;
 import javafx.beans.property.SimpleObjectProperty;
 
 /**
- * A JavaFX objectproperty which in toString() retuns the value from the
- * toString() of the {@link GAnsObjectPropertyValue}.
+ * A JavaFX object property which in toString() returns the toString() of the
+ * value.
  * 
  * @author Nicolas
  */
-public class GAnsObjectProperty extends SimpleObjectProperty<GAnsObjectPropertyValue<?>> {
+public class GAnsObjectProperty<T> extends SimpleObjectProperty<T> {
 
 	/**
 	 * Constructor.
