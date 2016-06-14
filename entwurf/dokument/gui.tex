@@ -1,30 +1,3 @@
-\section*{Class Hierarchy}{
-\thispagestyle{empty}
-\markboth{Class Hierarchy}{Class Hierarchy}
-\addcontentsline{toc}{section}{Class Hierarchy}
-\subsection*{Classes}
-{\raggedright
-\hspace{0.0cm} $\bullet$ java.lang.Object {\tiny \refdefined{java.lang.Object}} \\
-\hspace{1.0cm} $\bullet$ gui.GraphViewEventHandler {\tiny \refdefined{gui.GraphViewEventHandler}} \\
-\hspace{1.0cm} $\bullet$ javafx.application.Application {\tiny \refdefined{javafx.application.Application}} \\
-\hspace{2.0cm} $\bullet$ gui.GAnsApplication {\tiny \refdefined{gui.GAnsApplication}} \\
-\hspace{1.0cm} $\bullet$ javafx.scene.Node {\tiny \refdefined{javafx.scene.Node}} \\
-\hspace{2.0cm} $\bullet$ javafx.scene.Parent {\tiny \refdefined{javafx.scene.Parent}} \\
-\hspace{3.0cm} $\bullet$ javafx.scene.layout.Region {\tiny \refdefined{javafx.scene.layout.Region}} \\
-\hspace{4.0cm} $\bullet$ javafx.scene.control.Control {\tiny \refdefined{javafx.scene.control.Control}} \\
-\hspace{5.0cm} $\bullet$ javafx.scene.control.TableView {\tiny \refdefined{javafx.scene.control.TableView}} \\
-\hspace{6.0cm} $\bullet$ gui.InformationView {\tiny \refdefined{gui.InformationView}} \\
-\hspace{5.0cm} $\bullet$ javafx.scene.control.TreeView {\tiny \refdefined{javafx.scene.control.TreeView}} \\
-\hspace{6.0cm} $\bullet$ gui.StructureView {\tiny \refdefined{gui.StructureView}} \\
-\hspace{4.0cm} $\bullet$ javafx.scene.layout.Pane {\tiny \refdefined{javafx.scene.layout.Pane}} \\
-\hspace{5.0cm} $\bullet$ gui.GraphView {\tiny \refdefined{gui.GraphView}} \\
-\hspace{5.0cm} $\bullet$ javafx.scene.layout.StackPane {\tiny \refdefined{javafx.scene.layout.StackPane}} \\
-\hspace{6.0cm} $\bullet$ gui.VertexShape {\tiny \refdefined{gui.VertexShape}} \\
-\hspace{2.0cm} $\bullet$ javafx.scene.shape.Shape {\tiny \refdefined{javafx.scene.shape.Shape}} \\
-\hspace{3.0cm} $\bullet$ javafx.scene.shape.Line {\tiny \refdefined{javafx.scene.shape.Line}} \\
-\hspace{4.0cm} $\bullet$ gui.EdgeShape {\tiny \refdefined{gui.EdgeShape}} \\
-}
-}
 \section{Package gui}{
 \label{gui}\hskip -.05in
 \hbox to \hsize{\textit{ Package Contents\hfil Page}}
@@ -32,9 +5,13 @@
 \hbox{{\bf  Classes}}
 \entityintro{EdgeShape}{gui.EdgeShape}{A visual representation of an edge with a text.}
 \entityintro{GAnsApplication}{gui.GAnsApplication}{Main application of GAns.}
+\entityintro{GAnsGraphElement}{gui.GAnsGraphElement}{A abstract class to generalize the visual elements that can be displayed in the \texttt{\small GraphView}{\small 
+\refdefined{gui.GraphView}}.}
 \entityintro{GraphView}{gui.GraphView}{A view used for showing and creating a graph in GAns.}
 \entityintro{GraphViewEventHandler}{gui.GraphViewEventHandler}{GraphViewEventHandler provides listeners for making the \texttt{\small GraphView}{\small 
 \refdefined{gui.GraphView}} draggable and zoomable.}
+\entityintro{GraphViewSelectionModel}{gui.GraphViewSelectionModel}{The selection model for the \texttt{\small GraphView}{\small 
+\refdefined{gui.GraphView}}, that supports multiple selection of vertices and edges.}
 \entityintro{InformationView}{gui.InformationView}{The InformationView shows a given set of properties from the selected vertices in the \texttt{\small GraphView}{\small 
 \refdefined{gui.GraphView}}.}
 \entityintro{StructureView}{gui.StructureView}{The StructureView regulates the access and representation of the elements in the StructreView of GAns.}
@@ -47,7 +24,7 @@ A visual representation of an edge with a text.\vskip .1in
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class EdgeShape
- extends javafx.scene.shape.Line\end{lstlisting}
+ extends gui.GAnsGraphElement\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -73,6 +50,30 @@ Constructor.
 }%end item
 \end{itemize}
 }%end item
+\item{ 
+\index{EdgeShape(VertexShape, VertexShape, String)}
+{\bf  EdgeShape}\\
+\begin{lstlisting}[frame=none]
+public EdgeShape(VertexShape vertex1,VertexShape vertex2,java.lang.String text)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Constructor
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex1} -- First of the two vertices that shall be connected.}
+   \item{
+\texttt{vertex2} -- Second of the two vertices that shall be connected.}
+   \item{
+\texttt{text} -- Text that will be displayed on the edge.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
 \end{itemize}
 }
 \subsubsection{Methods}{
@@ -82,15 +83,15 @@ Constructor.
 \index{getText()}
 {\bf  getText}\\
 \begin{lstlisting}[frame=none]
-public java.lang.String getText()\end{lstlisting} %end signature
+public abstract java.lang.String getText()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from GAnsGraphElement{\small \refdefined{gui.GAnsGraphElement}} }
 
-Returns the text shown on the edge.
+Returns the text shown on the element.
 }
 \item{{\bf  Returns} -- 
-The text that is being displayed on the edge. 
+The text that is being displayed on the element. 
 }%end item
 \end{itemize}
 }%end item
@@ -98,18 +99,18 @@ The text that is being displayed on the edge.
 \index{setColor(Color)}
 {\bf  setColor}\\
 \begin{lstlisting}[frame=none]
-public void setColor(javafx.scene.paint.Color color)\end{lstlisting} %end signature
+public abstract void setColor(javafx.scene.paint.Color color)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from GAnsGraphElement{\small \refdefined{gui.GAnsGraphElement}} }
 
-Sets the color of the edge
+Sets the color of the element
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{color} -- The color the edge will be.}
+\texttt{color} -- The color the element will be displayed in.}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -118,18 +119,18 @@ Sets the color of the edge
 \index{setText(String)}
 {\bf  setText}\\
 \begin{lstlisting}[frame=none]
-public void setText(java.lang.String text)\end{lstlisting} %end signature
+public abstract void setText(java.lang.String text)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from GAnsGraphElement{\small \refdefined{gui.GAnsGraphElement}} }
 
-Sets the text shown on the edge
+Sets the text shown on the element
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{text} -- The text that is being displayed on the edge.}
+\texttt{text} -- The text that will be displayed on the element.}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -183,6 +184,88 @@ Main method.
 {\bf  start}\\
 \begin{lstlisting}[frame=none]
 public abstract void start(javafx.stage.Stage arg0) throws java.lang.Exception\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{gui.GAnsGraphElement}\index{GAnsGraphElement}Class GAnsGraphElement}{
+\vskip .1in 
+A abstract class to generalize the visual elements that can be displayed in the \texttt{\small GraphView}{\small 
+\refdefined{gui.GraphView}}.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class GAnsGraphElement
+ extends javafx.scene.layout.StackPane\end{lstlisting}
+\subsubsection{All known subclasses}{VertexShape\small{\refdefined{gui.VertexShape}}, EdgeShape\small{\refdefined{gui.EdgeShape}}}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{GAnsGraphElement()}
+{\bf  GAnsGraphElement}\\
+\begin{lstlisting}[frame=none]
+public GAnsGraphElement()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getText()}
+{\bf  getText}\\
+\begin{lstlisting}[frame=none]
+public abstract java.lang.String getText()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the text shown on the element.
+}
+\item{{\bf  Returns} -- 
+The text that is being displayed on the element. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setColor(Color)}
+{\bf  setColor}\\
+\begin{lstlisting}[frame=none]
+public abstract void setColor(javafx.scene.paint.Color color)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the color of the element
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{color} -- The color the element will be displayed in.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setText(String)}
+{\bf  setText}\\
+\begin{lstlisting}[frame=none]
+public abstract void setText(java.lang.String text)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the text shown on the element
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{text} -- The text that will be displayed on the element.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -269,6 +352,22 @@ The scale of the GraphView.
 \end{itemize}
 }%end item
 \item{ 
+\index{getSelectionModel()}
+{\bf  getSelectionModel}\\
+\begin{lstlisting}[frame=none]
+public GraphViewSelectionModel getSelectionModel()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the selection model of the GraphView.
+}
+\item{{\bf  Returns} -- 
+The selection model of the GraphView. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{setGraph()}
 {\bf  setGraph}\\
 \begin{lstlisting}[frame=none]
@@ -326,6 +425,26 @@ Sets the scale of the GraphView.
   \begin{itemize}
    \item{
 \texttt{scale} -- The scale of the GraphView.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setSelectionModel(GraphViewSelectionModel)}
+{\bf  setSelectionModel}\\
+\begin{lstlisting}[frame=none]
+public void setSelectionModel(GraphViewSelectionModel selectionModel)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the selection model for the GraphView.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{selectionModel} -- The selection model for the GraphView.}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -420,6 +539,145 @@ Returns an EventHandler which maps scrolling the mousewheel to zooming on the \t
 An EventHandler which maps scrolling the mousewheel to zooming. 
 }%end item
 \end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{gui.GraphViewSelectionModel}\index{GraphViewSelectionModel}Class GraphViewSelectionModel}{
+\vskip .1in 
+The selection model for the \texttt{\small GraphView}{\small 
+\refdefined{gui.GraphView}}, that supports multiple selection of vertices and edges.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class GraphViewSelectionModel
+ extends javafx.scene.control.MultipleSelectionModel\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{GraphViewSelectionModel()}
+{\bf  GraphViewSelectionModel}\\
+\begin{lstlisting}[frame=none]
+public GraphViewSelectionModel()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addListener(ChangeListener)}
+{\bf  addListener}\\
+\begin{lstlisting}[frame=none]
+public void addListener(javafx.beans.value.ChangeListener listener)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{clearAndSelect(int)}
+{\bf  clearAndSelect}\\
+\begin{lstlisting}[frame=none]
+public abstract void clearAndSelect(int arg0)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{clearSelection()}
+{\bf  clearSelection}\\
+\begin{lstlisting}[frame=none]
+public abstract void clearSelection()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{clearSelection(int)}
+{\bf  clearSelection}\\
+\begin{lstlisting}[frame=none]
+public abstract void clearSelection(int arg0)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSelectedIndices()}
+{\bf  getSelectedIndices}\\
+\begin{lstlisting}[frame=none]
+public abstract javafx.collections.ObservableList getSelectedIndices()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSelectedItems()}
+{\bf  getSelectedItems}\\
+\begin{lstlisting}[frame=none]
+public abstract javafx.collections.ObservableList getSelectedItems()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSelectedItemsProperties()}
+{\bf  getSelectedItemsProperties}\\
+\begin{lstlisting}[frame=none]
+public javafx.collections.ObservableList getSelectedItemsProperties()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the \texttt{\small GAnsProperty}{\small 
+\refdefined{objectproperty.GAnsProperty}} of all selected items.
+}
+\item{{\bf  Returns} -- 
+A list with all the \texttt{\small GAnsProperty}{\small 
+\refdefined{objectproperty.GAnsProperty}} of all selected items. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{isEmpty()}
+{\bf  isEmpty}\\
+\begin{lstlisting}[frame=none]
+public abstract boolean isEmpty()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{isSelected(int)}
+{\bf  isSelected}\\
+\begin{lstlisting}[frame=none]
+public abstract boolean isSelected(int arg0)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{select(GAnsGraphElement)}
+{\bf  select}\\
+\begin{lstlisting}[frame=none]
+public void select(GAnsGraphElement obj)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{select(int)}
+{\bf  select}\\
+\begin{lstlisting}[frame=none]
+public abstract void select(int arg0)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{selectAll()}
+{\bf  selectAll}\\
+\begin{lstlisting}[frame=none]
+public abstract void selectAll()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{selectFirst()}
+{\bf  selectFirst}\\
+\begin{lstlisting}[frame=none]
+public abstract void selectFirst()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{selectIndices(int, int\lbrack \rbrack )}
+{\bf  selectIndices}\\
+\begin{lstlisting}[frame=none]
+public abstract void selectIndices(int arg0,int[] arg1)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{selectLast()}
+{\bf  selectLast}\\
+\begin{lstlisting}[frame=none]
+public abstract void selectLast()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{selectNext()}
+{\bf  selectNext}\\
+\begin{lstlisting}[frame=none]
+public abstract void selectNext()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{selectPrevious()}
+{\bf  selectPrevious}\\
+\begin{lstlisting}[frame=none]
+public abstract void selectPrevious()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
@@ -529,7 +787,7 @@ A visual representation of a vertex with a text inside of it.\vskip .1in
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class VertexShape
- extends javafx.scene.layout.StackPane\end{lstlisting}
+ extends gui.GAnsGraphElement\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -575,15 +833,15 @@ Constructor which directly sets the text.
 \index{getText()}
 {\bf  getText}\\
 \begin{lstlisting}[frame=none]
-public java.lang.String getText()\end{lstlisting} %end signature
+public abstract java.lang.String getText()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from GAnsGraphElement{\small \refdefined{gui.GAnsGraphElement}} }
 
-Returns the text shown in the vertex.
+Returns the text shown on the element.
 }
 \item{{\bf  Returns} -- 
-The text that is being displayed in the vertex. 
+The text that is being displayed on the element. 
 }%end item
 \end{itemize}
 }%end item
@@ -591,18 +849,18 @@ The text that is being displayed in the vertex.
 \index{setColor(Color)}
 {\bf  setColor}\\
 \begin{lstlisting}[frame=none]
-public void setColor(javafx.scene.paint.Color color)\end{lstlisting} %end signature
+public abstract void setColor(javafx.scene.paint.Color color)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from GAnsGraphElement{\small \refdefined{gui.GAnsGraphElement}} }
 
-Sets the color of the vertex
+Sets the color of the element
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{color} -- The color the vertex will be.}
+\texttt{color} -- The color the element will be displayed in.}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -611,18 +869,18 @@ Sets the color of the vertex
 \index{setText(String)}
 {\bf  setText}\\
 \begin{lstlisting}[frame=none]
-public void setText(java.lang.String text)\end{lstlisting} %end signature
+public abstract void setText(java.lang.String text)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from GAnsGraphElement{\small \refdefined{gui.GAnsGraphElement}} }
 
-Sets the text and adjusts the size of the rectangle to the size of the text.
+Sets the text shown on the element
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{text} -- The text that will be displayed in the vertex.}
+\texttt{text} -- The text that will be displayed on the element.}
   \end{itemize}
 }%end item
 \end{itemize}

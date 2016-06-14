@@ -1,27 +1,3 @@
-\section*{Class Hierarchy}{
-\thispagestyle{empty}
-\markboth{Class Hierarchy}{Class Hierarchy}
-\addcontentsline{toc}{section}{Class Hierarchy}
-\subsection*{Classes}
-{\raggedright
-\hspace{0.0cm} $\bullet$ java.lang.Object {\tiny \refdefined{java.lang.Object}} \\
-\hspace{1.0cm} $\bullet$ graphmodel.DefaultVertex {\tiny \refdefined{graphmodel.DefaultVertex}} \\
-\hspace{2.0cm} $\bullet$ joana.JoanaVertex {\tiny \refdefined{joana.JoanaVertex}} \\
-\hspace{1.0cm} $\bullet$ graphmodel.DirectedEdge {\tiny \refdefined{graphmodel.DirectedEdge}} \\
-\hspace{2.0cm} $\bullet$ joana.JoanaEdge {\tiny \refdefined{joana.JoanaEdge}} \\
-\hspace{1.0cm} $\bullet$ graphmodel.DirectedGraph {\tiny \refdefined{graphmodel.DirectedGraph}} \\
-\hspace{2.0cm} $\bullet$ joana.Callgraph {\tiny \refdefined{joana.Callgraph}} \\
-\hspace{2.0cm} $\bullet$ joana.FieldAccess {\tiny \refdefined{joana.FieldAccess}} \\
-\hspace{2.0cm} $\bullet$ joana.MethodGraph {\tiny \refdefined{joana.MethodGraph}} \\
-\hspace{1.0cm} $\bullet$ graphmodel.GraphModel {\tiny \refdefined{graphmodel.GraphModel}} \\
-\hspace{2.0cm} $\bullet$ joana.JoanaGraphModel {\tiny \refdefined{joana.JoanaGraphModel}} \\
-\hspace{1.0cm} $\bullet$ joana.JoanaPlugin {\tiny \refdefined{joana.JoanaPlugin}} \\
-\hspace{1.0cm} $\bullet$ joana.JoanaPlugin.CallGraphLayoutRegister {\tiny \refdefined{joana.JoanaPlugin.CallGraphLayoutRegister}} \\
-\hspace{1.0cm} $\bullet$ joana.JoanaPlugin.MethodGraphLayoutRegister {\tiny \refdefined{joana.JoanaPlugin.MethodGraphLayoutRegister}} \\
-\hspace{1.0cm} $\bullet$ joana.JoanaWorkspace {\tiny \refdefined{joana.JoanaWorkspace}} \\
-\hspace{1.0cm} $\bullet$ joana.MethodGraphLayout {\tiny \refdefined{joana.MethodGraphLayout}} \\
-}
-}
 \section{Package joana}{
 \label{joana}\hskip -.05in
 \hbox to \hsize{\textit{ Package Contents\hfil Page}}
@@ -29,7 +5,9 @@
 \hbox{{\bf  Classes}}
 \entityintro{Callgraph}{joana.Callgraph}{This is a specified graph representation for the Callgraph in Joana}
 \entityintro{FieldAccess}{joana.FieldAccess}{This specifies the representation of FieldAccesses in Joana}
+\entityintro{FieldAccessLayout}{joana.FieldAccessLayout}{}
 \entityintro{JoanaEdge}{joana.JoanaEdge}{This is the Joana specified Edge.}
+\entityintro{JoanaGraph}{joana.JoanaGraph}{An abstract superclass for all JOANA graphs.}
 \entityintro{JoanaGraphModel}{joana.JoanaGraphModel}{This is the Joana specified Graphmodel.}
 \entityintro{JoanaPlugin}{joana.JoanaPlugin}{}
 \entityintro{JoanaPlugin.CallGraphLayoutRegister}{joana.JoanaPlugin.CallGraphLayoutRegister}{}
@@ -38,7 +16,9 @@
 \entityintro{JoanaWorkspace}{joana.JoanaWorkspace}{The \texttt{\small JoanaWorkspace}{\small 
 \refdefined{joana.JoanaWorkspace}} is the workspace for Joana graphs It is used to define parameters, and also contains an AbstractGraphBuilder and a \texttt{\small GraphModel}{\small 
 \refdefined{graphmodel.GraphModel}}}
-\entityintro{MethodGraph}{joana.MethodGraph}{This is a specified graph representation for a Methodgraph in Joana}
+\entityintro{MethodCall}{joana.MethodCall}{}
+\entityintro{MethodCallLayout}{joana.MethodCallLayout}{}
+\entityintro{MethodGraph}{joana.MethodGraph}{This is a specified graph representation for a MethodGraph in JOANA}
 \entityintro{MethodGraphLayout}{joana.MethodGraphLayout}{}
 \vskip .1in
 \vskip .1in
@@ -48,7 +28,7 @@ This is a specified graph representation for the Callgraph in Joana\vskip .1in
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class Callgraph
- extends graphmodel.DirectedGraph\end{lstlisting}
+ extends joana.JoanaGraph\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -67,7 +47,7 @@ This specifies the representation of FieldAccesses in Joana\vskip .1in
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FieldAccess
- extends graphmodel.DirectedGraph\end{lstlisting}
+ extends joana.JoanaGraph\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -76,6 +56,51 @@ public class FieldAccess
 {\bf  FieldAccess}\\
 \begin{lstlisting}[frame=none]
 public FieldAccess()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.FieldAccessLayout}\index{FieldAccessLayout}Class FieldAccessLayout}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class FieldAccessLayout
+ extends java.lang.Object implements plugin.LayoutAlgorithm\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{FieldAccessLayout()}
+{\bf  FieldAccessLayout}\\
+\begin{lstlisting}[frame=none]
+public FieldAccessLayout()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getSettings()}
+{\bf  getSettings}\\
+\begin{lstlisting}[frame=none]
+parameter.Settings getSettings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
+
+Get the set of parameters for this instance of the algorithm.
+}
+\item{{\bf  Returns} -- 
+the set of parameters 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{layout(FieldAccess)}
+{\bf  layout}\\
+\begin{lstlisting}[frame=none]
+public void layout(FieldAccess graph)\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
@@ -95,6 +120,26 @@ public class JoanaEdge
 {\bf  JoanaEdge}\\
 \begin{lstlisting}[frame=none]
 public JoanaEdge()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.JoanaGraph}\index{JoanaGraph}Class JoanaGraph}{
+\vskip .1in 
+An abstract superclass for all JOANA graphs.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class JoanaGraph
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{All known subclasses}{MethodGraph\small{\refdefined{joana.MethodGraph}}, MethodCall\small{\refdefined{joana.MethodCall}}, FieldAccess\small{\refdefined{joana.FieldAccess}}, Callgraph\small{\refdefined{joana.Callgraph}}}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{JoanaGraph()}
+{\bf  JoanaGraph}\\
+\begin{lstlisting}[frame=none]
+public JoanaGraph()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
@@ -463,13 +508,76 @@ void initialize(parameter.Settings parameters)\end{lstlisting} %end signature
 \end{itemize}
 }
 }
+\subsection{\label{joana.MethodCall}\index{MethodCall}Class MethodCall}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class MethodCall
+ extends joana.JoanaGraph\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{MethodCall()}
+{\bf  MethodCall}\\
+\begin{lstlisting}[frame=none]
+public MethodCall()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.MethodCallLayout}\index{MethodCallLayout}Class MethodCallLayout}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class MethodCallLayout
+ extends java.lang.Object implements plugin.LayoutAlgorithm\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{MethodCallLayout()}
+{\bf  MethodCallLayout}\\
+\begin{lstlisting}[frame=none]
+public MethodCallLayout()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getSettings()}
+{\bf  getSettings}\\
+\begin{lstlisting}[frame=none]
+parameter.Settings getSettings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
+
+Get the set of parameters for this instance of the algorithm.
+}
+\item{{\bf  Returns} -- 
+the set of parameters 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{layout(MethodCall)}
+{\bf  layout}\\
+\begin{lstlisting}[frame=none]
+public void layout(MethodCall graph)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
 \subsection{\label{joana.MethodGraph}\index{MethodGraph}Class MethodGraph}{
 \vskip .1in 
-This is a specified graph representation for a Methodgraph in Joana\vskip .1in 
+This is a specified graph representation for a MethodGraph in JOANA\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class MethodGraph
- extends graphmodel.DirectedGraph\end{lstlisting}
+ extends joana.JoanaGraph\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -484,6 +592,12 @@ public MethodGraph()\end{lstlisting} %end signature
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
+\item{ 
+\index{applyLayout(LayoutAlgorithm)}
+{\bf  applyLayout}\\
+\begin{lstlisting}[frame=none]
+void applyLayout(plugin.LayoutAlgorithm alg)\end{lstlisting} %end signature
+}%end item
 \item{ 
 \index{getEntryVertex()}
 {\bf  getEntryVertex}\\
@@ -551,7 +665,7 @@ Get a list of all MethodCalls in a method
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class MethodGraphLayout
- extends java.lang.Object implements plugin.LayoutAlgorithm\end{lstlisting}
+ extends sugiyama.SugiyamaLayoutAlgorithm\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -567,44 +681,6 @@ public MethodGraphLayout()\end{lstlisting} %end signature
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{getID()}
-{\bf  getID}\\
-\begin{lstlisting}[frame=none]
-java.lang.String getID()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
-
-Get a acronym of the layout.
-}
-\item{{\bf  Returns} -- 
-The acronym of the layout. 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getName()}
-{\bf  getName}\\
-\begin{lstlisting}[frame=none]
-java.lang.String getName()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
-
-Get the full name of the layout.
-}
-\item{{\bf  Returns} -- 
-The full name of the layout. 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getParameterDialog()}
-{\bf  getParameterDialog}\\
-\begin{lstlisting}[frame=none]
-void getParameterDialog()\end{lstlisting} %end signature
-}%end item
-\item{ 
 \index{getSettings()}
 {\bf  getSettings}\\
 \begin{lstlisting}[frame=none]
@@ -616,7 +692,7 @@ parameter.Settings getSettings()\end{lstlisting} %end signature
 Get the set of parameters for this instance of the algorithm.
 }
 \item{{\bf  Returns} -- 
-The set of parameters 
+the set of parameters 
 }%end item
 \end{itemize}
 }%end item
@@ -625,19 +701,6 @@ The set of parameters
 {\bf  layout}\\
 \begin{lstlisting}[frame=none]
 public void layout(MethodGraph graph)\end{lstlisting} %end signature
-}%end item
-\item{ 
-\index{onLoad()}
-{\bf  onLoad}\\
-\begin{lstlisting}[frame=none]
-void onLoad()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
-
-Register at LayoutAlgorithm for all supported Graphs
-}
-\end{itemize}
 }%end item
 \end{itemize}
 }

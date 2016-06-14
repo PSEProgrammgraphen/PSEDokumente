@@ -3,8 +3,6 @@
 
 Die Paketeinteilung der Software gliedert sich in folgende Pakete: %TODO Paketübersicht
 
-\section{plugin}
-
 \section{graphmodel}
 
 \begin{figure}[hb]
@@ -15,6 +13,8 @@ Die Paketeinteilung der Software gliedert sich in folgende Pakete: %TODO Paketü
 \end{figure}
 
 In dem Paket graphmodel befinden sich die Klassen die für die interne Repräsentation des Graphen benötigt werden. Die Funktionalität dieses Pakets ist es ein flexibles Graph model sowie schnellen Zugriff auf dessen Komponenten bereitzustellen. Hierfür werden Interfaces für Graphen, Vertices und Edges bereitgestellt und teilweise schon implementiert. 
+
+\newpage
 
 \section{gui}
 
@@ -27,6 +27,8 @@ In dem Paket graphmodel befinden sich die Klassen die für die interne Repräsen
 
 Das Paket gui beinhaltet die Anzeigenlogik. Hier werden Views und Elemente definiert die für die Anzeige notwendig sind. Dafür erweitern sie JavaFX Komponenten.
 
+\newpage
+
 \section{parameter}
 
 \begin{figure}[hb]
@@ -37,6 +39,8 @@ Das Paket gui beinhaltet die Anzeigenlogik. Hier werden Views und Elemente defin
 \end{figure}
 
 Diese Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plugins ihre Einstellungen an den View zu übergeben. Das selbe gilt auch für Constraints. Diese Wrapper Klassen beinhalten Methoden zur Umwandlung der jeweiligen Parameter in Zeichenketten aber auch vergleiche zum sortieren der Werte.
+
+\newpage
 
 \section{graphRegex}
 
@@ -49,6 +53,30 @@ Diese Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plu
 
 In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach Subgraphen mithilfe von Selektoren
 
+\newpage
+
+\section{objectpropert}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/objectproperty.pdf}
+  \caption{Paketübersicht objectproperty}
+  \label{fig:packge_objectproperty}
+\end{figure}
+
+\newpage
+
+\section{plugin}
+
+\begin{figure}[hb]
+  \centering
+  \includegraphics[width=380pt]{resourcen/plugin.pdf}
+  \caption{Paketübersicht plugin}
+  \label{fig:packge_plugin}
+\end{figure}
+
+\newpage
+
 \section{sugiyama}
 
 \begin{figure}[hb]
@@ -59,6 +87,8 @@ In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach S
 \end{figure}
 
 Das Paket sugiyama bietet eine einfache Implementierung des Sugiyamaframeworks mit der bereits Graphen gelayoutet werden können. Es handelt sich hierbei um ein mitgeliefertes Plugin.
+
+\newpage
 
 \section{joana}
 

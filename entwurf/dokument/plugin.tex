@@ -1,45 +1,22 @@
-\section*{Class Hierarchy}{
-\thispagestyle{empty}
-\markboth{Class Hierarchy}{Class Hierarchy}
-\addcontentsline{toc}{section}{Class Hierarchy}
-\subsection*{Classes}
-{\raggedright
-\hspace{0.0cm} $\bullet$ java.lang.Object {\tiny \refdefined{java.lang.Object}} \\
-\hspace{1.0cm} $\bullet$ plugin.EdgeFilter {\tiny \refdefined{plugin.EdgeFilter}} \\
-\hspace{1.0cm} $\bullet$ plugin.EntryPointOption {\tiny \refdefined{plugin.EntryPointOption}} \\
-\hspace{2.0cm} $\bullet$ plugin.LayoutOption {\tiny \refdefined{plugin.LayoutOption}} \\
-\hspace{2.0cm} $\bullet$ plugin.WorkspaceOption {\tiny \refdefined{plugin.WorkspaceOption}} \\
-\hspace{1.0cm} $\bullet$ plugin.PluginManager {\tiny \refdefined{plugin.PluginManager}} \\
-\hspace{1.0cm} $\bullet$ plugin.VertexFilter {\tiny \refdefined{plugin.VertexFilter}} \\
-}
-\subsection*{Interfaces}
-\hspace{0.0cm} $\bullet$ plugin.Constraint {\tiny \refdefined{plugin.Constraint}} \\
-\hspace{0.0cm} $\bullet$ plugin.FilterSet {\tiny \refdefined{plugin.FilterSet}} \\
-\hspace{0.0cm} $\bullet$ plugin.Importer {\tiny \refdefined{plugin.Importer}} \\
-\hspace{0.0cm} $\bullet$ plugin.LayoutAlgorithm {\tiny \refdefined{plugin.LayoutAlgorithm}} \\
-\hspace{0.0cm} $\bullet$ plugin.LayoutRegister {\tiny \refdefined{plugin.LayoutRegister}} \\
-\hspace{0.0cm} $\bullet$ plugin.Plugin {\tiny \refdefined{plugin.Plugin}} \\
-\hspace{0.0cm} $\bullet$ plugin.Workspace {\tiny \refdefined{plugin.Workspace}} \\
-}
 \section{Package plugin}{
 \label{plugin}\hskip -.05in
 \hbox to \hsize{\textit{ Package Contents\hfil Page}}
 \vskip .13in
 \hbox{{\bf  Interfaces}}
 \entityintro{Constraint}{plugin.Constraint}{}
-\entityintro{FilterSet}{plugin.FilterSet}{}
-\entityintro{Importer}{plugin.Importer}{}
-\entityintro{LayoutAlgorithm}{plugin.LayoutAlgorithm}{}
+\entityintro{FilterSet}{plugin.FilterSet}{A FilterSet is used to collect all available filters for a specific Graph from a workspace.}
+\entityintro{Importer}{plugin.Importer}{The importer interface is used to import a graph from a file into the intern representation.}
+\entityintro{LayoutAlgorithm}{plugin.LayoutAlgorithm}{A implementations of LayoutAlgorithm take a graph.}
 \entityintro{LayoutRegister}{plugin.LayoutRegister}{Stores a collection of layouts applicable to a specific subclass of graph.}
 \entityintro{Plugin}{plugin.Plugin}{}
 \entityintro{Workspace}{plugin.Workspace}{}
 \vskip .13in
 \hbox{{\bf  Classes}}
-\entityintro{EdgeFilter}{plugin.EdgeFilter}{}
+\entityintro{EdgeFilter}{plugin.EdgeFilter}{This Class represents a filter for edge types.}
 \entityintro{EntryPointOption}{plugin.EntryPointOption}{}
 \entityintro{LayoutOption}{plugin.LayoutOption}{}
 \entityintro{PluginManager}{plugin.PluginManager}{}
-\entityintro{VertexFilter}{plugin.VertexFilter}{}
+\entityintro{VertexFilter}{plugin.VertexFilter}{This Class represents a filter for vertex types.}
 \entityintro{WorkspaceOption}{plugin.WorkspaceOption}{}
 \vskip .1in
 \vskip .1in
@@ -52,6 +29,7 @@ public interface Constraint
 }
 \subsection{\label{plugin.FilterSet}\index{FilterSet@\textit{ FilterSet}}Interface FilterSet}{
 \vskip .1in 
+A FilterSet is used to collect all available filters for a specific Graph from a workspace. Just these filters will be displayed to the user for a specific graph\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface FilterSet
@@ -65,6 +43,12 @@ public interface FilterSet
 \begin{lstlisting}[frame=none]
 java.util.List getEdgeFilter()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a Set of all available \texttt{\small EdgeFilter}{\small 
+\refdefined{plugin.EdgeFilter}}
+}
 \item{{\bf  Returns} -- 
  
 }%end item
@@ -76,6 +60,11 @@ java.util.List getEdgeFilter()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 java.lang.String getName()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Get the name of this FilterSet
+}
 \item{{\bf  Returns} -- 
  
 }%end item
@@ -87,6 +76,12 @@ java.lang.String getName()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 java.util.List getVertexfilter()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a Set of all available \texttt{\small VertexFilter}{\small 
+\refdefined{plugin.VertexFilter}}.
+}
 \item{{\bf  Returns} -- 
  
 }%end item
@@ -97,6 +92,9 @@ java.util.List getVertexfilter()\end{lstlisting} %end signature
 }
 \subsection{\label{plugin.Importer}\index{Importer@\textit{ Importer}}Interface Importer}{
 \vskip .1in 
+The importer interface is used to import a graph from a file into the intern representation. The main task is to parse a FileInputStream into the Interface of an \texttt{\small AbstractGraphModelBuilder}{\small 
+\refdefined{graphmodel.AbstractGraphModelBuilder}}. The \texttt{\small AbstractGraphModelBuilder}{\small 
+\refdefined{graphmodel.AbstractGraphModelBuilder}} will then build the representation.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Importer
@@ -110,6 +108,11 @@ public interface Importer
 \begin{lstlisting}[frame=none]
 java.lang.String getName()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Get the name of this importer
+}
 \item{{\bf  Returns} -- 
  
 }%end item
@@ -121,6 +124,11 @@ java.lang.String getName()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 java.lang.String getSupportedFileEndings()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Get all filetypes which this importer can parse
+}
 \item{{\bf  Returns} -- 
  
 }%end item
@@ -132,6 +140,12 @@ java.lang.String getSupportedFileEndings()\end{lstlisting} %end signature
 \begin{lstlisting}[frame=none]
 void importGraph(graphmodel.AbstractGraphModelBuilder builder,java.io.FileInputStream filestream)\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+This method parses an FileInputStream into an \texttt{\small AbstractGraphModelBuilder}{\small 
+\refdefined{graphmodel.AbstractGraphModelBuilder}}.
+}
 \item{
 {\bf  Parameters}
   \begin{itemize}
@@ -148,6 +162,9 @@ void importGraph(graphmodel.AbstractGraphModelBuilder builder,java.io.FileInputS
 }
 \subsection{\label{plugin.LayoutAlgorithm}\index{LayoutAlgorithm@\textit{ LayoutAlgorithm}}Interface LayoutAlgorithm}{
 \vskip .1in 
+A implementations of LayoutAlgorithm take a graph. They assign its vertices absolute coordinates and assign its edges coordinates, they have to pass through. LayoutAlgorithms have to be registered with a \texttt{\small LayoutOption}{\small 
+\refdefined{plugin.LayoutOption}} at the \texttt{\small LayoutRegister}{\small 
+\refdefined{plugin.LayoutRegister}} of the Graph.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface LayoutAlgorithm
@@ -155,44 +172,6 @@ public interface LayoutAlgorithm
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
-\index{getID()}
-{\bf  getID}\\
-\begin{lstlisting}[frame=none]
-java.lang.String getID()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Get a acronym of the layout.
-}
-\item{{\bf  Returns} -- 
-The acronym of the layout. 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getName()}
-{\bf  getName}\\
-\begin{lstlisting}[frame=none]
-java.lang.String getName()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Get the full name of the layout.
-}
-\item{{\bf  Returns} -- 
-The full name of the layout. 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getParameterDialog()}
-{\bf  getParameterDialog}\\
-\begin{lstlisting}[frame=none]
-void getParameterDialog()\end{lstlisting} %end signature
-}%end item
 \item{ 
 \index{getSettings()}
 {\bf  getSettings}\\
@@ -205,7 +184,7 @@ parameter.Settings getSettings()\end{lstlisting} %end signature
 Get the set of parameters for this instance of the algorithm.
 }
 \item{{\bf  Returns} -- 
-The set of parameters 
+the set of parameters 
 }%end item
 \end{itemize}
 }%end item
@@ -224,22 +203,9 @@ Layout the specified Graph.
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{graph} -- The graph to layout}
+\texttt{graph} -- the graph to layout}
   \end{itemize}
 }%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{onLoad()}
-{\bf  onLoad}\\
-\begin{lstlisting}[frame=none]
-void onLoad()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Register at LayoutAlgorithm for all supported Graphs
-}
 \end{itemize}
 }%end item
 \end{itemize}
@@ -364,6 +330,7 @@ void initialize(parameter.Settings parameters)\end{lstlisting} %end signature
 }
 \subsection{\label{plugin.EdgeFilter}\index{EdgeFilter}Class EdgeFilter}{
 \vskip .1in 
+This Class represents a filter for edge types. The type of the edge can be specified through different parameters.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class EdgeFilter
@@ -402,14 +369,19 @@ Getter of name
 public boolean matches(graphmodel.Edge toMatch)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
+{\bf  Description}
+
+This method checks if an edge matches this Filter. It will compare specified parameters of the edge with the defined parameters of this filter.
+}
+\item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{toMatch} -- }
+\texttt{toMatch} -- the edge which should be checked}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+true if the edge matches this Filter, otherwise false 
 }%end item
 \end{itemize}
 }%end item
@@ -539,6 +511,7 @@ public java.util.List getWorkspaceOption()\end{lstlisting} %end signature
 }
 \subsection{\label{plugin.VertexFilter}\index{VertexFilter}Class VertexFilter}{
 \vskip .1in 
+This Class represents a filter for vertex types. The type of the vertex can be specified through different parameters.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class VertexFilter
@@ -577,14 +550,19 @@ Getter of name
 public boolean matches(graphmodel.Vertex toMatch)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
+{\bf  Description}
+
+This method checks if an vertex matches this Filter. It will compare specified parameters of the vertex with the defined parameters of this filter.
+}
+\item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{toMatch} -- }
+\texttt{toMatch} -- the vertex which should be checked}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+true if the edge matches this Filter, otherwise false 
 }%end item
 \end{itemize}
 }%end item
