@@ -20,12 +20,6 @@ public class MethodCallLayout implements LayoutAlgorithm<MethodCall, JoanaVertex
 	}
 
 	@Override
-	public void getParameterDialog() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Settings getSettings() {
 		// TODO Auto-generated method stub
 		return null;

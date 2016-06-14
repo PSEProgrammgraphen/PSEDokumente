@@ -4,7 +4,7 @@ import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 /**
- * This class takes a directed graph and assigns every vertex in it a relative height.
+ * This class takes a directed graph and assigns every vertex in it a layer.
  * 
  * @param <G> the type of the directed graph
  * @param <V> the type of the vertices the graph contains
@@ -16,8 +16,14 @@ public class LayerAssigning<G extends DirectedGraph<G, V, E>, V extends Vertex, 
 	/**
 	 * Assigns every vertex in the graph parameter e relative height.
 	 * @param graph input graph 
-	 */
+	 * 
 	public void assignLayers(SugiyamaGraph<G, V, E> graph) { }
+	
+	/**
+	 * Defines a set of constraints which should be considered by the algorithm.
+	 * @param constraints relative layer constraints the algorithm should consider
+	 */
+	public void addConstraints(Set<LayerConstraint<V>> constraints) {}
 	
 	/**
 	 * Reassigns the layer of vertices whose layer is greater than the height parameter.

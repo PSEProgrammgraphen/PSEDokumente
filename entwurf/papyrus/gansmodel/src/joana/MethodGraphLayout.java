@@ -13,9 +13,6 @@ import sugiyama.SugiyamaLayoutAlgorithm;
 public class MethodGraphLayout extends SugiyamaLayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> {
 
 	@Override
-	public void getParameterDialog() { }
-
-	@Override
 	public Settings getSettings() {
 
 		IntegerParameter p1 = new IntegerParameter("Max-Layer-Count", 20, 1, 100);

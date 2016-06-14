@@ -20,12 +20,6 @@ public class FieldAccessLayout implements LayoutAlgorithm<FieldAccess, JoanaVert
 	}
 
 	@Override
-	public void getParameterDialog() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Settings getSettings() {
 		// TODO Auto-generated method stub
 		return null;
