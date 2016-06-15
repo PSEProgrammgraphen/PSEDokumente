@@ -2,6 +2,7 @@ package plugin;
 
 import graphmodel.IGraphModelBuilder;
 import java.io.FileInputStream;
+import java.util.List;
 
 /**
  * The importer interface is used to import a graph from a file into the intern representation.
@@ -16,7 +17,7 @@ public interface Importer {
 	 * 
 	 * @return 
 	 */
-	public String getSupportedFileEndings();
+	public List<String> getSupportedFileEndings();
 
 	/**
 	 * Get the name of this importer
