@@ -2141,6 +2141,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_wLXyoDDxEeaZHIc6rzlw_w" name="myScale" visibility="private" type="_wLXLkTDxEeaZHIc6rzlw_w" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_HPkRkzDzEeaZHIc6rzlw_w" name="graph" type="_Rim-kDC6EeaTGLGmcq2w7A" association="_HPkRkDDzEeaZHIc6rzlw_w"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_e-buoDF3Eea9cLQqxalwMQ" name="selectionModel" visibility="private" type="_e-FJUDF3Eea9cLQqxalwMQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5TvtATMNEeak3amMgK8xYw" name="graphFactory" visibility="private" type="_5TvtADMNEeak3amMgK8xYw" isUnique="false"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_wLYZsDDxEeaZHIc6rzlw_w" name="addGrid" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_wLYZsTDxEeaZHIc6rzlw_w">
             <body>&#xD;
@@ -2230,6 +2231,34 @@
 	 </body>
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_e-icUDF3Eea9cLQqxalwMQ" type="_e-FJUDF3Eea9cLQqxalwMQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5TvtAjMNEeak3amMgK8xYw" name="setGraph" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5TvtAzMNEeak3amMgK8xYw">
+            <body>&#xD;
+	 * Sets a graph. Every element in the graph will be generated and then&#xD;
+	 * shown.&#xD;
+	 * &#xD;
+	 * @param graph&#xD;
+	 *            The graph to be visualized in the view.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5TvtBDMNEeak3amMgK8xYw" name="graph" type="_Rim-kDC6EeaTGLGmcq2w7A"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5T5eADMNEeak3amMgK8xYw" name="updateGraph" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5T5eATMNEeak3amMgK8xYw">
+            <body>&#xD;
+	 * Updates the shown graph.&#xD;
+	 </body>
+          </ownedComment>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5T5eAjMNEeak3amMgK8xYw" name="getFactory" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5T5eAzMNEeak3amMgK8xYw">
+            <body>&#xD;
+	 * Retruns the current {@link GraphViewGraphFactory} from the view.&#xD;
+	 * @return The current {@link GraphViewGraphFactory}.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5T5eBDMNEeak3amMgK8xYw" type="_5TvtADMNEeak3amMgK8xYw" direction="return"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_wLl1EDDxEeaZHIc6rzlw_w" name="GraphViewEventHandler" visibility="public">
@@ -2346,6 +2375,19 @@
 	 </body>
           </ownedComment>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5UMY8DMNEeak3amMgK8xYw" name="showTree" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5UMY8TMNEeak3amMgK8xYw">
+            <body>&#xD;
+	 * Creates a tree like representation from a given graph and its subgraphs.&#xD;
+	 * Should be called, before calling other methods, because there could be a&#xD;
+	 * dummy root-node in the View.&#xD;
+	 * &#xD;
+	 * @param graph&#xD;
+	 *            The graph which should be represented.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5UMY8jMNEeak3amMgK8xYw" name="graph" type="_Rim-kDC6EeaTGLGmcq2w7A"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_wMHZgDDxEeaZHIc6rzlw_w" name="VertexShape" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_wMHZgTDxEeaZHIc6rzlw_w">
@@ -2421,6 +2463,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_EW73kzDzEeaZHIc6rzlw_w" name="graph" type="_Rim-kDC6EeaTGLGmcq2w7A" association="_EW73kDDzEeaZHIc6rzlw_w"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_e-D7MDF3Eea9cLQqxalwMQ" name="graphViewEventHandler" visibility="private" type="_6hEq5y8zEeaW5pq-1rzVBQ" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_e-GXcDF3Eea9cLQqxalwMQ" name="graphViewSelectionModel" visibility="private" type="_e-FJUDF3Eea9cLQqxalwMQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5Tl8ADMNEeak3amMgK8xYw" name="currentGraphView" visibility="private" type="_wLRE8DDxEeaZHIc6rzlw_w" isUnique="false"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_B2IkPTDyEeaZHIc6rzlw_w" name="main" visibility="public" isStatic="true">
           <ownedComment xmi:type="uml:Comment" xmi:id="_B2IkPjDyEeaZHIc6rzlw_w">
             <body>&#xD;
@@ -2657,13 +2700,63 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_e_HrIDF3Eea9cLQqxalwMQ" name="selectPrevious" visibility="public"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_e_HrITF3Eea9cLQqxalwMQ" name="selectNext" visibility="public"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_5TvtADMNEeak3amMgK8xYw" name="GraphViewGraphFactory" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_5UCn8DMNEeak3amMgK8xYw">
+          <body>&#xD;
+ * The GraphViewGraphFactory generates all&#xD;
+ * &#xD;
+ * @author Nicolas&#xD;
+ </body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5UCn8TMNEeak3amMgK8xYw" name="graph" visibility="private" type="_Rim-kDC6EeaTGLGmcq2w7A" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5UCn8jMNEeak3amMgK8xYw" name="vertices" visibility="private" type="_tfF_EC8vEeaW5pq-1rzVBQ" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5UCn8zMNEeak3amMgK8xYw" name="edges" visibility="private" type="_tfF_EC8vEeaW5pq-1rzVBQ" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5UCn9DMNEeak3amMgK8xYw" name="getGraphicalElements" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5UCn9TMNEeak3amMgK8xYw">
+            <body>&#xD;
+	 * Returns all graphical elements that have been generated by the factory.&#xD;
+	 * &#xD;
+	 * @return All graphical elements generated by the factory.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5UCn9jMNEeak3amMgK8xYw" type="_6hEq5y8zEeaW5pq-1rzVBQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5UCn9zMNEeak3amMgK8xYw" name="getVertexFromShape" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5UCn-DMNEeak3amMgK8xYw">
+            <body>&#xD;
+	 * Returns the vertex element from the graph model that is being represented&#xD;
+	 * by the shape. Can be null if an {@link EdgeShape} is passed.&#xD;
+	 * &#xD;
+	 * @param shape&#xD;
+	 *            The shape that represents the vertex.&#xD;
+	 * @return The Vertex being represented by the passed shape.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5UCn-TMNEeak3amMgK8xYw" type="_Rmxs4DC6EeaTGLGmcq2w7A" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5UCn-jMNEeak3amMgK8xYw" name="shape" type="_e9pEcDF3Eea9cLQqxalwMQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_5UCn-zMNEeak3amMgK8xYw" name="getEdgeFromShape" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5UCn_DMNEeak3amMgK8xYw">
+            <body>&#xD;
+	 * Returns the edge element from the graph model that is being represented&#xD;
+	 * by the shape. Can be null if an {@link VertexShape} is passed.&#xD;
+	 * &#xD;
+	 * @param shape&#xD;
+	 *            The shape that represents the edge.&#xD;
+	 * @return The Edge being represented by the passed shape.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5UCn_TMNEeak3amMgK8xYw" type="_RevLMDC6EeaTGLGmcq2w7A" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5UCn_jMNEeak3amMgK8xYw" name="shape" type="_e9pEcDF3Eea9cLQqxalwMQ"/>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_iTiOMDDzEeaZHIc6rzlw_w" name="objectproperty">
       <packagedElement xmi:type="uml:Class" xmi:id="_iTiOMTDzEeaZHIc6rzlw_w" name="GAnsObjectProperty" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iTiOMjDzEeaZHIc6rzlw_w">
           <body>&#xD;
- * A JavaFX objectproperty which in toString() retuns the value from the&#xD;
- * toString() of the {@link GAnsObjectPropertyValue}.&#xD;
+ * A JavaFX object property which in toString() returns the toString() of the&#xD;
+ * value.&#xD;
  * &#xD;
  * @author Nicolas&#xD;
  </body>
@@ -2673,53 +2766,16 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_iTiONjDzEeaZHIc6rzlw_w" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_iTrYIDDzEeaZHIc6rzlw_w" name="GAnsObjectPropertyValue" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_iTrYITDzEeaZHIc6rzlw_w">
-          <body>&#xD;
- * A simple generic class made to save the different types of property values.&#xD;
- * Is being used with {@link GAnsProperty} to treat different kinds of&#xD;
- * properties in the same way in the GUI.&#xD;
- * &#xD;
- * @author Nicolas&#xD;
- *&#xD;
- * @param &lt;T>&#xD;
- *            The object derived class that sall be stored in the&#xD;
- *            GAnsObjectPropertyValue.&#xD;
- </body>
-        </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iTrYIjDzEeaZHIc6rzlw_w" name="value" visibility="private" type="_cwo1ITDtEeaerfpH0KeGRA" isUnique="false"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iTrYIzDzEeaZHIc6rzlw_w" name="getValue" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iTrYJDDzEeaZHIc6rzlw_w">
-            <body>&#xD;
-	 * Returns the value.&#xD;
-	 * &#xD;
-	 * @return The value from the GAnsObjectPropertyValue.&#xD;
-	 </body>
-          </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iTrYJTDzEeaZHIc6rzlw_w" type="_cwo1ITDtEeaerfpH0KeGRA" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iTrYJjDzEeaZHIc6rzlw_w" name="setValue" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iTrYJzDzEeaZHIc6rzlw_w">
-            <body>&#xD;
-	 * Sets the value.&#xD;
-	 * &#xD;
-	 * @param value&#xD;
-	 *            The value to be set.&#xD;
-	 </body>
-          </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iTrYKDDzEeaZHIc6rzlw_w" name="value" type="_cwo1ITDtEeaerfpH0KeGRA"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iTrYKTDzEeaZHIc6rzlw_w" name="toString" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iTrYKjDzEeaZHIc6rzlw_w" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
-        </ownedOperation>
-      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_iTrYKzDzEeaZHIc6rzlw_w" name="GAnsProperty" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iTrYLDDzEeaZHIc6rzlw_w">
           <body>&#xD;
  * The GAnsProperty is a single property of a vertex or an edge in GAns. The&#xD;
- * name and {@link GAnsObjectPropertyValue} of the property are being stored in&#xD;
- * JavaFX-Properties. The model consists out of vertices and edges which contain&#xD;
- * GAnsProperties, which are linked to the GUI-elements.&#xD;
+ * name and value of the property are being stored in JavaFX-Properties. A graph&#xD;
+ * consists out of vertices and edges which contain GAnsProperties, which are&#xD;
+ * linked to the GUI-elements.&#xD;
+ * &#xD;
+ * @param &lt;T>&#xD;
+ *            The type of element that is to be stored in the GAnsProperty.&#xD;
  * &#xD;
  * @author Nicolas&#xD;
  </body>
@@ -2766,12 +2822,10 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JJTDzEeaZHIc6rzlw_w" name="propertyValue" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JJjDzEeaZHIc6rzlw_w">
             <body>&#xD;
-	 * Ensures that the property which contains the&#xD;
-	 * {@link GAnsObjectPropertyValue} in the GAnsProperty is not null and&#xD;
-	 * always set with the right name.&#xD;
+	 * Ensures that the property which contains the value in the GAnsProperty is&#xD;
+	 * not null and always set with the right name.&#xD;
 	 * &#xD;
-	 * @return The property which contains the {@link GAnsObjectPropertyValue}&#xD;
-	 *         in the GAnsProperty.&#xD;
+	 * @return The property which contains the value in the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JJzDzEeaZHIc6rzlw_w" type="_iTiOMTDzEeaZHIc6rzlw_w" direction="return"/>
@@ -2780,11 +2834,10 @@
           <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JKTDzEeaZHIc6rzlw_w">
             <body>&#xD;
 	 * Ensures that the property which contains the string-representation of the&#xD;
-	 * {@link GAnsObjectPropertyValue} in the GAnsProperty is not null and&#xD;
-	 * always set with the right name.&#xD;
+	 * value in the GAnsProperty is not null and always set with the right name.&#xD;
 	 * &#xD;
 	 * @return The StringProperty which contains the string-representation of&#xD;
-	 *         the {@link GAnsObjectPropertyValue} in the GAnsProperty.&#xD;
+	 *         the value of the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JKjDzEeaZHIc6rzlw_w" type="_iTrYMzDzEeaZHIc6rzlw_w" direction="return"/>
@@ -2795,7 +2848,7 @@
 	 * Sets the name/identifier of the GAnsProperty.&#xD;
 	 * &#xD;
 	 * @param value&#xD;
-	 *            The string which shall be set as the name of the GAnsProperty.&#xD;
+	 *            The string will be set as the name of the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JLTDzEeaZHIc6rzlw_w" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
@@ -2821,29 +2874,38 @@
 	 *            GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JMzDzEeaZHIc6rzlw_w" name="value" type="_iTrYIDDzEeaZHIc6rzlw_w"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JMzDzEeaZHIc6rzlw_w" name="value"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JNDDzEeaZHIc6rzlw_w" name="getPropertyValue" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JNTDzEeaZHIc6rzlw_w">
             <body>&#xD;
-	 * Returns the {@link GAnsObjectPropertyValue} of the GAnsProperty.&#xD;
+	 * Returns the value of the GAnsProperty.&#xD;
 	 * &#xD;
-	 * @return The {@link GAnsObjectPropertyValue} of the GAnsProperty.&#xD;
+	 * @return The value of the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JNjDzEeaZHIc6rzlw_w" type="_iTrYIDDzEeaZHIc6rzlw_w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JNjDzEeaZHIc6rzlw_w" type="_cwo1ITDtEeaerfpH0KeGRA" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JNzDzEeaZHIc6rzlw_w" name="getPropertyValueAsString" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JODDzEeaZHIc6rzlw_w">
             <body>&#xD;
-	 * Returns the string-representation of the {@link GAnsObjectPropertyValue}&#xD;
-	 * from the GAnsProperty.&#xD;
+	 * Returns the string-representation of the value from the GAnsProperty.&#xD;
 	 * &#xD;
-	 * @return The string-representation of the {@link GAnsObjectPropertyValue}&#xD;
-	 *         from the GAnsProperty.&#xD;
+	 * @return The string-representation of the value from the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JOTDzEeaZHIc6rzlw_w" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_6vU6MDMNEeak3amMgK8xYw" name="setPropertyValue" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6vU6MTMNEeak3amMgK8xYw">
+            <body>&#xD;
+	 * Sets the value and its string-representation of the GAnsProperty.&#xD;
+	 * &#xD;
+	 * @param value&#xD;
+	 *            The value that will be set in the GAnsProperty.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_6vU6MjMNEeak3amMgK8xYw" name="value" type="_cwo1ITDtEeaerfpH0KeGRA"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_cwpcIDDtEeaerfpH0KeGRA" memberEnd="_cwpcJDDtEeaerfpH0KeGRA _cwpcIzDtEeaerfpH0KeGRA">
@@ -2866,13 +2928,6 @@
         </eAnnotations>
         <ownedEnd xmi:type="uml:Property" xmi:id="_16EI5DDzEeaZHIc6rzlw_w" name="gansproperty" type="_iTrYKzDzEeaZHIc6rzlw_w" association="_16EI4DDzEeaZHIc6rzlw_w"/>
         <ownedEnd xmi:type="uml:Property" xmi:id="_16EI4zDzEeaZHIc6rzlw_w" name="gansobjectproperty" type="_iTiOMTDzEeaZHIc6rzlw_w" association="_16EI4DDzEeaZHIc6rzlw_w"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_6aeZADDzEeaZHIc6rzlw_w" memberEnd="_6afAEjDzEeaZHIc6rzlw_w _6afAEzDzEeaZHIc6rzlw_w">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6afAEDDzEeaZHIc6rzlw_w" source="org.eclipse.papyrus">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6afAETDzEeaZHIc6rzlw_w" key="nature" value="UML_Nature"/>
-        </eAnnotations>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_6afAEzDzEeaZHIc6rzlw_w" name="gansobjectproperty" type="_iTiOMTDzEeaZHIc6rzlw_w" association="_6aeZADDzEeaZHIc6rzlw_w"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_6afAEjDzEeaZHIc6rzlw_w" name="gansobjectpropertyvalue" type="_iTrYIDDzEeaZHIc6rzlw_w" association="_6aeZADDzEeaZHIc6rzlw_w"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_eslsEDH4EeaaiaiZK_IS2A" name="sugiyama">
