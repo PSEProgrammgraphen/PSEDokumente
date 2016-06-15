@@ -17,6 +17,12 @@ public class DefaultVertex implements Vertex {
 	public Integer getID() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void addToFastGraphAccessor(FastGraphAccessor fga) {
+		// TODO Auto-generated method stub
+		
 	} 
 
 }

@@ -1,6 +1,7 @@
 package sugiyama;
 
 import graphmodel.DirectedGraph;
+import graphmodel.DefaultVertex;
 import graphmodel.DirectedEdge;
 import graphmodel.Vertex;
 
@@ -9,9 +10,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast acessability of
+ * The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast accessibility of
  * attributes and constructs needed during the computation of the hierarchical layout of a directed graph.
  * All vertices are assigned to a layer.
+ * The positions of the vertices can be viewed as a grid (with varying widths per layer).
  *
  * @param <G> the directed graph which is used as underlying representation
  * @param <V> the vertex class used in the graph
@@ -59,6 +61,25 @@ public class SugiyamaGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E
 	 * @return the layers.
 	 */
 	public List<List<V>> getLayers() { return null; }
+	
+	/**
+	 * Returns the height, i.e. the number of layers.
+	 * @return the height
+	 */
+	public int getHeight() { return 0; }
+	
+	/**
+	 * Returns the width of the layer specified by it's index, i.e. the number of vertices in the layer.
+	 * @param layerN the index of the layer
+	 * @return the width of the layer
+	 */
+	public int getWidth(int layerN) { return 0; }
+
+	/**
+	 * Returns the width of the widest layer, i.e. the number of vertices the layer with the most vertices contains.
+	 * @return the maximum width 
+	 */
+	public int getMaxWidth() { return 0; }
 	
 	/**
 	 * Reverses the specified edge (u, v) by replacing it with an supplement edge (v, u)
@@ -110,5 +131,13 @@ public class SugiyamaGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E
 	 */
 	public Set<E> restoreReplacedEdges() { return null; }
 	
+	/**
+	 * A supplement edge for reversed and inserted edges for connecting vertices more than one layer apart.
+	 */
+	public class SupplementEdge extends DirectedEdge<DefaultVertex> {}
 	
+	/**
+	 * A supplement vertex which is inserted between vertices, which are more than one layer apart.
+	 */
+	public class SupplementVertex extends DefaultVertex {}
 }

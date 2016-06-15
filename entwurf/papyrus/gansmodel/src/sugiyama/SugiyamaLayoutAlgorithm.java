@@ -3,27 +3,23 @@ package sugiyama;
 import plugin.LayoutAlgorithm;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
-
-import java.util.Set;
-
 import graphmodel.DirectedEdge;
-import parameter.Settings;
 
 /**
- * This class controls the collaboration between every single step of Sugiyama Layout.
- *
- * @param <G> a directed graph
- * @param <V> a vertex
- * @param <E> a directed edge
+ * This interface supports in addition to Layouts, where every vertex a coordinate and every
+ * edge a path is assigned, a Layout which saves the positioning of vertex in the representation of a {@link SugiyamaGraph}.
+ * 
+ * @param <G> the type of the graph the layout should be applied
+ * @param <V> the type of the vertices the graph contains
+ * @param <E> the type of the edges the graph contains
  */
-public class SugiyamaLayoutAlgorithm<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> 
-	implements LayoutAlgorithm<G, V, E> {
-	
-	private Set<E> brokenCycleEdges;
+public interface SugiyamaLayoutAlgorithm<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> 
+	extends LayoutAlgorithm<G, V, E> {
 
-	public Settings getSettings() {return null;}
-
-	@Override
-	public void layout(G graph) {
-	}
+	/**
+	 * Applies it's layout to a graph as in {@code layout(G graph)} but keeps the notion of layers.
+	 * A possible application is drawing of recursive graphs.
+	 * @param graph the graph to apply the layout to
+	 */
+	public void layoutSugiyamaGraph(SugiyamaGraph<G, V, E> graph);
 }

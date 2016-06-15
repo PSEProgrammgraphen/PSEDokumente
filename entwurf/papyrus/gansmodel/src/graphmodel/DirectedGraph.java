@@ -138,4 +138,10 @@ public class DirectedGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E
 	public void applyLayout(LayoutAlgorithm<G, V, E> alg) {
 	}
 
+	@Override
+	public void addToFastGraphAccessor(FastGraphAccessor fga) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

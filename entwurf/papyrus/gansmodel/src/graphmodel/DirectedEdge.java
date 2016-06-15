@@ -30,6 +30,12 @@ public class DirectedEdge<V extends Vertex> implements Edge<V> {
 	public Integer getID() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void addToFastGraphAccessor(FastGraphAccessor fga) {
+		// TODO Auto-generated method stub
+		
 	} 
 
 }
