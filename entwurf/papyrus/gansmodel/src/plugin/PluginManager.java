@@ -9,8 +9,10 @@ import java.util.ServiceLoader;
  */
 public class PluginManager {
 
-	private List<WorkspaceOption> wOptions;
+	private List<WorkspaceOption> workspaceOptions;
+	private List<Importer> importers;
     private ServiceLoader<Plugin> loader;	
+    private List<LayoutAlgorithm> layoutAlgorithms;
 
 	private static PluginManager mgr;
 
@@ -28,6 +30,12 @@ public class PluginManager {
 	}
 	
 	public void addWorkspaceOption(WorkspaceOption option) { }
-	public List<WorkspaceOption> getWorkspaceOption() { return null; }
+	public List<WorkspaceOption> getWorkspaceOptions() { return null; }
+	public void addExporter(Exporter exporter) { }
+	public List<Exporter> getExporters() { return null; }
+	public void addImporter(Importer importer) { }
+	public List<Importer> getImporters() { return null; }
+	public void addLayoutAlgorithm(LayoutAlgorithm layoutAlgorithm) { }
+	public List<LayoutAlgorithm> getLayoutAlgorithms() { return null; }
 	public List<Plugin> getPlugins() { return null; }
 }

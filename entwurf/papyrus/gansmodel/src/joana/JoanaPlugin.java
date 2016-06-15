@@ -23,7 +23,18 @@ public class JoanaPlugin implements Plugin {
 	 * 
 	 */
 	public JoanaPlugin() {
+	}
 
+	/* (non-Javadoc)
+	 * @see plugin.Plugin#getName()
+	 */
+	@Override
+	public String getName() {
+		return pluginName;
+	}
+
+	@Override
+	public load() {
 		// Example Workspace-Register
 		PluginManager.getPluginManager().addWorkspaceOption(new WorkspaceOption() {
 
@@ -41,14 +52,6 @@ public class JoanaPlugin implements Plugin {
 				return new JoanaWorkspace();
 			}
 		});
-	}
-
-	/* (non-Javadoc)
-	 * @see plugin.Plugin#getName()
-	 */
-	@Override
-	public String getName() {
-		return pluginName;
 	}
 	
 	public CallGraphLayoutRegister getCallGraphLayoutRegister() {return cRegister;}
