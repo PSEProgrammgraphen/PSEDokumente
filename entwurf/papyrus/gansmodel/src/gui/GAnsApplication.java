@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Optional;
 
 import graphmodel.Graph;
+import graphmodel.GraphModel;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -38,6 +39,8 @@ import javafx.stage.Stage;
 import joana.MethodGraphLayout;
 import parameter.ParameterDialogGenerator;
 import parameter.Settings;
+import plugin.PluginManager;
+import plugin.Workspace;
 
 /**
  * Main application of GAns.
@@ -51,6 +54,10 @@ public class GAnsApplication extends Application {
 	private TabPane graphViewTabPane;
 	private Stage primaryStage;
 	private MenuBar menuBar;
+	
+	private PluginManager pluginManager;
+	private Workspace workspace;
+	private GraphModel model;
 
 	private GraphView currentGraphView;
 	// Mapped TabId zum Controller.
