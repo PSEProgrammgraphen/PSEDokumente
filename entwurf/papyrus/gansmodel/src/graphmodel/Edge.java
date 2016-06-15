@@ -44,4 +44,6 @@ public interface Edge<V extends Vertex> {
 	 * @return 
 	 */
 	public void addToFastGraphAccessor(FastGraphAccessor fga);
+
+	public SerializedEdge serialize();
 }

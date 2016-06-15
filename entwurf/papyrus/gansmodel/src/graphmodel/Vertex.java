@@ -28,4 +28,6 @@ public interface Vertex {
 	 * @return 
 	 */
 	public void addToFastGraphAccessor(FastGraphAccessor fga);
+
+	public SerializedVertex serialize();
 }

@@ -72,4 +72,6 @@ public interface Graph<V extends Vertex, E extends Edge<V>> {
 	 * @return 
 	 */
 	public void addToFastGraphAccessor(FastGraphAccessor fga);
+
+	public SerializedGraph serialize();
 }

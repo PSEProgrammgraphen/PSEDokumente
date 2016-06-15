@@ -1,6 +1,7 @@
 package plugin;
 
 import graphmodel.IGraphModelBuilder;
+import graphmodel.SerializedGraph;
 import java.io.FileOutputStream;
 
 /**
