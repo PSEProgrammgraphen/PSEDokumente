@@ -2116,6 +2116,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="_lqztcDLfEeaNJ4DEezp-Kg" general="_PZl14zC1EeaTGLGmcq2w7A"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_w7oE8jLgEeaNJ4DEezp-Kg" name="fieldaccessgraph" type="_lq07kDLfEeaNJ4DEezp-Kg" association="_w7nd4DLgEeaNJ4DEezp-Kg"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_lq0UgDLfEeaNJ4DEezp-Kg" client="_PZAABDC1EeaTGLGmcq2w7A" supplier="_fZb2ADLfEeaNJ4DEezp-Kg" contract="_fZb2ADLfEeaNJ4DEezp-Kg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-qtkIDMtEea0NLrj9tFBmA" name="FieldAccess implements CompoundVertex" client="_PZAABDC1EeaTGLGmcq2w7A" supplier="_qCtOEDMcEea0NLrj9tFBmA" contract="_qCtOEDMcEea0NLrj9tFBmA"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_lq0UgTLfEeaNJ4DEezp-Kg" name="addToFastGraphAccessor" visibility="public">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_lq0UgjLfEeaNJ4DEezp-Kg" name="fga" type="_RevLPjC6EeaTGLGmcq2w7A"/>
         </ownedOperation>
@@ -2142,6 +2143,7 @@
  </body>
         </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_PZJxATC1EeaTGLGmcq2w7A" general="_ALU8BzC1EeaTGLGmcq2w7A"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_-q-p4DMtEea0NLrj9tFBmA" general="_qDOLcDMcEea0NLrj9tFBmA"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_PZJxAjC1EeaTGLGmcq2w7A" name="methodgraphs" visibility="private" type="_PaCh0TC1EeaTGLGmcq2w7A" isUnique="false">
           <ownedComment xmi:type="uml:Comment" xmi:id="_PZJxAzC1EeaTGLGmcq2w7A">
             <body>&#xD;
@@ -2200,6 +2202,56 @@
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZJxFzC1EeaTGLGmcq2w7A" name="callgraph" type="_PZAAATC1EeaTGLGmcq2w7A"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-q_4ADMtEea0NLrj9tFBmA" name="setMethodGraph" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-q_4ATMtEea0NLrj9tFBmA" name="methodgraphs" type="_PaCh0TC1EeaTGLGmcq2w7A">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-q_4AjMtEea0NLrj9tFBmA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-rAfEDMtEea0NLrj9tFBmA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rAfETMtEea0NLrj9tFBmA" name="getMethodGraphs" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-rAfEjMtEea0NLrj9tFBmA">
+            <body>&#xD;
+	 * Getter of graph &#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rAfEzMtEea0NLrj9tFBmA" type="_PaCh0TC1EeaTGLGmcq2w7A" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-rBGIDMtEea0NLrj9tFBmA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-rBGITMtEea0NLrj9tFBmA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rBGIjMtEea0NLrj9tFBmA" name="getGraphs" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-rBGIzMtEea0NLrj9tFBmA">
+            <body>&#xD;
+	 * Getter of graph&#xD;
+	 * 		 &#xD;
+	 * @return &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rBGJDMtEea0NLrj9tFBmA" type="_Rim-kDC6EeaTGLGmcq2w7A" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-rBGJTMtEea0NLrj9tFBmA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-rBGJjMtEea0NLrj9tFBmA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rBGJzMtEea0NLrj9tFBmA" name="getCallGraph" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-rBGKDMtEea0NLrj9tFBmA">
+            <body>&#xD;
+	 * &#xD;
+	 * @return &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rBtMDMtEea0NLrj9tFBmA" type="_PZAAATC1EeaTGLGmcq2w7A" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rBtMTMtEea0NLrj9tFBmA" name="setCallGraph" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-rBtMjMtEea0NLrj9tFBmA">
+            <body>&#xD;
+	 * &#xD;
+	 * @param graph &#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rBtMzMtEea0NLrj9tFBmA" name="graph" type="_PZAAATC1EeaTGLGmcq2w7A"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_PZS6-TC1EeaTGLGmcq2w7A" name="JoanaPlugin" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_PZS6-jC1EeaTGLGmcq2w7A">
@@ -2207,22 +2259,24 @@
  * @author Lucas&#xD;
  </body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_PZS6_TC1EeaTGLGmcq2w7A" name="cRegister" visibility="private" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_PZS6_zC1EeaTGLGmcq2w7A" name="mRegister" visibility="private" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PZS6_TC1EeaTGLGmcq2w7A" name="cRegister" visibility="private" type="_-rLeMDMtEea0NLrj9tFBmA" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PZS6_zC1EeaTGLGmcq2w7A" name="mRegister" visibility="private" type="_-rLeMTMtEea0NLrj9tFBmA" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_PZS7ADC1EeaTGLGmcq2w7A" name="pluginName" visibility="private" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_h3j98zLiEeaNJ4DEezp-Kg" name="joanaworkspace" type="_H17zYDEGEeaY3srWKK0XCQ" association="_h3j98DLiEeaNJ4DEezp-Kg"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_H1yCYDEGEeaY3srWKK0XCQ" client="_PZS6-TC1EeaTGLGmcq2w7A" supplier="_eu26UTC2EeaTGLGmcq2w7A" contract="_eu26UTC2EeaTGLGmcq2w7A"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rK3IDMtEea0NLrj9tFBmA" name="JoanaPlugin implements Plugin" client="_PZS6-TC1EeaTGLGmcq2w7A" supplier="_Kf-VMDMeEea0NLrj9tFBmA" contract="_Kf-VMDMeEea0NLrj9tFBmA"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_PZS7ATC1EeaTGLGmcq2w7A" name="getName" visibility="public">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZS7AjC1EeaTGLGmcq2w7A" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_PZS7AzC1EeaTGLGmcq2w7A" name="getCallGraphLayoutRegister" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZS7BDC1EeaTGLGmcq2w7A" type="_PZS6_DC1EeaTGLGmcq2w7A" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZS7BDC1EeaTGLGmcq2w7A" type="_-rLeMDMtEea0NLrj9tFBmA" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_PZcr8DC1EeaTGLGmcq2w7A" name="getMethodGraphLayoutRegister" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZcr8TC1EeaTGLGmcq2w7A" type="_PZS6_jC1EeaTGLGmcq2w7A" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZcr8TC1EeaTGLGmcq2w7A" type="_-rLeMTMtEea0NLrj9tFBmA" direction="return"/>
         </ownedOperation>
         <nestedClassifier xmi:type="uml:Class" xmi:id="_PZS6_DC1EeaTGLGmcq2w7A" name="CallGraphLayoutRegister" visibility="public">
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_PZcr8jC1EeaTGLGmcq2w7A" name="CallGraphLayoutRegister implements LayoutRegister" client="_PZS6_DC1EeaTGLGmcq2w7A" supplier="_AK4QCTC1EeaTGLGmcq2w7A" contract="_AK4QCTC1EeaTGLGmcq2w7A"/>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rMsUDMtEea0NLrj9tFBmA" name="CallGraphLayoutRegister implements LayoutRegister" client="_PZS6_DC1EeaTGLGmcq2w7A" supplier="_qC-64DMcEea0NLrj9tFBmA" contract="_qC-64DMcEea0NLrj9tFBmA"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_PZcr8zC1EeaTGLGmcq2w7A" name="addLayoutOption" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZcr9DC1EeaTGLGmcq2w7A" name="option" type="_AK4QBjC1EeaTGLGmcq2w7A"/>
           </ownedOperation>
@@ -2235,6 +2289,7 @@
         </nestedClassifier>
         <nestedClassifier xmi:type="uml:Class" xmi:id="_PZS6_jC1EeaTGLGmcq2w7A" name="MethodGraphLayoutRegister" visibility="public">
           <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_PZcr-TC1EeaTGLGmcq2w7A" name="MethodGraphLayoutRegister implements LayoutRegister" client="_PZS6_jC1EeaTGLGmcq2w7A" supplier="_AK4QCTC1EeaTGLGmcq2w7A" contract="_AK4QCTC1EeaTGLGmcq2w7A"/>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rNTYDMtEea0NLrj9tFBmA" name="MethodGraphLayoutRegister implements LayoutRegister" client="_PZS6_jC1EeaTGLGmcq2w7A" supplier="_qC-64DMcEea0NLrj9tFBmA" contract="_qC-64DMcEea0NLrj9tFBmA"/>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_PZcr-jC1EeaTGLGmcq2w7A" name="addLayoutOption" visibility="public">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_PZcr-zC1EeaTGLGmcq2w7A" name="option" type="_AK4QBjC1EeaTGLGmcq2w7A"/>
           </ownedOperation>
@@ -2318,6 +2373,7 @@
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H2U08DEGEeaY3srWKK0XCQ" name="applyLayout" visibility="public">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_H2VcADEGEeaY3srWKK0XCQ" name="alg" type="_eu26QDC2EeaTGLGmcq2w7A"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-reZIDMtEea0NLrj9tFBmA" name="alg" type="_Kf1LQDMeEea0NLrj9tFBmA"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_B2IkOzDyEeaZHIc6rzlw_w" name="MethodGraphLayout" visibility="public">
@@ -2329,6 +2385,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_-KJfQjLhEeaNJ4DEezp-Kg" name="fieldaccesslayout" type="_H1OBsDEGEeaY3srWKK0XCQ" association="_-KI4MDLhEeaNJ4DEezp-Kg"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_RhJwMjLiEeaNJ4DEezp-Kg" name="methodgraph" type="_PaCh0TC1EeaTGLGmcq2w7A" association="_RhJJIDLiEeaNJ4DEezp-Kg"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_lq9ecTLfEeaNJ4DEezp-Kg" client="_B2IkOzDyEeaZHIc6rzlw_w" supplier="_GD4nMDLYEeaNJ4DEezp-Kg" contract="_GD4nMDLYEeaNJ4DEezp-Kg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rlt4DMtEea0NLrj9tFBmA" name="MethodGraphLayout implements SugiyamaLayoutAlgorithm" client="_B2IkOzDyEeaZHIc6rzlw_w" supplier="_vy6WIDLwEeaLPvgE5e-1fQ" contract="_vy6WIDLwEeaLPvgE5e-1fQ"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H2a7kTEGEeaY3srWKK0XCQ" name="getParameterDialog" visibility="public"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H2bioDEGEeaY3srWKK0XCQ" name="getSettings" visibility="public">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_H2bioTEGEeaY3srWKK0XCQ" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
@@ -2354,6 +2411,7 @@
  </body>
         </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_H1ZA0TEGEeaY3srWKK0XCQ" general="_PZAAAjC1EeaTGLGmcq2w7A"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_-q8NoDMtEea0NLrj9tFBmA" general="_fZ8MUDLfEeaNJ4DEezp-Kg"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_EKMoEzLgEeaNJ4DEezp-Kg" name="joanaedge" type="_PZAABjC1EeaTGLGmcq2w7A" aggregation="shared" association="_EKMoEDLgEeaNJ4DEezp-Kg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LCQFADLgEeaNJ4DEezp-Kg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LCRTIDLgEeaNJ4DEezp-Kg" value="*"/>
@@ -2372,6 +2430,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_WcKRozLiEeaNJ4DEezp-Kg" name="fieldaccess" type="_PZAABDC1EeaTGLGmcq2w7A" association="_WcKRoDLiEeaNJ4DEezp-Kg"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_H1OowDEGEeaY3srWKK0XCQ" name="FieldAccessLayout implements LayoutAlgorithm" client="_H1OBsDEGEeaY3srWKK0XCQ" supplier="_eu26QDC2EeaTGLGmcq2w7A" contract="_eu26QDC2EeaTGLGmcq2w7A"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_lq6bIDLfEeaNJ4DEezp-Kg" client="_H1OBsDEGEeaY3srWKK0XCQ" supplier="_GD4nMDLYEeaNJ4DEezp-Kg" contract="_GD4nMDLYEeaNJ4DEezp-Kg"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-qx1kDMtEea0NLrj9tFBmA" name="FieldAccessLayout implements SugiyamaLayoutAlgorithm" client="_H1OBsDEGEeaY3srWKK0XCQ" supplier="_vy6WIDLwEeaLPvgE5e-1fQ" contract="_vy6WIDLwEeaLPvgE5e-1fQ"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H1P24DEGEeaY3srWKK0XCQ" name="getParameterDialog" visibility="public"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H1Qd8DEGEeaY3srWKK0XCQ" name="getSettings" visibility="public">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_H1RsEDEGEeaY3srWKK0XCQ" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
@@ -2393,6 +2452,7 @@
         </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_qvj2MDLeEeaNJ4DEezp-Kg" name="joanagraphmodel" type="_PZJxADC1EeaTGLGmcq2w7A" association="_qvjPIDLeEeaNJ4DEezp-Kg"/>
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_H17zYjEGEeaY3srWKK0XCQ" client="_H17zYDEGEeaY3srWKK0XCQ" supplier="_3r6DIDC1EeaTGLGmcq2w7A" contract="_3r6DIDC1EeaTGLGmcq2w7A"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rV2QDMtEea0NLrj9tFBmA" name="JoanaWorkspace implements Workspace" client="_H17zYDEGEeaY3srWKK0XCQ" supplier="_KgIGMDMeEea0NLrj9tFBmA" contract="_KgIGMDMeEea0NLrj9tFBmA"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H18acDEGEeaY3srWKK0XCQ" name="getParameterSet" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_H18acTEGEeaY3srWKK0XCQ">
             <body>&#xD;
@@ -2421,7 +2481,7 @@
 	 * @return &#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_H1-PozEGEeaY3srWKK0XCQ" type="_ALU8BzC1EeaTGLGmcq2w7A" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_H1-PozEGEeaY3srWKK0XCQ" type="_qDOLcDMcEea0NLrj9tFBmA" direction="return"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_H1-2sDEGEeaY3srWKK0XCQ" name="getParameterDialog" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_H1-2sTEGEeaY3srWKK0XCQ">
@@ -2442,8 +2502,8 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_lq07kDLfEeaNJ4DEezp-Kg" name="FieldAccessGraph" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_lq2wwDLfEeaNJ4DEezp-Kg">
-          <body>
- *
+          <body>&#xD;
+ *&#xD;
  </body>
         </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_lq2wwTLfEeaNJ4DEezp-Kg" general="_H1Gs8DEGEeaY3srWKK0XCQ"/>
@@ -2511,6 +2571,139 @@
         </eAnnotations>
         <ownedEnd xmi:type="uml:Property" xmi:id="_h3j99DLiEeaNJ4DEezp-Kg" name="joanaplugin" type="_PZS6-TC1EeaTGLGmcq2w7A" association="_h3j98DLiEeaNJ4DEezp-Kg"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-qmPYDMtEea0NLrj9tFBmA" name="CallGraphBuilder" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-qm2cDMtEea0NLrj9tFBmA">
+          <body>&#xD;
+ * The CallGraphBuilder implements an {@link IGraphBuilder} and builds &#xD;
+ * one {@link Callgraph}&#xD;
+ *&#xD;
+ </body>
+        </ownedComment>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-qndgDMtEea0NLrj9tFBmA" name="CallGraphBuilder implements IGraphBuilder" client="_-qmPYDMtEea0NLrj9tFBmA" supplier="_qDU5IDMcEea0NLrj9tFBmA" contract="_qDU5IDMcEea0NLrj9tFBmA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-qndgTMtEea0NLrj9tFBmA" name="getEdgeBuilder" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-qndgjMtEea0NLrj9tFBmA" type="_qDROwDMcEea0NLrj9tFBmA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-qoEkDMtEea0NLrj9tFBmA" name="getVertexBuilder" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-qoEkTMtEea0NLrj9tFBmA" type="_qDVgNTMcEea0NLrj9tFBmA" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-qoEkjMtEea0NLrj9tFBmA" name="vertexID" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-qoEkzMtEea0NLrj9tFBmA" name="build" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-qoElDMtEea0NLrj9tFBmA" type="_Rim-kDC6EeaTGLGmcq2w7A" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-q3VIDMtEea0NLrj9tFBmA" name="JoanaEdgeBuilder" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-q3VITMtEea0NLrj9tFBmA">
+          <body>&#xD;
+ * The JoanaEdgeBuilder implements an {@link IEdgeBuilder}&#xD;
+ * and build exactly one edge&#xD;
+ *&#xD;
+ </body>
+        </ownedComment>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-q3VIjMtEea0NLrj9tFBmA" name="JoanaEdgeBuilder implements IEdgeBuilder" client="_-q3VIDMtEea0NLrj9tFBmA" supplier="_qDROwDMcEea0NLrj9tFBmA" contract="_qDROwDMcEea0NLrj9tFBmA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-q3VIzMtEea0NLrj9tFBmA" name="setID" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-q38MDMtEea0NLrj9tFBmA" name="id" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-q38MTMtEea0NLrj9tFBmA" name="setDirection" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-q38MjMtEea0NLrj9tFBmA" name="direction" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-q4jQDMtEea0NLrj9tFBmA" name="newEdge" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-q4jQTMtEea0NLrj9tFBmA" name="source" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-q4jQjMtEea0NLrj9tFBmA" name="target" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-q5KUDMtEea0NLrj9tFBmA" name="addData" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-q5KUTMtEea0NLrj9tFBmA" name="keyname" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-q5KUjMtEea0NLrj9tFBmA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-rDiYDMtEea0NLrj9tFBmA" name="JoanaGraphModelBuilder" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-rDiYTMtEea0NLrj9tFBmA">
+          <body>&#xD;
+ * This JoanaGraphModelBuilder implements the {@link IGraphModelBuilder} and&#xD;
+ * creates one {@link JoanaGraphModel}&#xD;
+ *&#xD;
+ </body>
+        </ownedComment>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rDiYjMtEea0NLrj9tFBmA" name="JoanaGraphModelBuilder implements IGraphModelBuilder" client="_-rDiYDMtEea0NLrj9tFBmA" supplier="_qDX8cDMcEea0NLrj9tFBmA" contract="_qDX8cDMcEea0NLrj9tFBmA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rEJcDMtEea0NLrj9tFBmA" name="getGraphBuilder" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rEJcTMtEea0NLrj9tFBmA" type="_qDU5IDMcEea0NLrj9tFBmA" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rEJcjMtEea0NLrj9tFBmA" name="graphID" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rEJczMtEea0NLrj9tFBmA" name="build" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rEwgDMtEea0NLrj9tFBmA" type="_qDOLcDMcEea0NLrj9tFBmA" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-rLeMDMtEea0NLrj9tFBmA" name="CallGraphLayoutRegister"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-rLeMTMtEea0NLrj9tFBmA" name="MethodGraphLayoutRegister"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-rSL4DMtEea0NLrj9tFBmA" name="JoanaVertexBuilder" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-rSL4TMtEea0NLrj9tFBmA">
+          <body>&#xD;
+ * The JoanaVertexBuilder implements an {@link IVertexBuilder}&#xD;
+ * and build exactly one vertex&#xD;
+ *&#xD;
+ </body>
+        </ownedComment>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rSy8DMtEea0NLrj9tFBmA" name="JoanaVertexBuilder implements IVertexBuilder" client="_-rSL4DMtEea0NLrj9tFBmA" supplier="_qDVgNTMcEea0NLrj9tFBmA" contract="_qDVgNTMcEea0NLrj9tFBmA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rSy8TMtEea0NLrj9tFBmA" name="addData" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rSy8jMtEea0NLrj9tFBmA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rTaADMtEea0NLrj9tFBmA" name="keyname" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rTaATMtEea0NLrj9tFBmA" name="build" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rTaAjMtEea0NLrj9tFBmA" type="_Rmxs4DC6EeaTGLGmcq2w7A" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rTaAzMtEea0NLrj9tFBmA" name="getGraphBuilder" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rTaBDMtEea0NLrj9tFBmA" type="_qDU5IDMcEea0NLrj9tFBmA" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rUBEDMtEea0NLrj9tFBmA" name="graphID" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-rYSgDMtEea0NLrj9tFBmA" name="MethodCall" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-rY5kDMtEea0NLrj9tFBmA">
+          <body>&#xD;
+ * @author Lucas&#xD;
+ *&#xD;
+ </body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_-rY5kTMtEea0NLrj9tFBmA" general="_H1Gs8DEGEeaY3srWKK0XCQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-rauwDMtEea0NLrj9tFBmA" name="MethodCallLayout" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-rbV0DMtEea0NLrj9tFBmA">
+          <body>&#xD;
+ * @author Lucas&#xD;
+ *&#xD;
+ </body>
+        </ownedComment>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rbV0TMtEea0NLrj9tFBmA" name="MethodCallLayout implements LayoutAlgorithm" client="_-rauwDMtEea0NLrj9tFBmA" supplier="_Kf1LQDMeEea0NLrj9tFBmA" contract="_Kf1LQDMeEea0NLrj9tFBmA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rbV0jMtEea0NLrj9tFBmA" name="getSettings" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rbV0zMtEea0NLrj9tFBmA" type="_YK5nsC86Eea5c8WWEsgIIQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rbV1DMtEea0NLrj9tFBmA" name="layout" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rbV1TMtEea0NLrj9tFBmA" name="graph" type="_-rYSgDMtEea0NLrj9tFBmA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-rhccDMtEea0NLrj9tFBmA" name="MethodGraphBuilder" visibility="public">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-rhccTMtEea0NLrj9tFBmA">
+          <body>&#xD;
+ * The MethodGraphBuilder implements an {@link IGraphBuilder} and builds &#xD;
+ * one {@link MethodGraph}&#xD;
+ *&#xD;
+ </body>
+        </ownedComment>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-rhccjMtEea0NLrj9tFBmA" name="MethodGraphBuilder implements IGraphBuilder" client="_-rhccDMtEea0NLrj9tFBmA" supplier="_qDU5IDMcEea0NLrj9tFBmA" contract="_qDU5IDMcEea0NLrj9tFBmA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rhcczMtEea0NLrj9tFBmA" name="getEdgeBuilder" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-rhcdDMtEea0NLrj9tFBmA" type="_qDROwDMcEea0NLrj9tFBmA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-rhcdTMtEea0NLrj9tFBmA" name="getVertexBuilder" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-riDgDMtEea0NLrj9tFBmA" type="_qDVgNTMcEea0NLrj9tFBmA" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-riDgTMtEea0NLrj9tFBmA" name="vertexID" type="_8H8x4ispEeaqLZjhN-MabA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_-riDgjMtEea0NLrj9tFBmA" name="build" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_-riDgzMtEea0NLrj9tFBmA" type="_Rim-kDC6EeaTGLGmcq2w7A" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_EliuYDMvEea0NLrj9tFBmA" name="creates" client="_-rSL4DMtEea0NLrj9tFBmA" supplier="_PZl14zC1EeaTGLGmcq2w7A"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_IC3w4DMvEea0NLrj9tFBmA" name="creates" client="_-q3VIDMtEea0NLrj9tFBmA" supplier="_PZAABjC1EeaTGLGmcq2w7A"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_LmBHgDMvEea0NLrj9tFBmA" name="creates" client="_-rDiYDMtEea0NLrj9tFBmA" supplier="_PZJxADC1EeaTGLGmcq2w7A"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_PmhIgDMvEea0NLrj9tFBmA" name="creates" client="_-qmPYDMtEea0NLrj9tFBmA" supplier="_PZAAATC1EeaTGLGmcq2w7A"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_igKvEDMvEea0NLrj9tFBmA" name="creates" client="_-rhccDMtEea0NLrj9tFBmA" supplier="_PaCh0TC1EeaTGLGmcq2w7A"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_wKRmcDDxEeaZHIc6rzlw_w" name="gui">
       <packagedElement xmi:type="uml:Class" xmi:id="_wKV34DDxEeaZHIc6rzlw_w" name="EdgeShape" visibility="public">
