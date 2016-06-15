@@ -13,7 +13,7 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public interface EdgeDrawer<G extends DirectedGraph<G,V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface EdgeDrawer<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
 	/**
 	 * Draws the edges from the graph argument and reverses the edges, which have been reversed earlier,

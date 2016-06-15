@@ -4,7 +4,7 @@ import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public interface EdgeDrawerGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface EdgeDrawerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 	
 	/**
 	 * Reverses the direction of an directed edge and returns it.

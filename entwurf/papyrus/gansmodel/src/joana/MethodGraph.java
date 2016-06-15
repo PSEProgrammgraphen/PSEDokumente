@@ -1,14 +1,20 @@
 package joana;
 
 import plugin.LayoutAlgorithm;
+import plugin.LayoutOption;
+import plugin.LayoutRegister;
 
 import java.util.List;
 
 /**
  * This is a specified graph representation for a MethodGraph in JOANA 
  */
-public class MethodGraph extends JoanaGraph<MethodGraph> {
+public class MethodGraph extends JoanaGraph {
 
+	private static LayoutRegister<MethodGraph> register;
+	
+	public MethodGraph() {}
+	
 	/**
 	 * Get the entry vertex of a method
 	 * 
@@ -47,9 +53,12 @@ public class MethodGraph extends JoanaGraph<MethodGraph> {
 		// TODO Auto-generated method
 		return null;
 	 } 
+
+	/**
+	 * This sets the {@link LayoutRegister}, which stores the available 
+	 * {@link LayoutOption}s for all method graphs statically.
+	 * @param register the register
+	 */
+	protected static void setRegister(LayoutRegister<MethodGraph> register) {MethodGraph.register = register;}
 	
-	@Override
-	public void applyLayout(LayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> alg) {
-		alg.layout(this);
-	}
 }

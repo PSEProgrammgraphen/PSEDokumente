@@ -13,7 +13,7 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public interface DAGMaker<G extends DirectedGraph<G,V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface DAGMaker<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
 
 	/**
