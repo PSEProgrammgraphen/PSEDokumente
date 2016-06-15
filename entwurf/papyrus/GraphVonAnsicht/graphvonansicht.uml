@@ -3488,38 +3488,6 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyITADLwEeaLPvgE5e-1fQ" name="graph" type="_Y3vbpTDuEeaerfpH0KeGRA"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_vyKvQDLwEeaLPvgE5e-1fQ" name="JoanaCrossMinimizerGraph" visibility="public">
-        <generalization xmi:type="uml:Generalization" xmi:id="_vyLWUDLwEeaLPvgE5e-1fQ" general="_fZ8MUDLfEeaNJ4DEezp-Kg"/>
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vyLWUTLwEeaLPvgE5e-1fQ" name="JoanaCrossMinimizerGraph implements CrossMinimizerGraph" client="_vyKvQDLwEeaLPvgE5e-1fQ" supplier="_vx30UDLwEeaLPvgE5e-1fQ" contract="_vx30UDLwEeaLPvgE5e-1fQ"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyL9YDLwEeaLPvgE5e-1fQ" name="getLayerCount" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyL9YTLwEeaLPvgE5e-1fQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyMkcDLwEeaLPvgE5e-1fQ" name="swapVertices" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyMkcTLwEeaLPvgE5e-1fQ" name="first" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyNLgDLwEeaLPvgE5e-1fQ" name="second" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyNLgTLwEeaLPvgE5e-1fQ" name="getVertexCount" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyNLgjLwEeaLPvgE5e-1fQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyNLgzLwEeaLPvgE5e-1fQ" name="layerNum" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyNykDLwEeaLPvgE5e-1fQ" name="getLayer" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyNykTLwEeaLPvgE5e-1fQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyNykjLwEeaLPvgE5e-1fQ" name="vertex" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyOZoDLwEeaLPvgE5e-1fQ" name="getLayer" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyOZoTLwEeaLPvgE5e-1fQ" type="_PyHUBzDuEeaerfpH0KeGRA" direction="return">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vyOZojLwEeaLPvgE5e-1fQ"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vyOZozLwEeaLPvgE5e-1fQ" value="*"/>
-          </ownedParameter>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyPAsDLwEeaLPvgE5e-1fQ" name="layerNum" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyPAsTLwEeaLPvgE5e-1fQ" name="getLayers" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyPAsjLwEeaLPvgE5e-1fQ" type="_es7qUTH4EeaaiaiZK_IS2A" direction="return">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vyPAszLwEeaLPvgE5e-1fQ"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vyPAtDLwEeaLPvgE5e-1fQ" value="*"/>
-          </ownedParameter>
-        </ownedOperation>
-      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_vyRc8DLwEeaLPvgE5e-1fQ" name="JoanaDAGMaker" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_vySEADLwEeaLPvgE5e-1fQ">
           <body>&#xD;
@@ -3537,14 +3505,6 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyTSIDLwEeaLPvgE5e-1fQ" name="graph" type="_Y3vbpTDuEeaerfpH0KeGRA"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_vyUgQDLwEeaLPvgE5e-1fQ" name="JoanaDAGMakerGraph" visibility="public">
-        <generalization xmi:type="uml:Generalization" xmi:id="_vyUgQTLwEeaLPvgE5e-1fQ" general="_fZ8MUDLfEeaNJ4DEezp-Kg"/>
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vyUgQjLwEeaLPvgE5e-1fQ" name="JoanaDAGMakerGraph implements DAGMakerGraph" client="_vyUgQDLwEeaLPvgE5e-1fQ" supplier="_vx_JEDLwEeaLPvgE5e-1fQ" contract="_vx_JEDLwEeaLPvgE5e-1fQ"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyVHUDLwEeaLPvgE5e-1fQ" name="reverseEdge" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyVHUTLwEeaLPvgE5e-1fQ" type="_vx_wIDLwEeaLPvgE5e-1fQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyVHUjLwEeaLPvgE5e-1fQ" name="edge" type="_vx_wIDLwEeaLPvgE5e-1fQ"/>
-        </ownedOperation>
-      </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_vyWVcDLwEeaLPvgE5e-1fQ" name="JoanaEdgeDrawer" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_vyWVcTLwEeaLPvgE5e-1fQ">
           <body>&#xD;
@@ -3560,19 +3520,6 @@
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vyWVcjLwEeaLPvgE5e-1fQ" name="JoanaEdgeDrawer implements EdgeDrawer" client="_vyWVcDLwEeaLPvgE5e-1fQ" supplier="_vyBlUDLwEeaLPvgE5e-1fQ" contract="_vyBlUDLwEeaLPvgE5e-1fQ"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_vyW8gDLwEeaLPvgE5e-1fQ" name="drawEdges" visibility="public">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyW8gTLwEeaLPvgE5e-1fQ" name="graph" type="_Y3vbpTDuEeaerfpH0KeGRA"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_vyYKoDLwEeaLPvgE5e-1fQ" name="JoanaEdgeDrawerGraph" visibility="public">
-        <generalization xmi:type="uml:Generalization" xmi:id="_vyYxsDLwEeaLPvgE5e-1fQ" general="_fZ8MUDLfEeaNJ4DEezp-Kg"/>
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vyYxsTLwEeaLPvgE5e-1fQ" name="JoanaEdgeDrawerGraph implements EdgeDrawerGraph" client="_vyYKoDLwEeaLPvgE5e-1fQ" supplier="_vyCzcDLwEeaLPvgE5e-1fQ" contract="_vyCzcDLwEeaLPvgE5e-1fQ"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyZYwDLwEeaLPvgE5e-1fQ" name="reverseEdge" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyZYwTLwEeaLPvgE5e-1fQ" type="_vx_wIDLwEeaLPvgE5e-1fQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyZYwjLwEeaLPvgE5e-1fQ" name="edge" type="_vx_wIDLwEeaLPvgE5e-1fQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyZ_0DLwEeaLPvgE5e-1fQ" name="getDummyCount" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyZ_0TLwEeaLPvgE5e-1fQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyZ_0jLwEeaLPvgE5e-1fQ" name="source" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyam4DLwEeaLPvgE5e-1fQ" name="target" type="_PyHUBzDuEeaerfpH0KeGRA"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_vyccEDLwEeaLPvgE5e-1fQ" name="JoanaLayerAssigner" visibility="public">
@@ -3644,35 +3591,6 @@
 	 </body>
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyqegDLwEeaLPvgE5e-1fQ" name="width" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_vygGcDLwEeaLPvgE5e-1fQ" name="JoanaLayerAssignerGraph" visibility="public">
-        <generalization xmi:type="uml:Generalization" xmi:id="_vygtgDLwEeaLPvgE5e-1fQ" general="_fZ8MUDLfEeaNJ4DEezp-Kg"/>
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vygtgjLwEeaLPvgE5e-1fQ" name="JoanaLayerAssignerGraph implements LayerAssignerGraph" client="_vygGcDLwEeaLPvgE5e-1fQ" supplier="_vygtgTLwEeaLPvgE5e-1fQ" contract="_vygtgTLwEeaLPvgE5e-1fQ"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyhUkDLwEeaLPvgE5e-1fQ" name="assignToLayer" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyhUkTLwEeaLPvgE5e-1fQ" name="vertex" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyhUkjLwEeaLPvgE5e-1fQ" name="layerNum" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyhUkzLwEeaLPvgE5e-1fQ" name="getLayer" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyh7oDLwEeaLPvgE5e-1fQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyh7oTLwEeaLPvgE5e-1fQ" name="vertex" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyh7ojLwEeaLPvgE5e-1fQ" name="getLayer" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyh7ozLwEeaLPvgE5e-1fQ" type="_PyHUBzDuEeaerfpH0KeGRA" direction="return">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vyh7pDLwEeaLPvgE5e-1fQ"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vyh7pTLwEeaLPvgE5e-1fQ" value="*"/>
-          </ownedParameter>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyiisDLwEeaLPvgE5e-1fQ" name="layerNum" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyiisTLwEeaLPvgE5e-1fQ" name="getLayers" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyiisjLwEeaLPvgE5e-1fQ" type="_es7qUTH4EeaaiaiZK_IS2A" direction="return">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vyiiszLwEeaLPvgE5e-1fQ"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vyiitDLwEeaLPvgE5e-1fQ" value="*"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vyiitTLwEeaLPvgE5e-1fQ" name="getVertexCount" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyiitjLwEeaLPvgE5e-1fQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyiitzLwEeaLPvgE5e-1fQ" name="layerNum" type="_tfGmIi8vEeaW5pq-1rzVBQ"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_vygtgTLwEeaLPvgE5e-1fQ" name="LayerAssignerGraph" visibility="public">
@@ -3786,18 +3704,6 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_vy8LUDLwEeaLPvgE5e-1fQ" name="graph" type="_Y3vbpTDuEeaerfpH0KeGRA"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_vymNEDLwEeaLPvgE5e-1fQ" name="JoanaVertexPositionerGraph" visibility="public">
-        <generalization xmi:type="uml:Generalization" xmi:id="_vymNETLwEeaLPvgE5e-1fQ" general="_fZ8MUDLfEeaNJ4DEezp-Kg"/>
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_vym0ITLwEeaLPvgE5e-1fQ" name="JoanaVertexPositionerGraph implements VertexPositionerGraph" client="_vymNEDLwEeaLPvgE5e-1fQ" supplier="_vym0IDLwEeaLPvgE5e-1fQ" contract="_vym0IDLwEeaLPvgE5e-1fQ"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vym0IjLwEeaLPvgE5e-1fQ" name="getDeviatingDummiesCount" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vynbMDLwEeaLPvgE5e-1fQ" type="_tfGmIi8vEeaW5pq-1rzVBQ" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vynbMTLwEeaLPvgE5e-1fQ" name="source" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vynbMjLwEeaLPvgE5e-1fQ" name="target" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_vynbMzLwEeaLPvgE5e-1fQ" name="alignVertex" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vyoCQDLwEeaLPvgE5e-1fQ" name="vertex" type="_PyHUBzDuEeaerfpH0KeGRA"/>
-        </ownedOperation>
-      </packagedElement>
       <packagedElement xmi:type="uml:Interface" xmi:id="_vym0IDLwEeaLPvgE5e-1fQ" name="VertexPositionerGraph" visibility="public">
         <ownedOperation xmi:type="uml:Operation" xmi:id="_vy8yYDLwEeaLPvgE5e-1fQ" name="getDeviatingDummiesCount" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_vy8yYTLwEeaLPvgE5e-1fQ">
@@ -3903,6 +3809,11 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_vy0PgDLwEeaLPvgE5e-1fQ" name="brokenCycleEdges" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_vy0PgTLwEeaLPvgE5e-1fQ" name="insertedVertices" visibility="private" type="_qAw_gC2ZEeatg6U_MxLsoQ" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_vy0PgjLwEeaLPvgE5e-1fQ" name="graph" visibility="private" type="_Y3vbpTDuEeaerfpH0KeGRA" isUnique="false"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_8qlDwDL-Eeaurr9QTbyUMA" client="_vyzBYDLwEeaLPvgE5e-1fQ" supplier="_vx_JEDLwEeaLPvgE5e-1fQ" contract="_vx_JEDLwEeaLPvgE5e-1fQ"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_90eEADL-Eeaurr9QTbyUMA" client="_vyzBYDLwEeaLPvgE5e-1fQ" supplier="_vygtgTLwEeaLPvgE5e-1fQ" contract="_vygtgTLwEeaLPvgE5e-1fQ"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_-q_cUDL-Eeaurr9QTbyUMA" client="_vyzBYDLwEeaLPvgE5e-1fQ" supplier="_vx30UDLwEeaLPvgE5e-1fQ" contract="_vx30UDLwEeaLPvgE5e-1fQ"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="__9dJwDL-Eeaurr9QTbyUMA" client="_vyzBYDLwEeaLPvgE5e-1fQ" supplier="_vym0IDLwEeaLPvgE5e-1fQ" contract="_vym0IDLwEeaLPvgE5e-1fQ"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_BOjlQDL_Eeaurr9QTbyUMA" client="_vyzBYDLwEeaLPvgE5e-1fQ" supplier="_vyCzcDLwEeaLPvgE5e-1fQ" contract="_vyCzcDLwEeaLPvgE5e-1fQ"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_vy0PgzLwEeaLPvgE5e-1fQ" name="assignToLayer" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_vy0PhDLwEeaLPvgE5e-1fQ">
             <body>&#xD;
@@ -4072,6 +3983,11 @@
  </body>
         </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_vy6WIjLwEeaLPvgE5e-1fQ" general="_fZ_2sDLfEeaNJ4DEezp-Kg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_1-YRgzL-Eeaurr9QTbyUMA" name="joanadagmaker" type="_vyRc8DLwEeaLPvgE5e-1fQ" association="_1-YRgDL-Eeaurr9QTbyUMA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3CcWkzL-Eeaurr9QTbyUMA" name="joanalayerassigner" type="_vyccEDLwEeaLPvgE5e-1fQ" association="_3CcWkDL-Eeaurr9QTbyUMA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4D7owzL-Eeaurr9QTbyUMA" name="joanacrossminimizer" type="_vyGd0DLwEeaLPvgE5e-1fQ" association="_4D7owDL-Eeaurr9QTbyUMA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5A1V4zL-Eeaurr9QTbyUMA" name="joanavertexpositioner" type="_vykX4DLwEeaLPvgE5e-1fQ" association="_5A1V4DL-Eeaurr9QTbyUMA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6Hk7gzL-Eeaurr9QTbyUMA" name="joanaedgedrawer" type="_vyWVcDLwEeaLPvgE5e-1fQ" association="_6Hk7gDL-Eeaurr9QTbyUMA"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_vy6WIzLwEeaLPvgE5e-1fQ" name="layoutSugiyamaGraph" visibility="public">
           <ownedComment xmi:type="uml:Comment" xmi:id="_vy6WJDLwEeaLPvgE5e-1fQ">
             <body>&#xD;
@@ -5601,6 +5517,36 @@
       </ownedComment>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_GD6cYDLYEeaNJ4DEezp-Kg" name="graph"/>
     </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1-YRgDL-Eeaurr9QTbyUMA" memberEnd="_1-YRgzL-Eeaurr9QTbyUMA _1-YRhDL-Eeaurr9QTbyUMA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1-YRgTL-Eeaurr9QTbyUMA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1-YRgjL-Eeaurr9QTbyUMA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_1-YRhDL-Eeaurr9QTbyUMA" name="sugiyamalayoutalgorithm" type="_vy6WIDLwEeaLPvgE5e-1fQ" association="_1-YRgDL-Eeaurr9QTbyUMA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_3CcWkDL-Eeaurr9QTbyUMA" memberEnd="_3CcWkzL-Eeaurr9QTbyUMA _3CcWlDL-Eeaurr9QTbyUMA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3CcWkTL-Eeaurr9QTbyUMA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3CcWkjL-Eeaurr9QTbyUMA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_3CcWlDL-Eeaurr9QTbyUMA" name="sugiyamalayoutalgorithm" type="_vy6WIDLwEeaLPvgE5e-1fQ" association="_3CcWkDL-Eeaurr9QTbyUMA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_4D7owDL-Eeaurr9QTbyUMA" memberEnd="_4D7owzL-Eeaurr9QTbyUMA _4D7oxDL-Eeaurr9QTbyUMA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4D7owTL-Eeaurr9QTbyUMA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4D7owjL-Eeaurr9QTbyUMA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_4D7oxDL-Eeaurr9QTbyUMA" name="sugiyamalayoutalgorithm" type="_vy6WIDLwEeaLPvgE5e-1fQ" association="_4D7owDL-Eeaurr9QTbyUMA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5A1V4DL-Eeaurr9QTbyUMA" memberEnd="_5A1V4zL-Eeaurr9QTbyUMA _5A1V5DL-Eeaurr9QTbyUMA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5A1V4TL-Eeaurr9QTbyUMA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5A1V4jL-Eeaurr9QTbyUMA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5A1V5DL-Eeaurr9QTbyUMA" name="sugiyamalayoutalgorithm" type="_vy6WIDLwEeaLPvgE5e-1fQ" association="_5A1V4DL-Eeaurr9QTbyUMA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_6Hk7gDL-Eeaurr9QTbyUMA" memberEnd="_6Hk7gzL-Eeaurr9QTbyUMA _6Hk7hDL-Eeaurr9QTbyUMA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6Hk7gTL-Eeaurr9QTbyUMA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6Hk7gjL-Eeaurr9QTbyUMA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_6Hk7hDL-Eeaurr9QTbyUMA" name="sugiyamalayoutalgorithm" type="_vy6WIDLwEeaLPvgE5e-1fQ" association="_6Hk7gDL-Eeaurr9QTbyUMA"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_37zswChkEeaXOuI3eacPrQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_370T0ChkEeaXOuI3eacPrQ" source="http://www.eclipse.org/uml2/2.0.0/UML">

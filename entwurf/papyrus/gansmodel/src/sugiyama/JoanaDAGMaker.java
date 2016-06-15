@@ -3,6 +3,7 @@ package sugiyama;
 import java.util.Set;
 
 import graphmodel.DirectedEdge;
+import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
 /**
@@ -13,7 +14,7 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public class JoanaDAGMaker<G extends JoanaDAGMakerGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> implements DAGMaker<G,V,E>{
+public class JoanaDAGMaker<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> implements DAGMaker<G,V,E>{
 
 
 	@Override

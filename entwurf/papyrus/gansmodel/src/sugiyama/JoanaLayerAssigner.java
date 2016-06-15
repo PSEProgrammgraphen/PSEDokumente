@@ -3,6 +3,7 @@ package sugiyama;
 import java.util.Set;
 
 import graphmodel.DirectedEdge;
+import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 /**
  * This class takes a directed graph and assigns every vertex in it a layer.
@@ -11,7 +12,7 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public class JoanaLayerAssigner<G extends JoanaLayerAssignerGraph<G,V, E>, V extends Vertex, E extends DirectedEdge<V>> implements LayerAssigner<G,V,E>{
+public class JoanaLayerAssigner<G extends DirectedGraph<G,V, E>, V extends Vertex, E extends DirectedEdge<V>> implements LayerAssigner<G,V,E>{
 
 	@Override
 	public void assignLayers(G graph) {

@@ -1,6 +1,7 @@
 package sugiyama;
 
 import graphmodel.DirectedEdge;
+import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
 /**
@@ -11,7 +12,7 @@ import graphmodel.Vertex;
  * @param <V> the type of vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */ 
-public class JoanaCrossMinimizer<G extends JoanaCrossMinimizerGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> implements CrossMinimizer<G,V,E>{
+public class JoanaCrossMinimizer<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> implements CrossMinimizer<G,V,E>{
 
 	@Override
 	public void minimizeCrossings(G graph) {
