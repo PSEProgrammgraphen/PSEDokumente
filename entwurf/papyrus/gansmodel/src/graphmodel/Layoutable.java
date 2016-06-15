@@ -2,16 +2,18 @@ package graphmodel;
 
 import java.util.List;
 
-import plugin.LayoutAlgorithm;
 import plugin.LayoutOption;
 
-
-public interface Layoutable<G extends Graph<V, E>, V extends Vertex, E extends Edge<V>> {
+/**
+ * Classes implementing this interface provide a list of LayoutOptions with their
+ * target set to itself.
+ */
+public interface Layoutable {
 
 	/**
-	 * 
+	 * Returns a list of layouts which have been registered at the corresponding
+	 * LayoutRegister for this graph type.
+	 * The graph implementing this interface will be set as target of the LayoutOption.
 	 */
-	public List<LayoutOption<G>> getRegisteredLayouts();
-	
-	public void applyLayout(LayoutAlgorithm<G, V, E> alg);
+	public List<LayoutOption> getRegisteredLayouts();
 }

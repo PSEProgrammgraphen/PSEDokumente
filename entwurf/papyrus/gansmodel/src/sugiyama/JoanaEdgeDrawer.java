@@ -13,7 +13,7 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public class JoanaEdgeDrawer<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> implements EdgeDrawer<G,V,E>{
+public class JoanaEdgeDrawer<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> implements EdgeDrawer<G,V,E>{
 
 	@Override
 	public void drawEdges(G graph) {

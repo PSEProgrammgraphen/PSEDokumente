@@ -6,7 +6,7 @@ import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public interface LayerAssignerGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface LayerAssignerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 	
 	/**
 	 * Assigns a vertex to a certain layer represented by a number.

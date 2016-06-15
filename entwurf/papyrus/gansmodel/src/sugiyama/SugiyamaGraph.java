@@ -19,8 +19,8 @@ import java.util.Set;
  * @param <V> the vertex class used in the graph
  * @param <E> the edge class used in the graph
  */
-public class SugiyamaGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> 
-	extends DirectedGraph<SugiyamaGraph<G, V, E>, Vertex, DirectedEdge<Vertex>> {
+public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
+	extends DirectedGraph<Vertex, DirectedEdge<Vertex>> {
 	
 	private List<List<V>> layers;
 	private Map<V, Integer> vertexToLayer;

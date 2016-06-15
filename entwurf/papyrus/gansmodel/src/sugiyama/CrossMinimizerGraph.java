@@ -6,7 +6,7 @@ import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public interface CrossMinimizerGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface CrossMinimizerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
 	/**
 	 * Get the amount of layers.

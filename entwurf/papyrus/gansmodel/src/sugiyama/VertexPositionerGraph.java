@@ -4,7 +4,7 @@ import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 
-public interface VertexPositionerGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface VertexPositionerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
 	/**
 	 * Get the amount of dummy vertices that are not in the same column as the most dummy vertices that are in the same column.

@@ -3,6 +3,6 @@ package joana;
 /**
  *
  */
-public class FieldAccessGraph extends JoanaGraph<FieldAccessGraph> 
+public class FieldAccessGraph extends JoanaGraph
 {
 }

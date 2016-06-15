@@ -1,5 +1,7 @@
 package joana;
 
+import plugin.LayoutOption;
+import java.util.List;
 import plugin.Workspace;
 import parameter.Settings;
 import graphmodel.IGraphModelBuilder;
@@ -65,4 +67,10 @@ public class JoanaWorkspace implements Workspace {
 		// TODO Auto-generated method
 		return null;
 	 }
+
+	@Override
+	public List<LayoutOption> getLayoutOptions(int graphIndex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

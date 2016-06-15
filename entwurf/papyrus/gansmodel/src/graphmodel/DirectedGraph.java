@@ -10,9 +10,11 @@ import plugin.LayoutOption;
  * 
  *
  */
-public class DirectedGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> 
-		implements Graph<V, E>, Layoutable<G, V, E> {
+public class DirectedGraph<V extends Vertex, E extends DirectedEdge<V>> 
+		implements Graph<V, E>, Layoutable {
 
+	private DirectedGraphLayoutRegister register;
+	
 	/**
 	 * Get the outdegree of a vertex
 	 * 
@@ -130,12 +132,8 @@ public class DirectedGraph<G extends DirectedGraph<G, V, E>, V extends Vertex, E
 	}
 
 	@Override
-	public List<LayoutOption<G>> getRegisteredLayouts() {
+	public List<LayoutOption> getRegisteredLayouts() {
 		return null;
-	}
-
-	@Override
-	public void applyLayout(LayoutAlgorithm<G, V, E> alg) {
 	}
 
 	@Override

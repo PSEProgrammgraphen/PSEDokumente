@@ -13,7 +13,7 @@ import graphmodel.DirectedEdge;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the edges the graph contains
  */
-public interface SugiyamaLayoutAlgorithm<G extends DirectedGraph<G, V, E>, V extends Vertex, E extends DirectedEdge<V>> 
+public interface SugiyamaLayoutAlgorithm<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
 	extends LayoutAlgorithm<G, V, E> {
 
 	/**
