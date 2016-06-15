@@ -102,9 +102,15 @@
                       <children xmi:type="notation:DecorationNode" xmi:id="_0RbwrSwxEeaHXuqN0dh6DA" type="5017"/>
                       <children xmi:type="notation:BasicCompartment" xmi:id="_0RbwriwxEeaHXuqN0dh6DA" type="7010">
                         <children xmi:type="notation:Shape" xmi:id="_0RbwrywxEeaHXuqN0dh6DA" type="3009">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wZCBgDMdEea0NLrj9tFBmA" source="PapyrusCSSForceValue">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wZCBgTMdEea0NLrj9tFBmA" key="canonical" value="true"/>
+                          </eAnnotations>
                           <children xmi:type="notation:DecorationNode" xmi:id="_0RbwsCwxEeaHXuqN0dh6DA" type="5017"/>
                           <children xmi:type="notation:BasicCompartment" xmi:id="_0RbwsSwxEeaHXuqN0dh6DA" type="7010">
                             <children xmi:type="notation:Shape" xmi:id="_0RbwsiwxEeaHXuqN0dh6DA" type="3010">
+                              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UGc8sDMdEea0NLrj9tFBmA" source="PapyrusCSSForceValue">
+                                <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UGc8sTMdEea0NLrj9tFBmA" key="canonical" value="true"/>
+                              </eAnnotations>
                               <children xmi:type="notation:DecorationNode" xmi:id="_0RbwsywxEeaHXuqN0dh6DA" type="5014"/>
                               <children xmi:type="notation:DecorationNode" xmi:id="_0RbwtCwxEeaHXuqN0dh6DA" type="8518">
                                 <layoutConstraint xmi:type="notation:Location" xmi:id="_0RbwtSwxEeaHXuqN0dh6DA" y="5"/>
@@ -131,12 +137,14 @@
                                 <styles xmi:type="notation:FilteringStyle" xmi:id="_0RbwxSwxEeaHXuqN0dh6DA"/>
                                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0RbwxiwxEeaHXuqN0dh6DA"/>
                               </children>
+                              <styles xmi:type="notation:CanonicalStyle" xmi:id="_UGcVoDMdEea0NLrj9tFBmA" canonical="false"/>
                               <element xmi:type="uml:Class" href="graphvonansicht.uml#_0RbJliwxEeaHXuqN0dh6DA"/>
                               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0RbwyiwxEeaHXuqN0dh6DA" x="10" y="5"/>
                             </children>
                             <styles xmi:type="notation:TitleStyle" xmi:id="_0RbwyywxEeaHXuqN0dh6DA"/>
                             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0RbwzCwxEeaHXuqN0dh6DA"/>
                           </children>
+                          <styles xmi:type="notation:CanonicalStyle" xmi:id="_wZBacDMdEea0NLrj9tFBmA"/>
                           <element xmi:type="uml:Package" href="graphvonansicht.uml#_0RbJlSwxEeaHXuqN0dh6DA"/>
                           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Rbw0CwxEeaHXuqN0dh6DA" x="18" y="14" width="926" height="159"/>
                         </children>
@@ -914,6 +922,9 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gbI14TC2EeaTGLGmcq2w7A" x="259" y="229"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_geHRYDC2EeaTGLGmcq2w7A" type="3023">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Rj65EDMeEea0NLrj9tFBmA" source="PapyrusCSSForceValue">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rj65ETMeEea0NLrj9tFBmA" key="canonical" value="true"/>
+          </eAnnotations>
           <children xmi:type="notation:DecorationNode" xmi:id="_geHRYjC2EeaTGLGmcq2w7A" type="5049"/>
           <children xmi:type="notation:DecorationNode" xmi:id="_geHRYzC2EeaTGLGmcq2w7A" type="8515">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_geHRZDC2EeaTGLGmcq2w7A" y="5"/>
@@ -956,6 +967,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_geHRcjC2EeaTGLGmcq2w7A"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_geHRczC2EeaTGLGmcq2w7A"/>
           </children>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_Rj6SADMeEea0NLrj9tFBmA"/>
           <element xmi:type="uml:Interface" href="graphvonansicht.uml#_3r6DIDC1EeaTGLGmcq2w7A"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_geHRYTC2EeaTGLGmcq2w7A" x="208" y="420"/>
         </children>
