@@ -1,6 +1,6 @@
 package com.tinkerpop.blueprints.util.io.graphml;
 
-import graphmodel.AbstractGraphModelBuilder;
+import graphmodel.IGraphModelBuilder;
 import java.io.InputStream;
 
 /**
@@ -31,7 +31,7 @@ public class GraphMLImporter {
 	 * @param builder 
 	 * @param graphMLInputStream 
 	 */
-	public static void inputGraph(AbstractGraphModelBuilder builder, InputStream graphMLInputStream) { 
+	public static void inputGraph(IGraphModelBuilder builder, InputStream graphMLInputStream) { 
 		// TODO Auto-generated method
 	 } 
 

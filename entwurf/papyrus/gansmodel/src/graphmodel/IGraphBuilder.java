@@ -4,14 +4,14 @@ package graphmodel;
  * This is an abstract interface which is used to build a concrete graph.  
  *
  */
-public abstract class AbstractGraphBuilder {
+public interface IGraphBuilder {
 
 	/**
 	 * Returns the EdgeBuilder which is specified for this graph.
 	 * 
 	 * @return AbstractEdgeBuilder
 	 */
-	public abstract AbstractEdgeBuilder getEdgeBuilder();
+	public abstract IEdgeBuilder getEdgeBuilder();
 
 	/**
 	 * Returns the VertexBuilder which is specified for this graph.
@@ -19,7 +19,7 @@ public abstract class AbstractGraphBuilder {
 	 * @param vertexID 
 	 * @return AbstractVertexBuilder
 	 */
-	public abstract AbstractVertexBuilder getVertexBuilder(String vertexID);
+	public abstract IVertexBuilder getVertexBuilder(String vertexID);
 
 	/**
 	 * This method is called, when the buildingprocess of the graph is finished.
@@ -27,9 +27,5 @@ public abstract class AbstractGraphBuilder {
 	 * 	 
 	 * @return Graph
 	 */
-	public Graph build() { 
-		// TODO Auto-generated method
-		return null;
-	 } 
-
+	public Graph build();
 }

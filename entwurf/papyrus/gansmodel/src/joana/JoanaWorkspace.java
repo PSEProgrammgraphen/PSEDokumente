@@ -2,7 +2,7 @@ package joana;
 
 import plugin.Workspace;
 import parameter.Settings;
-import graphmodel.AbstractGraphModelBuilder;
+import graphmodel.IGraphModelBuilder;
 import graphmodel.GraphModel;
 
 /**
@@ -36,7 +36,7 @@ public class JoanaWorkspace implements Workspace {
 	 * 
 	 * @return 
 	 */
-	public AbstractGraphModelBuilder getGraphModelBuilder() { 
+	public IGraphModelBuilder getGraphModelBuilder() { 
 		// TODO Auto-generated method
 		return null;
 	 }

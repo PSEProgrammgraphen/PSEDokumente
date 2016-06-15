@@ -7,7 +7,7 @@ package graphmodel;
  *
  */
 
-public abstract class AbstractGraphModelBuilder {
+public interface IGraphModelBuilder {
 
 	/**
 	 * Returns a specific {@link AbstractGraphBuilder} which belongs to the graphmodel.
@@ -16,7 +16,7 @@ public abstract class AbstractGraphModelBuilder {
 	 * @param graphID 
 	 * @return 
 	 */
-	public abstract AbstractGraphBuilder getGraphBuilder(String graphID);
+	public abstract IGraphBuilder getGraphBuilder(String graphID);
 
 	/**
 	 * This method is called, when the buildingprocess of the graphmodel is finished.
@@ -24,9 +24,6 @@ public abstract class AbstractGraphModelBuilder {
 	 * 
 	 * @return GraphModel
 	 */
-	public GraphModel build() { 
-		// TODO Auto-generated method
-		return null;
-	 } 
+	public GraphModel build();
 
 }

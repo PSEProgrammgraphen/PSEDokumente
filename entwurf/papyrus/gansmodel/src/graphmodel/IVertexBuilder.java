@@ -5,7 +5,7 @@ package graphmodel;
  * 
  */
 
-public abstract class AbstractVertexBuilder {
+public interface IVertexBuilder {
 
 
 	/**
@@ -23,10 +23,7 @@ public abstract class AbstractVertexBuilder {
 	 * 
 	 * @return Vertex
 	 */
-	public Vertex build() { 
-		// TODO Auto-generated method
-		return null;
-	 }
+	public Vertex build();
 
 	/**
 	 * This method returns an specific GraphBuilder.
@@ -35,9 +32,6 @@ public abstract class AbstractVertexBuilder {
 	 * @param graphID 
 	 * @return 
 	 */
-	public AbstractGraphBuilder getGraphBuilder(String graphID) { 
-		// TODO Auto-generated method
-		return null;
-	 } 
+	public IGraphBuilder getGraphBuilder(String graphID); 
 
 }

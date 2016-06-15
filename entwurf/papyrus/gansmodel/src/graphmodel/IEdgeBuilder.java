@@ -6,7 +6,7 @@ package graphmodel;
  *
  */
 
-public abstract class AbstractEdgeBuilder {
+public interface IEdgeBuilder {
 
 	/**
 	 * sets the ID of the edge build by this.

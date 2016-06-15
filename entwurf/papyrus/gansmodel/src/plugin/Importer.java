@@ -1,6 +1,6 @@
 package plugin;
 
-import graphmodel.AbstractGraphModelBuilder;
+import graphmodel.IGraphModelBuilder;
 import java.io.FileInputStream;
 
 /**
@@ -31,6 +31,6 @@ public interface Importer {
 	 * @param builder 
 	 * @param filestream 
 	 */
-	public void importGraph(AbstractGraphModelBuilder builder, FileInputStream filestream); 
+	public void importGraph(IGraphModelBuilder builder, FileInputStream filestream); 
 
 }

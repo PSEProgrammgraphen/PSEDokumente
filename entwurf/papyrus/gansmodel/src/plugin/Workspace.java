@@ -1,7 +1,7 @@
 package plugin;
 
 import parameter.Settings;
-import graphmodel.AbstractGraphModelBuilder;
+import graphmodel.IGraphModelBuilder;
 import graphmodel.GraphModel;
 
 public interface Workspace {
@@ -17,7 +17,7 @@ public interface Workspace {
 	 * 
 	 * @return 
 	 */
-	public AbstractGraphModelBuilder getGraphModelBuilder();
+	public IGraphModelBuilder getGraphModelBuilder();
 
 	/**
 	 * 
