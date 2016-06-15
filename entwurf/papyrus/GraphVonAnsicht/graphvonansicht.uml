@@ -2895,7 +2895,7 @@
         </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_wLmcITDxEeaZHIc6rzlw_w" name="MAX_SCALE" visibility="private" isLeaf="true" isStatic="true" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_wLnqQDDxEeaZHIc6rzlw_w" name="MIN_SCALE" visibility="private" isLeaf="true" isStatic="true" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_wLo4YDDxEeaZHIc6rzlw_w" name="sceneDragContext" visibility="private" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_wLo4YDDxEeaZHIc6rzlw_w" name="sceneDragContext" visibility="private" type="_GprzkDMzEeaiPPOXfvLgpg" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_wLpfcDDxEeaZHIc6rzlw_w" name="canvas" visibility="private" type="_wLRE8DDxEeaZHIc6rzlw_w" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_wLqtmDDxEeaZHIc6rzlw_w" name="onMousePressedEventHandler" visibility="private" type="_wLqtkDDxEeaZHIc6rzlw_w" isUnique="false"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_wLqtmTDxEeaZHIc6rzlw_w" name="onMouseDraggedEventHandler" visibility="private" type="_wLqtkDDxEeaZHIc6rzlw_w" isUnique="false"/>
@@ -3011,6 +3011,15 @@
           </ownedComment>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_5UMY8jMNEeak3amMgK8xYw" name="graph" type="_Rim-kDC6EeaTGLGmcq2w7A"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_GqIfgDMzEeaiPPOXfvLgpg" name="getIdOfSelectedItem" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GqIfgTMzEeaiPPOXfvLgpg">
+            <body>&#xD;
+	 * Returns the id of the selected graph.&#xD;
+	 * @return The id of the selected graph.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GqIfgjMzEeaiPPOXfvLgpg" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+        </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_wMHZgDDxEeaZHIc6rzlw_w" name="VertexShape" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_wMHZgTDxEeaZHIc6rzlw_w">
@@ -3115,6 +3124,9 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_B2SVOjDyEeaZHIc6rzlw_w" name="settings" type="_YK5nsC86Eea5c8WWEsgIIQ"/>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_B2SVOzDyEeaZHIc6rzlw_w" name="openTestDialog" visibility="private"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_GpYRkDMzEeaiPPOXfvLgpg" name="showGraph" visibility="private">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_GpYRkTMzEeaiPPOXfvLgpg" name="graph" type="_Rim-kDC6EeaTGLGmcq2w7A"/>
+        </ownedOperation>
         <nestedClassifier xmi:type="uml:Class" xmi:id="_B2SVPDDyEeaZHIc6rzlw_w" name="TestContainer" visibility="private">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_B2SVPTDyEeaZHIc6rzlw_w" name="x" visibility="public" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
           <ownedAttribute xmi:type="uml:Property" xmi:id="_B2SVPjDyEeaZHIc6rzlw_w" name="y" visibility="public" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
@@ -3373,6 +3385,7 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_5UCn_jMNEeak3amMgK8xYw" name="shape" type="_e9pEcDF3Eea9cLQqxalwMQ"/>
         </ownedOperation>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_GprzkDMzEeaiPPOXfvLgpg" name="DragContext"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_iTiOMDDzEeaZHIc6rzlw_w" name="objectproperty">
       <packagedElement xmi:type="uml:Class" xmi:id="_iTiOMTDzEeaZHIc6rzlw_w" name="GAnsObjectProperty" visibility="public">
@@ -6356,7 +6369,7 @@
     <lifeline xmi:type="uml:Lifeline" xmi:id="_sDZScDMnEea0NLrj9tFBmA" name="" represents="_sDZScTMnEea0NLrj9tFBmA" coveredBy="_9pfmcTMnEea0NLrj9tFBmA __avhoTMnEea0NLrj9tFBmA _B8nogDMoEea0NLrj9tFBmA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_xfSTYDMnEea0NLrj9tFBmA" name="" represents="_xfSTYTMnEea0NLrj9tFBmA" coveredBy="_yRpkcTMnEea0NLrj9tFBmA _1N7IUDMnEea0NLrj9tFBmA _51rWkDMnEea0NLrj9tFBmA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_OShOMDMoEea0NLrj9tFBmA" name="" represents="_OSh1QDMoEea0NLrj9tFBmA" coveredBy="_TmaJsDMoEea0NLrj9tFBmA _hcyDoDMoEea0NLrj9tFBmA _kTpjEDMoEea0NLrj9tFBmA _o4F-oDMoEea0NLrj9tFBmA _ExfucDMpEea0NLrj9tFBmA _GjPY4jMpEea0NLrj9tFBmA _J6eacDMpEea0NLrj9tFBmA _UTbLQDMpEea0NLrj9tFBmA _W72mEDMpEea0NLrj9tFBmA _ZQVxMDMpEea0NLrj9tFBmA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_Z8CPADMoEea0NLrj9tFBmA" name="" represents="_Z8CPATMoEea0NLrj9tFBmA" coveredBy="_cq0JcDMoEea0NLrj9tFBmA _vqp3kDMoEea0NLrj9tFBmA _452LADMoEea0NLrj9tFBmA _9jczYDMoEea0NLrj9tFBmA _MyRG8DMpEea0NLrj9tFBmA _PL-JQTMpEea0NLrj9tFBmA _SVNyIDMpEea0NLrj9tFBmA _cYdYsTMpEea0NLrj9tFBmA _d0OzIDMpEea0NLrj9tFBmA _gX3NgDMpEea0NLrj9tFBmA _qmEt8TMpEea0NLrj9tFBmA _tAY0QDMpEea0NLrj9tFBmA _vaMkQDMpEea0NLrj9tFBmA _DamXgTMqEea0NLrj9tFBmA _FpmlsDMqEea0NLrj9tFBmA _Pq4dYDMqEea0NLrj9tFBmA _WIR-oDMqEea0NLrj9tFBmA _Y9J6ADMqEea0NLrj9tFBmA _JQewUDMrEea0NLrj9tFBmA _O6_cEDMrEea0NLrj9tFBmA _Y452sDMrEea0NLrj9tFBmA _b27HADMrEea0NLrj9tFBmA _mU6v4DMrEea0NLrj9tFBmA _O6-1ADMrEea0NLrj9tFBmA _W5otoTMrEea0NLrj9tFBmA _JQfXYDMrEea0NLrj9tFBmA _Y46dwDMrEea0NLrj9tFBmA _oNpBgDMqEea0NLrj9tFBmA _b26f8DMrEea0NLrj9tFBmA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_Z8CPADMoEea0NLrj9tFBmA" name="" represents="_Z8CPATMoEea0NLrj9tFBmA" coveredBy="_cq0JcDMoEea0NLrj9tFBmA _vqp3kDMoEea0NLrj9tFBmA _452LADMoEea0NLrj9tFBmA _9jczYDMoEea0NLrj9tFBmA _MyRG8DMpEea0NLrj9tFBmA _PL-JQTMpEea0NLrj9tFBmA _SVNyIDMpEea0NLrj9tFBmA _cYdYsTMpEea0NLrj9tFBmA _d0OzIDMpEea0NLrj9tFBmA _gX3NgDMpEea0NLrj9tFBmA _qmEt8TMpEea0NLrj9tFBmA _tAY0QDMpEea0NLrj9tFBmA _vaMkQDMpEea0NLrj9tFBmA _DamXgTMqEea0NLrj9tFBmA _FpmlsDMqEea0NLrj9tFBmA _Pq4dYDMqEea0NLrj9tFBmA _WIR-oDMqEea0NLrj9tFBmA _Y9J6ADMqEea0NLrj9tFBmA _JQewUDMrEea0NLrj9tFBmA _O6_cEDMrEea0NLrj9tFBmA _Y452sDMrEea0NLrj9tFBmA _b27HADMrEea0NLrj9tFBmA _mU6v4DMrEea0NLrj9tFBmA"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_MazMsDMqEea0NLrj9tFBmA" name="" represents="_Ma0a0DMqEea0NLrj9tFBmA" coveredBy="_Pq5EcDMqEea0NLrj9tFBmA _TUExoTMqEea0NLrj9tFBmA _WIR-oTMqEea0NLrj9tFBmA _Y9JS8DMqEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_NOurYDMnEea0NLrj9tFBmA" name="ActionExecSpecStart" covered="_L7or0DMnEea0NLrj9tFBmA" execution="_NOurYTMnEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_NOurYTMnEea0NLrj9tFBmA" name="ActionExecSpec" covered="_L7or0DMnEea0NLrj9tFBmA" finish="_NOurYjMnEea0NLrj9tFBmA" start="_NOurYDMnEea0NLrj9tFBmA"/>
@@ -6429,19 +6442,19 @@
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Y9JS8DMqEea0NLrj9tFBmA" name="getGraphicalElements_MessageSend0" covered="_MazMsDMqEea0NLrj9tFBmA" message="_Y9IE0DMqEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Y9J6ADMqEea0NLrj9tFBmA" name="getGraphicalElements_MessageRecv0" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_Y9IE0DMqEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JQewUDMrEea0NLrj9tFBmA" name="MessageSend17" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_JQdiMDMrEea0NLrj9tFBmA"/>
-    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_oNpBgDMqEea0NLrj9tFBmA" name="BehaviorExecSpec" covered="_Z8CPADMoEea0NLrj9tFBmA" finish="_O6-1ADMrEea0NLrj9tFBmA" start="_JQfXYDMrEea0NLrj9tFBmA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JQfXYDMrEea0NLrj9tFBmA" name="MessageRecv17" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_JQdiMDMrEea0NLrj9tFBmA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O6-1ADMrEea0NLrj9tFBmA" name="MessageSend18" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_O69m4DMrEea0NLrj9tFBmA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_oNpBgDMqEea0NLrj9tFBmA" name="BehaviorExecSpec" finish="_O6-1ADMrEea0NLrj9tFBmA" start="_JQfXYDMrEea0NLrj9tFBmA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JQfXYDMrEea0NLrj9tFBmA" name="MessageRecv17" message="_JQdiMDMrEea0NLrj9tFBmA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O6-1ADMrEea0NLrj9tFBmA" name="MessageSend18" message="_O69m4DMrEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O6_cEDMrEea0NLrj9tFBmA" name="MessageRecv18" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_O69m4DMrEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Y452sDMrEea0NLrj9tFBmA" name="MessageSend19" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_Y45PoDMrEea0NLrj9tFBmA"/>
-    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_W5otoTMrEea0NLrj9tFBmA" name="BehaviorExecSpec0" covered="_Z8CPADMoEea0NLrj9tFBmA" finish="_b26f8DMrEea0NLrj9tFBmA" start="_Y46dwDMrEea0NLrj9tFBmA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Y46dwDMrEea0NLrj9tFBmA" name="MessageRecv19" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_Y45PoDMrEea0NLrj9tFBmA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b26f8DMrEea0NLrj9tFBmA" name="MessageSend20" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_b25R0DMrEea0NLrj9tFBmA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_W5otoTMrEea0NLrj9tFBmA" name="BehaviorExecSpec0" finish="_b26f8DMrEea0NLrj9tFBmA" start="_Y46dwDMrEea0NLrj9tFBmA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Y46dwDMrEea0NLrj9tFBmA" name="MessageRecv19" message="_Y45PoDMrEea0NLrj9tFBmA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b26f8DMrEea0NLrj9tFBmA" name="MessageSend20" message="_b25R0DMrEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b27HADMrEea0NLrj9tFBmA" name="MessageRecv20" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_b25R0DMrEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mU6v4DMrEea0NLrj9tFBmA" name="setGraph_MessageSend0" covered="_Z8CPADMoEea0NLrj9tFBmA" message="_mU6I0DMrEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mU7W8DMrEea0NLrj9tFBmA" name="setGraph_MessageRecv0" covered="_O2IHADMnEea0NLrj9tFBmA" message="_mU6I0DMrEea0NLrj9tFBmA"/>
     <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_TZdvUTMnEea0NLrj9tFBmA" name="ActionExecSpec0Finish" covered="_O2IHADMnEea0NLrj9tFBmA" execution="_TZdvUDMnEea0NLrj9tFBmA"/>
-    <message xmi:type="uml:Message" xmi:id="_XfNcsDMnEea0NLrj9tFBmA" name="handle(MouseClick)" messageSort="asynchCall" receiveEvent="_XfODwTMnEea0NLrj9tFBmA" sendEvent="_XfODwDMnEea0NLrj9tFBmA"/>
+    <message xmi:type="uml:Message" xmi:id="_XfNcsDMnEea0NLrj9tFBmA" name="handle(mouseEvent: MouseEvent)" messageSort="asynchCall" receiveEvent="_XfODwTMnEea0NLrj9tFBmA" sendEvent="_XfODwDMnEea0NLrj9tFBmA"/>
     <message xmi:type="uml:Message" xmi:id="_itFDUDMnEea0NLrj9tFBmA" name="getIDofSelectedItem()" receiveEvent="_itG4gDMnEea0NLrj9tFBmA" sendEvent="_itGRcDMnEea0NLrj9tFBmA"/>
     <message xmi:type="uml:Message" xmi:id="_nsQTEDMnEea0NLrj9tFBmA" name="getIDofSelectedItem()" messageSort="reply" receiveEvent="_nsRhMDMnEea0NLrj9tFBmA" sendEvent="_nsQ6IDMnEea0NLrj9tFBmA"/>
     <message xmi:type="uml:Message" xmi:id="_1N56MDMnEea0NLrj9tFBmA" name="getGraphModel" receiveEvent="_1N7IUDMnEea0NLrj9tFBmA" sendEvent="_1N6hQDMnEea0NLrj9tFBmA" signature="_KgJUUTMeEea0NLrj9tFBmA"/>

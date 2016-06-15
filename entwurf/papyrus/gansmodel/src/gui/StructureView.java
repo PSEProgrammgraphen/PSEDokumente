@@ -16,28 +16,13 @@ import javafx.scene.input.MouseEvent;
  */
 public class StructureView extends TreeView<String> {
 
-	private HashMap<Integer, TreeItem<String>> itemMap;
+	private HashMap<TreeItem<String>, String> itemMap;
 
 	/**
 	 * Constructor.
 	 */
 	public StructureView() {
-		itemMap = new HashMap<Integer, TreeItem<String>>();
-
-		TreeItem<String> root = new TreeItem<String>();
-		setRoot(root);
-		itemMap.put(-1, root);
-
-		this.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent mouseEvent) {
-				if (mouseEvent.getClickCount() == 2) {
-					TreeItem<String> item = getSelectionModel().getSelectedItem();
-					// TODO: Aufruf an die Applikation, die einen neuen Tab
-					// oeffnet.
-				}
-			}
-		});
+		itemMap = new HashMap<TreeItem<String>, String>();
 	}
 
 	/**
@@ -54,5 +39,13 @@ public class StructureView extends TreeView<String> {
 		TreeItem<String> root = new TreeItem<String>(/* Text des RootGraphen */);
 		// Erstellen der Items anhand der Subgraphen von graph.
 		setRoot(root);
+	}
+	
+	/**
+	 * Returns the id of the selected graph.
+	 * @return The id of the selected graph.
+	 */
+	public String getIdOfSelectedItem() {
+		return itemMap.get(getSelectionModel().getSelectedItem());
 	}
 }

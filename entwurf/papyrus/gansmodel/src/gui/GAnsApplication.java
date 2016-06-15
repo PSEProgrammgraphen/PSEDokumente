@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.Optional;
 
+import graphmodel.Graph;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,10 +20,12 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.ColumnConstraints;
@@ -86,6 +89,18 @@ public class GAnsApplication extends Application {
 		structureView = new StructureView();
 		informationView = new InformationView();
 		treeInfoLayout.getItems().addAll(structureView, informationView);
+		
+		structureView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+		structureView.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent mouseEvent) {
+				if (mouseEvent.getClickCount() == 2) {
+					structureView.getIdOfSelectedItem();
+					//Model hinzufuegen von dem Model und heraussuchen des graphs. showGraph -> und graph an neue View uebergeben.
+					//TODO: hier den passenden Sub/Methodengraphen finden und mit addTab oeffnen.
+				}
+			}
+		});
 
 		graphViewSelectionModel = new GraphViewSelectionModel();
 		graphViewSelectionModel.getSelectedItems().addListener(new ListChangeListener<GAnsGraphElement>() {
@@ -144,6 +159,33 @@ public class GAnsApplication extends Application {
 		File saveFile = fileChooser.showSaveDialog(primaryStage);
 		// TODO: Daten aus Model/ViewController ziehen und Exportieren der Datei
 		// triggern.
+	}
+	
+	private void showGraph(Graph graph) {
+		Group group = new Group();
+		GraphView graphView = new GraphView();
+
+		group.getChildren().add(graphView);
+		// Die Oberflaeche die gezogen und gezoomed werden kann.
+		Pane pane = new Pane(group);
+
+		GraphViewEventHandler eventHandler = new GraphViewEventHandler(graphView);
+		pane.addEventFilter(MouseEvent.MOUSE_PRESSED, eventHandler.getOnMousePressedEventHandler());
+		pane.addEventFilter(MouseEvent.MOUSE_DRAGGED, eventHandler.getOnMouseDraggedEventHandler());
+		pane.addEventFilter(ScrollEvent.ANY, eventHandler.getOnScrollEventHandler());
+
+		// TODO: kann vermutlich weg
+		graphViewEventHandler.add(eventHandler);
+
+		graphView.setSelectionModel(graphViewSelectionModel);
+
+		Tab tab = new Tab(""/*hier name des graphen*/);
+		tab.setContent(pane);
+		graphViewTabPane.getTabs().add(tab);
+		graphViewTabPane.getSelectionModel().select(tab);
+
+		graphView.addGrid();
+		graphView.setGraph(graph);
 	}
 
 	private void addTab(String name) {
