@@ -17,6 +17,7 @@ public class LayerConstraint<V>
 	private Set<V> bottom;
 	private boolean exact;
 	private int distance;
+	private String name = "LayerConstraint";
 	
 	public LayerConstraint(Set<V> top, Set<V> bottom, boolean direct, int distance) {}
 	
@@ -48,5 +49,13 @@ public class LayerConstraint<V>
 	 * @return the bottom layer
 	 */
 	public Set<V> bottomSet() { return bottom; }
+
+	/**
+	 *
+	 *
+	 */
+	public String getName() {
+		return name;
+	}
 	
 }
