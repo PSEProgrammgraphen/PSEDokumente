@@ -2,12 +2,9 @@ package sugiyama;
 
 import java.util.List;
 
-import graphmodel.DirectedEdge;
-import graphmodel.DirectedGraph;
-import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface ILayerAssignerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface ILayerAssignerGraph extends SugiyamaStepGraph {
 	
 	/**
 	 * Assigns a vertex to a certain layer represented by a number.
@@ -15,7 +12,7 @@ public interface ILayerAssignerGraph<G extends DirectedGraph<V, E>, V extends Ve
 	 * @param vertex   the vertex to assign to a layer
 	 * @param layerNum the layer number to assign a vertex to
 	 */
-	public void assignToLayer(SugiyamaVertex<V> vertex, int layerNum);
+	public void assignToLayer(SugiyamaVertex vertex, int layerNum);
 	
 	/**
 	 * Get the layer from the vertex
@@ -23,7 +20,7 @@ public interface ILayerAssignerGraph<G extends DirectedGraph<V, E>, V extends Ve
 	 * @param vertex the vertex to get its layer from
 	 * @return 		 the layer number from this vertex
 	 */
-	public int getLayer(SugiyamaVertex<V> vertex);
+	public int getLayer(SugiyamaVertex vertex);
 	
 	/**
 	 * Get all vertices from a certain layer.
@@ -31,14 +28,14 @@ public interface ILayerAssignerGraph<G extends DirectedGraph<V, E>, V extends Ve
 	 * @param layerNum the layer number to get all vertices from
 	 * @return 		   a list of all vertices which are on this layer
 	 */
-	public List<SugiyamaVertex<V>> getLayer(int layerNum);
+	public List<SugiyamaVertex> getLayer(int layerNum);
 	
 	/**
 	 * Get all layers that contain vertices.
 	 * 
 	 * @return a list of lists of vertices which are on this layer
 	 */
-	public List<List<SugiyamaVertex<V>>> getLayers();
+	public List<List<SugiyamaVertex>> getLayers();
 	
 	/**
 	 * Get the number of vertices which are on a  certain layer

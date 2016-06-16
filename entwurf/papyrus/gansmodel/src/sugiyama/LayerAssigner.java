@@ -2,9 +2,6 @@ package sugiyama;
 
 import java.util.Set;
 
-import graphmodel.DirectedEdge;
-import graphmodel.DirectedGraph;
-import graphmodel.Vertex;
 /**
  * This class takes a directed graph and assigns every vertex in it a layer.
  * 
@@ -12,10 +9,10 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public class LayerAssigner<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> implements ILayerAssigner<G,V,E>{
+public class LayerAssigner implements ILayerAssigner {
 
 	@Override
-	public void addConstraints(Set<LayerConstraint<V>> constraints) {
+	public void addConstraints(Set<LayerConstraint> constraints) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -33,7 +30,7 @@ public class LayerAssigner<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	}
 
 	@Override
-	public void assignLayers(ILayerAssignerGraph<G, V, E> graph) {
+	public void assignLayers(ILayerAssignerGraph graph) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,9 +1,5 @@
 package sugiyama;
 
-import graphmodel.DirectedEdge;
-import graphmodel.DirectedGraph;
-import graphmodel.Vertex;
-
 /**
  * This interface represents a class that takes a directed graph and position 
  * its vertices in order to look more clearly. (e.g. position vertices in a row or column)
@@ -13,7 +9,7 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public interface IVertexPositioner<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface IVertexPositioner {
 
 	/**
 	 * Sets absolute coordinates for every vertex in the graph.
@@ -21,5 +17,5 @@ public interface IVertexPositioner<G extends DirectedGraph<V, E>, V extends Vert
 	 * 
 	 * @param graph input graph
 	 */
-	public void positionVertices(IVertexPositionerGraph<G,V,E> graph);
+	public void positionVertices(IVertexPositionerGraph graph);
 }

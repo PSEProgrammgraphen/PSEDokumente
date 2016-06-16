@@ -1,9 +1,5 @@
 package sugiyama;
 
-import graphmodel.DirectedEdge;
-import graphmodel.DirectedGraph;
-import graphmodel.Vertex;
-
 /**
  * This class takes a Sugiyama Graph and rearranges its vertices on each layer to minimize
  * the amount of edge crossings.
@@ -12,11 +8,10 @@ import graphmodel.Vertex;
  * @param <V> the type of vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */ 
-public class CrossMinimizer<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
-implements ICrossMinimizer<G,V,E>{
+public class CrossMinimizer implements ICrossMinimizer {
 
 	@Override
-	public void minimizeCrossings(ICrossMinimizerGraph<G, V, E> graph) {
+	public void minimizeCrossings(ICrossMinimizerGraph graph) {
 		// TODO Auto-generated method stub
 		
 	}

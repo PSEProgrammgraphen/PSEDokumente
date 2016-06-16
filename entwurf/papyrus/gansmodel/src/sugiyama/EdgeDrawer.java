@@ -1,9 +1,5 @@
 package sugiyama;
 
-import graphmodel.DirectedEdge;
-import graphmodel.DirectedGraph;
-import graphmodel.Vertex;
-
 /**
  * This class takes a directed graph, as a {@link SugiyamaClass}.
  * It removes dummy vertices and reverses previously reversed edges.
@@ -13,10 +9,10 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public class EdgeDrawer<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> implements IEdgeDrawer<G,V,E>{
+public class EdgeDrawer implements IEdgeDrawer {
 
 	@Override
-	public void drawEdges(IEdgeDrawerGraph<G, V, E> graph) {
+	public void drawEdges(IEdgeDrawerGraph graph) {
 		// TODO Auto-generated method stub
 		
 	}

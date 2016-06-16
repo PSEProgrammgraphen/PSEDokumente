@@ -1,15 +1,8 @@
 package sugiyama;
 
-import java.util.Set;
-
-import graphmodel.DirectedEdge;
-import graphmodel.DirectedGraph;
-import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
-import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface ICycleRemoverGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>>
-{
+public interface ICycleRemoverGraph extends SugiyamaStepGraph {
 	/**
 	 * Reverses the direction of a sugiyama edge.
 	 * The underlying edge won't be reversed to avoid
@@ -19,22 +12,12 @@ public interface ICycleRemoverGraph<G extends DirectedGraph<V, E>, V extends Ver
 	 * 
 	 * @param edge the edge to reverse its direction
 	 */
-	public void reverseEdge(SugiyamaEdge<V, E> edge);
+	public void reverseEdge(SugiyamaEdge edge);
 	
 	/**
 	 * Returns true if the specified edge is reversed, false otherwise
 	 * @param edge the edge
 	 * @return true if the edge is reversed, false otherwise
 	 */
-	public boolean isReversed(SugiyamaEdge<V, E> edge);
-	
-	/**
-	 * Returns the set of edges  in this graph as {@link SugiyamaEdge}.
-	 * @return a set of sugiyama edges
-	 */
-	public Set<SugiyamaEdge<V, E>> getEdgeSet();
-	
-	public Set<SugiyamaVertex<V>> getVertexSet();
-	
-	public Set<SugiyamaEdge<V, E>> edgesOf(SugiyamaVertex<V> vertex);
+	public boolean isReversed(SugiyamaEdge edge);
 }

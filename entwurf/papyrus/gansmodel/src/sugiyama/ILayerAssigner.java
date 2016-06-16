@@ -2,10 +2,6 @@ package sugiyama;
 
 import java.util.Set;
 
-import graphmodel.DirectedEdge;
-import graphmodel.DirectedGraph;
-import graphmodel.Vertex;
-
 /**
  * This interface represents a class that takes a directed graph and assigns every vertex in it a layer.
  * 
@@ -13,19 +9,19 @@ import graphmodel.Vertex;
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the directed edges the graph contains
  */
-public interface ILayerAssigner<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface ILayerAssigner {
 
 	/**
 	 * Assigns every vertex in the graph parameter e relative height.
 	 * @param graph input graph 
 	 */ 
-	public void assignLayers(ILayerAssignerGraph<G, V, E> graph);
+	public void assignLayers(ILayerAssignerGraph graph);
 	
 	/**
 	 * Defines a set of constraints which should be considered by the algorithm.
 	 * @param constraints relative layer constraints the algorithm should consider
 	 */
-	public void addConstraints(Set<LayerConstraint<V>> constraints);
+	public void addConstraints(Set<LayerConstraint> constraints);
 	
 	/**
 	 * Reassigns the layer of vertices whose layer is greater than the height parameter.

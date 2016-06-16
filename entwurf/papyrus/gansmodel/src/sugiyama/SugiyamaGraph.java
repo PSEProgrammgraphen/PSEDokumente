@@ -25,12 +25,12 @@ import sugiyama.SugiyamaGraph.SugiyamaEdge;
  * @param <E> the edge class used in the graph
  */
 public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
-	extends DirectedGraph<SugiyamaVertex<V>, SugiyamaEdge<V, E>>  
-	implements ICycleRemoverGraph<G, V, E>, 
-			   ILayerAssignerGraph<G, V, E>,
-			   ICrossMinimizerGraph<G, V, E>,
-			   IVertexPositionerGraph<G, V, E>,
-			   IEdgeDrawerGraph<G, V, E>
+	extends DirectedGraph<SugiyamaVertex, SugiyamaEdge>  
+	implements ICycleRemoverGraph, 
+			   ILayerAssignerGraph,
+			   ICrossMinimizerGraph,
+			   IVertexPositionerGraph,
+			   IEdgeDrawerGraph
 {
 	
 	private List<List<V>> layers;
@@ -72,7 +72,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	 * 
 	 * @return the set of all reversed edges.
 	 */
-	public Set<SugiyamaEdge<V, E>> getReversedEdges() { return null; }
+	public Set<SugiyamaEdge> getReversedEdges() { return null; }
 	
 	/**
 	 * Deletes the supplement edges, which have been created when an edge was reversed.
@@ -126,61 +126,61 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	}
 
 	@Override
-	public void reverseEdge(SugiyamaEdge<V, E> edge) {
+	public void reverseEdge(SugiyamaEdge edge) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public boolean isReversed(SugiyamaEdge<V, E> edge) {
+	public boolean isReversed(SugiyamaEdge edge) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public void swapVertices(SugiyamaVertex<V> first, SugiyamaVertex<V> second) {
+	public void swapVertices(SugiyamaVertex first, SugiyamaVertex second) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public int getLayer(SugiyamaVertex<V> vertex) {
+	public int getLayer(SugiyamaVertex vertex) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public List<SugiyamaVertex<V>> getLayer(int layerNum) {
+	public List<SugiyamaVertex> getLayer(int layerNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<List<SugiyamaVertex<V>>> getLayers() {
+	public List<List<SugiyamaVertex>> getLayers() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Set<SugiyamaEdge<V, E>> reverseAllEdges() {
+	public Set<SugiyamaEdge> reverseAllEdges() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void addEdgeCorner(SugiyamaEdge<V, E> edge, int x, int y, int index) {
+	public void addEdgeCorner(SugiyamaEdge edge, int x, int y, int index) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void removeEdgeCorner(SugiyamaEdge<V, E> edge, int index) {
+	public void removeEdgeCorner(SugiyamaEdge edge, int index) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<sugiyama.IEdgeDrawerGraph.Point> getEdgeCorners(SugiyamaEdge<V, E> edge) {
+	public List<sugiyama.IEdgeDrawerGraph.Point> getEdgeCorners(SugiyamaEdge edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -192,28 +192,35 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	}
 
 	@Override
-	public void setX(SugiyamaVertex<V> vertex, int x) {
+	public void setX(SugiyamaVertex vertex, int x) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void assignToLayer(SugiyamaVertex<V> vertex, int layerNum) {
+	public void assignToLayer(SugiyamaVertex vertex, int layerNum) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Set<SugiyamaEdge<V, E>> edgesOf(SugiyamaVertex<V> vertex) {
+	public Set<SugiyamaEdge> edgesOf(SugiyamaVertex vertex) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+
+	@Override
+	public SugiyamaEdge getTarget(SugiyamaEdge edge) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/**
 	 * A supplement path for connecting vertices, which are more than one layer apart.
 	 * They are stored in the SugiyamaEdge along with the substituted edge.
 	 */
-	public static class SupplementPath<V extends Vertex, E extends DirectedEdge<V>> extends DirectedEdge<V>
+	public static class SupplementPath extends DirectedEdge<DummyVertex>
 	{
 		/**
 		 * Returns the number of vertices including source and target.
@@ -225,7 +232,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		 * Returns the list of vertices on the path sorted from source to target excluding the source and target.
 		 * @return the list of vertices
 		 */
-		public List<SupplementVertex> getDummyVertices() {return null;}
+		public List<DummyVertex> getDummyVertices() {return null;}
 		
 		/**
 		 * Returns the list of edges on the path from source to target
@@ -237,7 +244,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		 * Returns the edge which is substituted by this path
 		 * @return the replaced edge
 		 */
-		public E getReplacedEdge() {return null;}
+		//public E getReplacedEdge() {return null;}
 	}
 	/**
 	 * A supplement edge which is part of a {@link SupplementPath}.
@@ -247,28 +254,25 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	/**
 	 * A supplement vertex which is part of a {@link SupplementPath}.
 	 */
-	public static class SupplementVertex extends DefaultVertex {}
+	public static class DummyVertex extends DefaultVertex {}
 	
 	
-	public static class SugiyamaVertex<V extends Vertex> extends DefaultVertex
+	public static class SugiyamaVertex extends DefaultVertex
 	{
 		public boolean isDummyVertex() {return false;}
-		public V getVertex() {return null;}
+		//private V getVertex() {return null;}
 		
 	}
 	
 	/**
 	 * A wrapper class for directed edges to implement additional functionality
 	 * to apply the sugiyama layout to the SugiyamaGraph containing them.
-	 *
-	 * @param <E> the type of the edge which should be wrapped
-	 * @param <V> the type of the vertex the E connects
 	 */
-	public static class SugiyamaEdge<V extends Vertex,E extends DirectedEdge<V>> extends DirectedEdge<SugiyamaVertex<V>>
+	public static class SugiyamaEdge extends DirectedEdge<SugiyamaVertex>
 	{
-		private SugiyamaEdge(E edge) {}
+		private SugiyamaEdge() {}
 		
-		public E getEdge() { return null; }
+		//private E getEdge() { return null; }
 		
 		private boolean isReversed() { return false; }
 		
@@ -276,7 +280,6 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		
 		private boolean isReplaced() { return false; }
 		
-		private List<SupplementPath<V, E>> getSupplement() { return null; }
+		private List<SupplementPath> getSupplement() { return null; }
 	}
-
 }

@@ -3,6 +3,7 @@ package sugiyama;
 import java.util.Set;
 
 import graphmodel.Vertex;
+import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
 /**
  * A relative constraint, regarding layer assignment, between to sets of vertices.
@@ -11,15 +12,15 @@ import graphmodel.Vertex;
  * 
  * @param <V> the type of the vertices in the sets
  */
-public class LayerConstraint<V>
+public class LayerConstraint
 {
-	private Set<V> top;
-	private Set<V> bottom;
+	private Set<SugiyamaVertex> top;
+	private Set<SugiyamaVertex> bottom;
 	private boolean exact;
 	private int distance;
 	private String name = "LayerConstraint";
 	
-	public LayerConstraint(Set<V> top, Set<V> bottom, boolean direct, int distance) {}
+	public LayerConstraint(Set<SugiyamaVertex> top, Set<SugiyamaVertex> bottom, boolean direct, int distance) {}
 	
 	/**
 	 * Returns true if the constraints describes an exact distance between the two sets, false otherwise.
@@ -42,13 +43,13 @@ public class LayerConstraint<V>
 	 * Returns the set which should be on top.
 	 * @return the top layer
 	 */
-	public Set<V> topSet() { return top; }
+	public Set<SugiyamaVertex> topSet() { return top; }
 	
 	/**
 	 * Returns the set which should be below.
 	 * @return the bottom layer
 	 */
-	public Set<V> bottomSet() { return bottom; }
+	public Set<SugiyamaVertex> bottomSet() { return bottom; }
 
 	/**
 	 *
