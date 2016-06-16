@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class MethodGraph extends JoanaGraph {
 
-	private static LayoutRegister<MethodGraph> register;
+	private static LayoutRegister register;
 	
 	public MethodGraph() {}
 	
@@ -59,6 +59,6 @@ public class MethodGraph extends JoanaGraph {
 	 * {@link LayoutOption}s for all method graphs statically.
 	 * @param register the register
 	 */
-	protected static void setRegister(LayoutRegister<MethodGraph> register) {MethodGraph.register = register;}
+	protected static void setRegister(LayoutRegister register) {MethodGraph.register = register;}
 	
 }
