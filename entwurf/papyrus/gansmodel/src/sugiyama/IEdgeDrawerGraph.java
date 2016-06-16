@@ -8,7 +8,7 @@ import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 
-public interface EdgeDrawerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface IEdgeDrawerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 	
 	/**
 	 * Reverses the direction of an directed edge and returns it.

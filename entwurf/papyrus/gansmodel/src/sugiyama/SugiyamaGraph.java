@@ -26,11 +26,11 @@ import sugiyama.SugiyamaGraph.SugiyamaEdge;
  */
 public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
 	extends DirectedGraph<SugiyamaVertex<V>, SugiyamaEdge<V, E>>  
-	implements DAGMakerGraph<G, V, E>, 
-			   LayerAssignerGraph<G, V, E>,
-			   CrossMinimizerGraph<G, V, E>,
-			   VertexPositionerGraph<G, V, E>,
-			   EdgeDrawerGraph<G, V, E>
+	implements ICycleRemoverGraph<G, V, E>, 
+			   ILayerAssignerGraph<G, V, E>,
+			   ICrossMinimizerGraph<G, V, E>,
+			   IVertexPositionerGraph<G, V, E>,
+			   IEdgeDrawerGraph<G, V, E>
 {
 	
 	private List<List<V>> layers;
@@ -250,7 +250,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	}
 
 	@Override
-	public List<sugiyama.EdgeDrawerGraph.Point> getEdgeCorners(SugiyamaEdge<V, E> edge) {
+	public List<sugiyama.IEdgeDrawerGraph.Point> getEdgeCorners(SugiyamaEdge<V, E> edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}

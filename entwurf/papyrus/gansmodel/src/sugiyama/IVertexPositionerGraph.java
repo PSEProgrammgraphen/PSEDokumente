@@ -7,7 +7,7 @@ import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface VertexPositionerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface IVertexPositionerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 //
 //	/**
 //	 * Get the amount of dummy vertices that are not in the same column as the most dummy vertices that are in the same column.

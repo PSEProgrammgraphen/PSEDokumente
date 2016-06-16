@@ -7,7 +7,7 @@ import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface CrossMinimizerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
+public interface ICrossMinimizerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 
 	/**
 	 * Get the amount of layers.

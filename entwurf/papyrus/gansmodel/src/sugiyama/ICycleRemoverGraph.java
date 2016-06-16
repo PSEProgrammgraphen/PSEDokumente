@@ -8,7 +8,7 @@ import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface DAGMakerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>>
+public interface ICycleRemoverGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>>
 {
 	/**
 	 * Reverses the direction of a sugiyama edge.
