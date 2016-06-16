@@ -7,7 +7,6 @@ import sugiyama.SugiyamaGraph.SugiyamaEdge;
 
 /**
  * This interfaces represents a class that generates a DAG(Directed Acyclic Graph) from a {@link DirectedGraph}.
- * 
  */
 public interface ICycleRemover {
 

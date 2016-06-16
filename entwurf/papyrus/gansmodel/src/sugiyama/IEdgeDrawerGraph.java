@@ -7,8 +7,9 @@ import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
+import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface IEdgeDrawerGraph  extends SugiyamaStepGraph {
+public interface IEdgeDrawerGraph  extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
 	
 	/**
 	 * Reverses the direction of an directed edge and returns it.
@@ -18,10 +19,12 @@ public interface IEdgeDrawerGraph  extends SugiyamaStepGraph {
 	public void reverseEdge(SugiyamaEdge edge);
 	
 	/**
-	 * Reverses all previously reversed edges
-	 * @return the set of edges, which have been reversed.
+	 * Deletes the supplement edges, which have been created when an edge was reversed.
+	 * Adds all reversed edges back to the set of edges and returns them.
+	 * 
+	 * @return the set of edges, which have been restored.
 	 */
-	public Set<SugiyamaEdge> reverseAllEdges();
+	public Set<SugiyamaEdge> restoreAllEdges();
 	
 	/**
 	 * Adds a new edge corner to the specified edge.
@@ -50,6 +53,13 @@ public interface IEdgeDrawerGraph  extends SugiyamaStepGraph {
 	 * @return	   the list of points of the corners on the edge
 	 */
 	public List<Point> getEdgeCorners(SugiyamaEdge edge);
+	
+	/**
+	 * Returns the set of all with {@code reverseEdge(E edge)} reversed edges.
+	 * 
+	 * @return the set of all reversed edges.
+	 */
+	public Set<SugiyamaEdge> getReversedEdges();
 	
 	public class Point 
 	{
