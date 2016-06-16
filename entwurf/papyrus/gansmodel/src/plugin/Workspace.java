@@ -6,45 +6,46 @@ import graphmodel.IGraphModelBuilder;
 import java.util.List;
 
 import graphmodel.GraphModel;
-import java.util.List;
 
+/**
+ * A workspace contains a set of default actions and options for displaying a specific domain of graphs.
+ * The workspace manages the graphs instantiation through providing an {@link IGraphModelBuilder}.
+ * He also provides a list of layout options for graphs in his model.
+ */
 public interface Workspace {
 
 	/**
-	 * 
-	 * @param parameters 
-	 * @return 
+	 * Initializes this workspace with the settings if they have not been adjusted.
+	 * If the settings have not been adjusted, default values will be used.
 	 */
-	public void initialize(Settings parameters);
+	public void initialize();
 
 	/**
+	 * Returns a builder to build a graph model in this workspace.
 	 * 
-	 * @return 
+	 * @return the builder
 	 */
 	public IGraphModelBuilder getGraphModelBuilder();
 
 	/**
-	 * 
-	 * @return 
+	 * Returns the {@link GraphModel} stored in the workspace.
+	 * @return the graph model
 	 */
 	public GraphModel getGraphModel();
-
+	
 	/**
-	 * 
-	 * @return 
+	 * Returns a set of parameters to initialize this workspace.
+	 * When the settings have been adjusted, the client has
+	 * to call {@code initialize()}. To initialize the workspace
+	 * with the settings.
+	 * @return the settings
 	 */
-	public String getName();
-
-	/**
-	 * 
-	 * @return 
-	 */
-	public Settings getParameterSet(); 
+	public abstract Settings getSettings();
 	
 	/**
 	 * Returns all layout options for the specified graph.
-	 * @param g the index of the graph in the model
-	 * @return a list of layout options
+	 * @param  graphindex the index of the graph in the model
+	 * @return       	  a list of layout options
 	 */
 	public List<LayoutOption> getLayoutOptions(int graphIndex);
 

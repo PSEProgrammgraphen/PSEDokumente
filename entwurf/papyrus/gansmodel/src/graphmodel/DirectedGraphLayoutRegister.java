@@ -9,19 +9,18 @@ import plugin.LayoutRegister;
  * @author Lucas
  *
  */
-public class DirectedGraphLayoutRegister implements LayoutRegister<DirectedGraph> {
+public class DirectedGraphLayoutRegister implements LayoutRegister {
 
-	public DirectedGraphLayoutRegister() {
-		// TODO Auto-generated constructor stub
-	}
+	public DirectedGraphLayoutRegister() {}
 
 	@Override
-	public void addLayoutOption(LayoutOption<DirectedGraph> option) {
+	public void addLayoutOption(LayoutOption option) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<LayoutOption<DirectedGraph>> getLayoutOptions() {
+	public List<LayoutOption> getLayoutOptions() {
 		// TODO Auto-generated method stub
 		return null;
 	}

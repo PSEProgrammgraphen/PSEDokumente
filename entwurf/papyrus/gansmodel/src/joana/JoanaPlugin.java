@@ -2,27 +2,55 @@ package joana;
 
 import java.util.List;
 
+import graphmodel.DirectedGraphLayoutRegister;
+import parameter.Settings;
+import plugin.EdgeFilter;
 import plugin.LayoutOption;
 import plugin.LayoutRegister;
 import plugin.Plugin;
 import plugin.PluginManager;
+import plugin.VertexFilter;
 import plugin.Workspace;
 import plugin.WorkspaceOption;
 
 /**
- * @author Lucas
+ * 
  */
 public class JoanaPlugin implements Plugin {
 
-	private CallGraphLayoutRegister cRegister;
-	private MethodGraphLayoutRegister mRegister;
+	private static CallGraphLayoutRegister cRegister;
+	private static MethodGraphLayoutRegister mRegister;
 
 	private final static String pluginName = "JOANA";
 
+	List<WorkspaceOption> wsOptions;
+	
 	/**
-	 * 
+	 * Constructs a new JoanaPlugin.
+	 * This constructor is present to be called by the ServiceLoader.
 	 */
-	public JoanaPlugin() {
+	public JoanaPlugin() 
+	{
+		WorkspaceOption joanaws = new WorkspaceOption() {
+
+			{
+				this.setName("JOANA-Workspace");
+				this.setID("joana");
+				this.ws = new JoanaWorkspace();
+			}
+
+			JoanaWorkspace ws;
+			
+			@Override
+			public Workspace getInstance() {
+				ws.initialize();
+				return ws;
+			}
+
+			@Override
+			public Settings getSettings() { return this.ws.getSettings(); }
+		};
+		wsOptions.add(joanaws);
 	}
 
 	/* (non-Javadoc)
@@ -34,45 +62,49 @@ public class JoanaPlugin implements Plugin {
 	}
 
 	@Override
-	public load() {
-		// Example Workspace-Register
-		PluginManager.getPluginManager().addWorkspaceOption(new WorkspaceOption() {
-
-			{
-				this.setName("JOANA-Workspace");
-				this.setID("joana");
-			}
-
-			@Override
-			public void onChoose() {
-			}
-
-			@Override
-			public Workspace getInstance() {
-				return new JoanaWorkspace();
-			}
-		});
+	public void load() {
 	}
 	
-	public CallGraphLayoutRegister getCallGraphLayoutRegister() {return cRegister;}
-	public MethodGraphLayoutRegister getMethodGraphLayoutRegister() {return mRegister;}
-	
-	public static class CallGraphLayoutRegister implements LayoutRegister<Callgraph>
+	public static CallGraphLayoutRegister getCallGraphLayoutRegister() {return cRegister;}
+	public static MethodGraphLayoutRegister getMethodGraphLayoutRegister() {return mRegister;}
+		
+	public static class CallGraphLayoutRegister implements LayoutRegister
 	{ 
 		@Override
-		public void addLayoutOption(LayoutOption<Callgraph> option) { }
+		public void addLayoutOption(LayoutOption option) { }
 
 		@Override
-		public List<LayoutOption<Callgraph>> getLayoutOptions() { return null; } 
+		public List<LayoutOption> getLayoutOptions() { return null; } 
 	}
 
-	public static class MethodGraphLayoutRegister implements LayoutRegister<MethodGraph>
+	public static class MethodGraphLayoutRegister implements LayoutRegister
 	{
 		@Override
-		public void addLayoutOption(LayoutOption<MethodGraph> option) { }
+		public void addLayoutOption(LayoutOption option) { }
 
 		@Override
-		public List<LayoutOption<MethodGraph>> getLayoutOptions() { return null; }
+		public List<LayoutOption> getLayoutOptions() 
+		{ 
+			return new DirectedGraphLayoutRegister().getLayoutOptions(); 
+		} 
+	}
+
+	@Override
+	public List<WorkspaceOption> getWorkspaceOptions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<VertexFilter> getVertexFilter() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EdgeFilter> getEdgeFilter() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
