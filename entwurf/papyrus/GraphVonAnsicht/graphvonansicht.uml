@@ -6494,7 +6494,7 @@
     <message xmi:type="uml:Message" xmi:id="_zS-LoDM0Eea0NLrj9tFBmA" name="getOnScrollEventHandler" receiveEvent="_zS-ysTM0Eea0NLrj9tFBmA" sendEvent="_zS-ysDM0Eea0NLrj9tFBmA" signature="_wLqtlTDxEeaZHIc6rzlw_w"/>
     <message xmi:type="uml:Message" xmi:id="_1rPDgDM0Eea0NLrj9tFBmA" name="getOnScrollEventHandler_Return" messageSort="reply" receiveEvent="_1rQ4sDM0Eea0NLrj9tFBmA" sendEvent="_1rQRoDM0Eea0NLrj9tFBmA" signature="_wLqtlTDxEeaZHIc6rzlw_w"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_iDfuQDM8EeaTnp3ISoGMgQ" memberEnd="_iDfuRDM8EeaTnp3ISoGMgQ _iDfuQzM8EeaTnp3ISoGMgQ" navigableOwnedEnd="_iDfuQzM8EeaTnp3ISoGMgQ">
+  <packagedElement xmi:type="uml:Association" xmi:id="_iDfuQDM8EeaTnp3ISoGMgQ" name="updates" memberEnd="_iDfuRDM8EeaTnp3ISoGMgQ _iDfuQzM8EeaTnp3ISoGMgQ" navigableOwnedEnd="_iDfuQzM8EeaTnp3ISoGMgQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDfuQTM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDfuQjM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
     </eAnnotations>
@@ -6512,8 +6512,6 @@
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfuSDM8EeaTnp3ISoGMgQ" general="_wKXGATDxEeaZHIc6rzlw_w"/>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfuSTM8EeaTnp3ISoGMgQ" general="_iDfvCTM8EeaTnp3ISoGMgQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuSjM8EeaTnp3ISoGMgQ" name="line" visibility="private" type="_wKXGATDxEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuSzM8EeaTnp3ISoGMgQ" name="text" visibility="private" type="_wMHZhzDxEeaZHIc6rzlw_w" isUnique="false"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfuTDM8EeaTnp3ISoGMgQ" name="setText" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iDfuTTM8EeaTnp3ISoGMgQ">
           <body>&#xD;
@@ -6557,9 +6555,6 @@
  </body>
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfuVzM8EeaTnp3ISoGMgQ" general="_wLV9cDDxEeaZHIc6rzlw_w"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuWDM8EeaTnp3ISoGMgQ" name="myScale" visibility="private" type="_wLXLkTDxEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuWTM8EeaTnp3ISoGMgQ" name="selectionModel" visibility="private" type="_iDfvFTM8EeaTnp3ISoGMgQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuWjM8EeaTnp3ISoGMgQ" name="graphFactory" visibility="private" type="_iDfvODM8EeaTnp3ISoGMgQ" isUnique="false"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuWzM8EeaTnp3ISoGMgQ" name="graphviewgraphfactory" type="_iDfvODM8EeaTnp3ISoGMgQ" association="_iDo4PzM8EeaTnp3ISoGMgQ"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfuXDM8EeaTnp3ISoGMgQ" name="addGrid" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iDfuXTM8EeaTnp3ISoGMgQ">
@@ -6691,11 +6686,6 @@
       </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfufzM8EeaTnp3ISoGMgQ" name="MAX_SCALE" visibility="private" isLeaf="true" isStatic="true" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfugDM8EeaTnp3ISoGMgQ" name="MIN_SCALE" visibility="private" isLeaf="true" isStatic="true" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfugTM8EeaTnp3ISoGMgQ" name="sceneDragContext" visibility="private" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfugjM8EeaTnp3ISoGMgQ" name="canvas" visibility="private" type="_iDfuVTM8EeaTnp3ISoGMgQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfugzM8EeaTnp3ISoGMgQ" name="onMousePressedEventHandler" visibility="private" type="_wLqtkDDxEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuhDM8EeaTnp3ISoGMgQ" name="onMouseDraggedEventHandler" visibility="private" type="_wLqtkDDxEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuhTM8EeaTnp3ISoGMgQ" name="onScrollEventHandler" visibility="private" type="_wLqtkDDxEeaZHIc6rzlw_w" isUnique="false"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfuhjM8EeaTnp3ISoGMgQ" name="getOnMousePressedEventHandler" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iDfuhzM8EeaTnp3ISoGMgQ">
           <body>&#xD;
@@ -6735,12 +6725,6 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_iDfukjM8EeaTnp3ISoGMgQ" name="min" type="_wLZn0DDxEeaZHIc6rzlw_w"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_iDfukzM8EeaTnp3ISoGMgQ" name="max" type="_wLZn0DDxEeaZHIc6rzlw_w"/>
       </ownedOperation>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_iDfulDM8EeaTnp3ISoGMgQ" name="DragContext" visibility="private">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfulTM8EeaTnp3ISoGMgQ" name="mouseAnchorX" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuljM8EeaTnp3ISoGMgQ" name="mouseAnchorY" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfulzM8EeaTnp3ISoGMgQ" name="translateAnchorX" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfumDM8EeaTnp3ISoGMgQ" name="translateAnchorY" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
-      </nestedClassifier>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_iDfumTM8EeaTnp3ISoGMgQ" name="InformationView" visibility="public">
       <ownedComment xmi:type="uml:Comment" xmi:id="_iDfumjM8EeaTnp3ISoGMgQ">
@@ -6752,7 +6736,6 @@
  </body>
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfumzM8EeaTnp3ISoGMgQ" general="_wL0emDDxEeaZHIc6rzlw_w"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfunDM8EeaTnp3ISoGMgQ" name="graph" type="_iDfvFTM8EeaTnp3ISoGMgQ" association="_iDfvBTM8EeaTnp3ISoGMgQ"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfunTM8EeaTnp3ISoGMgQ" name="setInformations" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iDfunjM8EeaTnp3ISoGMgQ">
           <body>&#xD;
@@ -6779,8 +6762,6 @@
  </body>
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfuojM8EeaTnp3ISoGMgQ" general="_wL-PlTDxEeaZHIc6rzlw_w"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuozM8EeaTnp3ISoGMgQ" name="itemMap" visibility="private" type="_tfF_EC8vEeaW5pq-1rzVBQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfupDM8EeaTnp3ISoGMgQ" name="gansapplication" type="_iDfuvzM8EeaTnp3ISoGMgQ" association="_iDfu_TM8EeaTnp3ISoGMgQ"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfupTM8EeaTnp3ISoGMgQ" name="graph" type="_iDo4QzM8EeaTnp3ISoGMgQ" association="_iDo4NzM8EeaTnp3ISoGMgQ"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfupjM8EeaTnp3ISoGMgQ" name="showTree" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iDfupzM8EeaTnp3ISoGMgQ">
@@ -6827,8 +6808,6 @@
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfusDM8EeaTnp3ISoGMgQ" general="_wMHZgjDxEeaZHIc6rzlw_w"/>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfusTM8EeaTnp3ISoGMgQ" general="_iDfvCTM8EeaTnp3ISoGMgQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfusjM8EeaTnp3ISoGMgQ" name="rectangle" visibility="private" type="_wMHZhDDxEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuszM8EeaTnp3ISoGMgQ" name="text" visibility="private" type="_wMHZhzDxEeaZHIc6rzlw_w" isUnique="false"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfutDM8EeaTnp3ISoGMgQ" name="mindWidth" visibility="private" isStatic="true" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfutTM8EeaTnp3ISoGMgQ" name="mindHeight" visibility="private" isStatic="true" type="_wLZn0DDxEeaZHIc6rzlw_w" isUnique="false"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfutjM8EeaTnp3ISoGMgQ" name="setText" visibility="public">
@@ -6874,14 +6853,6 @@
  </body>
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfuwTM8EeaTnp3ISoGMgQ" general="_B1_aQzDyEeaZHIc6rzlw_w"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuwjM8EeaTnp3ISoGMgQ" name="structureView" visibility="private" type="_iDfuoDM8EeaTnp3ISoGMgQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuwzM8EeaTnp3ISoGMgQ" name="informationView" visibility="private" type="_iDfumTM8EeaTnp3ISoGMgQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuxDM8EeaTnp3ISoGMgQ" name="graphViewTabPane" visibility="private" type="_B2IkMjDyEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuxTM8EeaTnp3ISoGMgQ" name="primaryStage" visibility="private" type="_B2IkNTDyEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuxjM8EeaTnp3ISoGMgQ" name="menuBar" visibility="private" type="_B2IkNzDyEeaZHIc6rzlw_w" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuxzM8EeaTnp3ISoGMgQ" name="graphViewControllerList" visibility="private" type="_6hEq5y8zEeaW5pq-1rzVBQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuyDM8EeaTnp3ISoGMgQ" name="currentFile" visibility="private" type="_6hEq6S8zEeaW5pq-1rzVBQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuyTM8EeaTnp3ISoGMgQ" name="methodlayout" visibility="private" type="_B2IkOzDyEeaZHIc6rzlw_w" isUnique="false"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuyjM8EeaTnp3ISoGMgQ" name="graphview" type="_iDfuVTM8EeaTnp3ISoGMgQ" association="_iDfu8TM8EeaTnp3ISoGMgQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iDfuyzM8EeaTnp3ISoGMgQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iDfuzDM8EeaTnp3ISoGMgQ" value="*"/>
@@ -6889,12 +6860,6 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuzTM8EeaTnp3ISoGMgQ" name="informationview" type="_iDfumTM8EeaTnp3ISoGMgQ" association="_iDfu9TM8EeaTnp3ISoGMgQ"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuzjM8EeaTnp3ISoGMgQ" name="structureview" type="_iDfuoDM8EeaTnp3ISoGMgQ" association="_iDfu-TM8EeaTnp3ISoGMgQ"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfuzzM8EeaTnp3ISoGMgQ" name="graph" type="_iDo4QzM8EeaTnp3ISoGMgQ" association="_iDfvATM8EeaTnp3ISoGMgQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu0DM8EeaTnp3ISoGMgQ" name="graphViewEventHandler" visibility="private" type="_6hEq5y8zEeaW5pq-1rzVBQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu0TM8EeaTnp3ISoGMgQ" name="graphViewSelectionModel" visibility="private" type="_iDfvFTM8EeaTnp3ISoGMgQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu0jM8EeaTnp3ISoGMgQ" name="currentGraphView" visibility="private" type="_iDfuVTM8EeaTnp3ISoGMgQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu0zM8EeaTnp3ISoGMgQ" name="pluginManager" visibility="private" type="_evArQzC2EeaTGLGmcq2w7A" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu1DM8EeaTnp3ISoGMgQ" name="workspace" visibility="private" type="_KgIGMDMeEea0NLrj9tFBmA" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu1TM8EeaTnp3ISoGMgQ" name="model" visibility="private" type="_qDOLcDMcEea0NLrj9tFBmA" isUnique="false"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_ygaMojM8EeaTnp3ISoGMgQ" name="pluginmanager" type="_evArQzC2EeaTGLGmcq2w7A" association="_ygQboDM8EeaTnp3ISoGMgQ"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_00BOAzM8EeaTnp3ISoGMgQ" name="workspace" type="_KgIGMDMeEea0NLrj9tFBmA" association="_00BOADM8EeaTnp3ISoGMgQ"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfu1jM8EeaTnp3ISoGMgQ" name="main" visibility="public" isStatic="true">
@@ -6924,58 +6889,47 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfu4zM8EeaTnp3ISoGMgQ" name="openParameterDialog" visibility="private">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_iDfu5DM8EeaTnp3ISoGMgQ" name="settings" type="_YK5nsC86Eea5c8WWEsgIIQ"/>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfu5TM8EeaTnp3ISoGMgQ" name="openTestDialog" visibility="private"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfu5jM8EeaTnp3ISoGMgQ" name="showGraph" visibility="private">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_iDfu5zM8EeaTnp3ISoGMgQ" name="graph" type="_iDo4QzM8EeaTnp3ISoGMgQ"/>
       </ownedOperation>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_iDfu6DM8EeaTnp3ISoGMgQ" name="TestContainer" visibility="private">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu6TM8EeaTnp3ISoGMgQ" name="x" visibility="public" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu6jM8EeaTnp3ISoGMgQ" name="y" visibility="public" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfu6zM8EeaTnp3ISoGMgQ" name="text" visibility="public" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false"/>
-      </nestedClassifier>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu7DM8EeaTnp3ISoGMgQ" memberEnd="_iDfu8DM8EeaTnp3ISoGMgQ _iDfu7zM8EeaTnp3ISoGMgQ">
+    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu7DM8EeaTnp3ISoGMgQ" name="sets" memberEnd="_iDfu8DM8EeaTnp3ISoGMgQ _iDfu7zM8EeaTnp3ISoGMgQ" navigableOwnedEnd="_iDfu8DM8EeaTnp3ISoGMgQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDfu7TM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDfu7jM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_iDfu7zM8EeaTnp3ISoGMgQ" name="graphvieweventhandler" type="_iDfufTM8EeaTnp3ISoGMgQ" association="_iDfu7DM8EeaTnp3ISoGMgQ"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_iDfu8DM8EeaTnp3ISoGMgQ" name="graphview" type="_iDfuVTM8EeaTnp3ISoGMgQ" association="_iDfu7DM8EeaTnp3ISoGMgQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu8TM8EeaTnp3ISoGMgQ" memberEnd="_iDfuyjM8EeaTnp3ISoGMgQ _iDfu9DM8EeaTnp3ISoGMgQ">
+    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu8TM8EeaTnp3ISoGMgQ" name="creates/controls" memberEnd="_iDfuyjM8EeaTnp3ISoGMgQ _iDfu9DM8EeaTnp3ISoGMgQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDfu8jM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDfu8zM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_iDfu9DM8EeaTnp3ISoGMgQ" name="gansapplication" type="_iDfuvzM8EeaTnp3ISoGMgQ" association="_iDfu8TM8EeaTnp3ISoGMgQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu9TM8EeaTnp3ISoGMgQ" memberEnd="_iDfuzTM8EeaTnp3ISoGMgQ _iDfu-DM8EeaTnp3ISoGMgQ">
+    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu9TM8EeaTnp3ISoGMgQ" name="creates/controls" memberEnd="_iDfuzTM8EeaTnp3ISoGMgQ _iDfu-DM8EeaTnp3ISoGMgQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDfu9jM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDfu9zM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_iDfu-DM8EeaTnp3ISoGMgQ" name="gansapplication" type="_iDfuvzM8EeaTnp3ISoGMgQ" association="_iDfu9TM8EeaTnp3ISoGMgQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu-TM8EeaTnp3ISoGMgQ" memberEnd="_iDfuzjM8EeaTnp3ISoGMgQ _iDfu_DM8EeaTnp3ISoGMgQ">
+    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu-TM8EeaTnp3ISoGMgQ" name="creates/controls" memberEnd="_iDfuzjM8EeaTnp3ISoGMgQ _iDfu_DM8EeaTnp3ISoGMgQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDfu-jM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDfu-zM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_iDfu_DM8EeaTnp3ISoGMgQ" name="gansapplication" type="_iDfuvzM8EeaTnp3ISoGMgQ" association="_iDfu-TM8EeaTnp3ISoGMgQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_iDfu_TM8EeaTnp3ISoGMgQ" memberEnd="_iDfupDM8EeaTnp3ISoGMgQ _iDfvADM8EeaTnp3ISoGMgQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDfu_jM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDfu_zM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_iDfvADM8EeaTnp3ISoGMgQ" name="structureview" type="_iDfuoDM8EeaTnp3ISoGMgQ" association="_iDfu_TM8EeaTnp3ISoGMgQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_iDfvATM8EeaTnp3ISoGMgQ" memberEnd="_iDfuzzM8EeaTnp3ISoGMgQ _iDfvBDM8EeaTnp3ISoGMgQ">
+    <packagedElement xmi:type="uml:Association" xmi:id="_iDfvATM8EeaTnp3ISoGMgQ" name="data access" memberEnd="_iDfuzzM8EeaTnp3ISoGMgQ _iDfvBDM8EeaTnp3ISoGMgQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDfvAjM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDfvAzM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_iDfvBDM8EeaTnp3ISoGMgQ" name="gansapplication" type="_iDfuvzM8EeaTnp3ISoGMgQ" association="_iDfvATM8EeaTnp3ISoGMgQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_iDfvBTM8EeaTnp3ISoGMgQ" memberEnd="_iDfunDM8EeaTnp3ISoGMgQ _iDfvCDM8EeaTnp3ISoGMgQ">
+    <packagedElement xmi:type="uml:Association" xmi:id="_iDfvBTM8EeaTnp3ISoGMgQ" name="updates data" memberEnd="_iDfunDM8EeaTnp3ISoGMgQ _iDfvCDM8EeaTnp3ISoGMgQ" navigableOwnedEnd="_iDfvCDM8EeaTnp3ISoGMgQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDfvBjM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDfvBzM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_iDfvCDM8EeaTnp3ISoGMgQ" name="informationview" type="_iDfumTM8EeaTnp3ISoGMgQ" association="_iDfvBTM8EeaTnp3ISoGMgQ"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_iDfunDM8EeaTnp3ISoGMgQ" name="graph" type="_iDfvFTM8EeaTnp3ISoGMgQ" association="_iDfvBTM8EeaTnp3ISoGMgQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_iDfvCTM8EeaTnp3ISoGMgQ" name="GAnsGraphElement" visibility="public" isAbstract="true">
       <ownedComment xmi:type="uml:Comment" xmi:id="_iDfvCjM8EeaTnp3ISoGMgQ">
@@ -7030,7 +6984,6 @@
  </body>
       </ownedComment>
       <generalization xmi:type="uml:Generalization" xmi:id="_iDfvFzM8EeaTnp3ISoGMgQ" general="_e-yT8DF3Eea9cLQqxalwMQ"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfvGDM8EeaTnp3ISoGMgQ" name="listenerList" visibility="private" type="_6hEq5y8zEeaW5pq-1rzVBQ" isUnique="false"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfvGTM8EeaTnp3ISoGMgQ" name="getSelectedItemsProperties" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iDfvGjM8EeaTnp3ISoGMgQ">
           <body>&#xD;
@@ -7088,9 +7041,6 @@
  * @author Nicolas&#xD;
  </body>
       </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfvOjM8EeaTnp3ISoGMgQ" name="graph" visibility="private" type="_iDo4QzM8EeaTnp3ISoGMgQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfvOzM8EeaTnp3ISoGMgQ" name="vertices" visibility="private" type="_tfF_EC8vEeaW5pq-1rzVBQ" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfvPDM8EeaTnp3ISoGMgQ" name="edges" visibility="private" type="_tfF_EC8vEeaW5pq-1rzVBQ" isUnique="false"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iDfvPTM8EeaTnp3ISoGMgQ" name="graph" type="_iDo4QzM8EeaTnp3ISoGMgQ" association="_iDo4OzM8EeaTnp3ISoGMgQ"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iDfvPjM8EeaTnp3ISoGMgQ" name="getGraphicalElements" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_iDfvPzM8EeaTnp3ISoGMgQ">
@@ -7132,7 +7082,7 @@
       </ownedOperation>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_iDo4MDM8EeaTnp3ISoGMgQ" memberEnd="_iDo4NjM8EeaTnp3ISoGMgQ _iDo4MzM8EeaTnp3ISoGMgQ">
+  <packagedElement xmi:type="uml:Association" xmi:id="_iDo4MDM8EeaTnp3ISoGMgQ" name="contains" memberEnd="_iDo4NjM8EeaTnp3ISoGMgQ _iDo4MzM8EeaTnp3ISoGMgQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDo4MTM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDo4MjM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
     </eAnnotations>
@@ -7142,19 +7092,19 @@
     </ownedEnd>
     <ownedEnd xmi:type="uml:Property" xmi:id="_iDo4NjM8EeaTnp3ISoGMgQ" name="graphview" type="_iDfuVTM8EeaTnp3ISoGMgQ" association="_iDo4MDM8EeaTnp3ISoGMgQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_iDo4NzM8EeaTnp3ISoGMgQ" memberEnd="_iDfupTM8EeaTnp3ISoGMgQ _iDo4OjM8EeaTnp3ISoGMgQ">
+  <packagedElement xmi:type="uml:Association" xmi:id="_iDo4NzM8EeaTnp3ISoGMgQ" name="data access" memberEnd="_iDfupTM8EeaTnp3ISoGMgQ _iDo4OjM8EeaTnp3ISoGMgQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDo4ODM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDo4OTM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_iDo4OjM8EeaTnp3ISoGMgQ" name="structureview" type="_iDfuoDM8EeaTnp3ISoGMgQ" association="_iDo4NzM8EeaTnp3ISoGMgQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_iDo4OzM8EeaTnp3ISoGMgQ" memberEnd="_iDfvPTM8EeaTnp3ISoGMgQ _iDo4PjM8EeaTnp3ISoGMgQ">
+  <packagedElement xmi:type="uml:Association" xmi:id="_iDo4OzM8EeaTnp3ISoGMgQ" name="data access" memberEnd="_iDfvPTM8EeaTnp3ISoGMgQ _iDo4PjM8EeaTnp3ISoGMgQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDo4PDM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDo4PTM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_iDo4PjM8EeaTnp3ISoGMgQ" name="graphviewgraphfactory" type="_iDfvODM8EeaTnp3ISoGMgQ" association="_iDo4OzM8EeaTnp3ISoGMgQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_iDo4PzM8EeaTnp3ISoGMgQ" memberEnd="_iDfuWzM8EeaTnp3ISoGMgQ _iDo4QjM8EeaTnp3ISoGMgQ">
+  <packagedElement xmi:type="uml:Association" xmi:id="_iDo4PzM8EeaTnp3ISoGMgQ" name="data access" memberEnd="_iDfuWzM8EeaTnp3ISoGMgQ _iDo4QjM8EeaTnp3ISoGMgQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iDo4QDM8EeaTnp3ISoGMgQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDo4QTM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
     </eAnnotations>
