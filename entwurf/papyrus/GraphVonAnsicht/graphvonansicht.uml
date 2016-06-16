@@ -3401,8 +3401,8 @@
  </body>
         </ownedComment>
         <generalization xmi:type="uml:Generalization" xmi:id="_iTiONDDzEeaZHIc6rzlw_w" general="_iTiOMzDzEeaZHIc6rzlw_w"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iTiONTDzEeaZHIc6rzlw_w" name="toString" visibility="public">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iTiONjDzEeaZHIc6rzlw_w" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm2h8DPGEea6ibwr2Am9BQ" name="toString" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm2h8TPGEea6ibwr2Am9BQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_iTrYKzDzEeaZHIc6rzlw_w" name="GAnsProperty" visibility="public">
@@ -3419,35 +3419,35 @@
  * @author Nicolas&#xD;
  </body>
         </ownedComment>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iTrYLTDzEeaZHIc6rzlw_w" name="name" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iTrYLjDzEeaZHIc6rzlw_w">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Rm2h8jPGEea6ibwr2Am9BQ" name="name" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm2h8zPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * A string with whoom, factories or other elements from the GUI, can&#xD;
 	 * reference to the name/identifier of the value.&#xD;
 	 </body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iTrYLzDzEeaZHIc6rzlw_w" name="value" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iTrYMDDzEeaZHIc6rzlw_w">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Rm2h9DPGEea6ibwr2Am9BQ" name="value" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm2h9TPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * A string with whoom, factories or other elements from the GUI, can&#xD;
 	 * reference to the value.&#xD;
 	 </body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iTrYMTDzEeaZHIc6rzlw_w" name="valueAsString" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iTrYMjDzEeaZHIc6rzlw_w">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Rm2h9jPGEea6ibwr2Am9BQ" name="valueAsString" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm2h9zPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * A string with whoom, factories or other elements from the GUI, can&#xD;
 	 * reference to the string-representation of the value.&#xD;
 	 </body>
           </ownedComment>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iTrYNDDzEeaZHIc6rzlw_w" name="propertyName" visibility="private" type="_iTrYMzDzEeaZHIc6rzlw_w" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iT1JIDDzEeaZHIc6rzlw_w" name="propertyValue" visibility="private" type="_iTiOMTDzEeaZHIc6rzlw_w" isUnique="false"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iT1JITDzEeaZHIc6rzlw_w" name="propertyValueAsString" visibility="private" type="_iTrYMzDzEeaZHIc6rzlw_w" isUnique="false"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JIjDzEeaZHIc6rzlw_w" name="propertyNameProperty" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JIzDzEeaZHIc6rzlw_w">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Rm2h-DPGEea6ibwr2Am9BQ" name="propertyName" visibility="private" type="_iTrYMzDzEeaZHIc6rzlw_w" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Rm2h-TPGEea6ibwr2Am9BQ" name="propertyValue" visibility="private" type="_iTiOMTDzEeaZHIc6rzlw_w" isUnique="false"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Rm2h-jPGEea6ibwr2Am9BQ" name="propertyValueAsString" visibility="private" type="_iTrYMzDzEeaZHIc6rzlw_w" isUnique="false"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm_r4DPGEea6ibwr2Am9BQ" name="propertyNameProperty" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm_r4TPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * Ensures that the property which contains the name/identifier of the&#xD;
 	 * GAnsProperty is not null and always set with the right name.&#xD;
@@ -3456,10 +3456,10 @@
 	 *         GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JJDDzEeaZHIc6rzlw_w" type="_iTrYMzDzEeaZHIc6rzlw_w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm_r4jPGEea6ibwr2Am9BQ" type="_iTrYMzDzEeaZHIc6rzlw_w" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JJTDzEeaZHIc6rzlw_w" name="propertyValue" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JJjDzEeaZHIc6rzlw_w">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm_r4zPGEea6ibwr2Am9BQ" name="propertyValue" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm_r5DPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * Ensures that the property which contains the value in the GAnsProperty is&#xD;
 	 * not null and always set with the right name.&#xD;
@@ -3467,10 +3467,10 @@
 	 * @return The property which contains the value in the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JJzDzEeaZHIc6rzlw_w" type="_iTiOMTDzEeaZHIc6rzlw_w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm_r5TPGEea6ibwr2Am9BQ" type="_iTiOMTDzEeaZHIc6rzlw_w" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JKDDzEeaZHIc6rzlw_w" name="propertyValueAsString" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JKTDzEeaZHIc6rzlw_w">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm_r5jPGEea6ibwr2Am9BQ" name="propertyValueAsString" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm_r5zPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * Ensures that the property which contains the string-representation of the&#xD;
 	 * value in the GAnsProperty is not null and always set with the right name.&#xD;
@@ -3479,10 +3479,10 @@
 	 *         the value of the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JKjDzEeaZHIc6rzlw_w" type="_iTrYMzDzEeaZHIc6rzlw_w" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm_r6DPGEea6ibwr2Am9BQ" type="_iTrYMzDzEeaZHIc6rzlw_w" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JKzDzEeaZHIc6rzlw_w" name="setPropertyName" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JLDDzEeaZHIc6rzlw_w">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm_r6TPGEea6ibwr2Am9BQ" name="setPropertyName" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm_r6jPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * Sets the name/identifier of the GAnsProperty.&#xD;
 	 * &#xD;
@@ -3490,53 +3490,20 @@
 	 *            The string will be set as the name of the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JLTDzEeaZHIc6rzlw_w" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm_r6zPGEea6ibwr2Am9BQ" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JLjDzEeaZHIc6rzlw_w" name="getPropertyName" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JLzDzEeaZHIc6rzlw_w">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm_r7DPGEea6ibwr2Am9BQ" name="getPropertyName" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm_r7TPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * Returns the name/identifier of the GAnsProperty.&#xD;
 	 * &#xD;
 	 * @return The name/identifier of the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JMDDzEeaZHIc6rzlw_w" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm_r7jPGEea6ibwr2Am9BQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JMTDzEeaZHIc6rzlw_w" name="setPropertyValue" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JMjDzEeaZHIc6rzlw_w">
-            <body>&#xD;
-	 * Sets the {@link GAnsObjectPropertyValue} and its string-representation of&#xD;
-	 * the GAnsProperty.&#xD;
-	 * &#xD;
-	 * @param value&#xD;
-	 *            The {@link GAnsObjectPropertyValue} which shall be set in the&#xD;
-	 *            GAnsProperty.&#xD;
-	 </body>
-          </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JMzDzEeaZHIc6rzlw_w" name="value"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JNDDzEeaZHIc6rzlw_w" name="getPropertyValue" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JNTDzEeaZHIc6rzlw_w">
-            <body>&#xD;
-	 * Returns the value of the GAnsProperty.&#xD;
-	 * &#xD;
-	 * @return The value of the GAnsProperty.&#xD;
-	 </body>
-          </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JNjDzEeaZHIc6rzlw_w" type="_cwo1ITDtEeaerfpH0KeGRA" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_iT1JNzDzEeaZHIc6rzlw_w" name="getPropertyValueAsString" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_iT1JODDzEeaZHIc6rzlw_w">
-            <body>&#xD;
-	 * Returns the string-representation of the value from the GAnsProperty.&#xD;
-	 * &#xD;
-	 * @return The string-representation of the value from the GAnsProperty.&#xD;
-	 </body>
-          </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iT1JOTDzEeaZHIc6rzlw_w" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_6vU6MDMNEeak3amMgK8xYw" name="setPropertyValue" visibility="public">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_6vU6MTMNEeak3amMgK8xYw">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm_r7zPGEea6ibwr2Am9BQ" name="setPropertyValue" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm_r8DPGEea6ibwr2Am9BQ">
             <body>&#xD;
 	 * Sets the value and its string-representation of the GAnsProperty.&#xD;
 	 * &#xD;
@@ -3544,30 +3511,37 @@
 	 *            The value that will be set in the GAnsProperty.&#xD;
 	 </body>
           </ownedComment>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_6vU6MjMNEeak3amMgK8xYw" name="value" type="_cwo1ITDtEeaerfpH0KeGRA"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm_r8TPGEea6ibwr2Am9BQ" name="value" type="_BDZ9wDPGEea6ibwr2Am9BQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm_r8jPGEea6ibwr2Am9BQ" name="getPropertyValue" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm_r8zPGEea6ibwr2Am9BQ">
+            <body>&#xD;
+	 * Returns the value of the GAnsProperty.&#xD;
+	 * &#xD;
+	 * @return The value of the GAnsProperty.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm_r9DPGEea6ibwr2Am9BQ" type="_BDZ9wDPGEea6ibwr2Am9BQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Rm_r9TPGEea6ibwr2Am9BQ" name="getPropertyValueAsString" visibility="public">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rm_r9jPGEea6ibwr2Am9BQ">
+            <body>&#xD;
+	 * Returns the string-representation of the value from the GAnsProperty.&#xD;
+	 * &#xD;
+	 * @return The string-representation of the value from the GAnsProperty.&#xD;
+	 </body>
+          </ownedComment>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Rm_r9zPGEea6ibwr2Am9BQ" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_cwpcIDDtEeaerfpH0KeGRA" memberEnd="_cwpcJDDtEeaerfpH0KeGRA _cwpcIzDtEeaerfpH0KeGRA">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cwpcITDtEeaerfpH0KeGRA" source="org.eclipse.papyrus">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cwpcIjDtEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
-        </eAnnotations>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_cwpcIzDtEeaerfpH0KeGRA" name="gansobjectproperty" type="_cwo1ETDtEeaerfpH0KeGRA" association="_cwpcIDDtEeaerfpH0KeGRA"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_cwpcJDDtEeaerfpH0KeGRA" name="gansobjectpropertyvalue" type="_cwo1FjDtEeaerfpH0KeGRA" association="_cwpcIDDtEeaerfpH0KeGRA"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_cwqDMDDtEeaerfpH0KeGRA" memberEnd="_cwqDNDDtEeaerfpH0KeGRA _cwqDMzDtEeaerfpH0KeGRA">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cwqDMTDtEeaerfpH0KeGRA" source="org.eclipse.papyrus">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cwqDMjDtEeaerfpH0KeGRA" key="nature" value="UML_Nature"/>
-        </eAnnotations>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_cwqDMzDtEeaerfpH0KeGRA" name="gansproperty" type="_cwo1IjDtEeaerfpH0KeGRA" association="_cwqDMDDtEeaerfpH0KeGRA"/>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_cwqDNDDtEeaerfpH0KeGRA" name="gansobjectproperty" type="_cwo1ETDtEeaerfpH0KeGRA" association="_cwqDMDDtEeaerfpH0KeGRA"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_16EI4DDzEeaZHIc6rzlw_w" memberEnd="_16EI4zDzEeaZHIc6rzlw_w _16EI5DDzEeaZHIc6rzlw_w">
+      <packagedElement xmi:type="uml:Association" xmi:id="_16EI4DDzEeaZHIc6rzlw_w" name="has" memberEnd="_16EI4zDzEeaZHIc6rzlw_w _16EI5DDzEeaZHIc6rzlw_w" navigableOwnedEnd="_16EI4zDzEeaZHIc6rzlw_w">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_16EI4TDzEeaZHIc6rzlw_w" source="org.eclipse.papyrus">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_16EI4jDzEeaZHIc6rzlw_w" key="nature" value="UML_Nature"/>
         </eAnnotations>
         <ownedEnd xmi:type="uml:Property" xmi:id="_16EI5DDzEeaZHIc6rzlw_w" name="gansproperty" type="_iTrYKzDzEeaZHIc6rzlw_w" association="_16EI4DDzEeaZHIc6rzlw_w"/>
         <ownedEnd xmi:type="uml:Property" xmi:id="_16EI4zDzEeaZHIc6rzlw_w" name="gansobjectproperty" type="_iTiOMTDzEeaZHIc6rzlw_w" association="_16EI4DDzEeaZHIc6rzlw_w"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_BDZ9wDPGEea6ibwr2Am9BQ" name="T"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_eslsEDH4EeaaiaiZK_IS2A" name="sugiyama">
       <packagedElement xmi:type="uml:Class" xmi:id="_espWcDH4EeaaiaiZK_IS2A" name="CrossMinimizer" visibility="public">
@@ -4741,195 +4715,6 @@
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_vy69MDLwEeaLPvgE5e-1fQ" name="graph" type="_vyzBYDLwEeaLPvgE5e-1fQ"/>
         </ownedOperation>
       </packagedElement>
-    </packagedElement>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_cwo1EDDtEeaerfpH0KeGRA" name="package objectproperty" URI="">
-    <packagedElement xmi:type="uml:Class" xmi:id="_cwo1ETDtEeaerfpH0KeGRA" name="GAnsObjectProperty" visibility="public">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1EjDtEeaerfpH0KeGRA">
-        <body>&#xD;
- * Ein JavaFX ObjectProperty welches bei toString() den Wert vom internen&#xD;
- * GAnsPropertyValue zurückgibt.&#xD;
- * &#xD;
- * @author Nicolas&#xD;
- </body>
-      </ownedComment>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1FDDtEeaerfpH0KeGRA" name="toString" visibility="public">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1FTDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
-      </ownedOperation>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_cwo1FjDtEeaerfpH0KeGRA" name="GAnsObjectPropertyValue" visibility="public">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1FzDtEeaerfpH0KeGRA">
-        <body>&#xD;
- * Einfache generische Klasse zum Speichern von verschiedenen Typen von&#xD;
- * Properties. Wird mit {@link GAnsProperty} genutzt um verschiedene Klassen von&#xD;
- * Eigenschaften in der GUI gleich zu behandeln.&#xD;
- * &#xD;
- * @author Nicolas&#xD;
- *&#xD;
- * @param &lt;T>&#xD;
- *            Objekt das in dem PropertyValue gespeichert werden soll.&#xD;
- </body>
-      </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1GDDtEeaerfpH0KeGRA" name="value" visibility="private" type="_cwo1ITDtEeaerfpH0KeGRA" isUnique="false"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1GTDtEeaerfpH0KeGRA" name="getValue" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1GjDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Gibt das Value zurück.&#xD;
-	 * &#xD;
-	 * @return Das Value des PropertyValues.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1GzDtEeaerfpH0KeGRA" type="_cwo1ITDtEeaerfpH0KeGRA" direction="return"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1HDDtEeaerfpH0KeGRA" name="setValue" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1HTDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Setzt das Value.&#xD;
-	 * &#xD;
-	 * @param value&#xD;
-	 *            Das zu setzende Value.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1HjDtEeaerfpH0KeGRA" name="value" type="_cwo1ITDtEeaerfpH0KeGRA"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1HzDtEeaerfpH0KeGRA" name="toString" visibility="public">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1IDDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
-      </ownedOperation>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_cwo1ITDtEeaerfpH0KeGRA" name="T"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_cwo1IjDtEeaerfpH0KeGRA" name="GAnsProperty" visibility="public">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1IzDtEeaerfpH0KeGRA">
-        <body>&#xD;
- * Eine Eigenschaft eines Knoten oder einer Kante in GAns. Der Name und&#xD;
- * {@link GAnsObjectPropertyValue} der Eigenschaft wird in JavaFX-Properties&#xD;
- * gespeichert und darüber auch zugriff für die GUI gewährt. Das Model von GAns&#xD;
- * besteht aus Knoten und Kanten welche GAnsProperties beinhalten, welche mit&#xD;
- * der GUI gekoppelt sind.&#xD;
- * &#xD;
- * @author Nicolas&#xD;
- </body>
-      </ownedComment>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1JDDtEeaerfpH0KeGRA" name="name" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1JTDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * String über den von der GUI aus, Factories oder Änliches, auf den&#xD;
-	 * Namen/Bezeichner des Values verwiesen werden kann.&#xD;
-	 </body>
-        </ownedComment>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1JjDtEeaerfpH0KeGRA" name="value" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1JzDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * String über den von der GUI aus, Factories oder Änliches, auf den Value&#xD;
-	 * verwiesen werden kann.&#xD;
-	 </body>
-        </ownedComment>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1KDDtEeaerfpH0KeGRA" name="valueAsString" visibility="public" isLeaf="true" isStatic="true" type="_8H8x4ispEeaqLZjhN-MabA" isUnique="false">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1KTDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * String über den von der GUI aus, Factories oder Änliches, auf die&#xD;
-	 * Stringrepräsentation des Values verwiesen werden kann.&#xD;
-	 </body>
-        </ownedComment>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1KjDtEeaerfpH0KeGRA" name="propertyName" visibility="private" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1KzDtEeaerfpH0KeGRA" name="propertyValue" visibility="private" type="_cwo1ETDtEeaerfpH0KeGRA" isUnique="false"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cwo1LDDtEeaerfpH0KeGRA" name="propertyValueAsString" visibility="private" isUnique="false"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1LTDtEeaerfpH0KeGRA" name="propertyNameProperty" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1LjDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Stellt sicher das die Property die den Namen/Bezeichner der GAnsProperty&#xD;
-	 * enthält nie null ist und immer mit dem passenden Namen erstellt wird.&#xD;
-	 * &#xD;
-	 * @return Die StringProperty die den Namen/Bezeichner der GAnsProperty&#xD;
-	 *         enthält.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1LzDtEeaerfpH0KeGRA" direction="return"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1MDDtEeaerfpH0KeGRA" name="propertyValue" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1MTDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Stellt sicher das die Property die den {@link GAnsObjectPropertyValue} der&#xD;
-	 * GAnsProperty enthält nie null ist und immer mit dem passenden Namen&#xD;
-	 * erstellt wird.&#xD;
-	 * &#xD;
-	 * @return Die Property die den {@link GAnsObjectPropertyValue} der GAnsProperty&#xD;
-	 *         enthält.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1MjDtEeaerfpH0KeGRA" type="_cwo1ETDtEeaerfpH0KeGRA" direction="return"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1MzDtEeaerfpH0KeGRA" name="propertyValueAsString" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1NDDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Stellt sicher das die Property die den {@link GAnsObjectPropertyValue} der&#xD;
-	 * GAnsProperty als String enthält nie null ist und immer mit dem passenden&#xD;
-	 * Namen erstellt wird.&#xD;
-	 * &#xD;
-	 * @return Die StringProperty die den {@link GAnsObjectPropertyValue} der&#xD;
-	 *         GAnsProperty als String enthält.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1NTDtEeaerfpH0KeGRA" direction="return"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1NjDtEeaerfpH0KeGRA" name="setPropertyName" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1NzDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Setzt den Namen/Bezeichner der GAnsProperty.&#xD;
-	 * &#xD;
-	 * @param value&#xD;
-	 *            Der String der als Name der GAnsProperty gesetzt werden soll.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1ODDtEeaerfpH0KeGRA" name="value" type="_8H8x4ispEeaqLZjhN-MabA"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1OTDtEeaerfpH0KeGRA" name="getPropertyName" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1OjDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Gibt den Namen/Bezeichner der GAnsProperty zurück.&#xD;
-	 * &#xD;
-	 * @return Der Name/Bezeichner der GAnsProperty.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1OzDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1PDDtEeaerfpH0KeGRA" name="setPropertyValue" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1PTDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Setzt das {@link GAnsObjectPropertyValue} und die Stringrepräsentation des&#xD;
-	 * Werts der GAnsProperty.&#xD;
-	 * &#xD;
-	 * @param value&#xD;
-	 *            Der {@link GAnsObjectPropertyValue} der GAnsProperty die gesetzt&#xD;
-	 *            werden soll.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1PjDtEeaerfpH0KeGRA" name="value" type="_cwo1FjDtEeaerfpH0KeGRA"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1PzDtEeaerfpH0KeGRA" name="getPropertyValue" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1QDDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Gibt das den {@link GAnsObjectPropertyValue} der GAnsProperty zurück.&#xD;
-	 * &#xD;
-	 * @return Der {@link GAnsObjectPropertyValue} der GAnsProperty.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1QTDtEeaerfpH0KeGRA" type="_cwo1FjDtEeaerfpH0KeGRA" direction="return"/>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_cwo1QjDtEeaerfpH0KeGRA" name="getPropertyValueAsString" visibility="public">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_cwo1QzDtEeaerfpH0KeGRA">
-          <body>&#xD;
-	 * Gibt die Stringrepräsentation des {@link GAnsObjectPropertyValue} der&#xD;
-	 * GAnsProperty zurück.&#xD;
-	 * &#xD;
-	 * @return Die Stringrepräsentation des {@link GAnsObjectPropertyValue} der&#xD;
-	 *         GAnsProperty.&#xD;
-	 </body>
-        </ownedComment>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_cwo1RDDtEeaerfpH0KeGRA" type="_8H8x4ispEeaqLZjhN-MabA" direction="return"/>
-      </ownedOperation>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_kmCrEDDtEeaerfpH0KeGRA" name="package graphRegex">
@@ -7087,8 +6872,8 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iDo4MjM8EeaTnp3ISoGMgQ" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_iDo4MzM8EeaTnp3ISoGMgQ" name="gansgraphelement" type="_iDfvCTM8EeaTnp3ISoGMgQ" aggregation="shared" association="_iDo4MDM8EeaTnp3ISoGMgQ">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iDo4NDM8EeaTnp3ISoGMgQ" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iDo4NTM8EeaTnp3ISoGMgQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iDo4NDM8EeaTnp3ISoGMgQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iDo4NTM8EeaTnp3ISoGMgQ" value="*"/>
     </ownedEnd>
     <ownedEnd xmi:type="uml:Property" xmi:id="_iDo4NjM8EeaTnp3ISoGMgQ" name="graphview" type="_iDfuVTM8EeaTnp3ISoGMgQ" association="_iDo4MDM8EeaTnp3ISoGMgQ"/>
   </packagedElement>
