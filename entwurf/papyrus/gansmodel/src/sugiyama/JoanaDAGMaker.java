@@ -15,10 +15,9 @@ import graphmodel.Vertex;
  * @param <E> the type of the directed edges the graph contains
  */
 public class JoanaDAGMaker<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> implements DAGMaker<G,V,E>{
-
-
+	
 	@Override
-	public Set<E> removeCycles(G graph) {
+	public Set<E> removeCycles(DAGMakerGraph<G, V, E> graph) {
 		// TODO Auto-generated method stub
 		return null;
 	}

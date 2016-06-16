@@ -19,7 +19,7 @@ public interface LayerAssigner<G extends DirectedGraph<V, E>, V extends Vertex, 
 	 * Assigns every vertex in the graph parameter e relative height.
 	 * @param graph input graph 
 	 */ 
-	public void assignLayers(G graph);
+	public void assignLayers(LayerAssignerGraph<G, V, E> graph);
 	
 	/**
 	 * Defines a set of constraints which should be considered by the algorithm.

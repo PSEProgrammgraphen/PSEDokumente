@@ -14,9 +14,10 @@ import graphmodel.Vertex;
 public class JoanaVertexPositioner <G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> implements VertexPositioner<G,V,E>{
 
 	@Override
-	public void positionVertices(G graph) {
+	public void positionVertices(VertexPositionerGraph graph) {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }

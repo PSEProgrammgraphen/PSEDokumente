@@ -21,5 +21,5 @@ public interface EdgeDrawer<G extends DirectedGraph<V, E>, V extends Vertex, E e
 	 * 
 	 * @param graph the input graph
 	 */
-	public void drawEdges(G graph);
+	public void drawEdges(EdgeDrawerGraph<G, V, E> graph);
 }

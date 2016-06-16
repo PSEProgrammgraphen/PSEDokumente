@@ -20,5 +20,5 @@ public interface CrossMinimizer<G extends DirectedGraph<V, E>, V extends Vertex,
 	 * 
 	 * @param graph input graph
 	 */
-	public void minimizeCrossings(G graph);
+	public void minimizeCrossings(CrossMinimizerGraph<G, V, E> graph);
 }

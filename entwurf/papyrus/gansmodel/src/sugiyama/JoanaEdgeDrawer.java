@@ -16,7 +16,7 @@ import graphmodel.Vertex;
 public class JoanaEdgeDrawer<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> implements EdgeDrawer<G,V,E>{
 
 	@Override
-	public void drawEdges(G graph) {
+	public void drawEdges(EdgeDrawerGraph<G, V, E> graph) {
 		// TODO Auto-generated method stub
 		
 	}

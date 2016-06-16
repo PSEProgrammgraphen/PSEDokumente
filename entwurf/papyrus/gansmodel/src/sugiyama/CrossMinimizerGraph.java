@@ -23,7 +23,7 @@ public interface CrossMinimizerGraph<G extends DirectedGraph<V, E>, V extends Ve
 	 * @param second
 	 * 		second vertex to change position with
 	 */
-	public void swapVertices(V first, V second);
+	public void swapVertices(SugiyamaVertex<V> first, SugiyamaVertex<V> second);
 	
 	/**
 	 * Get the number of vertices which are on a  certain layer
@@ -43,7 +43,7 @@ public interface CrossMinimizerGraph<G extends DirectedGraph<V, E>, V extends Ve
 	 * @return
 	 * 		the layer number from this vertex
 	 */
-	public int getLayer(V vertex);
+	public int getLayer(SugiyamaVertex<V> vertex);
 	
 	/**
 	 * Get all vertices from a certain layer.
@@ -53,7 +53,7 @@ public interface CrossMinimizerGraph<G extends DirectedGraph<V, E>, V extends Ve
 	 * @return
 	 * 		a list of all vertices which are on this layer
 	 */
-	public List<V> getLayer(int layerNum);
+	public List<SugiyamaVertex<V>> getLayer(int layerNum);
 	
 	/**
 	 * Get all layers that contain vertices.
@@ -61,5 +61,5 @@ public interface CrossMinimizerGraph<G extends DirectedGraph<V, E>, V extends Ve
 	 * @return
 	 * 		a list of lists of vertices which are on this layer
 	 */
-	public List<List<V>> getLayers();
+	public List<List<SugiyamaVertex<V>>> getLayers();
 }

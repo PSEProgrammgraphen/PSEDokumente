@@ -15,12 +15,6 @@ import graphmodel.Vertex;
 public class JoanaLayerAssigner<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> implements LayerAssigner<G,V,E>{
 
 	@Override
-	public void assignLayers(G graph) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void addConstraints(Set<LayerConstraint<V>> constraints) {
 		// TODO Auto-generated method stub
 		
@@ -34,6 +28,12 @@ public class JoanaLayerAssigner<G extends DirectedGraph<V, E>, V extends Vertex,
 
 	@Override
 	public void setMaxWidth(int width) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void assignLayers(LayerAssignerGraph<G, V, E> graph) {
 		// TODO Auto-generated method stub
 		
 	}

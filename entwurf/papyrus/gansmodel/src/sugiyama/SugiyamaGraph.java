@@ -1,6 +1,7 @@
 package sugiyama;
 
 import graphmodel.DirectedGraph;
+import graphmodel.SerializedGraph;
 import graphmodel.DefaultVertex;
 import graphmodel.DirectedEdge;
 import graphmodel.Vertex;
@@ -20,7 +21,13 @@ import java.util.Set;
  * @param <E> the edge class used in the graph
  */
 public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
-	extends DirectedGraph<Vertex, DirectedEdge<Vertex>> {
+	extends DirectedGraph<SugiyamaVertex<V>, SugiyamaEdge<E, V>>  
+	implements DAGMakerGraph<G, V, E>, 
+			   LayerAssignerGraph<G, V, E>,
+			   CrossMinimizerGraph<G, V, E>,
+			   VertexPositionerGraph<G, V, E>,
+			   EdgeDrawerGraph<G, V, E>
+{
 	
 	private List<List<V>> layers;
 	private Map<V, Integer> vertexToLayer;
@@ -48,21 +55,6 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	public void assignToLayer(V vertex, int layerN) {}
 	
 	/**
-	 * Returns a copy of the layer specified by the index.
-	 * @param layerN the index of the layer, which should be returned
-	 * 
-	 * @return the layer
-	 */
-	public List<V> getLayer(int layerN) { return null; }
-	
-	/**
-	 * Returns a copy of all layers.
-	 * 
-	 * @return the layers.
-	 */
-	public List<List<V>> getLayers() { return null; }
-	
-	/**
 	 * Returns the height, i.e. the number of layers.
 	 * @return the height
 	 */
@@ -82,21 +74,11 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	public int getMaxWidth() { return 0; }
 	
 	/**
-	 * Reverses the specified edge (u, v) by replacing it with an supplement edge (v, u)
-	 * The action will be saved and can later be retrieved with {@code getInvertedEdges()} or
-	 * restored with {@code restoreReversedEdges()} of the old state.
-	 * While reversed the specified edge won't be part of the edge set and therefore not returned by {@code getEdgeSet()}
-	 * 
-	 * @param edge the edge to reverse
-	 */
-	public void reverseEdge(E edge) {}
-	
-	/**
 	 * Returns the set of all with {@code reverseEdge(E edge)} reversed edges.
 	 * 
 	 * @return the set of all reversed edges.
 	 */
-	public Set<E> getReversedEdges() { return null; }
+	public Set<SugiyamaEdge<E, V>> getReversedEdges() { return null; }
 	
 	/**
 	 * Deletes the supplement edges, which have been created when an edge was reversed.
@@ -132,12 +114,139 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	public Set<E> restoreReplacedEdges() { return null; }
 	
 	/**
-	 * A supplement edge for reversed and inserted edges for connecting vertices more than one layer apart.
+	 * A supplement path for connecting vertices, which are more than one layer apart.
+	 * They are stored in the SugiyamaEdge along with the substituted edge.
+	 */
+	public class SupplementPath extends DirectedEdge<V>
+	{
+		/**
+		 * Returns the number of vertices including source and target.
+		 * @return the length of the path
+		 */
+		public int getLength() {return 0;}
+		
+		/**
+		 * Returns the list of vertices on the path sorted from source to target
+		 * @return the list of vertices
+		 */
+		public List<SupplementVertex> getVertices() {return null;}
+		
+		/**
+		 * Returns the list of edges on the path from source to target
+		 * @return the edges
+		 */
+		public List<SupplementEdge> getEdges() {return null;}
+		
+		/**
+		 * Returns the edge which is substituted by this path
+		 * @return the replaced edge
+		 */
+		public E getReplacedEdge() {return null;}
+	}
+	/**
+	 * A supplement edge which is part of a {@link SupplementPath}.
 	 */
 	public class SupplementEdge extends DirectedEdge<DefaultVertex> {}
 	
 	/**
-	 * A supplement vertex which is inserted between vertices, which are more than one layer apart.
+	 * A supplement vertex which is part of a {@link SupplementPath}.
 	 */
 	public class SupplementVertex extends DefaultVertex {}
+
+	
+	@Override
+	public SerializedGraph serialize() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getLayerCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getVertexCount(int layerNum) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void reverseEdge(SugiyamaEdge<E, V> edge) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isReversed(SugiyamaEdge<E, V> edge) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void swapVertices(SugiyamaVertex<V> first, SugiyamaVertex<V> second) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getLayer(SugiyamaVertex<V> vertex) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<SugiyamaVertex<V>> getLayer(int layerNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<List<SugiyamaVertex<V>>> getLayers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<SugiyamaEdge<E, V>> reverseAllEdges() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addEdgeCorner(SugiyamaEdge<E, V> edge, int x, int y, int index) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeEdgeCorner(SugiyamaEdge<E, V> edge, int index) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<sugiyama.EdgeDrawerGraph.Point> getEdgeCorners(SugiyamaEdge<E, V> edge) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setLayerY(int layerN, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setX(SugiyamaVertex<V> vertex, int x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void assignToLayer(SugiyamaVertex<V> vertex, int layerNum) {
+		// TODO Auto-generated method stub
+		
+	}
 }

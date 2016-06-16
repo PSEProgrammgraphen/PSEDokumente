@@ -16,7 +16,7 @@ public class JoanaCrossMinimizer<G extends DirectedGraph<V, E>, V extends Vertex
 implements CrossMinimizer<G,V,E>{
 
 	@Override
-	public void minimizeCrossings(G graph) {
+	public void minimizeCrossings(CrossMinimizerGraph<G, V, E> graph) {
 		// TODO Auto-generated method stub
 		
 	}
