@@ -5,6 +5,7 @@ import java.util.List;
 import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
+import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
 public interface LayerAssignerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 	
