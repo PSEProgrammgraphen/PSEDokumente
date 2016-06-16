@@ -94,7 +94,7 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 		return new HashMap<String, String>();
 	}
 
-	public SerializedGraph serialize() {
+	public SerializedGraph<V, E> serialize() {
 		return this;
 	}
 }
