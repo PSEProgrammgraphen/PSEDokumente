@@ -3,16 +3,15 @@ package plugin;
 import graphmodel.Edge;
 
 /**
- * This Class represents a filter for edge types. 
- * The type of the edge can be specified through different parameters.
- *
+ * This class represents a filter for edges. 
+ * To check if an edge passes through this filter, the client can specify it in {@code matches(Edge edge)}.
  */
-public class EdgeFilter {
+public abstract class EdgeFilter {
 
 	private String name;
 
 	/**
-	 * Getter of name
+	 * Getter of name of this filter
 	 */
 	public String getName() {
 	 	 return name; 
@@ -32,9 +31,6 @@ public class EdgeFilter {
 	 * @param toMatch the edge which should be checked
 	 * @return true if the edge matches this Filter, otherwise false
 	 */
-	public boolean matches(Edge toMatch) { 
-		// TODO Auto-generated method
-		return false;
-	 } 
+	public abstract boolean matches(Edge toMatch); 
 
 }
