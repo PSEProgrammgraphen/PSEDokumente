@@ -161,7 +161,6 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		public V getVertex() {return null;}
 		
 	}
-
 	
 	/**
 	 * A wrapper class for directed edges to implement additional functionality
@@ -170,7 +169,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	 * @param <E> the type of the edge which should be wrapped
 	 * @param <V> the type of the vertex the E connects
 	 */
-	public class SugiyamaEdge<E extends DirectedEdge<V>, V extends Vertex> extends DirectedEdge<SugiyamaVertex<V>>
+	public class SugiyamaEdge<V extends Vertex,E extends DirectedEdge<V>> extends DirectedEdge<SugiyamaVertex<V>>
 	{
 		private SugiyamaEdge(E edge) {}	
 		public E getEdge() { return null; }

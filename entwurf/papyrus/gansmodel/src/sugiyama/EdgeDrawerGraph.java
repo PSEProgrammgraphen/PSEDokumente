@@ -6,6 +6,7 @@ import java.util.Set;
 import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
+import sugiyama.SugiyamaGraph.SugiyamaEdge;
 
 public interface EdgeDrawerGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> {
 	
@@ -14,13 +15,13 @@ public interface EdgeDrawerGraph<G extends DirectedGraph<V, E>, V extends Vertex
 	 * 
 	 * @param edge the edge to return its direction
 	 */
-	public void reverseEdge(SugiyamaEdge<E, V> edge);
+	public void reverseEdge(SugiyamaEdge<V, E> edge);
 	
 	/**
 	 * Reverses all previously reversed edges
 	 * @return the set of edges, which have been reversed.
 	 */
-	public Set<SugiyamaEdge<E, V>> reverseAllEdges();
+	public Set<SugiyamaEdge<V, E>> reverseAllEdges();
 	
 	/**
 	 * Adds a new edge corner to the specified edge.
@@ -34,21 +35,21 @@ public interface EdgeDrawerGraph<G extends DirectedGraph<V, E>, V extends Vertex
 	 * @param y 	the y coordinate of the corner
 	 * @param index the index on the edge of the corner
 	 */
-	public void addEdgeCorner(SugiyamaEdge<E, V> edge, int x, int y, int index);
+	public void addEdgeCorner(SugiyamaEdge<V, E> edge, int x, int y, int index);
 	
 	/**
 	 * Removes the corner on the specified edge at the index
 	 * @param edge  the edge to reomve the corner
 	 * @param index the index of the corner to remove
 	 */
-	public void removeEdgeCorner(SugiyamaEdge<E, V> edge, int index);
+	public void removeEdgeCorner(SugiyamaEdge<V, E> edge, int index);
 	
 	/**
 	 * Returns a list of points, which describe the coordinates of the edges
 	 * @param edge the edge
 	 * @return	   the list of points of the corners on the edge
 	 */
-	public List<Point> getEdgeCorners(SugiyamaEdge<E, V> edge);
+	public List<Point> getEdgeCorners(SugiyamaEdge<V, E> edge);
 	
 	public class Point 
 	{
