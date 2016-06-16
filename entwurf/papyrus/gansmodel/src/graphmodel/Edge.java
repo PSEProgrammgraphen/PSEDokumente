@@ -1,6 +1,7 @@
 package graphmodel;
 
 import java.lang.Integer;
+import java.util.List;
 
 /**
  * This edge interface specifies an edge.
@@ -10,40 +11,41 @@ import java.lang.Integer;
 public interface Edge<V extends Vertex> {
 
 	/**
-	 * Get the source vertex of this edge
+	 * Get the vertices connected with this edge of this edge.
 	 * 
-	 * @return 
+	 * @return
+	 * 		the vertices connected with this edge
 	 */
-	public V getSource();
+	public List<V> getVertices();
 
 	/**
-	 * Get the name of this Edge
+	 * Get the name of this Edge.
 	 * 
-	 * @return 
+	 * @return
+	 * 		name of this edge
 	 */
 	public String getName();
 
-	/**
-	 * Get the target vertex of this edge
-	 * 
-	 * @return 
-	 */
-	public V getTarget();
 
 	/**
-	 * Get the ID of this edge
+	 * Get the ID of this edge.
 	 * 
-	 * @return 
+	 * @return
+	 * 		id of this edge
 	 */
 	public Integer getID(); 
 
 
 	/**
-	 * Adds Values to FastGraphAccessor
+	 * Adds Values to FastGraphAccessor.
 	 * 
-	 * @return 
+	 * @param fga 
 	 */
 	public void addToFastGraphAccessor(FastGraphAccessor fga);
-
-	public SerializedEdge serialize();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public SerializedEdge<V> serialize();
 }

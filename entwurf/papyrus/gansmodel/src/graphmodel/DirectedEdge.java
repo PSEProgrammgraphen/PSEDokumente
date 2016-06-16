@@ -1,5 +1,6 @@
 package graphmodel;
 
+import java.util.List;
 
 /**
  * A {@link DirectedEdge} is an edge that has one source and one target vertex.
@@ -8,34 +9,52 @@ package graphmodel;
  */
 public class DirectedEdge<V extends Vertex> implements Edge<V> {
 
-	@Override
+	private List<V> vertices;
+	
+	/**
+	 * Get the source vertex of this directed edge.
+	 * 
+	 * @return
+	 * 		the source vertex of this directed edge
+	 */
 	public V getSource() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	/**
+	 * Get the target vertex of this edge.
+	 * 
+	 * @return
+	 * 		the target vertex of this directed edge
+	 */
+	public V getTarget() {
+		return null;
+	}
+	
+	@Override
+	public List<V> getVertices() {
+		return null;
+	}
+	
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public V getTarget() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Integer getID() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
-		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public SerializedEdge<V> serialize() {
+		return null;
 	} 
 
 }
