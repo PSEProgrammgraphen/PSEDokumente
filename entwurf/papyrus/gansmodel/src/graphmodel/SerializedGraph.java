@@ -2,11 +2,7 @@ package graphmodel;
 
 import java.util.Set;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import plugin.LayoutAlgorithm;
-import plugin.LayoutOption;
 
 /**
  * A {@link SerializedGraph} is a specific Graph that contains all informations as Strings
