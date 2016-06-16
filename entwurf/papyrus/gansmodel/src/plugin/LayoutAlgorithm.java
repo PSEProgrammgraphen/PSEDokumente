@@ -6,9 +6,9 @@ import graphmodel.Vertex;
 import parameter.Settings;
 
 /**
- * A implementations of LayoutAlgorithm take a graph.
- * They assign its vertices absolute coordinates and assign its edges coordinates, they have to pass through.
- * LayoutAlgorithms have to be registered with a {@link LayoutOption} at the {@link LayoutRegister} of the Graph.
+ * An implementations of LayoutAlgorithm takes a graph.
+ * It assigns all vertices absolute coordinates and assigns all edges coordinates, they have to pass through.
+ * LayoutAlgorithms can be registered with a {@link LayoutOption} at a {@link LayoutRegister}.
  * 
  * @param <G> the type of directed graph which should be processed
  * @param <V> the type of vertex used in the graph

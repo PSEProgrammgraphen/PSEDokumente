@@ -2,30 +2,33 @@ package graphmodel;
 
 
 /**
- * This vertex interface specifies an vertex.
- * An vertex contains an ID and a name
- *
+ * This vertex interface specifies a vertex.
+ * Every vertex contains an ID and a name.
+ * The ID of a vertex is unique.
  */
 public interface Vertex {
 
 	/**
 	 * Get the name of the vertex
+	 * A descriptive name of the vertex.
+	 * Multiple vertices with equal name in one graph are allowed.
+	 * Therefore don't use this as identifer, instead use {@code getID()}.
 	 * 
-	 * @return 
+	 * @return the name of the vertex
 	 */
 	public String getName();
 
 	/**
-	 * Get the ID of the vertex
+	 * Get the ID of the vertex.
+	 * Every vertex in one graph has a unique ID
 	 * 
-	 * @return 
+	 * @return the ID of the vertex
 	 */
 	public Integer getID(); 
 
+	// TODO: Add JavaDoc below.
 	/**
 	 * Adds Values to FastGraphAccessor
-	 * 
-	 * @return 
 	 */
 	public void addToFastGraphAccessor(FastGraphAccessor fga);
 

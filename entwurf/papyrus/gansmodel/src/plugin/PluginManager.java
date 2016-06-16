@@ -16,12 +16,12 @@ public class PluginManager {
 
 	private static PluginManager mgr;
 
-	/**
-	 * 
-	 */
-	private PluginManager() {
-	}
+	private PluginManager() {}
 	
+	/**
+	 * Returns the singleton instance of the plugin manager.
+	 * @return the plugin manager
+	 */
 	public static PluginManager getPluginManager() {
 		if (mgr == null) {
 			mgr = new PluginManager();
@@ -29,13 +29,32 @@ public class PluginManager {
 		return mgr;
 	}
 	
-	public void addWorkspaceOption(WorkspaceOption option) { }
-	public List<WorkspaceOption> getWorkspaceOptions() { return null; }
 	public void addExporter(Exporter exporter) { }
 	public List<Exporter> getExporters() { return null; }
 	public void addImporter(Importer importer) { }
 	public List<Importer> getImporters() { return null; }
-	public void addLayoutAlgorithm(LayoutAlgorithm layoutAlgorithm) { }
-	public List<LayoutAlgorithm> getLayoutAlgorithms() { return null; }
+
+	/**
+	 * Returns all {@link WorkspaceOption}s provided by plugins.
+	 * @return a list of all workspace options
+	 */
+	public List<WorkspaceOption> getWorkspaceOptions() { return null; } 
+	
+	/**
+	 * Returns all vertex filter provided by plugins.
+	 * @return a list of all vertex filter
+	 */
+	public List<VertexFilter> getVertexFilter() { return null; }
+	
+	/**
+	 * Returns a list of all edge filter provided by plugins.
+	 * @return a list of all edge filter
+	 */
+	public List<EdgeFilter> getEdgeFilter() { return null; }
+	
+	/**
+	 * Returns a list of all plugins loaded by the ServiceLoader.
+	 * @return all loaded plugins
+	 */
 	public List<Plugin> getPlugins() { return null; }
 }

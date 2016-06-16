@@ -5,14 +5,16 @@ package plugin;
 
 import java.util.List;
 
+import graphmodel.Edge;
 import graphmodel.Graph;
+import graphmodel.Vertex;
 
 /**
- * Stores a collection of layouts applicable to a specific subclass of graph.
- * @author Lucas
+ * Stores a collection of layouts.
+ * This 
  */
-public interface LayoutRegister<G extends Graph> {
+public interface LayoutRegister {
 	
-	public void addLayoutOption(LayoutOption<G> option);
-	public List<LayoutOption<G>>getLayoutOptions();
+	public void addLayoutOption(LayoutOption option);
+	public List<LayoutOption> getLayoutOptions();
 }
