@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
  * The {@link AbstractGraphModelBuilder} will then build the representation. 
  *
  */
-public interface Importer {
+public interface Exporter {
 
 	/**
 	 * Get all filetypes which this importer can parse
