@@ -13,7 +13,7 @@ import plugin.LayoutOption;
  * 
  *
  */
-public class SerializedGraph<V extends Vertex, E extends SerializedEdge<V>> 
+public class SerializedGraph<V extends Vertex, E extends SerializedEdge<V>>
 		implements Graph<V, E> {
 
 	/**

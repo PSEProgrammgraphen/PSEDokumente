@@ -8,7 +8,7 @@ import java.util.Map;
  * An vertex contains an ID and a name
  *
  */
-public class SerializedVertex {
+public class SerializedVertex implements Vertex {
 	private String name;
 	private int id;
 
