@@ -39,7 +39,7 @@ public interface EdgeDrawerGraph<G extends DirectedGraph<V, E>, V extends Vertex
 	
 	/**
 	 * Removes the corner on the specified edge at the index
-	 * @param edge  the edge to reomve the corner
+	 * @param edge  the edge to remove the corner
 	 * @param index the index of the corner to remove
 	 */
 	public void removeEdgeCorner(SugiyamaEdge<V, E> edge, int index);

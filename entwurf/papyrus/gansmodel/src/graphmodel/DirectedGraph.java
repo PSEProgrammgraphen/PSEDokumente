@@ -142,4 +142,10 @@ public class DirectedGraph<V extends Vertex, E extends DirectedEdge<V>>
 		
 	}
 
+	@Override
+	public SerializedGraph serialize() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -23,6 +23,12 @@ public class DefaultVertex implements Vertex {
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public SerializedVertex serialize() {
+		// TODO Auto-generated method stub
+		return null;
 	} 
 
 }

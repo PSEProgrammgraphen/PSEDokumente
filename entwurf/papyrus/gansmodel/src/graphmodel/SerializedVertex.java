@@ -1,5 +1,7 @@
 package graphmodel;
 
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This vertex interface specifies an vertex.

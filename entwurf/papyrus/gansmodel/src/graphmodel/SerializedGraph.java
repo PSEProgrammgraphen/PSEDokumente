@@ -1,7 +1,10 @@
 package graphmodel;
 
 import java.util.Set;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import plugin.LayoutAlgorithm;
 import plugin.LayoutOption;
 
@@ -18,15 +21,6 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	 */
 	public void addEdge() {
 
-	}
-
-	/**
-	 * Set a set of vertices
-	 * 
-	 * @param edge 
-	 */
-	public void setVertexSet(Set<E> edge) {
-		
 	}
 
 	/**
