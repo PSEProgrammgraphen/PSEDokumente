@@ -11,6 +11,7 @@ public class PluginManager {
 
 	private List<WorkspaceOption> workspaceOptions;
 	private List<Importer> importers;
+	private List<Exporter> exporters;
     private ServiceLoader<Plugin> loader;	
     private List<LayoutAlgorithm> layoutAlgorithms;
 
