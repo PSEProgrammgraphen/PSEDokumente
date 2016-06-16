@@ -12,7 +12,7 @@ public interface Vertex {
 	 * Get the name of the vertex
 	 * A descriptive name of the vertex.
 	 * Multiple vertices with equal name in one graph are allowed.
-	 * Therefore don't use this as identifer, instead use {@code getID()}.
+	 * Therefore don't use this as identifier, instead use {@code getID()}.
 	 * 
 	 * @return the name of the vertex
 	 */
@@ -24,12 +24,27 @@ public interface Vertex {
 	 * 
 	 * @return the ID of the vertex
 	 */
-	public Integer getID(); 
+	public Integer getID();
 
 	// TODO: Add JavaDoc below.
 	/**
 	 * Adds Values to FastGraphAccessor
 	 */
+	
+	/**
+	 * Get the X-coordinate of the vertex.
+	 * 
+	 * @return the X-coordinate of this vertex
+	 */
+	public int getX();
+	
+	/**
+	 * Get the Y-coordinate of the vertex.
+	 * 
+	 * @return the Y-coordinate of the vertex
+	 */
+	public int getY();
+	
 	public void addToFastGraphAccessor(FastGraphAccessor fga);
 
 	public SerializedVertex serialize();

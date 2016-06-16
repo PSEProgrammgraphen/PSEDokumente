@@ -47,4 +47,16 @@ public class SerializedVertex implements Vertex {
 	public SerializedVertex serialize() {
 		return this;
 	}
+
+	@Override
+	public int getX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
