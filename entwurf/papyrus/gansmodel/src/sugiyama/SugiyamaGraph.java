@@ -107,75 +107,6 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	 */
 	public Set<E> restoreReplacedEdges() { return null; }
 	
-	/**
-	 * A supplement path for connecting vertices, which are more than one layer apart.
-	 * They are stored in the SugiyamaEdge along with the substituted edge.
-	 */
-	public static class SupplementPath<V extends Vertex, E extends DirectedEdge<V>> extends DirectedEdge<V>
-	{
-		/**
-		 * Returns the number of vertices including source and target.
-		 * @return the length of the path
-		 */
-		public int getLength() {return 0;}
-		
-		/**
-		 * Returns the list of vertices on the path sorted from source to target excluding the source and target.
-		 * @return the list of vertices
-		 */
-		public List<SupplementVertex> getDummyVertices() {return null;}
-		
-		/**
-		 * Returns the list of edges on the path from source to target
-		 * @return the edges
-		 */
-		public List<SupplementEdge> getEdges() {return null;}
-		
-		/**
-		 * Returns the edge which is substituted by this path
-		 * @return the replaced edge
-		 */
-		public E getReplacedEdge() {return null;}
-	}
-	/**
-	 * A supplement edge which is part of a {@link SupplementPath}.
-	 */
-	public static class SupplementEdge extends DirectedEdge<DefaultVertex> {}
-	
-	/**
-	 * A supplement vertex which is part of a {@link SupplementPath}.
-	 */
-	public static class SupplementVertex extends DefaultVertex {}
-	
-	
-	public static class SugiyamaVertex<V extends Vertex> extends DefaultVertex
-	{
-		public boolean isDummyVertex() {return false;}
-		public V getVertex() {return null;}
-		
-	}
-	
-	/**
-	 * A wrapper class for directed edges to implement additional functionality
-	 * to apply the sugiyama layout to the SugiyamaGraph containing them.
-	 *
-	 * @param <E> the type of the edge which should be wrapped
-	 * @param <V> the type of the vertex the E connects
-	 */
-	public static class SugiyamaEdge<V extends Vertex,E extends DirectedEdge<V>> extends DirectedEdge<SugiyamaVertex<V>>
-	{
-		private SugiyamaEdge(E edge) {}
-		
-		public E getEdge() { return null; }
-		
-		private boolean isReversed() { return false; }
-		
-		private void setReversed(boolean rev) {}
-		
-		private boolean isReplaced() { return false; }
-		
-		private List<SupplementPath> getSupplement() { return null; }
-	}
 	
 	@Override
 	public SerializedGraph serialize() {
@@ -278,4 +209,75 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	/**
+	 * A supplement path for connecting vertices, which are more than one layer apart.
+	 * They are stored in the SugiyamaEdge along with the substituted edge.
+	 */
+	public static class SupplementPath<V extends Vertex, E extends DirectedEdge<V>> extends DirectedEdge<V>
+	{
+		/**
+		 * Returns the number of vertices including source and target.
+		 * @return the length of the path
+		 */
+		public int getLength() {return 0;}
+		
+		/**
+		 * Returns the list of vertices on the path sorted from source to target excluding the source and target.
+		 * @return the list of vertices
+		 */
+		public List<SupplementVertex> getDummyVertices() {return null;}
+		
+		/**
+		 * Returns the list of edges on the path from source to target
+		 * @return the edges
+		 */
+		public List<SupplementEdge> getEdges() {return null;}
+		
+		/**
+		 * Returns the edge which is substituted by this path
+		 * @return the replaced edge
+		 */
+		public E getReplacedEdge() {return null;}
+	}
+	/**
+	 * A supplement edge which is part of a {@link SupplementPath}.
+	 */
+	public static class SupplementEdge extends DirectedEdge<DefaultVertex> {}
+	
+	/**
+	 * A supplement vertex which is part of a {@link SupplementPath}.
+	 */
+	public static class SupplementVertex extends DefaultVertex {}
+	
+	
+	public static class SugiyamaVertex<V extends Vertex> extends DefaultVertex
+	{
+		public boolean isDummyVertex() {return false;}
+		public V getVertex() {return null;}
+		
+	}
+	
+	/**
+	 * A wrapper class for directed edges to implement additional functionality
+	 * to apply the sugiyama layout to the SugiyamaGraph containing them.
+	 *
+	 * @param <E> the type of the edge which should be wrapped
+	 * @param <V> the type of the vertex the E connects
+	 */
+	public static class SugiyamaEdge<V extends Vertex,E extends DirectedEdge<V>> extends DirectedEdge<SugiyamaVertex<V>>
+	{
+		private SugiyamaEdge(E edge) {}
+		
+		public E getEdge() { return null; }
+		
+		private boolean isReversed() { return false; }
+		
+		private void setReversed(boolean rev) {}
+		
+		private boolean isReplaced() { return false; }
+		
+		private List<SupplementPath<V, E>> getSupplement() { return null; }
+	}
+
 }

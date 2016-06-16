@@ -5,16 +5,12 @@ package plugin;
 
 import java.util.List;
 
-import graphmodel.Edge;
-import graphmodel.Graph;
-import graphmodel.Vertex;
-
 /**
  * Stores a collection of layouts.
  * This 
  */
-public interface LayoutRegister {
+public interface LayoutRegister<E extends LayoutOption> {
 	
-	public void addLayoutOption(LayoutOption option);
+	public void addLayoutOption(E option);
 	public List<LayoutOption> getLayoutOptions();
 }

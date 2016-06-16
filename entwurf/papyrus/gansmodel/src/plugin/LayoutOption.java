@@ -1,9 +1,6 @@
 package plugin;
 
 
-import graphmodel.Edge;
-import graphmodel.Graph;
-import graphmodel.Vertex;
 import parameter.Settings;
 
 /**

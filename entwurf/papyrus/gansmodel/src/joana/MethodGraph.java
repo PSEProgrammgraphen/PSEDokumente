@@ -1,10 +1,9 @@
 package joana;
 
-import plugin.LayoutAlgorithm;
+import java.util.List;
+
 import plugin.LayoutOption;
 import plugin.LayoutRegister;
-
-import java.util.List;
 
 /**
  * This is a specified graph representation for a MethodGraph in JOANA 

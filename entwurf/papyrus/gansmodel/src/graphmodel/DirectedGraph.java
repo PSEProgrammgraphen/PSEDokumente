@@ -1,8 +1,8 @@
 package graphmodel;
 
-import java.util.Set;
 import java.util.List;
-import plugin.LayoutAlgorithm;
+import java.util.Set;
+
 import plugin.LayoutOption;
 
 /**

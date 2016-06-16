@@ -2,13 +2,11 @@ package joana;
 
 import java.util.List;
 
-import graphmodel.DirectedGraphLayoutRegister;
 import parameter.Settings;
 import plugin.EdgeFilter;
 import plugin.LayoutOption;
 import plugin.LayoutRegister;
 import plugin.Plugin;
-import plugin.PluginManager;
 import plugin.VertexFilter;
 import plugin.Workspace;
 import plugin.WorkspaceOption;
@@ -64,30 +62,6 @@ public class JoanaPlugin implements Plugin {
 	@Override
 	public void load() {
 	}
-	
-	public static CallGraphLayoutRegister getCallGraphLayoutRegister() {return cRegister;}
-	public static MethodGraphLayoutRegister getMethodGraphLayoutRegister() {return mRegister;}
-		
-	public static class CallGraphLayoutRegister implements LayoutRegister
-	{ 
-		@Override
-		public void addLayoutOption(LayoutOption option) { }
-
-		@Override
-		public List<LayoutOption> getLayoutOptions() { return null; } 
-	}
-
-	public static class MethodGraphLayoutRegister implements LayoutRegister
-	{
-		@Override
-		public void addLayoutOption(LayoutOption option) { }
-
-		@Override
-		public List<LayoutOption> getLayoutOptions() 
-		{ 
-			return new DirectedGraphLayoutRegister().getLayoutOptions(); 
-		} 
-	}
 
 	@Override
 	public List<WorkspaceOption> getWorkspaceOptions() {
@@ -106,5 +80,32 @@ public class JoanaPlugin implements Plugin {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public static CallGraphLayoutRegister getCallGraphLayoutRegister() {return cRegister;}
+	public static MethodGraphLayoutRegister getMethodGraphLayoutRegister() {return mRegister;}
+		
+	public static class CallGraphLayoutRegister implements LayoutRegister<CallGraphLayoutOption>
+	{ 
+		@Override
+		public void addLayoutOption(CallGraphLayoutOption option) { }
 
+		@Override
+		public List<LayoutOption> getLayoutOptions() { return null; } 
+	}
+
+	public static class MethodGraphLayoutRegister implements LayoutRegister<MethodGraphLayoutOption>
+	{
+
+		@Override
+		public void addLayoutOption(MethodGraphLayoutOption option) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public List<LayoutOption> getLayoutOptions() {
+			// TODO Auto-generated method stub
+			return null;
+		} 
+	}
 }

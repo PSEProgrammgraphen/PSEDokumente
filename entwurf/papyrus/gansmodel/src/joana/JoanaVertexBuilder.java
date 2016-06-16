@@ -1,6 +1,5 @@
 package joana;
 
-import graphmodel.IEdgeBuilder;
 import graphmodel.IGraphBuilder;
 import graphmodel.IVertexBuilder;
 import graphmodel.Vertex;
