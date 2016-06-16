@@ -8,17 +8,6 @@ import java.util.Set;
  */
 public interface Graph<V extends Vertex, E extends Edge<V>> {
 
-	/**
-	 * Adds a new Edge to the graph
-	 */
-	public void addEdge();
-
-	/**
-	 * Set a set of vertices
-	 * 
-	 * @param edge 
-	 */
-	public void setVertexSet(Set<E> edge);
 
 	/**
 	 * Get a set of all vertices in this graph
@@ -27,34 +16,12 @@ public interface Graph<V extends Vertex, E extends Edge<V>> {
 	 */
 	public Set<V> getVertexSet();
 
-
-	/**
-	 * Set a set of edges
-	 * 
-	 * @param edge 
-	 */
-	public void setEdgeSet(Set<E> edge);
-
 	/**
 	 * Get a set of all edges in this graph
 	 * 
 	 * @return 
 	 */
 	public Set<E> getEdgeSet();
-
-	/**
-	 * Adds a new Vertex to the graph
-	 * 
-	 * @param vertex 
-	 */
-	public void addVertex(V vertex);
-
-	/**
-	 * Adds a new Edge to the graph
-	 * 
-	 * @param edge 
-	 */
-	public void addEdge(E edge);
 
 	/**
 	 * get a list of all edges of a vertex

@@ -1,8 +1,10 @@
 package sugiyama;
 
+import graphmodel.DirectedGraph;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
+import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface ICycleRemoverGraph extends SugiyamaStepGraph {
+public interface ICycleRemoverGraph extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
 	/**
 	 * Reverses the direction of a sugiyama edge.
 	 * The underlying edge won't be reversed to avoid

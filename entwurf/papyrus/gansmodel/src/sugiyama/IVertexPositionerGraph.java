@@ -2,9 +2,11 @@ package sugiyama;
 
 import java.util.List;
 
+import graphmodel.DirectedGraph;
+import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface IVertexPositionerGraph  extends SugiyamaStepGraph {
+public interface IVertexPositionerGraph extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
 
 	/**
 	 * Get the amount of layers.
@@ -41,6 +43,26 @@ public interface IVertexPositionerGraph  extends SugiyamaStepGraph {
 	 */
 	public List<SugiyamaVertex> getLayer(int layerNum);
 	
+	
+	/**
+	 * Returns the height, i.e. the number of layers.
+	 * @return the height
+	 */
+	public int getHeight();
+	
+	/**
+	 * Returns the width of the layer specified by it's index, i.e. the number of vertices in the layer.
+	 * @param layerN the index of the layer
+	 * @return the width of the layer
+	 */
+	public int getWidth(int layerN);
+
+	/**
+	 * Returns the width of the widest layer, i.e. the number of vertices the layer with the most vertices contains.
+	 * @return the maximum width 
+	 */
+	public int getMaxWidth();
+	
 	/**
 	 * Sets the y-coordinate of all vertices on layer Y.
 	 * 
@@ -56,5 +78,6 @@ public interface IVertexPositionerGraph  extends SugiyamaStepGraph {
 	 * @param x 	 the x-coordinate
 	 */
 	public void setX(SugiyamaVertex vertex, int x);
+
 	
 }

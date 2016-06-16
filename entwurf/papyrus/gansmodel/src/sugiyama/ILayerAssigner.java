@@ -4,10 +4,6 @@ import java.util.Set;
 
 /**
  * This interface represents a class that takes a directed graph and assigns every vertex in it a layer.
- * 
- * @param <G> the type of the directed graph
- * @param <V> the type of the vertices the graph contains
- * @param <E> the type of the directed edges the graph contains
  */
 public interface ILayerAssigner {
 

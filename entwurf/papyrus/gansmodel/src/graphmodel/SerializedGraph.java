@@ -40,15 +40,6 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	/**
 	 * 
 	 * @param edge 
-	 */
-	public void setEdgeSet(Set<E> edge) { 
-		// TODO Auto-generated method
-	 }
-
-
-	/**
-	 * 
-	 * @param edge 
 	 * @return 
 	 */
 	public V getSource(E edge) { 
@@ -56,27 +47,6 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 		return null;
 	 }
 
-	/**
-	 * 
-	 * @param vertex 
-	 */
-	public void addVertex(V vertex) { 
-		// TODO Auto-generated method
-	 }
-
-	/**
-	 * 
-	 * @param edge 
-	 */
-	public void addEdge(E edge) { 
-		// TODO Auto-generated method
-	 }
-
-	@Override
-	public void setVertexSet(Set<E> edge) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public Set<E> edgesOf(V vertex) {

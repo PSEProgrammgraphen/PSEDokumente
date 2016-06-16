@@ -2,9 +2,11 @@ package sugiyama;
 
 import java.util.List;
 
+import graphmodel.DirectedGraph;
+import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface ILayerAssignerGraph extends SugiyamaStepGraph {
+public interface ILayerAssignerGraph extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
 	
 	/**
 	 * Assigns a vertex to a certain layer represented by a number.
