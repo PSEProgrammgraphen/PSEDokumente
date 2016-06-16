@@ -164,11 +164,16 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	 */
 	public static class SugiyamaEdge<V extends Vertex,E extends DirectedEdge<V>> extends DirectedEdge<SugiyamaVertex<V>>
 	{
-		private SugiyamaEdge(E edge) {}	
+		private SugiyamaEdge(E edge) {}
+		
 		public E getEdge() { return null; }
+		
 		private boolean isReversed() { return false; }
+		
 		private void setReversed(boolean rev) {}
+		
 		private boolean isReplaced() { return false; }
+		
 		private List<SupplementPath> getSupplement() { return null; }
 	}
 	
