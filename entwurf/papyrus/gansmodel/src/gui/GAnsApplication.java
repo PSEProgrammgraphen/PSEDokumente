@@ -2,7 +2,6 @@ package gui;
 
 import java.io.File;
 import java.util.LinkedList;
-import java.util.Optional;
 
 import graphmodel.Graph;
 import graphmodel.GraphModel;
@@ -16,8 +15,6 @@ import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -25,13 +22,10 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TreeItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -39,6 +33,8 @@ import javafx.stage.Stage;
 import joana.MethodGraphLayout;
 import parameter.ParameterDialogGenerator;
 import parameter.Settings;
+import plugin.FilterSet;
+import plugin.LayoutOption;
 import plugin.PluginManager;
 import plugin.Workspace;
 
@@ -58,6 +54,8 @@ public class GAnsApplication extends Application {
 	private PluginManager pluginManager;
 	private Workspace workspace;
 	private GraphModel model;
+	private FilterSet filterSet;
+	private LayoutOption layoutOption;
 
 	private GraphView currentGraphView;
 	// Mapped TabId zum Controller.
