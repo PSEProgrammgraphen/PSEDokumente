@@ -1,9 +1,9 @@
 package sugiyama;
 
-import plugin.LayoutAlgorithm;
+import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.Vertex;
-import graphmodel.DirectedEdge;
+import plugin.LayoutAlgorithm;
 
 /**
  * This interface supports in addition to Layouts, where every vertex a coordinate and every

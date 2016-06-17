@@ -1,8 +1,5 @@
 package parameter;
 
-
-import java.util.List;
-
 public class Main {
     private static Settings settings;
 

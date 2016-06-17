@@ -1,11 +1,12 @@
 package joana;
 
-import plugin.LayoutOption;
 import java.util.List;
-import plugin.Workspace;
-import parameter.Settings;
-import graphmodel.IGraphModelBuilder;
+
 import graphmodel.GraphModel;
+import graphmodel.IGraphModelBuilder;
+import parameter.Settings;
+import plugin.LayoutOption;
+import plugin.Workspace;
 
 /**
  * The {@link JoanaWorkspace} is the workspace for Joana graphs

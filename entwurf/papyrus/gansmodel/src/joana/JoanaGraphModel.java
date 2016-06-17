@@ -1,8 +1,9 @@
 package joana;
 
-import graphmodel.GraphModel;
 import java.util.List;
+
 import graphmodel.Graph;
+import graphmodel.GraphModel;
 
 /**
  * This is the Joana specified Graphmodel.

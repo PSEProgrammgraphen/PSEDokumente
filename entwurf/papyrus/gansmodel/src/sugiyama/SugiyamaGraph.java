@@ -1,18 +1,15 @@
 package sugiyama;
 
-import graphmodel.DirectedGraph;
-import graphmodel.FastGraphAccessor;
-import graphmodel.SerializedGraph;
-import graphmodel.DefaultVertex;
-import graphmodel.DirectedEdge;
-import graphmodel.Vertex;
-import sugiyama.SugiyamaGraph.SupplementPath;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import sugiyama.SugiyamaGraph.SugiyamaVertex;
-import sugiyama.SugiyamaGraph.SugiyamaEdge;
+
+import graphmodel.DefaultVertex;
+import graphmodel.DirectedEdge;
+import graphmodel.DirectedGraph;
+import graphmodel.FastGraphAccessor;
+import graphmodel.SerializedGraph;
+import graphmodel.Vertex;
 
 
 /**

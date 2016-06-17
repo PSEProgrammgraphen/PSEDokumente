@@ -3,9 +3,7 @@ package sugiyama;
 import java.util.List;
 import java.util.Set;
 
-import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
-import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
@@ -61,6 +59,9 @@ public interface IEdgeDrawerGraph  extends DirectedGraph<SugiyamaVertex, Sugiyam
 	 */
 	public Set<SugiyamaEdge> getReversedEdges();
 	
+	/**
+	 * This class is a standard immutable 2D Vector with integer values as it's components.
+	 */
 	public class Point 
 	{
 		public final int x;

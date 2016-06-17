@@ -1,11 +1,10 @@
 package graphmodel;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import objectproperty.GAnsProperty;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * A {@link SerializedGraph} is a specific Graph that contains all informations as Strings

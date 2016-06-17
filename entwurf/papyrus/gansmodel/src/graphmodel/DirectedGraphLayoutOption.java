@@ -1,6 +1,5 @@
 package graphmodel;
 
-import parameter.Settings;
 import plugin.LayoutOption;
 
 /**
