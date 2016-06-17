@@ -1,9 +1,6 @@
 package graphmodel;
 
-import java.util.List;
 import java.util.Set;
-
-import plugin.LayoutOption;
 
 /**
  * A {@link DirectedGraph} is a specific Graph which contains just {@link DirectedEdge} as edges

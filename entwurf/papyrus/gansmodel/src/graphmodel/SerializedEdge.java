@@ -9,15 +9,23 @@ import java.util.Map;
  *
  */
 public class SerializedEdge<V extends Vertex> implements Edge<V> {
+	private String name;
+	private int id;
+	private String label;
+	
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
+	
 	@Override
 	public Integer getID() {
-		// TODO Auto-generated method stub
-		return null;
+		return id;
+	}
+	
+	@Override
+	public String getLabel() {
+		return label;
 	}
 
 	@Override

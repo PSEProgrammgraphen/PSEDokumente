@@ -11,6 +11,7 @@ import java.util.Map;
 public class SerializedVertex implements Vertex {
 	private String name;
 	private int id;
+	private String label;
 
 	/**
 	 * Get the name of the vertex
@@ -28,6 +29,10 @@ public class SerializedVertex implements Vertex {
 	 */
 	public Integer getID() {
 		return this.id;
+	}
+	
+	public String getLabel() {
+		return this.label;
 	}
 
 	/**

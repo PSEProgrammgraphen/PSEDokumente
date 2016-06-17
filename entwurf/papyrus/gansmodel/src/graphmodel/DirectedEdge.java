@@ -2,6 +2,8 @@ package graphmodel;
 
 import java.util.List;
 
+import objectproperty.GAnsProperty;
+
 /**
  * A {@link DirectedEdge} is an edge that has one source and one target vertex.
  * So the direction of the edge is specified.
@@ -10,9 +12,12 @@ import java.util.List;
 public class DirectedEdge<V extends Vertex> implements Edge<V> {
 
 	private List<V> vertices;
+	private GAnsProperty<String> name;
+	private GAnsProperty<Integer> id;
+	private GAnsProperty<String> label;
 	
 	/**
-	 * Get the source vertex of this directed edge.
+	 * Returns the source vertex of this directed edge.
 	 * 
 	 * @return
 	 * 		the source vertex of this directed edge
@@ -22,7 +27,7 @@ public class DirectedEdge<V extends Vertex> implements Edge<V> {
 	}
 	
 	/**
-	 * Get the target vertex of this edge.
+	 * Returns the target vertex of this edge.
 	 * 
 	 * @return
 	 * 		the target vertex of this directed edge
@@ -38,13 +43,18 @@ public class DirectedEdge<V extends Vertex> implements Edge<V> {
 	
 	@Override
 	public String getName() {
-		return null;
+		return name.getPropertyValue();
 	}
 
 
 	@Override
 	public Integer getID() {
-		return null;
+		return id.getPropertyValue();
+	}
+	
+	@Override
+	public String getLabel() {
+		return label.getPropertyValue();
 	}
 
 	@Override

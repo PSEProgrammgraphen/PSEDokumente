@@ -1,7 +1,7 @@
 package gui;
 
-import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 import graphmodel.Edge;
 import graphmodel.Graph;
@@ -15,8 +15,8 @@ import graphmodel.Vertex;
 public class GraphViewGraphFactory {
 
 	private Graph<?, ?> graph;
-	private HashMap<VertexShape, Vertex> vertices;
-	private HashMap<EdgeShape, Edge<?> > edges;
+	private Map<VertexShape, Vertex> vertices;
+	private Map<EdgeShape, Edge<?> > edges;
 
 	/**
 	 * Constructor. Sets the graph and generates the vertices and edges for

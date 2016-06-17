@@ -230,6 +230,18 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		return null;
 	}
 	
+	@Override
+	public String getName() {
+		// Is not needed in this graph.
+		return graph.getName();
+	}
+
+	@Override
+	public Integer getID() {
+		// Is not needed in this graph.
+		return graph.getID();
+	}
+	
 	/**
 	 * A supplement path for connecting vertices, which are more than one layer apart.
 	 * They are stored in the SugiyamaEdge along with the substituted edge.

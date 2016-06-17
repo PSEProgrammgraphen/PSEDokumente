@@ -13,15 +13,14 @@ public class GAnsObjectProperty<T> extends SimpleObjectProperty<T> {
 	/**
 	 * Constructor.
 	 * 
-	 * @param bean
-	 *            Bean that will be given to the SimpleObjectProperty
-	 *            constructor.
+	 * @param parent
+	 *            object that contains the GAnsObjectProperty.
 	 * @param name
 	 *            name that will be given to the SimpleObjectProperty
 	 *            constructor.
 	 */
-	public GAnsObjectProperty(Object bean, String name) {
-		super(bean, name);
+	public GAnsObjectProperty(Object parent, String name) {
+		super(parent, name);
 	}
 
 	@Override

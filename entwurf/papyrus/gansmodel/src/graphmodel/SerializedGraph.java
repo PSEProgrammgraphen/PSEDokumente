@@ -1,6 +1,9 @@
 package graphmodel;
 
 import java.util.Set;
+
+import objectproperty.GAnsProperty;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +14,9 @@ import java.util.Map;
  */
 public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdge<V>>
 		implements Graph<V, E> {
+	
+	private GAnsProperty<String> name;
+	private GAnsProperty<Integer> id;
 
 	/**
 	 * Adds a new Edge to the graph
@@ -66,5 +72,15 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 
 	public SerializedGraph<V, E> serialize() {
 		return this;
+	}
+
+	@Override
+	public String getName() {
+		return name.getPropertyValue();
+	}
+
+	@Override
+	public Integer getID() {
+		return id.getPropertyValue();
 	}
 }

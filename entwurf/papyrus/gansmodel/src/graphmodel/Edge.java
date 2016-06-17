@@ -5,35 +5,43 @@ import java.util.List;
 
 /**
  * This edge interface specifies an edge.
- * An edge contains two vertices and needs an ID.
+ * An edge contains two vertices, an ID, a name and a label.
  *
  */
 public interface Edge<V extends Vertex> {
 
 	/**
-	 * Get the vertices connected with this edge of this edge.
+	 * Returns the vertices connected with the edge of this edge.
 	 * 
 	 * @return
-	 * 		the vertices connected with this edge
+	 * 		the vertices connected with the edge
 	 */
 	public List<V> getVertices();
 
 	/**
-	 * Get the name of this Edge.
+	 * Returns the name of the Edge.
 	 * 
 	 * @return
-	 * 		name of this edge
+	 * 		name of the edge
 	 */
 	public String getName();
 
 
 	/**
-	 * Get the ID of this edge.
+	 * Returns the ID of the edge.
 	 * 
 	 * @return
-	 * 		id of this edge
+	 * 		id of the edge
 	 */
 	public Integer getID(); 
+	
+	/**
+	 * Returns the label of the edge.
+	 * 
+	 * @return
+	 * 		label of the edge
+	 */
+	public String getLabel(); 
 
 
 	/**

@@ -3,6 +3,7 @@ package graphmodel;
 import java.util.List;
 import java.util.Set;
 
+import objectproperty.GAnsProperty;
 import plugin.LayoutOption;
 
 /**
@@ -14,6 +15,8 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>>
 		implements DirectedGraph<V, E>, Layoutable {
 
 	private DirectedGraphLayoutRegister register;
+	private GAnsProperty<String> name;
+	private GAnsProperty<Integer> id;
 	
 	/**
 	 * Get the outdegree of a vertex
@@ -109,6 +112,16 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>>
 	public SerializedGraph serialize() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String getName() {
+		return name.getPropertyValue();
+	}
+
+	@Override
+	public Integer getID() {
+		return id.getPropertyValue();
 	}
 
 }

@@ -10,6 +10,23 @@ public interface Graph<V extends Vertex, E extends Edge<V>> {
 
 
 	/**
+	 * Returns the name of the Graph.
+	 * 
+	 * @return
+	 * 		name of the graph
+	 */
+	public String getName();
+
+
+	/**
+	 * Returns the ID of the graph.
+	 * 
+	 * @return
+	 * 		id of the graph
+	 */
+	public Integer getID(); 
+	
+	/**
 	 * Get a set of all vertices in this graph
 	 * 
 	 * @return 
