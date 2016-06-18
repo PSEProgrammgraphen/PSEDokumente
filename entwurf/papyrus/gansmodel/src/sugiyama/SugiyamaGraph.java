@@ -10,6 +10,7 @@ import graphmodel.DirectedGraph;
 import graphmodel.FastGraphAccessor;
 import graphmodel.SerializedGraph;
 import graphmodel.Vertex;
+import plugin.LayoutOption;
 
 
 /**
@@ -304,5 +305,11 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		private boolean isReplaced() { return false; }
 		
 		private List<SupplementPath> getSupplement() { return null; }
+	}
+
+	@Override
+	public List<LayoutOption> getRegisteredLayouts() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

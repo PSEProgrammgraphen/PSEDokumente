@@ -1,10 +1,12 @@
 package graphmodel;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import objectproperty.GAnsProperty;
+import plugin.LayoutOption;
 
 /**
  * A {@link SerializedGraph} is a specific Graph that contains all informations as Strings
@@ -81,5 +83,11 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	@Override
 	public Integer getID() {
 		return id.getPropertyValue();
+	}
+
+	@Override
+	public List<LayoutOption> getRegisteredLayouts() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

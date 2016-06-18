@@ -12,7 +12,7 @@ import plugin.LayoutOption;
  *
  */
 public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> 
-		implements DirectedGraph<V, E>, Layoutable {
+		implements DirectedGraph<V, E> {
 
 	private DirectedGraphLayoutRegister register;
 	private GAnsProperty<String> name;
