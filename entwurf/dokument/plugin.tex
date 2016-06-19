@@ -4,20 +4,21 @@
 \vskip .13in
 \hbox{{\bf  Interfaces}}
 \entityintro{Constraint}{plugin.Constraint}{}
+\entityintro{Exporter}{plugin.Exporter}{The importer interface is used to import a graph from a file into the intern representation.}
 \entityintro{FilterSet}{plugin.FilterSet}{A FilterSet is used to collect all available filters for a specific Graph from a workspace.}
 \entityintro{Importer}{plugin.Importer}{The importer interface is used to import a graph from a file into the intern representation.}
-\entityintro{LayoutAlgorithm}{plugin.LayoutAlgorithm}{A implementations of LayoutAlgorithm take a graph.}
-\entityintro{LayoutRegister}{plugin.LayoutRegister}{Stores a collection of layouts applicable to a specific subclass of graph.}
+\entityintro{LayoutAlgorithm}{plugin.LayoutAlgorithm}{An implementations of LayoutAlgorithm takes a graph.}
+\entityintro{LayoutRegister}{plugin.LayoutRegister}{Stores a collection of layouts.}
 \entityintro{Plugin}{plugin.Plugin}{}
-\entityintro{Workspace}{plugin.Workspace}{}
+\entityintro{Workspace}{plugin.Workspace}{A workspace contains a set of default actions and options for displaying a specific domain of graphs.}
 \vskip .13in
 \hbox{{\bf  Classes}}
-\entityintro{EdgeFilter}{plugin.EdgeFilter}{This Class represents a filter for edge types.}
-\entityintro{EntryPointOption}{plugin.EntryPointOption}{}
-\entityintro{LayoutOption}{plugin.LayoutOption}{}
+\entityintro{EdgeFilter}{plugin.EdgeFilter}{This class represents a filter for edges.}
+\entityintro{EntryPointOption}{plugin.EntryPointOption}{An entry point option is an abstract superclass for all entry points, where the user can choose one of multiple entry points.}
+\entityintro{LayoutOption}{plugin.LayoutOption}{An option for a layout of a specific graph.}
 \entityintro{PluginManager}{plugin.PluginManager}{}
 \entityintro{VertexFilter}{plugin.VertexFilter}{This Class represents a filter for vertex types.}
-\entityintro{WorkspaceOption}{plugin.WorkspaceOption}{}
+\entityintro{WorkspaceOption}{plugin.WorkspaceOption}{This is an option for a}
 \vskip .1in
 \vskip .1in
 \subsection{\label{plugin.Constraint}\index{Constraint@\textit{ Constraint}}Interface Constraint}{
@@ -26,6 +27,85 @@
 \begin{lstlisting}[frame=none]
 public interface Constraint
 \end{lstlisting}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{plugin.Exporter}\index{Exporter@\textit{ Exporter}}Interface Exporter}{
+\vskip .1in 
+The importer interface is used to import a graph from a file into the intern representation. The main task is to parse a FileInputStream into the Interface of an AbstractGraphModelBuilder. The AbstractGraphModelBuilder will then build the representation.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Exporter
+\end{lstlisting}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{exportGraph(SerializedGraph, FileOutputStream)}
+{\bf  exportGraph}\\
+\begin{lstlisting}[frame=none]
+void exportGraph(graphmodel.SerializedGraph graph,java.io.FileOutputStream filestream)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+This method writes an \texttt{\small SerializedGraph}{\small 
+\refdefined{graphmodel.SerializedGraph}} into an FileOutputStream.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- }
+   \item{
+\texttt{filestream} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the name of this importer
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSupportedFileEndings()}
+{\bf  getSupportedFileEndings}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getSupportedFileEndings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get all filetypes which this importer can parse
+}
+\item{{\bf  Returns} -- 
+ 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
 }
 \subsection{\label{plugin.FilterSet}\index{FilterSet@\textit{ FilterSet}}Interface FilterSet}{
 \vskip .1in 
@@ -92,9 +172,7 @@ Returns a Set of all available \texttt{\small VertexFilter}{\small
 }
 \subsection{\label{plugin.Importer}\index{Importer@\textit{ Importer}}Interface Importer}{
 \vskip .1in 
-The importer interface is used to import a graph from a file into the intern representation. The main task is to parse a FileInputStream into the Interface of an \texttt{\small AbstractGraphModelBuilder}{\small 
-\refdefined{graphmodel.AbstractGraphModelBuilder}}. The \texttt{\small AbstractGraphModelBuilder}{\small 
-\refdefined{graphmodel.AbstractGraphModelBuilder}} will then build the representation.\vskip .1in 
+The importer interface is used to import a graph from a file into the intern representation. The main task is to parse a FileInputStream into the Interface of an AbstractGraphModelBuilder. The AbstractGraphModelBuilder will then build the representation.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Importer
@@ -122,7 +200,7 @@ Get the name of this importer
 \index{getSupportedFileEndings()}
 {\bf  getSupportedFileEndings}\\
 \begin{lstlisting}[frame=none]
-java.lang.String getSupportedFileEndings()\end{lstlisting} %end signature
+java.util.List getSupportedFileEndings()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -135,16 +213,15 @@ Get all filetypes which this importer can parse
 \end{itemize}
 }%end item
 \item{ 
-\index{importGraph(AbstractGraphModelBuilder, FileInputStream)}
+\index{importGraph(IGraphModelBuilder, FileInputStream)}
 {\bf  importGraph}\\
 \begin{lstlisting}[frame=none]
-void importGraph(graphmodel.AbstractGraphModelBuilder builder,java.io.FileInputStream filestream)\end{lstlisting} %end signature
+void importGraph(graphmodel.IGraphModelBuilder builder,java.io.FileInputStream filestream)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
-This method parses an FileInputStream into an \texttt{\small AbstractGraphModelBuilder}{\small 
-\refdefined{graphmodel.AbstractGraphModelBuilder}}.
+This method parses an FileInputStream into an AbstractGraphModelBuilder.
 }
 \item{
 {\bf  Parameters}
@@ -162,9 +239,9 @@ This method parses an FileInputStream into an \texttt{\small AbstractGraphModelB
 }
 \subsection{\label{plugin.LayoutAlgorithm}\index{LayoutAlgorithm@\textit{ LayoutAlgorithm}}Interface LayoutAlgorithm}{
 \vskip .1in 
-A implementations of LayoutAlgorithm take a graph. They assign its vertices absolute coordinates and assign its edges coordinates, they have to pass through. LayoutAlgorithms have to be registered with a \texttt{\small LayoutOption}{\small 
-\refdefined{plugin.LayoutOption}} at the \texttt{\small LayoutRegister}{\small 
-\refdefined{plugin.LayoutRegister}} of the Graph.\vskip .1in 
+An implementations of LayoutAlgorithm takes a graph. It assigns all vertices absolute coordinates and assigns all edges coordinates, they have to pass through. LayoutAlgorithms can be registered with a \texttt{\small LayoutOption}{\small 
+\refdefined{plugin.LayoutOption}} at a \texttt{\small LayoutRegister}{\small 
+\refdefined{plugin.LayoutRegister}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface LayoutAlgorithm
@@ -213,7 +290,7 @@ Layout the specified Graph.
 }
 \subsection{\label{plugin.LayoutRegister}\index{LayoutRegister@\textit{ LayoutRegister}}Interface LayoutRegister}{
 \vskip .1in 
-Stores a collection of layouts applicable to a specific subclass of graph.\vskip .1in 
+Stores a collection of layouts. This\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface LayoutRegister
@@ -222,7 +299,7 @@ public interface LayoutRegister
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{addLayoutOption(LayoutOption)}
+\index{addLayoutOption(E)}
 {\bf  addLayoutOption}\\
 \begin{lstlisting}[frame=none]
 void addLayoutOption(LayoutOption option)\end{lstlisting} %end signature
@@ -246,16 +323,92 @@ public interface Plugin
 \vskip -2em
 \begin{itemize}
 \item{ 
+\index{getEdgeFilter()}
+{\bf  getEdgeFilter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getEdgeFilter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all by the plugin provided \texttt{\small EdgeFilter}{\small 
+\refdefined{plugin.EdgeFilter}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+the list of provided edge filter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{getName()}
 {\bf  getName}\\
 \begin{lstlisting}[frame=none]
 java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the name of the plugin. Uniqueness can't be assumed.
+}
+\item{{\bf  Returns} -- 
+the name of the plugin 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexFilter()}
+{\bf  getVertexFilter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getVertexFilter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all by the plugin provided \texttt{\small VertexFilter}{\small 
+\refdefined{plugin.VertexFilter}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+the list of provided vertex filter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getWorkspaceOptions()}
+{\bf  getWorkspaceOptions}\\
+\begin{lstlisting}[frame=none]
+java.util.List getWorkspaceOptions()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all provided by the plugin \texttt{\small WorkspaceOption}{\small 
+\refdefined{plugin.WorkspaceOption}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+The list of provided workspace options 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{load()}
+{\bf  load}\\
+\begin{lstlisting}[frame=none]
+void load()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Called after all plugins have been constructed. "Inter-Plugin" communication, like registering of layouts for graphs in other plugins should be executed in here.
+}
+\end{itemize}
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{plugin.Workspace}\index{Workspace@\textit{ Workspace}}Interface Workspace}{
 \vskip .1in 
+A workspace contains a set of default actions and options for displaying a specific domain of graphs. The workspace manages the graphs instantiation through providing an \texttt{\small IGraphModelBuilder}{\small 
+\refdefined{graphmodel.IGraphModelBuilder}}. He also provides a list of layout options for graphs in his model.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Workspace
@@ -269,8 +422,14 @@ public interface Workspace
 \begin{lstlisting}[frame=none]
 graphmodel.GraphModel getGraphModel()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}} stored in the workspace.
+}
 \item{{\bf  Returns} -- 
- 
+the graph model 
 }%end item
 \end{itemize}
 }%end item
@@ -278,51 +437,68 @@ graphmodel.GraphModel getGraphModel()\end{lstlisting} %end signature
 \index{getGraphModelBuilder()}
 {\bf  getGraphModelBuilder}\\
 \begin{lstlisting}[frame=none]
-graphmodel.AbstractGraphModelBuilder getGraphModelBuilder()\end{lstlisting} %end signature
+graphmodel.IGraphModelBuilder getGraphModelBuilder()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a builder to build a graph model in this workspace.
+}
 \item{{\bf  Returns} -- 
- 
+the builder 
 }%end item
 \end{itemize}
 }%end item
 \item{ 
-\index{getName()}
-{\bf  getName}\\
+\index{getLayoutOptions(int)}
+{\bf  getLayoutOptions}\\
 \begin{lstlisting}[frame=none]
-java.lang.String getName()\end{lstlisting} %end signature
+java.util.List getLayoutOptions(int graphIndex)\end{lstlisting} %end signature
 \begin{itemize}
-\item{{\bf  Returns} -- 
- 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getParameterSet()}
-{\bf  getParameterSet}\\
-\begin{lstlisting}[frame=none]
-parameter.Settings getParameterSet()\end{lstlisting} %end signature
-\begin{itemize}
-\item{{\bf  Returns} -- 
- 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{initialize(Settings)}
-{\bf  initialize}\\
-\begin{lstlisting}[frame=none]
-void initialize(parameter.Settings parameters)\end{lstlisting} %end signature
-\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all layout options for the specified graph.
+}
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{parameters} -- }
+\texttt{graphindex} -- the index of the graph in the model}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+a list of layout options 
 }%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSettings()}
+{\bf  getSettings}\\
+\begin{lstlisting}[frame=none]
+parameter.Settings getSettings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a set of parameters to initialize this workspace. When the settings have been adjusted, the client has to call \texttt{\small initialize()}. To initialize the workspace with the settings.
+}
+\item{{\bf  Returns} -- 
+the settings 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{initialize()}
+{\bf  initialize}\\
+\begin{lstlisting}[frame=none]
+void initialize()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Initializes this workspace with the settings if they have not been adjusted. If the settings have not been adjusted, default values will be used.
+}
 \end{itemize}
 }%end item
 \end{itemize}
@@ -330,10 +506,10 @@ void initialize(parameter.Settings parameters)\end{lstlisting} %end signature
 }
 \subsection{\label{plugin.EdgeFilter}\index{EdgeFilter}Class EdgeFilter}{
 \vskip .1in 
-This Class represents a filter for edge types. The type of the edge can be specified through different parameters.\vskip .1in 
+This class represents a filter for edges. To check if an edge passes through this filter, the client can specify it in \texttt{\small matches(Edge edge)}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
-public class EdgeFilter
+public abstract class EdgeFilter
  extends java.lang.Object\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
@@ -358,7 +534,7 @@ public java.lang.String getName()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Getter of name
+Getter of name of this filter
 }
 \end{itemize}
 }%end item
@@ -366,7 +542,7 @@ Getter of name
 \index{matches(Edge)}
 {\bf  matches}\\
 \begin{lstlisting}[frame=none]
-public boolean matches(graphmodel.Edge toMatch)\end{lstlisting} %end signature
+public abstract boolean matches(graphmodel.Edge toMatch)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -403,6 +579,7 @@ Setter of name
 }
 \subsection{\label{plugin.EntryPointOption}\index{EntryPointOption}Class EntryPointOption}{
 \vskip .1in 
+An entry point option is an abstract superclass for all entry points, where the user can choose one of multiple entry points. Entry point options should allow a categorical overview for the entry point, to enable the client to differentiate the option from other options. Additionally a method for should be provided which can be executed when the client wants to select an option.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class EntryPointOption
@@ -427,18 +604,32 @@ public EntryPointOption()\end{lstlisting} %end signature
 {\bf  getID}\\
 \begin{lstlisting}[frame=none]
 public java.lang.String getID()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+The ID of an entry point should be an acronym of it's name.
+}
+\item{{\bf  Returns} -- 
+the id 
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getName()}
 {\bf  getName}\\
 \begin{lstlisting}[frame=none]
 public java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the name of the entry point option. This name can be displayed when displaying multiple options
+}
+\item{{\bf  Returns} -- 
+the name 
 }%end item
-\item{ 
-\index{onChoose()}
-{\bf  onChoose}\\
-\begin{lstlisting}[frame=none]
-public abstract void onChoose()\end{lstlisting} %end signature
+\end{itemize}
 }%end item
 \item{ 
 \index{setID(String)}
@@ -457,10 +648,11 @@ protected void setName(java.lang.String name)\end{lstlisting} %end signature
 }
 \subsection{\label{plugin.LayoutOption}\index{LayoutOption}Class LayoutOption}{
 \vskip .1in 
+An option for a layout of a specific graph. Workspaces can return these for a specific graph. The client can then decide between one ore more LayoutOptions When selected the layout will be applied to the graph.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class LayoutOption
- extends plugin.EntryPointOption\end{lstlisting}
+ extends plugin.EntryPointOption implements java.lang.Cloneable\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -469,6 +661,40 @@ public abstract class LayoutOption
 {\bf  LayoutOption}\\
 \begin{lstlisting}[frame=none]
 public LayoutOption()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{applyLayout()}
+{\bf  applyLayout}\\
+\begin{lstlisting}[frame=none]
+public abstract void applyLayout()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+This should execute the layout on the graph, which should be specified on construction, or in beforehand. The settings, which are accessible over \texttt{\small getSettings()} will be used to instantiate the LayoutAlgorithm.
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{getSettings()}
+{\bf  getSettings}\\
+\begin{lstlisting}[frame=none]
+public abstract parameter.Settings getSettings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the set of parameters for an algorithm of this option.
+}
+\item{{\bf  Returns} -- 
+the set of parameters 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -483,28 +709,109 @@ public class PluginManager
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{addWorkspaceOption(WorkspaceOption)}
-{\bf  addWorkspaceOption}\\
+\index{addExporter(Exporter)}
+{\bf  addExporter}\\
 \begin{lstlisting}[frame=none]
-public void addWorkspaceOption(WorkspaceOption option)\end{lstlisting} %end signature
+public void addExporter(Exporter exporter)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{addImporter(Importer)}
+{\bf  addImporter}\\
+\begin{lstlisting}[frame=none]
+public void addImporter(Importer importer)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getEdgeFilter()}
+{\bf  getEdgeFilter}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getEdgeFilter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a list of all edge filter provided by plugins.
+}
+\item{{\bf  Returns} -- 
+a list of all edge filter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getExporters()}
+{\bf  getExporters}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getExporters()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getImporters()}
+{\bf  getImporters}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getImporters()\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{getPluginManager()}
 {\bf  getPluginManager}\\
 \begin{lstlisting}[frame=none]
 public static PluginManager getPluginManager()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the singleton instance of the plugin manager.
+}
+\item{{\bf  Returns} -- 
+the plugin manager 
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getPlugins()}
 {\bf  getPlugins}\\
 \begin{lstlisting}[frame=none]
 public java.util.List getPlugins()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a list of all plugins loaded by the ServiceLoader.
+}
+\item{{\bf  Returns} -- 
+all loaded plugins 
+}%end item
+\end{itemize}
 }%end item
 \item{ 
-\index{getWorkspaceOption()}
-{\bf  getWorkspaceOption}\\
+\index{getVertexFilter()}
+{\bf  getVertexFilter}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getWorkspaceOption()\end{lstlisting} %end signature
+public java.util.List getVertexFilter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all vertex filter provided by plugins.
+}
+\item{{\bf  Returns} -- 
+a list of all vertex filter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getWorkspaceOptions()}
+{\bf  getWorkspaceOptions}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getWorkspaceOptions()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all \texttt{\small WorkspaceOption}{\small 
+\refdefined{plugin.WorkspaceOption}}s provided by plugins.
+}
+\item{{\bf  Returns} -- 
+a list of all workspace options 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -584,6 +891,7 @@ Setter of name
 }
 \subsection{\label{plugin.WorkspaceOption}\index{WorkspaceOption}Class WorkspaceOption}{
 \vskip .1in 
+This is an option for a\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class WorkspaceOption
@@ -607,6 +915,32 @@ public WorkspaceOption()\end{lstlisting} %end signature
 {\bf  getInstance}\\
 \begin{lstlisting}[frame=none]
 public abstract Workspace getInstance()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Creates an instance of the workspace with the earlier adjusted Settings
+}
+\item{{\bf  Returns} -- 
+a workspace 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSettings()}
+{\bf  getSettings}\\
+\begin{lstlisting}[frame=none]
+public abstract parameter.Settings getSettings()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a set of parameters to initialize a workspace for this. When the settings have been adjusted, the client has to call \texttt{\small getInstance()}, to get an instance of the workspace with the settings.
+}
+\item{{\bf  Returns} -- 
+the settings 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }

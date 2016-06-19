@@ -1,32 +1,36 @@
 package graphmodel;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
- * This vertex interface specifies an vertex.
- * An vertex contains an ID and a name
- *
+ * A serialized version of a {@link Vertex}.
+ * It contains all attributes as a {@link List} of String to String entries which can be used by an {@link Exporter} to
+ * export a {@link Vertex}. It is designed as an intermediate Step in the export workflow and should not be used for other
+ * purposes. Attributes in the {@link List} are not synchronized with attributes outside the {@link List}, and Attributes of
+ * SerializedVertex are not synchronized with the origin {@link Vertex} attributes.
  */
 public class SerializedVertex implements Vertex {
 	private String name;
 	private int id;
 	private String label;
+	private final List<Entry<String, String>> attributes;
 
 	/**
-	 * Get the name of the vertex
-	 * 
-	 * @return 
-	 */
+	 * creates
+	 * @param attributes
+     */
+	public SerializedVertex(List<Entry<String, String>> attributes) {
+		this.attributes = attributes;
+	}
+
+	@Override
 	public String getName() {
 		return this.name;
 	}
 
-	/**
-	 * Get the ID of the vertex
-	 * 
-	 * @return 
-	 */
+	@Override
 	public Integer getID() {
 		return this.id;
 	}
@@ -35,24 +39,25 @@ public class SerializedVertex implements Vertex {
 		return this.label;
 	}
 
-	/**
-	 * Adds Values to FastGraphAccessor
-	 * 
-	 * @return 
-	 */
+	@Override
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
 
 	}
 
+	/**
+	 * Gets all serialized Attributes as a Map from String to String.
+	 * This Map gets created when serializing a {@link Vertex} and is returned on demand.
+	 * This should only be used for exporting Vertices since the attributes are not synchronized with the attributes
+	 * of the unserialized {@link Vertex}
+	 *
+	 * @return The Map of serialized Attributes
+	 * @see Map
+	 */
 	public Map<String, String> getAttributes() {
 		return new HashMap<String, String>();
 	}
 
-	public void setAttribute(String name, String value) {
-		
-	}
-
-
+	@Override
 	public SerializedVertex serialize() {
 		return this;
 	}
