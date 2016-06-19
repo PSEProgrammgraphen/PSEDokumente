@@ -13,6 +13,14 @@ public class SerializedEdge<V extends Vertex> implements Edge<V> {
 	private int id;
 	private String label;
 	
+	public Map<String, String> getAttributes() {
+		return null;
+	}
+	
+	public void setAttribute(String name, String value) {
+		
+	}
+	
 	@Override
 	public String getName() {
 		return name;
@@ -27,6 +35,12 @@ public class SerializedEdge<V extends Vertex> implements Edge<V> {
 	public String getLabel() {
 		return label;
 	}
+	
+	@Override
+	public List<V> getVertices() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
@@ -34,20 +48,8 @@ public class SerializedEdge<V extends Vertex> implements Edge<V> {
 		
 	} 
 
-	public Map<String, String> getAttributes() {
-		return null;
-	}
-
-	public void setAttribute(String name, String value) {
-		
-	}
-
-	public SerializedEdge serialize() {
-		return this;
-	}
-
 	@Override
-	public List<V> getVertices() {
+	public SerializedEdge<V> serialize() {
 		// TODO Auto-generated method stub
 		return null;
 	}

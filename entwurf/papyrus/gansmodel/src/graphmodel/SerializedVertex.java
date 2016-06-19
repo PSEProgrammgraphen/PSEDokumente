@@ -13,46 +13,35 @@ public class SerializedVertex implements Vertex {
 	private int id;
 	private String label;
 
-	/**
-	 * Get the name of the vertex
-	 * 
-	 * @return 
-	 */
+	public Map<String, String> getAttributes() {
+		return new HashMap<String, String>();
+	}
+	
+	public void setAttribute(String name, String value) {
+		
+	}
+	
+	@Override
 	public String getName() {
 		return this.name;
 	}
 
-	/**
-	 * Get the ID of the vertex
-	 * 
-	 * @return 
-	 */
+	@Override
 	public Integer getID() {
 		return this.id;
 	}
 	
+	@Override
 	public String getLabel() {
 		return this.label;
 	}
 
-	/**
-	 * Adds Values to FastGraphAccessor
-	 * 
-	 * @return 
-	 */
+	@Override
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
 
 	}
 
-	public Map<String, String> getAttributes() {
-		return new HashMap<String, String>();
-	}
-
-	public void setAttribute(String name, String value) {
-		
-	}
-
-
+	@Override
 	public SerializedVertex serialize() {
 		return this;
 	}

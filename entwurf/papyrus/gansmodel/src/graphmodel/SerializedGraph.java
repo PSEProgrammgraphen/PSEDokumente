@@ -9,7 +9,7 @@ import objectproperty.GAnsProperty;
 import plugin.LayoutOption;
 
 /**
- * A {@link SerializedGraph} is a specific Graph that contains all informations as Strings
+ * A {@link SerializedGraph} is a specific Graph that contains all informations as Strings.
  * 
  *
  */
@@ -20,30 +20,11 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	private GAnsProperty<Integer> id;
 
 	/**
-	 * Adds a new Edge to the graph
+	 * 
 	 */
 	public void addEdge() {
-
 	}
-
-	/**
-	 * 
-	 * @return 
-	 */
-	public Set<V> getVertexSet() { 
-		// TODO Auto-generated method
-		return null;
-	 }
-
-	/**
-	 * 
-	 * @return 
-	 */
-	public Set<E> getEdgeSet() { 
-		// TODO Auto-generated method
-		return null;
-	 }
-
+	
 	/**
 	 * 
 	 * @param edge 
@@ -52,8 +33,31 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	public V getSource(E edge) { 
 		// TODO Auto-generated method
 		return null;
-	 }
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Map<String, String> getAttributes() {
+		return new HashMap<String, String>();
+	}
+	
+	public void setAttribute(String name, String value) {
+		
+	}
 
+	@Override
+	public Set<V> getVertexSet() { 
+		// TODO Auto-generated method
+		return null;
+	 }
+	
+	@Override
+	public Set<E> getEdgeSet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public Set<E> edgesOf(V vertex) {
@@ -66,19 +70,7 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 		// TODO Auto-generated method stub
 		
 	}
-
-	public Map<String, String> getAttributes() {
-		return new HashMap<String, String>();
-	}
-
-	public SerializedGraph<V, E> serialize() {
-		return this;
-	}
-
-	public void setAttribute(String name, String value) {
-		
-	}
-
+	
 	@Override
 	public String getName() {
 		return name.getPropertyValue();
@@ -93,5 +85,10 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	public List<LayoutOption> getRegisteredLayouts() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public SerializedGraph<V, E> serialize() {
+		return this;
 	}
 }
