@@ -1,6 +1,9 @@
 package graphmodel;
 
+import java.util.List;
 import java.util.Set;
+
+import plugin.LayoutOption;
 
 /**
  * This graph interface specifies a graph.
@@ -56,5 +59,12 @@ public interface Graph<V extends Vertex, E extends Edge<V>> {
 	 */
 	public void addToFastGraphAccessor(FastGraphAccessor fga);
 
+	/**
+	 * Returns a list of layouts which have been registered at the corresponding
+	 * LayoutRegister for this graph type.
+	 * The graph implementing this interface will be set as target of the LayoutOption.
+	 */
+	public List<LayoutOption> getRegisteredLayouts();
+	
 	public SerializedGraph serialize();
 }

@@ -1,8 +1,9 @@
 package plugin;
 
-import graphmodel.IGraphModelBuilder;
 import java.io.FileInputStream;
 import java.util.List;
+
+import graphmodel.IGraphModelBuilder;
 
 /**
  * The importer interface is used to import a graph from a file into the intern representation.

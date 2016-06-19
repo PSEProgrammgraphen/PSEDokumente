@@ -279,6 +279,14 @@ public class GAnsApplication extends Application {
 	private void openWorkspaceDialog() {
 
 	}
+	
+	private void openLayoutSelectionDialog() {
+		
+	}
+	
+	private void openLayoutSettingsDialog() {
+		
+	}
 
 	private void openParameterDialog(Settings settings) {
 		GridPane root = new GridPane();

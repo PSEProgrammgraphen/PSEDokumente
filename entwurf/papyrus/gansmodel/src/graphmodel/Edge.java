@@ -1,6 +1,5 @@
 package graphmodel;
 
-import java.lang.Integer;
 import java.util.List;
 
 /**
@@ -11,7 +10,7 @@ import java.util.List;
 public interface Edge<V extends Vertex> {
 
 	/**
-	 * Returns the vertices connected with the edge of this edge.
+	 * Returns the vertices connected with this edge.
 	 * 
 	 * @return
 	 * 		the vertices connected with the edge
@@ -19,7 +18,7 @@ public interface Edge<V extends Vertex> {
 	public List<V> getVertices();
 
 	/**
-	 * Returns the name of the Edge.
+	 * Returns the name of the edge.
 	 * 
 	 * @return
 	 * 		name of the edge

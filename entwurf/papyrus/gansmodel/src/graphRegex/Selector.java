@@ -1,7 +1,8 @@
 package graphRegex;
 
-import graphmodel.Graph;
 import java.util.List;
+
+import graphmodel.Graph;
 
 public class Selector {
 

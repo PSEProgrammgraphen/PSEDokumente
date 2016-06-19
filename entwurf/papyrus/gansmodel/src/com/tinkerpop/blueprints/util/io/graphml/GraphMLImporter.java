@@ -1,7 +1,9 @@
 package com.tinkerpop.blueprints.util.io.graphml;
 
-import graphmodel.IGraphModelBuilder;
+import java.io.IOException;
 import java.io.InputStream;
+
+import graphmodel.IGraphModelBuilder;
 
 /**
  * 

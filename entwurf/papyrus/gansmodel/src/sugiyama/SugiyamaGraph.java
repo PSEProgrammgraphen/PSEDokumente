@@ -1,18 +1,16 @@
 package sugiyama;
 
-import graphmodel.DirectedGraph;
-import graphmodel.FastGraphAccessor;
-import graphmodel.SerializedGraph;
-import graphmodel.DefaultVertex;
-import graphmodel.DirectedEdge;
-import graphmodel.Vertex;
-import sugiyama.SugiyamaGraph.SupplementPath;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import sugiyama.SugiyamaGraph.SugiyamaVertex;
-import sugiyama.SugiyamaGraph.SugiyamaEdge;
+
+import graphmodel.DefaultVertex;
+import graphmodel.DirectedEdge;
+import graphmodel.DirectedGraph;
+import graphmodel.FastGraphAccessor;
+import graphmodel.SerializedGraph;
+import graphmodel.Vertex;
+import plugin.LayoutOption;
 
 
 /**
@@ -307,5 +305,11 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		private boolean isReplaced() { return false; }
 		
 		private List<SupplementPath> getSupplement() { return null; }
+	}
+
+	@Override
+	public List<LayoutOption> getRegisteredLayouts() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

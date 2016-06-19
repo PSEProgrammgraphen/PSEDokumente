@@ -1,11 +1,10 @@
 package plugin;
 
-import parameter.Settings;
-import graphmodel.IGraphModelBuilder;
-
 import java.util.List;
 
 import graphmodel.GraphModel;
+import graphmodel.IGraphModelBuilder;
+import parameter.Settings;
 
 /**
  * A workspace contains a set of default actions and options for displaying a specific domain of graphs.

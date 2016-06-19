@@ -10,7 +10,7 @@ import parameter.Settings;
  * When selected the layout will be applied to the graph.
  *
  */
-public abstract class LayoutOption extends EntryPointOption 
+public abstract class LayoutOption extends EntryPointOption implements Cloneable
 { 
 	/**
 	 * This should execute the layout on the graph, which should be

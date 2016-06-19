@@ -2,7 +2,6 @@ package sugiyama;
 
 import java.util.Set;
 
-import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 import plugin.Constraint;
 

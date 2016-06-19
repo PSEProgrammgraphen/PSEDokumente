@@ -3,10 +3,8 @@ package gui;
 import java.util.HashMap;
 
 import graphmodel.Graph;
-import javafx.event.EventHandler;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
-import javafx.scene.input.MouseEvent;
 
 /**
  * The StructureView regulates the access and representation of the elements in

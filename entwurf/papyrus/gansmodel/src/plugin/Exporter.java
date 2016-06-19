@@ -1,8 +1,8 @@
 package plugin;
 
-import graphmodel.IGraphModelBuilder;
-import graphmodel.SerializedGraph;
 import java.io.FileOutputStream;
+
+import graphmodel.SerializedGraph;
 
 /**
  * The importer interface is used to import a graph from a file into the intern representation.
