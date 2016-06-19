@@ -1,4 +1,4 @@
-package parameter;
+package gui;
 
 
 import javafx.geometry.Insets;
@@ -10,6 +10,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
+import parameter.IntegerParameter;
+import parameter.MultipleChoiceParameter;
+import parameter.Parameter;
+import parameter.ParameterVisitor;
+import parameter.Settings;
+import parameter.StringParameter;
 
 /**
  * Generates a parameter dialog given a parent node and a set of parameters.
@@ -45,12 +51,6 @@ public class ParameterDialogGenerator extends ParameterVisitor {
 		parent.add(new Spinner<Integer>(parameter.getMin(), parameter.getMax(), parameter.getValue()), 1, parameterCount);
 		parameterCount++;
 	}
-
-	/* (non-Javadoc)
-	 * @see parameter.ParameterVisitor#visit(parameter.EnumerationParameter)
-	 */
-	@Override
-	public void visit(EnumerationParameter parameter) {}
 
 	/* (non-Javadoc)
 	 * @see parameter.ParameterVisitor#visit(parameter.MultipleChoiceParameter)
