@@ -5,13 +5,23 @@
 In den Klassen (referenz) wird ein Visitor Pattern verwendet um bei Änderungen der Werte auch direkte Änderungen in der GUI zu erhalten. %TODO: mehr
 
 \section{Plugins}
-Plugins werden verwendet um das Programm leicht Erweiterbar zu machen.
+Durch Plugin soll eine einfache Erweiterung des Programmes möglich gemacht werden. Dafür werden Schnittstellen zur Verfügung gestellt welche zu jeder Zeit erweitert werden können.
+Es existieren Schnittstellen für:
+\begin{itemize}
+  \item Importer und Exporter um neue Dateiformate unterstützen zu können
+  \item Layoutalgorithmen für verschiedene Graphrepräsentationen
+  \item Graphrepräsentationen, welche mit einem \textbf{Workspace} implementiert werden
+\end{itemize}
 
 \section{Sugiyama Algorithmus Strategy Pattern}
-Leichte Austauschbarkeit der einzelnen Schritte von Sugiyama wird durch ein Strategy Pattern erreicht.
+Der \textbf{SugiyamaLayoutAlgorithm} basiert auf dem Strategy Pattern. Es gibt 5 Phasen/Algorithmen welche das Sugiyama Framework durchläuft.
+Jede Phase entspricht einer Strategie, welche durch eine Schnittstelle definiert ist (z.B \textbf{ICrossMinimizer}).
+Die Konkreten Strategien implementieren dann diese gegebene Schnittstelle. Dadurch können einzelne Phasen des SugiyamaLayoutAlgorithm leicht ausgetauscht werden.
 
 \section{Graph Builder Builder Pattern}
-Da es verschiedene Graphtypen gibt die aus verschiedenen Datei Formaten erstellt werden können eignet sich ein Builder Pattern um diese Datenstrukturen zu erstellen.
+Da viele unterschiedliche Graphtypen existieren können, wird für die Konstruktion eines speziellen Graphes ein Builder Pattern verwendet.
+Dies hat den großen Vorteil, dass ein Importer nur eine Schnittstelle kennen muss, aber unterschiedliche Graphtypen importieren kann.
+Dazu erhält der Importer einen GraphModelBuilder, welchem er die Attribute des Graphes übergibt. Der konkrete GraphModelBuilder konstruiert nun aus diesen Attributen die spezielle Graphrepräsentation.
 
 \section{GUI-Klassen Model View Controller Pattern}
 In der GUI von GAns gibt es verschiedene \textbf{Ansichten(Views)} welche auf verschiedenen \textbf{Datensätzen(Models)} darstellen und auf Benutzerinteraktionen unterschiedlich reagieren. \\
