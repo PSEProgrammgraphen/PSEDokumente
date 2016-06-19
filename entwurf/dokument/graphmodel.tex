@@ -3,39 +3,47 @@
 \hbox to \hsize{\textit{ Package Contents\hfil Page}}
 \vskip .13in
 \hbox{{\bf  Interfaces}}
-\entityintro{CompoundVertex}{graphmodel.CompoundVertex}{}
+\entityintro{CompoundVertex}{graphmodel.CompoundVertex}{A interface of a vertex that contains an entire subgraph.}
 \entityintro{DirectedGraph}{graphmodel.DirectedGraph}{A \texttt{\small DirectedGraph}{\small 
 \refdefined{graphmodel.DirectedGraph}} is a specific Graph which contains just \texttt{\small DirectedEdge}{\small 
 \refdefined{graphmodel.DirectedEdge}} as edges}
 \entityintro{Edge}{graphmodel.Edge}{This edge interface specifies an edge.}
 \entityintro{Graph}{graphmodel.Graph}{This graph interface specifies a graph.}
-\entityintro{IEdgeBuilder}{graphmodel.IEdgeBuilder}{This is an abstract Interface which is used to build a concrete edge.}
-\entityintro{IGraphBuilder}{graphmodel.IGraphBuilder}{This is an abstract interface which is used to build a concrete graph.}
-\entityintro{IGraphModelBuilder}{graphmodel.IGraphModelBuilder}{This is an abstract interface, which builds a concrete graphmodel.}
-\entityintro{IVertexBuilder}{graphmodel.IVertexBuilder}{This is an abstract VertexBuilder which is used to build a concrete Vertex.}
+\entityintro{IEdgeBuilder}{graphmodel.IEdgeBuilder}{An abstract interface, which is used to build a edge.}
+\entityintro{IGraphBuilder}{graphmodel.IGraphBuilder}{An abstract interface, which is used to build a graph.}
+\entityintro{IGraphModelBuilder}{graphmodel.IGraphModelBuilder}{An abstract interface, which is used to build a graphmodel.}
+\entityintro{IVertexBuilder}{graphmodel.IVertexBuilder}{An abstract interface, which is used to build a vertex.}
+\entityintro{LayeredGraph}{graphmodel.LayeredGraph}{}
 \entityintro{Vertex}{graphmodel.Vertex}{This vertex interface specifies a vertex.}
+\entityintro{Viewable}{graphmodel.Viewable}{}
 \vskip .13in
 \hbox{{\bf  Classes}}
 \entityintro{DefaultDirectedGraph}{graphmodel.DefaultDirectedGraph}{A \texttt{\small DefaultDirectedGraph}{\small 
-\refdefined{graphmodel.DefaultDirectedGraph}} is a specific Graph which contains just \texttt{\small DirectedEdge}{\small 
-\refdefined{graphmodel.DirectedEdge}} as edges}
-\entityintro{DefaultVertex}{graphmodel.DefaultVertex}{This is an DefaultVertex, which has basic functions and is provided by the mainapplication.}
+\refdefined{graphmodel.DefaultDirectedGraph}} is a specific Graph which only contains \texttt{\small DirectedEdge}{\small 
+\refdefined{graphmodel.DirectedEdge}} as edges.}
+\entityintro{DefaultVertex}{graphmodel.DefaultVertex}{This is an DefaultVertex, which has basic functions and is provided by the main application.}
 \entityintro{DirectedEdge}{graphmodel.DirectedEdge}{A \texttt{\small DirectedEdge}{\small 
 \refdefined{graphmodel.DirectedEdge}} is an edge that has one source and one target vertex.}
-\entityintro{DirectedGraphLayoutOption}{graphmodel.DirectedGraphLayoutOption}{}
-\entityintro{DirectedGraphLayoutRegister}{graphmodel.DirectedGraphLayoutRegister}{}
+\entityintro{DirectedGraphLayoutOption}{graphmodel.DirectedGraphLayoutOption}{A \texttt{\small LayoutOption}{\small 
+\refdefined{plugin.LayoutOption}} which is specific for \texttt{\small DirectedGraph}{\small 
+\refdefined{graphmodel.DirectedGraph}}.}
+\entityintro{DirectedGraphLayoutRegister}{graphmodel.DirectedGraphLayoutRegister}{A \texttt{\small LayoutRegister}{\small 
+\refdefined{plugin.LayoutRegister}} which is specific for \texttt{\small DirectedGraphLayoutOption}{\small 
+\refdefined{graphmodel.DirectedGraphLayoutOption}}.}
 \entityintro{FastGraphAccessor}{graphmodel.FastGraphAccessor}{}
-\entityintro{GraphModel}{graphmodel.GraphModel}{A \texttt{\small GraphModel}{\small 
-\refdefined{graphmodel.GraphModel}} contains one or more graphs.}
-\entityintro{SerializedEdge}{graphmodel.SerializedEdge}{A \texttt{\small DirectedEdge}{\small 
-\refdefined{graphmodel.DirectedEdge}} is an edge that has one source and one target vertex.}
-\entityintro{SerializedGraph}{graphmodel.SerializedGraph}{A \texttt{\small SerializedGraph}{\small 
-\refdefined{graphmodel.SerializedGraph}} is a specific Graph that contains all informations as Strings}
-\entityintro{SerializedVertex}{graphmodel.SerializedVertex}{This vertex interface specifies an vertex.}
+\entityintro{GraphModel}{graphmodel.GraphModel}{A GraphModel contains one or more graphs.}
+\entityintro{Group}{graphmodel.Group}{This class allows to collect an amount of vertices.}
+\entityintro{SerializedEdge}{graphmodel.SerializedEdge}{A serialized version of a \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}}.}
+\entityintro{SerializedGraph}{graphmodel.SerializedGraph}{A serialized version of a \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}}.}
+\entityintro{SerializedVertex}{graphmodel.SerializedVertex}{A serialized version of a \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}}.}
 \vskip .1in
 \vskip .1in
 \subsection{\label{graphmodel.CompoundVertex}\index{CompoundVertex@\textit{ CompoundVertex}}Interface CompoundVertex}{
 \vskip .1in 
+A interface of a vertex that contains an entire subgraph.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface CompoundVertex
@@ -44,10 +52,43 @@ public interface CompoundVertex
 \vskip -2em
 \begin{itemize}
 \item{ 
+\index{getConnectedVertex(Edge)}
+{\bf  getConnectedVertex}\\
+\begin{lstlisting}[frame=none]
+Vertex getConnectedVertex(Edge edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the connected vertex contained in the compound vertex for a given edge, where one end point of the edge has to be this vertex.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge to get the vertex to}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the connected vertex if the edge is valid 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{getGraph()}
 {\bf  getGraph}\\
 \begin{lstlisting}[frame=none]
 Graph getGraph()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the graph contained in the vertex.
+}
+\item{{\bf  Returns} -- 
+the graph contained in the vertex. 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -61,7 +102,7 @@ A \texttt{\small DirectedGraph}{\small
 \begin{lstlisting}[frame=none]
 public interface DirectedGraph
  extends Graph\end{lstlisting}
-\subsubsection{All known subinterfaces}{DefaultDirectedGraph\small{\refdefined{graphmodel.DefaultDirectedGraph}}}
+\subsubsection{All known subinterfaces}{LayeredGraph\small{\refdefined{graphmodel.LayeredGraph}}, DefaultDirectedGraph\small{\refdefined{graphmodel.DefaultDirectedGraph}}}
 \subsubsection{All classes known to implement interface}{DefaultDirectedGraph\small{\refdefined{graphmodel.DefaultDirectedGraph}}}
 \subsubsection{Methods}{
 \vskip -2em
@@ -75,17 +116,17 @@ java.util.Set incomingEdgesOf(Vertex vertex)\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get a set of all incoming edges of a vertex
+Returns a set of all incoming edges of a vertex.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- Vertex whose incoming edges will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The edges coming in the supplied vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -98,40 +139,17 @@ java.lang.Integer indegreeOf(Vertex vertex)\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get the indegree of a vertex
+Returns the indegree of a vertex of the graph.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- Vertex whose indegree will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{outcomingEdgesOf(V)}
-{\bf  outcomingEdgesOf}\\
-\begin{lstlisting}[frame=none]
-java.util.Set outcomingEdgesOf(Vertex vertex)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Get a set of all outcoming edges of a vertex
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{vertex} -- }
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
- 
+The number of edges going into the supplied vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -144,17 +162,40 @@ java.lang.Integer outdegreeOf(Vertex vertex)\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get the outdegree of a vertex
+Returns the outdegree of a vertex of the graph.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- Vertex whose outdegree will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The number of edges going out of the supplied vertex. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{outgoingEdgesOf(V)}
+{\bf  outgoingEdgesOf}\\
+\begin{lstlisting}[frame=none]
+java.util.Set outgoingEdgesOf(Vertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a set of all outgoing edges of a vertex.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- Vertex whose outgoing edges will be returned.}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+The edges going out of the supplied vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -182,13 +223,15 @@ void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signatur
 \item{
 {\bf  Description}
 
-Adds Values to FastGraphAccessor.
+Adds the edge to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{fga} -- }
+\texttt{fga} -- The \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this edge will be added.}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -205,7 +248,7 @@ java.lang.Integer getID()\end{lstlisting} %end signature
 Returns the ID of the edge.
 }
 \item{{\bf  Returns} -- 
-id of the edge 
+The id of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -221,7 +264,7 @@ java.lang.String getLabel()\end{lstlisting} %end signature
 Returns the label of the edge.
 }
 \item{{\bf  Returns} -- 
-label of the edge 
+The label of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -237,7 +280,7 @@ java.lang.String getName()\end{lstlisting} %end signature
 Returns the name of the edge.
 }
 \item{{\bf  Returns} -- 
-name of the edge 
+The name of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -253,7 +296,7 @@ java.util.List getVertices()\end{lstlisting} %end signature
 Returns the vertices connected with this edge.
 }
 \item{{\bf  Returns} -- 
-the vertices connected with the edge 
+The vertices connected with the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -263,8 +306,15 @@ the vertices connected with the edge
 \begin{lstlisting}[frame=none]
 SerializedEdge serialize()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a \texttt{\small SerializedEdge}{\small 
+\refdefined{graphmodel.SerializedEdge}} representation of the edge.
+}
 \item{{\bf  Returns} -- 
- 
+The \texttt{\small SerializedEdge}{\small 
+\refdefined{graphmodel.SerializedEdge}} representation of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -278,7 +328,7 @@ This graph interface specifies a graph. A graph contains edges and vertices.\vsk
 \begin{lstlisting}[frame=none]
 public interface Graph
 \end{lstlisting}
-\subsubsection{All known subinterfaces}{SerializedGraph\small{\refdefined{graphmodel.SerializedGraph}}, DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}, DefaultDirectedGraph\small{\refdefined{graphmodel.DefaultDirectedGraph}}}
+\subsubsection{All known subinterfaces}{SerializedGraph\small{\refdefined{graphmodel.SerializedGraph}}, LayeredGraph\small{\refdefined{graphmodel.LayeredGraph}}, DirectedGraph\small{\refdefined{graphmodel.DirectedGraph}}, DefaultDirectedGraph\small{\refdefined{graphmodel.DefaultDirectedGraph}}}
 \subsubsection{All classes known to implement interface}{SerializedGraph\small{\refdefined{graphmodel.SerializedGraph}}}
 \subsubsection{Methods}{
 \vskip -2em
@@ -292,17 +342,16 @@ void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signatur
 \item{
 {\bf  Description}
 
-adds this graph to a fastGraphAccessor
+Adds the graph to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{fga} -- the \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this graph will be added.}
   \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
- 
 }%end item
 \end{itemize}
 }%end item
@@ -315,17 +364,17 @@ java.util.Set edgesOf(Vertex vertex)\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-get a list of all edges of a vertex
+Returns a list of all edges of a vertex.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- the vertex which edges will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+All edges which are connected with the supplied vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -338,10 +387,10 @@ java.util.Set getEdgeSet()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get a set of all edges in this graph
+Returns all edges of the graph.
 }
 \item{{\bf  Returns} -- 
- 
+A set of all edges of the graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -357,7 +406,7 @@ java.lang.Integer getID()\end{lstlisting} %end signature
 Returns the ID of the graph.
 }
 \item{{\bf  Returns} -- 
-id of the graph 
+The id of the graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -373,21 +422,8 @@ java.lang.String getName()\end{lstlisting} %end signature
 Returns the name of the Graph.
 }
 \item{{\bf  Returns} -- 
-name of the graph 
+The name of the graph. 
 }%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getRegisteredLayouts()}
-{\bf  getRegisteredLayouts}\\
-\begin{lstlisting}[frame=none]
-java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Returns a list of layouts which have been registered at the corresponding LayoutRegister for this graph type. The graph implementing this interface will be set as target of the LayoutOption.
-}
 \end{itemize}
 }%end item
 \item{ 
@@ -399,25 +435,19 @@ java.util.Set getVertexSet()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get a set of all vertices in this graph
+Returns all vertices of the graph.
 }
 \item{{\bf  Returns} -- 
- 
+A set of all vertices of the graph. 
 }%end item
 \end{itemize}
-}%end item
-\item{ 
-\index{serialize()}
-{\bf  serialize}\\
-\begin{lstlisting}[frame=none]
-SerializedGraph serialize()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{graphmodel.IEdgeBuilder}\index{IEdgeBuilder@\textit{ IEdgeBuilder}}Interface IEdgeBuilder}{
 \vskip .1in 
-This is an abstract Interface which is used to build a concrete edge.\vskip .1in 
+An abstract interface, which is used to build a edge.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface IEdgeBuilder
@@ -456,7 +486,7 @@ void newEdge(java.lang.String source,java.lang.String target)\end{lstlisting} %e
 \item{
 {\bf  Description}
 
-sets source and target vertices of the edge build by this.
+Sets source and target vertices of the edge build by this.
 }
 \item{
 {\bf  Parameters}
@@ -478,7 +508,7 @@ void setDirection(java.lang.String direction)\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-sets the direction of the edge build by this.
+Sets the direction of the edge build by this.
 }
 \item{
 {\bf  Parameters}
@@ -498,7 +528,7 @@ void setID(java.lang.String id)\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-sets the ID of the edge build by this.
+Sets the ID of the edge build by this.
 }
 \item{
 {\bf  Parameters}
@@ -514,7 +544,7 @@ sets the ID of the edge build by this.
 }
 \subsection{\label{graphmodel.IGraphBuilder}\index{IGraphBuilder@\textit{ IGraphBuilder}}Interface IGraphBuilder}{
 \vskip .1in 
-This is an abstract interface which is used to build a concrete graph.\vskip .1in 
+An abstract interface, which is used to build a graph.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface IGraphBuilder
@@ -531,10 +561,10 @@ Graph build()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-This method is called, when the buildingprocess of the graph is finished. Then it builds the graph and returns it.
+Builds a graph from the given settings and returns it.
 }
 \item{{\bf  Returns} -- 
-Graph 
+The graph that is being build by the IGraphBuilder. 
 }%end item
 \end{itemize}
 }%end item
@@ -550,7 +580,8 @@ IEdgeBuilder getEdgeBuilder()\end{lstlisting} %end signature
 Returns the EdgeBuilder which is specified for this graph.
 }
 \item{{\bf  Returns} -- 
-AbstractEdgeBuilder 
+The \texttt{\small IEdgeBuilder}{\small 
+\refdefined{graphmodel.IEdgeBuilder}} which is specified for this graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -569,11 +600,12 @@ Returns the VertexBuilder which is specified for this graph.
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertexID} -- }
+\texttt{vertexID} -- The id of the vertex which associated IVertexBuilder will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
-AbstractVertexBuilder 
+The \texttt{\small IVertexBuilder}{\small 
+\refdefined{graphmodel.IVertexBuilder}} which is specified for this graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -582,7 +614,7 @@ AbstractVertexBuilder
 }
 \subsection{\label{graphmodel.IGraphModelBuilder}\index{IGraphModelBuilder@\textit{ IGraphModelBuilder}}Interface IGraphModelBuilder}{
 \vskip .1in 
-This is an abstract interface, which builds a concrete graphmodel. This Class is based on the Builder Pattern.\vskip .1in 
+An abstract interface, which is used to build a graphmodel. This class is based on the Builder Pattern.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface IGraphModelBuilder
@@ -599,10 +631,11 @@ GraphModel build()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-This method is called, when the buildingprocess of the graphmodel is finished. It returns the finished graphmodel
+Builds a graphmodel from the given settings and returns it.
 }
 \item{{\bf  Returns} -- 
-GraphModel 
+The \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}} that is being build by the IGraphModelBuilder. 
 }%end item
 \end{itemize}
 }%end item
@@ -615,17 +648,20 @@ IGraphBuilder getGraphBuilder(java.lang.String graphID)\end{lstlisting} %end sig
 \item{
 {\bf  Description}
 
-Returns a specific AbstractGraphBuilder which belongs to the graphmodel. It should also decide which graph should be builded with the help of the graphID.
+Returns a specific \texttt{\small IGraphBuilder}{\small 
+\refdefined{graphmodel.IGraphBuilder}} for a graph, which belongs to the \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}}.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{graphID} -- }
+\texttt{graphID} -- The id of the graph which associated \texttt{\small IGraphBuilder}{\small 
+\refdefined{graphmodel.IGraphBuilder}} will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The IGraphBuilder of the graph which is referenced over the graphID. 
 }%end item
 \end{itemize}
 }%end item
@@ -634,7 +670,7 @@ Returns a specific AbstractGraphBuilder which belongs to the graphmodel. It shou
 }
 \subsection{\label{graphmodel.IVertexBuilder}\index{IVertexBuilder@\textit{ IVertexBuilder}}Interface IVertexBuilder}{
 \vskip .1in 
-This is an abstract VertexBuilder which is used to build a concrete Vertex.\vskip .1in 
+An abstract interface, which is used to build a vertex.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface IVertexBuilder
@@ -706,6 +742,190 @@ This method returns an specific GraphBuilder. This method is used to implement n
 \end{itemize}
 }
 }
+\subsection{\label{graphmodel.LayeredGraph}\index{LayeredGraph@\textit{ LayeredGraph}}Interface LayeredGraph}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface LayeredGraph
+ extends DirectedGraph\end{lstlisting}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getHeight()}
+{\bf  getHeight}\\
+\begin{lstlisting}[frame=none]
+int getHeight()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the height, i.e. the number of layers.
+}
+\item{{\bf  Returns} -- 
+the height 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(int)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayer(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get all vertices from a certain layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerN} -- the index of the layer}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+a list of all vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(V)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+int getLayer(Vertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the layer from the vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to get its layer from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the layer number from this vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayerCount()}
+{\bf  getLayerCount}\\
+\begin{lstlisting}[frame=none]
+int getLayerCount()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the amount of layers.
+}
+\item{{\bf  Returns} -- 
+the amount of layers that contain at least one vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayers()}
+{\bf  getLayers}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayers()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get all layers that contain vertices.
+}
+\item{{\bf  Returns} -- 
+a list of lists of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayerWidth(int)}
+{\bf  getLayerWidth}\\
+\begin{lstlisting}[frame=none]
+int getLayerWidth(int layerN)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the width of the layer specified by its index, i.e. the number of vertices in the layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerN} -- the index of the layer}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the width of the layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getMaxWidth()}
+{\bf  getMaxWidth}\\
+\begin{lstlisting}[frame=none]
+int getMaxWidth()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the width of the widest layer, i.e. the number of vertices the layer with the most vertices contains.
+}
+\item{{\bf  Returns} -- 
+the maximum width 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSubgraphs()}
+{\bf  getSubgraphs}\\
+\begin{lstlisting}[frame=none]
+java.util.List getSubgraphs()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all subgraphs contained in this graph. All subgraphs of layered graphs have to be layered graphs with equal parameters themselves.
+}
+\item{{\bf  Returns} -- 
+subgraphs in this layered graph 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexCount(int)}
+{\bf  getVertexCount}\\
+\begin{lstlisting}[frame=none]
+int getVertexCount(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the number of vertices which are on a certain layer
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get the vertex count from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the number of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
 \subsection{\label{graphmodel.Vertex}\index{Vertex@\textit{ Vertex}}Interface Vertex}{
 \vskip .1in 
 This vertex interface specifies a vertex. Every vertex contains an ID, a name and a label. The ID of a vertex is unique.\vskip .1in 
@@ -727,8 +947,17 @@ void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signatur
 \item{
 {\bf  Description}
 
-Adds Values to FastGraphAccessor
+Adds the vertex to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{fga} -- The \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this vertex will be added.}
+  \end{itemize}
+}%end item
 \end{itemize}
 }%end item
 \item{ 
@@ -743,7 +972,7 @@ java.lang.Integer getID()\end{lstlisting} %end signature
 Returns the ID of the vertex. Every vertex in one graph has a unique ID.
 }
 \item{{\bf  Returns} -- 
-the ID of the vertex. 
+The ID of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -759,7 +988,7 @@ java.lang.String getLabel()\end{lstlisting} %end signature
 Returns the label of the vertex, that will be shown in the GUI. The label can be an empty string.
 }
 \item{{\bf  Returns} -- 
-the label of the vertex 
+The label of the vertex 
 }%end item
 \end{itemize}
 }%end item
@@ -775,7 +1004,7 @@ java.lang.String getName()\end{lstlisting} %end signature
 Returns the name of the vertex. A descriptive name of the vertex. Multiple vertices with equal name in one graph are allowed. Therefore don't use this as identifier, instead use \texttt{\small getID()}.
 }
 \item{{\bf  Returns} -- 
-the name of the vertex. 
+The name of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -791,7 +1020,7 @@ int getX()\end{lstlisting} %end signature
 Returns the X-coordinate of the vertex.
 }
 \item{{\bf  Returns} -- 
-the X-coordinate of this vertex. 
+The X-coordinate of this vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -807,7 +1036,7 @@ int getY()\end{lstlisting} %end signature
 Returns the Y-coordinate of the vertex.
 }
 \item{{\bf  Returns} -- 
-the Y-coordinate of the vertex. 
+The Y-coordinate of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -816,6 +1045,151 @@ the Y-coordinate of the vertex.
 {\bf  serialize}\\
 \begin{lstlisting}[frame=none]
 SerializedVertex serialize()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a \texttt{\small SerializedVertex}{\small 
+\refdefined{graphmodel.SerializedVertex}} representation of the graph.
+}
+\item{{\bf  Returns} -- 
+The \texttt{\small SerializedVertex}{\small 
+\refdefined{graphmodel.SerializedVertex}} representation of the graph. 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.Viewable}\index{Viewable@\textit{ Viewable}}Interface Viewable}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface Viewable
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{DefaultDirectedGraph\small{\refdefined{graphmodel.DefaultDirectedGraph}}}
+\subsubsection{All classes known to implement interface}{DefaultDirectedGraph\small{\refdefined{graphmodel.DefaultDirectedGraph}}}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{collapse(Set)}
+{\bf  collapse}\\
+\begin{lstlisting}[frame=none]
+CompoundVertex collapse(java.util.Set subset)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Collapses a set of vertices in one compound vertex. The collapsed vertices can be expanded back into their previous state with \texttt{\small expand(CompoundVertex)}.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{subset} -- the subset to collapse}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the resulting collapsed vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{expand(CompoundVertex)}
+{\bf  expand}\\
+\begin{lstlisting}[frame=none]
+java.util.Set expand(CompoundVertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Expands a collapsed vertex into its substituted set of vertices The vertices will be added back to the set of vertices of this graph. The compound vertex will be removed from the set of vertices. All to the compound vertex incident edges, will be resolved back into an edge between the vertices it connected before the collapse.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the collapsed vertex to expand}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the set of vertices which was substituted by the collapsed vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getDefaultLayout()}
+{\bf  getDefaultLayout}\\
+\begin{lstlisting}[frame=none]
+plugin.LayoutOption getDefaultLayout()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the default layout for this graph. This can be called when to quickly get a suiting layout without having to decide between multiple options.
+}
+\item{{\bf  Returns} -- 
+the default layout for this graph 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getRegisteredLayouts()}
+{\bf  getRegisteredLayouts}\\
+\begin{lstlisting}[frame=none]
+java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a list of layouts which have been registered at the corresponding LayoutRegister for this graph type. The graph implementing this interface will be set as target of the LayoutOption.
+}
+\item{{\bf  Returns} -- 
+A list of layouts which have been registered at the corresponding LayoutRegister for this graph type. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{isCompound(Vertex)}
+{\bf  isCompound}\\
+\begin{lstlisting}[frame=none]
+boolean isCompound(Vertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns true if the specified vertex is a compound vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to check}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the vertex is a compound, false otherwise 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{serialize()}
+{\bf  serialize}\\
+\begin{lstlisting}[frame=none]
+SerializedGraph serialize()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a \texttt{\small SerializedGraph}{\small 
+\refdefined{graphmodel.SerializedGraph}} representation of the graph.
+}
+\item{{\bf  Returns} -- 
+The \texttt{\small SerializedGraph}{\small 
+\refdefined{graphmodel.SerializedGraph}} representation of the graph. 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -823,12 +1197,12 @@ SerializedVertex serialize()\end{lstlisting} %end signature
 \subsection{\label{graphmodel.DefaultDirectedGraph}\index{DefaultDirectedGraph}Class DefaultDirectedGraph}{
 \vskip .1in 
 A \texttt{\small DefaultDirectedGraph}{\small 
-\refdefined{graphmodel.DefaultDirectedGraph}} is a specific Graph which contains just \texttt{\small DirectedEdge}{\small 
-\refdefined{graphmodel.DirectedEdge}} as edges\vskip .1in 
+\refdefined{graphmodel.DefaultDirectedGraph}} is a specific Graph which only contains \texttt{\small DirectedEdge}{\small 
+\refdefined{graphmodel.DirectedEdge}} as edges.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DefaultDirectedGraph
- extends java.lang.Object implements DirectedGraph\end{lstlisting}
+ extends java.lang.Object implements DirectedGraph, Viewable\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -850,21 +1224,78 @@ public DefaultDirectedGraph()\end{lstlisting} %end signature
 public void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signature
 }%end item
 \item{ 
+\index{collapse(Set)}
+{\bf  collapse}\\
+\begin{lstlisting}[frame=none]
+CompoundVertex collapse(java.util.Set subset)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Collapses a set of vertices in one compound vertex. The collapsed vertices can be expanded back into their previous state with \texttt{\small expand(CompoundVertex)}.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{subset} -- the subset to collapse}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the resulting collapsed vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{edgesOf(V)}
 {\bf  edgesOf}\\
 \begin{lstlisting}[frame=none]
 public java.util.Set edgesOf(Vertex vertex)\end{lstlisting} %end signature
 }%end item
 \item{ 
+\index{expand(CompoundVertex)}
+{\bf  expand}\\
+\begin{lstlisting}[frame=none]
+java.util.Set expand(CompoundVertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Expands a collapsed vertex into its substituted set of vertices The vertices will be added back to the set of vertices of this graph. The compound vertex will be removed from the set of vertices. All to the compound vertex incident edges, will be resolved back into an edge between the vertices it connected before the collapse.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the collapsed vertex to expand}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the set of vertices which was substituted by the collapsed vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getDefaultLayout()}
+{\bf  getDefaultLayout}\\
+\begin{lstlisting}[frame=none]
+plugin.LayoutOption getDefaultLayout()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Returns the default layout for this graph. This can be called when to quickly get a suiting layout without having to decide between multiple options.
+}
+\item{{\bf  Returns} -- 
+the default layout for this graph 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{getEdgeSet()}
 {\bf  getEdgeSet}\\
 \begin{lstlisting}[frame=none]
 public java.util.Set getEdgeSet()\end{lstlisting} %end signature
-\begin{itemize}
-\item{{\bf  Returns} -- 
- 
-}%end item
-\end{itemize}
 }%end item
 \item{ 
 \index{getID()}
@@ -882,7 +1313,17 @@ public java.lang.String getName()\end{lstlisting} %end signature
 \index{getRegisteredLayouts()}
 {\bf  getRegisteredLayouts}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
+java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Returns a list of layouts which have been registered at the corresponding LayoutRegister for this graph type. The graph implementing this interface will be set as target of the LayoutOption.
+}
+\item{{\bf  Returns} -- 
+A list of layouts which have been registered at the corresponding LayoutRegister for this graph type. 
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getSource(E)}
@@ -891,14 +1332,19 @@ public java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
 public Vertex getSource(DirectedEdge edge)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
+{\bf  Description}
+
+Returns the source of a edge of the graph.
+}
+\item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{edge} -- }
+\texttt{edge} -- A edge which is contained in the graph.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The vertex which the edge is coming from. 
 }%end item
 \end{itemize}
 }%end item
@@ -907,32 +1353,27 @@ public Vertex getSource(DirectedEdge edge)\end{lstlisting} %end signature
 {\bf  getVertexSet}\\
 \begin{lstlisting}[frame=none]
 public java.util.Set getVertexSet()\end{lstlisting} %end signature
-\begin{itemize}
-\item{{\bf  Returns} -- 
- 
-}%end item
-\end{itemize}
 }%end item
 \item{ 
 \index{incomingEdgesOf(V)}
 {\bf  incomingEdgesOf}\\
 \begin{lstlisting}[frame=none]
-public java.util.Set incomingEdgesOf(Vertex vertex)\end{lstlisting} %end signature
+java.util.Set incomingEdgesOf(Vertex vertex)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from DirectedGraph{\small \refdefined{graphmodel.DirectedGraph}} }
 
-Get a set of all incoming edges of a vertex
+Returns a set of all incoming edges of a vertex.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- Vertex whose incoming edges will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The edges coming in the supplied vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -940,45 +1381,45 @@ Get a set of all incoming edges of a vertex
 \index{indegreeOf(V)}
 {\bf  indegreeOf}\\
 \begin{lstlisting}[frame=none]
-public java.lang.Integer indegreeOf(Vertex vertex)\end{lstlisting} %end signature
+java.lang.Integer indegreeOf(Vertex vertex)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from DirectedGraph{\small \refdefined{graphmodel.DirectedGraph}} }
 
-Get the indegree of a vertex
+Returns the indegree of a vertex of the graph.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- Vertex whose indegree will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The number of edges going into the supplied vertex. 
 }%end item
 \end{itemize}
 }%end item
 \item{ 
-\index{outcomingEdgesOf(V)}
-{\bf  outcomingEdgesOf}\\
+\index{isCompound(Vertex)}
+{\bf  isCompound}\\
 \begin{lstlisting}[frame=none]
-public java.util.Set outcomingEdgesOf(Vertex vertex)\end{lstlisting} %end signature
+boolean isCompound(Vertex vertex)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from Viewable{\small \refdefined{graphmodel.Viewable}} }
 
-Get a set of all outcoming edges of a vertex
+Returns true if the specified vertex is a compound vertex
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- the vertex to check}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+true if the vertex is a compound, false otherwise 
 }%end item
 \end{itemize}
 }%end item
@@ -986,22 +1427,45 @@ Get a set of all outcoming edges of a vertex
 \index{outdegreeOf(V)}
 {\bf  outdegreeOf}\\
 \begin{lstlisting}[frame=none]
-public java.lang.Integer outdegreeOf(Vertex vertex)\end{lstlisting} %end signature
+java.lang.Integer outdegreeOf(Vertex vertex)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from DirectedGraph{\small \refdefined{graphmodel.DirectedGraph}} }
 
-Get the outdegree of a vertex
+Returns the outdegree of a vertex of the graph.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- Vertex whose outdegree will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The number of edges going out of the supplied vertex. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{outgoingEdgesOf(V)}
+{\bf  outgoingEdgesOf}\\
+\begin{lstlisting}[frame=none]
+java.util.Set outgoingEdgesOf(Vertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from DirectedGraph{\small \refdefined{graphmodel.DirectedGraph}} }
+
+Returns a set of all outgoing edges of a vertex.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- Vertex whose outgoing edges will be returned.}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+The edges going out of the supplied vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -1009,14 +1473,26 @@ Get the outdegree of a vertex
 \index{serialize()}
 {\bf  serialize}\\
 \begin{lstlisting}[frame=none]
-public SerializedGraph serialize()\end{lstlisting} %end signature
+SerializedGraph serialize()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Returns a \texttt{\small SerializedGraph}{\small 
+\refdefined{graphmodel.SerializedGraph}} representation of the graph.
+}
+\item{{\bf  Returns} -- 
+The \texttt{\small SerializedGraph}{\small 
+\refdefined{graphmodel.SerializedGraph}} representation of the graph. 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{graphmodel.DefaultVertex}\index{DefaultVertex}Class DefaultVertex}{
 \vskip .1in 
-This is an DefaultVertex, which has basic functions and is provided by the mainapplication.\vskip .1in 
+This is an DefaultVertex, which has basic functions and is provided by the main application. This vertex can be derived by plugins which offer more functionality than the basic vertex.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DefaultVertex
@@ -1044,8 +1520,17 @@ void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signatur
 \item{
 {\bf  Description copied from Vertex{\small \refdefined{graphmodel.Vertex}} }
 
-Adds Values to FastGraphAccessor
+Adds the vertex to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{fga} -- The \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this vertex will be added.}
+  \end{itemize}
+}%end item
 \end{itemize}
 }%end item
 \item{ 
@@ -1060,7 +1545,7 @@ java.lang.Integer getID()\end{lstlisting} %end signature
 Returns the ID of the vertex. Every vertex in one graph has a unique ID.
 }
 \item{{\bf  Returns} -- 
-the ID of the vertex. 
+The ID of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -1076,7 +1561,7 @@ java.lang.String getLabel()\end{lstlisting} %end signature
 Returns the label of the vertex, that will be shown in the GUI. The label can be an empty string.
 }
 \item{{\bf  Returns} -- 
-the label of the vertex 
+The label of the vertex 
 }%end item
 \end{itemize}
 }%end item
@@ -1092,7 +1577,7 @@ java.lang.String getName()\end{lstlisting} %end signature
 Returns the name of the vertex. A descriptive name of the vertex. Multiple vertices with equal name in one graph are allowed. Therefore don't use this as identifier, instead use \texttt{\small getID()}.
 }
 \item{{\bf  Returns} -- 
-the name of the vertex. 
+The name of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -1108,7 +1593,7 @@ int getX()\end{lstlisting} %end signature
 Returns the X-coordinate of the vertex.
 }
 \item{{\bf  Returns} -- 
-the X-coordinate of this vertex. 
+The X-coordinate of this vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -1124,7 +1609,7 @@ int getY()\end{lstlisting} %end signature
 Returns the Y-coordinate of the vertex.
 }
 \item{{\bf  Returns} -- 
-the Y-coordinate of the vertex. 
+The Y-coordinate of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -1133,6 +1618,18 @@ the Y-coordinate of the vertex.
 {\bf  serialize}\\
 \begin{lstlisting}[frame=none]
 SerializedVertex serialize()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Vertex{\small \refdefined{graphmodel.Vertex}} }
+
+Returns a \texttt{\small SerializedVertex}{\small 
+\refdefined{graphmodel.SerializedVertex}} representation of the graph.
+}
+\item{{\bf  Returns} -- 
+The \texttt{\small SerializedVertex}{\small 
+\refdefined{graphmodel.SerializedVertex}} representation of the graph. 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -1140,7 +1637,7 @@ SerializedVertex serialize()\end{lstlisting} %end signature
 \subsection{\label{graphmodel.DirectedEdge}\index{DirectedEdge}Class DirectedEdge}{
 \vskip .1in 
 A \texttt{\small DirectedEdge}{\small 
-\refdefined{graphmodel.DirectedEdge}} is an edge that has one source and one target vertex. So the direction of the edge is specified.\vskip .1in 
+\refdefined{graphmodel.DirectedEdge}} is an edge that has one source and one target vertex. The direction of the edge is specified.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DirectedEdge
@@ -1168,13 +1665,15 @@ void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signatur
 \item{
 {\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
 
-Adds Values to FastGraphAccessor.
+Adds the edge to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{fga} -- }
+\texttt{fga} -- The \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this edge will be added.}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -1191,7 +1690,7 @@ java.lang.Integer getID()\end{lstlisting} %end signature
 Returns the ID of the edge.
 }
 \item{{\bf  Returns} -- 
-id of the edge 
+The id of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1207,7 +1706,7 @@ java.lang.String getLabel()\end{lstlisting} %end signature
 Returns the label of the edge.
 }
 \item{{\bf  Returns} -- 
-label of the edge 
+The label of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1223,7 +1722,7 @@ java.lang.String getName()\end{lstlisting} %end signature
 Returns the name of the edge.
 }
 \item{{\bf  Returns} -- 
-name of the edge 
+The name of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1239,7 +1738,7 @@ public Vertex getSource()\end{lstlisting} %end signature
 Returns the source vertex of this directed edge.
 }
 \item{{\bf  Returns} -- 
-the source vertex of this directed edge 
+The vertex the edge is coming from. 
 }%end item
 \end{itemize}
 }%end item
@@ -1255,7 +1754,7 @@ public Vertex getTarget()\end{lstlisting} %end signature
 Returns the target vertex of this edge.
 }
 \item{{\bf  Returns} -- 
-the target vertex of this directed edge 
+The vertex the edge is pointing at/going to. 
 }%end item
 \end{itemize}
 }%end item
@@ -1271,7 +1770,7 @@ java.util.List getVertices()\end{lstlisting} %end signature
 Returns the vertices connected with this edge.
 }
 \item{{\bf  Returns} -- 
-the vertices connected with the edge 
+The vertices connected with the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1281,8 +1780,15 @@ the vertices connected with the edge
 \begin{lstlisting}[frame=none]
 SerializedEdge serialize()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
+
+Returns a \texttt{\small SerializedEdge}{\small 
+\refdefined{graphmodel.SerializedEdge}} representation of the edge.
+}
 \item{{\bf  Returns} -- 
- 
+The \texttt{\small SerializedEdge}{\small 
+\refdefined{graphmodel.SerializedEdge}} representation of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1291,6 +1797,9 @@ SerializedEdge serialize()\end{lstlisting} %end signature
 }
 \subsection{\label{graphmodel.DirectedGraphLayoutOption}\index{DirectedGraphLayoutOption}Class DirectedGraphLayoutOption}{
 \vskip .1in 
+A \texttt{\small LayoutOption}{\small 
+\refdefined{plugin.LayoutOption}} which is specific for \texttt{\small DirectedGraph}{\small 
+\refdefined{graphmodel.DirectedGraph}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class DirectedGraphLayoutOption
@@ -1314,12 +1823,29 @@ public DirectedGraphLayoutOption()\end{lstlisting} %end signature
 {\bf  setGraph}\\
 \begin{lstlisting}[frame=none]
 public void setGraph(DirectedGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the graph that will be the target of the DirectedGraphLayoutOption.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- The graph that will be the target of this DirectedGraphLayoutOption.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{graphmodel.DirectedGraphLayoutRegister}\index{DirectedGraphLayoutRegister}Class DirectedGraphLayoutRegister}{
 \vskip .1in 
+A \texttt{\small LayoutRegister}{\small 
+\refdefined{plugin.LayoutRegister}} which is specific for \texttt{\small DirectedGraphLayoutOption}{\small 
+\refdefined{graphmodel.DirectedGraphLayoutOption}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DirectedGraphLayoutRegister
@@ -1540,8 +2066,7 @@ public void reset()\end{lstlisting} %end signature
 }
 \subsection{\label{graphmodel.GraphModel}\index{GraphModel}Class GraphModel}{
 \vskip .1in 
-A \texttt{\small GraphModel}{\small 
-\refdefined{graphmodel.GraphModel}} contains one or more graphs. It is used to save nested or hierachical graphs in one class\vskip .1in 
+A GraphModel contains one or more graphs. It is used to save nested or hierachical graphs in one class.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class GraphModel
@@ -1569,10 +2094,76 @@ public abstract java.util.List getGraphs()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Getter of graph
+Returns all \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}} contained in the GraphModel.
 }
 \item{{\bf  Returns} -- 
- 
+A list of all the \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}} contained in the GraphModel. 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.Group}\index{Group}Class Group}{
+\vskip .1in 
+This class allows to collect an amount of vertices.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class Group
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Group()}
+{\bf  Group}\\
+\begin{lstlisting}[frame=none]
+public Group()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addVertex(V)}
+{\bf  addVertex}\\
+\begin{lstlisting}[frame=none]
+public void addVertex(Vertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Adds the vertex to this Group.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- vertex to add to this group}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{removeVertex(V)}
+{\bf  removeVertex}\\
+\begin{lstlisting}[frame=none]
+public void removeVertex(Vertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Removes the vertex argument from this Group.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- vertex to remove from this Group}
+  \end{itemize}
 }%end item
 \end{itemize}
 }%end item
@@ -1581,8 +2172,13 @@ Getter of graph
 }
 \subsection{\label{graphmodel.SerializedEdge}\index{SerializedEdge}Class SerializedEdge}{
 \vskip .1in 
-A \texttt{\small DirectedEdge}{\small 
-\refdefined{graphmodel.DirectedEdge}} is an edge that has one source and one target vertex. So the direction of the edge is specified.\vskip .1in 
+A serialized version of a \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}}. It contains all attributes as a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of String to String entries which can be used by an Exporter to export a \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}}. It is designed as an intermediate Step in the export workflow and should not be used for other purposes. Attributes in the \texttt{\small List}{\small 
+\refdefined{java.util.List}} are not synchronized with attributes outside the \texttt{\small List}{\small 
+\refdefined{java.util.List}}, and Attributes of SerializedEdge are not synchronized with the origin \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} attributes.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class SerializedEdge
@@ -1610,13 +2206,15 @@ void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signatur
 \item{
 {\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
 
-Adds Values to FastGraphAccessor.
+Adds the edge to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{fga} -- }
+\texttt{fga} -- The \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this edge will be added.}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -1626,6 +2224,25 @@ Adds Values to FastGraphAccessor.
 {\bf  getAttributes}\\
 \begin{lstlisting}[frame=none]
 public java.util.Map getAttributes()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Gets all serialized Attributes as a Map from String to String. This Map gets created when serializing a \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} and is returned on demand. This should only be used for exporting Edges since the attributes are not synchronized with the attributes of the unserialized \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}}
+}
+\item{{\bf  Returns} -- 
+The Map of serialized Attributes 
+}%end item
+\item{{\bf  See also}
+  \begin{itemize}
+\item{ \texttt{java.util.Map} {\small 
+\refdefined{java.util.Map}}%end
+}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getID()}
@@ -1639,7 +2256,7 @@ java.lang.Integer getID()\end{lstlisting} %end signature
 Returns the ID of the edge.
 }
 \item{{\bf  Returns} -- 
-id of the edge 
+The id of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1655,7 +2272,7 @@ java.lang.String getLabel()\end{lstlisting} %end signature
 Returns the label of the edge.
 }
 \item{{\bf  Returns} -- 
-label of the edge 
+The label of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1671,7 +2288,7 @@ java.lang.String getName()\end{lstlisting} %end signature
 Returns the name of the edge.
 }
 \item{{\bf  Returns} -- 
-name of the edge 
+The name of the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1687,7 +2304,7 @@ java.util.List getVertices()\end{lstlisting} %end signature
 Returns the vertices connected with this edge.
 }
 \item{{\bf  Returns} -- 
-the vertices connected with the edge 
+The vertices connected with the edge. 
 }%end item
 \end{itemize}
 }%end item
@@ -1697,24 +2314,31 @@ the vertices connected with the edge
 \begin{lstlisting}[frame=none]
 SerializedEdge serialize()\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
+
+Returns a \texttt{\small SerializedEdge}{\small 
+\refdefined{graphmodel.SerializedEdge}} representation of the edge.
+}
 \item{{\bf  Returns} -- 
- 
+The \texttt{\small SerializedEdge}{\small 
+\refdefined{graphmodel.SerializedEdge}} representation of the edge. 
 }%end item
 \end{itemize}
-}%end item
-\item{ 
-\index{setAttribute(String, String)}
-{\bf  setAttribute}\\
-\begin{lstlisting}[frame=none]
-public void setAttribute(java.lang.String name,java.lang.String value)\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{graphmodel.SerializedGraph}\index{SerializedGraph}Class SerializedGraph}{
 \vskip .1in 
-A \texttt{\small SerializedGraph}{\small 
-\refdefined{graphmodel.SerializedGraph}} is a specific Graph that contains all informations as Strings\vskip .1in 
+A serialized version of a \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}}. It contains all attributes as a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of String to String entries which can be used by an \texttt{\small Exporter}{\small 
+\refdefined{plugin.Exporter}} to export a \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}}. It is designed as an intermediate Step in the export workflow and should not be used for other purposes. Attributes in the \texttt{\small List}{\small 
+\refdefined{java.util.List}} are not synchronized with attributes outside the \texttt{\small List}{\small 
+\refdefined{java.util.List}}, and Attributes of SerializedGraph are not synchronized with the origin \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}} attributes.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class SerializedGraph
@@ -1734,19 +2358,6 @@ public SerializedGraph()\end{lstlisting} %end signature
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{addEdge()}
-{\bf  addEdge}\\
-\begin{lstlisting}[frame=none]
-public void addEdge()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Adds a new Edge to the graph
-}
-\end{itemize}
-}%end item
-\item{ 
 \index{addToFastGraphAccessor(FastGraphAccessor)}
 {\bf  addToFastGraphAccessor}\\
 \begin{lstlisting}[frame=none]
@@ -1755,17 +2366,16 @@ void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signatur
 \item{
 {\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
 
-adds this graph to a fastGraphAccessor
+Adds the graph to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{fga} -- the \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this graph will be added.}
   \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
- 
 }%end item
 \end{itemize}
 }%end item
@@ -1778,17 +2388,17 @@ java.util.Set edgesOf(Vertex vertex)\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
 
-get a list of all edges of a vertex
+Returns a list of all edges of a vertex.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{vertex} -- the vertex which edges will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+All edges which are connected with the supplied vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -1797,6 +2407,25 @@ get a list of all edges of a vertex
 {\bf  getAttributes}\\
 \begin{lstlisting}[frame=none]
 public java.util.Map getAttributes()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Gets all serialized Attributes as a Map from String to String. This Map gets created when serializing a \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}} and is returned on demand. This should only be used for exporting Graphs since the attributes are not synchronized with the attributes of the unserialized \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}}
+}
+\item{{\bf  Returns} -- 
+The Map of serialized Attributes 
+}%end item
+\item{{\bf  See also}
+  \begin{itemize}
+\item{ \texttt{java.util.Map} {\small 
+\refdefined{java.util.Map}}%end
+}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getEdgeSet()}
@@ -1807,10 +2436,10 @@ java.util.Set getEdgeSet()\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
 
-Get a set of all edges in this graph
+Returns all edges of the graph.
 }
 \item{{\bf  Returns} -- 
- 
+A set of all edges of the graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -1826,7 +2455,7 @@ java.lang.Integer getID()\end{lstlisting} %end signature
 Returns the ID of the graph.
 }
 \item{{\bf  Returns} -- 
-id of the graph 
+The id of the graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -1842,38 +2471,7 @@ java.lang.String getName()\end{lstlisting} %end signature
 Returns the name of the Graph.
 }
 \item{{\bf  Returns} -- 
-name of the graph 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getRegisteredLayouts()}
-{\bf  getRegisteredLayouts}\\
-\begin{lstlisting}[frame=none]
-java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
-
-Returns a list of layouts which have been registered at the corresponding LayoutRegister for this graph type. The graph implementing this interface will be set as target of the LayoutOption.
-}
-\end{itemize}
-}%end item
-\item{ 
-\index{getSource(E)}
-{\bf  getSource}\\
-\begin{lstlisting}[frame=none]
-public SerializedVertex getSource(SerializedEdge edge)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{edge} -- }
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
- 
+The name of the graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -1886,31 +2484,26 @@ java.util.Set getVertexSet()\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from Graph{\small \refdefined{graphmodel.Graph}} }
 
-Get a set of all vertices in this graph
+Returns all vertices of the graph.
 }
 \item{{\bf  Returns} -- 
- 
+A set of all vertices of the graph. 
 }%end item
 \end{itemize}
-}%end item
-\item{ 
-\index{serialize()}
-{\bf  serialize}\\
-\begin{lstlisting}[frame=none]
-SerializedGraph serialize()\end{lstlisting} %end signature
-}%end item
-\item{ 
-\index{setAttribute(String, String)}
-{\bf  setAttribute}\\
-\begin{lstlisting}[frame=none]
-public void setAttribute(java.lang.String name,java.lang.String value)\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{graphmodel.SerializedVertex}\index{SerializedVertex}Class SerializedVertex}{
 \vskip .1in 
-This vertex interface specifies an vertex. An vertex contains an ID and a name\vskip .1in 
+A serialized version of a \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}}. It contains all attributes as a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of String to String entries which can be used by an \texttt{\small Exporter}{\small 
+\refdefined{plugin.Exporter}} to export a \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}}. It is designed as an intermediate Step in the export workflow and should not be used for other purposes. Attributes in the \texttt{\small List}{\small 
+\refdefined{java.util.List}} are not synchronized with attributes outside the \texttt{\small List}{\small 
+\refdefined{java.util.List}}, and Attributes of SerializedVertex are not synchronized with the origin \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} attributes.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class SerializedVertex
@@ -1919,10 +2512,24 @@ public class SerializedVertex
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{SerializedVertex()}
+\index{SerializedVertex(List)}
 {\bf  SerializedVertex}\\
 \begin{lstlisting}[frame=none]
-public SerializedVertex()\end{lstlisting} %end signature
+public SerializedVertex(java.util.List attributes)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+creates
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{attributes} -- }
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -1933,15 +2540,21 @@ public SerializedVertex()\end{lstlisting} %end signature
 \index{addToFastGraphAccessor(FastGraphAccessor)}
 {\bf  addToFastGraphAccessor}\\
 \begin{lstlisting}[frame=none]
-public void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signature
+void addToFastGraphAccessor(FastGraphAccessor fga)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from Vertex{\small \refdefined{graphmodel.Vertex}} }
 
-Adds Values to FastGraphAccessor
+Adds the vertex to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
-\item{{\bf  Returns} -- 
- 
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{fga} -- The \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this vertex will be added.}
+  \end{itemize}
 }%end item
 \end{itemize}
 }%end item
@@ -1950,20 +2563,39 @@ Adds Values to FastGraphAccessor
 {\bf  getAttributes}\\
 \begin{lstlisting}[frame=none]
 public java.util.Map getAttributes()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Gets all serialized Attributes as a Map from String to String. This Map gets created when serializing a \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} and is returned on demand. This should only be used for exporting Vertices since the attributes are not synchronized with the attributes of the unserialized \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}}
+}
+\item{{\bf  Returns} -- 
+The Map of serialized Attributes 
+}%end item
+\item{{\bf  See also}
+  \begin{itemize}
+\item{ \texttt{java.util.Map} {\small 
+\refdefined{java.util.Map}}%end
+}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getID()}
 {\bf  getID}\\
 \begin{lstlisting}[frame=none]
-public java.lang.Integer getID()\end{lstlisting} %end signature
+java.lang.Integer getID()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from Vertex{\small \refdefined{graphmodel.Vertex}} }
 
-Get the ID of the vertex
+Returns the ID of the vertex. Every vertex in one graph has a unique ID.
 }
 \item{{\bf  Returns} -- 
- 
+The ID of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -1979,7 +2611,7 @@ java.lang.String getLabel()\end{lstlisting} %end signature
 Returns the label of the vertex, that will be shown in the GUI. The label can be an empty string.
 }
 \item{{\bf  Returns} -- 
-the label of the vertex 
+The label of the vertex 
 }%end item
 \end{itemize}
 }%end item
@@ -1987,15 +2619,15 @@ the label of the vertex
 \index{getName()}
 {\bf  getName}\\
 \begin{lstlisting}[frame=none]
-public java.lang.String getName()\end{lstlisting} %end signature
+java.lang.String getName()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from Vertex{\small \refdefined{graphmodel.Vertex}} }
 
-Get the name of the vertex
+Returns the name of the vertex. A descriptive name of the vertex. Multiple vertices with equal name in one graph are allowed. Therefore don't use this as identifier, instead use \texttt{\small getID()}.
 }
 \item{{\bf  Returns} -- 
- 
+The name of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -2011,7 +2643,7 @@ int getX()\end{lstlisting} %end signature
 Returns the X-coordinate of the vertex.
 }
 \item{{\bf  Returns} -- 
-the X-coordinate of this vertex. 
+The X-coordinate of this vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -2027,7 +2659,7 @@ int getY()\end{lstlisting} %end signature
 Returns the Y-coordinate of the vertex.
 }
 \item{{\bf  Returns} -- 
-the Y-coordinate of the vertex. 
+The Y-coordinate of the vertex. 
 }%end item
 \end{itemize}
 }%end item
@@ -2036,12 +2668,18 @@ the Y-coordinate of the vertex.
 {\bf  serialize}\\
 \begin{lstlisting}[frame=none]
 SerializedVertex serialize()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Vertex{\small \refdefined{graphmodel.Vertex}} }
+
+Returns a \texttt{\small SerializedVertex}{\small 
+\refdefined{graphmodel.SerializedVertex}} representation of the graph.
+}
+\item{{\bf  Returns} -- 
+The \texttt{\small SerializedVertex}{\small 
+\refdefined{graphmodel.SerializedVertex}} representation of the graph. 
 }%end item
-\item{ 
-\index{setAttribute(String, String)}
-{\bf  setAttribute}\\
-\begin{lstlisting}[frame=none]
-public void setAttribute(java.lang.String name,java.lang.String value)\end{lstlisting} %end signature
+\end{itemize}
 }%end item
 \end{itemize}
 }

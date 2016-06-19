@@ -3,59 +3,152 @@
 \hbox to \hsize{\textit{ Package Contents\hfil Page}}
 \vskip .13in
 \hbox{{\bf  Classes}}
-\entityintro{Callgraph}{joana.Callgraph}{This is a specified graph representation for the Callgraph in Joana}
+\entityintro{CallGraph}{joana.CallGraph}{This is a specified graph representation for the Callgraph in Joana.}
 \entityintro{CallGraphBuilder}{joana.CallGraphBuilder}{The CallGraphBuilder implements an \texttt{\small IGraphBuilder}{\small 
-\refdefined{graphmodel.IGraphBuilder}} and builds one \texttt{\small Callgraph}{\small 
-\refdefined{joana.Callgraph}}}
-\entityintro{CallGraphLayoutOption}{joana.CallGraphLayoutOption}{}
+\refdefined{graphmodel.IGraphBuilder}} and builds one \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}}.}
+\entityintro{CallGraphLayout}{joana.CallGraphLayout}{}
+\entityintro{CallGraphLayoutOption}{joana.CallGraphLayoutOption}{A \texttt{\small LayoutOption}{\small 
+\refdefined{plugin.LayoutOption}} which is specific for \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}}.}
 \entityintro{FieldAccess}{joana.FieldAccess}{This specifies the vertex representation of FieldAccesses in a MethodGraph It contains a \texttt{\small FieldAccessGraph}.}
-\entityintro{FieldAccessGraph}{joana.FieldAccessGraph}{}
-\entityintro{FieldAccessLayout}{joana.FieldAccessLayout}{This class applies it's Layout to a \texttt{\small FieldAccess}{\small 
+\entityintro{FieldAccessGraph}{joana.FieldAccessGraph}{A \texttt{\small JoanaGraph}{\small 
+\refdefined{joana.JoanaGraph}} which specifies a \texttt{\small FieldAccess}{\small 
+\refdefined{joana.FieldAccess}} in a \texttt{\small JoanaGraph}{\small 
+\refdefined{joana.JoanaGraph}}}
+\entityintro{FieldAccessLayout}{joana.FieldAccessLayout}{The FieldAccessLayout applies its layout to a \texttt{\small FieldAccess}{\small 
 \refdefined{joana.FieldAccess}}.}
-\entityintro{JoanaEdge}{joana.JoanaEdge}{This is the Joana specified Edge.}
-\entityintro{JoanaEdgeBuilder}{joana.JoanaEdgeBuilder}{The JoanaEdgeBuilder implements an \texttt{\small IEdgeBuilder}{\small 
-\refdefined{graphmodel.IEdgeBuilder}} and build exactly one edge}
-\entityintro{JoanaGraph}{joana.JoanaGraph}{An abstract superclass for all JOANA graphs.}
-\entityintro{JoanaGraphModel}{joana.JoanaGraphModel}{This is the Joana specified Graphmodel.}
-\entityintro{JoanaGraphModelBuilder}{joana.JoanaGraphModelBuilder}{This JoanaGraphModelBuilder implements the \texttt{\small IGraphModelBuilder}{\small 
-\refdefined{graphmodel.IGraphModelBuilder}} and creates one \texttt{\small JoanaGraphModel}{\small 
-\refdefined{joana.JoanaGraphModel}}}
-\entityintro{JoanaPlugin}{joana.JoanaPlugin}{}
+\entityintro{JoanaEdge}{joana.JoanaEdge}{A Joana specific Edge.}
+\entityintro{JoanaEdgeBuilder}{joana.JoanaEdgeBuilder}{The JoanaEdgeBuilder is a \texttt{\small IEdgeBuilder}{\small 
+\refdefined{graphmodel.IEdgeBuilder}}, specifically for building \texttt{\small JoanaEdge}{\small 
+\refdefined{joana.JoanaEdge}}.}
+\entityintro{JoanaGraph}{joana.JoanaGraph}{An abstract superclass for all JOANA specific graphs.}
+\entityintro{JoanaGraphModel}{joana.JoanaGraphModel}{A Joana specific \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}}.}
+\entityintro{JoanaGraphModelBuilder}{joana.JoanaGraphModelBuilder}{The JoanaGraphModelBuilder implements the \texttt{\small IGraphModelBuilder}{\small 
+\refdefined{graphmodel.IGraphModelBuilder}} and creates a \texttt{\small JoanaGraphModel}{\small 
+\refdefined{joana.JoanaGraphModel}}.}
+\entityintro{JoanaPlugin}{joana.JoanaPlugin}{A plugin for GAns that supports the creation and visualization of Joana system dependence graphs.}
 \entityintro{JoanaPlugin.CallGraphLayoutRegister}{joana.JoanaPlugin.CallGraphLayoutRegister}{}
 \entityintro{JoanaPlugin.MethodGraphLayoutRegister}{joana.JoanaPlugin.MethodGraphLayoutRegister}{}
-\entityintro{JoanaVertex}{joana.JoanaVertex}{This is the Joana specified Vertex.}
+\entityintro{JoanaVertex}{joana.JoanaVertex}{A Joana specific Vertex.}
 \entityintro{JoanaVertexBuilder}{joana.JoanaVertexBuilder}{The JoanaVertexBuilder implements an \texttt{\small IVertexBuilder}{\small 
-\refdefined{graphmodel.IVertexBuilder}} and build exactly one vertex}
+\refdefined{graphmodel.IVertexBuilder}} and creates a \texttt{\small JoanaVertex}{\small 
+\refdefined{joana.JoanaVertex}}.}
 \entityintro{JoanaWorkspace}{joana.JoanaWorkspace}{The \texttt{\small JoanaWorkspace}{\small 
-\refdefined{joana.JoanaWorkspace}} is the workspace for Joana graphs It is used to define parameters, and also provides an \texttt{\small IGraphModelBuilder}{\small 
-\refdefined{graphmodel.IGraphModelBuilder}} and contains a \texttt{\small JoanaGraphModel}{\small 
-\refdefined{joana.JoanaGraphModel}}}
-\entityintro{MethodCall}{joana.MethodCall}{}
-\entityintro{MethodCallLayout}{joana.MethodCallLayout}{}
-\entityintro{MethodGraph}{joana.MethodGraph}{This is a specified graph representation for a MethodGraph in JOANA}
-\entityintro{MethodGraphBuilder}{joana.MethodGraphBuilder}{The MethodGraphBuilder implements an \texttt{\small IGraphBuilder}{\small 
-\refdefined{graphmodel.IGraphBuilder}} and builds one \texttt{\small MethodGraph}{\small 
-\refdefined{joana.MethodGraph}}}
-\entityintro{MethodGraphLayout}{joana.MethodGraphLayout}{Implements a SugiyamaLayout for \texttt{\small MethodGraph}{\small 
-\refdefined{joana.MethodGraph}}}
-\entityintro{MethodGraphLayoutOption}{joana.MethodGraphLayoutOption}{}
+\refdefined{joana.JoanaWorkspace}} is the workspace for Joana graphs.}
+\entityintro{MethodGraph}{joana.MethodGraph}{This is a specific graph representation for a MethodGraph in JOANA}
+\entityintro{MethodGraphBuilder}{joana.MethodGraphBuilder}{The MethodGraphBuilder is a \texttt{\small IGraphBuilder}{\small 
+\refdefined{graphmodel.IGraphBuilder}}, specifically for building \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}}.}
+\entityintro{MethodGraphLayout}{joana.MethodGraphLayout}{Implements hierarchical layout with layers for \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}}.}
+\entityintro{MethodGraphLayoutOption}{joana.MethodGraphLayoutOption}{A \texttt{\small LayoutOption}{\small 
+\refdefined{plugin.LayoutOption}} which is specific for \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}}.}
 \vskip .1in
 \vskip .1in
-\subsection{\label{joana.Callgraph}\index{Callgraph}Class Callgraph}{
+\subsection{\label{joana.CallGraph}\index{CallGraph}Class CallGraph}{
 \vskip .1in 
-This is a specified graph representation for the Callgraph in Joana\vskip .1in 
+This is a specified graph representation for the Callgraph in Joana.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
-public class Callgraph
+public class CallGraph
  extends joana.JoanaGraph\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{Callgraph()}
-{\bf  Callgraph}\\
+\index{CallGraph()}
+{\bf  CallGraph}\\
 \begin{lstlisting}[frame=none]
-public Callgraph()\end{lstlisting} %end signature
+public CallGraph()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{collapse(Set)}
+{\bf  collapse}\\
+\begin{lstlisting}[frame=none]
+graphmodel.CompoundVertex collapse(java.util.Set subset)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Collapses a set of vertices in one compound vertex. The collapsed vertices can be expanded back into their previous state with \texttt{\small expand(CompoundVertex)}.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{subset} -- the subset to collapse}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the resulting collapsed vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{expand(CompoundVertex)}
+{\bf  expand}\\
+\begin{lstlisting}[frame=none]
+java.util.Set expand(graphmodel.CompoundVertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Expands a collapsed vertex into its substituted set of vertices The vertices will be added back to the set of vertices of this graph. The compound vertex will be removed from the set of vertices. All to the compound vertex incident edges, will be resolved back into an edge between the vertices it connected before the collapse.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the collapsed vertex to expand}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the set of vertices which was substituted by the collapsed vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayerWidth(int)}
+{\bf  getLayerWidth}\\
+\begin{lstlisting}[frame=none]
+public int getLayerWidth(int layerN)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSubgraphs()}
+{\bf  getSubgraphs}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getSubgraphs()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{isCompound(Vertex)}
+{\bf  isCompound}\\
+\begin{lstlisting}[frame=none]
+boolean isCompound(graphmodel.Vertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Returns true if the specified vertex is a compound vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to check}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the vertex is a compound, false otherwise 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -63,8 +156,8 @@ public Callgraph()\end{lstlisting} %end signature
 \subsection{\label{joana.CallGraphBuilder}\index{CallGraphBuilder}Class CallGraphBuilder}{
 \vskip .1in 
 The CallGraphBuilder implements an \texttt{\small IGraphBuilder}{\small 
-\refdefined{graphmodel.IGraphBuilder}} and builds one \texttt{\small Callgraph}{\small 
-\refdefined{joana.Callgraph}}\vskip .1in 
+\refdefined{graphmodel.IGraphBuilder}} and builds one \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class CallGraphBuilder
@@ -92,10 +185,10 @@ graphmodel.Graph build()\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from graphmodel.IGraphBuilder{\small \refdefined{graphmodel.IGraphBuilder}} }
 
-This method is called, when the buildingprocess of the graph is finished. Then it builds the graph and returns it.
+Builds a graph from the given settings and returns it.
 }
 \item{{\bf  Returns} -- 
-Graph 
+The graph that is being build by the IGraphBuilder. 
 }%end item
 \end{itemize}
 }%end item
@@ -111,7 +204,8 @@ graphmodel.IEdgeBuilder getEdgeBuilder()\end{lstlisting} %end signature
 Returns the EdgeBuilder which is specified for this graph.
 }
 \item{{\bf  Returns} -- 
-AbstractEdgeBuilder 
+The \texttt{\small IEdgeBuilder}{\small 
+\refdefined{graphmodel.IEdgeBuilder}} which is specified for this graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -130,11 +224,67 @@ Returns the VertexBuilder which is specified for this graph.
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertexID} -- }
+\texttt{vertexID} -- The id of the vertex which associated IVertexBuilder will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
-AbstractVertexBuilder 
+The \texttt{\small IVertexBuilder}{\small 
+\refdefined{graphmodel.IVertexBuilder}} which is specified for this graph. 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{joana.CallGraphLayout}\index{CallGraphLayout}Class CallGraphLayout}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class CallGraphLayout
+ extends java.lang.Object implements sugiyama.LayeredLayoutAlgorithm\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{CallGraphLayout()}
+{\bf  CallGraphLayout}\\
+\begin{lstlisting}[frame=none]
+public CallGraphLayout()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getSettings()}
+{\bf  getSettings}\\
+\begin{lstlisting}[frame=none]
+public parameter.Settings getSettings()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{layout(CallGraph)}
+{\bf  layout}\\
+\begin{lstlisting}[frame=none]
+public void layout(CallGraph graph)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{layoutLayeredGraph(LayeredGraph)}
+{\bf  layoutLayeredGraph}\\
+\begin{lstlisting}[frame=none]
+void layoutLayeredGraph(graphmodel.LayeredGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from sugiyama.LayeredLayoutAlgorithm{\small \refdefined{sugiyama.LayeredLayoutAlgorithm}} }
+
+Applies its layout to a graph as in \texttt{\small layout(G graph)} but keeps the notion of layers. The algorithm will assign every vertex a coordinate and every edge a path. Additionally every vertex will be assigned a position in a layer in the LayeredGraph. A possible application is drawing of recursive graphs.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- the graph to apply the layout to}
+  \end{itemize}
 }%end item
 \end{itemize}
 }%end item
@@ -143,6 +293,9 @@ AbstractVertexBuilder
 }
 \subsection{\label{joana.CallGraphLayoutOption}\index{CallGraphLayoutOption}Class CallGraphLayoutOption}{
 \vskip .1in 
+A \texttt{\small LayoutOption}{\small 
+\refdefined{plugin.LayoutOption}} which is specific for \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class CallGraphLayoutOption
@@ -175,16 +328,59 @@ This should execute the layout on the graph, which should be specified on constr
 \end{itemize}
 }%end item
 \item{ 
-\index{setGraph(Callgraph)}
+\index{chooseLayout()}
+{\bf  chooseLayout}\\
+\begin{lstlisting}[frame=none]
+public abstract void chooseLayout()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutOption{\small \refdefined{plugin.LayoutOption}} }
+
+Called when this layout option is chosen. This allows the layout option to prepare the actual LayoutAlgorithm.
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{setGraph(CallGraph)}
 {\bf  setGraph}\\
 \begin{lstlisting}[frame=none]
-public void setGraph(Callgraph g)\end{lstlisting} %end signature
+public void setGraph(CallGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}} that will be the target of the CallGraphLayoutOption.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- The \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}} that will be the target of this CallGraphLayoutOption.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{setLayout(LayoutAlgorithm)}
 {\bf  setLayout}\\
 \begin{lstlisting}[frame=none]
 public void setLayout(plugin.LayoutAlgorithm layout)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the LayoutAlgorithm that will be used to layout the set graph.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layout} -- The LayoutAlgorithm that will be used to layout the set graph.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -204,6 +400,20 @@ public class FieldAccess
 {\bf  FieldAccess}\\
 \begin{lstlisting}[frame=none]
 public FieldAccess(FieldAccessGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Constructor.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- The FieldAccessGraph that will be set in the FieldAccess.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -219,8 +429,40 @@ void addToFastGraphAccessor(graphmodel.FastGraphAccessor fga)\end{lstlisting} %e
 \item{
 {\bf  Description copied from graphmodel.Vertex{\small \refdefined{graphmodel.Vertex}} }
 
-Adds Values to FastGraphAccessor
+Adds the vertex to a \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}}.
 }
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{fga} -- The \texttt{\small FastGraphAccessor}{\small 
+\refdefined{graphmodel.FastGraphAccessor}} to whom this vertex will be added.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getConnectedVertex(Edge)}
+{\bf  getConnectedVertex}\\
+\begin{lstlisting}[frame=none]
+graphmodel.Vertex getConnectedVertex(graphmodel.Edge edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.CompoundVertex{\small \refdefined{graphmodel.CompoundVertex}} }
+
+Returns the connected vertex contained in the compound vertex for a given edge, where one end point of the edge has to be this vertex.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge to get the vertex to}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the connected vertex if the edge is valid 
+}%end item
 \end{itemize}
 }%end item
 \item{ 
@@ -228,12 +470,26 @@ Adds Values to FastGraphAccessor
 {\bf  getGraph}\\
 \begin{lstlisting}[frame=none]
 graphmodel.Graph getGraph()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.CompoundVertex{\small \refdefined{graphmodel.CompoundVertex}} }
+
+Returns the graph contained in the vertex.
+}
+\item{{\bf  Returns} -- 
+the graph contained in the vertex. 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{joana.FieldAccessGraph}\index{FieldAccessGraph}Class FieldAccessGraph}{
 \vskip .1in 
+A \texttt{\small JoanaGraph}{\small 
+\refdefined{joana.JoanaGraph}} which specifies a \texttt{\small FieldAccess}{\small 
+\refdefined{joana.FieldAccess}} in a \texttt{\small JoanaGraph}{\small 
+\refdefined{joana.JoanaGraph}}\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FieldAccessGraph
@@ -249,15 +505,32 @@ public FieldAccessGraph()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getLayerWidth(int)}
+{\bf  getLayerWidth}\\
+\begin{lstlisting}[frame=none]
+public int getLayerWidth(int layerN)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getSubgraphs()}
+{\bf  getSubgraphs}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getSubgraphs()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
 }
 \subsection{\label{joana.FieldAccessLayout}\index{FieldAccessLayout}Class FieldAccessLayout}{
 \vskip .1in 
-This class applies it's Layout to a \texttt{\small FieldAccess}{\small 
+The FieldAccessLayout applies its layout to a \texttt{\small FieldAccess}{\small 
 \refdefined{joana.FieldAccess}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FieldAccessLayout
- extends java.lang.Object implements sugiyama.SugiyamaLayoutAlgorithm\end{lstlisting}
+ extends java.lang.Object implements sugiyama.LayeredLayoutAlgorithm\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -285,15 +558,15 @@ public parameter.Settings getSettings()\end{lstlisting} %end signature
 public void layout(FieldAccessGraph graph)\end{lstlisting} %end signature
 }%end item
 \item{ 
-\index{layoutSugiyamaGraph(SugiyamaGraph)}
-{\bf  layoutSugiyamaGraph}\\
+\index{layoutLayeredGraph(LayeredGraph)}
+{\bf  layoutLayeredGraph}\\
 \begin{lstlisting}[frame=none]
-void layoutSugiyamaGraph(sugiyama.SugiyamaGraph graph)\end{lstlisting} %end signature
+void layoutLayeredGraph(graphmodel.LayeredGraph graph)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description copied from sugiyama.SugiyamaLayoutAlgorithm{\small \refdefined{sugiyama.SugiyamaLayoutAlgorithm}} }
+{\bf  Description copied from sugiyama.LayeredLayoutAlgorithm{\small \refdefined{sugiyama.LayeredLayoutAlgorithm}} }
 
-Applies it's layout to a graph as in \texttt{\small layout(G graph)} but keeps the notion of layers. A possible application is drawing of recursive graphs.
+Applies its layout to a graph as in \texttt{\small layout(G graph)} but keeps the notion of layers. The algorithm will assign every vertex a coordinate and every edge a path. Additionally every vertex will be assigned a position in a layer in the LayeredGraph. A possible application is drawing of recursive graphs.
 }
 \item{
 {\bf  Parameters}
@@ -309,7 +582,8 @@ Applies it's layout to a graph as in \texttt{\small layout(G graph)} but keeps t
 }
 \subsection{\label{joana.JoanaEdge}\index{JoanaEdge}Class JoanaEdge}{
 \vskip .1in 
-This is the Joana specified Edge. It contains parameters which are only useful for Joana\vskip .1in 
+A Joana specific Edge. It contains parameters which are only used/usefull in \texttt{\small JoanaGraph}{\small 
+\refdefined{joana.JoanaGraph}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class JoanaEdge
@@ -349,8 +623,9 @@ The edgeKind of the JoanaEdge.
 }
 \subsection{\label{joana.JoanaEdgeBuilder}\index{JoanaEdgeBuilder}Class JoanaEdgeBuilder}{
 \vskip .1in 
-The JoanaEdgeBuilder implements an \texttt{\small IEdgeBuilder}{\small 
-\refdefined{graphmodel.IEdgeBuilder}} and build exactly one edge\vskip .1in 
+The JoanaEdgeBuilder is a \texttt{\small IEdgeBuilder}{\small 
+\refdefined{graphmodel.IEdgeBuilder}}, specifically for building \texttt{\small JoanaEdge}{\small 
+\refdefined{joana.JoanaEdge}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class JoanaEdgeBuilder
@@ -400,7 +675,7 @@ void newEdge(java.lang.String source,java.lang.String target)\end{lstlisting} %e
 \item{
 {\bf  Description copied from graphmodel.IEdgeBuilder{\small \refdefined{graphmodel.IEdgeBuilder}} }
 
-sets source and target vertices of the edge build by this.
+Sets source and target vertices of the edge build by this.
 }
 \item{
 {\bf  Parameters}
@@ -422,7 +697,7 @@ void setDirection(java.lang.String direction)\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from graphmodel.IEdgeBuilder{\small \refdefined{graphmodel.IEdgeBuilder}} }
 
-sets the direction of the edge build by this.
+Sets the direction of the edge build by this.
 }
 \item{
 {\bf  Parameters}
@@ -442,7 +717,7 @@ void setID(java.lang.String id)\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from graphmodel.IEdgeBuilder{\small \refdefined{graphmodel.IEdgeBuilder}} }
 
-sets the ID of the edge build by this.
+Sets the ID of the edge build by this.
 }
 \item{
 {\bf  Parameters}
@@ -458,12 +733,12 @@ sets the ID of the edge build by this.
 }
 \subsection{\label{joana.JoanaGraph}\index{JoanaGraph}Class JoanaGraph}{
 \vskip .1in 
-An abstract superclass for all JOANA graphs.\vskip .1in 
+An abstract superclass for all JOANA specific graphs.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class JoanaGraph
- extends graphmodel.DefaultDirectedGraph\end{lstlisting}
-\subsubsection{All known subclasses}{MethodGraph\small{\refdefined{joana.MethodGraph}}, MethodCall\small{\refdefined{joana.MethodCall}}, FieldAccessGraph\small{\refdefined{joana.FieldAccessGraph}}, Callgraph\small{\refdefined{joana.Callgraph}}}
+ extends graphmodel.DefaultDirectedGraph implements graphmodel.LayeredGraph\end{lstlisting}
+\subsubsection{All known subclasses}{MethodGraph\small{\refdefined{joana.MethodGraph}}, FieldAccessGraph\small{\refdefined{joana.FieldAccessGraph}}, CallGraph\small{\refdefined{joana.CallGraph}}}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -475,10 +750,134 @@ public JoanaGraph()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getHeight()}
+{\bf  getHeight}\\
+\begin{lstlisting}[frame=none]
+int getHeight()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.LayeredGraph{\small \refdefined{graphmodel.LayeredGraph}} }
+
+Returns the height, i.e. the number of layers.
+}
+\item{{\bf  Returns} -- 
+the height 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(int)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayer(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.LayeredGraph{\small \refdefined{graphmodel.LayeredGraph}} }
+
+Get all vertices from a certain layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerN} -- the index of the layer}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+a list of all vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(JoanaVertex)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+public int getLayer(JoanaVertex vertex)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getLayerCount()}
+{\bf  getLayerCount}\\
+\begin{lstlisting}[frame=none]
+int getLayerCount()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.LayeredGraph{\small \refdefined{graphmodel.LayeredGraph}} }
+
+Get the amount of layers.
+}
+\item{{\bf  Returns} -- 
+the amount of layers that contain at least one vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayers()}
+{\bf  getLayers}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayers()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.LayeredGraph{\small \refdefined{graphmodel.LayeredGraph}} }
+
+Get all layers that contain vertices.
+}
+\item{{\bf  Returns} -- 
+a list of lists of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getMaxWidth()}
+{\bf  getMaxWidth}\\
+\begin{lstlisting}[frame=none]
+int getMaxWidth()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.LayeredGraph{\small \refdefined{graphmodel.LayeredGraph}} }
+
+Returns the width of the widest layer, i.e. the number of vertices the layer with the most vertices contains.
+}
+\item{{\bf  Returns} -- 
+the maximum width 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexCount(int)}
+{\bf  getVertexCount}\\
+\begin{lstlisting}[frame=none]
+int getVertexCount(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.LayeredGraph{\small \refdefined{graphmodel.LayeredGraph}} }
+
+Get the number of vertices which are on a certain layer
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get the vertex count from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the number of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
 }
 \subsection{\label{joana.JoanaGraphModel}\index{JoanaGraphModel}Class JoanaGraphModel}{
 \vskip .1in 
-This is the Joana specified Graphmodel. It can only contain methodgraph and callgraph\vskip .1in 
+A Joana specific \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}}. It can only contain \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} and \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class JoanaGraphModel
@@ -498,26 +897,20 @@ public JoanaGraphModel()\end{lstlisting} %end signature
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{getCallgraph()}
-{\bf  getCallgraph}\\
+\index{getCallGraph()}
+{\bf  getCallGraph}\\
 \begin{lstlisting}[frame=none]
-public Callgraph getCallgraph()\end{lstlisting} %end signature
+public CallGraph getCallGraph()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
-Getter of callgraph
+Returns all \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}} contained in the JoanaGraphModel.
 }
-\end{itemize}
-}%end item
-\item{ 
-\index{getCallGraph()}
-{\bf  getCallGraph}\\
-\begin{lstlisting}[frame=none]
-public Callgraph getCallGraph()\end{lstlisting} %end signature
-\begin{itemize}
 \item{{\bf  Returns} -- 
- 
+A list of all the \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}} contained in the JoanaGraphModel. 
 }%end item
 \end{itemize}
 }%end item
@@ -525,29 +918,18 @@ public Callgraph getCallGraph()\end{lstlisting} %end signature
 \index{getGraphs()}
 {\bf  getGraphs}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getGraphs()\end{lstlisting} %end signature
+public abstract java.util.List getGraphs()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from graphmodel.GraphModel{\small \refdefined{graphmodel.GraphModel}} }
 
-Getter of graph
+Returns all \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}} contained in the GraphModel.
 }
 \item{{\bf  Returns} -- 
- 
+A list of all the \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}} contained in the GraphModel. 
 }%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getMethodgraphs()}
-{\bf  getMethodgraphs}\\
-\begin{lstlisting}[frame=none]
-public java.util.List getMethodgraphs()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Getter of methodgraphs
-}
 \end{itemize}
 }%end item
 \item{ 
@@ -559,58 +941,57 @@ public java.util.List getMethodGraphs()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Getter of graph
+Returns all \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} contained in the JoanaGraphModel.
 }
 \item{{\bf  Returns} -- 
- 
+A list of all the \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} contained in the JoanaGraphModel. 
 }%end item
 \end{itemize}
 }%end item
 \item{ 
-\index{setCallgraph(Callgraph)}
-{\bf  setCallgraph}\\
+\index{setCallGraph(CallGraph)}
+{\bf  setCallGraph}\\
 \begin{lstlisting}[frame=none]
-public void setCallgraph(Callgraph callgraph)\end{lstlisting} %end signature
+public void setCallGraph(CallGraph callgraph)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
-Setter of callgraph
+Sets the \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}} in the JoanaGraphModel.
 }
-\end{itemize}
-}%end item
-\item{ 
-\index{setCallGraph(Callgraph)}
-{\bf  setCallGraph}\\
-\begin{lstlisting}[frame=none]
-public void setCallGraph(Callgraph graph)\end{lstlisting} %end signature
-\begin{itemize}
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{graph} -- }
+\texttt{callgraph} -- The \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}} that will be set in the JoanaGraphModel.}
   \end{itemize}
 }%end item
 \end{itemize}
 }%end item
 \item{ 
-\index{setMethodGraph(List)}
-{\bf  setMethodGraph}\\
+\index{setMethodGraphs(List)}
+{\bf  setMethodGraphs}\\
 \begin{lstlisting}[frame=none]
-public void setMethodGraph(java.util.List methodgraphs)\end{lstlisting} %end signature
-}%end item
-\item{ 
-\index{setMethodgraphs(List)}
-{\bf  setMethodgraphs}\\
-\begin{lstlisting}[frame=none]
-public void setMethodgraphs(java.util.List methodgraphs)\end{lstlisting} %end signature
+public void setMethodGraphs(java.util.List methodgraphs)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
-Setter of methodgraphs
+Sets the \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} objects in the JoanaGraphModel.
 }
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{methodgraphs} -- The \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} objects that will be set in the JoanaGraphModel.}
+  \end{itemize}
+}%end item
 \end{itemize}
 }%end item
 \end{itemize}
@@ -618,9 +999,9 @@ Setter of methodgraphs
 }
 \subsection{\label{joana.JoanaGraphModelBuilder}\index{JoanaGraphModelBuilder}Class JoanaGraphModelBuilder}{
 \vskip .1in 
-This JoanaGraphModelBuilder implements the \texttt{\small IGraphModelBuilder}{\small 
-\refdefined{graphmodel.IGraphModelBuilder}} and creates one \texttt{\small JoanaGraphModel}{\small 
-\refdefined{joana.JoanaGraphModel}}\vskip .1in 
+The JoanaGraphModelBuilder implements the \texttt{\small IGraphModelBuilder}{\small 
+\refdefined{graphmodel.IGraphModelBuilder}} and creates a \texttt{\small JoanaGraphModel}{\small 
+\refdefined{joana.JoanaGraphModel}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class JoanaGraphModelBuilder
@@ -648,10 +1029,11 @@ graphmodel.GraphModel build()\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from graphmodel.IGraphModelBuilder{\small \refdefined{graphmodel.IGraphModelBuilder}} }
 
-This method is called, when the buildingprocess of the graphmodel is finished. It returns the finished graphmodel
+Builds a graphmodel from the given settings and returns it.
 }
 \item{{\bf  Returns} -- 
-GraphModel 
+The \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}} that is being build by the IGraphModelBuilder. 
 }%end item
 \end{itemize}
 }%end item
@@ -664,17 +1046,20 @@ graphmodel.IGraphBuilder getGraphBuilder(java.lang.String graphID)\end{lstlistin
 \item{
 {\bf  Description copied from graphmodel.IGraphModelBuilder{\small \refdefined{graphmodel.IGraphModelBuilder}} }
 
-Returns a specific AbstractGraphBuilder which belongs to the graphmodel. It should also decide which graph should be builded with the help of the graphID.
+Returns a specific \texttt{\small IGraphBuilder}{\small 
+\refdefined{graphmodel.IGraphBuilder}} for a graph, which belongs to the \texttt{\small GraphModel}{\small 
+\refdefined{graphmodel.GraphModel}}.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{graphID} -- }
+\texttt{graphID} -- The id of the graph which associated \texttt{\small IGraphBuilder}{\small 
+\refdefined{graphmodel.IGraphBuilder}} will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The IGraphBuilder of the graph which is referenced over the graphID. 
 }%end item
 \end{itemize}
 }%end item
@@ -683,6 +1068,7 @@ Returns a specific AbstractGraphBuilder which belongs to the graphmodel. It shou
 }
 \subsection{\label{joana.JoanaPlugin}\index{JoanaPlugin}Class JoanaPlugin}{
 \vskip .1in 
+A plugin for GAns that supports the creation and visualization of Joana system dependence graphs.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class JoanaPlugin
@@ -699,7 +1085,7 @@ public JoanaPlugin()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Constructs a new JoanaPlugin. This constructor is present to be called by the ServiceLoader.
+Constructor. The constructor is called by the ServiceLoader.
 }
 \end{itemize}
 }%end item
@@ -875,7 +1261,7 @@ java.util.List getLayoutOptions()\end{lstlisting} %end signature
 }
 \subsection{\label{joana.JoanaVertex}\index{JoanaVertex}Class JoanaVertex}{
 \vskip .1in 
-This is the Joana specified Vertex. It contains parameters which are only useful for Joana.\vskip .1in 
+A Joana specific Vertex. It contains parameters which are only used/useful for Joana.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class JoanaVertex
@@ -1061,7 +1447,8 @@ The nodeSr of the JoanaVertex.
 \subsection{\label{joana.JoanaVertexBuilder}\index{JoanaVertexBuilder}Class JoanaVertexBuilder}{
 \vskip .1in 
 The JoanaVertexBuilder implements an \texttt{\small IVertexBuilder}{\small 
-\refdefined{graphmodel.IVertexBuilder}} and build exactly one vertex\vskip .1in 
+\refdefined{graphmodel.IVertexBuilder}} and creates a \texttt{\small JoanaVertex}{\small 
+\refdefined{joana.JoanaVertex}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class JoanaVertexBuilder
@@ -1147,9 +1534,9 @@ This method returns an specific GraphBuilder. This method is used to implement n
 \subsection{\label{joana.JoanaWorkspace}\index{JoanaWorkspace}Class JoanaWorkspace}{
 \vskip .1in 
 The \texttt{\small JoanaWorkspace}{\small 
-\refdefined{joana.JoanaWorkspace}} is the workspace for Joana graphs It is used to define parameters, and also provides an \texttt{\small IGraphModelBuilder}{\small 
+\refdefined{joana.JoanaWorkspace}} is the workspace for Joana graphs. It is used to define parameters, provides an \texttt{\small IGraphModelBuilder}{\small 
 \refdefined{graphmodel.IGraphModelBuilder}} and contains a \texttt{\small JoanaGraphModel}{\small 
-\refdefined{joana.JoanaGraphModel}}\vskip .1in 
+\refdefined{joana.JoanaGraphModel}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class JoanaWorkspace
@@ -1202,29 +1589,6 @@ the builder
 \end{itemize}
 }%end item
 \item{ 
-\index{getLayoutOptions(int)}
-{\bf  getLayoutOptions}\\
-\begin{lstlisting}[frame=none]
-java.util.List getLayoutOptions(int graphIndex)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from plugin.Workspace{\small \refdefined{plugin.Workspace}} }
-
-Returns all layout options for the specified graph.
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{graphindex} -- the index of the graph in the model}
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
-a list of layout options 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
 \index{getSettings()}
 {\bf  getSettings}\\
 \begin{lstlisting}[frame=none]
@@ -1256,72 +1620,9 @@ Initializes this workspace with the settings if they have not been adjusted. If 
 \end{itemize}
 }
 }
-\subsection{\label{joana.MethodCall}\index{MethodCall}Class MethodCall}{
-\vskip .1in 
-\subsubsection{Declaration}{
-\begin{lstlisting}[frame=none]
-public class MethodCall
- extends joana.JoanaGraph\end{lstlisting}
-\subsubsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{MethodCall()}
-{\bf  MethodCall}\\
-\begin{lstlisting}[frame=none]
-public MethodCall()\end{lstlisting} %end signature
-}%end item
-\end{itemize}
-}
-}
-\subsection{\label{joana.MethodCallLayout}\index{MethodCallLayout}Class MethodCallLayout}{
-\vskip .1in 
-\subsubsection{Declaration}{
-\begin{lstlisting}[frame=none]
-public class MethodCallLayout
- extends java.lang.Object implements plugin.LayoutAlgorithm\end{lstlisting}
-\subsubsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{MethodCallLayout()}
-{\bf  MethodCallLayout}\\
-\begin{lstlisting}[frame=none]
-public MethodCallLayout()\end{lstlisting} %end signature
-}%end item
-\end{itemize}
-}
-\subsubsection{Methods}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{getSettings()}
-{\bf  getSettings}\\
-\begin{lstlisting}[frame=none]
-parameter.Settings getSettings()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
-
-Get the set of parameters for this instance of the algorithm.
-}
-\item{{\bf  Returns} -- 
-the set of parameters 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{layout(MethodCall)}
-{\bf  layout}\\
-\begin{lstlisting}[frame=none]
-public void layout(MethodCall graph)\end{lstlisting} %end signature
-}%end item
-\end{itemize}
-}
-}
 \subsection{\label{joana.MethodGraph}\index{MethodGraph}Class MethodGraph}{
 \vskip .1in 
-This is a specified graph representation for a MethodGraph in JOANA\vskip .1in 
+This is a specific graph representation for a MethodGraph in JOANA\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class MethodGraph
@@ -1341,6 +1642,52 @@ public MethodGraph()\end{lstlisting} %end signature
 \vskip -2em
 \begin{itemize}
 \item{ 
+\index{collapse(Set)}
+{\bf  collapse}\\
+\begin{lstlisting}[frame=none]
+graphmodel.CompoundVertex collapse(java.util.Set subset)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Collapses a set of vertices in one compound vertex. The collapsed vertices can be expanded back into their previous state with \texttt{\small expand(CompoundVertex)}.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{subset} -- the subset to collapse}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the resulting collapsed vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{expand(CompoundVertex)}
+{\bf  expand}\\
+\begin{lstlisting}[frame=none]
+java.util.Set expand(graphmodel.CompoundVertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Expands a collapsed vertex into its substituted set of vertices The vertices will be added back to the set of vertices of this graph. The compound vertex will be removed from the set of vertices. All to the compound vertex incident edges, will be resolved back into an edge between the vertices it connected before the collapse.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the collapsed vertex to expand}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the set of vertices which was substituted by the collapsed vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{getEntryVertex()}
 {\bf  getEntryVertex}\\
 \begin{lstlisting}[frame=none]
@@ -1349,10 +1696,10 @@ public JoanaVertex getEntryVertex()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get the entry vertex of a method
+Returns the entry vertex of a method.
 }
 \item{{\bf  Returns} -- 
- 
+The entry vertex of a method. 
 }%end item
 \end{itemize}
 }%end item
@@ -1365,23 +1712,18 @@ public java.util.List getFieldAccesses()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get a list of all FieldAcesses in a method
+Returns a list of all FieldAcesses in the MethodGraph.
 }
 \item{{\bf  Returns} -- 
- 
+A list of all FieldAcesses in the MethodGraph. 
 }%end item
 \end{itemize}
 }%end item
 \item{ 
-\index{getFormVertices()}
-{\bf  getFormVertices}\\
+\index{getLayerWidth(int)}
+{\bf  getLayerWidth}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getFormVertices()\end{lstlisting} %end signature
-\begin{itemize}
-\item{{\bf  Returns} -- 
- 
-}%end item
-\end{itemize}
+public int getLayerWidth(int layerN)\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{getMethodCalls()}
@@ -1392,10 +1734,39 @@ public java.util.List getMethodCalls()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get a list of all MethodCalls in a method
+Returns a list of all MethodCall in the MethodGraph.
 }
 \item{{\bf  Returns} -- 
- 
+A list of all MethodCall in the MethodGraph. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSubgraphs()}
+{\bf  getSubgraphs}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getSubgraphs()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{isCompound(Vertex)}
+{\bf  isCompound}\\
+\begin{lstlisting}[frame=none]
+boolean isCompound(graphmodel.Vertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
+
+Returns true if the specified vertex is a compound vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to check}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the vertex is a compound, false otherwise 
 }%end item
 \end{itemize}
 }%end item
@@ -1408,15 +1779,16 @@ protected static void setRegister(plugin.LayoutRegister register)\end{lstlisting
 \item{
 {\bf  Description}
 
-This sets the \texttt{\small LayoutRegister}{\small 
+Sets the \texttt{\small LayoutRegister}{\small 
 \refdefined{plugin.LayoutRegister}}, which stores the available \texttt{\small LayoutOption}{\small 
-\refdefined{plugin.LayoutOption}}s for all method graphs statically.
+\refdefined{plugin.LayoutOption}} for all method graphs statically.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{register} -- the register}
+\texttt{register} -- The \texttt{\small LayoutRegister}{\small 
+\refdefined{plugin.LayoutRegister}} that will be set.}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -1426,9 +1798,9 @@ This sets the \texttt{\small LayoutRegister}{\small
 }
 \subsection{\label{joana.MethodGraphBuilder}\index{MethodGraphBuilder}Class MethodGraphBuilder}{
 \vskip .1in 
-The MethodGraphBuilder implements an \texttt{\small IGraphBuilder}{\small 
-\refdefined{graphmodel.IGraphBuilder}} and builds one \texttt{\small MethodGraph}{\small 
-\refdefined{joana.MethodGraph}}\vskip .1in 
+The MethodGraphBuilder is a \texttt{\small IGraphBuilder}{\small 
+\refdefined{graphmodel.IGraphBuilder}}, specifically for building \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class MethodGraphBuilder
@@ -1456,10 +1828,10 @@ graphmodel.Graph build()\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from graphmodel.IGraphBuilder{\small \refdefined{graphmodel.IGraphBuilder}} }
 
-This method is called, when the buildingprocess of the graph is finished. Then it builds the graph and returns it.
+Builds a graph from the given settings and returns it.
 }
 \item{{\bf  Returns} -- 
-Graph 
+The graph that is being build by the IGraphBuilder. 
 }%end item
 \end{itemize}
 }%end item
@@ -1475,7 +1847,8 @@ graphmodel.IEdgeBuilder getEdgeBuilder()\end{lstlisting} %end signature
 Returns the EdgeBuilder which is specified for this graph.
 }
 \item{{\bf  Returns} -- 
-AbstractEdgeBuilder 
+The \texttt{\small IEdgeBuilder}{\small 
+\refdefined{graphmodel.IEdgeBuilder}} which is specified for this graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -1494,11 +1867,12 @@ Returns the VertexBuilder which is specified for this graph.
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertexID} -- }
+\texttt{vertexID} -- The id of the vertex which associated IVertexBuilder will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
-AbstractVertexBuilder 
+The \texttt{\small IVertexBuilder}{\small 
+\refdefined{graphmodel.IVertexBuilder}} which is specified for this graph. 
 }%end item
 \end{itemize}
 }%end item
@@ -1507,12 +1881,12 @@ AbstractVertexBuilder
 }
 \subsection{\label{joana.MethodGraphLayout}\index{MethodGraphLayout}Class MethodGraphLayout}{
 \vskip .1in 
-Implements a SugiyamaLayout for \texttt{\small MethodGraph}{\small 
-\refdefined{joana.MethodGraph}}\vskip .1in 
+Implements hierarchical layout with layers for \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}}. This graph contains field access subgraphs.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class MethodGraphLayout
- extends java.lang.Object implements sugiyama.SugiyamaLayoutAlgorithm\end{lstlisting}
+ extends java.lang.Object implements sugiyama.LayeredLayoutAlgorithm\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -1538,17 +1912,33 @@ public parameter.Settings getSettings()\end{lstlisting} %end signature
 {\bf  layout}\\
 \begin{lstlisting}[frame=none]
 public void layout(MethodGraph graph)\end{lstlisting} %end signature
-}%end item
-\item{ 
-\index{layoutSugiyamaGraph(SugiyamaGraph)}
-{\bf  layoutSugiyamaGraph}\\
-\begin{lstlisting}[frame=none]
-void layoutSugiyamaGraph(sugiyama.SugiyamaGraph graph)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description copied from sugiyama.SugiyamaLayoutAlgorithm{\small \refdefined{sugiyama.SugiyamaLayoutAlgorithm}} }
+{\bf  Description}
 
-Applies it's layout to a graph as in \texttt{\small layout(G graph)} but keeps the notion of layers. A possible application is drawing of recursive graphs.
+Layouts a single \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} with the configured settings.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- The \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} to layout.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{layoutLayeredGraph(LayeredGraph)}
+{\bf  layoutLayeredGraph}\\
+\begin{lstlisting}[frame=none]
+void layoutLayeredGraph(graphmodel.LayeredGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from sugiyama.LayeredLayoutAlgorithm{\small \refdefined{sugiyama.LayeredLayoutAlgorithm}} }
+
+Applies its layout to a graph as in \texttt{\small layout(G graph)} but keeps the notion of layers. The algorithm will assign every vertex a coordinate and every edge a path. Additionally every vertex will be assigned a position in a layer in the LayeredGraph. A possible application is drawing of recursive graphs.
 }
 \item{
 {\bf  Parameters}
@@ -1564,6 +1954,9 @@ Applies it's layout to a graph as in \texttt{\small layout(G graph)} but keeps t
 }
 \subsection{\label{joana.MethodGraphLayoutOption}\index{MethodGraphLayoutOption}Class MethodGraphLayoutOption}{
 \vskip .1in 
+A \texttt{\small LayoutOption}{\small 
+\refdefined{plugin.LayoutOption}} which is specific for \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class MethodGraphLayoutOption
@@ -1596,16 +1989,59 @@ This should execute the layout on the graph, which should be specified on constr
 \end{itemize}
 }%end item
 \item{ 
+\index{chooseLayout()}
+{\bf  chooseLayout}\\
+\begin{lstlisting}[frame=none]
+public abstract void chooseLayout()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutOption{\small \refdefined{plugin.LayoutOption}} }
+
+Called when this layout option is chosen. This allows the layout option to prepare the actual LayoutAlgorithm.
+}
+\end{itemize}
+}%end item
+\item{ 
 \index{setGraph(MethodGraph)}
 {\bf  setGraph}\\
 \begin{lstlisting}[frame=none]
-public void setGraph(MethodGraph g)\end{lstlisting} %end signature
+public void setGraph(MethodGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} that will be the target of the CallGraphLayoutOption.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- The \texttt{\small MethodGraph}{\small 
+\refdefined{joana.MethodGraph}} that will be the target of the MethodGraphLayoutOption.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{setLayout(LayoutAlgorithm)}
 {\bf  setLayout}\\
 \begin{lstlisting}[frame=none]
 public void setLayout(plugin.LayoutAlgorithm layout)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the LayoutAlgorithm that will be used to layout the set graph.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layout} -- The LayoutAlgorithm that will be used to layout the set graph.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }

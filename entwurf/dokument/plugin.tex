@@ -4,12 +4,12 @@
 \vskip .13in
 \hbox{{\bf  Interfaces}}
 \entityintro{Constraint}{plugin.Constraint}{}
-\entityintro{Exporter}{plugin.Exporter}{The importer interface is used to import a graph from a file into the intern representation.}
+\entityintro{Exporter}{plugin.Exporter}{The exporter interface is used to export a graph from it's internal representation into a specific file.}
 \entityintro{FilterSet}{plugin.FilterSet}{A FilterSet is used to collect all available filters for a specific Graph from a workspace.}
 \entityintro{Importer}{plugin.Importer}{The importer interface is used to import a graph from a file into the intern representation.}
 \entityintro{LayoutAlgorithm}{plugin.LayoutAlgorithm}{An implementations of LayoutAlgorithm takes a graph.}
 \entityintro{LayoutRegister}{plugin.LayoutRegister}{Stores a collection of layouts.}
-\entityintro{Plugin}{plugin.Plugin}{}
+\entityintro{Plugin}{plugin.Plugin}{This is the main entry point for plugins.}
 \entityintro{Workspace}{plugin.Workspace}{A workspace contains a set of default actions and options for displaying a specific domain of graphs.}
 \vskip .13in
 \hbox{{\bf  Classes}}
@@ -41,7 +41,7 @@ java.lang.String getName()\end{lstlisting} %end signature
 }
 \subsection{\label{plugin.Exporter}\index{Exporter@\textit{ Exporter}}Interface Exporter}{
 \vskip .1in 
-The importer interface is used to import a graph from a file into the intern representation. The main task is to parse a FileInputStream into the Interface of an AbstractGraphModelBuilder. The AbstractGraphModelBuilder will then build the representation.\vskip .1in 
+The exporter interface is used to export a graph from it's internal representation into a specific file. For every graph structure given as SerializedGraph/SerializedVertex/SerializedEdge interfaces the implementing class translates it into a FileOutputStream for the given file type, by \texttt{\small getSupportedFileEnding}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Exporter
@@ -89,15 +89,15 @@ Get the name of this importer
 \end{itemize}
 }%end item
 \item{ 
-\index{getSupportedFileEndings()}
-{\bf  getSupportedFileEndings}\\
+\index{getSupportedFileEnding()}
+{\bf  getSupportedFileEnding}\\
 \begin{lstlisting}[frame=none]
-java.lang.String getSupportedFileEndings()\end{lstlisting} %end signature
+java.lang.String getSupportedFileEnding()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
-Get all filetypes which this importer can parse
+Get all filetypes which this exporter can parse
 }
 \item{{\bf  Returns} -- 
  
@@ -315,6 +315,7 @@ java.util.List getLayoutOptions()\end{lstlisting} %end signature
 }
 \subsection{\label{plugin.Plugin}\index{Plugin@\textit{ Plugin}}Interface Plugin}{
 \vskip .1in 
+This is the main entry point for plugins. Plugins have to register their content extensions via this interface. The plugin manager will load classes implementing this interface with a service loader, when they are correctly described in the plugins META-INF.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Plugin
@@ -450,29 +451,6 @@ the builder
 \end{itemize}
 }%end item
 \item{ 
-\index{getLayoutOptions(int)}
-{\bf  getLayoutOptions}\\
-\begin{lstlisting}[frame=none]
-java.util.List getLayoutOptions(int graphIndex)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Returns all layout options for the specified graph.
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{graphindex} -- the index of the graph in the model}
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
-a list of layout options 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
 \index{getSettings()}
 {\bf  getSettings}\\
 \begin{lstlisting}[frame=none]
@@ -534,8 +512,11 @@ public java.lang.String getName()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Getter of name of this filter
+Returns the name of the filter.
 }
+\item{{\bf  Returns} -- 
+the name of the filter 
+}%end item
 \end{itemize}
 }%end item
 \item{ 
@@ -570,8 +551,15 @@ public void setName(java.lang.String name)\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Setter of name
+Sets the name of the filter.
 }
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{name} -- the name of the filter}
+  \end{itemize}
+}%end item
 \end{itemize}
 }%end item
 \end{itemize}
@@ -608,7 +596,7 @@ public java.lang.String getID()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-The ID of an entry point should be an acronym of it's name.
+The id of an entry point should be an acronym of it's name.
 }
 \item{{\bf  Returns} -- 
 the id 
@@ -627,7 +615,7 @@ public java.lang.String getName()\end{lstlisting} %end signature
 Returns the name of the entry point option. This name can be displayed when displaying multiple options
 }
 \item{{\bf  Returns} -- 
-the name 
+the name of the entry point 
 }%end item
 \end{itemize}
 }%end item
@@ -636,12 +624,40 @@ the name
 {\bf  setID}\\
 \begin{lstlisting}[frame=none]
 protected void setID(java.lang.String id)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the id of the entry point. The id should be an acronym of the name.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{id} -- the id of the entry point.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{setName(String)}
 {\bf  setName}\\
 \begin{lstlisting}[frame=none]
 protected void setName(java.lang.String name)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the name of the entry point
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{name} -- the name of the entry point}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -681,6 +697,19 @@ This should execute the layout on the graph, which should be specified on constr
 \end{itemize}
 }%end item
 \item{ 
+\index{chooseLayout()}
+{\bf  chooseLayout}\\
+\begin{lstlisting}[frame=none]
+public abstract void chooseLayout()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Called when this layout option is chosen. This allows the layout option to prepare the actual LayoutAlgorithm.
+}
+\end{itemize}
+}%end item
+\item{ 
 \index{getSettings()}
 {\bf  getSettings}\\
 \begin{lstlisting}[frame=none]
@@ -689,7 +718,7 @@ public abstract parameter.Settings getSettings()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get the set of parameters for an algorithm of this option.
+Get the set of parameters for an algorithm of this option. \texttt{\small choose()} has to be called up front.
 }
 \item{{\bf  Returns} -- 
 the set of parameters 
