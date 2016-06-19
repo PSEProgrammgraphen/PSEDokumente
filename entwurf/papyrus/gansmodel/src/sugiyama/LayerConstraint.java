@@ -4,6 +4,7 @@ import java.util.Set;
 
 import graphmodel.Vertex;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
+import plugin.Constraint;
 
 /**
  * A relative constraint, regarding layer assignment, between to sets of vertices.
@@ -12,7 +13,7 @@ import sugiyama.SugiyamaGraph.SugiyamaVertex;
  * 
  * @param <V> the type of the vertices in the sets
  */
-public class LayerConstraint
+public class LayerConstraint implements Constraint
 {
 	private Set<SugiyamaVertex> top;
 	private Set<SugiyamaVertex> bottom;
