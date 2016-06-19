@@ -12,3 +12,9 @@ Leichte Austauschbarkeit der einzelnen Schritte von Sugiyama wird durch ein Stra
 
 \section{Graph Builder Builder Pattern}
 Da es verschiedene Graphtypen gibt die aus verschiedenen Datei Formaten erstellt werden können eignet sich ein Builder Pattern um diese Datenstrukturen zu erstellen.
+
+\section{GUI-Klassen Model View Controller Pattern}
+In der GUI von GAns gibt es verschiedene \textbf{Ansichten(Views)} welche auf verschiedenen \textbf{Datensätzen(Models)} darstellen und auf Benutzerinteraktionen unterschiedlich reagieren. \\
+Die \textbf{StrukturView} arbeitet auf einem GraphModel-Object, bzw. dessen Liste von Graphen, welche beim Import von GAnsApplication gesetzt wird. Die meisten Interaktionen werden hier von der View selber behandelt. Da aber der Doppelklick auf ein Baumelement eine anzeigeübergreifende Aktion ist, wird dieser von der GAnsApplication bearbeitet. \\
+Eine \textbf{GraphView} arbeitet auf einem Graph-Objekt aus dem graphmodel-Paket welches durch die GAnsApplication gesetzt wird. Die GraphView behandelt alle Benutzerinteraktionen, wie Zoomen und navigieren selbst und hat ein SelectionModel(GraphViewSelectionModel), welches Änderungen in der Selektion behandelt. \\
+Die \textbf{InformationView} arbeitet auf dem SelectionModel der aktuell angezeigten GraphView. Ändert sich die Selektion wird die InformationView informiert und bekommt neue Daten gesetzt. Einen Controller gibt es nicht, da die TableView keine besonderen Benutzerinteraktionen benötigt.
