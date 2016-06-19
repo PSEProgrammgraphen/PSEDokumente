@@ -6,6 +6,7 @@ import java.util.Map;
 import graphmodel.Edge;
 import graphmodel.Graph;
 import graphmodel.Vertex;
+import javafx.util.Pair;
 
 /**
  * The GraphViewGraphFactory generates the visual representation of a given
@@ -62,5 +63,17 @@ public class GraphViewGraphFactory {
 	 */
 	public Edge<?> getEdgeFromShape(GAnsGraphElement shape) {
 		return edges.get(shape);
+	}
+	
+	/**
+	 * Calculates and returns the size of a vertex with the given text.
+	 * 
+	 * @param text The text which size the vertex depends on.
+	 * @return A Pair of width and height of the vertex.
+	 */
+	public static Pair<Double, Double> getSizeOfVertex(String text) {
+		VertexShape shape = new VertexShape(text);
+		Pair<Double, Double> pair = new Pair<Double, Double>(shape.getWidth(), shape.getHeight());
+		return pair;
 	}
 }
