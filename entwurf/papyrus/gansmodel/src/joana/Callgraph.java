@@ -1,9 +1,8 @@
 package joana;
 
 /**
- * This is a specified graph representation for the Callgraph in Joana
- *
+ * This is a specified graph representation for the Callgraph in Joana.
  */
-public class Callgraph extends JoanaGraph { 
+public class CallGraph extends JoanaGraph { 
 
 }
