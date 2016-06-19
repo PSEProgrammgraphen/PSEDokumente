@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * A GraphModel contains one or more graphs. It is used to save nested or
- * hierachical graphs in one class.
+ * hierarchical graphs in one class.
  */
 public abstract class GraphModel {
 

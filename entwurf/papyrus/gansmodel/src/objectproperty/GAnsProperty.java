@@ -49,8 +49,8 @@ public class GAnsProperty<T extends Object> {
 	 *            The value that will be set in the GAnsProperty.
 	 */
 	public GAnsProperty(String name, T value) {
-		setPropertyName(name);
-		setPropertyValue(value);
+		setName(name);
+		setValue(value);
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class GAnsProperty<T extends Object> {
 	 * @param value
 	 *            The string will be set as the name of the GAnsProperty.
 	 */
-	public void setPropertyName(String value) {
+	public void setName(String value) {
 		propertyNameProperty().set(value);
 	}
 
@@ -107,7 +107,7 @@ public class GAnsProperty<T extends Object> {
 	 * 
 	 * @return The name/identifier of the GAnsProperty.
 	 */
-	public String getPropertyName() {
+	public String getName() {
 		return propertyNameProperty().get();
 	}
 
@@ -117,7 +117,7 @@ public class GAnsProperty<T extends Object> {
 	 * @param value
 	 *            The value that will be set in the GAnsProperty.
 	 */
-	public void setPropertyValue(T value) {
+	public void setValue(T value) {
 		propertyValue().setValue(value);
 		propertyValueAsString().set(value.toString());
 	}
@@ -127,7 +127,7 @@ public class GAnsProperty<T extends Object> {
 	 * 
 	 * @return The value of the GAnsProperty.
 	 */
-	public T getPropertyValue() {
+	public T getValue() {
 		return propertyValue().getValue();
 	}
 
@@ -136,7 +136,7 @@ public class GAnsProperty<T extends Object> {
 	 * 
 	 * @return The string-representation of the value from the GAnsProperty.
 	 */
-	public String getPropertyValueAsString() {
+	public String getValueAsString() {
 		return propertyValueAsString().toString();
 	}
 }
