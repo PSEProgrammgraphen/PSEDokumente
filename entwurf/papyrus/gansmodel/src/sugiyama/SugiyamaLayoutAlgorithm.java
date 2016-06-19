@@ -24,7 +24,7 @@ public class SugiyamaLayoutAlgorithm<G extends DirectedGraph<V, E>, V extends Ve
 	 * Sets the algorithm to remove all cycles for a graph to layout used when applying the layout
 	 * @param remover the algorithm
 	 */
-	public void setCycleRemove(ICycleRemover remover) {}
+	public void setCycleRemover(ICycleRemover remover) {}
 	
 	/**
 	 * Sets the algorithm for layer assigning used when applying the layout
@@ -42,7 +42,7 @@ public class SugiyamaLayoutAlgorithm<G extends DirectedGraph<V, E>, V extends Ve
 	 * Sets the algorithm for vertex positioning used when applying the layout
 	 * @param positioner the positioning algorithm
 	 */
-	public void setPositioner(IVertexPositioner positioner) {}
+	public void setVertexPositioner(IVertexPositioner positioner) {}
 	
 	/**
 	 * Sets the algorithm for edge drawing used when applying the layout
