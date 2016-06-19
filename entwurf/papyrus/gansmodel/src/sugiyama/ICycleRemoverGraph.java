@@ -1,8 +1,8 @@
 package sugiyama;
 
 import graphmodel.DirectedGraph;
-import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
-import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
+import sugiyama.SugiyamaGraph.SugiyamaEdge;
+import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
 public interface ICycleRemoverGraph extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
 	/**

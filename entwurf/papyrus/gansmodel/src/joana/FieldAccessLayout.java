@@ -1,7 +1,7 @@
 package joana;
 
 import parameter.Settings;
-import sugiyama.SugiyamaGraphBase;
+import sugiyama.SugiyamaGraph;
 import sugiyama.SugiyamaLayoutAlgorithm;
 
 /**
@@ -21,7 +21,7 @@ public class FieldAccessLayout implements SugiyamaLayoutAlgorithm<FieldAccessGra
 	}
 
 	@Override
-	public void layoutSugiyamaGraph(SugiyamaGraphBase<FieldAccessGraph, JoanaVertex, JoanaEdge> graph) {
+	public void layoutSugiyamaGraph(SugiyamaGraph<FieldAccessGraph, JoanaVertex, JoanaEdge> graph) {
 		// TODO Auto-generated method stub
 	}
 

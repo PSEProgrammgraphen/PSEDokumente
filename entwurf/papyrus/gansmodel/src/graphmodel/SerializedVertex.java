@@ -3,6 +3,9 @@ package graphmodel;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+
+import plugin.Exporter;
 
 /**
  * A serialized version of a {@link Vertex}.
@@ -35,6 +38,7 @@ public class SerializedVertex implements Vertex {
 		return this.id;
 	}
 	
+	@Override
 	public String getLabel() {
 		return this.label;
 	}

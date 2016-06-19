@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Set;
 
 import graphmodel.LayeredGraph;
-import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
-import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
+import sugiyama.SugiyamaGraph.SugiyamaEdge;
+import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
 public interface IEdgeDrawerGraph  extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 	
