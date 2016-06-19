@@ -23,7 +23,7 @@ Das Workspace übergibt der GAnsApplication nun den dazugehörigen IGraphModelBu
 	\label{fig:seq:openMethod}
 \end{figure}
 
-Der Benutzer hat einen Doppelklick auf ein Element in der StruktureView gemacht. Aus der StruktureView wird die ID des selektierten, gerade doppelt angeklickten, Elements gespeichert. Über das Workspace wird in den Graphen des geladenen GraphModels nach dem zur ID gehörenden Graph gesucht. Der gefundene Graph wird nun gelayouted (siehe \ref{seq:layout}). Nachdem der Graph vom layouten zurückgegeben wird, wird eine neue GraphView und ein neues GraphViewEventHandler-Objekt erzeugt, die einzelnen EventFilter werden zur GraphView hinzugefügt und ein Grid wird gesetzt, welches für die Zoom-Funktion benötigt wird. Ist die GraphView aufgesetzt, wird der Graph an sie übergeben. Die GraphView erzeugt eine eigene Factory, welche passend zum Graphen, GraphischeElemente erzeugt. Die GraphView setzt diese Elemente, wodurch sie angezeigt werden.
+Der Benutzer hat einen Doppelklick auf ein Element in der StruktureView gemacht. Aus der StruktureView wird die ID des selektierten, gerade doppelt angeklickten, Elements gespeichert. Über das Workspace wird in den Graphen des geladenen GraphModels nach dem zur ID gehörenden Graph gesucht. Der gefundene Graph wird nun gelayouted (siehe \ref{fig:seq:layout}) dabei werden nicht die Dialoge geöffnet, sondern direkt die default LayoutOption des Workspace für den Graphen verwendet. Nachdem der Graph vom layouten zurückgegeben wird, wird eine neue GraphView und ein neues GraphViewEventHandler-Objekt erzeugt, die einzelnen EventFilter werden zur GraphView hinzugefügt und ein Grid wird gesetzt, welches für die Zoom-Funktion benötigt wird. Ist die GraphView aufgesetzt, wird der Graph an sie übergeben. Die GraphView erzeugt eine eigene Factory, welche passend zum Graphen, GraphischeElemente erzeugt. Die GraphView setzt diese Elemente, wodurch sie angezeigt werden.
 
 \newpage
 
@@ -41,7 +41,24 @@ Der Benutzer hat in der aktuellen GraphAnsicht die Selektion geändert. Die GAns
 \newpage
 
 \section{Layouten eines JOANA-Graphs}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=450pt]{resourcen/SeqDiagramLayout.PDF}
+	\caption{Sequenz Diagramm für layouten eines JOANA-Graphs, Oberfläche}
+	\label{fig:seq:layout}
+\end{figure}
+
+Der Benutzer hat das Layouten des angezeigten Graphen über einen Menüeintrag angestoßen. Die GAnsApplication holt sich über den Graphen alle registrierten LayoutOptions. Diese werden in einem Dialog zur Auswahl gestellt. Nachdem der Benutzer eine Wahl getroffen hat wird ein Dialog geöffnet in dem Einstellungen zur gewählten LayoutOption gemacht werden können. Nun wird auf den gewählten LayoutOption applyLayout aufgerufen, ein MethodGraphLayout erstellt und auf den Graph angewendet(siehe \ref{fig:seq:layoutSugi}).
 \newpage
-\section{Filtern von Kanten (Pflichtenheft 9 /T060/)}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=450pt]{resourcen/SeqDiagramSugiyama.PDF}
+	\caption{Sequenz Diagramm für layouten eines JOANA-Graphs, Sugiyama}
+	\label{fig:seq:layoutSugi}
+\end{figure}
+
+Nachdem das Layouten mit dem MethodGraphLayout angestoßen wurde, wird zuerst ein FieldAccessLayout erstellt und damit alle FieldAccessGraphen des MethodenGraphen gelayouted. Danach wird ein SugiymaLayoutAlgorithm erstellt, die jeweiligen Phasen gesetzt, ein SugiyamaGraph erstellt und die jeweiligen Phasen auf den Graphen angewandt.
+
 \newpage
 \section{Export von einem geladenen JOANA-Graphen als SVG (Pflichtenheft 9 /T070/)}
