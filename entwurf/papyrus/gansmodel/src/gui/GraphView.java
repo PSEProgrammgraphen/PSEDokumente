@@ -22,9 +22,10 @@ public class GraphView extends Pane {
 
 	private DoubleProperty myScale = new SimpleDoubleProperty(1.0);
 
-	//TODO: selectionModel muss ueber EventHandler bei selektion aktualisiert werden.
+	// TODO: selectionModel muss ueber EventHandler bei selektion aktualisiert
+	// werden.
 	private GraphViewSelectionModel selectionModel;
-	
+
 	private GraphViewGraphFactory graphFactory;
 
 	/**
@@ -91,7 +92,9 @@ public class GraphView extends Pane {
 	 * GraphView.
 	 * 
 	 * @param x
+	 *            The x coordinate of the pivot.
 	 * @param y
+	 *            The y coordinate of the pivot.
 	 */
 	public void setPivot(double x, double y) {
 		setTranslateX(getTranslateX() - x);
@@ -107,40 +110,41 @@ public class GraphView extends Pane {
 	 */
 	public void setGraph(Graph<?, ?> graph) {
 		graphFactory = new GraphViewGraphFactory(graph);
-		
+
 		getChildren().addAll(graphFactory.getGraphicalElements());
 	}
-	
+
 	/**
 	 * Updates the shown graph.
 	 */
 	public void updateGraph() {
 		getChildren().addAll(graphFactory.getGraphicalElements());
 	}
-	
+
 	/**
-	 * Retruns the current {@link GraphViewGraphFactory} from the view.
+	 * Returns the current {@link GraphViewGraphFactory} from the view.
+	 * 
 	 * @return The current {@link GraphViewGraphFactory}.
 	 */
 	public GraphViewGraphFactory getFactory() {
 		return graphFactory;
 	}
 
-//	/**
-//	 * Adds a single vertex in the GraphView.
-//	 * 
-//	 * @param x
-//	 *            The x position in the view.
-//	 * @param y
-//	 *            The y position in the view.
-//	 * @param Text
-//	 *            The text of the vertex.
-//	 */
-//	public void addVertex(double x, double y, String text) {
-//		VertexShape test = new VertexShape(text);
-//		test.relocate(x, y);
-//		getChildren().add(test);
-//	}
+	// /**
+	// * Adds a single vertex in the GraphView.
+	// *
+	// * @param x
+	// * The x position in the view.
+	// * @param y
+	// * The y position in the view.
+	// * @param Text
+	// * The text of the vertex.
+	// */
+	// public void addVertex(double x, double y, String text) {
+	// VertexShape test = new VertexShape(text);
+	// test.relocate(x, y);
+	// getChildren().add(test);
+	// }
 
 	/**
 	 * Sets the selection model for the GraphView.

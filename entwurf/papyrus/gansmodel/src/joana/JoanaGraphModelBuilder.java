@@ -5,9 +5,8 @@ import graphmodel.IGraphBuilder;
 import graphmodel.IGraphModelBuilder;
 
 /**
- * This JoanaGraphModelBuilder implements the {@link IGraphModelBuilder} and
- * creates one {@link JoanaGraphModel}
- *
+ * The JoanaGraphModelBuilder implements the {@link IGraphModelBuilder} and
+ * creates a {@link JoanaGraphModel}.
  */
 public class JoanaGraphModelBuilder implements IGraphModelBuilder {
 

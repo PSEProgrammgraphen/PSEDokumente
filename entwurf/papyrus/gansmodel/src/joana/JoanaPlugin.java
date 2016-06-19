@@ -12,7 +12,8 @@ import plugin.Workspace;
 import plugin.WorkspaceOption;
 
 /**
- * 
+ * A plugin for GAns that supports the creation and visualization of Joana
+ * system dependence graphs.
  */
 public class JoanaPlugin implements Plugin {
 
@@ -21,14 +22,12 @@ public class JoanaPlugin implements Plugin {
 
 	private final static String pluginName = "JOANA";
 
-	List<WorkspaceOption> wsOptions;
-	
+	private List<WorkspaceOption> wsOptions;
+
 	/**
-	 * Constructs a new JoanaPlugin.
-	 * This constructor is present to be called by the ServiceLoader.
+	 * Constructor. The constructor is called by the ServiceLoader.
 	 */
-	public JoanaPlugin() 
-	{
+	public JoanaPlugin() {
 		WorkspaceOption joanaws = new WorkspaceOption() {
 
 			{
@@ -38,7 +37,7 @@ public class JoanaPlugin implements Plugin {
 			}
 
 			JoanaWorkspace ws;
-			
+
 			@Override
 			public Workspace getInstance() {
 				ws.initialize();
@@ -46,14 +45,13 @@ public class JoanaPlugin implements Plugin {
 			}
 
 			@Override
-			public Settings getSettings() { return this.ws.getSettings(); }
+			public Settings getSettings() {
+				return this.ws.getSettings();
+			}
 		};
 		wsOptions.add(joanaws);
 	}
 
-	/* (non-Javadoc)
-	 * @see plugin.Plugin#getName()
-	 */
 	@Override
 	public String getName() {
 		return pluginName;
@@ -80,32 +78,36 @@ public class JoanaPlugin implements Plugin {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public static CallGraphLayoutRegister getCallGraphLayoutRegister() {return cRegister;}
-	public static MethodGraphLayoutRegister getMethodGraphLayoutRegister() {return mRegister;}
-		
-	public static class CallGraphLayoutRegister implements LayoutRegister<CallGraphLayoutOption>
-	{ 
-		@Override
-		public void addLayoutOption(CallGraphLayoutOption option) { }
 
-		@Override
-		public List<LayoutOption> getLayoutOptions() { return null; } 
+	public static CallGraphLayoutRegister getCallGraphLayoutRegister() {
+		return cRegister;
 	}
 
-	public static class MethodGraphLayoutRegister implements LayoutRegister<MethodGraphLayoutOption>
-	{
+	public static MethodGraphLayoutRegister getMethodGraphLayoutRegister() {
+		return mRegister;
+	}
 
+	public static class CallGraphLayoutRegister implements LayoutRegister<CallGraphLayoutOption> {
+		@Override
+		public void addLayoutOption(CallGraphLayoutOption option) {
+		}
+
+		@Override
+		public List<LayoutOption> getLayoutOptions() {
+			return null;
+		}
+	}
+
+	public static class MethodGraphLayoutRegister implements LayoutRegister<MethodGraphLayoutOption> {
 		@Override
 		public void addLayoutOption(MethodGraphLayoutOption option) {
 			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public List<LayoutOption> getLayoutOptions() {
 			// TODO Auto-generated method stub
 			return null;
-		} 
+		}
 	}
 }

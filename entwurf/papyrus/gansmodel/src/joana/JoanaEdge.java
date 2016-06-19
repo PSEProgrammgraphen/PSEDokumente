@@ -4,9 +4,8 @@ import graphmodel.DirectedEdge;
 import objectproperty.GAnsProperty;
 
 /**
- * This is the Joana specified Edge. It contains parameters which are only
- * useful for Joana
- * 
+ * A Joana specific {@link Edge}. It contains parameters which are only
+ * used/usefull in {@link JoanaGraph}.
  */
 public class JoanaEdge extends DirectedEdge<JoanaVertex> {
 

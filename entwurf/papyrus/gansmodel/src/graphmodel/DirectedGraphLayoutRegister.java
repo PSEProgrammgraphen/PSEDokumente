@@ -6,14 +6,12 @@ import plugin.LayoutOption;
 import plugin.LayoutRegister;
 
 /**
- * @author Lucas
- *
+ * A {@link LayoutRegister} which is specific for
+ * {@link DirectedGraphLayoutOption}.
  */
 public class DirectedGraphLayoutRegister implements LayoutRegister<DirectedGraphLayoutOption> {
 
 	private List<LayoutOption> options;
-	
-	public DirectedGraphLayoutRegister() {}
 
 	@Override
 	public List<LayoutOption> getLayoutOptions() {
@@ -23,7 +21,7 @@ public class DirectedGraphLayoutRegister implements LayoutRegister<DirectedGraph
 	@Override
 	public void addLayoutOption(DirectedGraphLayoutOption option) {
 		options.add(option);
-		
+
 	}
 
 }

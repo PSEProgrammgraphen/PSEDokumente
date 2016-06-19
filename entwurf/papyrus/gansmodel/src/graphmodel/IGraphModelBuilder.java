@@ -1,28 +1,34 @@
 package graphmodel;
 
-
 /**
- * This is an abstract interface, which builds a concrete graphmodel.
- * This Class is based on the Builder Pattern.
- *
+ * An abstract interface, which is used to build a graphmodel. This class is
+ * based on the Builder Pattern.
  */
-
 public interface IGraphModelBuilder {
 
 	/**
-	 * Returns a specific {@link AbstractGraphBuilder} which belongs to the graphmodel.
-	 * It should also decide which graph should be builded with the help of the graphID.
+	 * Returns a specific {@link IGraphBuilder} for a graph, which belongs to
+	 * the {@link GraphModel}.
 	 * 
-	 * @param graphID 
-	 * @return 
+	 * @param graphID
+	 *            The id of the graph which associated {@link IGraphBuilder}
+	 *            will be returned.
+	 * @return The IGraphBuilder of the graph which is referenced over the
+	 *         graphID.
 	 */
 	public abstract IGraphBuilder getGraphBuilder(String graphID);
 
 	/**
-	 * This method is called, when the buildingprocess of the graphmodel is finished.
-	 * It returns the finished graphmodel
+	 * This method is called, when the buildingprocess of the graphmodel is
+	 * finished. It returns the finished graphmodel
 	 * 
 	 * @return GraphModel
+	 */
+	/**
+	 * Builds a graphmodel from the given settings and returns it.
+	 * 
+	 * @return The {@link GraphModel} that is being build by the
+	 *         IGraphModelBuilder.
 	 */
 	public GraphModel build();
 

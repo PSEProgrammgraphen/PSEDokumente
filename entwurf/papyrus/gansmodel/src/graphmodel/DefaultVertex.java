@@ -3,12 +3,12 @@ package graphmodel;
 import objectproperty.GAnsProperty;
 
 /**
- * This is an DefaultVertex, which has basic functions and is provided by the mainapplication.
- * 
- *
+ * This is an DefaultVertex, which has basic functions and is provided by the
+ * main application. This vertex can be derived by plugins which offer more
+ * functionality than the basic vertex.
  */
 public class DefaultVertex implements Vertex {
-	
+
 	private GAnsProperty<String> name;
 	private GAnsProperty<Integer> id;
 	private GAnsProperty<String> label;
@@ -26,7 +26,7 @@ public class DefaultVertex implements Vertex {
 		// TODO Auto-generated method stub
 		return id.getPropertyValue();
 	}
-	
+
 	@Override
 	public String getLabel() {
 		// TODO Auto-generated method stub
@@ -36,7 +36,7 @@ public class DefaultVertex implements Vertex {
 	@Override
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -55,6 +55,5 @@ public class DefaultVertex implements Vertex {
 	public int getY() {
 		// TODO Auto-generated method stub
 		return y;
-	} 
-
+	}
 }

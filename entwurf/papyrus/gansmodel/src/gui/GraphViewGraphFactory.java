@@ -8,7 +8,8 @@ import graphmodel.Graph;
 import graphmodel.Vertex;
 
 /**
- * The GraphViewGraphFactory generates all
+ * The GraphViewGraphFactory generates the visual representation of a given
+ * {@link Graph} and gives access to the set {@link Graph}.
  * 
  * @author Nicolas
  */
@@ -16,7 +17,7 @@ public class GraphViewGraphFactory {
 
 	private Graph<?, ?> graph;
 	private Map<VertexShape, Vertex> vertices;
-	private Map<EdgeShape, Edge<?> > edges;
+	private Map<EdgeShape, Edge<?>> edges;
 
 	/**
 	 * Constructor. Sets the graph and generates the vertices and edges for

@@ -6,65 +6,75 @@ import java.util.Set;
 import plugin.LayoutOption;
 
 /**
- * This graph interface specifies a graph.
- * A graph contains edges and vertices.
+ * This graph interface specifies a graph. A graph contains edges and vertices.
  */
 public interface Graph<V extends Vertex, E extends Edge<V>> {
-
 
 	/**
 	 * Returns the name of the Graph.
 	 * 
-	 * @return
-	 * 		name of the graph
+	 * @return The name of the graph.
 	 */
 	public String getName();
-
 
 	/**
 	 * Returns the ID of the graph.
 	 * 
-	 * @return
-	 * 		id of the graph
+	 * @return The id of the graph.
 	 */
-	public Integer getID(); 
-	
+	public Integer getID();
+
 	/**
-	 * Get a set of all vertices in this graph
+	 * Returns all vertices of the graph.
 	 * 
-	 * @return 
+	 * @return A set of all vertices of the graph.
 	 */
 	public Set<V> getVertexSet();
 
 	/**
-	 * Get a set of all edges in this graph
+	 * Returns all edges of the graph.
 	 * 
-	 * @return 
+	 * @return A set of all edges of the graph.
 	 */
 	public Set<E> getEdgeSet();
 
 	/**
-	 * get a list of all edges of a vertex
+	 * Returns a list of all edges of a vertex.
 	 * 
-	 * @param vertex 
-	 * @return 
+	 * @param vertex
+	 *            The vertex which edges will be returned.
+	 * @return All edges which are connected with the supplied vertex.
 	 */
 	public Set<E> edgesOf(V vertex);
 
 	/**
-	 * adds this graph to a fastGraphAccessor
+	 * Adds the graph to a {@link FastGraphAccessor}.
 	 * 
-	 * @param vertex 
-	 * @return 
+	 * @param fga
+	 *            The {@link FastGraphAccessor} to whom this graph will be
+	 *            added.
 	 */
 	public void addToFastGraphAccessor(FastGraphAccessor fga);
 
 	/**
 	 * Returns a list of layouts which have been registered at the corresponding
-	 * LayoutRegister for this graph type.
-	 * The graph implementing this interface will be set as target of the LayoutOption.
+	 * LayoutRegister for this graph type. The graph implementing this interface
+	 * will be set as target of the LayoutOption.
+	 */
+	/**
+	 * Returns a list of layouts which have been registered at the corresponding
+	 * LayoutRegister for this graph type. The graph implementing this interface
+	 * will be set as target of the LayoutOption.
+	 * 
+	 * @return A list of layouts which have been registered at the corresponding
+	 *         LayoutRegister for this graph type.
 	 */
 	public List<LayoutOption> getRegisteredLayouts();
-	
+
+	/**
+	 * Returns a {@link SerializedGraph} representation of the graph.
+	 * 
+	 * @return The {@link SerializedGraph} representation of the graph.
+	 */
 	public SerializedGraph serialize();
 }

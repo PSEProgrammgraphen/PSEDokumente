@@ -1,43 +1,44 @@
 package graphmodel;
 
 /**
- * This is an abstract Interface which is used to build a concrete edge.
- * 
- *
+ * An abstract interface, which is used to build a edge.
  */
-
 public interface IEdgeBuilder {
 
 	/**
-	 * sets the ID of the edge build by this.
+	 * Sets the ID of the edge build by this.
 	 * 
-	 * @param id value to which the id is set
+	 * @param id
+	 *            value to which the id is set
 	 */
 	public abstract void setID(String id);
 
 	/**
-	 * sets the direction of the edge build by this.
+	 * Sets the direction of the edge build by this.
 	 * 
-	 * @param direction String representation of the direction. Can be one of
+	 * @param direction
+	 *            String representation of the direction. Can be one of
 	 * @TODO
 	 */
 	public abstract void setDirection(String direction);
 
 	/**
-	 * sets source and target vertices of the edge build by this.
+	 * Sets source and target vertices of the edge build by this.
 	 *
-	 * @param source String represantation of the source vertex
-	 * @param target String represantation of the target vertex
+	 * @param source
+	 *            String represantation of the source vertex
+	 * @param target
+	 *            String represantation of the target vertex
 	 */
 	public abstract void newEdge(String source, String target);
 
 	/**
-	 * Adds additional data to this edge.
-	 * The specific EdgeBuilder implementation needs to decide how to save the value for given edge type.
+	 * Adds additional data to this edge. The specific EdgeBuilder
+	 * implementation needs to decide how to save the value for given edge type.
 	 * 
-	 * @param keyname 
-	 * @param value 
+	 * @param keyname
+	 * @param value
 	 */
-	public abstract void addData(String keyname, String value); 
+	public abstract void addData(String keyname, String value);
 
 }
