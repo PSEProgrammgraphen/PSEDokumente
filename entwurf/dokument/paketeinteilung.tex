@@ -12,7 +12,10 @@ Die Paketeinteilung der Software gliedert sich in folgende Pakete: %TODO Paketü
   \label{fig:packge_graphmodel}
 \end{figure}
 
-In dem Paket graphmodel befinden sich die Klassen die für die interne Repräsentation des Graphen benötigt werden. Die Funktionalität dieses Pakets ist es ein flexibles Graph model sowie schnellen Zugriff auf dessen Komponenten bereitzustellen. Hierfür werden Interfaces für Graphen, Vertices und Edges bereitgestellt und teilweise schon implementiert. 
+In dem Paket graphmodel befinden sich die Klassen die für die interne Repräsentation des Graphen benötigt werden. Die Funktionalität dieses Pakets ist es ein flexibles Graph-Modell, sowie schnellen Zugriff auf dessen Komponenten bereitzustellen.\\ 
+Zum Graph-Modell gehören Interfaces wie GraphModel, Graph, Vertex und Edge welche den groben Aufbau eines Graphen und dessen Funktionalitäten vorgeben. Das GraphModel enthält alle Graphen, welche bei einem Import aus der Datei ausgelesen wurden. Da es Kanten und somit auch Graphen gibt, welche gerichtet sind, gibt es dazu auch passende Interfaces, welche die zuvor genannten erweitern. Zusätzlich gibt es noch weitere Spezialisierungen der Interfaces, wie CompoundVertex, ein Knoten der einen Subgraphen enthält und LayeredGraph, ein Graph der noch Schichten speichert.\\
+Die genannten Interfaces sind teilweise schon implementiert. Zu diesen Klassen gehören die Default-Klassen, welche die im Interface definierten Methoden primitiv implementieren und die Serialized-Klassen, welche ein jeweiliges Element darstellt, welches einheitlich für den Export vorbereitet ist. \\
+Damit speziellere Implementierungen von Graph, Vertex oder Edge aus Plugins vom Importer einheitlich erstellt werden können gibt es die Builder-Interfaces. Sie geben eine Schnittstelle vor, über welche die speziellen Graphelemente erstellt werden können, ohne das der Importer davon etwas wissen muss.
 
 \newpage
 
@@ -93,13 +96,13 @@ Das Paket \textbf{objectproperty} bietet eine generische Eigenschaft eines Eleme
   \label{fig:packge_sugiyama}
 \end{figure}
 
-Das Paket \textbf{sugiyama} bietet neben einer Implementierung des Sugiyama-Frameworks zum hierarchischen layouten eines gerichteten Graphen Schnittstellen zum ändern und austauschen einzelner Schritte dieses Frameworks.\\
-Die fünf Schritte des Sugiyama-Frameworks Kreise entfernen, Lagenzuordnung, Kreuzungsminimierung, Knotenpositionierung und Kantenzeichnen werden in dieser Reihenfolge durchlaufen und durch einen \textbf{SugiyamaLayoutAlgorithm} verwaltet und gesteuert. Die Klassen, die diese Schritte darstellen \textbf{CycleRemover}, \textbf{LayerAssigner}, \textbf{CrossMinimizer}, \textbf{VertexPositioner} und \textbf{EdgeDrawer} arbeiten auf einem \textbf{SugiyamaGraph}, welcher den zu layoutenden Graphen repräsentiert.\\
-Im ersten Schritt werden die Zykel des Graphen entfernt, indem die Richtungen einer minimalen Kantenmenge umgekehrt wird.\\
+Das Paket \textbf{sugiyama} bietet neben einer Implementierung des Sugiyama-Frameworks zum hierarchischen layouten eines gerichteten Graphen Schnittstellen zum ändern und austauschen einzelner Phasen dieses Frameworks.\\
+Die fünf Phasen des Sugiyama-Frameworks Kreise entfernen, Lagenzuordnung, Kreuzungsminimierung, Knotenpositionierung und Kantenzeichnen werden in dieser Reihenfolge durchlaufen und durch einen \textbf{SugiyamaLayoutAlgorithm} verwaltet und gesteuert. Die Klassen, die diese Schritte darstellen \textbf{CycleRemover}, \textbf{LayerAssigner}, \textbf{CrossMinimizer}, \textbf{VertexPositioner} und \textbf{EdgeDrawer} arbeiten auf einem \textbf{SugiyamaGraph}, welcher den zu layoutenden Graphen repräsentiert.\\
+In der ersten Phase werden die Zykel des Graphen entfernt, indem die Richtungen einer minimalen Kantenmenge umgekehrt wird.\\
 Anschließend wird jedem Knoten eine Lage zugewiesen, welche abhängig von der Anzahl der ein- und ausgehenden Kanten des Knotens, sowie der Länge des kürzesten Pfades des Knotens zu einem Knoten aus der ersten Lage ist. Zudem werden, falls eine Kante zwischen zwei Knoten mindestens eine Lage überspringt, in jede dieser Lagen ein \textbf{DummyVertex} ein.\\
-Im dritten Schritt wird die Anzahl der Kantenkreuzungen minimiert. Dazu werden jeweils in zwei aneinanderliegenden Lagen die Knoten beider Lagen umgeordnet.\\
-In Schritt Vier bekommen die Knoten feste Positionen in den Lagen zugewiesen\\
-Im letzten Schritt wird jeder \textbf{DummyVertex} entfernt und die Kanten werden gezeichnet. Zusätzlich werden die im ersten Schritt umgedrehten Kanten wieder in ihre ursprüngliche Richtung zurückversetzt.
+In der dritten Phase wird die Anzahl der Kantenkreuzungen minimiert. Dazu werden jeweils in zwei aneinanderliegenden Lagen die Knoten beider Lagen umgeordnet.\\
+In Phase Vier bekommen die Knoten feste Positionen in den Lagen zugewiesen\\
+In der letzten Phase wird jeder \textbf{DummyVertex} entfernt und die Kanten werden gezeichnet. Zusätzlich werden die im ersten Schritt umgedrehten Kanten wieder in ihre ursprüngliche Richtung zurückversetzt.
 
 \newpage
 
