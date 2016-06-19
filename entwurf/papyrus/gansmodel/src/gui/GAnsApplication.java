@@ -31,7 +31,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import joana.MethodGraphLayout;
-import parameter.ParameterDialogGenerator;
 import parameter.Settings;
 import plugin.FilterSet;
 import plugin.LayoutOption;

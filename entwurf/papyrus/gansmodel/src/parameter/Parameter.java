@@ -5,7 +5,9 @@ import java.util.List;
 
 /**
  * An abstract parameter class.
- * Created by Sven on 08.06.2016.
+ * A Parameter contains a value and a name. The value can be transformed into a string.
+ * Clients can set Listeners to track changes of the value.
+ * Classes inheriting from this class can visited by a ParameterVisitor.
  */
 public abstract class Parameter<T, V> implements Comparable<T> {
 	
