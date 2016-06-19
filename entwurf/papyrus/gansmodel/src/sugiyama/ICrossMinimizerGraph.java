@@ -2,11 +2,11 @@ package sugiyama;
 
 import java.util.List;
 
-import graphmodel.DirectedGraph;
+import graphmodel.LayeredGraph;
 import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
 import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
 
-public interface ICrossMinimizerGraph  extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
+public interface ICrossMinimizerGraph  extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 
 	/**
 	 * Get the amount of layers.

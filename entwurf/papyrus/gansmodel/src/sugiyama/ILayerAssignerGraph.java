@@ -1,12 +1,11 @@
 package sugiyama;
 
-import java.util.List;
 
-import graphmodel.DirectedGraph;
+import graphmodel.LayeredGraph;
 import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
 import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
 
-public interface ILayerAssignerGraph extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
+public interface ILayerAssignerGraph extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 	
 	/**
 	 * Assigns a vertex to a certain layer represented by a number.
@@ -24,20 +23,6 @@ public interface ILayerAssignerGraph extends DirectedGraph<SugiyamaVertex, Sugiy
 	 */
 	public int getLayer(SugiyamaVertex vertex);
 	
-	/**
-	 * Get all vertices from a certain layer.
-	 * 
-	 * @param layerNum the layer number to get all vertices from
-	 * @return 		   a list of all vertices which are on this layer
-	 */
-	public List<SugiyamaVertex> getLayer(int layerNum);
-	
-	/**
-	 * Get all layers that contain vertices.
-	 * 
-	 * @return a list of lists of vertices which are on this layer
-	 */
-	public List<List<SugiyamaVertex>> getLayers();
 	
 	/**
 	 * Get the number of vertices which are on a  certain layer

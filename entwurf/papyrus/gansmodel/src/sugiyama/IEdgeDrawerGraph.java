@@ -3,11 +3,11 @@ package sugiyama;
 import java.util.List;
 import java.util.Set;
 
-import graphmodel.DirectedGraph;
+import graphmodel.LayeredGraph;
 import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
 import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
 
-public interface IEdgeDrawerGraph  extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
+public interface IEdgeDrawerGraph  extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 	
 	/**
 	 * Reverses the direction of an directed edge and returns it.
