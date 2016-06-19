@@ -17,7 +17,7 @@ public class MultipleChoiceParameter extends Parameter<MultipleChoiceParameter, 
 	public MultipleChoiceParameter(String name) 
 	{
 		this(name, new ArrayList<String>(), 0);
-		}
+	}
 	@Override
 	public String valueString() { return values.get(selected); } 
 	@Override
