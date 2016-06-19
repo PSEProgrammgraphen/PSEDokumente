@@ -6,18 +6,16 @@ import plugin.LayoutOption;
 import plugin.LayoutRegister;
 
 /**
- * This is a specified graph representation for a MethodGraph in JOANA 
+ * This is a specific graph representation for a MethodGraph in JOANA 
  */
 public class MethodGraph extends JoanaGraph {
 
 	private static LayoutRegister register;
 	
-	public MethodGraph() {}
-	
 	/**
-	 * Get the entry vertex of a method
+	 * Returns the entry vertex of a method.
 	 * 
-	 * @return 
+	 * @return The entry vertex of a method.
 	 */
 	public JoanaVertex getEntryVertex() { 
 		// TODO Auto-generated method
@@ -25,9 +23,9 @@ public class MethodGraph extends JoanaGraph {
 	 }
 
 	/**
-	 * Get a list of all {@link FieldAcesses} in a method
+	 * Returns a list of all {@link FieldAcesses} in the MethodGraph.
 	 * 
-	 * @return 
+	 * @return A list of all {@link FieldAcesses} in the MethodGraph.
 	 */
 	public List<FieldAccess> getFieldAccesses() { 
 		// TODO Auto-generated method
@@ -35,18 +33,9 @@ public class MethodGraph extends JoanaGraph {
 	 }
 
 	/**
+	 * Returns a list of all {@link MethodCall} in the MethodGraph.
 	 * 
-	 * @return 
-	 */
-	public List<JoanaVertex> getFormVertices() { 
-		// TODO Auto-generated method
-		return null;
-	 }
-
-	/**
-	 * Get a list of all MethodCalls in a method
-	 * 
-	 * @return 
+	 * @return A list of all {@link MethodCall} in the MethodGraph.
 	 */
 	public List<JoanaVertex> getMethodCalls() { 
 		// TODO Auto-generated method
@@ -54,10 +43,11 @@ public class MethodGraph extends JoanaGraph {
 	 } 
 
 	/**
-	 * This sets the {@link LayoutRegister}, which stores the available 
-	 * {@link LayoutOption}s for all method graphs statically.
-	 * @param register the register
+	 * Sets the {@link LayoutRegister}, which stores the available 
+	 * {@link LayoutOption} for all method graphs statically.
+	 * @param register The {@link LayoutRegister} that will be set.
 	 */
-	protected static void setRegister(LayoutRegister register) {MethodGraph.register = register;}
-	
+	protected static void setRegister(LayoutRegister register) {
+		MethodGraph.register = register;
+	}
 }

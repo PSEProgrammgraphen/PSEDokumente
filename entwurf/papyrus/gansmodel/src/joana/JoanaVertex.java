@@ -4,8 +4,8 @@ import graphmodel.DefaultVertex;
 import objectproperty.GAnsProperty;
 
 /**
- * This is the Joana specified Vertex. It contains parameters which are only
- * useful for Joana.
+ * A Joana specific Vertex. It contains parameters which are only used/useful
+ * for Joana.
  */
 public class JoanaVertex extends DefaultVertex {
 

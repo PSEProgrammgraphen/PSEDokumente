@@ -72,7 +72,7 @@ public class EdgeShape extends GAnsGraphElement {
 	}
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 * 
 	 * @param vertex1
 	 *            First of the two vertices that shall be connected.

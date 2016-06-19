@@ -1,9 +1,11 @@
 package com.tinkerpop.blueprints.util.io.graphml;
 
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.List;
 
 import graphmodel.IGraphModelBuilder;
+import plugin.Importer;
 
 /**
  * 
@@ -15,7 +17,7 @@ import graphmodel.IGraphModelBuilder;
  
  * @author
  */
-public class GraphMLImporter {
+public class GraphMLImporter implements Importer {
 
 	/**
 	 * 
@@ -33,8 +35,21 @@ public class GraphMLImporter {
 	 * @param builder 
 	 * @param graphMLInputStream 
 	 */
-	public static void inputGraph(IGraphModelBuilder builder, InputStream graphMLInputStream) { 
+	public void importGraph(IGraphModelBuilder builder, FileInputStream graphMLInputStream) { 
 		// TODO Auto-generated method
-	 } 
+	 }
+
+	@Override
+	public List<String> getSupportedFileEndings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

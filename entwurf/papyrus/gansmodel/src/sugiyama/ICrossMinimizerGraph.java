@@ -3,8 +3,8 @@ package sugiyama;
 import java.util.List;
 
 import graphmodel.DirectedGraph;
-import sugiyama.SugiyamaGraph.SugiyamaEdge;
-import sugiyama.SugiyamaGraph.SugiyamaVertex;
+import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
+import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
 
 public interface ICrossMinimizerGraph  extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
 

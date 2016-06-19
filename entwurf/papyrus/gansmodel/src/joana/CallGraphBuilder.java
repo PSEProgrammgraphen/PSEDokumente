@@ -7,8 +7,7 @@ import graphmodel.IVertexBuilder;
 
 /**
  * The CallGraphBuilder implements an {@link IGraphBuilder} and builds 
- * one {@link Callgraph}
- *
+ * one {@link CallGraph}.
  */
 public class CallGraphBuilder implements IGraphBuilder{
 
@@ -29,5 +28,4 @@ public class CallGraphBuilder implements IGraphBuilder{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

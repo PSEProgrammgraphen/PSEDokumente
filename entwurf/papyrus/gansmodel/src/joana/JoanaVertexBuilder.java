@@ -5,16 +5,14 @@ import graphmodel.IVertexBuilder;
 import graphmodel.Vertex;
 
 /**
- * The JoanaVertexBuilder implements an {@link IVertexBuilder}
- * and build exactly one vertex
- *
+ * The JoanaVertexBuilder implements an {@link IVertexBuilder} and
+ * creates a {@link JoanaVertex}.
  */
 public class JoanaVertexBuilder implements IVertexBuilder {
 
 	@Override
 	public void addData(String value, String keyname) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

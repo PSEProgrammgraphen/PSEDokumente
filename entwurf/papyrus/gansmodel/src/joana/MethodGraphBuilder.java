@@ -6,11 +6,10 @@ import graphmodel.IGraphBuilder;
 import graphmodel.IVertexBuilder;
 
 /**
- * The MethodGraphBuilder implements an {@link IGraphBuilder} and builds 
- * one {@link MethodGraph}
- *
+ * The MethodGraphBuilder is a {@link IGraphBuilder}, specifically for building
+ * {@link MethodGraph}.
  */
-public class MethodGraphBuilder implements IGraphBuilder{
+public class MethodGraphBuilder implements IGraphBuilder {
 
 	@Override
 	public IEdgeBuilder getEdgeBuilder() {

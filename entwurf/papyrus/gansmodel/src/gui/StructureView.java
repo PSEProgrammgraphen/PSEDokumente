@@ -8,7 +8,7 @@ import javafx.scene.control.TreeView;
 
 /**
  * The StructureView regulates the access and representation of the elements in
- * the StructreView of GAns.
+ * the StructureView of GAns.
  * 
  * @author Nicolas
  */

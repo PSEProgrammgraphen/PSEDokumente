@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 public abstract class GAnsGraphElement extends StackPane {
 
 	/**
-	 * Sets the text shown on the element
+	 * Sets the text shown on the element.
 	 * 
 	 * @param text
 	 *            The text that will be displayed on the element.
@@ -27,7 +27,7 @@ public abstract class GAnsGraphElement extends StackPane {
 	public abstract String getText();
 
 	/**
-	 * Sets the color of the element
+	 * Sets the color of the element.
 	 * 
 	 * @param color
 	 *            The color the element will be displayed in.

@@ -6,80 +6,49 @@ import graphmodel.Graph;
 import graphmodel.GraphModel;
 
 /**
- * This is the Joana specified Graphmodel.
- * It can only contain {@link methodgraph} and {@link callgraph}
- *
+ * A Joana specific {@link GraphModel}. It can only contain {@link MethodGraph}
+ * and {@link CallGraph}.
  */
 public class JoanaGraphModel extends GraphModel {
 
-	/**
-	 * 
-	 */
 	private List<MethodGraph> methodgraphs;
-	/**
-	 * 
-	 */
-	private Callgraph callgraph;
+	private CallGraph callgraph;
 	
 	/**
-	 * Getter of methodgraphs
+	 * Returns all {@link MethodGraph} contained in the JoanaGraphModel.
+	 * @return A list of all the {@link MethodGraph} contained in the JoanaGraphModel.
 	 */
-	public List<MethodGraph> getMethodgraphs() {
-	 	 return methodgraphs; 
+	public List<MethodGraph> getMethodGraphs() {
+		return methodgraphs;
 	}
-	/**
-	 * Setter of methodgraphs
-	 */
-	public void setMethodgraphs(List<MethodGraph> methodgraphs) { 
-		 this.methodgraphs = methodgraphs; 
-	}
-	/**
-	 * Getter of callgraph
-	 */
-	public Callgraph getCallgraph() {
-	 	 return callgraph; 
-	}
-	/**
-	 * Setter of callgraph
-	 */
-	public void setCallgraph(Callgraph callgraph) { 
-		 this.callgraph = callgraph; 
-	}
-	public void setMethodGraph(List<MethodGraph> methodgraphs) { 
-		// TODO Auto-generated method
-	 }
-	/**
-	 * Getter of graph 
-	 * 
-	 * @return 
-	 */
-	public List<MethodGraph> getMethodGraphs() { 
-		// TODO Auto-generated method
-		return null;
-	 }
-	/**
-	 * Getter of graph
-	 * 		 
-	 * @return 
-	 */
-	public List<Graph> getGraphs() { 
-		// TODO Auto-generated method
-		return null;
-	 }
-	/**
-	 * 
-	 * @return 
-	 */
-	public Callgraph getCallGraph() { 
-		// TODO Auto-generated method
-		return null;
-	 }
-	/**
-	 * 
-	 * @param graph 
-	 */
-	public void setCallGraph(Callgraph graph) { 
-		// TODO Auto-generated method
-	 } 
 
+	/**
+	 * Sets the {@link MethodGraph} objects in the JoanaGraphModel.
+	 * @param methodgraphs The {@link MethodGraph} objects that will be set in the JoanaGraphModel.
+	 */
+	public void setMethodGraphs(List<MethodGraph> methodgraphs) {
+		this.methodgraphs = methodgraphs;
+	}
+
+	/**
+	 * Returns all {@link CallGraph} contained in the JoanaGraphModel.
+	 * @return A list of all the {@link CallGraph} contained in the JoanaGraphModel.
+	 */
+	public CallGraph getCallGraph() {
+		return callgraph;
+	}
+
+	/**
+	 * Sets the {@link CallGraph} in the JoanaGraphModel.
+	 * @param callgraph The {@link CallGraph} that will be set in the JoanaGraphModel.
+	 */
+	public void setCallGraph(CallGraph callgraph) {
+		this.callgraph = callgraph;
+	}
+
+	@Override
+	public List<Graph> getGraphs() {
+		// TODO Auto-generated method
+		return null;
+	}
 }

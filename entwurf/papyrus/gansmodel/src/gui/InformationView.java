@@ -21,7 +21,7 @@ public class InformationView extends TableView<GAnsProperty> {
 	 * whenever the selection of the {@link GraphView} changes.
 	 * 
 	 * @param informations
-	 *            List with {@link GAnsProperty}-elements which define the
+	 *            List with {@link GAnsProperty} elements which define the
 	 *            content of the InformationView
 	 */
 	public void setInformations(ObservableList<GAnsProperty> informations) {

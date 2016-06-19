@@ -22,8 +22,16 @@ public abstract class LayoutOption extends EntryPointOption implements Cloneable
 	
 	/**
 	 * Get the set of parameters for an algorithm of this option.
+	 * {@code choose()} has to be called up front.
 	 * 
 	 * @return the set of parameters
 	 */
 	public abstract Settings getSettings();
+	
+	
+	/**
+	 * Called when this layout option is chosen.
+	 * This allows the layout option to prepare the actual LayoutAlgorithm.
+	 */
+	public abstract void chooseLayout();
 }

@@ -8,17 +8,16 @@ import parameter.IntegerParameter;
 import parameter.MultipleChoiceParameter;
 import parameter.Settings;
 import parameter.StringParameter;
-import sugiyama.SugiyamaGraph;
+import sugiyama.SugiyamaGraphBase;
 import sugiyama.SugiyamaLayoutAlgorithm;
 
 /**
- * Implements a SugiyamaLayout for {@link MethodGraph}
+ * Implements a SugiyamaLayout specific a {@link MethodGraph}.
  */
 public class MethodGraphLayout implements SugiyamaLayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> {
 
 	@Override
 	public Settings getSettings() {
-
 		IntegerParameter p1 = new IntegerParameter("Max-Layer-Count", 20, 1, 100);
 		IntegerParameter p2 = new IntegerParameter("Min-Layer-Count", 5, 1, 100);
 		StringParameter p3 = new StringParameter("StringParameter", "Hallo");
@@ -35,14 +34,17 @@ public class MethodGraphLayout implements SugiyamaLayoutAlgorithm<MethodGraph, J
 		return s;
 	}
 
+	/**
+	 * Layouts a single {@link MethodGraph}.
+	 * 
+	 * @param graph The {@link MethodGraph} to be layouted.
+	 */
 	public void layout(MethodGraph graph) {
 		System.out.println("Layouting MethodGraph!");
-		
 	}
 
 	@Override
-	public void layoutSugiyamaGraph(SugiyamaGraph<MethodGraph, JoanaVertex, JoanaEdge> graph) {
+	public void layoutSugiyamaGraph(SugiyamaGraphBase<MethodGraph, JoanaVertex, JoanaEdge> graph) {
 		// TODO Auto-generated method stub
-		
 	}
 }
