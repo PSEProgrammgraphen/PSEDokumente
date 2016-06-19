@@ -16,15 +16,26 @@ public abstract class EntryPointOption {
 	 * Returns the name of the entry point option.
 	 * This name can be displayed when displaying multiple options
 	 * 
-	 * @return the name
+	 * @return the name of the entry point
 	 */
 	public String getName() {return name;}
+	
+	/**
+	 * Sets the name of the entry point
+	 * @param name the name of the entry point
+	 */
 	protected void setName(String name) { this.name = name; }
 	
 	/**
-	 * The ID of an entry point should be an acronym of it's name.
+	 * The id of an entry point should be an acronym of it's name.
 	 * @return the id
 	 */
 	public String getID() {return id;}
+	
+	/**
+	 * Sets the id of the entry point.
+	 * The id should be an acronym of the name.
+	 * @param id the id of the entry point.
+	 */
 	protected void setID(String id) { this.id = id; }
 }

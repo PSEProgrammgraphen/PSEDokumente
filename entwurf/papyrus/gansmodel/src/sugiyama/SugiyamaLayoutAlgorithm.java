@@ -7,7 +7,7 @@ import plugin.LayoutAlgorithm;
 
 /**
  * This interface supports in addition to Layouts, where every vertex a coordinate and every
- * edge a path is assigned, a Layout which saves the positioning of vertex in the representation of a {@link SugiyamaGraph}.
+ * edge a path is assigned, a Layout which saves the positioning of vertex in the representation of a {@link SugiyamaGraphBase}.
  * 
  * @param <G> the type of the graph the layout should be applied
  * @param <V> the type of the vertices the graph contains
@@ -21,5 +21,5 @@ public interface SugiyamaLayoutAlgorithm<G extends DirectedGraph<V, E>, V extend
 	 * A possible application is drawing of recursive graphs.
 	 * @param graph the graph to apply the layout to
 	 */
-	public void layoutSugiyamaGraph(SugiyamaGraph<G, V, E> graph);
+	public void layoutSugiyamaGraph(SugiyamaGraphBase<G, V, E> graph);
 }

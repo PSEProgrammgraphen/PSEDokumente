@@ -3,7 +3,10 @@ package plugin;
 import java.util.List;
 
 /**
- * 
+ * This is the main entry point for plugins.
+ * Plugins have to register their content extensions via this interface.
+ * The plugin manager will load classes implementing this interface  with a service loader, when
+ * they are correctly described in the plugins META-INF.
  */
 public interface Plugin {
 	
