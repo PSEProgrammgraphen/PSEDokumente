@@ -17,7 +17,7 @@ public interface ILayerAssigner {
 	 * Defines a set of constraints which should be considered by the algorithm.
 	 * @param constraints relative layer constraints the algorithm should consider
 	 */
-	public void addConstraints(Set<LayerConstraint> constraints);
+	public void addConstraints(Set<RelativeLayerConstraint> constraints);
 	
 	/**
 	 * Reassigns the layer of vertices whose layer is greater than the height parameter.

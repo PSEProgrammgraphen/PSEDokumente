@@ -17,7 +17,7 @@ public interface SugiyamaLayoutAlgorithm<G extends DirectedGraph<V, E>, V extend
 	extends LayoutAlgorithm<G, V, E> {
 
 	/**
-	 * Applies it's layout to a graph as in {@code layout(G graph)} but keeps the notion of layers.
+	 * Applies its layout to a graph as in {@code layout(G graph)} but keeps the notion of layers.
 	 * A possible application is drawing of recursive graphs.
 	 * @param graph the graph to apply the layout to
 	 */
