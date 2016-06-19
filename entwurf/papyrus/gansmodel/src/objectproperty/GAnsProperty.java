@@ -19,19 +19,19 @@ import javafx.beans.property.StringProperty;
 public class GAnsProperty<T extends Object> {
 
 	/**
-	 * A string with whoom, factories or other elements from the GUI, can
+	 * A string with whom, factories or other elements from the GUI, can
 	 * reference to the name/identifier of the value.
 	 */
 	public final static String name = "propertyName";
 
 	/**
-	 * A string with whoom, factories or other elements from the GUI, can
+	 * A string with whom, factories or other elements from the GUI, can
 	 * reference to the value.
 	 */
 	public final static String value = "propertyValue";
 
 	/**
-	 * A string with whoom, factories or other elements from the GUI, can
+	 * A string with whom, factories or other elements from the GUI, can
 	 * reference to the string-representation of the value.
 	 */
 	public final static String valueAsString = "propertyValueAsString";

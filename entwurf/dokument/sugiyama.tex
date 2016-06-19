@@ -2,43 +2,57 @@
 \label{sugiyama}\hskip -.05in
 \hbox to \hsize{\textit{ Package Contents\hfil Page}}
 \vskip .13in
+\hbox{{\bf  Interfaces}}
+\entityintro{ICrossMinimizer}{sugiyama.ICrossMinimizer}{This interface represents a class that takes a Sugiyama Graph and rearranges its vertices on each layer to minimize the amount of edge crossings.}
+\entityintro{ICrossMinimizerGraph}{sugiyama.ICrossMinimizerGraph}{}
+\entityintro{ICycleRemover}{sugiyama.ICycleRemover}{This interfaces represents a class that generates a DAG(Directed Acyclic Graph) from a \texttt{\small DirectedGraph}{\small 
+\refdefined{graphmodel.DirectedGraph}}.}
+\entityintro{ICycleRemoverGraph}{sugiyama.ICycleRemoverGraph}{}
+\entityintro{IEdgeDrawer}{sugiyama.IEdgeDrawer}{This interface represents a class that takes a directed graph, as a SugiyamaClass.}
+\entityintro{IEdgeDrawerGraph}{sugiyama.IEdgeDrawerGraph}{}
+\entityintro{ILayerAssigner}{sugiyama.ILayerAssigner}{This interface represents a class that takes a directed graph and assigns every vertex in it a layer.}
+\entityintro{ILayerAssignerGraph}{sugiyama.ILayerAssignerGraph}{}
+\entityintro{IVertexPositioner}{sugiyama.IVertexPositioner}{This interface represents a class that takes a directed graph and position its vertices in order to look more clearly.}
+\entityintro{IVertexPositionerGraph}{sugiyama.IVertexPositionerGraph}{}
+\entityintro{SugiyamaLayoutAlgorithm}{sugiyama.SugiyamaLayoutAlgorithm}{This interface supports in addition to Layouts, where every vertex a coordinate and every edge a path is assigned, a Layout which saves the positioning of vertex in the representation of a \texttt{\small SugiyamaGraph}{\small 
+\refdefined{sugiyama.SugiyamaGraph}}.}
+\vskip .13in
 \hbox{{\bf  Classes}}
-\entityintro{CrossMinimizer}{sugiyama.CrossMinimizer}{This class takes a sugiyama graph and rearranges its vertices on each layer to minimize the amount of edge crossings.}
-\entityintro{DAGMaker}{sugiyama.DAGMaker}{This class takes a directed Graph G = (V, E) and removes a set of edges E\_\ so that the resulting Graph G' = (V, E\textbackslash E\_) is a DAG(Directed Acyclic Graph).}
-\entityintro{EdgeDrawing}{sugiyama.EdgeDrawing}{This class takes a directed graph, as a SugiyamaClass.}
-\entityintro{LayerAssigning}{sugiyama.LayerAssigning}{This class takes a directed graph and assigns every vertex in it a layer.}
+\entityintro{CrossMinimizer}{sugiyama.CrossMinimizer}{This class takes a Sugiyama Graph and rearranges its vertices on each layer to minimize the amount of edge crossings.}
+\entityintro{CycleRemover}{sugiyama.CycleRemover}{This class takes a directed Graph G = (V, E) and removes a set of edges E\_\ so that the resulting Graph G' = (V, E\textbackslash E\_) is a DAG(Directed Acyclic Graph).}
+\entityintro{EdgeDrawer}{sugiyama.EdgeDrawer}{This class takes a directed graph, as a SugiyamaClass.}
+\entityintro{IEdgeDrawerGraph.Point}{sugiyama.IEdgeDrawerGraph.Point}{This class is a standard immutable 2D Vector with integer values as it's components.}
+\entityintro{LayerAssigner}{sugiyama.LayerAssigner}{This class takes a directed graph and assigns every vertex in it a layer.}
 \entityintro{LayerConstraint}{sugiyama.LayerConstraint}{A relative constraint, regarding layer assignment, between to sets of vertices.}
-\entityintro{SugiyamaGraph}{sugiyama.SugiyamaGraph}{The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast acessability of attributes and constructs needed during the computation of the hierarchical layout of a directed graph.}
-\entityintro{SugiyamaLayoutAlgorithm}{sugiyama.SugiyamaLayoutAlgorithm}{This class controls the collaboration between every single step of Sugiyama Layout.}
-\entityintro{VertexPositioning}{sugiyama.VertexPositioning}{This class takes a directed graph and position its vertices in order to look more clearly.}
+\entityintro{SugiyamaGraph}{sugiyama.SugiyamaGraph}{The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast accessibility of attributes and constructs needed during the computation of the hierarchical layout of a directed graph.}
+\entityintro{SugiyamaGraph.DummyVertex}{sugiyama.SugiyamaGraph.DummyVertex}{A supplement vertex which is part of a \texttt{\small SugiyamaGraph.SupplementPath}{\small 
+\refdefined{sugiyama.SugiyamaGraph.SupplementPath}}.}
+\entityintro{SugiyamaGraph.SugiyamaEdge}{sugiyama.SugiyamaGraph.SugiyamaEdge}{A wrapper class for directed edges to implement additional functionality to apply the sugiyama layout to the SugiyamaGraph containing them.}
+\entityintro{SugiyamaGraph.SugiyamaVertex}{sugiyama.SugiyamaGraph.SugiyamaVertex}{}
+\entityintro{SugiyamaGraph.SupplementEdge}{sugiyama.SugiyamaGraph.SupplementEdge}{A supplement edge which is part of a \texttt{\small SugiyamaGraph.SupplementPath}{\small 
+\refdefined{sugiyama.SugiyamaGraph.SupplementPath}}.}
+\entityintro{SugiyamaGraph.SupplementPath}{sugiyama.SugiyamaGraph.SupplementPath}{A supplement path for connecting vertices, which are more than one layer apart.}
+\entityintro{SugiyamaPlugin}{sugiyama.SugiyamaPlugin}{}
+\entityintro{VertexPositioner}{sugiyama.VertexPositioner}{This class takes a directed graph and position its vertices in order to look more clearly.}
 \vskip .1in
 \vskip .1in
-\subsection{\label{sugiyama.CrossMinimizer}\index{CrossMinimizer}Class CrossMinimizer}{
+\subsection{\label{sugiyama.ICrossMinimizer}\index{ICrossMinimizer@\textit{ ICrossMinimizer}}Interface ICrossMinimizer}{
 \vskip .1in 
-This class takes a sugiyama graph and rearranges its vertices on each layer to minimize the amount of edge crossings.\vskip .1in 
+This interface represents a class that takes a Sugiyama Graph and rearranges its vertices on each layer to minimize the amount of edge crossings.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
-public class CrossMinimizer
- extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{CrossMinimizer()}
-{\bf  CrossMinimizer}\\
-\begin{lstlisting}[frame=none]
-public CrossMinimizer()\end{lstlisting} %end signature
-}%end item
-\end{itemize}
-}
+public interface ICrossMinimizer
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{CrossMinimizer\small{\refdefined{sugiyama.CrossMinimizer}}}
+\subsubsection{All classes known to implement interface}{CrossMinimizer\small{\refdefined{sugiyama.CrossMinimizer}}}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{minimizeCrossings(SugiyamaGraph)}
+\index{minimizeCrossings(ICrossMinimizerGraph)}
 {\bf  minimizeCrossings}\\
 \begin{lstlisting}[frame=none]
-public void minimizeCrossings(SugiyamaGraph graph)\end{lstlisting} %end signature
+void minimizeCrossings(ICrossMinimizerGraph graph)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -57,32 +71,161 @@ Rearranges vertices in the graph argument in order to remove the amount of cross
 \end{itemize}
 }
 }
-\subsection{\label{sugiyama.DAGMaker}\index{DAGMaker}Class DAGMaker}{
+\subsection{\label{sugiyama.ICrossMinimizerGraph}\index{ICrossMinimizerGraph@\textit{ ICrossMinimizerGraph}}Interface ICrossMinimizerGraph}{
 \vskip .1in 
-This class takes a directed Graph G = (V, E) and removes a set of edges E\_\ so that the resulting Graph G' = (V, E\textbackslash E\_) is a DAG(Directed Acyclic Graph).\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
-public class DAGMaker
- extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{DAGMaker()}
-{\bf  DAGMaker}\\
-\begin{lstlisting}[frame=none]
-public DAGMaker()\end{lstlisting} %end signature
-}%end item
-\end{itemize}
-}
+public interface ICrossMinimizerGraph
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{All known subinterfaces}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
+\subsubsection{All classes known to implement interface}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{removeCycles(SugiyamaGraph)}
+\index{getLayer(int)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayer(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get all vertices from a certain layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get all vertices from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+a list of all vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(SugiyamaGraph.SugiyamaVertex)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+int getLayer(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the layer from the vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to get its layer from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the layer number from this vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayerCount()}
+{\bf  getLayerCount}\\
+\begin{lstlisting}[frame=none]
+int getLayerCount()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the amount of layers.
+}
+\item{{\bf  Returns} -- 
+the amount of layers that contain at least one vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayers()}
+{\bf  getLayers}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayers()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get all layers that contain vertices.
+}
+\item{{\bf  Returns} -- 
+a list of lists of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexCount(int)}
+{\bf  getVertexCount}\\
+\begin{lstlisting}[frame=none]
+int getVertexCount(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the number of vertices which are on a certain layer
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get the vertex count from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the number of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{swapVertices(SugiyamaGraph.SugiyamaVertex, SugiyamaGraph.SugiyamaVertex)}
+{\bf  swapVertices}\\
+\begin{lstlisting}[frame=none]
+void swapVertices(SugiyamaGraph.SugiyamaVertex first,SugiyamaGraph.SugiyamaVertex second)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Swaps the position of two vertices that are on the same layer
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{first} -- first vertex to change position with}
+   \item{
+\texttt{second} -- second vertex to change position with}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.ICycleRemover}\index{ICycleRemover@\textit{ ICycleRemover}}Interface ICycleRemover}{
+\vskip .1in 
+This interfaces represents a class that generates a DAG(Directed Acyclic Graph) from a \texttt{\small DirectedGraph}{\small 
+\refdefined{graphmodel.DirectedGraph}}.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface ICycleRemover
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{CycleRemover\small{\refdefined{sugiyama.CycleRemover}}}
+\subsubsection{All classes known to implement interface}{CycleRemover\small{\refdefined{sugiyama.CycleRemover}}}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{removeCycles(ICycleRemoverGraph)}
 {\bf  removeCycles}\\
 \begin{lstlisting}[frame=none]
-public java.util.Set removeCycles(SugiyamaGraph graph)\end{lstlisting} %end signature
+java.util.Set removeCycles(ICycleRemoverGraph graph)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -104,32 +247,80 @@ a set of edges whose direction has been reversed in order to remove cycles from 
 \end{itemize}
 }
 }
-\subsection{\label{sugiyama.EdgeDrawing}\index{EdgeDrawing}Class EdgeDrawing}{
+\subsection{\label{sugiyama.ICycleRemoverGraph}\index{ICycleRemoverGraph@\textit{ ICycleRemoverGraph}}Interface ICycleRemoverGraph}{
 \vskip .1in 
-This class takes a directed graph, as a SugiyamaClass. It removes dummy vertices and reverses previously reversed edges. Afterwards it assigns every edge points it must run through.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
-public class EdgeDrawing
- extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{EdgeDrawing()}
-{\bf  EdgeDrawing}\\
-\begin{lstlisting}[frame=none]
-public EdgeDrawing()\end{lstlisting} %end signature
-}%end item
-\end{itemize}
-}
+public interface ICycleRemoverGraph
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{All known subinterfaces}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
+\subsubsection{All classes known to implement interface}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{drawEdges(SugiyamaGraph)}
+\index{isReversed(SugiyamaGraph.SugiyamaEdge)}
+{\bf  isReversed}\\
+\begin{lstlisting}[frame=none]
+boolean isReversed(SugiyamaGraph.SugiyamaEdge edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns true if the specified edge is reversed, false otherwise
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the edge is reversed, false otherwise 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{reverseEdge(SugiyamaGraph.SugiyamaEdge)}
+{\bf  reverseEdge}\\
+\begin{lstlisting}[frame=none]
+void reverseEdge(SugiyamaGraph.SugiyamaEdge edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Reverses the direction of a sugiyama edge. The underlying edge won't be reversed to avoid inconsistencies in the underlying graph Instead the reversing will be saved in the SugiyamaEdge. If the edge is already reversed it will be reversed again.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge to reverse its direction}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.IEdgeDrawer}\index{IEdgeDrawer@\textit{ IEdgeDrawer}}Interface IEdgeDrawer}{
+\vskip .1in 
+This interface represents a class that takes a directed graph, as a SugiyamaClass. It removes dummy vertices and reverses previously reversed edges. Afterwards it assigns every edge points it must run through.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface IEdgeDrawer
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{EdgeDrawer\small{\refdefined{sugiyama.EdgeDrawer}}}
+\subsubsection{All classes known to implement interface}{EdgeDrawer\small{\refdefined{sugiyama.EdgeDrawer}}}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{drawEdges(IEdgeDrawerGraph)}
 {\bf  drawEdges}\\
 \begin{lstlisting}[frame=none]
-public void drawEdges(SugiyamaGraph graph)\end{lstlisting} %end signature
+void drawEdges(IEdgeDrawerGraph graph)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -148,32 +339,180 @@ Draws the edges from the graph argument and reverses the edges, which have been 
 \end{itemize}
 }
 }
-\subsection{\label{sugiyama.LayerAssigning}\index{LayerAssigning}Class LayerAssigning}{
+\subsection{\label{sugiyama.IEdgeDrawerGraph}\index{IEdgeDrawerGraph@\textit{ IEdgeDrawerGraph}}Interface IEdgeDrawerGraph}{
 \vskip .1in 
-This class takes a directed graph and assigns every vertex in it a layer.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
-public class LayerAssigning
- extends java.lang.Object\end{lstlisting}
-\subsubsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{LayerAssigning()}
-{\bf  LayerAssigning}\\
-\begin{lstlisting}[frame=none]
-public LayerAssigning()\end{lstlisting} %end signature
-}%end item
-\end{itemize}
-}
+public interface IEdgeDrawerGraph
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{All known subinterfaces}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
+\subsubsection{All classes known to implement interface}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{addConstraints()}
+\index{addEdgeCorner(SugiyamaGraph.SugiyamaEdge, int, int, int)}
+{\bf  addEdgeCorner}\\
+\begin{lstlisting}[frame=none]
+void addEdgeCorner(SugiyamaGraph.SugiyamaEdge edge,int x,int y,int index)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Adds a new edge corner to the specified edge. The index specifies the position between other edge corners. Every edge corner is connected with the corners with index +/- 1 of it's index. Counting starts at 0 at the endpoint at the source vertex of the edge. End- and startpoint are also counted as corners
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge to add a new corner}
+   \item{
+\texttt{x} -- the x coordinate of the corner}
+   \item{
+\texttt{y} -- the y coordinate of the corner}
+   \item{
+\texttt{index} -- the index on the edge of the corner}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdgeCorners(SugiyamaGraph.SugiyamaEdge)}
+{\bf  getEdgeCorners}\\
+\begin{lstlisting}[frame=none]
+java.util.List getEdgeCorners(SugiyamaGraph.SugiyamaEdge edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns a list of points, which describe the coordinates of the edges
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the list of points of the corners on the edge 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getReversedEdges()}
+{\bf  getReversedEdges}\\
+\begin{lstlisting}[frame=none]
+java.util.Set getReversedEdges()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the set of all with \texttt{\small reverseEdge(E edge)} reversed edges.
+}
+\item{{\bf  Returns} -- 
+the set of all reversed edges. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{removeEdgeCorner(SugiyamaGraph.SugiyamaEdge, int)}
+{\bf  removeEdgeCorner}\\
+\begin{lstlisting}[frame=none]
+void removeEdgeCorner(SugiyamaGraph.SugiyamaEdge edge,int index)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Removes the corner on the specified edge at the index
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge to remove the corner}
+   \item{
+\texttt{index} -- the index of the corner to remove}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{restoreAllEdges()}
+{\bf  restoreAllEdges}\\
+\begin{lstlisting}[frame=none]
+java.util.Set restoreAllEdges()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Deletes the supplement edges, which have been created when an edge was reversed. Adds all reversed edges back to the set of edges and returns them.
+}
+\item{{\bf  Returns} -- 
+the set of edges, which have been restored. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{reverseEdge(SugiyamaGraph.SugiyamaEdge)}
+{\bf  reverseEdge}\\
+\begin{lstlisting}[frame=none]
+void reverseEdge(SugiyamaGraph.SugiyamaEdge edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Reverses the direction of an directed edge and returns it.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge to return its direction}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.ILayerAssigner}\index{ILayerAssigner@\textit{ ILayerAssigner}}Interface ILayerAssigner}{
+\vskip .1in 
+This interface represents a class that takes a directed graph and assigns every vertex in it a layer.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface ILayerAssigner
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{LayerAssigner\small{\refdefined{sugiyama.LayerAssigner}}}
+\subsubsection{All classes known to implement interface}{LayerAssigner\small{\refdefined{sugiyama.LayerAssigner}}}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addConstraints(Set)}
 {\bf  addConstraints}\\
 \begin{lstlisting}[frame=none]
-public void addConstraints(<any> constraints)\end{lstlisting} %end signature
+void addConstraints(java.util.Set constraints)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Defines a set of constraints which should be considered by the algorithm.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{constraints} -- relative layer constraints the algorithm should consider}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{assignLayers(ILayerAssignerGraph)}
+{\bf  assignLayers}\\
+\begin{lstlisting}[frame=none]
+void assignLayers(ILayerAssignerGraph graph)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -184,9 +523,7 @@ Assigns every vertex in the graph parameter e relative height.
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{graph} -- input graph public void assignLayers(SugiyamaGraph graph) \{\ \}\ /** Defines a set of constraints which should be considered by the algorithm.}
-   \item{
-\texttt{constraints} -- relative layer constraints the algorithm should consider}
+\texttt{graph} -- input graph}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -195,7 +532,7 @@ Assigns every vertex in the graph parameter e relative height.
 \index{setMaxHeight(int)}
 {\bf  setMaxHeight}\\
 \begin{lstlisting}[frame=none]
-public void setMaxHeight(int height)\end{lstlisting} %end signature
+void setMaxHeight(int height)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -215,10 +552,668 @@ Reassigns the layer of vertices whose layer is greater than the height parameter
 \index{setMaxWidth(int)}
 {\bf  setMaxWidth}\\
 \begin{lstlisting}[frame=none]
-public void setMaxWidth(int width)\end{lstlisting} %end signature
+void setMaxWidth(int width)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
+
+Reassigns the layer of vertices in case there are more than the width parameter in one layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{width} -- maximum amount of vertices in one layer}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.ILayerAssignerGraph}\index{ILayerAssignerGraph@\textit{ ILayerAssignerGraph}}Interface ILayerAssignerGraph}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface ILayerAssignerGraph
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{All known subinterfaces}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
+\subsubsection{All classes known to implement interface}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{assignToLayer(SugiyamaGraph.SugiyamaVertex, int)}
+{\bf  assignToLayer}\\
+\begin{lstlisting}[frame=none]
+void assignToLayer(SugiyamaGraph.SugiyamaVertex vertex,int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Assigns a vertex to a certain layer represented by a number.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to assign to a layer}
+   \item{
+\texttt{layerNum} -- the layer number to assign a vertex to}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(int)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayer(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get all vertices from a certain layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get all vertices from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+a list of all vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(SugiyamaGraph.SugiyamaVertex)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+int getLayer(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the layer from the vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to get its layer from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the layer number from this vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayers()}
+{\bf  getLayers}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayers()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get all layers that contain vertices.
+}
+\item{{\bf  Returns} -- 
+a list of lists of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexCount(int)}
+{\bf  getVertexCount}\\
+\begin{lstlisting}[frame=none]
+int getVertexCount(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the number of vertices which are on a certain layer
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get the vertex count from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the number of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.IVertexPositioner}\index{IVertexPositioner@\textit{ IVertexPositioner}}Interface IVertexPositioner}{
+\vskip .1in 
+This interface represents a class that takes a directed graph and position its vertices in order to look more clearly. (e.g. position vertices in a row or column) This step has to access the GraphicEngine to get the size of each vertex.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface IVertexPositioner
+\end{lstlisting}
+\subsubsection{All known subinterfaces}{VertexPositioner\small{\refdefined{sugiyama.VertexPositioner}}}
+\subsubsection{All classes known to implement interface}{VertexPositioner\small{\refdefined{sugiyama.VertexPositioner}}}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{positionVertices(IVertexPositionerGraph)}
+{\bf  positionVertices}\\
+\begin{lstlisting}[frame=none]
+void positionVertices(IVertexPositionerGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets absolute coordinates for every vertex in the graph. Before this step the vertices are only positioned relatively to each other (layer and order in one layer)
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- input graph}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.IVertexPositionerGraph}\index{IVertexPositionerGraph@\textit{ IVertexPositionerGraph}}Interface IVertexPositionerGraph}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface IVertexPositionerGraph
+ extends graphmodel.DirectedGraph\end{lstlisting}
+\subsubsection{All known subinterfaces}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
+\subsubsection{All classes known to implement interface}{SugiyamaGraph\small{\refdefined{sugiyama.SugiyamaGraph}}}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getHeight()}
+{\bf  getHeight}\\
+\begin{lstlisting}[frame=none]
+int getHeight()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the height, i.e. the number of layers.
+}
+\item{{\bf  Returns} -- 
+the height 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(int)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayer(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get all vertices from a certain layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerN} -- the index of the layer}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+a list of all vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(SugiyamaGraph.SugiyamaVertex)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+int getLayer(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the layer from the vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to get its layer from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the layer number from this vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayerCount()}
+{\bf  getLayerCount}\\
+\begin{lstlisting}[frame=none]
+int getLayerCount()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the amount of layers.
+}
+\item{{\bf  Returns} -- 
+the amount of layers that contain at least one vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getMaxWidth()}
+{\bf  getMaxWidth}\\
+\begin{lstlisting}[frame=none]
+int getMaxWidth()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the width of the widest layer, i.e. the number of vertices the layer with the most vertices contains.
+}
+\item{{\bf  Returns} -- 
+the maximum width 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexCount(int)}
+{\bf  getVertexCount}\\
+\begin{lstlisting}[frame=none]
+int getVertexCount(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Get the number of vertices which are on a certain layer
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get the vertex count from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the number of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getWidth(int)}
+{\bf  getWidth}\\
+\begin{lstlisting}[frame=none]
+int getWidth(int layerN)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the width of the layer specified by it's index, i.e. the number of vertices in the layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerN} -- the index of the layer}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the width of the layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setLayerY(int, int)}
+{\bf  setLayerY}\\
+\begin{lstlisting}[frame=none]
+void setLayerY(int layerN,int y)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the y-coordinate of all vertices on layer Y.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerN} -- the index of the layer}
+   \item{
+\texttt{y} -- the y-coordinate}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setX(SugiyamaGraph.SugiyamaVertex, int)}
+{\bf  setX}\\
+\begin{lstlisting}[frame=none]
+void setX(SugiyamaGraph.SugiyamaVertex vertex,int x)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the x-coordinate of the specified vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to position}
+   \item{
+\texttt{x} -- the x-coordinate}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.SugiyamaLayoutAlgorithm}\index{SugiyamaLayoutAlgorithm@\textit{ SugiyamaLayoutAlgorithm}}Interface SugiyamaLayoutAlgorithm}{
+\vskip .1in 
+This interface supports in addition to Layouts, where every vertex a coordinate and every edge a path is assigned, a Layout which saves the positioning of vertex in the representation of a \texttt{\small SugiyamaGraph}{\small 
+\refdefined{sugiyama.SugiyamaGraph}}.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public interface SugiyamaLayoutAlgorithm
+ extends plugin.LayoutAlgorithm\end{lstlisting}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{layoutSugiyamaGraph(SugiyamaGraph)}
+{\bf  layoutSugiyamaGraph}\\
+\begin{lstlisting}[frame=none]
+void layoutSugiyamaGraph(SugiyamaGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Applies it's layout to a graph as in \texttt{\small layout(G graph)} but keeps the notion of layers. A possible application is drawing of recursive graphs.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- the graph to apply the layout to}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.CrossMinimizer}\index{CrossMinimizer}Class CrossMinimizer}{
+\vskip .1in 
+This class takes a Sugiyama Graph and rearranges its vertices on each layer to minimize the amount of edge crossings.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class CrossMinimizer
+ extends java.lang.Object implements ICrossMinimizer\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{CrossMinimizer()}
+{\bf  CrossMinimizer}\\
+\begin{lstlisting}[frame=none]
+public CrossMinimizer()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{minimizeCrossings(ICrossMinimizerGraph)}
+{\bf  minimizeCrossings}\\
+\begin{lstlisting}[frame=none]
+void minimizeCrossings(ICrossMinimizerGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ICrossMinimizer{\small \refdefined{sugiyama.ICrossMinimizer}} }
+
+Rearranges vertices in the graph argument in order to remove the amount of crosses of their edges.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- input graph}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.CycleRemover}\index{CycleRemover}Class CycleRemover}{
+\vskip .1in 
+This class takes a directed Graph G = (V, E) and removes a set of edges E\_\ so that the resulting Graph G' = (V, E\textbackslash E\_) is a DAG(Directed Acyclic Graph).\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class CycleRemover
+ extends java.lang.Object implements ICycleRemover\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{CycleRemover()}
+{\bf  CycleRemover}\\
+\begin{lstlisting}[frame=none]
+public CycleRemover()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{removeCycles(ICycleRemoverGraph)}
+{\bf  removeCycles}\\
+\begin{lstlisting}[frame=none]
+java.util.Set removeCycles(ICycleRemoverGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ICycleRemover{\small \refdefined{sugiyama.ICycleRemover}} }
+
+Searches for a acyclic subgraph in the graph argument and reversed the direction of the edges that are not part of this subgraph.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- the input graph to remove cycles from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+a set of edges whose direction has been reversed in order to remove cycles from the graph 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.EdgeDrawer}\index{EdgeDrawer}Class EdgeDrawer}{
+\vskip .1in 
+This class takes a directed graph, as a SugiyamaClass. It removes dummy vertices and reverses previously reversed edges. Afterwards it assigns every edge points it must run through.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class EdgeDrawer
+ extends java.lang.Object implements IEdgeDrawer\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{EdgeDrawer()}
+{\bf  EdgeDrawer}\\
+\begin{lstlisting}[frame=none]
+public EdgeDrawer()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{drawEdges(IEdgeDrawerGraph)}
+{\bf  drawEdges}\\
+\begin{lstlisting}[frame=none]
+void drawEdges(IEdgeDrawerGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IEdgeDrawer{\small \refdefined{sugiyama.IEdgeDrawer}} }
+
+Draws the edges from the graph argument and reverses the edges, which have been reversed earlier, so they have now the correct direction.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- the input graph}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.IEdgeDrawerGraph.Point}\index{IEdgeDrawerGraph.Point}Class IEdgeDrawerGraph.Point}{
+\vskip .1in 
+This class is a standard immutable 2D Vector with integer values as it's components.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class IEdgeDrawerGraph.Point
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Fields}{
+\begin{itemize}
+\item{
+\index{x}
+\label{sugiyama.IEdgeDrawerGraph.Point.x}\texttt{public final int\ {\bf  x}}
+}
+\item{
+\index{y}
+\label{sugiyama.IEdgeDrawerGraph.Point.y}\texttt{public final int\ {\bf  y}}
+}
+\end{itemize}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Point(int, int)}
+{\bf  Point}\\
+\begin{lstlisting}[frame=none]
+public Point(int x,int y)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.LayerAssigner}\index{LayerAssigner}Class LayerAssigner}{
+\vskip .1in 
+This class takes a directed graph and assigns every vertex in it a layer.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class LayerAssigner
+ extends java.lang.Object implements ILayerAssigner\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{LayerAssigner()}
+{\bf  LayerAssigner}\\
+\begin{lstlisting}[frame=none]
+public LayerAssigner()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{addConstraints(Set)}
+{\bf  addConstraints}\\
+\begin{lstlisting}[frame=none]
+void addConstraints(java.util.Set constraints)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ILayerAssigner{\small \refdefined{sugiyama.ILayerAssigner}} }
+
+Defines a set of constraints which should be considered by the algorithm.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{constraints} -- relative layer constraints the algorithm should consider}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{assignLayers(ILayerAssignerGraph)}
+{\bf  assignLayers}\\
+\begin{lstlisting}[frame=none]
+void assignLayers(ILayerAssignerGraph graph)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ILayerAssigner{\small \refdefined{sugiyama.ILayerAssigner}} }
+
+Assigns every vertex in the graph parameter e relative height.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{graph} -- input graph}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setMaxHeight(int)}
+{\bf  setMaxHeight}\\
+\begin{lstlisting}[frame=none]
+void setMaxHeight(int height)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ILayerAssigner{\small \refdefined{sugiyama.ILayerAssigner}} }
+
+Reassigns the layer of vertices whose layer is greater than the height parameter.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{height} -- maximum height for vertices}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setMaxWidth(int)}
+{\bf  setMaxWidth}\\
+\begin{lstlisting}[frame=none]
+void setMaxWidth(int width)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ILayerAssigner{\small \refdefined{sugiyama.ILayerAssigner}} }
 
 Reassigns the layer of vertices in case there are more than the width parameter in one layer.
 }
@@ -240,7 +1235,7 @@ A relative constraint, regarding layer assignment, between to sets of vertices. 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class LayerConstraint
- extends java.lang.Object\end{lstlisting}
+ extends java.lang.Object implements plugin.Constraint\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -293,6 +1288,12 @@ the number of layers between the sets
 \end{itemize}
 }%end item
 \item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+}%end item
+\item{ 
 \index{isExact()}
 {\bf  isExact}\\
 \begin{lstlisting}[frame=none]
@@ -329,11 +1330,11 @@ the top layer
 }
 \subsection{\label{sugiyama.SugiyamaGraph}\index{SugiyamaGraph}Class SugiyamaGraph}{
 \vskip .1in 
-The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast acessability of attributes and constructs needed during the computation of the hierarchical layout of a directed graph. All vertices are assigned to a layer.\vskip .1in 
+The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast accessibility of attributes and constructs needed during the computation of the hierarchical layout of a directed graph. All vertices are assigned to a layer. The positions of the vertices can be viewed as a grid (with varying widths per layer).\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class SugiyamaGraph
- extends graphmodel.DirectedGraph\end{lstlisting}
+ extends java.lang.Object implements ICycleRemoverGraph, ILayerAssignerGraph, ICrossMinimizerGraph, IVertexPositionerGraph, IEdgeDrawerGraph\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
@@ -363,47 +1364,175 @@ Constructs a new SugiyamaGraph and sets the Graph which is the underlying repres
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{assignToLayer(V, int)}
-{\bf  assignToLayer}\\
+\index{addEdgeCorner(SugiyamaGraph.SugiyamaEdge, int, int, int)}
+{\bf  addEdgeCorner}\\
 \begin{lstlisting}[frame=none]
-public void assignToLayer(graphmodel.Vertex vertex,int layerN)\end{lstlisting} %end signature
+void addEdgeCorner(SugiyamaGraph.SugiyamaEdge edge,int x,int y,int index)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from IEdgeDrawerGraph{\small \refdefined{sugiyama.IEdgeDrawerGraph}} }
 
-Assigns the specified vertex to the specified layer. A vertex must only be assigned to one layer at the time. When assigned to a new layer the vertex will be removed from layer it was assigned before.
+Adds a new edge corner to the specified edge. The index specifies the position between other edge corners. Every edge corner is connected with the corners with index +/- 1 of it's index. Counting starts at 0 at the endpoint at the source vertex of the edge. End- and startpoint are also counted as corners
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- the vertex to assign to the layer}
+\texttt{edge} -- the edge to add a new corner}
    \item{
-\texttt{layerN} -- the index of the layer}
+\texttt{x} -- the x coordinate of the corner}
+   \item{
+\texttt{y} -- the y coordinate of the corner}
+   \item{
+\texttt{index} -- the index on the edge of the corner}
   \end{itemize}
 }%end item
 \end{itemize}
 }%end item
 \item{ 
-\index{getLayer(int)}
-{\bf  getLayer}\\
+\index{addToFastGraphAccessor(FastGraphAccessor)}
+{\bf  addToFastGraphAccessor}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getLayer(int layerN)\end{lstlisting} %end signature
+public void addToFastGraphAccessor(graphmodel.FastGraphAccessor fga)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{assignToLayer(SugiyamaGraph.SugiyamaVertex, int)}
+{\bf  assignToLayer}\\
+\begin{lstlisting}[frame=none]
+void assignToLayer(SugiyamaGraph.SugiyamaVertex vertex,int layerNum)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from ILayerAssignerGraph{\small \refdefined{sugiyama.ILayerAssignerGraph}} }
 
-Returns a copy of the layer specified by the index.
+Assigns a vertex to a certain layer represented by a number.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{layerN} -- the index of the layer, which should be returned}
+\texttt{vertex} -- the vertex to assign to a layer}
+   \item{
+\texttt{layerNum} -- the layer number to assign a vertex to}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{edgesOf(SugiyamaGraph.SugiyamaVertex)}
+{\bf  edgesOf}\\
+\begin{lstlisting}[frame=none]
+public java.util.Set edgesOf(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getEdgeCorners(SugiyamaGraph.SugiyamaEdge)}
+{\bf  getEdgeCorners}\\
+\begin{lstlisting}[frame=none]
+java.util.List getEdgeCorners(SugiyamaGraph.SugiyamaEdge edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IEdgeDrawerGraph{\small \refdefined{sugiyama.IEdgeDrawerGraph}} }
+
+Returns a list of points, which describe the coordinates of the edges
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
-the layer 
+the list of points of the corners on the edge 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getEdgeSet()}
+{\bf  getEdgeSet}\\
+\begin{lstlisting}[frame=none]
+public java.util.Set getEdgeSet()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getHeight()}
+{\bf  getHeight}\\
+\begin{lstlisting}[frame=none]
+int getHeight()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IVertexPositionerGraph{\small \refdefined{sugiyama.IVertexPositionerGraph}} }
+
+Returns the height, i.e. the number of layers.
+}
+\item{{\bf  Returns} -- 
+the height 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getID()}
+{\bf  getID}\\
+\begin{lstlisting}[frame=none]
+public java.lang.Integer getID()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getLayer(int)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+java.util.List getLayer(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ILayerAssignerGraph{\small \refdefined{sugiyama.ILayerAssignerGraph}} }
+
+Get all vertices from a certain layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get all vertices from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+a list of all vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayer(SugiyamaGraph.SugiyamaVertex)}
+{\bf  getLayer}\\
+\begin{lstlisting}[frame=none]
+int getLayer(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ILayerAssignerGraph{\small \refdefined{sugiyama.ILayerAssignerGraph}} }
+
+Get the layer from the vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to get its layer from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the layer number from this vertex 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLayerCount()}
+{\bf  getLayerCount}\\
+\begin{lstlisting}[frame=none]
+int getLayerCount()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ICrossMinimizerGraph{\small \refdefined{sugiyama.ICrossMinimizerGraph}} }
+
+Get the amount of layers.
+}
+\item{{\bf  Returns} -- 
+the amount of layers that contain at least one vertex 
 }%end item
 \end{itemize}
 }%end item
@@ -411,17 +1540,45 @@ the layer
 \index{getLayers()}
 {\bf  getLayers}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getLayers()\end{lstlisting} %end signature
+java.util.List getLayers()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from ILayerAssignerGraph{\small \refdefined{sugiyama.ILayerAssignerGraph}} }
 
-Returns a copy of all layers.
+Get all layers that contain vertices.
 }
 \item{{\bf  Returns} -- 
-the layers. 
+a list of lists of vertices which are on this layer 
 }%end item
 \end{itemize}
+}%end item
+\item{ 
+\index{getMaxWidth()}
+{\bf  getMaxWidth}\\
+\begin{lstlisting}[frame=none]
+int getMaxWidth()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IVertexPositionerGraph{\small \refdefined{sugiyama.IVertexPositionerGraph}} }
+
+Returns the width of the widest layer, i.e. the number of vertices the layer with the most vertices contains.
+}
+\item{{\bf  Returns} -- 
+the maximum width 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getName()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getRegisteredLayouts()}
+{\bf  getRegisteredLayouts}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getRegisteredLayouts()\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{getReplacedEdges()}
@@ -443,15 +1600,136 @@ the set of replaced edges
 \index{getReversedEdges()}
 {\bf  getReversedEdges}\\
 \begin{lstlisting}[frame=none]
-public java.util.Set getReversedEdges()\end{lstlisting} %end signature
+java.util.Set getReversedEdges()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from IEdgeDrawerGraph{\small \refdefined{sugiyama.IEdgeDrawerGraph}} }
 
 Returns the set of all with \texttt{\small reverseEdge(E edge)} reversed edges.
 }
 \item{{\bf  Returns} -- 
 the set of all reversed edges. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexCount(int)}
+{\bf  getVertexCount}\\
+\begin{lstlisting}[frame=none]
+int getVertexCount(int layerNum)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ILayerAssignerGraph{\small \refdefined{sugiyama.ILayerAssignerGraph}} }
+
+Get the number of vertices which are on a certain layer
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerNum} -- the layer number to get the vertex count from}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the number of vertices which are on this layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexSet()}
+{\bf  getVertexSet}\\
+\begin{lstlisting}[frame=none]
+public java.util.Set getVertexSet()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getWidth(int)}
+{\bf  getWidth}\\
+\begin{lstlisting}[frame=none]
+int getWidth(int layerN)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IVertexPositionerGraph{\small \refdefined{sugiyama.IVertexPositionerGraph}} }
+
+Returns the width of the layer specified by it's index, i.e. the number of vertices in the layer.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerN} -- the index of the layer}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+the width of the layer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{incomingEdgesOf(SugiyamaGraph.SugiyamaVertex)}
+{\bf  incomingEdgesOf}\\
+\begin{lstlisting}[frame=none]
+public java.util.Set incomingEdgesOf(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{indegreeOf(SugiyamaGraph.SugiyamaVertex)}
+{\bf  indegreeOf}\\
+\begin{lstlisting}[frame=none]
+public java.lang.Integer indegreeOf(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{isReversed(SugiyamaGraph.SugiyamaEdge)}
+{\bf  isReversed}\\
+\begin{lstlisting}[frame=none]
+boolean isReversed(SugiyamaGraph.SugiyamaEdge edge)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ICycleRemoverGraph{\small \refdefined{sugiyama.ICycleRemoverGraph}} }
+
+Returns true if the specified edge is reversed, false otherwise
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+true if the edge is reversed, false otherwise 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{outcomingEdgesOf(SugiyamaGraph.SugiyamaVertex)}
+{\bf  outcomingEdgesOf}\\
+\begin{lstlisting}[frame=none]
+public java.util.Set outcomingEdgesOf(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{outdegreeOf(SugiyamaGraph.SugiyamaVertex)}
+{\bf  outdegreeOf}\\
+\begin{lstlisting}[frame=none]
+public java.lang.Integer outdegreeOf(SugiyamaGraph.SugiyamaVertex vertex)\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{removeEdgeCorner(SugiyamaGraph.SugiyamaEdge, int)}
+{\bf  removeEdgeCorner}\\
+\begin{lstlisting}[frame=none]
+void removeEdgeCorner(SugiyamaGraph.SugiyamaEdge edge,int index)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IEdgeDrawerGraph{\small \refdefined{sugiyama.IEdgeDrawerGraph}} }
+
+Removes the corner on the specified edge at the index
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{edge} -- the edge to remove the corner}
+   \item{
+\texttt{index} -- the index of the corner to remove}
+  \end{itemize}
 }%end item
 \end{itemize}
 }%end item
@@ -478,6 +1756,22 @@ Replaces the specified edge with a path of dummy vertices of the specified lengt
 \end{itemize}
 }%end item
 \item{ 
+\index{restoreAllEdges()}
+{\bf  restoreAllEdges}\\
+\begin{lstlisting}[frame=none]
+java.util.Set restoreAllEdges()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IEdgeDrawerGraph{\small \refdefined{sugiyama.IEdgeDrawerGraph}} }
+
+Deletes the supplement edges, which have been created when an edge was reversed. Adds all reversed edges back to the set of edges and returns them.
+}
+\item{{\bf  Returns} -- 
+the set of edges, which have been restored. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{restoreReplacedEdges()}
 {\bf  restoreReplacedEdges}\\
 \begin{lstlisting}[frame=none]
@@ -494,37 +1788,93 @@ the set of edges, which has been restored
 \end{itemize}
 }%end item
 \item{ 
-\index{restoreReversedEdges()}
-{\bf  restoreReversedEdges}\\
-\begin{lstlisting}[frame=none]
-public java.util.Set restoreReversedEdges()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Deletes the supplement edges, which have been created when an edge was reversed. Adds all reversed edges back to the set of edges and returns them.
-}
-\item{{\bf  Returns} -- 
-the set of edges which have been restored. 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{reverseEdge(E)}
+\index{reverseEdge(SugiyamaGraph.SugiyamaEdge)}
 {\bf  reverseEdge}\\
 \begin{lstlisting}[frame=none]
-public void reverseEdge(graphmodel.DirectedEdge edge)\end{lstlisting} %end signature
+void reverseEdge(SugiyamaGraph.SugiyamaEdge edge)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from ICycleRemoverGraph{\small \refdefined{sugiyama.ICycleRemoverGraph}} }
 
-Reverses the specified edge (u, v) by replacing it with an supplement edge (v, u) The action will be saved and can later be retrieved with \texttt{\small getInvertedEdges()} or restored with \texttt{\small restoreReversedEdges()} of the old state. While reversed the specified edge won't be part of the edge set and therefore not returned by \texttt{\small getEdgeSet()}
+Reverses the direction of a sugiyama edge. The underlying edge won't be reversed to avoid inconsistencies in the underlying graph Instead the reversing will be saved in the SugiyamaEdge. If the edge is already reversed it will be reversed again.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{edge} -- the edge to reverse}
+\texttt{edge} -- the edge to reverse its direction}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{serialize()}
+{\bf  serialize}\\
+\begin{lstlisting}[frame=none]
+public graphmodel.SerializedGraph serialize()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{setLayerY(int, int)}
+{\bf  setLayerY}\\
+\begin{lstlisting}[frame=none]
+void setLayerY(int layerN,int y)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IVertexPositionerGraph{\small \refdefined{sugiyama.IVertexPositionerGraph}} }
+
+Sets the y-coordinate of all vertices on layer Y.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{layerN} -- the index of the layer}
+   \item{
+\texttt{y} -- the y-coordinate}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setX(SugiyamaGraph.SugiyamaVertex, int)}
+{\bf  setX}\\
+\begin{lstlisting}[frame=none]
+void setX(SugiyamaGraph.SugiyamaVertex vertex,int x)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from IVertexPositionerGraph{\small \refdefined{sugiyama.IVertexPositionerGraph}} }
+
+Sets the x-coordinate of the specified vertex
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{vertex} -- the vertex to position}
+   \item{
+\texttt{x} -- the x-coordinate}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{swapVertices(SugiyamaGraph.SugiyamaVertex, SugiyamaGraph.SugiyamaVertex)}
+{\bf  swapVertices}\\
+\begin{lstlisting}[frame=none]
+void swapVertices(SugiyamaGraph.SugiyamaVertex first,SugiyamaGraph.SugiyamaVertex second)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from ICrossMinimizerGraph{\small \refdefined{sugiyama.ICrossMinimizerGraph}} }
+
+Swaps the position of two vertices that are on the same layer
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{first} -- first vertex to change position with}
+   \item{
+\texttt{second} -- second vertex to change position with}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -532,21 +1882,48 @@ Reverses the specified edge (u, v) by replacing it with an supplement edge (v, u
 \end{itemize}
 }
 }
-\subsection{\label{sugiyama.SugiyamaLayoutAlgorithm}\index{SugiyamaLayoutAlgorithm}Class SugiyamaLayoutAlgorithm}{
+\subsection{\label{sugiyama.SugiyamaGraph.DummyVertex}\index{SugiyamaGraph.DummyVertex}Class SugiyamaGraph.DummyVertex}{
 \vskip .1in 
-This class controls the collaboration between every single step of Sugiyama Layout.\vskip .1in 
+A supplement vertex which is part of a \texttt{\small SugiyamaGraph.SupplementPath}{\small 
+\refdefined{sugiyama.SugiyamaGraph.SupplementPath}}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
-public class SugiyamaLayoutAlgorithm
- extends java.lang.Object implements plugin.LayoutAlgorithm\end{lstlisting}
+public static class SugiyamaGraph.DummyVertex
+ extends graphmodel.DefaultVertex\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{SugiyamaLayoutAlgorithm()}
-{\bf  SugiyamaLayoutAlgorithm}\\
+\index{DummyVertex()}
+{\bf  DummyVertex}\\
 \begin{lstlisting}[frame=none]
-public SugiyamaLayoutAlgorithm()\end{lstlisting} %end signature
+public DummyVertex()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.SugiyamaGraph.SugiyamaEdge}\index{SugiyamaGraph.SugiyamaEdge}Class SugiyamaGraph.SugiyamaEdge}{
+\vskip .1in 
+A wrapper class for directed edges to implement additional functionality to apply the sugiyama layout to the SugiyamaGraph containing them.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class SugiyamaGraph.SugiyamaEdge
+ extends graphmodel.DirectedEdge\end{lstlisting}
+}
+\subsection{\label{sugiyama.SugiyamaGraph.SugiyamaVertex}\index{SugiyamaGraph.SugiyamaVertex}Class SugiyamaGraph.SugiyamaVertex}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class SugiyamaGraph.SugiyamaVertex
+ extends graphmodel.DefaultVertex\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{SugiyamaVertex()}
+{\bf  SugiyamaVertex}\\
+\begin{lstlisting}[frame=none]
+public SugiyamaVertex()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
@@ -554,59 +1931,224 @@ public SugiyamaLayoutAlgorithm()\end{lstlisting} %end signature
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{getSettings()}
-{\bf  getSettings}\\
+\index{isDummyVertex()}
+{\bf  isDummyVertex}\\
 \begin{lstlisting}[frame=none]
-parameter.Settings getSettings()\end{lstlisting} %end signature
+public boolean isDummyVertex()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.SugiyamaGraph.SupplementEdge}\index{SugiyamaGraph.SupplementEdge}Class SugiyamaGraph.SupplementEdge}{
+\vskip .1in 
+A supplement edge which is part of a \texttt{\small SugiyamaGraph.SupplementPath}{\small 
+\refdefined{sugiyama.SugiyamaGraph.SupplementPath}}.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class SugiyamaGraph.SupplementEdge
+ extends graphmodel.DirectedEdge\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{SupplementEdge()}
+{\bf  SupplementEdge}\\
+\begin{lstlisting}[frame=none]
+public SupplementEdge()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.SugiyamaGraph.SupplementPath}\index{SugiyamaGraph.SupplementPath}Class SugiyamaGraph.SupplementPath}{
+\vskip .1in 
+A supplement path for connecting vertices, which are more than one layer apart. They are stored in the SugiyamaEdge along with the substituted edge.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public static class SugiyamaGraph.SupplementPath
+ extends graphmodel.DirectedEdge\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{SupplementPath()}
+{\bf  SupplementPath}\\
+\begin{lstlisting}[frame=none]
+public SupplementPath()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getDummyVertices()}
+{\bf  getDummyVertices}\\
+\begin{lstlisting}[frame=none]
+public java.util.List getDummyVertices()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
+{\bf  Description}
 
-Get the set of parameters for this instance of the algorithm.
+Returns the list of vertices on the path sorted from source to target excluding the source and target.
 }
 \item{{\bf  Returns} -- 
-the set of parameters 
+the list of vertices 
 }%end item
 \end{itemize}
 }%end item
 \item{ 
-\index{layout(G)}
-{\bf  layout}\\
+\index{getEdges()}
+{\bf  getEdges}\\
 \begin{lstlisting}[frame=none]
-void layout(graphmodel.Graph graph)\end{lstlisting} %end signature
+public java.util.List getEdges()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description copied from plugin.LayoutAlgorithm{\small \refdefined{plugin.LayoutAlgorithm}} }
+{\bf  Description}
 
-Layout the specified Graph.
+Returns the list of edges on the path from source to target
 }
+\item{{\bf  Returns} -- 
+the edges 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getLength()}
+{\bf  getLength}\\
+\begin{lstlisting}[frame=none]
+public int getLength()\end{lstlisting} %end signature
+\begin{itemize}
 \item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{graph} -- the graph to layout}
-  \end{itemize}
+{\bf  Description}
+
+Returns the number of vertices including source and target.
+}
+\item{{\bf  Returns} -- 
+the length of the path 
 }%end item
 \end{itemize}
 }%end item
 \end{itemize}
 }
 }
-\subsection{\label{sugiyama.VertexPositioning}\index{VertexPositioning}Class VertexPositioning}{
+\subsection{\label{sugiyama.SugiyamaPlugin}\index{SugiyamaPlugin}Class SugiyamaPlugin}{
+\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class SugiyamaPlugin
+ extends java.lang.Object implements plugin.Plugin\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{SugiyamaPlugin()}
+{\bf  SugiyamaPlugin}\\
+\begin{lstlisting}[frame=none]
+public SugiyamaPlugin()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getEdgeFilter()}
+{\bf  getEdgeFilter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getEdgeFilter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Returns all by the plugin provided \texttt{\small EdgeFilter}{\small 
+\refdefined{plugin.EdgeFilter}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+the list of provided edge filter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Returns the name of the plugin. Uniqueness can't be assumed.
+}
+\item{{\bf  Returns} -- 
+the name of the plugin 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getVertexFilter()}
+{\bf  getVertexFilter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getVertexFilter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Returns all by the plugin provided \texttt{\small VertexFilter}{\small 
+\refdefined{plugin.VertexFilter}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+the list of provided vertex filter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getWorkspaceOptions()}
+{\bf  getWorkspaceOptions}\\
+\begin{lstlisting}[frame=none]
+java.util.List getWorkspaceOptions()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Returns all provided by the plugin \texttt{\small WorkspaceOption}{\small 
+\refdefined{plugin.WorkspaceOption}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+The list of provided workspace options 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{load()}
+{\bf  load}\\
+\begin{lstlisting}[frame=none]
+void load()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Called after all plugins have been constructed. "Inter-Plugin" communication, like registering of layouts for graphs in other plugins should be executed in here.
+}
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{sugiyama.VertexPositioner}\index{VertexPositioner}Class VertexPositioner}{
 \vskip .1in 
 This class takes a directed graph and position its vertices in order to look more clearly. (e.g. position vertices in a row or column)\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
-public class VertexPositioning
- extends java.lang.Object\end{lstlisting}
+public class VertexPositioner
+ extends java.lang.Object implements IVertexPositioner\end{lstlisting}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{VertexPositioning()}
-{\bf  VertexPositioning}\\
+\index{VertexPositioner()}
+{\bf  VertexPositioner}\\
 \begin{lstlisting}[frame=none]
-public VertexPositioning()\end{lstlisting} %end signature
+public VertexPositioner()\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
@@ -614,15 +2156,15 @@ public VertexPositioning()\end{lstlisting} %end signature
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{positionVertices(SugiyamaGraph)}
+\index{positionVertices(IVertexPositionerGraph)}
 {\bf  positionVertices}\\
 \begin{lstlisting}[frame=none]
-public void positionVertices(SugiyamaGraph graph)\end{lstlisting} %end signature
+void positionVertices(IVertexPositionerGraph graph)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
-{\bf  Description}
+{\bf  Description copied from IVertexPositioner{\small \refdefined{sugiyama.IVertexPositioner}} }
 
-Position all vertices relatively to each other.
+Sets absolute coordinates for every vertex in the graph. Before this step the vertices are only positioned relatively to each other (layer and order in one layer)
 }
 \item{
 {\bf  Parameters}

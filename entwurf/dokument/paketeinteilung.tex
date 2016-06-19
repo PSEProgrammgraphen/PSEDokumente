@@ -25,7 +25,12 @@ In dem Paket graphmodel befinden sich die Klassen die für die interne Repräsen
   \label{fig:packge_gui}
 \end{figure}
 
-Das Paket gui beinhaltet die Anzeigenlogik. Hier werden Views und Elemente definiert die für die Anzeige notwendig sind. Dafür erweitern sie JavaFX Komponenten.
+Das Paket gui beinhaltet die Anzeigelogik, sowie die Haupt-Applikation von GAns. Dafür werden JavaFX Komponenten verwendet, die erweitert und angepasst werden. Es werden Views und Elemente definiert, die für die Anzeige notwendig sind. Die GAnsApplication hat, als Klasse welche das ganze Programm aufsetzt, noch weitere Aufgaben. Sie stößt das Laden der Plugins an und behandelt zusätzlich viele Interaktionen des Benutzers mit den einzelnen GUI-Elementen(siehe SeqDiag Import, doppelklick, selection) unter anderem auch das Laden bzw. Erstellen des unterliegenden GraphModels(siehe graphmodel). Es werden verschiedene Views definiert:
+\begin{enumerate}
+	\item[GraphView] Eine View welche den gelayouteten Graphen anzeigt und dazu verschiedene Navigationsmöglichkeiten, wie Zoom, Selektion usw., anbietet. Es können mehrere GraphViews gleichzeitig geöffnet sein. Jede einzelne ist in einem eigenen Tab enthalten, zwischen denen hin und her gewechselt werden kann. Die Elemente welche in der GraphView angezeigt werden, sind GAnsGraphElemente. Sie bestehen aus verschiedenen JavaFX Klassen, welche einen Text und eine Farbe gesetzt bekommen können. Standardmäßig werden Rechtecke für Knoten und direkte Kanten als Kanten zwischen Knoten verwendet.
+	\item[StructureView] Eine TreeView, welche die geschachtelten Graphen einer importierten Datei anzeigt. Über doppelklick auf eines der Baumelemente wird der durch das Element dargestellte Graph in einer neuen GraphView angezeigt. Zum erstellen der einzelnen Baumelemente werden normale JavaFX-Funktionalitäten verwendet.
+	\item[InformationView] Eine TableView, welche, je nach Selektion in der aktuell angezeigten GraphView, Informationen über die selektierten Elemente anzeigt. Jede Zeile der Tabelle enthält in der ersten Zelle den Bezeichner/Namen und in der zweiten Zelle den jeweiligen Wert der Eigenschaft aus der Selektion. Die einzelnen Zellen werden durch eine JavaFX PropertyValueFactory erstellt welche mit den GAnsProperties(siehe objectproperty) der selektierten Elemente der GraphView arbeitet.
+\end{enumerate}}
 
 \newpage
 
@@ -55,7 +60,7 @@ In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach S
 
 \newpage
 
-\section{objectpropert}
+\section{objectproperty}
 
 \begin{figure}[hb]
   \centering
@@ -63,6 +68,8 @@ In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach S
   \caption{Paketübersicht objectproperty}
   \label{fig:packge_objectproperty}
 \end{figure}
+
+Das Paket objectproperty bietet eine generische Eigenschaft eines Elements aus dem graphmodel. Dabei stellt jede GAnsProperty eine einzelne Eigenschaft dar, welche aus einen Bezeichner/Namen, einen generischen Wert und eine Stringrepräsentation des Werts besteht. Die einzelnen Bestandteile werden in JavaFX ObjectProperties gespeichert. Darunter die GAnsObjectProperty, welche einen generischen Typ unterstützt. Diese Properties harmonieren gut mit den restlichen JavaFX-GUI-Elementen, somit kann auf viele Funktionen zurückgegriffen werden kann die von JavaFX direkt angeboten werden ohne große Eigenentwicklungen anfertigen zu müssen. Das beste Beispiel dafür ist die InformationView der GUI, deren Inhalt durch PropertyValueFactories von JavaFX automatisch erstellt werden, sobald eine Liste mit GAnsProperties gesetzt wird. Dabei ist der eigentliche Typ des Werts irrelevant, da in der GUI auf die Stringrepräsentation des Werts zugegriffen werden kann, wobei z.B. im Model oder Layoutalgorithmus mit dem eigentlichen Wert gearbeitet werden kann. Die PropertyValueFactories arbeiten mit dem Bestandteil der GAnsProperty, welcher mit einem bestimmten Referenz-String erstellt wurde. Diese Strings sind in GAnsProperty statisch gegeben, sodass die Aufrufe selbst bei Änderungen in der GAnsProperty im restlichen Programm konstant bleiben.
 
 \newpage
 
