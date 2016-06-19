@@ -146,6 +146,10 @@ public class GAnsApplication extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+	
+	private void parseCommandLineArguments(String args) {
+		
+	}
 
 	private void importClicked() {
 		FileChooser fileChooser = new FileChooser();
