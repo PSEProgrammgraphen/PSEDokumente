@@ -17,7 +17,7 @@ public class JoanaEdge extends DirectedEdge<JoanaVertex> {
 	 * @return The edgeKind of the JoanaEdge.
 	 */
 	public String getEdgeKind() {
-		return edgeKind.getPropertyValue();
+		return edgeKind.getValue();
 	}
 
 }

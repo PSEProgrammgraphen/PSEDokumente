@@ -54,12 +54,12 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> i
 
 	@Override
 	public String getName() {
-		return name.getPropertyValue();
+		return name.getValue();
 	}
 
 	@Override
 	public Integer getID() {
-		return id.getPropertyValue();
+		return id.getValue();
 	}
 
 	@Override

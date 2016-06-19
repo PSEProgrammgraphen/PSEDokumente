@@ -26,7 +26,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeKind of the JoanaVertex.
 	 */
 	public String getNodeKind() {
-		return nodeKind.getPropertyValue();
+		return nodeKind.getValue();
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeSource of the JoanaVertex.
 	 */
 	public String getNodeSource() {
-		return nodeSource.getPropertyValue();
+		return nodeSource.getValue();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeProc of the JoanaVertex.
 	 */
 	public Integer getNodeProc() {
-		return nodeProc.getPropertyValue();
+		return nodeProc.getValue();
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeOperation of the JoanaVertex.
 	 */
 	public String getNodeOperation() {
-		return nodeOperation.getPropertyValue();
+		return nodeOperation.getValue();
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeBcName of the JoanaVertex.
 	 */
 	public String getNodeBcName() {
-		return nodeBcName.getPropertyValue();
+		return nodeBcName.getValue();
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeBCIndex of the JoanaVertex.
 	 */
 	public Integer getNodeBCIndex() {
-		return nodeBCIndex.getPropertyValue();
+		return nodeBCIndex.getValue();
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeSr of the JoanaVertex.
 	 */
 	public Integer getNodeSr() {
-		return nodeSr.getPropertyValue();
+		return nodeSr.getValue();
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeSc of the JoanaVertex.
 	 */
 	public Integer getNodeSc() {
-		return nodeSc.getPropertyValue();
+		return nodeSc.getValue();
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeEr of the JoanaVertex.
 	 */
 	public Integer getNodeEr() {
-		return nodeEr.getPropertyValue();
+		return nodeEr.getValue();
 	}
 
 	/**
@@ -107,6 +107,6 @@ public class JoanaVertex extends DefaultVertex {
 	 * @return The nodeEc of the JoanaVertex.
 	 */
 	public Integer getNodeEc() {
-		return nodeEc.getPropertyValue();
+		return nodeEc.getValue();
 	}
 }

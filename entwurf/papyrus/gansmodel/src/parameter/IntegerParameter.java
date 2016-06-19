@@ -27,25 +27,15 @@ public class IntegerParameter extends Parameter<IntegerParameter, Integer> {
      * @param max the maximum boundary of the parameter
      */
     public IntegerParameter(String name, int value, int min, int max) {
-        this.value = value;
-        setName(name);
+    	super(name, value);
         this.min = min;
         this.max = max;
     }
-
+   
     @Override
-    public String valueString() {
-        return Integer.toString(value);
-    }
-    
-    /**
-     * Sets the value of the parameter.
-     * Informs all listener about the change.
-     * @param value the new value
-     */
-    public void setValue(int value)
+    public void setValue(Integer value)
     {
-    	this.value = value;
+    	super.setValue(value);
     	for (ActionListener listener: this.getListener())
     	{
     		listener.actionPerformed(new ActionEvent(this, 0, "Value changed"));

@@ -8,18 +8,7 @@ public class StringParameter extends Parameter<StringParameter, String> {
     private String value;
 
     public StringParameter(String name, String value) {
-        setName(name);
-        this.value = value;
-    }
-
-    @Override
-    public String valueString() {
-        return this.value;
-    }
-
-    @Override
-    public String getValue() {
-        return this.value;
+        super(name, value);
     }
 
     @Override

@@ -3,44 +3,21 @@ package parameter;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+import objectproperty.GAnsProperty;
+
 /**
  * An abstract parameter class.
  * A Parameter contains a value and a name. The value can be transformed into a string.
  * Clients can set Listeners to track changes of the value.
  * Classes inheriting from this class can visited by a ParameterVisitor.
  */
-public abstract class Parameter<T, V> implements Comparable<T> {
+public abstract class Parameter<T, V extends Object> extends GAnsProperty<V> implements Comparable<T> {
 	
-	private String name;
+	public Parameter(String name, V value) {
+		super(name, value);
+	}
+	
 	private List<ActionListener> onChangeListener;
-	
-	/**
-	 * Sets the name of the parameter.
-	 * @param name
-	 * 		The new name to set
-	 */
-	public void setName(String name) {this.name = name;}
-	
-	/**
-	 * Returns the name of the parameter.
-	 * @return
-	 * 		The name of the parameter
-	 */
-    public String getName() {return name;}
-    
-    /**
-     * Returns the value of the parameter as a string.
-     * @return
-     * 		The value as a string
-     */
-    public abstract String valueString();
-    
-    /**
-     * Returns the value of the parameter.
-     * @return
-     * 		The current value of the parameter
-     */
-    public abstract V getValue();
     
     /**
      * Let the visitor visit this parameter.

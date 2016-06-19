@@ -40,17 +40,17 @@ public class DirectedEdge<V extends Vertex> implements Edge<V> {
 
 	@Override
 	public String getName() {
-		return name.getPropertyValue();
+		return name.getValue();
 	}
 
 	@Override
 	public Integer getID() {
-		return id.getPropertyValue();
+		return id.getValue();
 	}
 
 	@Override
 	public String getLabel() {
-		return label.getPropertyValue();
+		return label.getValue();
 	}
 
 	@Override
