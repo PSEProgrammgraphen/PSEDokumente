@@ -7,13 +7,12 @@ import graphmodel.FastGraphAccessor;
  * This specifies the vertex representation of FieldAccesses in a MethodGraph It
  * contains a {@code FieldAccessGraph}.
  */
-public class FieldAccess extends JoanaVertex implements CompoundVertex<FieldAccessGraph, JoanaVertex, JoanaEdge> {
+public class FieldAccess extends JoanaVertex implements CompoundVertex {
 
 	/**
 	 * Constructor.
 	 * 
-	 * @param graph
-	 *            The FieldAccessGraph that will be set in the FieldAccess.
+	 * @param graph The FieldAccessGraph that will be set in the FieldAccess.
 	 */
 	public FieldAccess(FieldAccessGraph graph) {
 	}

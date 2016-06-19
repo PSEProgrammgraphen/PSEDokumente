@@ -80,15 +80,4 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	public Integer getID() {
 		return id.getPropertyValue();
 	}
-
-	@Override
-	public List<LayoutOption> getRegisteredLayouts() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public SerializedGraph<V, E> serialize() {
-		return this;
-	}
 }

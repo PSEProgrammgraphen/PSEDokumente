@@ -1,7 +1,10 @@
 package joana;
 
 import java.util.List;
+import java.util.Set;
 
+import graphmodel.CompoundVertex;
+import graphmodel.Vertex;
 import plugin.LayoutOption;
 import plugin.LayoutRegister;
 
@@ -49,5 +52,23 @@ public class MethodGraph extends JoanaGraph {
 	 */
 	protected static void setRegister(LayoutRegister register) {
 		MethodGraph.register = register;
+	}
+
+	@Override
+	public CompoundVertex collapse(Set<JoanaVertex> subset) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<JoanaVertex> expand(CompoundVertex vertex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isCompound(Vertex vertex) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

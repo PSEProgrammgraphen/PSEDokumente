@@ -10,7 +10,7 @@ import plugin.LayoutOption;
  * A {@link DefaultDirectedGraph} is a specific Graph which only contains
  * {@link DirectedEdge} as edges.
  */
-public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> implements DirectedGraph<V, E> {
+public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> implements DirectedGraph<V, E>, Viewable<V, E> {
 
 	private DirectedGraphLayoutRegister register;
 	private GAnsProperty<String> name;
@@ -95,5 +95,23 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> i
 	public SerializedGraph serialize() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public CompoundVertex collapse(Set<V> subset) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<V> expand(CompoundVertex vertex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isCompound(Vertex vertex) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
