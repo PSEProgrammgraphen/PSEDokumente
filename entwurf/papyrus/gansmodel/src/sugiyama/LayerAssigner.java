@@ -12,7 +12,7 @@ import java.util.Set;
 public class LayerAssigner implements ILayerAssigner {
 
 	@Override
-	public void addConstraints(Set<LayerConstraint> constraints) {
+	public void addConstraints(Set<RelativeLayerConstraint> constraints) {
 		// TODO Auto-generated method stub
 		
 	}

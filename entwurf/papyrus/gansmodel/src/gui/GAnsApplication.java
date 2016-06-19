@@ -147,7 +147,7 @@ public class GAnsApplication extends Application {
 		primaryStage.show();
 	}
 	
-	private void parseCommandLineArguments(String args) {
+	private void parseCommandLineArguments(String[] args) {
 		
 	}
 

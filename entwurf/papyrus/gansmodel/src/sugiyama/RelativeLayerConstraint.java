@@ -9,18 +9,16 @@ import plugin.Constraint;
  * A relative constraint, regarding layer assignment, between to sets of vertices.
  * Can describe if one set of vertices should be on top of the other.
  * When the exact is set a layer distance can be set.
- * 
- * @param <V> the type of the vertices in the sets
  */
-public class LayerConstraint implements Constraint
+public class RelativeLayerConstraint implements Constraint
 {
 	private Set<SugiyamaVertex> top;
 	private Set<SugiyamaVertex> bottom;
 	private boolean exact;
 	private int distance;
-	private String name = "LayerConstraint";
+	private String name = "RelativeLayerConstraint";
 	
-	public LayerConstraint(Set<SugiyamaVertex> top, Set<SugiyamaVertex> bottom, boolean direct, int distance) {}
+	public RelativeLayerConstraint(Set<SugiyamaVertex> top, Set<SugiyamaVertex> bottom, boolean direct, int distance) {}
 	
 	/**
 	 * Returns true if the constraints describes an exact distance between the two sets, false otherwise.
@@ -52,8 +50,7 @@ public class LayerConstraint implements Constraint
 	public Set<SugiyamaVertex> bottomSet() { return bottom; }
 
 	/**
-	 *
-	 *
+	 * Returns the name of the layout constraint
 	 */
 	public String getName() {
 		return name;
