@@ -48,6 +48,10 @@ public class SerializedVertex implements Vertex {
 		return new HashMap<String, String>();
 	}
 
+	public void setAttribute(String name, String value) {
+		
+	}
+
 
 	public SerializedVertex serialize() {
 		return this;

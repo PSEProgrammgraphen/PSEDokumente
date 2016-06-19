@@ -75,6 +75,10 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 		return this;
 	}
 
+	public void setAttribute(String name, String value) {
+		
+	}
+
 	@Override
 	public String getName() {
 		return name.getPropertyValue();

@@ -38,6 +38,10 @@ public class SerializedEdge<V extends Vertex> implements Edge<V> {
 		return null;
 	}
 
+	public void setAttribute(String name, String value) {
+		
+	}
+
 	public SerializedEdge serialize() {
 		return this;
 	}
