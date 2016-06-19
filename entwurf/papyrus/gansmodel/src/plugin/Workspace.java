@@ -40,12 +40,4 @@ public interface Workspace {
 	 * @return the settings
 	 */
 	public abstract Settings getSettings();
-	
-	/**
-	 * Returns all layout options for the specified graph.
-	 * @param  graphindex the index of the graph in the model
-	 * @return       	  a list of layout options
-	 */
-	public List<LayoutOption> getLayoutOptions(int graphIndex);
-
 }

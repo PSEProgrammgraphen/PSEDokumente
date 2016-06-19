@@ -2,24 +2,82 @@ package sugiyama;
 
 import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
+import graphmodel.LayeredGraph;
 import graphmodel.Vertex;
-import plugin.LayoutAlgorithm;
+import parameter.Settings;
 
 /**
- * This interface supports in addition to Layouts, where every vertex a coordinate and every
- * edge a path is assigned, a Layout which saves the positioning of vertex in the representation of a {@link SugiyamaGraphBase}.
+ * This class supports a customizable implementation of the Sugiyama-framework.
+ * The single stages of the framework can be chosen individually.
+ * Additionally this class tries to follow the given constraints, if possible.
+ * 
  * 
  * @param <G> the type of the graph the layout should be applied
  * @param <V> the type of the vertices the graph contains
  * @param <E> the type of the edges the graph contains
  */
-public interface SugiyamaLayoutAlgorithm<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
-	extends LayoutAlgorithm<G, V, E> {
-
+public class SugiyamaLayoutAlgorithm<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
+	implements LayeredLayoutAlgorithm<G, V, E> {
+	
+	
 	/**
-	 * Applies its layout to a graph as in {@code layout(G graph)} but keeps the notion of layers.
-	 * A possible application is drawing of recursive graphs.
-	 * @param graph the graph to apply the layout to
+	 * Sets the algorithm to remove all cycles for a graph to layout used when applying the layout
+	 * @param remover the algorithm
 	 */
-	public void layoutSugiyamaGraph(SugiyamaGraphBase<G, V, E> graph);
+	public void setCycleRemove(ICycleRemover remover) {}
+	
+	/**
+	 * Sets the algorithm for layer assigning used when applying the layout
+	 * @param assigner the layer assign algorithm
+	 */
+	public void setLayerAssigner(ILayerAssigner assigner) {}
+	
+	/**
+	 * Sets the algorithm for cross minimization used when applying the layout
+	 * @param minimizer the cross minimization algorithm
+	 */
+	public void setCrossMinimizer(ICrossMinimizer minimizer) {}
+	
+	/**
+	 * Sets the algorithm for vertex positioning used when applying the layout
+	 * @param positioner the positioning algorithm
+	 */
+	public void setPositioner(IVertexPositioner positioner) {}
+	
+	/**
+	 * Sets the algorithm for edge drawing used when applying the layout
+	 * @param drawer the edge drawing algorithm
+	 */
+	public void setEdgeDrawer(IEdgeDrawer drawer) {}
+	
+	/**
+	 * Adds an {@link AbsoluteLayerConstraint} to the set of constraints which should be followed.
+	 * @param constraint the constraint to follow
+	 */
+	public void addAbsoluteLayerConstraint(AbsoluteLayerConstraint constraint) {}
+	
+	/**
+	 * Adds an {@link RelativeLayerConstraint} to the set of constraints which should be followed.
+	 * @param constraint the constraint to follow
+	 */
+	public void addRelativeLayerConstraint(RelativeLayerConstraint constraint) {}
+
+	@Override
+	public Settings getSettings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void layout(G graph) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void layoutLayeredGraph(LayeredGraph<V, E> graph) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

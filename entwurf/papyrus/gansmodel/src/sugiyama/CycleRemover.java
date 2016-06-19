@@ -2,7 +2,7 @@ package sugiyama;
 
 import java.util.Set;
 
-import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
+import sugiyama.SugiyamaGraph.SugiyamaEdge;
 
 /**
  * This class takes a directed Graph G = (V, E) and removes a set of edges E_ 

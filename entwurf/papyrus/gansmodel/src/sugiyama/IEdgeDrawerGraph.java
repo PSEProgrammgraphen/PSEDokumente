@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Set;
 
 import graphmodel.LayeredGraph;
-import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
-import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
+import sugiyama.SugiyamaGraph.SugiyamaEdge;
+import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
 public interface IEdgeDrawerGraph  extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 	
@@ -23,6 +23,29 @@ public interface IEdgeDrawerGraph  extends LayeredGraph<SugiyamaVertex, Sugiyama
 	 * @return the set of edges, which have been restored.
 	 */
 	public Set<SugiyamaEdge> restoreAllEdges();
+
+	/**
+	 * Returns the set of all with {@code reverseEdge(E edge)} reversed edges.
+	 * 
+	 * @return the set of all reversed edges.
+	 */
+	public Set<SugiyamaEdge> getReversedEdges();
+
+	/**
+	 * Returns the set of replaced edges.
+	 * 
+	 * @return the set of replaced edges
+	 */
+	public Set<SugiyamaEdge> getReplacedEdges();
+	
+	/**
+	 * Deletes all dummy vertices and edges connecting dummy vertices.
+	 * Adds the replaced edges back to set of edges.
+	 * 
+	 * @return the set of edges, which has been restored
+	 */
+	public Set<SugiyamaEdge> restoreReplacedEdges();
+	
 	
 	/**
 	 * Adds a new edge corner to the specified edge.
@@ -51,13 +74,6 @@ public interface IEdgeDrawerGraph  extends LayeredGraph<SugiyamaVertex, Sugiyama
 	 * @return	   the list of points of the corners on the edge
 	 */
 	public List<Point> getEdgeCorners(SugiyamaEdge edge);
-	
-	/**
-	 * Returns the set of all with {@code reverseEdge(E edge)} reversed edges.
-	 * 
-	 * @return the set of all reversed edges.
-	 */
-	public Set<SugiyamaEdge> getReversedEdges();
 	
 	/**
 	 * This class is a standard immutable 2D Vector with integer values as it's components.

@@ -25,11 +25,6 @@ public class JoanaWorkspace implements Workspace {
 	}
 
 	@Override
-	public List<LayoutOption> getLayoutOptions(int graphIndex) {
-		return null;
-	}
-
-	@Override
 	public GraphModel getGraphModel() {
 		return null;
 	}

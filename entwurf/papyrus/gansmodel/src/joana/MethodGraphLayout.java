@@ -4,17 +4,17 @@ package joana;
 import java.util.ArrayList;
 import java.util.List;
 
+import graphmodel.LayeredGraph;
 import parameter.IntegerParameter;
 import parameter.MultipleChoiceParameter;
 import parameter.Settings;
 import parameter.StringParameter;
-import sugiyama.SugiyamaGraphBase;
-import sugiyama.SugiyamaLayoutAlgorithm;
+import sugiyama.LayeredLayoutAlgorithm;
 
 /**
- * Implements a SugiyamaLayout specific a {@link MethodGraph}.
+ * Implements hierarchical layout with layers for {@link MethodGraph}.
  */
-public class MethodGraphLayout implements SugiyamaLayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> {
+public class MethodGraphLayout implements LayeredLayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> {
 
 	@Override
 	public Settings getSettings() {
@@ -35,16 +35,15 @@ public class MethodGraphLayout implements SugiyamaLayoutAlgorithm<MethodGraph, J
 	}
 
 	/**
-	 * Layouts a single {@link MethodGraph}.
+	 * Layouts a single {@link MethodGraph} with the configured settings.
 	 * 
-	 * @param graph The {@link MethodGraph} to be layouted.
+	 * @param graph The {@link MethodGraph} to layout.
 	 */
-	public void layout(MethodGraph graph) {
-		System.out.println("Layouting MethodGraph!");
-	}
+	public void layout(MethodGraph graph) { }
 
 	@Override
-	public void layoutSugiyamaGraph(SugiyamaGraphBase<MethodGraph, JoanaVertex, JoanaEdge> graph) {
+	public void layoutLayeredGraph(LayeredGraph<JoanaVertex, JoanaEdge> graph) {
 		// TODO Auto-generated method stub
+		
 	}
 }

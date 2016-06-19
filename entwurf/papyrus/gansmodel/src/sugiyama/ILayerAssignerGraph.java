@@ -2,8 +2,8 @@ package sugiyama;
 
 
 import graphmodel.LayeredGraph;
-import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
-import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
+import sugiyama.SugiyamaGraph.SugiyamaEdge;
+import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
 public interface ILayerAssignerGraph extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 	

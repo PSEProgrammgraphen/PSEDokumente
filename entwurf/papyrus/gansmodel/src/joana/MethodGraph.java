@@ -71,4 +71,22 @@ public class MethodGraph extends JoanaGraph {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public int getLayerWidth(int layerN) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getWidth(JoanaVertex vertex) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHeight(JoanaVertex vertex) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

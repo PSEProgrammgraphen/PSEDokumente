@@ -4,18 +4,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import graphmodel.CompoundVertex;
 import graphmodel.DefaultVertex;
 import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.FastGraphAccessor;
-import graphmodel.SerializedGraph;
 import graphmodel.Vertex;
-import plugin.LayoutOption;
 
 
 /**
- * The SugiyamaGraphBase is a wrapper for a directed graph to enable easy and fast accessibility of
+ * The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast accessibility of
  * attributes and constructs needed during the computation of the hierarchical layout of a directed graph.
  * All vertices are assigned to a layer.
  * The positions of the vertices can be viewed as a grid (with varying widths per layer).
@@ -24,7 +21,7 @@ import plugin.LayoutOption;
  * @param <V> the vertex class used in the graph
  * @param <E> the edge class used in the graph
  */
-public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
+public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
 	implements ICycleRemoverGraph, 
 			   ILayerAssignerGraph,
 			   ICrossMinimizerGraph,
@@ -39,26 +36,14 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 	private G graph;
 	
 	/**
-	 * Constructs a new SugiyamaGraphBase and sets the Graph which is the underlying representation.
+	 * Constructs a new SugiyamaGraph and sets the Graph which is the underlying representation.
 	 * To fulfill the invariant that all vertices are assigned to a layer, all vertices
 	 * will be assigned to layer 0.
 	 * 
 	 * @param graph the graph used as underlying representation.
 	 */
-	public SugiyamaGraphBase(G graph) {}
+	public SugiyamaGraph(G graph) {}
 
-	@Override
-	public int getHeight() { return 0; }
-
-	@Override
-	public int getWidth(int layerN) { return 0; }
-
-	@Override
-	public int getMaxWidth() { return 0; }
-
-
-	public Set<SugiyamaEdge> restoreAllEdges() { return null; }
-	
 	/**
 	 * Replaces the specified edge with a path of dummy vertices of the specified length.
 	 * Replaced edges are removed from the set of edges but saved for later retrieval 
@@ -67,23 +52,8 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 	 * @param edge the edge to be replaced
 	 * @param length the length of the path which replaces the edge
 	 */
-	public void replaceWithSupplementPath(E edge, int length) {}
-	
-	/**
-	 * Returns the set of replaced edges.
-	 * 
-	 * @return the set of replaced edges
-	 */
-	public Set<E> getReplacedEdges() { return null; }
-	
-	/**
-	 * Deletes all dummy vertices and edges connecting dummy vertices.
-	 * Adds the replaced edges back to set of edges.
-	 * 
-	 * @return the set of edges, which has been restored
-	 */
-	public Set<E> restoreReplacedEdges() { return null; }
-	
+	private void replaceWithSupplementPath(SugiyamaEdge edge, int length) {}
+
 	@Override
 	public int getLayerCount() {
 		// TODO Auto-generated method stub
@@ -234,7 +204,49 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
+	@Override
+	public int getHeight() { return 0; }
+
+	@Override
+	public int getMaxWidth() { return 0; }
+
+	@Override
+	public Set<SugiyamaEdge> restoreAllEdges() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<SugiyamaEdge> getReplacedEdges() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<SugiyamaEdge> restoreReplacedEdges() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getLayerWidth(int layerN) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getWidth(SugiyamaVertex vertex) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHeight(SugiyamaVertex vertex) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	
 	/**
 	 * A supplement path for connecting vertices, which are more than one layer apart.
@@ -286,7 +298,7 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 
 	/**
 	 * A wrapper class for directed edges to implement additional functionality
-	 * to apply the sugiyama layout to the SugiyamaGraphBase containing them.
+	 * to apply the sugiyama layout to the SugiyamaGraph containing them.
 	 */
 	public static class SugiyamaEdge extends DirectedEdge<SugiyamaVertex>
 	{
@@ -302,5 +314,4 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 		
 		private List<SupplementPath> getSupplement() { return null; }
 	}
-
 }

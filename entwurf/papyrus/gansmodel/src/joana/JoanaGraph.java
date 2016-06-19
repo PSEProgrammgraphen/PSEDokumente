@@ -47,12 +47,6 @@ public abstract class JoanaGraph extends DefaultDirectedGraph<JoanaVertex, Joana
 	}
 
 	@Override
-	public int getWidth(int layerN) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public int getMaxWidth() {
 		// TODO Auto-generated method stub
 		return 0;

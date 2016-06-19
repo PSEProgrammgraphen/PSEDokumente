@@ -1,12 +1,11 @@
 package graphmodel;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import objectproperty.GAnsProperty;
-import plugin.LayoutOption;
+import plugin.Exporter;
 
 /**
  * A serialized version of a {@link Graph}.
@@ -21,10 +20,17 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	private GAnsProperty<String> name;
 	private GAnsProperty<Integer> id;
 
-
-	@Override
-	public void addEdge() {
-
+	/**
+	 * Gets all serialized Attributes as a Map from String to String.
+	 * This Map gets created when serializing a {@link Graph} and is returned on demand.
+	 * This should only be used for exporting Graphs since the attributes are not synchronized with the attributes
+	 * of the unserialized {@link Graph}
+	 *
+	 * @return The Map of serialized Attributes
+	 * @see Map
+     */
+	public Map<String, String> getAttributes() {
+		return null;
 	}
 
 	@Override
@@ -40,13 +46,6 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	 }
 
 	@Override
-	public V getSource(E edge) { 
-		// TODO Auto-generated method
-		return null;
-	 }
-
-
-	@Override
 	public Set<E> edgesOf(V vertex) {
 		// TODO Auto-generated method stub
 		return null;
@@ -56,19 +55,6 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	/**
-	 * Gets all serialized Attributes as a Map from String to String.
-	 * This Map gets created when serializing a {@link Graph} and is returned on demand.
-	 * This should only be used for exporting Graphs since the attributes are not synchronized with the attributes
-	 * of the unserialized {@link Graph}
-	 *
-	 * @return The Map of serialized Attributes
-	 * @see Map
-     */
-	public Map<String, String> getAttributes() {
-		return null;
 	}
 
 	@Override
