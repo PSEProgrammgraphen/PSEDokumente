@@ -1,7 +1,7 @@
 package graphmodel;
 
 /**
- * An abstract interface, which is used to build a edge.
+ * An abstract interface, which is used to build one edge.
  */
 public interface IEdgeBuilder {
 
@@ -26,9 +26,9 @@ public interface IEdgeBuilder {
 	 * Sets source and target vertices of the edge build by this.
 	 *
 	 * @param source
-	 *            String represantation of the source vertex
+	 *            String representation of the source vertex as ID
 	 * @param target
-	 *            String represantation of the target vertex
+	 *            String representation of the target vertex as ID
 	 */
 	public abstract void newEdge(String source, String target);
 
@@ -37,8 +37,17 @@ public interface IEdgeBuilder {
 	 * implementation needs to decide how to save the value for given edge type.
 	 * 
 	 * @param keyname
+	 * 				Name of the attribute
 	 * @param value
+	 * 				Value of the attribute
 	 */
 	public abstract void addData(String keyname, String value);
+	
+	/**.
+	 * Builds an Edge with the given Data and returns it.
+	 * 
+	 * @return The Edge that is being build by the IEdgeBuilder
+	 */
+	public Edge build();
 
 }
