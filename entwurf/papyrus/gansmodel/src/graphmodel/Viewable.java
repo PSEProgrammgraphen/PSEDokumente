@@ -49,6 +49,14 @@ public interface Viewable<V extends Vertex, E extends Edge<V>> {
 	public List<LayoutOption> getRegisteredLayouts();
 
 	/**
+	 * Returns the default layout for this graph.
+	 * This can be called when to quickly get a suiting layout without
+	 * having to decide between multiple options.
+	 * @return the default layout for this graph
+	 */
+	public LayoutOption getDefaultLayout();
+
+	/**
 	 * Returns a {@link SerializedGraph} representation of the graph.
 	 * 
 	 * @return The {@link SerializedGraph} representation of the graph.

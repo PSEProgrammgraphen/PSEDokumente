@@ -114,4 +114,10 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> i
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public LayoutOption getDefaultLayout() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
