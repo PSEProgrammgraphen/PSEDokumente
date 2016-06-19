@@ -13,6 +13,7 @@ import sugiyama.LayeredLayoutAlgorithm;
 
 /**
  * Implements hierarchical layout with layers for {@link MethodGraph}.
+ * This graph contains field access subgraphs.
  */
 public class MethodGraphLayout implements LayeredLayoutAlgorithm<MethodGraph, JoanaVertex, JoanaEdge> {
 

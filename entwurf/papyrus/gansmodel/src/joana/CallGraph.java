@@ -1,8 +1,10 @@
 package joana;
 
+import java.util.List;
 import java.util.Set;
 
 import graphmodel.CompoundVertex;
+import graphmodel.LayeredGraph;
 import graphmodel.Vertex;
 
 /**
@@ -35,15 +37,8 @@ public class CallGraph extends JoanaGraph {
 	}
 
 	@Override
-	public int getWidth(JoanaVertex vertex) {
+	public List<LayeredGraph<JoanaVertex, JoanaEdge>> getSubgraphs() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
-
-	@Override
-	public int getHeight(JoanaVertex vertex) {
-		// TODO Auto-generated method stub
-		return 0;
-	} 
-
 }

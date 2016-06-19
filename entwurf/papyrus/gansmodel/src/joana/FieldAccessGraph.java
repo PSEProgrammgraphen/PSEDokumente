@@ -1,5 +1,9 @@
 package joana;
 
+import java.util.List;
+
+import graphmodel.LayeredGraph;
+
 /**
  * A {@link JoanaGraph} which specifies a {@link FieldAccess} in a {@link JoanaGraph}
  */
@@ -12,15 +16,8 @@ public class FieldAccessGraph extends JoanaGraph {
 	}
 
 	@Override
-	public int getWidth(JoanaVertex vertex) {
+	public List<LayeredGraph<JoanaVertex, JoanaEdge>> getSubgraphs() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
-
-	@Override
-	public int getHeight(JoanaVertex vertex) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }

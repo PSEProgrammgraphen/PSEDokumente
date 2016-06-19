@@ -62,19 +62,10 @@ public interface LayeredGraph<V extends Vertex, E extends DirectedEdge<V>> exten
 	public int getMaxWidth();
 	
 	/**
-	 * Returns the columns the vertex spans.
-	 * Default is 1. Compound Vertices can span over multiple columns.
-	 * @param vertex the vertex to get the width
-	 * @return the width of the vertex
+	 * Returns all subgraphs contained in this graph.
+	 * All subgraphs of layered graphs have to be layered graphs with equal parameters themselves.
+	 * @return subgraphs in this layered graph
 	 */
-	public int getWidth(V vertex);
-
-	/**
-	 * Returns the layers the vertex spans.
-	 * Default is 1. Compound Vertices can span over multiple layers.
-	 * @param vertex the vertex to get the height
-	 * @return the width of the height
-	 */
-	public int getHeight(V vertex);
+	public List<LayeredGraph<V, E>> getSubgraphs();
 	
 }

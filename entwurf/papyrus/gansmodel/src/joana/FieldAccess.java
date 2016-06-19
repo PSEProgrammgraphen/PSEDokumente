@@ -1,6 +1,7 @@
 package joana;
 
 import graphmodel.CompoundVertex;
+import graphmodel.Edge;
 import graphmodel.FastGraphAccessor;
 
 /**
@@ -24,6 +25,12 @@ public class FieldAccess extends JoanaVertex implements CompoundVertex {
 
 	@Override
 	public FieldAccessGraph getGraph() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public JoanaVertex getConnectedVertex(Edge edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}
