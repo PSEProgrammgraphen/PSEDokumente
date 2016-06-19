@@ -12,7 +12,10 @@ Die Paketeinteilung der Software gliedert sich in folgende Pakete: %TODO Paketü
   \label{fig:packge_graphmodel}
 \end{figure}
 
-In dem Paket graphmodel befinden sich die Klassen die für die interne Repräsentation des Graphen benötigt werden. Die Funktionalität dieses Pakets ist es ein flexibles Graph model sowie schnellen Zugriff auf dessen Komponenten bereitzustellen. Hierfür werden Interfaces für Graphen, Vertices und Edges bereitgestellt und teilweise schon implementiert. 
+In dem Paket graphmodel befinden sich die Klassen die für die interne Repräsentation des Graphen benötigt werden. Die Funktionalität dieses Pakets ist es ein flexibles Graph-Modell, sowie schnellen Zugriff auf dessen Komponenten bereitzustellen.\\ 
+Zum Graph-Modell gehören Interfaces wie GraphModel, Graph, Vertex und Edge welche den groben Aufbau eines Graphen und dessen Funktionalitäten vorgeben. Das GraphModel enthält alle Graphen, welche bei einem Import aus der Datei ausgelesen wurden. Da es Kanten und somit auch Graphen gibt, welche gerichtet sind, gibt es dazu auch passende Interfaces, welche die zuvor genannten erweitern. Zusätzlich gibt es noch weitere Spezialisierungen der Interfaces, wie CompoundVertex, ein Knoten der einen Subgraphen enthält und LayeredGraph, ein Graph der noch Schichten speichert.\\
+Die genannten Interfaces sind teilweise schon implementiert. Zu diesen Klassen gehören die Default-Klassen, welche die im Interface definierten Methoden primitiv implementieren und die Serialized-Klassen, welche ein jeweiliges Element darstellt, welches einheitlich für den Export vorbereitet ist. \\
+Damit speziellere Implementierungen von Graph, Vertex oder Edge aus Plugins vom Importer einheitlich erstellt werden können gibt es die Builder-Interfaces. Sie geben eine Schnittstelle vor, über welche die speziellen Graphelemente erstellt werden können, ohne das der Importer davon etwas wissen muss.
 
 \newpage
 
