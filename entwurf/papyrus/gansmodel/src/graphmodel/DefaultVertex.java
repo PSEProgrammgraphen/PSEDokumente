@@ -18,19 +18,19 @@ public class DefaultVertex implements Vertex {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return name.getPropertyValue();
+		return name.getValue();
 	}
 
 	@Override
 	public Integer getID() {
 		// TODO Auto-generated method stub
-		return id.getPropertyValue();
+		return id.getValue();
 	}
 
 	@Override
 	public String getLabel() {
 		// TODO Auto-generated method stub
-		return label.getPropertyValue();
+		return label.getValue();
 	}
 
 	@Override

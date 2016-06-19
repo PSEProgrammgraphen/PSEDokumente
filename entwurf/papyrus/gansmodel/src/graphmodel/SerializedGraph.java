@@ -59,11 +59,11 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 
 	@Override
 	public String getName() {
-		return name.getPropertyValue();
+		return name.getValue();
 	}
 
 	@Override
 	public Integer getID() {
-		return id.getPropertyValue();
+		return id.getValue();
 	}
 }
