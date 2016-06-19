@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import graphmodel.CompoundVertex;
+import graphmodel.LayeredGraph;
 import graphmodel.Vertex;
 import plugin.LayoutOption;
 import plugin.LayoutRegister;
@@ -79,14 +80,8 @@ public class MethodGraph extends JoanaGraph {
 	}
 
 	@Override
-	public int getWidth(JoanaVertex vertex) {
+	public List<LayeredGraph<JoanaVertex, JoanaEdge>> getSubgraphs() {
 		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getHeight(JoanaVertex vertex) {
-		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 }

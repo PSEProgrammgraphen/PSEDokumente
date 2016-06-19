@@ -8,6 +8,7 @@ import graphmodel.DefaultVertex;
 import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
 import graphmodel.FastGraphAccessor;
+import graphmodel.LayeredGraph;
 import graphmodel.Vertex;
 
 
@@ -236,17 +237,10 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	}
 
 	@Override
-	public int getWidth(SugiyamaVertex vertex) {
+	public List<LayeredGraph<SugiyamaVertex, SugiyamaEdge>> getSubgraphs() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
-
-	@Override
-	public int getHeight(SugiyamaVertex vertex) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	
 	/**
 	 * A supplement path for connecting vertices, which are more than one layer apart.

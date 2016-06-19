@@ -1,6 +1,5 @@
 package plugin;
 
-import java.util.List;
 
 import graphmodel.GraphModel;
 import graphmodel.IGraphModelBuilder;

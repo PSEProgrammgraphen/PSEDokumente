@@ -1,11 +1,8 @@
 package joana;
 
-import java.util.List;
-
 import graphmodel.GraphModel;
 import graphmodel.IGraphModelBuilder;
 import parameter.Settings;
-import plugin.LayoutOption;
 import plugin.Workspace;
 
 /**
