@@ -1,13 +1,13 @@
 package joana;
 
+import graphmodel.LayeredGraph;
 import parameter.Settings;
-import sugiyama.SugiyamaGraph;
-import sugiyama.SugiyamaLayoutAlgorithm;
+import sugiyama.LayeredLayoutAlgorithm;
 
 /**
  * The FieldAccessLayout applies its layout to a {@link FieldAccess}.
  */
-public class FieldAccessLayout implements SugiyamaLayoutAlgorithm<FieldAccessGraph, JoanaVertex, JoanaEdge> {
+public class FieldAccessLayout implements LayeredLayoutAlgorithm<FieldAccessGraph, JoanaVertex, JoanaEdge> {
 
 	@Override
 	public Settings getSettings() {
@@ -21,8 +21,9 @@ public class FieldAccessLayout implements SugiyamaLayoutAlgorithm<FieldAccessGra
 	}
 
 	@Override
-	public void layoutSugiyamaGraph(SugiyamaGraph<FieldAccessGraph, JoanaVertex, JoanaEdge> graph) {
+	public void layoutLayeredGraph(LayeredGraph<JoanaVertex, JoanaEdge> graph) {
 		// TODO Auto-generated method stub
+		
 	}
 
 }

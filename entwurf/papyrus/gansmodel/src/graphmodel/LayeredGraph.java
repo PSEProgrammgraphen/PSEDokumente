@@ -49,16 +49,32 @@ public interface LayeredGraph<V extends Vertex, E extends DirectedEdge<V>> exten
 	public int getHeight();
 	
 	/**
-	 * Returns the width of the layer specified by it's index, i.e. the number of vertices in the layer.
+	 * Returns the width of the layer specified by its index, i.e. the number of vertices in the layer.
 	 * @param layerN the index of the layer
 	 * @return 		 the width of the layer
 	 */
-	public int getWidth(int layerN);
+	public int getLayerWidth(int layerN);
 
 	/**
 	 * Returns the width of the widest layer, i.e. the number of vertices the layer with the most vertices contains.
 	 * @return the maximum width 
 	 */
 	public int getMaxWidth();
+	
+	/**
+	 * Returns the columns the vertex spans.
+	 * Default is 1. Compound Vertices can span over multiple columns.
+	 * @param vertex the vertex to get the width
+	 * @return the width of the vertex
+	 */
+	public int getWidth(V vertex);
+
+	/**
+	 * Returns the layers the vertex spans.
+	 * Default is 1. Compound Vertices can span over multiple layers.
+	 * @param vertex the vertex to get the height
+	 * @return the width of the height
+	 */
+	public int getHeight(V vertex);
 	
 }
