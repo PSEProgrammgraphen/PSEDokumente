@@ -14,7 +14,7 @@ import plugin.LayoutOption;
 
 
 /**
- * The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast accessibility of
+ * The SugiyamaGraphBase is a wrapper for a directed graph to enable easy and fast accessibility of
  * attributes and constructs needed during the computation of the hierarchical layout of a directed graph.
  * All vertices are assigned to a layer.
  * The positions of the vertices can be viewed as a grid (with varying widths per layer).
@@ -23,7 +23,7 @@ import plugin.LayoutOption;
  * @param <V> the vertex class used in the graph
  * @param <E> the edge class used in the graph
  */
-public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
+public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, E extends DirectedEdge<V>> 
 	implements ICycleRemoverGraph, 
 			   ILayerAssignerGraph,
 			   ICrossMinimizerGraph,
@@ -38,13 +38,13 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	private G graph;
 	
 	/**
-	 * Constructs a new SugiyamaGraph and sets the Graph which is the underlying representation.
+	 * Constructs a new SugiyamaGraphBase and sets the Graph which is the underlying representation.
 	 * To fulfill the invariant that all vertices are assigned to a layer, all vertices
 	 * will be assigned to layer 0.
 	 * 
 	 * @param graph the graph used as underlying representation.
 	 */
-	public SugiyamaGraph(G graph) {}
+	public SugiyamaGraphBase(G graph) {}
 
 	@Override
 	public int getHeight() { return 0; }
@@ -290,7 +290,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	
 	/**
 	 * A wrapper class for directed edges to implement additional functionality
-	 * to apply the sugiyama layout to the SugiyamaGraph containing them.
+	 * to apply the sugiyama layout to the SugiyamaGraphBase containing them.
 	 */
 	public static class SugiyamaEdge extends DirectedEdge<SugiyamaVertex>
 	{

@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Set;
 
 import graphmodel.DirectedGraph;
-import sugiyama.SugiyamaGraph.SugiyamaEdge;
-import sugiyama.SugiyamaGraph.SugiyamaVertex;
+import sugiyama.SugiyamaGraphBase.SugiyamaEdge;
+import sugiyama.SugiyamaGraphBase.SugiyamaVertex;
 
 public interface IEdgeDrawerGraph  extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
 	

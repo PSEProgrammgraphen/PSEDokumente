@@ -22,4 +22,7 @@ public abstract class CallGraphLayoutOption  extends LayoutOption {
 	public void applyLayout() {
 		layout.layout(graph);
 	}
+	
+	@Override
+	public void chooseLayout() {};
 }

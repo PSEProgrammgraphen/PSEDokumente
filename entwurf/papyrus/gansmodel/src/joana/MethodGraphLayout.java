@@ -8,7 +8,7 @@ import parameter.IntegerParameter;
 import parameter.MultipleChoiceParameter;
 import parameter.Settings;
 import parameter.StringParameter;
-import sugiyama.SugiyamaGraph;
+import sugiyama.SugiyamaGraphBase;
 import sugiyama.SugiyamaLayoutAlgorithm;
 
 /**
@@ -41,7 +41,7 @@ public class MethodGraphLayout implements SugiyamaLayoutAlgorithm<MethodGraph, J
 	}
 
 	@Override
-	public void layoutSugiyamaGraph(SugiyamaGraph<MethodGraph, JoanaVertex, JoanaEdge> graph) {
+	public void layoutSugiyamaGraph(SugiyamaGraphBase<MethodGraph, JoanaVertex, JoanaEdge> graph) {
 		// TODO Auto-generated method stub
 		
 	}

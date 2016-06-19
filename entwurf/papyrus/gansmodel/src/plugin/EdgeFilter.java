@@ -11,14 +11,16 @@ public abstract class EdgeFilter {
 	private String name;
 
 	/**
-	 * Getter of name of this filter
+	 * Returns the name of the filter.
+	 * @return the name of the filter
 	 */
 	public String getName() {
 	 	 return name; 
 	}
 
 	/**
-	 * Setter of name
+	 * Sets the name of the filter.
+	 * @param name the name of the filter
 	 */
 	public void setName(String name) { 
 		 this.name = name; 
@@ -28,8 +30,8 @@ public abstract class EdgeFilter {
 	 * This method checks if an edge matches this Filter.
 	 * It will compare specified parameters of the edge with the defined parameters of this filter.
 	 * 
-	 * @param toMatch the edge which should be checked
-	 * @return true if the edge matches this Filter, otherwise false
+	 * @param  toMatch the edge which should be checked
+	 * @return true    if the edge matches this Filter, otherwise false
 	 */
 	public abstract boolean matches(Edge toMatch); 
 

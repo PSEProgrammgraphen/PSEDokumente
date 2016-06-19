@@ -5,19 +5,18 @@ import java.io.FileOutputStream;
 import graphmodel.SerializedGraph;
 
 /**
- * The importer interface is used to import a graph from a file into the intern representation.
- * The main task is to parse a FileInputStream  into the Interface of an {@link AbstractGraphModelBuilder}.
- * The {@link AbstractGraphModelBuilder} will then build the representation. 
- *
+ * The exporter interface is used to export a graph from it's internal representation into a specific file.
+ * For every graph structure given as SerializedGraph/SerializedVertex/SerializedEdge interfaces the 
+ * implementing class translates it into a FileOutputStream for the given file type, by {@code getSupportedFileEnding}.
  */
 public interface Exporter {
 
 	/**
-	 * Get all filetypes which this importer can parse
+	 * Get all filetypes which this exporter can parse
 	 * 
 	 * @return 
 	 */
-	public String getSupportedFileEndings();
+	public String getSupportedFileEnding();
 
 	/**
 	 * Get the name of this importer
