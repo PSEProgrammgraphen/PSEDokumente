@@ -2,37 +2,46 @@
 
 \section{Import von einem JOANA Graphen}
 
-\begin{figure}[hb]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=450pt]{resourcen/SeqDiagramImport.PDF}
   \caption{Sequenz Diagramm für den Import}
-  \label{seq:import}
+  \label{fig:seq:import}
 \end{figure}
 
 Der Benutzer möchte einen Graphen importieren und klickt auf Import. Die GAnsApplication öffnet einen FileChooser, in welchem der Benutzer die Datei auswählen kann welche er importieren möchte. Danach öffnet sich ein Workspace Dialog in welchem der Benutzer auswählt als welcher Typ der Graph interpretiert werden soll.\\
 Das Workspace übergibt der GAnsApplication nun den dazugehörigen IGraphModelBuilder. Dieser wird dann dem Importer übergeben, welcher mithilfe des Builders eine Repräsentation des Graphen erstellt, welche Workspace spezifisch ist.
 
-\section{Öffnen eines JOANA-Methodengraphen}
-\begin{figure}[hb]
+\newpage
+
+\section{Öffnen eines Graphen über die Strukturansicht}
+
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=450pt]{resourcen/SeqDiagramOpenGraph.PDF}
 	\caption{Sequenz Diagramm das Öffnen eines Graphen aus der Strukturansicht}
-	\label{seq:openMethod}
+	\label{fig:seq:openMethod}
 \end{figure}
 
+Der Benutzer hat einen Doppelklick auf ein Element in der StruktureView gemacht. Aus der StruktureView wird die ID des selektierten, gerade doppelt angeklickten, Elements gespeichert. Über das Workspace wird in den Graphen des geladenen GraphModels nach dem zur ID gehörenden Graph gesucht. Der gefundene Graph wird nun gelayouted (siehe \ref{seq:layout}). Nachdem der Graph vom layouten zurückgegeben wird, wird eine neue GraphView und ein neues GraphViewEventHandler-Objekt erzeugt, die einzelnen EventFilter werden zur GraphView hinzugefügt und ein Grid wird gesetzt, welches für die Zoom-Funktion benötigt wird. Ist die GraphView aufgesetzt, wird der Graph an sie übergeben. Die GraphView erzeugt eine eigene Factory, welche passend zum Graphen, GraphischeElemente erzeugt. Die GraphView setzt diese Elemente, wodurch sie angezeigt werden.
+
+\newpage
 
 \section{Ändern der Selektion im Graphen}
-\begin{figure}[hb]
+
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=450pt]{resourcen/SeqDiagramSelection.PDF}
 	\caption{Sequenz Diagramm für geänderte Selektion}
-	\label{seq:selection}
+	\label{fig:seq:selection}
 \end{figure}
 
 Der Benutzer hat in der aktuellen GraphAnsicht die Selektion geändert. Die GAnsApplication wird vom GraphViewSelectionModel benachrichtigt. Die GAnsApplication holt sich von der aktuellen GraphAnsicht die Factory, welche zugriff auf die Elemente in der GraphView bietet, und vom SelectionModel eine Liste mit allen selektierten Elementen. Über die Factory und wird nun zu jedem selektiertem Element die zugehörige Vertex oder Edge aus dem angezeigten Graphen ermittelt. Deren GAnsProperties werden in eine ObservableList zusammengeführt und an die InformationsView übergeben, welche die Informationen die über die Properties gegeben sind darstellt.
 
-\section{Navigation (Pflichtenheft 9 /T040/)}
+\newpage
 
+\section{Layouten eines JOANA-Graphs}
+\newpage
 \section{Filtern von Kanten (Pflichtenheft 9 /T060/)}
-
+\newpage
 \section{Export von einem geladenen JOANA-Graphen als SVG (Pflichtenheft 9 /T070/)}
