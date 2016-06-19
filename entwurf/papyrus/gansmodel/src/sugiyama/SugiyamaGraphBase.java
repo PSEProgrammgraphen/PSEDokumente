@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import graphmodel.CompoundVertex;
 import graphmodel.DefaultVertex;
 import graphmodel.DirectedEdge;
 import graphmodel.DirectedGraph;
@@ -83,12 +84,6 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 	 */
 	public Set<E> restoreReplacedEdges() { return null; }
 	
-	@Override
-	public SerializedGraph serialize() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@Override
 	public int getLayerCount() {
 		// TODO Auto-generated method stub
@@ -233,6 +228,13 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 		// Is not needed in this graph.
 		return graph.getID();
 	}
+
+	@Override
+	public Set<SugiyamaEdge> outgoingEdgesOf(SugiyamaVertex vertex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	
 	/**
 	 * A supplement path for connecting vertices, which are more than one layer apart.
@@ -281,7 +283,7 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 		//private V getVertex() {return null;}
 		
 	}
-	
+
 	/**
 	 * A wrapper class for directed edges to implement additional functionality
 	 * to apply the sugiyama layout to the SugiyamaGraphBase containing them.
@@ -301,15 +303,4 @@ public class SugiyamaGraphBase<G extends DirectedGraph<V, E>, V extends Vertex, 
 		private List<SupplementPath> getSupplement() { return null; }
 	}
 
-	@Override
-	public List<LayoutOption> getRegisteredLayouts() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Set<SugiyamaEdge> outgoingEdgesOf(SugiyamaVertex vertex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

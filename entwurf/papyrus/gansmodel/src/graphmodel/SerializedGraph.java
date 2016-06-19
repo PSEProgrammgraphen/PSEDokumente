@@ -72,12 +72,6 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	}
 
 	@Override
-	public SerializedGraph<V, E> serialize() {
-		return this;
-	}
-
-
-	@Override
 	public String getName() {
 		return name.getPropertyValue();
 	}
@@ -85,11 +79,5 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	@Override
 	public Integer getID() {
 		return id.getPropertyValue();
-	}
-
-	@Override
-	public List<LayoutOption> getRegisteredLayouts() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
