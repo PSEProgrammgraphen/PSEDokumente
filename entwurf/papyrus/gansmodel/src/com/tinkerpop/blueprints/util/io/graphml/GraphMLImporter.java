@@ -2,7 +2,6 @@ package com.tinkerpop.blueprints.util.io.graphml;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
 
 import graphmodel.IGraphModelBuilder;
 import plugin.Importer;
@@ -40,7 +39,7 @@ public class GraphMLImporter implements Importer {
 	 }
 
 	@Override
-	public List<String> getSupportedFileEndings() {
+	public String getSupportedFileEndings() {
 		// TODO Auto-generated method stub
 		return null;
 	}
