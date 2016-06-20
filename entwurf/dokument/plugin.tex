@@ -4,9 +4,9 @@
 \vskip .13in
 \hbox{{\bf  Interfaces}}
 \entityintro{Constraint}{plugin.Constraint}{}
-\entityintro{Exporter}{plugin.Exporter}{The exporter interface is used to export a graph from it's internal representation into a specific file.}
+\entityintro{Exporter}{plugin.Exporter}{The exporter interface is implemented to export a graph from it's internal representation into a specific file.}
 \entityintro{FilterSet}{plugin.FilterSet}{A FilterSet is used to collect all available filters for a specific Graph from a workspace.}
-\entityintro{Importer}{plugin.Importer}{The importer interface is used to import a graph from a file into the intern representation.}
+\entityintro{Importer}{plugin.Importer}{The importer interface is implemented when writting a class that can import files.}
 \entityintro{LayoutAlgorithm}{plugin.LayoutAlgorithm}{An implementations of LayoutAlgorithm takes a graph.}
 \entityintro{LayoutRegister}{plugin.LayoutRegister}{Stores a collection of layouts.}
 \entityintro{Plugin}{plugin.Plugin}{This is the main entry point for plugins.}
@@ -16,7 +16,7 @@
 \entityintro{EdgeFilter}{plugin.EdgeFilter}{This class represents a filter for edges.}
 \entityintro{EntryPointOption}{plugin.EntryPointOption}{An entry point option is an abstract superclass for all entry points, where the user can choose one of multiple entry points.}
 \entityintro{LayoutOption}{plugin.LayoutOption}{An option for a layout of a specific graph.}
-\entityintro{PluginManager}{plugin.PluginManager}{}
+\entityintro{PluginManager}{plugin.PluginManager}{The plugin manager manages the access of the main application to the plugins.}
 \entityintro{VertexFilter}{plugin.VertexFilter}{This Class represents a filter for vertex types.}
 \entityintro{WorkspaceOption}{plugin.WorkspaceOption}{This is an option for a}
 \vskip .1in
@@ -41,7 +41,7 @@ java.lang.String getName()\end{lstlisting} %end signature
 }
 \subsection{\label{plugin.Exporter}\index{Exporter@\textit{ Exporter}}Interface Exporter}{
 \vskip .1in 
-The exporter interface is used to export a graph from it's internal representation into a specific file. For every graph structure given as SerializedGraph/SerializedVertex/SerializedEdge interfaces the implementing class translates it into a FileOutputStream for the given file type, by \texttt{\small getSupportedFileEnding}.\vskip .1in 
+The exporter interface is implemented to export a graph from it's internal representation into a specific file. For every graph structure given as SerializedGraph/SerializedVertex/SerializedEdge interfaces the implementing class translates it into a FileOutputStream for the given file type, by \texttt{\small getSupportedFileEnding}.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Exporter
@@ -59,15 +59,16 @@ void exportGraph(graphmodel.SerializedGraph graph,java.io.FileOutputStream files
 {\bf  Description}
 
 This method writes an \texttt{\small SerializedGraph}{\small 
-\refdefined{graphmodel.SerializedGraph}} into an FileOutputStream.
+\refdefined{graphmodel.SerializedGraph}} into an FileOutputStream. The \texttt{\small SerializedGraph}{\small 
+\refdefined{graphmodel.SerializedGraph}} enables us to read all attributes as Strings. To write the contained Information into the filestream is the task of this method
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{graph} -- }
+\texttt{graph} -- serializedGraph that contains the information to write to a file}
    \item{
-\texttt{filestream} -- }
+\texttt{filestream} -- to write the information into}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -81,10 +82,10 @@ java.lang.String getName()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get the name of this importer
+Gets the name of this importer.
 }
 \item{{\bf  Returns} -- 
- 
+name of this exporter 
 }%end item
 \end{itemize}
 }%end item
@@ -97,10 +98,10 @@ java.lang.String getSupportedFileEnding()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get all filetypes which this exporter can parse
+Gets all filetypes which this exporter can parse.
 }
 \item{{\bf  Returns} -- 
- 
+the supported file ending. 
 }%end item
 \end{itemize}
 }%end item
@@ -109,7 +110,7 @@ Get all filetypes which this exporter can parse
 }
 \subsection{\label{plugin.FilterSet}\index{FilterSet@\textit{ FilterSet}}Interface FilterSet}{
 \vskip .1in 
-A FilterSet is used to collect all available filters for a specific Graph from a workspace. Just these filters will be displayed to the user for a specific graph\vskip .1in 
+A FilterSet is used to collect all available filters for a specific Graph from a workspace. Just these filters will be displayed to the user for a specific graph.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface FilterSet
@@ -126,11 +127,11 @@ java.util.List getEdgeFilter()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Returns a Set of all available \texttt{\small EdgeFilter}{\small 
+Returns a List of all available \texttt{\small EdgeFilter}{\small 
 \refdefined{plugin.EdgeFilter}}
 }
 \item{{\bf  Returns} -- 
- 
+the list of EdgeFilters 
 }%end item
 \end{itemize}
 }%end item
@@ -143,10 +144,10 @@ java.lang.String getName()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get the name of this FilterSet
+Gets the name of this FilterSet.
 }
 \item{{\bf  Returns} -- 
- 
+name of this FilterSet 
 }%end item
 \end{itemize}
 }%end item
@@ -159,11 +160,12 @@ java.util.List getVertexfilter()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Returns a Set of all available \texttt{\small VertexFilter}{\small 
+Returns a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of all available \texttt{\small VertexFilter}{\small 
 \refdefined{plugin.VertexFilter}}.
 }
 \item{{\bf  Returns} -- 
- 
+the list of VertexFilters 
 }%end item
 \end{itemize}
 }%end item
@@ -172,7 +174,7 @@ Returns a Set of all available \texttt{\small VertexFilter}{\small
 }
 \subsection{\label{plugin.Importer}\index{Importer@\textit{ Importer}}Interface Importer}{
 \vskip .1in 
-The importer interface is used to import a graph from a file into the intern representation. The main task is to parse a FileInputStream into the Interface of an AbstractGraphModelBuilder. The AbstractGraphModelBuilder will then build the representation.\vskip .1in 
+The importer interface is implemented when writting a class that can import files. This will enable Plugins that import specific files to be build. The main task of a class implementing this interface is to parse a FileInputStream into the Interface of an AbstractGraphModelBuilder. The AbstractGraphModelBuilder will then build the representation.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Importer
@@ -189,10 +191,10 @@ java.lang.String getName()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Get the name of this importer
+Gets the name of this importer.
 }
 \item{{\bf  Returns} -- 
- 
+name of this importer 
 }%end item
 \end{itemize}
 }%end item
@@ -200,15 +202,15 @@ Get the name of this importer
 \index{getSupportedFileEndings()}
 {\bf  getSupportedFileEndings}\\
 \begin{lstlisting}[frame=none]
-java.util.List getSupportedFileEndings()\end{lstlisting} %end signature
+java.lang.String getSupportedFileEndings()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
-Get all filetypes which this importer can parse
+Gets the filetype which this importer can parse.
 }
 \item{{\bf  Returns} -- 
- 
+the supported file ending. 
 }%end item
 \end{itemize}
 }%end item
@@ -221,15 +223,15 @@ void importGraph(graphmodel.IGraphModelBuilder builder,java.io.FileInputStream f
 \item{
 {\bf  Description}
 
-This method parses an FileInputStream into an AbstractGraphModelBuilder.
+This method parses an FileInputStream into an AbstractGraphModelBuilder. It has to ensure that all information is transfered to a correct graphmodelbuilder.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{builder} -- }
+\texttt{builder} -- that the values are parsed into}
    \item{
-\texttt{filestream} -- }
+\texttt{filestream} -- from which the values are parsed}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -337,6 +339,40 @@ Returns all by the plugin provided \texttt{\small EdgeFilter}{\small
 }
 \item{{\bf  Returns} -- 
 the list of provided edge filter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getExporter()}
+{\bf  getExporter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getExporter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all by the plugin provided \texttt{\small Exporter}{\small 
+\refdefined{plugin.Exporter}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+a list of provided exporter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getImporter()}
+{\bf  getImporter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getImporter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all by the plugin provided \texttt{\small Importer}{\small 
+\refdefined{plugin.Importer}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+a list of provided importer 
 }%end item
 \end{itemize}
 }%end item
@@ -730,6 +766,7 @@ the set of parameters
 }
 \subsection{\label{plugin.PluginManager}\index{PluginManager}Class PluginManager}{
 \vskip .1in 
+The plugin manager manages the access of the main application to the plugins. It loads all plugins at the start of the runtime. When the client needs some service implemented by plugins, it can get a list of all available options.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class PluginManager
@@ -737,18 +774,6 @@ public class PluginManager
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
-\index{addExporter(Exporter)}
-{\bf  addExporter}\\
-\begin{lstlisting}[frame=none]
-public void addExporter(Exporter exporter)\end{lstlisting} %end signature
-}%end item
-\item{ 
-\index{addImporter(Importer)}
-{\bf  addImporter}\\
-\begin{lstlisting}[frame=none]
-public void addImporter(Importer importer)\end{lstlisting} %end signature
-}%end item
 \item{ 
 \index{getEdgeFilter()}
 {\bf  getEdgeFilter}\\
@@ -766,16 +791,38 @@ a list of all edge filter
 \end{itemize}
 }%end item
 \item{ 
-\index{getExporters()}
-{\bf  getExporters}\\
+\index{getExporter()}
+{\bf  getExporter}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getExporters()\end{lstlisting} %end signature
+public java.util.List getExporter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the \texttt{\small Exporter}{\small 
+\refdefined{plugin.Exporter}} provided by all plugins.
+}
+\item{{\bf  Returns} -- 
+a list of provided exporter 
+}%end item
+\end{itemize}
 }%end item
 \item{ 
-\index{getImporters()}
-{\bf  getImporters}\\
+\index{getImporter()}
+{\bf  getImporter}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getImporters()\end{lstlisting} %end signature
+public java.util.List getImporter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the \texttt{\small Importer}{\small 
+\refdefined{plugin.Importer}} provided by all plugins.
+}
+\item{{\bf  Returns} -- 
+a list of provided importer 
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getPluginManager()}

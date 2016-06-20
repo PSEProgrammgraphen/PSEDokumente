@@ -119,10 +119,30 @@ Constructor, setting the name and value of the property.
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{getPropertyName()}
-{\bf  getPropertyName}\\
+\index{addListenerToValue(ChangeListener)}
+{\bf  addListenerToValue}\\
 \begin{lstlisting}[frame=none]
-public java.lang.String getPropertyName()\end{lstlisting} %end signature
+public void addListenerToValue(javafx.beans.value.ChangeListener listener)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Adds a ChangeListener to the value of the property.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{listener} -- The listener that will be added.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getName()}
+{\bf  getName}\\
+\begin{lstlisting}[frame=none]
+public java.lang.String getName()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -135,10 +155,10 @@ The name/identifier of the GAnsProperty.
 \end{itemize}
 }%end item
 \item{ 
-\index{getPropertyValue()}
-{\bf  getPropertyValue}\\
+\index{getValue()}
+{\bf  getValue}\\
 \begin{lstlisting}[frame=none]
-public java.lang.Object getPropertyValue()\end{lstlisting} %end signature
+public java.lang.Object getValue()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -151,10 +171,10 @@ The value of the GAnsProperty.
 \end{itemize}
 }%end item
 \item{ 
-\index{getPropertyValueAsString()}
-{\bf  getPropertyValueAsString}\\
+\index{getValueAsString()}
+{\bf  getValueAsString}\\
 \begin{lstlisting}[frame=none]
-public java.lang.String getPropertyValueAsString()\end{lstlisting} %end signature
+public java.lang.String getValueAsString()\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -215,10 +235,30 @@ The StringProperty which contains the string-representation of the value of the 
 \end{itemize}
 }%end item
 \item{ 
-\index{setPropertyName(String)}
-{\bf  setPropertyName}\\
+\index{removeListenerFromValue(ChangeListener)}
+{\bf  removeListenerFromValue}\\
 \begin{lstlisting}[frame=none]
-public void setPropertyName(java.lang.String value)\end{lstlisting} %end signature
+public void removeListenerFromValue(javafx.beans.value.ChangeListener listener)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Removes a ChangeListener from the value of the property.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{listener} -- The listener that will be removed.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setName(String)}
+{\bf  setName}\\
+\begin{lstlisting}[frame=none]
+public void setName(java.lang.String value)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
@@ -235,10 +275,10 @@ Sets the name/identifier of the GAnsProperty.
 \end{itemize}
 }%end item
 \item{ 
-\index{setPropertyValue(T)}
-{\bf  setPropertyValue}\\
+\index{setValue(T)}
+{\bf  setValue}\\
 \begin{lstlisting}[frame=none]
-public void setPropertyValue(java.lang.Object value)\end{lstlisting} %end signature
+public void setValue(java.lang.Object value)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
