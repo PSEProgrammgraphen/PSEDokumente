@@ -303,13 +303,31 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		private SugiyamaEdge() {}
 		
 		//private E getEdge() { return null; }
-		
+		/**
+		 * Returns true, if this edge has been reversed in order to break cycles in the first step of sugiyama, false otherwise.
+		 * @return
+		 * 		true if this edge is reversed, false otherwise
+		 */
 		private boolean isReversed() { return false; }
 		
+		/**
+		 * Sets this edge to be reversed or not.
+		 * @param rev
+		 * 		sets, if this edge is reversed or not
+		 */
 		private void setReversed(boolean rev) {}
 		
+		/**
+		 * Returns true, if this edge was replaced by a {@link SupplementPath} that contains source and target vertices and at least one dummy vertex.
+		 * @return
+		 * 		True if this edge is an supplement path, false otherwise
+		 */
 		private boolean isReplaced() { return false; }
 		
-		private List<SupplementPath> getSupplement() { return null; }
+		/**
+		 * Returns the {@link SupplementPath} which this {@link SugiyamaEdge} represents.
+		 * @return
+		 */
+		private SupplementPath getSupplement() { return null; }
 	}
 }
