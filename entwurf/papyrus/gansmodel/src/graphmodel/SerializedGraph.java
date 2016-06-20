@@ -19,6 +19,7 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	
 	private GAnsProperty<String> name;
 	private GAnsProperty<Integer> id;
+	private FastGraphAccessor fga;
 
 	/**
 	 * Gets all serialized Attributes as a Map from String to String.

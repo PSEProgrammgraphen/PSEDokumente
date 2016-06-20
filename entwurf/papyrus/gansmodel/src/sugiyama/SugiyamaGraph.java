@@ -35,6 +35,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	private Set<E> brokenCycleEdges;
 	private Set<V> insertedVertices;
 	private G graph;
+	private FastGraphAccessor fga;
 	
 	/**
 	 * Constructs a new SugiyamaGraph and sets the Graph which is the underlying representation.

@@ -16,6 +16,7 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> i
 	private DirectedGraphLayoutRegister register;
 	private GAnsProperty<String> name;
 	private GAnsProperty<Integer> id;
+	private FastGraphAccessor fga;
 
 	/**
 	 * Returns the source of a edge of the graph.
