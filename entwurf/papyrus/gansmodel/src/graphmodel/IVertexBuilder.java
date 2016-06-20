@@ -1,25 +1,32 @@
 package graphmodel;
 
 /**
- * An abstract interface, which is used to build a vertex.
+ * An abstract interface, which is used to build one vertex.
  */
 public interface IVertexBuilder {
 
 	/**
-	 * Add Data to this Vertex. The vertexBuilder decides which kind of data it
-	 * is and where to save in the concrete Vertex.
+	 * Sets the ID of the vertex build by this.
 	 * 
-	 * 
-	 * @param value
-	 * @param keyname
+	 * @param id
+	 *           value to which the id is set
 	 */
-	public abstract void addData(String value, String keyname);
-
+	public abstract void setID(String id);
+	
 	/**
-	 * This method builds the concrete Vertex and returns it.
+	 * Add Data to this Vertex. The IVertexBuilder needs to parse the data and add it to the edge
 	 * 
+	 * @param keyname
+	 * 			Name of the attribute which is added
+	 * @param value
+	 * 			Value of the attribute
+	 */
+	public abstract void addData(String keyname, String value);
+
+	/**.
+	 * Builds a Vertex with the given Data and returns it.
 	 * 
-	 * @return Vertex
+	 * @return The Vertex that is being build by the IVertexBuilder
 	 */
 	public Vertex build();
 
@@ -28,7 +35,10 @@ public interface IVertexBuilder {
 	 * implement nested Graphs.
 	 * 
 	 * @param graphID
-	 * @return
+	 * 			The id of the graph which associated {@link IGraphBuilder}
+	 *          will be returned.
+	 * @return The IGraphBuilder of the graph which is referenced over the
+	 *         graphID.
 	 */
 	public IGraphBuilder getGraphBuilder(String graphID);
 
