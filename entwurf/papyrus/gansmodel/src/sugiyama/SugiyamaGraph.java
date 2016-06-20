@@ -116,7 +116,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	}
 
 	@Override
-	public List<sugiyama.IEdgeDrawerGraph.Point> getEdgeCorners(SugiyamaEdge edge) {
+	public List<graphmodel.EdgePath.Point> getEdgeCorners(SugiyamaEdge edge) {
 		// TODO Auto-generated method stub
 		return null;
 	}
