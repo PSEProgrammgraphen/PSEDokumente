@@ -46,7 +46,7 @@ Das Paket \textbf{gui} beinhaltet die Anzeigelogik, sowie die Haupt-Applikation 
   \label{fig:packge_parameter}
 \end{figure}
 
-Diese Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plugins ihre Einstellungen an den View zu übergeben. Das selbe gilt auch für Constraints. Diese Wrapper Klassen beinhalten Methoden zur Umwandlung der jeweiligen Parameter in Zeichenketten aber auch vergleiche zum sortieren der Werte.
+Dieses Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plugins ihre Einstellungen an den View zu übergeben. Das selbe gilt auch für Constraints. Diese Wrapper Klassen beinhalten Methoden zur Umwandlung der jeweiligen Parameter in Zeichenketten aber auch vergleiche zum sortieren der Werte.
 
 \newpage
 
@@ -59,7 +59,7 @@ Diese Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plu
   \label{fig:packge_graphRegex}
 \end{figure}
 
-In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach Subgraphen mithilfe von Selektoren
+In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach Subgraphen mithilfe von Selektoren. Es gibt eine \textbf{Selector} Klasse, welche die Information welche Subgraphen selektiert werden soll speichert und eine \textbf{Engine}, die aus einem gegebenen Graphen die Subgraphen, welche die Beschreibung erfüllen, heraussucht und rurückgibt. Dieses Paket dient hauptsächlich als Helfer für Layoutalgorithmen die auf diese Weise für gegebene Constraints bestimmte Subgraphen selektieren können und speziell verarbeiten können.
 
 \newpage
 
@@ -85,6 +85,12 @@ Das Paket \textbf{objectproperty} bietet eine generische Eigenschaft eines Eleme
   \label{fig:packge_plugin}
 \end{figure}
 
+Das Paket \textbf{plugin} bietet Interfaces für Plugins sowie einen \textbf{PluginManager} welcher die Plugins lädt, verwaltet und zur Verfügung stellt. Klassen die Interfaces dieses Plugins implementieren müssen sich beim laden, der Klasse die \textbf{Plugin} erweitert beim \textbf{PluginManager} registriert werden, um dann vom Programm verwendet werden zu können. Es bietet somit die Möglichkeit Funktionalität von außen zu laden und somit das Programm zu erweitern. \\
+Ein \textbf{Importer} und ein \textbf{Exporter} Interface können implementiert werden um weitere File Importer oder Exporter hinzuzufügen. \\
+Ein \textbf{LayoutAlgorithm} ist in der Lage einen Graphen zu layouten. Er hat \textbf{LayoutOption}s und \textbf{Constraint}s die eingestellt werden können, um die funktionsweise des Algorithmus zu beeinflussen. Die \textbf{LayoutOption}s können dann in einem \textbf{LayoutRegister} gespeichert werden. \\
+\textbf{EdgeFilter}, \textbf{VertexFilter} und \textbf{FilterSet} erlauben es Plugins Filter für Kanten und Knoten zu definieren die bei Layouten und Darstellung unbeachtet bleiben. \\
+\textbf{Workspace}s beschreiben eine Arbeitssituation in der spezifische Graphtypen verarbeitet werden können. Ein Beispiel hierfür ist der \textbf{JoanaWorkspace} im \textbf{joana} Paket. Ein Workspace definiert, welche Dateien mit welchem Importer importiert werden und ermöglicht so das öffnen spezifischer Graphtypen welche in generischen Formaten wie graphml gespeichert werden können. Dieses kann wiederum über \textbf{WorkspaceOption}s eingestellt werden.\\
+
 \newpage
 
 \section{sugiyama}
@@ -97,7 +103,7 @@ Das Paket \textbf{objectproperty} bietet eine generische Eigenschaft eines Eleme
 \end{figure}
 
 Das Paket \textbf{sugiyama} bietet neben einer Implementierung des Sugiyama-Frameworks zum hierarchischen layouten eines gerichteten Graphen Schnittstellen zum ändern und austauschen einzelner Phasen dieses Frameworks.\\
-Die fünf Phasen des Sugiyama-Frameworks Kreise entfernen, Lagenzuordnung, Kreuzungsminimierung, Knotenpositionierung und Kantenzeichnen werden in dieser Reihenfolge durchlaufen und durch einen \textbf{SugiyamaLayoutAlgorithm} verwaltet und gesteuert. Die Klassen, die diese Schritte darstellen \textbf{CycleRemover}, \textbf{LayerAssigner}, \textbf{CrossMinimizer}, \textbf{VertexPositioner} und \textbf{EdgeDrawer} arbeiten auf einem \textbf{SugiyamaGraph}, welcher den zu layoutenden Graphen repräsentiert.\\
+Die fünf Phasen des Sugiyama-Frameworks: Kreise entfernen, Lagenzuordnung, Kreuzungsminimierung, Knotenpositionierung und Kantenzeichnen werden in dieser Reihenfolge durchlaufen und durch einen \textbf{SugiyamaLayoutAlgorithm} verwaltet und gesteuert. Die Klassen, die diese Schritte darstellen \textbf{CycleRemover}, \textbf{LayerAssigner}, \textbf{CrossMinimizer}, \textbf{VertexPositioner} und \textbf{EdgeDrawer} arbeiten auf einem \textbf{SugiyamaGraph}, welcher den zu layoutenden Graphen repräsentiert. Hierzu implementiert er die jeweiligen Interfaces, die diese Schritte fordern.\\
 In der ersten Phase werden die Zykel des Graphen entfernt, indem die Richtungen einer minimalen Kantenmenge umgekehrt wird.\\
 Anschließend wird jedem Knoten eine Lage zugewiesen, welche abhängig von der Anzahl der ein- und ausgehenden Kanten des Knotens, sowie der Länge des kürzesten Pfades des Knotens zu einem Knoten aus der ersten Lage ist. Zudem werden, falls eine Kante zwischen zwei Knoten mindestens eine Lage überspringt, in jede dieser Lagen ein \textbf{DummyVertex} ein.\\
 In der dritten Phase wird die Anzahl der Kantenkreuzungen minimiert. Dazu werden jeweils in zwei aneinanderliegenden Lagen die Knoten beider Lagen umgeordnet.\\
