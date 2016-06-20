@@ -5,7 +5,8 @@ import parameter.Settings;
 import sugiyama.LayeredLayoutAlgorithm;
 
 /**
- *
+ * Offers a layout for {@link CallGraph}.
+ * Groups vertices representing the same Java-Method together.
  */
 public class CallGraphLayout implements LayeredLayoutAlgorithm <CallGraph, JoanaVertex, JoanaEdge> {
 
