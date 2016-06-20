@@ -1,5 +1,8 @@
 package graphmodel;
 
+import java.util.List;
+import java.util.Map.Entry;
+
 import objectproperty.GAnsProperty;
 
 /**
@@ -40,7 +43,7 @@ public class DefaultVertex implements Vertex {
 	}
 
 	@Override
-	public SerializedVertex serialize() {
+	public SerializedVertex serialize(List<Entry<String, String>> attributes) {
 		// TODO Auto-generated method stub
 		return null;
 	}
