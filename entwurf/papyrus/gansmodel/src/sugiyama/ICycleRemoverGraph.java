@@ -4,6 +4,9 @@ import graphmodel.DirectedGraph;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
+/**
+ * A DirectedGraph which additionally defines functions to remove cycles in the graph.
+ */
 public interface ICycleRemoverGraph extends DirectedGraph<SugiyamaVertex, SugiyamaEdge> {
 	/**
 	 * Reverses the direction of a sugiyama edge.

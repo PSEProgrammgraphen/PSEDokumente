@@ -1,10 +1,12 @@
 package sugiyama;
 
-
 import graphmodel.LayeredGraph;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
+/**
+ * A LayeredGraph which additionally defines functions to assign layers in the sugiyama-layout.
+ */
 public interface ILayerAssignerGraph extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 	
 	/**

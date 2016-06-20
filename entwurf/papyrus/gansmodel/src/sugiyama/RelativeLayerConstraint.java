@@ -18,6 +18,13 @@ public class RelativeLayerConstraint implements Constraint
 	private int distance;
 	private String name = "RelativeLayerConstraint";
 	
+	/**
+	 * Constructs a new RelativeLayerConstraint, sets the top and bottom vertices, whether its direct and the distance.
+	 * @param top The top vertices.
+	 * @param bottom The bottom vertices.
+	 * @param direct True is direct, false is not direct.
+	 * @param distance The distance between top and bottom layer.
+	 */
 	public RelativeLayerConstraint(Set<SugiyamaVertex> top, Set<SugiyamaVertex> bottom, boolean direct, int distance) {}
 	
 	/**
