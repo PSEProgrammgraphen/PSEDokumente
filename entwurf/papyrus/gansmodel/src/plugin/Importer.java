@@ -6,32 +6,33 @@ import java.util.List;
 import graphmodel.IGraphModelBuilder;
 
 /**
- * The importer interface is used to import a graph from a file into the intern representation.
- * The main task is to parse a FileInputStream  into the Interface of an {@link AbstractGraphModelBuilder}.
- * The {@link AbstractGraphModelBuilder} will then build the representation. 
- *
+ * The importer interface is implemented when writting a class that can import files.
+ * This will enable Plugins that import specific files to be build.
+ * The main task of a class implementing this interface is to parse a FileInputStream  into the Interface of an {@link AbstractGraphModelBuilder}.
+ * The {@link AbstractGraphModelBuilder} will then build the representation.
  */
 public interface Importer {
 
 	/**
-	 * Get all filetypes which this importer can parse
+	 * Gets the filetype which this importer can parse.
 	 * 
-	 * @return 
+	 * @return the supported file ending.
 	 */
-	public List<String> getSupportedFileEndings();
+	public String getSupportedFileEndings();
 
 	/**
-	 * Get the name of this importer
+	 * Gets the name of this importer.
 	 * 
-	 * @return 
+	 * @return name of this importer
 	 */
 	public String getName();
 
 	/**
 	 * This method parses an FileInputStream into an {@link AbstractGraphModelBuilder}.
+	 * It has to ensure that all information is transfered to a correct graphmodelbuilder.
 	 * 
-	 * @param builder 
-	 * @param filestream 
+	 * @param builder that the values are parsed into
+	 * @param filestream from which the values are parsed
 	 */
 	public void importGraph(IGraphModelBuilder builder, FileInputStream filestream); 
 

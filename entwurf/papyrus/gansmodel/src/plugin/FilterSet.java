@@ -4,28 +4,28 @@ import java.util.List;
 
 /**
  * A FilterSet is used to collect all available filters for a specific {@link Graph} from a workspace. 
- * Just these filters will be displayed to the user for a specific graph
+ * Just these filters will be displayed to the user for a specific graph.
  */
 public interface FilterSet {
 
 	/**
-	 * Returns a Set of all available {@link VertexFilter}.
+	 * Returns a {@link List} of all available {@link VertexFilter}.
 	 * 
-	 * @return 
+	 * @return the list of VertexFilters
 	 */
 	public List<VertexFilter> getVertexfilter();
 
 	/**
-	 * Get the name of this FilterSet
+	 * Gets the name of this FilterSet.
 	 * 
-	 * @return 
+	 * @return name of this FilterSet
 	 */
 	public String getName();
 
 	/**
-	 * Returns a Set of all available {@link EdgeFilter}
+	 * Returns a List of all available {@link EdgeFilter}
 	 * 
-	 * @return 
+	 * @return  the list of EdgeFilters
 	 */
 	public List<EdgeFilter> getEdgeFilter(); 
 
