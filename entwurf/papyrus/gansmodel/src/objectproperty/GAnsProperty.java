@@ -2,6 +2,7 @@ package objectproperty;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ChangeListener;
 
 // Implementation aehnlich wie im Beispiel "Person" bei https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableView.html
 
@@ -138,5 +139,25 @@ public class GAnsProperty<T extends Object> {
 	 */
 	public String getValueAsString() {
 		return propertyValueAsString().toString();
+	}
+
+	/**
+	 * Adds a ChangeListener to the value of the property.
+	 * 
+	 * @param listener
+	 *            The listener that will be added.
+	 */
+	public void addListenerToValue(ChangeListener<T> listener) {
+		propertyValue().addListener(listener);
+	}
+
+	/**
+	 * Removes a ChangeListener from the value of the property.
+	 * 
+	 * @param listener
+	 *            The listener that will be removed.
+	 */
+	public void removeListenerFromValue(ChangeListener<T> listener) {
+		propertyValue().removeListener(listener);
 	}
 }
