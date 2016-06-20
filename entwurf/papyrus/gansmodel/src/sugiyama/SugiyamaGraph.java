@@ -282,7 +282,10 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	 */
 	public static class DummyVertex extends DefaultVertex {}
 	
-	
+	/**
+	 * A wrapper class for vertices used in the sugiyama framework. 
+	 * A SugiyamaVertex can be a {@link DefaultVertex} or a {@link DummyVertex}
+	 */
 	public static class SugiyamaVertex extends DefaultVertex
 	{
 		public boolean isDummyVertex() {return false;}
@@ -296,6 +299,7 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 	 */
 	public static class SugiyamaEdge extends DirectedEdge<SugiyamaVertex>
 	{
+
 		private SugiyamaEdge() {}
 		
 		//private E getEdge() { return null; }

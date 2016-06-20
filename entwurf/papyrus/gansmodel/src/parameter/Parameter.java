@@ -10,6 +10,14 @@ import objectproperty.GAnsProperty;
  */
 public abstract class Parameter<T, V extends Object> extends GAnsProperty<V> implements Comparable<T> {
 	
+	/**
+	 * Constructor, setting the name and value of the property.
+	 * 
+	 * @param name
+	 *            The string will be set as the name of the GAnsProperty.
+	 * @param value
+	 *            The value that will be set in the GAnsProperty.
+	 */
 	public Parameter(String name, V value) {
 		super(name, value);
 	}
