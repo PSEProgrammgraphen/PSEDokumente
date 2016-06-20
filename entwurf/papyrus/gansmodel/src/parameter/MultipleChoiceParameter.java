@@ -35,7 +35,7 @@ public class MultipleChoiceParameter extends Parameter<MultipleChoiceParameter, 
 
 	/**
 	 * Returns a list of all set possible choices in the MultipleChoiceParameter.
-	 * @return
+	 * @return {@link List} of all possible choises
 	 */
 	public List<String> getChoices() {
 		return values;
