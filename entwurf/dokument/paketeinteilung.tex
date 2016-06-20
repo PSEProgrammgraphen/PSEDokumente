@@ -127,3 +127,15 @@ Das \textbf{Workspace} bietet die Möglichkeit zum Einstellen und Speichern von 
 Zudem ermöglicht das \textbf{joana} Paket die wiedererkennbare Darstellung von Feldzugriffen über das \textbf{FieldAccessLayout}, indem die Zugriffe immer ähnlich dargestellt werden.\\
 \textbf{JoanaVertex} und \textbf{JoanaEdge} beinhalten Attribute, welche speziell auf die Eigenschaften abgestimmt sind, welche durch JOANA gesetzt werden.\\
 \textbf{Callgraph} und \textbf{Methodengraph}(en) werden in einem speziellen \textbf{JoanaGraphModel} gespeichert.
+
+\section{export}
+
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=380pt]{resourcen/export.png}
+	\caption{Paketübersicht joana}
+	\label{fig:packge_export}
+\end{figure}
+
+
+Das \textbf{export} Paket bietet eine Implementierung eines Export-Plugins von GAns. Das Plugin definiert den Export eines angezeigten Graphen als SVG-Datei. Dazu wurde ein SvgExportPlugin erstellt, welches von GAns geladen wird und ein SvgExporter, welcher die vorgegebene Exporter-Schnittstelle implementiert.
