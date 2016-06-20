@@ -1,12 +1,13 @@
 package plugin;
 
 import graphmodel.Edge;
+import graphmodel.Vertex;
 
 /**
  * This class represents a filter for edges. 
  * To check if an edge passes through this filter, the client can specify it in {@code matches(Edge edge)}.
  */
-public abstract class EdgeFilter {
+public abstract class EdgeFilter<E extends Edge<V>, V extends Vertex> {
 
 	private String name;
 
@@ -33,6 +34,6 @@ public abstract class EdgeFilter {
 	 * @param  toMatch the edge which should be checked
 	 * @return true    if the edge matches this Filter, otherwise false
 	 */
-	public abstract boolean matches(Edge toMatch); 
+	public abstract boolean matches(E toMatch); 
 
 }
