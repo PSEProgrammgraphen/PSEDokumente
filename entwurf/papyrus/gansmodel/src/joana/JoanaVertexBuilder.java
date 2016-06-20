@@ -27,4 +27,10 @@ public class JoanaVertexBuilder implements IVertexBuilder {
 		return null;
 	}
 
+	@Override
+	public void setID(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -15,7 +15,7 @@ import plugin.WorkspaceOption;
  * This class provides the {@link SvgExporter} to the plugin manager
  *
  */
-public class ExportPlugin implements Plugin{
+public class SVGExportPlugin implements Plugin{
 
 	@Override
 	public String getName() {
