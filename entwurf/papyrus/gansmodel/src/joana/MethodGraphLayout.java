@@ -2,11 +2,13 @@ package joana;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import graphmodel.LayeredGraph;
 import parameter.IntegerParameter;
 import parameter.MultipleChoiceParameter;
+import parameter.Parameter;
 import parameter.Settings;
 import parameter.StringParameter;
 import sugiyama.LayeredLayoutAlgorithm;
@@ -27,11 +29,12 @@ public class MethodGraphLayout implements LayeredLayoutAlgorithm<MethodGraph, Jo
 		options.add("option2");
 		options.add("option3");
 		MultipleChoiceParameter p4 = new MultipleChoiceParameter("Multiple-Choice-Test", options, 2);
-		Settings  s = new Settings();
-		s.addParameter(p1.getName(), p1);
-		s.addParameter(p2.getName(), p2);
-		s.addParameter(p3.getName(), p3);
-		s.addParameter(p4.getName(), p4);
+		HashMap<String, Parameter> parameter = new HashMap<String, Parameter>();
+		parameter.put(p1.getName(), p1);
+		parameter.put(p2.getName(), p2);
+		parameter.put(p3.getName(), p3);
+		parameter.put(p4.getName(), p4);
+		Settings  s = new Settings(parameter);
 		return s;
 	}
 

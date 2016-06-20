@@ -1,45 +1,23 @@
 package parameter;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 /**
  * IntegerParameters are parameters with an integer value space.
  */
 public class IntegerParameter extends Parameter<IntegerParameter, Integer> {
-    private int value;
     private int min;
     private int max;
 
     /**
-     * Returns the current value of the parameter.
-     * @return current value
-     */
-    public Integer getValue() {
-        return value;
-    }
-
-    /**
      * Constructs a new IntegerParameter, sets its name, its default value and boundaries.
-     * @param name the name of the parameter
-     * @param value the value of the parameter
-     * @param min the minimum boundary of the parameter
-     * @param max the maximum boundary of the parameter
+     * @param name The name of the parameter.
+     * @param value The value of the parameter.
+     * @param min The minimum boundary of the parameter.
+     * @param max The maximum boundary of the parameter.
      */
     public IntegerParameter(String name, int value, int min, int max) {
     	super(name, value);
         this.min = min;
         this.max = max;
-    }
-   
-    @Override
-    public void setValue(Integer value)
-    {
-    	super.setValue(value);
-    	for (ActionListener listener: this.getListener())
-    	{
-    		listener.actionPerformed(new ActionEvent(this, 0, "Value changed"));
-    	}
     }
 
     @Override
@@ -54,15 +32,15 @@ public class IntegerParameter extends Parameter<IntegerParameter, Integer> {
 
 	/**
 	 * Returns the minimum boundary.
-	 * @return the minimum boundary
+	 * @return The minimum boundary.
 	 */
 	public int getMin() {
 		return min;
 	}
 
 	/**
-	 * Sets the minimum boundary
-	 * @param min the minimum boundary
+	 * Sets the minimum boundary.
+	 * @param min The minimum boundary.
 	 */
 	public void setMin(int min) {
 		this.min = min;
@@ -70,15 +48,15 @@ public class IntegerParameter extends Parameter<IntegerParameter, Integer> {
 
 	/**
 	 * Returns the maximum boundary.
-	 * @return the maximum boundary
+	 * @return The maximum boundary.
 	 */
 	public int getMax() {
 		return max;
 	}
 
 	/**
-	 * Sets the maximum boundary
-	 * @param min the maximum boundary
+	 * Sets the maximum boundary.
+	 * @param min The maximum boundary.
 	 */
 	public void setMax(int max) {
 		this.max = max;

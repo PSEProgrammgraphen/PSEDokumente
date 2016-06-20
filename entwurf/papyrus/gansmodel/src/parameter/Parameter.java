@@ -1,8 +1,5 @@
 package parameter;
 
-import java.awt.event.ActionListener;
-import java.util.List;
-
 import objectproperty.GAnsProperty;
 
 /**
@@ -16,29 +13,12 @@ public abstract class Parameter<T, V extends Object> extends GAnsProperty<V> imp
 	public Parameter(String name, V value) {
 		super(name, value);
 	}
-	
-	private List<ActionListener> onChangeListener;
     
     /**
      * Let the visitor visit this parameter.
-     * @param visitor
-     * 		The visitor to visit
+     * @param visitor The visitor to visit
      */
     public abstract void accept(ParameterVisitor visitor);
-    
-    /**
-     * Add a listener who gets triggered when a change of the value occurs.
-     * @param listener
-     * 		The listener to add
-     */
-    public void addChangeListener(ActionListener listener) { onChangeListener.add(listener); }
-
-    /**
-     * Returns all listener listening to changes of this parameter.
-     * @return
-     * 		A list of listeners
-     */
-    protected List<ActionListener> getListener() { return onChangeListener; }
 
     @Override
     public abstract int compareTo(T o);
