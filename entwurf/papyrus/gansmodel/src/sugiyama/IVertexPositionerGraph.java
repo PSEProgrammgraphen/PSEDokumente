@@ -4,6 +4,9 @@ import graphmodel.LayeredGraph;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
+/**
+ * A LayeredGraph which additionally defines functions to position vertices in the sugiyama-layout.
+ */
 public interface IVertexPositionerGraph extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 
 	/**

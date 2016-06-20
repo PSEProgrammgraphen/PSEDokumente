@@ -2,6 +2,14 @@ package graphmodel;
 
 import java.util.List;
 
+/**
+ * A DirectedGraph which in addition to coordinates saves the relative position of all vertices
+ * in a layered structure.
+ * Every vertex is in a layer. Every layer is sorted so that every node has zero to two horizontal neighbors.
+ *
+ * @param <V> the vertex type contained in the graph
+ * @param <E> the edge type contained in the graph
+ */
 public interface LayeredGraph<V extends Vertex, E extends DirectedEdge<V>> extends DirectedGraph<V, E> {
 	
 	

@@ -32,7 +32,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import joana.MethodGraphLayout;
 import parameter.Settings;
-import plugin.FilterSet;
 import plugin.LayoutOption;
 import plugin.PluginManager;
 import plugin.Workspace;
@@ -53,7 +52,6 @@ public class GAnsApplication extends Application {
 	private PluginManager pluginManager;
 	private Workspace workspace;
 	private GraphModel model;
-	private FilterSet filterSet;
 	private LayoutOption layoutOption;
 
 	private GraphView currentGraphView;

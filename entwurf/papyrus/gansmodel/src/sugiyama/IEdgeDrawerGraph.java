@@ -8,6 +8,9 @@ import graphmodel.LayeredGraph;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
+/**
+ * A LayeredGraph which additionally defines functions draw the edges in the sugiyama-layout.
+ */
 public interface IEdgeDrawerGraph  extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 	
 	/**

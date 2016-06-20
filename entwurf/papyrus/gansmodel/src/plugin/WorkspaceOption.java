@@ -3,8 +3,7 @@ package plugin;
 import parameter.Settings;
 
 /**
- * This is an option for a 
- * @author Lucas
+ * This is an option for a workspace to set and change settings on it.
  *
  */
 public abstract class WorkspaceOption extends EntryPointOption {

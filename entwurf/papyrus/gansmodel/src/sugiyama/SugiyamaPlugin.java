@@ -10,7 +10,7 @@ import plugin.VertexFilter;
 import plugin.WorkspaceOption;
 
 /**
- * 
+ * A plugin for GAns that supplies a layout algorithm based on the Sugiyama-framework.
  */
 public class SugiyamaPlugin implements Plugin {
 	private String name;
@@ -24,7 +24,6 @@ public class SugiyamaPlugin implements Plugin {
 	@Override
 	public void load() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -56,6 +55,4 @@ public class SugiyamaPlugin implements Plugin {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
 }

@@ -6,7 +6,10 @@ import graphmodel.LayeredGraph;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
 
-public interface ICrossMinimizerGraph  extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
+/**
+ * A LayeredGraph which additionally defines functions that can be used to minimize the crossings in the sugiyama-layout.
+ */
+public interface ICrossMinimizerGraph extends LayeredGraph<SugiyamaVertex, SugiyamaEdge> {
 
 	/**
 	 * Get the amount of layers.
