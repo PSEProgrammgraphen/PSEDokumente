@@ -41,6 +41,7 @@ Der Benutzer hat in der aktuellen GraphAnsicht die Selektion geändert. Die GAns
 \newpage
 
 \section{Layouten eines JOANA-Graphs}
+
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=450pt]{resourcen/SeqDiagramLayout.PDF}
@@ -61,4 +62,13 @@ Der Benutzer hat das Layouten des angezeigten Graphen über einen Menüeintrag a
 Nachdem das Layouten mit dem MethodGraphLayout angestoßen wurde, wird zuerst ein FieldAccessLayout erstellt und damit alle FieldAccessGraphen des MethodenGraphen gelayouted. Danach wird ein SugiymaLayoutAlgorithm erstellt, die jeweiligen Phasen gesetzt, ein SugiyamaGraph erstellt und die jeweiligen Phasen auf den Graphen angewandt.
 
 \newpage
-\section{Export von einem geladenen JOANA-Graphen als SVG (Pflichtenheft 9 /T070/)}
+\section{Export von einem geladenen JOANA-Graphen als SVG}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=450pt]{resourcen/SeqDiagramExport.PDF}
+	\caption{Sequenz Diagramm für Layouten eines JOANA-Graphs, Sugiyama}
+	\label{fig:seq:export}
+\end{figure}
+
+Der Benutzer möchte einen Graphen exportierten und klickt auf Export. Die GAnsApplication öffnet einen FileChooser, in welchem der Benutzer den Ort und Namen der Datei angeben kann, in die exportiert werden soll. Danach wird der Graph serialisiert und dessen serialisierte Repräsentation in den SvgExporter gegeben, welcher die Daten aus dem Graph in SVG-Form an den ausgewählten Ort schreibt.
