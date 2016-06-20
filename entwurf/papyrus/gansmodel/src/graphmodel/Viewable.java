@@ -7,8 +7,9 @@ import java.util.Set;
 import plugin.LayoutOption;
 
 /**
- * 
- *
+ * Adds methods for manipulation and observation of graphs.
+ * This interface differentiates between domain specific graphs, which can be viewed (children of ViewableGraph),
+ * and utility graphs like {@link SerializedGraph} and {@link SugiyamaGraph}
  */
 public interface Viewable<V extends Vertex, E extends Edge<V>> {
 

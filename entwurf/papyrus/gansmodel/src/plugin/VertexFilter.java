@@ -8,7 +8,7 @@ import graphmodel.Vertex;
  * 
  *
  */
-public class VertexFilter {
+public class VertexFilter<V extends Vertex> {
 
 	private String name;
 
@@ -33,7 +33,7 @@ public class VertexFilter {
 	 * @param toMatch the vertex which should be checked
 	 * @return true if the edge matches this Filter, otherwise false
 	 */
-	public boolean matches(Vertex toMatch) { 
+	public boolean matches(V toMatch) { 
 		// TODO Auto-generated method
 		return false;
 	 } 
