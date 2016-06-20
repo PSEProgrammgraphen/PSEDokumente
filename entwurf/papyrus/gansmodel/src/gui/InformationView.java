@@ -36,7 +36,7 @@ public class InformationView extends TableView<GAnsProperty> {
 
 		getColumns().setAll(propertyNameCol, propertyValueCol);
 
-		refresh();
+		//refresh();
 	}
 
 }

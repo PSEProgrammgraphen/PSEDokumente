@@ -2,8 +2,6 @@ package export;
 
 import java.util.List;
 
-import com.tinkerpop.blueprints.util.io.graphml.GraphMLImporter;
-
 import plugin.EdgeFilter;
 import plugin.Exporter;
 import plugin.Importer;

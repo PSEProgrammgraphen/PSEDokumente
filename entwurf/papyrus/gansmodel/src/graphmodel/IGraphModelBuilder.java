@@ -16,7 +16,7 @@ public interface IGraphModelBuilder {
 	 * @return The IGraphBuilder of the graph which is referenced over the
 	 *         graphID.
 	 */
-	public abstract IGraphBuilder getGraphBuilder(String graphID);
+	public IGraphBuilder getGraphBuilder(String graphID);
 
 	/**
 	 * This method is called, when the buildingprocess of the graphmodel is

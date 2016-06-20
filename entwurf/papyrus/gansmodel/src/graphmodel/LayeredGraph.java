@@ -30,7 +30,7 @@ public interface LayeredGraph<V extends Vertex, E extends DirectedEdge<V>> exten
 	/**
 	 * Get all vertices from a certain layer.
 	 * 
-	 * @param layerN the index of the layer
+	 * @param layerNum the index of the layer
 	 * @return 		 a list of all vertices which are on this layer
 	 */
 	public List<V> getLayer(int layerNum);

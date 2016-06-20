@@ -88,6 +88,11 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> i
 	}
 
 	@Override
+	public FastGraphAccessor getFastGraphAccessor() {
+		return null;
+	}
+
+	@Override
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
 		// TODO Auto-generated method stub
 

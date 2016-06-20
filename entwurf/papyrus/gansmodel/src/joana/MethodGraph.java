@@ -27,9 +27,9 @@ public class MethodGraph extends JoanaGraph {
 	 }
 
 	/**
-	 * Returns a list of all {@link FieldAcesses} in the MethodGraph.
+	 * Returns a list of all {@link FieldAccess} in the MethodGraph.
 	 * 
-	 * @return A list of all {@link FieldAcesses} in the MethodGraph.
+	 * @return A list of all {@link FieldAccess} in the MethodGraph.
 	 */
 	public List<FieldAccess> getFieldAccesses() { 
 		// TODO Auto-generated method
@@ -37,9 +37,9 @@ public class MethodGraph extends JoanaGraph {
 	 }
 
 	/**
-	 * Returns a list of all {@link MethodCall} in the MethodGraph.
+	 * Returns a list of all {@link JoanaVertex} which are method calls in the MethodGraph.
 	 * 
-	 * @return A list of all {@link MethodCall} in the MethodGraph.
+	 * @return A list of all method calls.
 	 */
 	public List<JoanaVertex> getMethodCalls() { 
 		// TODO Auto-generated method

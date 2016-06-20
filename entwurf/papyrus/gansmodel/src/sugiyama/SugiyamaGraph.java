@@ -145,6 +145,11 @@ public class SugiyamaGraph<G extends DirectedGraph<V, E>, V extends Vertex, E ex
 		return null;
 	}
 
+	@Override
+	public FastGraphAccessor getFastGraphAccessor() {
+		return null;
+	}
+
 
 	@Override
 	public Integer outdegreeOf(SugiyamaVertex vertex) {

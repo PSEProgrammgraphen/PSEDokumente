@@ -1,7 +1,6 @@
 package graphmodel;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * This class provides a fast lookup of {@link Vertex} and {@link Edge} for a given Attribute value pair without traversing a {@link Graph}.

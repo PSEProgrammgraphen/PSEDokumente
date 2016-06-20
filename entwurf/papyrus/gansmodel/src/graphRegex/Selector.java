@@ -4,54 +4,44 @@ import java.util.List;
 
 import graphmodel.Graph;
 
+/**
+ * A Selector for describing graphs.
+ * The Selector describes a graph with a String. It is used by the {@link Engine} to select subgraphs of Graph.
+ * A Selector is also able to save Lists of subgraphs so that results can be memorized.
+ */
 public class Selector {
+	private String value;
+	private List<Graph> selectedSubgraphs;
 
 	/**
-	 * 
-	 */
-	public String value;
-	/**
-	 * 
-	 */
-	public List<Graph> selectedSubgraphs;
-	/**
-	 * 
-	 * @return 
+	 * Gets the String which is used to select the subgraph
+	 * @return value Selector String
 	 */
 	public String getValue() {
 	 	 return value; 
 	}
+
 	/**
-	 * Setter of value
-	 */
+	 * Sets the String which is used to select the subgraph
+	 * @param value Selector String
+     */
 	public void setValue(String value) { 
 		 this.value = value; 
 	}
+
 	/**
-	 * Getter of selectedSubgraphs
-	 */
+	 * Gets the previously selected Subgraphs
+	 * @return {@link List} of Subgraphs
+     */
 	public List<Graph> getSelectedSubgraphs() {
 	 	 return selectedSubgraphs; 
 	}
+
 	/**
-	 * Setter of selectedSubgraphs
-	 */
-	public void setSelectedSubgraphs(List<Graph> selectedSubgraphs) { 
+	 * Sets subgraphs for this Selector
+	 * @param selectedSubgraphs sets the selected Subgraphs
+     */
+	void setSelectedSubgraphs(List<Graph> selectedSubgraphs) {
 		 this.selectedSubgraphs = selectedSubgraphs; 
 	}
-	/**
-	 * 
-	 * @param graph 
-	 */
-	public void getSubgraphs(Graph graph) { 
-		// TODO Auto-generated method
-	 }
-	/**
-	 * 
-	 * @param graphs 
-	 */
-	public void setSubgraphs(Graph graphs) { 
-		// TODO Auto-generated method
-	 } 
-
 }

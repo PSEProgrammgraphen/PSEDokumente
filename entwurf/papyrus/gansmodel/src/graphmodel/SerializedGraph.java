@@ -52,6 +52,11 @@ public class SerializedGraph<V extends SerializedVertex, E extends SerializedEdg
 	}
 
 	@Override
+	public FastGraphAccessor getFastGraphAccessor() {
+		return null;
+	}
+
+	@Override
 	public void addToFastGraphAccessor(FastGraphAccessor fga) {
 		// TODO Auto-generated method stub
 		
