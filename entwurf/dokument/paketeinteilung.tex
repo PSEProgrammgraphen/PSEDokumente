@@ -46,7 +46,7 @@ Das Paket \textbf{gui} beinhaltet die Anzeigelogik, sowie die Haupt-Applikation 
   \label{fig:packge_parameter}
 \end{figure}
 
-Dieses Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plugins ihre Einstellungen an den View zu übergeben. Das selbe gilt auch für Constraints. Diese Wrapper Klassen beinhalten Methoden zur Umwandlung der jeweiligen Parameter in Zeichenketten aber auch vergleiche zum sortieren der Werte.
+Dieses Paket trennt Rahmenbedingungen(Parameter) von Layouts oder Constraints in eigene Klassen. Diese Wrapper-Klassen erlauben z.B. einem Layout seine Einstellungsmöglichkeiten an die GUI zu übergeben, ohne das vom Layout aus Wissen über GUI-Elemente gefordert wird. \\Die implementierten Parameter können von Visitors besucht werden, welche den Wert des Parameters auslesen und verändern können. Im GUI-Paket gibt es eine Generator-Klasse, welche einen solchen Visitor implementiert. Somit können die Einstellungsdialoge automatisch gefüllt werden und gemachte Änderungen im Dialog werden direkt wieder in den Parametern gesetzt. Da in gewissen Situationen von der GUI, oder dem zugehörigen Layout, Listener auf die Werte gesetzt werden müssen, erben die Parameter von GAnsProperty, da diese bereits viel benötigte Funktionalität vereinfacht anbieten und Gemeinsamkeiten aufweisen.
 
 \newpage
 
@@ -125,5 +125,5 @@ In der letzten Phase wird jeder \textbf{DummyVertex} entfernt und die Kanten wer
 Das \textbf{joana} Paket bietet Funktionalitäten zum Erstellen von Graphen samt Knoten und Kanten, sowie das Darstellen von \textbf{Methoden}- und \textbf{Callgraphen} in ihren eigenen Layouts.\\
 Das \textbf{Workspace} bietet die Möglichkeit zum Einstellen und Speichern von Optionen, speziell für \textbf{JOANA-Graphen}.\\
 Zudem ermöglicht das \textbf{joana} Paket die wiedererkennbare Darstellung von Feldzugriffen über das \textbf{FieldAccessLayout}, indem die Zugriffe immer ähnlich dargestellt werden.\\
-\textbf{JoanaVertex} und \textbf{JoanaEdge} beinhalten Attribute, wie zum Beispiel Kanten- und Knotenart.\\
-\textbf{Callgraph} und \textbf{Methodengraph}(en) werden in dem \textbf{JoanaGraphModel} gespeichert.
+\textbf{JoanaVertex} und \textbf{JoanaEdge} beinhalten Attribute, welche speziell auf die Eigenschaften abgestimmt sind, welche durch JOANA gesetzt werden.\\
+\textbf{Callgraph} und \textbf{Methodengraph}(en) werden in einem speziellen \textbf{JoanaGraphModel} gespeichert.
