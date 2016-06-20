@@ -62,7 +62,7 @@ public class SerializedVertex implements Vertex {
 	}
 
 	@Override
-	public SerializedVertex serialize() {
+	public SerializedVertex serialize(List<Entry<String, String>> attributes) {
 		return this;
 	}
 

@@ -1,6 +1,7 @@
 package graphmodel;
 
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import objectproperty.GAnsProperty;
@@ -92,7 +93,7 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> i
 	}
 
 	@Override
-	public SerializedGraph serialize() {
+	public SerializedGraph serialize(List<Entry<String, String>> attributes) {
 		// TODO Auto-generated method stub
 		return null;
 	}
