@@ -10,7 +10,7 @@ import plugin.LayoutOption;
  * A {@link DefaultDirectedGraph} is a specific Graph which only contains
  * {@link DirectedEdge} as edges.
  */
-public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> implements DirectedGraph<V, E>, Viewable<V, E> {
+public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> implements DirectedGraph<V, E>, ViewableGraph<V, E> {
 
 	private DirectedGraphLayoutRegister register;
 	private GAnsProperty<String> name;
@@ -27,6 +27,12 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> i
 		// TODO Auto-generated method
 		return null;
 	}
+
+	@Override
+	public List<LayoutOption> getRegisteredLayouts() {
+		return register.getLayoutOptions();
+	}
+
 
 	@Override
 	public Integer outdegreeOf(V vertex) {
@@ -77,11 +83,6 @@ public class DefaultDirectedGraph<V extends Vertex, E extends DirectedEdge<V>> i
 	@Override
 	public Set<E> edgesOf(V vertex) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<LayoutOption> getRegisteredLayouts() {
 		return null;
 	}
 
