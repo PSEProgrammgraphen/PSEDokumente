@@ -4,6 +4,8 @@ import java.util.List;
 
 import parameter.Settings;
 import plugin.EdgeFilter;
+import plugin.Exporter;
+import plugin.Importer;
 import plugin.LayoutOption;
 import plugin.LayoutRegister;
 import plugin.Plugin;
@@ -69,6 +71,18 @@ public class JoanaPlugin implements Plugin {
 
 	@Override
 	public List<VertexFilter> getVertexFilter() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Exporter> getExporter() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Importer> getImporter() {
 		// TODO Auto-generated method stub
 		return null;
 	}

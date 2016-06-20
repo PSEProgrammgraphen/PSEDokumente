@@ -59,4 +59,10 @@ public class SerializedEdge<V extends Vertex> implements Edge<V> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public EdgePath getPath() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

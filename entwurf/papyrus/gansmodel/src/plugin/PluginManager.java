@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.ServiceLoader;
 
 /**
- * @author Lucas
- *
+ * The plugin manager manages the access of the main application to the plugins.
+ * It loads all plugins at the start of the runtime.
+ * When the client needs some service implemented by plugins, it can get a list
+ * of all available options.
  */
 public class PluginManager {
 
@@ -29,11 +31,6 @@ public class PluginManager {
 		}
 		return mgr;
 	}
-	
-	public void addExporter(Exporter exporter) { }
-	public List<Exporter> getExporters() { return null; }
-	public void addImporter(Importer importer) { }
-	public List<Importer> getImporters() { return null; }
 
 	/**
 	 * Returns all {@link WorkspaceOption}s provided by plugins.
@@ -58,4 +55,16 @@ public class PluginManager {
 	 * @return all loaded plugins
 	 */
 	public List<Plugin> getPlugins() { return null; }
+	
+	/**
+	 * Returns the {@link Exporter} provided by all plugins. 
+	 * @return a list of provided exporter
+	 */
+	public List<Exporter> getExporter() { return null; }
+	
+	/**
+	 * Returns the {@link Importer} provided by all plugins. 
+	 * @return a list of provided importer
+	 */
+	public List<Importer> getImporter() { return null; }	
 }

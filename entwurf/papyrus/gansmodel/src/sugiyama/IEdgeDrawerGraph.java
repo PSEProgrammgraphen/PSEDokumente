@@ -3,6 +3,7 @@ package sugiyama;
 import java.util.List;
 import java.util.Set;
 
+import graphmodel.EdgePath.Point;
 import graphmodel.LayeredGraph;
 import sugiyama.SugiyamaGraph.SugiyamaEdge;
 import sugiyama.SugiyamaGraph.SugiyamaVertex;
@@ -74,18 +75,4 @@ public interface IEdgeDrawerGraph  extends LayeredGraph<SugiyamaVertex, Sugiyama
 	 * @return	   the list of points of the corners on the edge
 	 */
 	public List<Point> getEdgeCorners(SugiyamaEdge edge);
-	
-	/**
-	 * This class is a standard immutable 2D Vector with integer values as it's components.
-	 */
-	public class Point 
-	{
-		public final int x;
-		public final int y;
-		
-		public Point(int x, int y) {
-			this.x = x;
-			this.y = y;
-		}
-	}
 }

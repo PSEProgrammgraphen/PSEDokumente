@@ -1,5 +1,6 @@
 package joana;
 
+import graphmodel.Edge;
 import graphmodel.IEdgeBuilder;
 
 /**
@@ -26,5 +27,11 @@ public class JoanaEdgeBuilder implements IEdgeBuilder {
 	@Override
 	public void addData(String keyname, String value) {
 		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public Edge build() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
