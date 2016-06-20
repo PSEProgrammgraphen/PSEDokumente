@@ -45,4 +45,18 @@ public interface Plugin {
 	 * @return the list of provided edge filter
 	 */
 	public List<EdgeFilter> getEdgeFilter();
+	
+	/**
+	 * Returns all by the plugin provided {@link Exporter}.
+	 * If none are provided returns {@code null} or an empty list.
+	 * @return a list of provided exporter
+	 */
+	public List<Exporter> getExporter();
+	
+	/**
+	 * Returns all by the plugin provided {@link Importer}.
+	 * If none are provided returns {@code null} or an empty list.
+	 * @return a list of provided importer
+	 */
+	public List<Importer> getImporter();
 }

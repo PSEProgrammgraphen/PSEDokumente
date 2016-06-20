@@ -1,6 +1,8 @@
-package com.tinkerpop.blueprints.util.io.graphml;
+package export;
 
 import java.util.List;
+
+import com.tinkerpop.blueprints.util.io.graphml.GraphMLImporter;
 
 import plugin.EdgeFilter;
 import plugin.Exporter;
@@ -10,23 +12,20 @@ import plugin.VertexFilter;
 import plugin.WorkspaceOption;
 
 /**
- * This is the entry point for the {@link GraphMLImporter}-plugin.
- * It provides the Importer to the plugin manager
- * 
+ * This class provides the {@link SvgExporter} to the plugin manager
+ *
  */
-public class GmlImporterPlugin implements Plugin {
-	private String name;
+public class ExportPlugin implements Plugin{
 
-	/**
-	 * Getter of the name
-	 * 
-	 * @return the name of this plugin
-	 */
+	@Override
 	public String getName() {
-		return this.name;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	@Override
 	public void load() {
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -59,4 +58,5 @@ public class GmlImporterPlugin implements Plugin {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }
