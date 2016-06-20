@@ -19,6 +19,9 @@ public class PluginManager {
 
 	private static PluginManager mgr;
 
+	/**
+	 * constructs an instance of a plugin manager
+	 */
 	private PluginManager() {}
 	
 	/**

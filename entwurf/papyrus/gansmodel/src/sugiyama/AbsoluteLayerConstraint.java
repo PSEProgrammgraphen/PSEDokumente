@@ -24,6 +24,15 @@ public class AbsoluteLayerConstraint implements Constraint {
 	private int minLayer;
 	private int maxLayer;
 
+	/**
+	 * Constructs an AbsoluteLayerConstraint.
+	 * 
+	 * @param set set of sugiyama vertices to apply this constraint on
+	 * @param inverted invertes this constraint, if true
+	 * @param exclusive places only this set of vertices in this range of layers
+	 * @param minLayer lower bound of layer number
+	 * @param maxLayer upper bound of layer number
+	 */
 	public AbsoluteLayerConstraint(Set<SugiyamaVertex> set, boolean inverted, boolean exclusive, int minLayer, int maxLayer) { }
 
 	/* (non-Javadoc)
