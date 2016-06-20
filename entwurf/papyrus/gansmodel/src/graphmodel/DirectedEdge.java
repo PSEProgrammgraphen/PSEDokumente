@@ -62,4 +62,10 @@ public class DirectedEdge<V extends Vertex> implements Edge<V> {
 	public SerializedEdge<V> serialize() {
 		return null;
 	}
+
+	@Override
+	public OrthogonalEdgePath getPath() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
