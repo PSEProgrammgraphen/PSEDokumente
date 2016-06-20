@@ -1,6 +1,7 @@
 package graphmodel;
 
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import plugin.LayoutOption;
@@ -55,12 +56,12 @@ public interface Viewable<V extends Vertex, E extends Edge<V>> {
 	 * @return the default layout for this graph
 	 */
 	public LayoutOption getDefaultLayout();
-
+	
 	/**
 	 * Returns a {@link SerializedGraph} representation of the graph.
-	 * 
+	 * @param attributes The attributes that have to be serialized.
 	 * @return The {@link SerializedGraph} representation of the graph.
 	 */
-	public SerializedGraph serialize();
+	public SerializedGraph serialize(List<Entry<String, String>> attributes);
 	
 }
