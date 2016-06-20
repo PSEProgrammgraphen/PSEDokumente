@@ -7,7 +7,8 @@
 \entityintro{CallGraphBuilder}{joana.CallGraphBuilder}{The CallGraphBuilder implements an \texttt{\small IGraphBuilder}{\small 
 \refdefined{graphmodel.IGraphBuilder}} and builds one \texttt{\small CallGraph}{\small 
 \refdefined{joana.CallGraph}}.}
-\entityintro{CallGraphLayout}{joana.CallGraphLayout}{}
+\entityintro{CallGraphLayout}{joana.CallGraphLayout}{Offers a layout for \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}}.}
 \entityintro{CallGraphLayoutOption}{joana.CallGraphLayoutOption}{A \texttt{\small LayoutOption}{\small 
 \refdefined{plugin.LayoutOption}} which is specific for \texttt{\small CallGraph}{\small 
 \refdefined{joana.CallGraph}}.}
@@ -73,47 +74,13 @@ public CallGraph()\end{lstlisting} %end signature
 \index{collapse(Set)}
 {\bf  collapse}\\
 \begin{lstlisting}[frame=none]
-graphmodel.CompoundVertex collapse(java.util.Set subset)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
-
-Collapses a set of vertices in one compound vertex. The collapsed vertices can be expanded back into their previous state with \texttt{\small expand(CompoundVertex)}.
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{subset} -- the subset to collapse}
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
-the resulting collapsed vertex 
-}%end item
-\end{itemize}
+public graphmodel.CompoundVertex collapse(java.util.Set subset)\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{expand(CompoundVertex)}
 {\bf  expand}\\
 \begin{lstlisting}[frame=none]
-java.util.Set expand(graphmodel.CompoundVertex vertex)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
-
-Expands a collapsed vertex into its substituted set of vertices The vertices will be added back to the set of vertices of this graph. The compound vertex will be removed from the set of vertices. All to the compound vertex incident edges, will be resolved back into an edge between the vertices it connected before the collapse.
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{vertex} -- the collapsed vertex to expand}
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
-the set of vertices which was substituted by the collapsed vertex 
-}%end item
-\end{itemize}
+public java.util.Set expand(graphmodel.CompoundVertex vertex)\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{getLayerWidth(int)}
@@ -131,24 +98,7 @@ public java.util.List getSubgraphs()\end{lstlisting} %end signature
 \index{isCompound(Vertex)}
 {\bf  isCompound}\\
 \begin{lstlisting}[frame=none]
-boolean isCompound(graphmodel.Vertex vertex)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
-
-Returns true if the specified vertex is a compound vertex
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{vertex} -- the vertex to check}
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
-true if the vertex is a compound, false otherwise 
-}%end item
-\end{itemize}
+public boolean isCompound(graphmodel.Vertex vertex)\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
@@ -238,6 +188,8 @@ The \texttt{\small IVertexBuilder}{\small
 }
 \subsection{\label{joana.CallGraphLayout}\index{CallGraphLayout}Class CallGraphLayout}{
 \vskip .1in 
+Offers a layout for \texttt{\small CallGraph}{\small 
+\refdefined{joana.CallGraph}}. Groups vertices representing the same Java-Method together.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class CallGraphLayout
@@ -800,7 +752,7 @@ Get all vertices from a certain layer.
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{layerN} -- the index of the layer}
+\texttt{layerNum} -- the index of the layer}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
@@ -1270,6 +1222,16 @@ public void addLayoutOption(CallGraphLayoutOption option)\end{lstlisting} %end s
 {\bf  getLayoutOptions}\\
 \begin{lstlisting}[frame=none]
 java.util.List getLayoutOptions()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutRegister{\small \refdefined{plugin.LayoutRegister}} }
+
+Returns all available layouts for the graph associated with this register.
+}
+\item{{\bf  Returns} -- 
+the available layouts 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -1305,6 +1267,16 @@ public void addLayoutOption(MethodGraphLayoutOption option)\end{lstlisting} %end
 {\bf  getLayoutOptions}\\
 \begin{lstlisting}[frame=none]
 java.util.List getLayoutOptions()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.LayoutRegister{\small \refdefined{plugin.LayoutRegister}} }
+
+Returns all available layouts for the graph associated with this register.
+}
+\item{{\bf  Returns} -- 
+the available layouts 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -1716,47 +1688,13 @@ public MethodGraph()\end{lstlisting} %end signature
 \index{collapse(Set)}
 {\bf  collapse}\\
 \begin{lstlisting}[frame=none]
-graphmodel.CompoundVertex collapse(java.util.Set subset)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
-
-Collapses a set of vertices in one compound vertex. The collapsed vertices can be expanded back into their previous state with \texttt{\small expand(CompoundVertex)}.
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{subset} -- the subset to collapse}
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
-the resulting collapsed vertex 
-}%end item
-\end{itemize}
+public graphmodel.CompoundVertex collapse(java.util.Set subset)\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{expand(CompoundVertex)}
 {\bf  expand}\\
 \begin{lstlisting}[frame=none]
-java.util.Set expand(graphmodel.CompoundVertex vertex)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
-
-Expands a collapsed vertex into its substituted set of vertices The vertices will be added back to the set of vertices of this graph. The compound vertex will be removed from the set of vertices. All to the compound vertex incident edges, will be resolved back into an edge between the vertices it connected before the collapse.
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{vertex} -- the collapsed vertex to expand}
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
-the set of vertices which was substituted by the collapsed vertex 
-}%end item
-\end{itemize}
+public java.util.Set expand(graphmodel.CompoundVertex vertex)\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{getEntryVertex()}
@@ -1783,10 +1721,12 @@ public java.util.List getFieldAccesses()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Returns a list of all FieldAcesses in the MethodGraph.
+Returns a list of all \texttt{\small FieldAccess}{\small 
+\refdefined{joana.FieldAccess}} in the MethodGraph.
 }
 \item{{\bf  Returns} -- 
-A list of all FieldAcesses in the MethodGraph. 
+A list of all \texttt{\small FieldAccess}{\small 
+\refdefined{joana.FieldAccess}} in the MethodGraph. 
 }%end item
 \end{itemize}
 }%end item
@@ -1805,10 +1745,11 @@ public java.util.List getMethodCalls()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-Returns a list of all MethodCall in the MethodGraph.
+Returns a list of all \texttt{\small JoanaVertex}{\small 
+\refdefined{joana.JoanaVertex}} which are method calls in the MethodGraph.
 }
 \item{{\bf  Returns} -- 
-A list of all MethodCall in the MethodGraph. 
+A list of all method calls. 
 }%end item
 \end{itemize}
 }%end item
@@ -1822,24 +1763,7 @@ public java.util.List getSubgraphs()\end{lstlisting} %end signature
 \index{isCompound(Vertex)}
 {\bf  isCompound}\\
 \begin{lstlisting}[frame=none]
-boolean isCompound(graphmodel.Vertex vertex)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description copied from graphmodel.Viewable{\small \refdefined{graphmodel.Viewable}} }
-
-Returns true if the specified vertex is a compound vertex
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{vertex} -- the vertex to check}
-  \end{itemize}
-}%end item
-\item{{\bf  Returns} -- 
-true if the vertex is a compound, false otherwise 
-}%end item
-\end{itemize}
+public boolean isCompound(graphmodel.Vertex vertex)\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{setRegister(LayoutRegister)}

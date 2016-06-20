@@ -4,16 +4,16 @@
 \vskip .13in
 \hbox{{\bf  Interfaces}}
 \entityintro{ICrossMinimizer}{sugiyama.ICrossMinimizer}{This interface represents a class that takes a Sugiyama Graph and rearranges its vertices on each layer to minimize the amount of edge crossings.}
-\entityintro{ICrossMinimizerGraph}{sugiyama.ICrossMinimizerGraph}{}
+\entityintro{ICrossMinimizerGraph}{sugiyama.ICrossMinimizerGraph}{A LayeredGraph which additionally defines functions that can be used to minimize the crossings in the sugiyama-layout.}
 \entityintro{ICycleRemover}{sugiyama.ICycleRemover}{This interfaces represents a class that generates a DAG(Directed Acyclic Graph) from a \texttt{\small DirectedGraph}{\small 
 \refdefined{graphmodel.DirectedGraph}}.}
-\entityintro{ICycleRemoverGraph}{sugiyama.ICycleRemoverGraph}{}
+\entityintro{ICycleRemoverGraph}{sugiyama.ICycleRemoverGraph}{A DirectedGraph which additionally defines functions to remove cycles in the graph.}
 \entityintro{IEdgeDrawer}{sugiyama.IEdgeDrawer}{This interface represents a class that takes a directed graph, as a SugiyamaClass.}
-\entityintro{IEdgeDrawerGraph}{sugiyama.IEdgeDrawerGraph}{}
+\entityintro{IEdgeDrawerGraph}{sugiyama.IEdgeDrawerGraph}{A LayeredGraph which additionally defines functions draw the edges in the sugiyama-layout.}
 \entityintro{ILayerAssigner}{sugiyama.ILayerAssigner}{This interface represents a class that takes a directed graph and assigns every vertex in it a layer.}
-\entityintro{ILayerAssignerGraph}{sugiyama.ILayerAssignerGraph}{}
+\entityintro{ILayerAssignerGraph}{sugiyama.ILayerAssignerGraph}{A LayeredGraph which additionally defines functions to assign layers in the sugiyama-layout.}
 \entityintro{IVertexPositioner}{sugiyama.IVertexPositioner}{This interface represents a class that takes a directed graph and position its vertices in order to look more clearly.}
-\entityintro{IVertexPositionerGraph}{sugiyama.IVertexPositionerGraph}{}
+\entityintro{IVertexPositionerGraph}{sugiyama.IVertexPositionerGraph}{A LayeredGraph which additionally defines functions to position vertices in the sugiyama-layout.}
 \entityintro{LayeredLayoutAlgorithm}{sugiyama.LayeredLayoutAlgorithm}{A layout algorithm which is able to apply Layouts while keeping the notion of layers in addition to layout regular graphs.}
 \vskip .13in
 \hbox{{\bf  Classes}}
@@ -27,12 +27,12 @@
 \entityintro{SugiyamaGraph.DummyVertex}{sugiyama.SugiyamaGraph.DummyVertex}{A supplement vertex which is part of a \texttt{\small SugiyamaGraph.SupplementPath}{\small 
 \refdefined{sugiyama.SugiyamaGraph.SupplementPath}}.}
 \entityintro{SugiyamaGraph.SugiyamaEdge}{sugiyama.SugiyamaGraph.SugiyamaEdge}{A wrapper class for directed edges to implement additional functionality to apply the sugiyama layout to the SugiyamaGraph containing them.}
-\entityintro{SugiyamaGraph.SugiyamaVertex}{sugiyama.SugiyamaGraph.SugiyamaVertex}{}
+\entityintro{SugiyamaGraph.SugiyamaVertex}{sugiyama.SugiyamaGraph.SugiyamaVertex}{A wrapper class for vertices used in the sugiyama framework.}
 \entityintro{SugiyamaGraph.SupplementEdge}{sugiyama.SugiyamaGraph.SupplementEdge}{A supplement edge which is part of a \texttt{\small SugiyamaGraph.SupplementPath}{\small 
 \refdefined{sugiyama.SugiyamaGraph.SupplementPath}}.}
 \entityintro{SugiyamaGraph.SupplementPath}{sugiyama.SugiyamaGraph.SupplementPath}{A supplement path for connecting vertices, which are more than one layer apart.}
 \entityintro{SugiyamaLayoutAlgorithm}{sugiyama.SugiyamaLayoutAlgorithm}{This class supports a customizable implementation of the Sugiyama-framework.}
-\entityintro{SugiyamaPlugin}{sugiyama.SugiyamaPlugin}{}
+\entityintro{SugiyamaPlugin}{sugiyama.SugiyamaPlugin}{A plugin for GAns that supplies a layout algorithm based on the Sugiyama-framework.}
 \entityintro{VertexPositioner}{sugiyama.VertexPositioner}{This class takes a directed graph and position its vertices in order to look more clearly.}
 \vskip .1in
 \vskip .1in
@@ -73,6 +73,7 @@ Rearranges vertices in the graph argument in order to remove the amount of cross
 }
 \subsection{\label{sugiyama.ICrossMinimizerGraph}\index{ICrossMinimizerGraph@\textit{ ICrossMinimizerGraph}}Interface ICrossMinimizerGraph}{
 \vskip .1in 
+A LayeredGraph which additionally defines functions that can be used to minimize the crossings in the sugiyama-layout.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface ICrossMinimizerGraph
@@ -249,6 +250,7 @@ a set of edges whose direction has been reversed in order to remove cycles from 
 }
 \subsection{\label{sugiyama.ICycleRemoverGraph}\index{ICycleRemoverGraph@\textit{ ICycleRemoverGraph}}Interface ICycleRemoverGraph}{
 \vskip .1in 
+A DirectedGraph which additionally defines functions to remove cycles in the graph.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface ICycleRemoverGraph
@@ -341,6 +343,7 @@ Draws the edges from the graph argument and reverses the edges, which have been 
 }
 \subsection{\label{sugiyama.IEdgeDrawerGraph}\index{IEdgeDrawerGraph@\textit{ IEdgeDrawerGraph}}Interface IEdgeDrawerGraph}{
 \vskip .1in 
+A LayeredGraph which additionally defines functions draw the edges in the sugiyama-layout.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface IEdgeDrawerGraph
@@ -605,6 +608,7 @@ Reassigns the layer of vertices in case there are more than the width parameter 
 }
 \subsection{\label{sugiyama.ILayerAssignerGraph}\index{ILayerAssignerGraph@\textit{ ILayerAssignerGraph}}Interface ILayerAssignerGraph}{
 \vskip .1in 
+A LayeredGraph which additionally defines functions to assign layers in the sugiyama-layout.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface ILayerAssignerGraph
@@ -722,6 +726,7 @@ Sets absolute coordinates for every vertex in the graph. Before this step the ve
 }
 \subsection{\label{sugiyama.IVertexPositionerGraph}\index{IVertexPositionerGraph@\textit{ IVertexPositionerGraph}}Interface IVertexPositionerGraph}{
 \vskip .1in 
+A LayeredGraph which additionally defines functions to position vertices in the sugiyama-layout.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface IVertexPositionerGraph
@@ -828,6 +833,28 @@ public class AbsoluteLayerConstraint
 {\bf  AbsoluteLayerConstraint}\\
 \begin{lstlisting}[frame=none]
 public AbsoluteLayerConstraint(java.util.Set set,boolean inverted,boolean exclusive,int minLayer,int maxLayer)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Constructs an AbsoluteLayerConstraint.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{set} -- set of sugiyama vertices to apply this constraint on}
+   \item{
+\texttt{inverted} -- invertes this constraint, if true}
+   \item{
+\texttt{exclusive} -- places only this set of vertices in this range of layers}
+   \item{
+\texttt{minLayer} -- lower bound of layer number}
+   \item{
+\texttt{maxLayer} -- upper bound of layer number}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -871,6 +898,16 @@ the minimum layer
 {\bf  getName}\\
 \begin{lstlisting}[frame=none]
 java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Constraint{\small \refdefined{plugin.Constraint}} }
+
+The name of the constraint
+}
+\item{{\bf  Returns} -- 
+the name 
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getVertices()}
@@ -1177,6 +1214,26 @@ public class RelativeLayerConstraint
 {\bf  RelativeLayerConstraint}\\
 \begin{lstlisting}[frame=none]
 public RelativeLayerConstraint(java.util.Set top,java.util.Set bottom,boolean direct,int distance)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Constructs a new RelativeLayerConstraint, sets the top and bottom vertices, whether its direct and the distance.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{top} -- The top vertices.}
+   \item{
+\texttt{bottom} -- The bottom vertices.}
+   \item{
+\texttt{direct} -- True is direct, false is not direct.}
+   \item{
+\texttt{distance} -- The distance between top and bottom layer.}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -1391,6 +1448,12 @@ the list of points of the corners on the edge
 {\bf  getEdgeSet}\\
 \begin{lstlisting}[frame=none]
 public java.util.Set getEdgeSet()\end{lstlisting} %end signature
+}%end item
+\item{ 
+\index{getFastGraphAccessor()}
+{\bf  getFastGraphAccessor}\\
+\begin{lstlisting}[frame=none]
+public graphmodel.FastGraphAccessor getFastGraphAccessor()\end{lstlisting} %end signature
 }%end item
 \item{ 
 \index{getHeight()}
@@ -1787,6 +1850,9 @@ public static class SugiyamaGraph.SugiyamaEdge
 }
 \subsection{\label{sugiyama.SugiyamaGraph.SugiyamaVertex}\index{SugiyamaGraph.SugiyamaVertex}Class SugiyamaGraph.SugiyamaVertex}{
 \vskip .1in 
+A wrapper class for vertices used in the sugiyama framework. A SugiyamaVertex can be a \texttt{\small DefaultVertex}{\small 
+\refdefined{graphmodel.DefaultVertex}} or a \texttt{\small SugiyamaGraph.DummyVertex}{\small 
+\refdefined{sugiyama.SugiyamaGraph.DummyVertex}}\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public static class SugiyamaGraph.SugiyamaVertex
@@ -2106,6 +2172,7 @@ Sets the algorithm for vertex positioning used when applying the layout
 }
 \subsection{\label{sugiyama.SugiyamaPlugin}\index{SugiyamaPlugin}Class SugiyamaPlugin}{
 \vskip .1in 
+A plugin for GAns that supplies a layout algorithm based on the Sugiyama-framework.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class SugiyamaPlugin

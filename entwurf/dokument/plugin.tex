@@ -3,12 +3,11 @@
 \hbox to \hsize{\textit{ Package Contents\hfil Page}}
 \vskip .13in
 \hbox{{\bf  Interfaces}}
-\entityintro{Constraint}{plugin.Constraint}{}
+\entityintro{Constraint}{plugin.Constraint}{The most abstract interface for a constraint.}
 \entityintro{Exporter}{plugin.Exporter}{The exporter interface is implemented to export a graph from it's internal representation into a specific file.}
-\entityintro{FilterSet}{plugin.FilterSet}{A FilterSet is used to collect all available filters for a specific Graph from a workspace.}
 \entityintro{Importer}{plugin.Importer}{The importer interface is implemented when writting a class that can import files.}
 \entityintro{LayoutAlgorithm}{plugin.LayoutAlgorithm}{An implementations of LayoutAlgorithm takes a graph.}
-\entityintro{LayoutRegister}{plugin.LayoutRegister}{Stores a collection of layouts.}
+\entityintro{LayoutRegister}{plugin.LayoutRegister}{Stores a collection of layouts for a specific graph.}
 \entityintro{Plugin}{plugin.Plugin}{This is the main entry point for plugins.}
 \entityintro{Workspace}{plugin.Workspace}{A workspace contains a set of default actions and options for displaying a specific domain of graphs.}
 \vskip .13in
@@ -18,11 +17,12 @@
 \entityintro{LayoutOption}{plugin.LayoutOption}{An option for a layout of a specific graph.}
 \entityintro{PluginManager}{plugin.PluginManager}{The plugin manager manages the access of the main application to the plugins.}
 \entityintro{VertexFilter}{plugin.VertexFilter}{This Class represents a filter for vertex types.}
-\entityintro{WorkspaceOption}{plugin.WorkspaceOption}{This is an option for a}
+\entityintro{WorkspaceOption}{plugin.WorkspaceOption}{This is an option for a workspace to set and change settings on it.}
 \vskip .1in
 \vskip .1in
 \subsection{\label{plugin.Constraint}\index{Constraint@\textit{ Constraint}}Interface Constraint}{
 \vskip .1in 
+The most abstract interface for a constraint. Can later be used to achieve compatibility between constraints of different domains and layouts.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Constraint
@@ -35,6 +35,16 @@ public interface Constraint
 {\bf  getName}\\
 \begin{lstlisting}[frame=none]
 java.lang.String getName()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+The name of the constraint
+}
+\item{{\bf  Returns} -- 
+the name 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -108,73 +118,11 @@ the supported file ending.
 \end{itemize}
 }
 }
-\subsection{\label{plugin.FilterSet}\index{FilterSet@\textit{ FilterSet}}Interface FilterSet}{
-\vskip .1in 
-A FilterSet is used to collect all available filters for a specific Graph from a workspace. Just these filters will be displayed to the user for a specific graph.\vskip .1in 
-\subsubsection{Declaration}{
-\begin{lstlisting}[frame=none]
-public interface FilterSet
-\end{lstlisting}
-\subsubsection{Methods}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{getEdgeFilter()}
-{\bf  getEdgeFilter}\\
-\begin{lstlisting}[frame=none]
-java.util.List getEdgeFilter()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Returns a List of all available \texttt{\small EdgeFilter}{\small 
-\refdefined{plugin.EdgeFilter}}
-}
-\item{{\bf  Returns} -- 
-the list of EdgeFilters 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getName()}
-{\bf  getName}\\
-\begin{lstlisting}[frame=none]
-java.lang.String getName()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Gets the name of this FilterSet.
-}
-\item{{\bf  Returns} -- 
-name of this FilterSet 
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{getVertexfilter()}
-{\bf  getVertexfilter}\\
-\begin{lstlisting}[frame=none]
-java.util.List getVertexfilter()\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Returns a \texttt{\small List}{\small 
-\refdefined{java.util.List}} of all available \texttt{\small VertexFilter}{\small 
-\refdefined{plugin.VertexFilter}}.
-}
-\item{{\bf  Returns} -- 
-the list of VertexFilters 
-}%end item
-\end{itemize}
-}%end item
-\end{itemize}
-}
-}
 \subsection{\label{plugin.Importer}\index{Importer@\textit{ Importer}}Interface Importer}{
 \vskip .1in 
-The importer interface is implemented when writting a class that can import files. This will enable Plugins that import specific files to be build. The main task of a class implementing this interface is to parse a FileInputStream into the Interface of an AbstractGraphModelBuilder. The AbstractGraphModelBuilder will then build the representation.\vskip .1in 
+The importer interface is implemented when writting a class that can import files. This will enable Plugins that import specific files to be build. The main task of a class implementing this interface is to parse a FileInputStream into the Interface of an \texttt{\small IGraphModelBuilder}{\small 
+\refdefined{graphmodel.IGraphModelBuilder}}. The \texttt{\small IGraphModelBuilder}{\small 
+\refdefined{graphmodel.IGraphModelBuilder}} will then build the representation.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface Importer
@@ -223,7 +171,8 @@ void importGraph(graphmodel.IGraphModelBuilder builder,java.io.FileInputStream f
 \item{
 {\bf  Description}
 
-This method parses an FileInputStream into an AbstractGraphModelBuilder. It has to ensure that all information is transfered to a correct graphmodelbuilder.
+This method parses an FileInputStream into an \texttt{\small IGraphModelBuilder}{\small 
+\refdefined{graphmodel.IGraphModelBuilder}}. It has to ensure that all information is transfered to a correct graphmodelbuilder.
 }
 \item{
 {\bf  Parameters}
@@ -292,7 +241,7 @@ Layout the specified Graph.
 }
 \subsection{\label{plugin.LayoutRegister}\index{LayoutRegister@\textit{ LayoutRegister}}Interface LayoutRegister}{
 \vskip .1in 
-Stores a collection of layouts. This\vskip .1in 
+Stores a collection of layouts for a specific graph. This allows the client to select fitted layouts for every graph.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface LayoutRegister
@@ -305,12 +254,36 @@ public interface LayoutRegister
 {\bf  addLayoutOption}\\
 \begin{lstlisting}[frame=none]
 void addLayoutOption(LayoutOption option)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Adds a layout option to this register.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{option} -- the layout option}
+  \end{itemize}
+}%end item
+\end{itemize}
 }%end item
 \item{ 
 \index{getLayoutOptions()}
 {\bf  getLayoutOptions}\\
 \begin{lstlisting}[frame=none]
 java.util.List getLayoutOptions()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all available layouts for the graph associated with this register.
+}
+\item{{\bf  Returns} -- 
+the available layouts 
+}%end item
+\end{itemize}
 }%end item
 \end{itemize}
 }
@@ -556,7 +529,7 @@ the name of the filter
 \end{itemize}
 }%end item
 \item{ 
-\index{matches(Edge)}
+\index{matches(E)}
 {\bf  matches}\\
 \begin{lstlisting}[frame=none]
 public abstract boolean matches(graphmodel.Edge toMatch)\end{lstlisting} %end signature
@@ -927,7 +900,7 @@ Getter of name
 \end{itemize}
 }%end item
 \item{ 
-\index{matches(Vertex)}
+\index{matches(V)}
 {\bf  matches}\\
 \begin{lstlisting}[frame=none]
 public boolean matches(graphmodel.Vertex toMatch)\end{lstlisting} %end signature
@@ -967,7 +940,7 @@ Setter of name
 }
 \subsection{\label{plugin.WorkspaceOption}\index{WorkspaceOption}Class WorkspaceOption}{
 \vskip .1in 
-This is an option for a\vskip .1in 
+This is an option for a workspace to set and change settings on it.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class WorkspaceOption

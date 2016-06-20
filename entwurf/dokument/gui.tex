@@ -33,47 +33,21 @@ public class EdgeShape
 \vskip -2em
 \begin{itemize}
 \item{ 
-\index{EdgeShape(VertexShape, VertexShape)}
+\index{EdgeShape(Edge)}
 {\bf  EdgeShape}\\
 \begin{lstlisting}[frame=none]
-public EdgeShape(VertexShape vertex1,VertexShape vertex2)\end{lstlisting} %end signature
+public EdgeShape(graphmodel.Edge edge)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
-Constructor.
+Constructs a EdgeShape with the information supplied by edge. The path of the EdgeShape is set by the EdgePath of edge.
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex1} -- First of the two vertices that shall be connected.}
-   \item{
-\texttt{vertex2} -- Second of the two vertices that shall be connected.}
-  \end{itemize}
-}%end item
-\end{itemize}
-}%end item
-\item{ 
-\index{EdgeShape(VertexShape, VertexShape, String)}
-{\bf  EdgeShape}\\
-\begin{lstlisting}[frame=none]
-public EdgeShape(VertexShape vertex1,VertexShape vertex2,java.lang.String text)\end{lstlisting} %end signature
-\begin{itemize}
-\item{
-{\bf  Description}
-
-Constructor.
-}
-\item{
-{\bf  Parameters}
-  \begin{itemize}
-   \item{
-\texttt{vertex1} -- First of the two vertices that shall be connected.}
-   \item{
-\texttt{vertex2} -- Second of the two vertices that shall be connected.}
-   \item{
-\texttt{text} -- Text that will be displayed on the edge.}
+\texttt{edge} -- The Edge that supplies the information for building an EdgeShape.}
   \end{itemize}
 }%end item
 \end{itemize}
