@@ -12,10 +12,10 @@ Die Paketeinteilung der Software gliedert sich in folgende Pakete: %TODO Paketü
   \label{fig:packge_graphmodel}
 \end{figure}
 
-In dem Paket graphmodel befinden sich die Klassen die für die interne Repräsentation des Graphen benötigt werden. Die Funktionalität dieses Pakets ist es ein flexibles Graph-Modell, sowie schnellen Zugriff auf dessen Komponenten bereitzustellen.\\ 
-Zum Graph-Modell gehören Interfaces wie GraphModel, Graph, Vertex und Edge welche den groben Aufbau eines Graphen und dessen Funktionalitäten vorgeben. Das GraphModel enthält alle Graphen, welche bei einem Import aus der Datei ausgelesen wurden. Da es Kanten und somit auch Graphen gibt, welche gerichtet sind, gibt es dazu auch passende Interfaces, welche die zuvor genannten erweitern. Zusätzlich gibt es noch weitere Spezialisierungen der Interfaces, wie CompoundVertex, ein Knoten der einen Subgraphen enthält und LayeredGraph, ein Graph der noch Schichten speichert.\\
-Die genannten Interfaces sind teilweise schon implementiert. Zu diesen Klassen gehören die Default-Klassen, welche die im Interface definierten Methoden primitiv implementieren und die Serialized-Klassen, welche ein jeweiliges Element darstellt, welches einheitlich für den Export vorbereitet ist. \\
-Damit speziellere Implementierungen von Graph, Vertex oder Edge aus Plugins vom Importer einheitlich erstellt werden können gibt es die Builder-Interfaces. Sie geben eine Schnittstelle vor, über welche die speziellen Graphelemente erstellt werden können, ohne das der Importer davon etwas wissen muss.
+In dem Paket \textbf{graphmodel} befinden sich die Klassen, die für die interne Repräsentation des Graphen benötigt werden. Die Funktionalität dieses Pakets ist es ein flexibles Graph-Modell, sowie schnellen Zugriff auf dessen Komponenten bereitzustellen.\\ 
+Zum Graph-Modell gehören Interfaces wie \textbf{GraphModel}, \textbf{Graph}, \textbf{Vertex} und \textbf{Edge}, welche den groben Aufbau eines Graphen und dessen Funktionalitäten vorgeben. Das \textbf{GraphModel} enthält alle Graphen, welche bei einem Import aus der Datei ausgelesen wurden. Da es Kanten und somit auch Graphen gibt, welche gerichtet sind, gibt es dazu auch passende Interfaces, welche die zuvor genannten erweitern. Zusätzlich gibt es noch weitere Spezialisierungen der Interfaces, wie \textbf{CompoundVertex}, ein Knoten der einen Subgraphen enthält und \textbf{LayeredGraph}, ein Graph der noch Schichten speichert.\\
+Die genannten Interfaces sind teilweise schon implementiert. Zu diesen Klassen gehören die \textbf{Default}-Klassen, welche die im Interface definierten Methoden primitiv implementieren und die \textbf{Serialized}-Klassen, welche ein jeweiliges Element darstellen, welche einheitlich für den Export vorbereitet sind. \\
+Damit speziellere Implementierungen von \textbf{Graph}, \textbf{Vertex} oder \textbf{Edge} aus \textbf{Plugins} vom \textbf{Importer} einheitlich erstellt werden können gibt es die \textbf{Builder}-Interfaces. Sie geben eine Schnittstelle vor, über welche die speziellen Graphelemente erstellt werden können, ohne dass der \textbf{Importer} davon in Kenntnis gesetzt werden muss.
 
 \newpage
 
@@ -29,11 +29,11 @@ Damit speziellere Implementierungen von Graph, Vertex oder Edge aus Plugins vom 
 \end{figure}
 
 Das Paket \textbf{gui} beinhaltet die Anzeigelogik, sowie die Haupt-Applikation von GAns. Dafür werden JavaFX Komponenten verwendet, die erweitert und angepasst werden. Es werden Views und Elemente definiert, die für die Anzeige notwendig sind. Die \textbf{GAnsApplication} hat, als Klasse welche das ganze Programm aufsetzt, noch weitere Aufgaben. Sie stößt das Laden der Plugins an und behandelt zusätzlich viele Interaktionen des Benutzers mit den einzelnen GUI-Elementen(siehe SeqDiag Import, doppelklick, selection) unter anderem auch das Laden bzw. Erstellen des unterliegenden GraphModels(siehe graphmodel). Es werden verschiedene Views definiert:
-\begin{enumerate}
+\begin{itemize}[labelindent=0pt,labelwidth=\widthof{\textbf{InformationView}},itemindent=0em,leftmargin=!]
 	\item[\textbf{GraphView}] Eine View welche den gelayouteten Graphen anzeigt und dazu verschiedene Navigationsmöglichkeiten, wie Zoom, Selektion usw., anbietet. Es können mehrere GraphViews gleichzeitig geöffnet sein. Jede einzelne ist in einem eigenen Tab enthalten, zwischen denen hin und her gewechselt werden kann. Die Elemente welche in der GraphView angezeigt werden, sind \textbf{GAnsGraphElemente}. Sie bestehen aus verschiedenen JavaFX Klassen, welche einen Text und eine Farbe gesetzt bekommen können. Standardmäßig werden Rechtecke für Knoten und direkte Kanten als Kanten zwischen Knoten verwendet.
 	\item[\textbf{StructureView}] Eine TreeView, welche die geschachtelten Graphen einer importierten Datei anzeigt. Über doppelklick auf eines der Baumelemente wird der durch das Element dargestellte Graph in einer neuen GraphView angezeigt. Zum Erstellen der einzelnen Baumelemente werden normale JavaFX-Funktionalitäten verwendet.
-	\item[\textbf{InformationView}] Eine TableView, welche, je nach Selektion in der aktuell angezeigten GraphView, Informationen über die selektierten Elemente anzeigt. Jede Zeile der Tabelle enthält in der ersten Zelle den Bezeichner/Namen und in der zweiten Zelle den jeweiligen Wert der Eigenschaft aus der Selektion. Die einzelnen Zellen werden durch eine JavaFX \textbf{PropertyValueFactory} erstellt welche mit den \textbf{GAnsProperties}(siehe objectproperty) der selektierten Elemente der GraphView arbeitet.
-\end{enumerate}}
+	\item[\textbf{InformationView}] Eine TableView, welche, je nach Selektion in der aktuell angezeigten GraphView, Informationen über die selektierten Elemente anzeigt. Jede Zeile der Tabelle enthält in der ersten Zelle den Bezeichner/Namen und in der zweiten Zelle den jeweiligen Wert der Eigenschaft aus der Selektion. Die einzelnen Zellen werden durch eine JavaFX \textbf{PropertyValueFactory} erstellt welche mit den \textbf{GAnsProperties}(siehe objectproperty) der selektierten Elemente der GraphView arbeitet. 
+\end{itemize}
 
 \newpage
 
@@ -46,7 +46,7 @@ Das Paket \textbf{gui} beinhaltet die Anzeigelogik, sowie die Haupt-Applikation 
   \label{fig:packge_parameter}
 \end{figure}
 
-Diese Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plugins ihre Einstellungen an den View zu übergeben. Das selbe gilt auch für Constraints. Diese Wrapper Klassen beinhalten Methoden zur Umwandlung der jeweiligen Parameter in Zeichenketten aber auch vergleiche zum sortieren der Werte.
+Dieses Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plugins ihre Einstellungen an den View zu übergeben. Das selbe gilt auch für Constraints. Diese Wrapper Klassen beinhalten Methoden zur Umwandlung der jeweiligen Parameter in Zeichenketten aber auch vergleiche zum sortieren der Werte.
 
 \newpage
 
@@ -59,7 +59,7 @@ Diese Paket trennt parameter vom Rest. Diese speziellen Wrapper erlauben dem plu
   \label{fig:packge_graphRegex}
 \end{figure}
 
-In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach Subgraphen mithilfe von Selektoren
+In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach Subgraphen mithilfe von Selektoren. Es gibt eine \textbf{Selector} Klasse, welche die Information, welche Subgraphen selektiert werden sollen, speichert und eine \textbf{Engine}, die aus einem gegebenen Graphen die Subgraphen, welche die Beschreibung erfüllen, heraussucht und zurückgibt. Dieses Paket dient hauptsächlich als Helfer für Layoutalgorithmen, die auf diese Weise für gegebene Constraints bestimmte Subgraphen selektieren und speziell verarbeiten können.
 
 \newpage
 
@@ -85,6 +85,12 @@ Das Paket \textbf{objectproperty} bietet eine generische Eigenschaft eines Eleme
   \label{fig:packge_plugin}
 \end{figure}
 
+Das Paket \textbf{plugin} bietet Interfaces für Plugins sowie einen \textbf{PluginManager} welcher die Plugins lädt, verwaltet und zur Verfügung stellt. Klassen die Interfaces dieses Plugins implementieren müssen sich beim laden, der Klasse die \textbf{Plugin} erweitert beim \textbf{PluginManager} registriert werden, um dann vom Programm verwendet werden zu können. Es bietet somit die Möglichkeit Funktionalität von außen zu laden und somit das Programm zu erweitern. \\
+Ein \textbf{Importer} und ein \textbf{Exporter} Interface können implementiert werden um weitere File Importer oder Exporter hinzuzufügen. \\
+Ein \textbf{LayoutAlgorithm} ist in der Lage einen Graphen zu layouten. Er hat \textbf{LayoutOption}s und \textbf{Constraint}s die eingestellt werden können, um die funktionsweise des Algorithmus zu beeinflussen. Die \textbf{LayoutOption}s können dann in einem \textbf{LayoutRegister} gespeichert werden. \\
+\textbf{EdgeFilter}, \textbf{VertexFilter} und \textbf{FilterSet} erlauben es Plugins Filter für Kanten und Knoten zu definieren die bei Layouten und Darstellung unbeachtet bleiben. \\
+\textbf{Workspace}s beschreiben eine Arbeitssituation in der spezifische Graphtypen verarbeitet werden können. Ein Beispiel hierfür ist der \textbf{JoanaWorkspace} im \textbf{joana} Paket. Ein Workspace definiert, welche Dateien mit welchem Importer importiert werden und ermöglicht so das öffnen spezifischer Graphtypen welche in generischen Formaten wie graphml gespeichert werden können. Dieses kann wiederum über \textbf{WorkspaceOption}s eingestellt werden.\\
+
 \newpage
 
 \section{sugiyama}
@@ -97,7 +103,7 @@ Das Paket \textbf{objectproperty} bietet eine generische Eigenschaft eines Eleme
 \end{figure}
 
 Das Paket \textbf{sugiyama} bietet neben einer Implementierung des Sugiyama-Frameworks zum hierarchischen layouten eines gerichteten Graphen Schnittstellen zum ändern und austauschen einzelner Phasen dieses Frameworks.\\
-Die fünf Phasen des Sugiyama-Frameworks Kreise entfernen, Lagenzuordnung, Kreuzungsminimierung, Knotenpositionierung und Kantenzeichnen werden in dieser Reihenfolge durchlaufen und durch einen \textbf{SugiyamaLayoutAlgorithm} verwaltet und gesteuert. Die Klassen, die diese Schritte darstellen \textbf{CycleRemover}, \textbf{LayerAssigner}, \textbf{CrossMinimizer}, \textbf{VertexPositioner} und \textbf{EdgeDrawer} arbeiten auf einem \textbf{SugiyamaGraph}, welcher den zu layoutenden Graphen repräsentiert.\\
+Die fünf Phasen des Sugiyama-Frameworks: Kreise entfernen, Lagenzuordnung, Kreuzungsminimierung, Knotenpositionierung und Kantenzeichnen werden in dieser Reihenfolge durchlaufen und durch einen \textbf{SugiyamaLayoutAlgorithm} verwaltet und gesteuert. Die Klassen, die diese Schritte darstellen \textbf{CycleRemover}, \textbf{LayerAssigner}, \textbf{CrossMinimizer}, \textbf{VertexPositioner} und \textbf{EdgeDrawer} arbeiten auf einem \textbf{SugiyamaGraph}, welcher den zu layoutenden Graphen repräsentiert. Hierzu implementiert er die jeweiligen Interfaces, die diese Schritte fordern.\\
 In der ersten Phase werden die Zykel des Graphen entfernt, indem die Richtungen einer minimalen Kantenmenge umgekehrt wird.\\
 Anschließend wird jedem Knoten eine Lage zugewiesen, welche abhängig von der Anzahl der ein- und ausgehenden Kanten des Knotens, sowie der Länge des kürzesten Pfades des Knotens zu einem Knoten aus der ersten Lage ist. Zudem werden, falls eine Kante zwischen zwei Knoten mindestens eine Lage überspringt, in jede dieser Lagen ein \textbf{DummyVertex} ein.\\
 In der dritten Phase wird die Anzahl der Kantenkreuzungen minimiert. Dazu werden jeweils in zwei aneinanderliegenden Lagen die Knoten beider Lagen umgeordnet.\\

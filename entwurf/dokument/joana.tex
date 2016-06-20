@@ -659,10 +659,26 @@ Adds additional data to this edge. The specific EdgeBuilder implementation needs
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{keyname} -- }
+\texttt{keyname} -- Name of the attribute}
    \item{
-\texttt{value} -- }
+\texttt{value} -- Value of the attribute}
   \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{build()}
+{\bf  build}\\
+\begin{lstlisting}[frame=none]
+graphmodel.Edge build()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.IEdgeBuilder{\small \refdefined{graphmodel.IEdgeBuilder}} }
+
+. Builds an Edge with the given Data and returns it.
+}
+\item{{\bf  Returns} -- 
+The Edge that is being build by the IEdgeBuilder 
 }%end item
 \end{itemize}
 }%end item
@@ -681,9 +697,9 @@ Sets source and target vertices of the edge build by this.
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{source} -- String represantation of the source vertex}
+\texttt{source} -- String representation of the source vertex as ID}
    \item{
-\texttt{target} -- String represantation of the target vertex}
+\texttt{target} -- String representation of the target vertex as ID}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -1118,6 +1134,40 @@ the list of provided edge filter
 \end{itemize}
 }%end item
 \item{ 
+\index{getExporter()}
+{\bf  getExporter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getExporter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Returns all by the plugin provided \texttt{\small Exporter}{\small 
+\refdefined{plugin.Exporter}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+a list of provided exporter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getImporter()}
+{\bf  getImporter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getImporter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Returns all by the plugin provided \texttt{\small Importer}{\small 
+\refdefined{plugin.Importer}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+a list of provided importer 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{getMethodGraphLayoutRegister()}
 {\bf  getMethodGraphLayoutRegister}\\
 \begin{lstlisting}[frame=none]
@@ -1471,20 +1521,20 @@ public JoanaVertexBuilder()\end{lstlisting} %end signature
 \index{addData(String, String)}
 {\bf  addData}\\
 \begin{lstlisting}[frame=none]
-void addData(java.lang.String value,java.lang.String keyname)\end{lstlisting} %end signature
+void addData(java.lang.String keyname,java.lang.String value)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description copied from graphmodel.IVertexBuilder{\small \refdefined{graphmodel.IVertexBuilder}} }
 
-Add Data to this Vertex. The vertexBuilder decides which kind of data it is and where to save in the concrete Vertex.
+Add Data to this Vertex. The IVertexBuilder needs to parse the data and add it to the edge
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{value} -- }
+\texttt{keyname} -- Name of the attribute which is added}
    \item{
-\texttt{keyname} -- }
+\texttt{value} -- Value of the attribute}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -1498,10 +1548,10 @@ graphmodel.Vertex build()\end{lstlisting} %end signature
 \item{
 {\bf  Description copied from graphmodel.IVertexBuilder{\small \refdefined{graphmodel.IVertexBuilder}} }
 
-This method builds the concrete Vertex and returns it.
+. Builds a Vertex with the given Data and returns it.
 }
 \item{{\bf  Returns} -- 
-Vertex 
+The Vertex that is being build by the IVertexBuilder 
 }%end item
 \end{itemize}
 }%end item
@@ -1520,11 +1570,32 @@ This method returns an specific GraphBuilder. This method is used to implement n
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{graphID} -- }
+\texttt{graphID} -- The id of the graph which associated \texttt{\small IGraphBuilder}{\small 
+\refdefined{graphmodel.IGraphBuilder}} will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The IGraphBuilder of the graph which is referenced over the graphID. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setID(String)}
+{\bf  setID}\\
+\begin{lstlisting}[frame=none]
+void setID(java.lang.String id)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from graphmodel.IVertexBuilder{\small \refdefined{graphmodel.IVertexBuilder}} }
+
+Sets the ID of the vertex build by this.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{id} -- value to which the id is set}
+  \end{itemize}
 }%end item
 \end{itemize}
 }%end item

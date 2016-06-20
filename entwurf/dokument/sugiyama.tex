@@ -21,7 +21,6 @@
 \entityintro{CrossMinimizer}{sugiyama.CrossMinimizer}{This class takes a Sugiyama Graph and rearranges its vertices on each layer to minimize the amount of edge crossings.}
 \entityintro{CycleRemover}{sugiyama.CycleRemover}{This class takes a directed Graph G = (V, E) and removes a set of edges E\_\ so that the resulting Graph G' = (V, E\textbackslash E\_) is a DAG(Directed Acyclic Graph).}
 \entityintro{EdgeDrawer}{sugiyama.EdgeDrawer}{This class takes a directed graph, as a SugiyamaClass.}
-\entityintro{IEdgeDrawerGraph.Point}{sugiyama.IEdgeDrawerGraph.Point}{This class is a standard immutable 2D Vector with integer values as it's components.}
 \entityintro{LayerAssigner}{sugiyama.LayerAssigner}{This class takes a directed graph and assigns every vertex in it a layer.}
 \entityintro{RelativeLayerConstraint}{sugiyama.RelativeLayerConstraint}{A relative constraint, regarding layer assignment, between to sets of vertices.}
 \entityintro{SugiyamaGraph}{sugiyama.SugiyamaGraph}{The SugiyamaGraph is a wrapper for a directed graph to enable easy and fast accessibility of attributes and constructs needed during the computation of the hierarchical layout of a directed graph.}
@@ -1055,37 +1054,6 @@ Draws the edges from the graph argument and reverses the edges, which have been 
   \end{itemize}
 }%end item
 \end{itemize}
-}%end item
-\end{itemize}
-}
-}
-\subsection{\label{sugiyama.IEdgeDrawerGraph.Point}\index{IEdgeDrawerGraph.Point}Class IEdgeDrawerGraph.Point}{
-\vskip .1in 
-This class is a standard immutable 2D Vector with integer values as it's components.\vskip .1in 
-\subsubsection{Declaration}{
-\begin{lstlisting}[frame=none]
-public static class IEdgeDrawerGraph.Point
- extends java.lang.Object\end{lstlisting}
-\subsubsection{Fields}{
-\begin{itemize}
-\item{
-\index{x}
-\label{sugiyama.IEdgeDrawerGraph.Point.x}\texttt{public final int\ {\bf  x}}
-}
-\item{
-\index{y}
-\label{sugiyama.IEdgeDrawerGraph.Point.y}\texttt{public final int\ {\bf  y}}
-}
-\end{itemize}
-}
-\subsubsection{Constructors}{
-\vskip -2em
-\begin{itemize}
-\item{ 
-\index{Point(int, int)}
-{\bf  Point}\\
-\begin{lstlisting}[frame=none]
-public Point(int x,int y)\end{lstlisting} %end signature
 }%end item
 \end{itemize}
 }
@@ -2170,6 +2138,40 @@ Returns all by the plugin provided \texttt{\small EdgeFilter}{\small
 }
 \item{{\bf  Returns} -- 
 the list of provided edge filter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getExporter()}
+{\bf  getExporter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getExporter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Returns all by the plugin provided \texttt{\small Exporter}{\small 
+\refdefined{plugin.Exporter}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+a list of provided exporter 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getImporter()}
+{\bf  getImporter}\\
+\begin{lstlisting}[frame=none]
+java.util.List getImporter()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from plugin.Plugin{\small \refdefined{plugin.Plugin}} }
+
+Returns all by the plugin provided \texttt{\small Importer}{\small 
+\refdefined{plugin.Importer}}. If none are provided returns \texttt{\small null} or an empty list.
+}
+\item{{\bf  Returns} -- 
+a list of provided importer 
 }%end item
 \end{itemize}
 }%end item

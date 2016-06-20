@@ -1,6 +1,7 @@
 package graphmodel;
 
 import java.util.List;
+import java.util.Map.Entry;
 
 import objectproperty.GAnsProperty;
 
@@ -59,7 +60,7 @@ public class DirectedEdge<V extends Vertex> implements Edge<V> {
 	}
 
 	@Override
-	public SerializedEdge<V> serialize() {
+	public SerializedEdge<V> serialize(List<Entry<String, String>> attributes) {
 		return null;
 	}
 

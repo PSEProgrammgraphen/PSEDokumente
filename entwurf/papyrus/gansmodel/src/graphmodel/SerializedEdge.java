@@ -2,6 +2,7 @@ package graphmodel;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * A serialized version of a {@link Edge}.
@@ -50,7 +51,7 @@ public class SerializedEdge<V extends Vertex> implements Edge<V> {
 	}
 
 	@Override
-	public SerializedEdge serialize() {
+	public SerializedEdge serialize(List<Entry<String, String>> attributes) {
 		return this;
 	}
 

@@ -9,10 +9,10 @@
 \refdefined{graphmodel.DirectedEdge}} as edges}
 \entityintro{Edge}{graphmodel.Edge}{This edge interface specifies an edge.}
 \entityintro{Graph}{graphmodel.Graph}{This graph interface specifies a graph.}
-\entityintro{IEdgeBuilder}{graphmodel.IEdgeBuilder}{An abstract interface, which is used to build a edge.}
+\entityintro{IEdgeBuilder}{graphmodel.IEdgeBuilder}{An abstract interface, which is used to build one edge.}
 \entityintro{IGraphBuilder}{graphmodel.IGraphBuilder}{An abstract interface, which is used to build a graph.}
 \entityintro{IGraphModelBuilder}{graphmodel.IGraphModelBuilder}{An abstract interface, which is used to build a graphmodel.}
-\entityintro{IVertexBuilder}{graphmodel.IVertexBuilder}{An abstract interface, which is used to build a vertex.}
+\entityintro{IVertexBuilder}{graphmodel.IVertexBuilder}{An abstract interface, which is used to build one vertex.}
 \entityintro{LayeredGraph}{graphmodel.LayeredGraph}{}
 \entityintro{Vertex}{graphmodel.Vertex}{This vertex interface specifies a vertex.}
 \entityintro{Viewable}{graphmodel.Viewable}{}
@@ -30,9 +30,15 @@
 \entityintro{DirectedGraphLayoutRegister}{graphmodel.DirectedGraphLayoutRegister}{A \texttt{\small LayoutRegister}{\small 
 \refdefined{plugin.LayoutRegister}} which is specific for \texttt{\small DirectedGraphLayoutOption}{\small 
 \refdefined{graphmodel.DirectedGraphLayoutOption}}.}
-\entityintro{FastGraphAccessor}{graphmodel.FastGraphAccessor}{}
+\entityintro{EdgePath}{graphmodel.EdgePath}{An abstract super class for edge paths.}
+\entityintro{EdgePath.Point}{graphmodel.EdgePath.Point}{This class is a standard immutable 2D Vector with integer values as it's components.}
+\entityintro{FastGraphAccessor}{graphmodel.FastGraphAccessor}{This class provides a fast lookup of \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} and \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} for a given Attribute value pair without traversing a \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}}.}
 \entityintro{GraphModel}{graphmodel.GraphModel}{A GraphModel contains one or more graphs.}
 \entityintro{Group}{graphmodel.Group}{This class allows to collect an amount of vertices.}
+\entityintro{OrthogonalEdgePath}{graphmodel.OrthogonalEdgePath}{An orthogonal edge path used as standard graphical edge representation.}
 \entityintro{SerializedEdge}{graphmodel.SerializedEdge}{A serialized version of a \texttt{\small Edge}{\small 
 \refdefined{graphmodel.Edge}}.}
 \entityintro{SerializedGraph}{graphmodel.SerializedGraph}{A serialized version of a \texttt{\small Graph}{\small 
@@ -285,6 +291,23 @@ The name of the edge.
 \end{itemize}
 }%end item
 \item{ 
+\index{getPath()}
+{\bf  getPath}\\
+\begin{lstlisting}[frame=none]
+EdgePath getPath()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns the \texttt{\small EdgePath}{\small 
+\refdefined{graphmodel.EdgePath}} of the edge. The edge path is attached to the edge and cannot be replaced.
+}
+\item{{\bf  Returns} -- 
+the edge path 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{getVertices()}
 {\bf  getVertices}\\
 \begin{lstlisting}[frame=none]
@@ -447,7 +470,7 @@ A set of all vertices of the graph.
 }
 \subsection{\label{graphmodel.IEdgeBuilder}\index{IEdgeBuilder@\textit{ IEdgeBuilder}}Interface IEdgeBuilder}{
 \vskip .1in 
-An abstract interface, which is used to build a edge.\vskip .1in 
+An abstract interface, which is used to build one edge.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface IEdgeBuilder
@@ -470,10 +493,26 @@ Adds additional data to this edge. The specific EdgeBuilder implementation needs
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{keyname} -- }
+\texttt{keyname} -- Name of the attribute}
    \item{
-\texttt{value} -- }
+\texttt{value} -- Value of the attribute}
   \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{build()}
+{\bf  build}\\
+\begin{lstlisting}[frame=none]
+Edge build()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+. Builds an Edge with the given Data and returns it.
+}
+\item{{\bf  Returns} -- 
+The Edge that is being build by the IEdgeBuilder 
 }%end item
 \end{itemize}
 }%end item
@@ -492,9 +531,9 @@ Sets source and target vertices of the edge build by this.
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{source} -- String represantation of the source vertex}
+\texttt{source} -- String representation of the source vertex as ID}
    \item{
-\texttt{target} -- String represantation of the target vertex}
+\texttt{target} -- String representation of the target vertex as ID}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -670,7 +709,7 @@ The IGraphBuilder of the graph which is referenced over the graphID.
 }
 \subsection{\label{graphmodel.IVertexBuilder}\index{IVertexBuilder@\textit{ IVertexBuilder}}Interface IVertexBuilder}{
 \vskip .1in 
-An abstract interface, which is used to build a vertex.\vskip .1in 
+An abstract interface, which is used to build one vertex.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface IVertexBuilder
@@ -682,20 +721,20 @@ public interface IVertexBuilder
 \index{addData(String, String)}
 {\bf  addData}\\
 \begin{lstlisting}[frame=none]
-void addData(java.lang.String value,java.lang.String keyname)\end{lstlisting} %end signature
+void addData(java.lang.String keyname,java.lang.String value)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
 {\bf  Description}
 
-Add Data to this Vertex. The vertexBuilder decides which kind of data it is and where to save in the concrete Vertex.
+Add Data to this Vertex. The IVertexBuilder needs to parse the data and add it to the edge
 }
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{value} -- }
+\texttt{keyname} -- Name of the attribute which is added}
    \item{
-\texttt{keyname} -- }
+\texttt{value} -- Value of the attribute}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -709,10 +748,10 @@ Vertex build()\end{lstlisting} %end signature
 \item{
 {\bf  Description}
 
-This method builds the concrete Vertex and returns it.
+. Builds a Vertex with the given Data and returns it.
 }
 \item{{\bf  Returns} -- 
-Vertex 
+The Vertex that is being build by the IVertexBuilder 
 }%end item
 \end{itemize}
 }%end item
@@ -731,11 +770,32 @@ This method returns an specific GraphBuilder. This method is used to implement n
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{graphID} -- }
+\texttt{graphID} -- The id of the graph which associated \texttt{\small IGraphBuilder}{\small 
+\refdefined{graphmodel.IGraphBuilder}} will be returned.}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+The IGraphBuilder of the graph which is referenced over the graphID. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{setID(String)}
+{\bf  setID}\\
+\begin{lstlisting}[frame=none]
+void setID(java.lang.String id)\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Sets the ID of the vertex build by this.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{id} -- value to which the id is set}
+  \end{itemize}
 }%end item
 \end{itemize}
 }%end item
@@ -1727,6 +1787,23 @@ The name of the edge.
 \end{itemize}
 }%end item
 \item{ 
+\index{getPath()}
+{\bf  getPath}\\
+\begin{lstlisting}[frame=none]
+EdgePath getPath()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
+
+Returns the \texttt{\small EdgePath}{\small 
+\refdefined{graphmodel.EdgePath}} of the edge. The edge path is attached to the edge and cannot be replaced.
+}
+\item{{\bf  Returns} -- 
+the edge path 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
 \index{getSource()}
 {\bf  getSource}\\
 \begin{lstlisting}[frame=none]
@@ -1879,8 +1956,102 @@ java.util.List getLayoutOptions()\end{lstlisting} %end signature
 \end{itemize}
 }
 }
+\subsection{\label{graphmodel.EdgePath}\index{EdgePath}Class EdgePath}{
+\vskip .1in 
+An abstract super class for edge paths. Contains basic information every edge path must provide.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public abstract class EdgePath
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{All known subclasses}{OrthogonalEdgePath\small{\refdefined{graphmodel.OrthogonalEdgePath}}}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{EdgePath()}
+{\bf  EdgePath}\\
+\begin{lstlisting}[frame=none]
+public EdgePath()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getNodes()}
+{\bf  getNodes}\\
+\begin{lstlisting}[frame=none]
+public abstract java.util.List getNodes()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns all nodes the edge has to pass through. In the order it has to pass through them.
+}
+\item{{\bf  Returns} -- 
+the list of nodes 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSegmentsCount()}
+{\bf  getSegmentsCount}\\
+\begin{lstlisting}[frame=none]
+public abstract int getSegmentsCount()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Returns out of how many segments the path consists.
+}
+\item{{\bf  Returns} -- 
+the number of segments 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.EdgePath.Point}\index{EdgePath.Point}Class EdgePath.Point}{
+\vskip .1in 
+This class is a standard immutable 2D Vector with integer values as it's components.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class EdgePath.Point
+ extends java.lang.Object\end{lstlisting}
+\subsubsection{Fields}{
+\begin{itemize}
+\item{
+\index{x}
+\label{graphmodel.EdgePath.Point.x}\texttt{public final int\ {\bf  x}}
+}
+\item{
+\index{y}
+\label{graphmodel.EdgePath.Point.y}\texttt{public final int\ {\bf  y}}
+}
+\end{itemize}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Point(int, int)}
+{\bf  Point}\\
+\begin{lstlisting}[frame=none]
+public Point(int x,int y)\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+}
 \subsection{\label{graphmodel.FastGraphAccessor}\index{FastGraphAccessor}Class FastGraphAccessor}{
 \vskip .1in 
+This class provides a fast lookup of \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} and \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} for a given Attribute value pair without traversing a \texttt{\small Graph}{\small 
+\refdefined{graphmodel.Graph}}. FastGraphAccessor is a helper class for looking up all \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} and \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} that have a specific value for a specific attribute. To achieve this all elements of a Graph need to add their attributes and values to a FastGraphAccessor. These values are not linked to the origin values so the fastGraphAccessor needs to be updated after changes when needed for following steps. This should be done by reverting and adding the values again.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FastGraphAccessor
@@ -1906,33 +2077,45 @@ public FastGraphAccessor()\end{lstlisting} %end signature
 public void addEdgeForAttribute(java.lang.String name,Edge edge,int value)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
+{\bf  Description}
+
+Adds an \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} for a given attribute with a given value.
+}
+\item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{name} -- }
+\texttt{name} -- name of the attribute}
    \item{
-\texttt{edge} -- }
+\texttt{value} -- value of the attribute}
    \item{
-\texttt{value} -- }
+\texttt{edge} -- edge that has this value for the given attribute}
   \end{itemize}
 }%end item
 \end{itemize}
 }%end item
 \item{ 
-\index{addEdgeForAttribute(String, Edge, String)}
+\index{addEdgeForAttribute(String, String, Edge)}
 {\bf  addEdgeForAttribute}\\
 \begin{lstlisting}[frame=none]
-public void addEdgeForAttribute(java.lang.String name,Edge edge,java.lang.String value)\end{lstlisting} %end signature
+public void addEdgeForAttribute(java.lang.String name,java.lang.String value,Edge edge)\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+Adds an \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} for a given attribute with a given value.
+}
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{name} -- }
+\texttt{name} -- name of the attribute}
    \item{
-\texttt{edge} -- }
+\texttt{value} -- value of the attribute}
    \item{
-\texttt{value} -- }
+\texttt{edge} -- edge that has this value for the given attribute}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -1944,14 +2127,20 @@ public void addEdgeForAttribute(java.lang.String name,Edge edge,java.lang.String
 public void addVertexForAttribute(Vertex vertex,java.lang.String value,int name)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
+{\bf  Description}
+
+adds an \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} for a given attribute with a given value
+}
+\item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{name} -- name of the attribute}
    \item{
-\texttt{value} -- }
+\texttt{value} -- value of the attribute}
    \item{
-\texttt{name} -- }
+\texttt{vertex} -- vertex that has this value for the given attribute}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -1963,14 +2152,20 @@ public void addVertexForAttribute(Vertex vertex,java.lang.String value,int name)
 public void addVertexForAttribute(Vertex vertex,java.lang.String value,java.lang.String name)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
+{\bf  Description}
+
+adds an \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} for a given attribute with a given value
+}
+\item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{vertex} -- }
+\texttt{name} -- name of the attribute}
    \item{
-\texttt{value} -- }
+\texttt{value} -- value of the attribute}
    \item{
-\texttt{name} -- }
+\texttt{vertex} -- vertex that has this value for the given attribute}
   \end{itemize}
 }%end item
 \end{itemize}
@@ -1979,19 +2174,29 @@ public void addVertexForAttribute(Vertex vertex,java.lang.String value,java.lang
 \index{getEdgesByAttribute(String, int)}
 {\bf  getEdgesByAttribute}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getEdgesByAttribute(java.lang.String value,int name)\end{lstlisting} %end signature
+public java.util.List getEdgesByAttribute(java.lang.String name,int value)\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+gets a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} that contains all \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} that have the value for given attribute
+}
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{value} -- }
+\texttt{name} -- name of the attribute}
    \item{
-\texttt{name} -- }
+\texttt{value} -- value of the attribute}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} that has the value for given attribute 
 }%end item
 \end{itemize}
 }%end item
@@ -1999,19 +2204,28 @@ public java.util.List getEdgesByAttribute(java.lang.String value,int name)\end{l
 \index{getEdgesByAttribute(String, String)}
 {\bf  getEdgesByAttribute}\\
 \begin{lstlisting}[frame=none]
-public java.util.List getEdgesByAttribute(java.lang.String value,java.lang.String name)\end{lstlisting} %end signature
+public java.util.List getEdgesByAttribute(java.lang.String name,java.lang.String value)\end{lstlisting} %end signature
 \begin{itemize}
+\item{
+{\bf  Description}
+
+gets a List of \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} that contains all \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} that have the value for given attribute
+}
 \item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{value} -- }
+\texttt{name} -- name of the attribute}
    \item{
-\texttt{name} -- }
+\texttt{value} -- value of the attribute}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of \texttt{\small Edge}{\small 
+\refdefined{graphmodel.Edge}} that has tthe value for given attribute 
 }%end item
 \end{itemize}
 }%end item
@@ -2022,16 +2236,26 @@ public java.util.List getEdgesByAttribute(java.lang.String value,java.lang.Strin
 public java.util.List getVerticesByAttribute(java.lang.String name,int value)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
+{\bf  Description}
+
+gets a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} that contains all \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} that have the value for given attribut
+}
+\item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{name} -- }
+\texttt{name} -- name of the attribute}
    \item{
-\texttt{value} -- }
+\texttt{value} -- value of the attribute}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} that has the value for given attribute 
 }%end item
 \end{itemize}
 }%end item
@@ -2042,16 +2266,26 @@ public java.util.List getVerticesByAttribute(java.lang.String name,int value)\en
 public java.util.List getVerticesByAttribute(java.lang.String name,java.lang.String value)\end{lstlisting} %end signature
 \begin{itemize}
 \item{
+{\bf  Description}
+
+gets a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} that contains all \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} that have the value for given attribut
+}
+\item{
 {\bf  Parameters}
   \begin{itemize}
    \item{
-\texttt{name} -- }
+\texttt{name} -- name of the attribute}
    \item{
-\texttt{value} -- }
+\texttt{value} -- value of the attribute}
   \end{itemize}
 }%end item
 \item{{\bf  Returns} -- 
- 
+a \texttt{\small List}{\small 
+\refdefined{java.util.List}} of \texttt{\small Vertex}{\small 
+\refdefined{graphmodel.Vertex}} that has the value for given attribute 
 }%end item
 \end{itemize}
 }%end item
@@ -2060,13 +2294,20 @@ public java.util.List getVerticesByAttribute(java.lang.String name,java.lang.Str
 {\bf  reset}\\
 \begin{lstlisting}[frame=none]
 public void reset()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Deletes all data in this FastGraphAccessor. After this step all the information needs to be readded to this. This is necessary when updating the FastGraphAccessor
+}
+\end{itemize}
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{graphmodel.GraphModel}\index{GraphModel}Class GraphModel}{
 \vskip .1in 
-A GraphModel contains one or more graphs. It is used to save nested or hierachical graphs in one class.\vskip .1in 
+A GraphModel contains one or more graphs. It is used to save nested or hierarchical graphs in one class.\vskip .1in 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public abstract class GraphModel
@@ -2164,6 +2405,62 @@ Removes the vertex argument from this Group.
    \item{
 \texttt{vertex} -- vertex to remove from this Group}
   \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{graphmodel.OrthogonalEdgePath}\index{OrthogonalEdgePath}Class OrthogonalEdgePath}{
+\vskip .1in 
+An orthogonal edge path used as standard graphical edge representation.\vskip .1in 
+\subsubsection{Declaration}{
+\begin{lstlisting}[frame=none]
+public class OrthogonalEdgePath
+ extends graphmodel.EdgePath\end{lstlisting}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{OrthogonalEdgePath()}
+{\bf  OrthogonalEdgePath}\\
+\begin{lstlisting}[frame=none]
+public OrthogonalEdgePath()\end{lstlisting} %end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getNodes()}
+{\bf  getNodes}\\
+\begin{lstlisting}[frame=none]
+public abstract java.util.List getNodes()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from EdgePath{\small \refdefined{graphmodel.EdgePath}} }
+
+Returns all nodes the edge has to pass through. In the order it has to pass through them.
+}
+\item{{\bf  Returns} -- 
+the list of nodes 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getSegmentsCount()}
+{\bf  getSegmentsCount}\\
+\begin{lstlisting}[frame=none]
+public abstract int getSegmentsCount()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from EdgePath{\small \refdefined{graphmodel.EdgePath}} }
+
+Returns out of how many segments the path consists.
+}
+\item{{\bf  Returns} -- 
+the number of segments 
 }%end item
 \end{itemize}
 }%end item
@@ -2289,6 +2586,23 @@ Returns the name of the edge.
 }
 \item{{\bf  Returns} -- 
 The name of the edge. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getPath()}
+{\bf  getPath}\\
+\begin{lstlisting}[frame=none]
+EdgePath getPath()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description copied from Edge{\small \refdefined{graphmodel.Edge}} }
+
+Returns the \texttt{\small EdgePath}{\small 
+\refdefined{graphmodel.EdgePath}} of the edge. The edge path is attached to the edge and cannot be replaced.
+}
+\item{{\bf  Returns} -- 
+the edge path 
 }%end item
 \end{itemize}
 }%end item
