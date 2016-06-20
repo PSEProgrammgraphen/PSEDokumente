@@ -2,7 +2,7 @@
 \label{ch:entwurfsmuster}
 
 \section{Parameterklassen Visitor Pattern}
-In den Klassen (referenz) wird ein Visitor Pattern verwendet um bei Änderungen der Werte auch direkte Änderungen in der GUI zu erhalten. %TODO: mehr
+In den Parameterklassen wird ein Visitor Pattern verwendet um bei Änderungen der Werte auch direkte Änderungen in der GUI zu erhalten und umgekehrt. Die zum textspezifischen Parameter passende Funktion des Visitors wird per Double Dispatch vom Parameter aufgerufen. In dieser Funktion kann der Visitor nun Änderungen am Parameter machen, oder ihn Auslesen. In der GUI ist ein solcher Visitor implementiert. Er liest mehrere Parameter aus und erstellt passend zu den Typen und Werten der Parameter einen Dialog, welcher genau Elemente beinhaltet, mit denen man die Werte der Parameter anpassen/editieren kann. Wurde ein Wert im Dialog geändert wird dieser im passenden Parameter gesetzt. Deshalb werden die Parameterklassen zum dynamischen Erstellen von Einstellungsdialogen für Layouts und/oder Constraints verwendet.
 
 \section{Plugins}
 Durch Plugin soll eine einfache Erweiterung des Programmes möglich gemacht werden. Dafür werden Schnittstellen zur Verfügung gestellt welche zu jeder Zeit erweitert werden können.

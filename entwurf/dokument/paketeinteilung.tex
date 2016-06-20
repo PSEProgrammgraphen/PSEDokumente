@@ -4,7 +4,7 @@
 Die Paketeinteilung der Software gliedert sich in folgende Pakete: %TODO Paketübersicht
 
 \section{graphmodel}
-
+\label{sec:graphmodel}
 \begin{figure}[hb]
   \centering
   \includegraphics[width=380pt]{resourcen/graphmodel.pdf}
@@ -28,11 +28,11 @@ Damit speziellere Implementierungen von \textbf{Graph}, \textbf{Vertex} oder \te
   \label{fig:packge_gui}
 \end{figure}
 
-Das Paket \textbf{gui} beinhaltet die Anzeigelogik, sowie die Haupt-Applikation von GAns. Dafür werden JavaFX Komponenten verwendet, die erweitert und angepasst werden. Es werden Views und Elemente definiert, die für die Anzeige notwendig sind. Die \textbf{GAnsApplication} hat, als Klasse welche das ganze Programm aufsetzt, noch weitere Aufgaben. Sie stößt das Laden der Plugins an und behandelt zusätzlich viele Interaktionen des Benutzers mit den einzelnen GUI-Elementen(siehe SeqDiag Import, doppelklick, selection) unter anderem auch das Laden bzw. Erstellen des unterliegenden GraphModels(siehe graphmodel). Es werden verschiedene Views definiert:
+Das Paket \textbf{gui} beinhaltet die Anzeigelogik, sowie die Haupt-Applikation von GAns. Dafür werden JavaFX Komponenten verwendet, die erweitert und angepasst werden. Es werden Views und Elemente definiert, die für die Anzeige notwendig sind. Die \textbf{GAnsApplication} hat, als Klasse welche das ganze Programm aufsetzt, noch weitere Aufgaben. Sie stößt das Laden der Plugins an und behandelt zusätzlich viele Interaktionen des Benutzers mit den einzelnen GUI-Elementen unter anderem auch das Laden bzw. Erstellen des unterliegenden GraphModels(siehe \ref{sec:graphmodel}). Es werden verschiedene Views definiert:
 \begin{itemize}[labelindent=0pt,labelwidth=\widthof{\textbf{InformationView}},itemindent=0em,leftmargin=!]
 	\item[\textbf{GraphView}] Eine View welche den gelayouteten Graphen anzeigt und dazu verschiedene Navigationsmöglichkeiten, wie Zoom, Selektion usw., anbietet. Es können mehrere GraphViews gleichzeitig geöffnet sein. Jede einzelne ist in einem eigenen Tab enthalten, zwischen denen hin und her gewechselt werden kann. Die Elemente welche in der GraphView angezeigt werden, sind \textbf{GAnsGraphElemente}. Sie bestehen aus verschiedenen JavaFX Klassen, welche einen Text und eine Farbe gesetzt bekommen können. Standardmäßig werden Rechtecke für Knoten und direkte Kanten als Kanten zwischen Knoten verwendet.
 	\item[\textbf{StructureView}] Eine TreeView, welche die geschachtelten Graphen einer importierten Datei anzeigt. Über doppelklick auf eines der Baumelemente wird der durch das Element dargestellte Graph in einer neuen GraphView angezeigt. Zum Erstellen der einzelnen Baumelemente werden normale JavaFX-Funktionalitäten verwendet.
-	\item[\textbf{InformationView}] Eine TableView, welche, je nach Selektion in der aktuell angezeigten GraphView, Informationen über die selektierten Elemente anzeigt. Jede Zeile der Tabelle enthält in der ersten Zelle den Bezeichner/Namen und in der zweiten Zelle den jeweiligen Wert der Eigenschaft aus der Selektion. Die einzelnen Zellen werden durch eine JavaFX \textbf{PropertyValueFactory} erstellt welche mit den \textbf{GAnsProperties}(siehe objectproperty) der selektierten Elemente der GraphView arbeitet. 
+	\item[\textbf{InformationView}] Eine TableView, welche, je nach Selektion in der aktuell angezeigten GraphView, Informationen über die selektierten Elemente anzeigt. Jede Zeile der Tabelle enthält in der ersten Zelle den Bezeichner/Namen und in der zweiten Zelle den jeweiligen Wert der Eigenschaft aus der Selektion. Die einzelnen Zellen werden durch eine JavaFX \textbf{PropertyValueFactory} erstellt welche mit den \textbf{GAnsProperties}(siehe \ref{sec:objectproperty}) der selektierten Elemente der GraphView arbeitet. 
 \end{itemize}
 
 \newpage
@@ -64,7 +64,7 @@ In diesem Paket befinden sich die Algorithmen zum durchsuchen von Graphen nach S
 \newpage
 
 \section{objectproperty}
-
+\label{sec:objectproperty}
 \begin{figure}[hb]
   \centering
   \includegraphics[width=380pt]{resourcen/objectproperty.pdf}
