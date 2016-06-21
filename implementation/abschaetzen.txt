@@ -1,0 +1,41 @@
+Bitte jeweils abschätzen und priorisieren!
+Falls noch etwas fehlen sollte, bitte hinzufügen.
+
+objectproperties
+parameter
+graphmodel
+	Interfaces schreiben
+	Default-Klassen implementieren
+	Layout-Register schreiben
+sugiyama
+	SugiyamaGraph + Implementierte Interfaces + SugiyamaVertex/Edge
+	Phase 1
+	Phase 2
+	Phase 3
+	Phase 4
+	Phase 5
+	Constraints
+joana
+	Callgraph
+	Methodgraph
+	FieldAccess
+	GraphModel
+	CallgraphLayout/Register/Option
+	MethodgraphLayout/Register/Option
+	GraphBuilder-Klassen
+	JoanaPlugin
+GUI
+	GraphFactory
+	GraphView(Navigation und Zoom)
+	StrukturView(Aufbau aus GraphModel)
+	InformationView
+	Sprache Ändern in xml
+	Laden der Plugins
+	Import und export anstoßen und Dialoge
+	ParameterDialogCreator
+Plugin
+	Manager
+	ServiceLoader anpassen(?)
+	Inferfaces
+Import
+Export
