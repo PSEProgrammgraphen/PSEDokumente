@@ -15,6 +15,24 @@ root           = exports ? this
 
 log = (text) -> console.log(text)
 
+absolutePosition = (el) ->
+    found
+    left = 0
+    top = 0
+    width = 0
+    height = 0
+    offsetBase = document.createElement 'div'
+    offsetBase.style.cssText = 'position:absolute;left:0;top:0'
+    document.body.appendChild offsetBase
+    boundingRect = el.getBoundingClientRect()
+    baseRect = offsetBase.getBoundingClientRect()
+    found = true
+    left = boundingRect.left - baseRect.left
+    top = boundingRect.top - baseRect.top;
+    width = boundingRect.right - boundingRect.left
+    height = boundingRect.bottom - boundingRect.top
+    return {found: found, left: left, top: top, width: width, height: height, right: left + width, bottom: top + height}
+
 scaleThatfitsInto = (boundaryWidth, boundaryHeight, objectWidth, objectHeight) ->
     boundaryRatio = boundaryHeight / boundaryWidth
     objectRatio   = objectHeight / objectWidth
@@ -31,10 +49,11 @@ linearInterpolate = (from, to, step, numberOfSteps) -> from + ((to - from) * ste
 centerObject = (graph, object) ->
     rotation     = Snap.deg Math.acos object.transform().localMatrix.a
     graph.transform createTransformString 0, 0, 1, rotation
-    bBox         = object.node.getBoundingClientRect()
+    bBox         = absolutePosition object.node
+    log bBox
     scale        = scaleThatfitsInto viewWidth, viewHeight, bBox.width, bBox.height
-    translationX = (viewWidth - bBox.width * scale) / 2  - bBox.left * scale
-    translationY = (viewHeight - bBox.height * scale) / 2  - bBox.top * scale
+    translationX = (viewWidth - bBox.width * scale) / 2  - (bBox.left + window.scrollX) * scale
+    translationY = (viewHeight - bBox.height * scale) / 2  - (bBox.top + window.scrollY) * scale
     viewX        = translationX
     viewY        = translationY
     viewScale    = scale
@@ -44,12 +63,15 @@ centerObject = (graph, object) ->
 
 
 centerObjectAnimated = (graph, object, time = 1000) ->
-    rotation     = Snap.deg Math.acos object.transform().localMatrix.a
+    #rotation     = Snap.deg Math.acos object.transform().localMatrix.a
+    rotation = 0
     graph.transform createTransformString 0, 0, 1, rotation
-    bBox         = object.node.getBoundingClientRect()
+    #bBox         = object.node.getBoundingClientRect()
+    bBox         = absolutePosition object.node
+    log bBox
     scale        = scaleThatfitsInto viewWidth, viewHeight, bBox.width, bBox.height
-    translationX = (viewWidth - bBox.width * scale) / 2  - bBox.left * scale
-    translationY = (viewHeight - bBox.height * scale) / 2  - bBox.top * scale
+    translationX = (viewWidth - bBox.width * scale) / 2  - (bBox.left + window.scrollX) * scale
+    translationY = (viewHeight - bBox.height * scale) / 2  - (bBox.top + window.scrollY) * scale
     inAnimation  = true
 
     Snap.animate 1, 1000, (l) ->
