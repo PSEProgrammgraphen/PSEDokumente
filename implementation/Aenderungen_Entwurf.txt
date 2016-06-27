@@ -1,0 +1,5 @@
+Action:	Rename: GraphMLImporter -> GraphmlImporter
+Reason:	Match Conventions (no more than 1 capital letter in abreviations)
+
+Action: Added Generics to Raw-Types: VertexFilter and EdgeFilter
+Reason: Create more type-safety during compile-time.
