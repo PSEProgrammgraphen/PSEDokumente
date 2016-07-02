@@ -3,3 +3,6 @@ Reason:	Match Conventions (no more than 1 capital letter in abreviations)
 
 Action: Added Generics to Raw-Types: VertexFilter and EdgeFilter
 Reason: Create more type-safety during compile-time.
+
+Action: Moved method getGraphBuilder from IVertexBuilder to IGraphBuilder
+Reason: Better possibility to build hierarchical graphs dynamically
