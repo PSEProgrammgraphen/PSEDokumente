@@ -9,3 +9,6 @@ Reason: Better possibility to build hierarchical graphs dynamically
 
 Action: Collabsable Graph Interface hinzugefügt 
 Reason: unterscheiden zwischen einem compoundgraph(z.B. FieldAccess) und einem normalen zusammengeklappten subgraphen
+
+Action: JoanaBuilder Abhängigkeiten hinzugefügt
+Reason: Damit jeder Builder weiß von wem er erstellt wurde und sein Produkt bei diesem platzieren kann.
