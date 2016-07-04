@@ -12,3 +12,6 @@ Reason: unterscheiden zwischen einem compoundgraph(z.B. FieldAccess) und einem n
 
 Action: JoanaBuilder Abhängigkeiten hinzugefügt
 Reason: Damit jeder Builder weiß von wem er erstellt wurde und sein Produkt bei diesem platzieren kann.
+
+Action: Added AbstractPluginBase
+Reason: Many functions in the concrete Plugins are nearly empty, but have to be overwritten. An AbstractPluginBase reduces identical code.
