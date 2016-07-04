@@ -3,3 +3,12 @@ Reason:	Match Conventions (no more than 1 capital letter in abreviations)
 
 Action: Added Generics to Raw-Types: VertexFilter and EdgeFilter
 Reason: Create more type-safety during compile-time.
+
+Action: Moved method getGraphBuilder from IVertexBuilder to IGraphBuilder
+Reason: Better possibility to build hierarchical graphs dynamically
+
+Action: Collabsable Graph Interface hinzugefügt 
+Reason: unterscheiden zwischen einem compoundgraph(z.B. FieldAccess) und einem normalen zusammengeklappten subgraphen
+
+Action: JoanaBuilder Abhängigkeiten hinzugefügt
+Reason: Damit jeder Builder weiß von wem er erstellt wurde und sein Produkt bei diesem platzieren kann.
