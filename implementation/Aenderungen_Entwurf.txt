@@ -18,3 +18,15 @@ Reason: Many functions in the concrete Plugins are nearly empty, but have to be 
 
 Action: Changed method return type of reverseEdge(SugiyamaEdge edge) in ICycleRemoverGraph from Set<SugiyamaEdge> to void
 Reason: Not really necessary to know which edges have been turned, it can be queried from the edge throug an instance of a SugiyamaGraph
+
+Action: Added AbstractPluginBase
+Reason: Many functions in the concrete Plugins are nearly empty, but have to be overwritten. An AbstractPluginBase reduces identical code. (Lucas)
+
+Action: Removed build() functions from IGraphBuilder, IVertexBuilder, IEdgeBuilder.
+Reason: build() is now only called on IGraphModelBuilder, which then calls recursively the specific build functions of the concrete classes. (Lucas)
+
+Action: Replaced nodeKind (String) field from JoanaVertex with enum. Adapted interface of JoanaVertex accordingly.
+Reason: All reason why using enum is better when possibility are known at compile-time.  (Lucas)
+
+Action: Replaced edgeKind (String) field from JoanaEdge with enum. Adapted interface of JoanaEdge accordingly.  
+Reason: All reason why using enum is better when possibility are known at compile-time.  (Lucas)
