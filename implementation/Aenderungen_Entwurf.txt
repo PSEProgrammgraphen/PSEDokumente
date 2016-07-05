@@ -15,3 +15,6 @@ Reason: Damit jeder Builder weiﬂ von wem er erstellt wurde und sein Produkt bei 
 
 Action: Added AbstractPluginBase
 Reason: Many functions in the concrete Plugins are nearly empty, but have to be overwritten. An AbstractPluginBase reduces identical code.
+
+Action: Changed method return type of reverseEdge(SugiyamaEdge edge) in ICycleRemoverGraph from Set<SugiyamaEdge> to void
+Reason: Not really necessary to know which edges have been turned, it can be queried from the edge throug an instance of a SugiyamaGraph
