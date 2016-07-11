@@ -30,3 +30,6 @@ Reason: All reason why using enum is better when possibility are known at compil
 
 Action: Replaced edgeKind (String) field from JoanaEdge with enum. Adapted interface of JoanaEdge accordingly.  
 Reason: All reason why using enum is better when possibility are known at compile-time.  (Lucas)
+
+Action: SerializedGraph verschoben. Die View wird nun serialized und nicht das model
+Reason: View besitzt mehr Information über den Graphen wie Koordinaten -> wichtig für SvgExporter (Jonas F)
