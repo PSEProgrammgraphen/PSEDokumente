@@ -1,0 +1,60 @@
+\chapter{Implementierte Muss- und Wunschkriterien}
+\label{ch:implkrit}
+
+\section{Pflichtkriterien}
+
+\subsection{Allgemein}
+\begin{itemize}
+	\item Hierarchisches Layout mit dem Sugiyama-Framework
+	\item Ein Callgraph-Layout, welches übersichtlich die Abhängigkeiten der Methoden darstellt
+	\item Ein Methodgraph-Layout, welches die Abhängigkeiten innerhalb einer Methode - mithilfe von vorgegebenen Constraints darstellt
+	\item Kollabieren und Ausklappen von Subgraphen
+	\item Informationsanzeige zu einzelnen Knoten und Kanten
+	\item Statistiken über den Graphen und Subgraphen
+	\item Filter für Knoten- und Kantentypen aus JOANA
+	\item Tabs für geöffnete Graphen
+	\item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten
+	\item Das Produkt wird unter einer freien Lizenz veröffentlicht
+	\item Die Anzeigesprache der GUI ist englisch. Ein Sprachwechsel soll aber leicht zu implementieren sein.
+\end{itemize}
+
+\subsection{Input/Output}
+\begin{itemize}
+	\item Import von generischen Graphen im GraphML-Format
+	\item Export der visualisierten Graphen im SVG-Format
+\end{itemize}
+
+\subsection{Steuerung}
+\begin{itemize}
+	\item Navigation mittels Zoom und Verschieben
+	\item Selektieren und Deselektieren von einzelnen oder mehreren Knoten
+\end{itemize}
+
+\subsection{Plugins}
+\begin{itemize}
+	\item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
+	\item Es gibt ein Pluginmanagement-System, welches externe Plugins laden und verwalten kann.
+\end{itemize}
+
+\section{Wunschkriterien}
+
+\subsection{Allgemein}
+\begin{itemize}
+	\item Automatisiertes Subgraph finden mittels Graph Pattern Matching
+	\item Layout Constraints, die vom Nutzer angepasst werden
+	\item Fortschrittsbalken bei der Berechnung des Layouts des Graphen
+	\item Eine Übersicht des angezeigten Graphen
+	\item Algorithmus zur Erreichbarkeit eines Knoten
+	\item Die Darstellung von Kanten kann geändert werden
+	\item Reload-Funktion
+\end{itemize}
+
+\subsection{Steuerung}
+\begin{itemize}
+	\item Tastaturkürzel (evtl. benutzerdefiniert)
+\end{itemize}
+
+\subsection{Input/Output}
+\begin{itemize}
+	\item weitere Exportfunktionen für das JPG- und das GraphML-Format (mit Koordinaten der Knoten und Kanten des aktuellen Layouts)
+\end{itemize}

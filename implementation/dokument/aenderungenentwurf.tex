@@ -1,0 +1,50 @@
+\chapter{Änderungen am Entwurf}
+\label{ch:aenderungen}
+%In tabellenform bringen damit einheitlich gelayouted wird
+
+\newcounter{cnr}
+
+\newcommand\change[2]{\textbf{\arabic{cnr}}\addtocounter{cnr}{1}. & \textbf{Aktion:} & #1 \\ & \textbf{Grund:} & #2 \\ [1ex] }
+	
+\subsection{Gerneral:}
+\setcounter{cnr}{1}
+
+\begin{tabular}{llp{0.9\linewidth}}
+	\change	{Rename: GraphMLImporter -> GraphmlImporter} 
+			{Match Conventions (no more than 1 capital letter in abreviations)}
+	\change	{Added Generics to Raw-Types: VertexFilter and EdgeFilter} 
+			{Create more type-safety during compile-time.}
+	\change	{Moved method getGraphBuilder from IVertexBuilder to IGraphBuilder} 
+			{Better possibility to build hierarchical graphs dynamically}
+	\change	{Collabsable Graph Interface hinzugefügt} 
+			{unterscheiden zwischen einem compoundgraph(z.B. FieldAccess) und einem normalen zusammengeklappten subgraphen}
+	\change	{JoanaBuilder Abhängigkeiten hinzugefügt} 
+			{Damit jeder Builder weiß von wem er erstellt wurde und sein Produkt bei diesem platzieren kann.}
+	\change	{Added AbstractPluginBase} 
+			{Many functions in the concrete Plugins are nearly empty, but have to be overwritten. An AbstractPluginBase reduces identical code.}
+	\change	{Removed build() functions from IGraphBuilder, IVertexBuilder, IEdgeBuilder.} 
+			{build() is now only called on IGraphModelBuilder, which then calls recursively the specific build functions of the concrete classes. (Lucas)}
+	\change	{Replaced nodeKind (String) field from JoanaVertex with enum. Adapted interface of JoanaVertex accordingly.} 
+			{All reason why using enum is better when possibility are known at compile-time.  (Lucas)}
+	\change	{Replaced edgeKind (String) field from JoanaEdge with enum. Adapted interface of JoanaEdge accordingly.} 
+			{All reason why using enum is better when possibility are known at compile-time.  (Lucas)}
+	\change	{SerializedGraph verschoben. Die View wird nun serialized und nicht das model} 
+			{View besitzt mehr Information über den Graphen wie Koordinaten -> wichtig für SvgExporter (Jonas F)}
+	\change	{Added class DefaultDirectedEdge and changed DirectedEdge from class to interface. Changed occurences of DirectedEdge to DefaultDirectedEdge in most cases in whole project.} 
+			{There was a need of an interface of DirectedEdge (Jonas M)}		
+\end{tabular}
+
+\subsection{Sugiyama:}
+\setcounter{cnr}{1}
+
+\begin{tabular}{llp{0.9\linewidth}}
+	\change	{Changed method return type of reverseEdge(SugiyamaEdge edge) in ICycleRemoverGraph from Set<SugiyamaEdge> to void} 
+			{Not really necessary to know which edges have been turned, it can be queried from the edge throug an instance of a SugiyamaGraph (Jonas M)}
+	\change	{Added Interface ISugiyamaVertex and let SugiyamaVertex and DummyVertex implement it. Changed every occurence of SugiyamaVertex to ISugiyamaVertex in package sugiyama} 
+			{It's necessary to treat SugiyamaVertex and DummyVertex the same way in a common list (Jonas M)}
+	\change	{Moved class Point to from package sugiyama to package edu.kit.student.util} 
+			{For a better overview (Lucas)}
+	\change	{SupplementPath does not extends DirectedEdge anymore.} 
+			{?}
+\end{tabular}
+
