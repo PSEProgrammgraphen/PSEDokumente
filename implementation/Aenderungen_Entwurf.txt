@@ -16,9 +16,6 @@ Reason: Damit jeder Builder weiß von wem er erstellt wurde und sein Produkt bei 
 Action: Added AbstractPluginBase
 Reason: Many functions in the concrete Plugins are nearly empty, but have to be overwritten. An AbstractPluginBase reduces identical code.
 
-Action: Changed method return type of reverseEdge(SugiyamaEdge edge) in ICycleRemoverGraph from Set<SugiyamaEdge> to void
-Reason: Not really necessary to know which edges have been turned, it can be queried from the edge throug an instance of a SugiyamaGraph
-
 Action: Added AbstractPluginBase
 Reason: Many functions in the concrete Plugins are nearly empty, but have to be overwritten. An AbstractPluginBase reduces identical code. (Lucas)
 
@@ -33,3 +30,24 @@ Reason: All reason why using enum is better when possibility are known at compil
 
 Action: SerializedGraph verschoben. Die View wird nun serialized und nicht das model
 Reason: View besitzt mehr Information über den Graphen wie Koordinaten -> wichtig für SvgExporter (Jonas F)
+
+Acion: Added class DefaultDirectedEdge and changed DirectedEdge from class to interface. Changed occurences of DirectedEdge to DefaultDirectedEdge in most cases in whole project.
+Reason: There was a need of an interface of DirectedEdge (Jonas M)
+
+
+Sugiyama:
+
+Action: Changed method return type of reverseEdge(SugiyamaEdge edge) in ICycleRemoverGraph from Set<SugiyamaEdge> to void
+Reason: Not really necessary to know which edges have been turned, it can be queried from the edge throug an instance of a SugiyamaGraph (Jonas M)
+
+Action: Added Interface ISugiyamaVertex and let SugiyamaVertex and DummyVertex implement it. Changed every occurence of SugiyamaVertex to ISugiyamaVertex in package sugiyama
+Reason: It's necessary to treat SugiyamaVertex and DummyVertex the same way in a common list (Jonas M)
+
+Action: Added Interface ISugiyamaEdge and let SugiyamaEdge and SupplementEdge implement it. Both doesn't extend DirectedEdge anymore. Changed every occurence of SugiyamaEdge to ISugiyamaEdge in package sugiyama
+Reason: It's necessary to treat SugiyamaEdge and SupplementEdge the same way in a common list (Jonas M)
+
+Action: Moved class Point to from package sugiyama to package edu.kit.student.util
+Reason: For a better overview (Lucas)
+
+Action: SupplementPath does not extends DirectedEdge anymore.
+Reason: ?
