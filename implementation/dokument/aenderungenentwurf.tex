@@ -1,15 +1,13 @@
 \chapter{Änderungen am Entwurf}
 \label{ch:aenderungen}
-%In tabellenform bringen damit einheitlich gelayouted wird
 
 \newcounter{cnr}
-
 \newcommand\change[2]{\textbf{\arabic{cnr}}\addtocounter{cnr}{1}. & \textbf{Aktion:} & #1 \\ & \textbf{Grund:} & #2 \\ [1ex] }
 	
-\subsection{Gerneral:}
+\section{Gerneral}
 \setcounter{cnr}{1}
 
-\begin{tabular}{llp{0.9\linewidth}}
+\begin{tabular}{llp{0.8\linewidth}}
 	\change	{Rename: GraphMLImporter -> GraphmlImporter} 
 			{Match Conventions (no more than 1 capital letter in abreviations)}
 	\change	{Added Generics to Raw-Types: VertexFilter and EdgeFilter} 
@@ -36,10 +34,11 @@
 			{Die Farbe muss von der Edge/Vertex vorgegeben werden, damit die GUI verschiedene Farben vergeben kann, JOANA Edge und Vertex geben jeweils eine Farbe zurück die von ihrer jeweiligen KIND bestimmt wird.}		
 \end{tabular}
 
-\subsection{Sugiyama:}
+\section{Sugiyama}
+\label{sec:change_sugiyama}
 \setcounter{cnr}{1}
 
-\begin{tabular}{llp{0.9\linewidth}}
+\begin{tabular}{llp{0.8\linewidth}}
 	\change	{Changed method return type of reverseEdge(SugiyamaEdge edge) in ICycleRemoverGraph from Set<SugiyamaEdge> to void} 
 			{Not really necessary to know which edges have been turned, it can be queried from the edge throug an instance of a SugiyamaGraph (Jonas M)}
 	\change	{Added Interface ISugiyamaVertex and let SugiyamaVertex and DummyVertex implement it. Changed every occurence of SugiyamaVertex to ISugiyamaVertex in package sugiyama} 

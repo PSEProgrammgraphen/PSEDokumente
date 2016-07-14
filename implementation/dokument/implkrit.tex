@@ -16,6 +16,9 @@
 	\item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten
 	\item Das Produkt wird unter einer freien Lizenz veröffentlicht
 	\item Die Anzeigesprache der GUI ist englisch. Ein Sprachwechsel soll aber leicht zu implementieren sein.
+	\begin{itemize}
+		\item JavaFX bietet bereits eine Möglichkeit verschiedene Sprachen zu verwenden und Oberflächenstrings anhand einer ID zu vergeben.
+	\end{itemize}
 \end{itemize}
 
 \subsection{Input/Output}
@@ -27,7 +30,16 @@
 \subsection{Steuerung}
 \begin{itemize}
 	\item Navigation mittels Zoom und Verschieben
+	\begin{itemize}
+		\item Die im Pflichtenheft definierte Maustastenbelegung kann von Java leider nicht unter jedem Betriebssystem realisiert werden. Im Fall von Windows 8.1 gibt es eine Funktionalität die auf den Klick des Mausrads reagiert. Aus diesem Grund wurde die Tastenbelegung leicht abgeändert:
+		\item Das Sichtfeld verschiebt man nun durch drücken von STRG und klicken und ziehen der rechten Maustaste.
+	\end{itemize}
 	\item Selektieren und Deselektieren von einzelnen oder mehreren Knoten
+	\begin{itemize}
+		\item Um das Selektieren und Deselektieren benutzerfreundlicher zu gestalten, wurde die Tastenbelegung an die der gängigen Dateisystemexplorer angepasst:
+		\item Zum Hinzufügen oder Entfernen eines Knotens aus der Selektion muss beim Klicken STRG mit gedrückt werden, anders wird nur der angeklickte Knoten selektiert.
+		\item Ist eine Menge von Knoten selektiert, STRG gedrückt und man selektiert durch ziehen der Maus bereits selektierte Knoten, werden diese aus der Selektion entfernt und neue Knoten hinzugefügt.
+	\end{itemize}
 \end{itemize}
 
 \subsection{Plugins}
@@ -37,24 +49,4 @@
 \end{itemize}
 
 \section{Wunschkriterien}
-
-\subsection{Allgemein}
-\begin{itemize}
-	\item Automatisiertes Subgraph finden mittels Graph Pattern Matching
-	\item Layout Constraints, die vom Nutzer angepasst werden
-	\item Fortschrittsbalken bei der Berechnung des Layouts des Graphen
-	\item Eine Übersicht des angezeigten Graphen
-	\item Algorithmus zur Erreichbarkeit eines Knoten
-	\item Die Darstellung von Kanten kann geändert werden
-	\item Reload-Funktion
-\end{itemize}
-
-\subsection{Steuerung}
-\begin{itemize}
-	\item Tastaturkürzel (evtl. benutzerdefiniert)
-\end{itemize}
-
-\subsection{Input/Output}
-\begin{itemize}
-	\item weitere Exportfunktionen für das JPG- und das GraphML-Format (mit Koordinaten der Knoten und Kanten des aktuellen Layouts)
-\end{itemize}
+Aus den Wunschkriterien die im Pflichtenheft definiert wurden wurden keine Implementiert.
