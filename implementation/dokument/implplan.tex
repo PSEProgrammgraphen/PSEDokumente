@@ -9,7 +9,7 @@ Um einen Implementierungsplan aufzustellen wurde das Projekt zuerst anhand der e
 \end{figure}
 \newpage
 \section{Woche 1}
-In der ersten Woche wurde der zuerst erstellte Implementierungsplan komplett überarbeitet. Die Aufgaben wurden in der Abarbeitungsreihenfolge umsortiert, verfeinert und für die ersten zwei Wochen einzelnen Personen zugewiesen. Zusätzlich wurde eine Tabelle erstellt, die den bereits existierenden Plan, durch eine Fortschrittsspalte, in der die Entwickler ihren Prozentualen Fortschritt der ihnen zugeteilten Aufgaben eintragen, und eine visuelle Repräsentation des Soll- und Ist-Zustands des gesamten Projekt erweitert.\\
+In der ersten Woche wurde der zuerst erstellte Implementierungsplan komplett überarbeitet. Dies war nötig da im ersten Plan viele Abhängigkeiten zwischen den Aufgaben nicht berücksichtigt wurden. Zum Beispiel hing das restliche Projekt komplett von der Fertigstellung des Sugiyama ab und hätte ohne diese nicht getestet werden können. Um dieses Problem zu lösen wurden vorläufige Mockups für die einzelnen Phasen eingeplant. Die anderen Aufgaben wurden zusätzlich in der Abarbeitungsreihenfolge umsortiert, verfeinert und für die ersten zwei Wochen einzelnen Personen zugewiesen. Außerdem wurde eine Tabelle erstellt, die den bereits existierenden Plan, durch eine Fortschrittsspalte, in der die Entwickler ihren Prozentualen Fortschritt der ihnen zugeteilten Aufgaben eintragen, und eine visuelle Repräsentation des Soll- und Ist-Zustands des gesamten Projekt erweitert.\\
 \\
 Zusätzlich zur Änderung des Plans wurde eine grobe Projektstruktur in Gradle aufgebaut und die bereits im Entwurf gemachten Interfaces in das Projekt überführt. Um die Gradle Projektkonfiguration zu testen wurde eine grobe GUI implementiert und die Entwicklung der allgemeinen genutzten Klassen aus dem Paket "graphmodel"  begonnen.
 
@@ -41,6 +41,7 @@ In Woche 2 wurde vorrangig daran gearbeitet einen Graphen einzulesen, mit den im
 	\label{fig:week_two_table}
 \end{figure}
 \subsection{Verzögerungen}
+\label{sec:delay_week2}
 Aufgrund der im Entwurf definierten Generics im GraphModel entstanden häufig sehr unschöne Stellen im Code und Inkompatibilitäten. Diese zu reparieren oder funktionsfähig zu machen war häufig Grund für mehr oder weniger unschöne Workarounds die Teilweise viel Arbeit in Anspruch nahmen. Deshalb wurde im Laufe der folgenden Woche ein großes Refactoring vorgenommen welches die Generic-Struktur im GraphModel stark vereinfachte.
 
 \begin{figure}[!htbp]
@@ -51,6 +52,7 @@ Aufgrund der im Entwurf definierten Generics im GraphModel entstanden häufig se
 \end{figure}
 
 \section{Woche 3}
+In Woche 3 wurde das in \ref{sec:delay_week2} beschriebene Refactoring vorgenommen. Dazu wurden die letzten zwei Phasen des Sugiyama benutzbar gemacht und die Oberfläche weiter verfeinert.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{week_three_table.PNG}
@@ -58,11 +60,12 @@ Aufgrund der im Entwurf definierten Generics im GraphModel entstanden häufig se
 	\label{fig:week_three_table}
 \end{figure}
 \subsection{Verzögerungen}
+Nach dem Sprint zum Ende der zweiten Woche wurde wie in \ref{fig:week_three_diagram} zu sehen ist zunächst weniger gearbeitet, ab Mitte der Woche wurde aber wieder der normale Arbeitsrythmus aufgenommen und es kam zu keinen Verzögerungen mehr.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{resourcen/week_three_diagram.PNG}
 	\caption{Fortschrittsdiagramm nach Woche 3}
-	\label{Restliche nicht abgeschlossene Aufgaben für Woche 3 und 4}
+	\label{fig:week_three_diagram}
 \end{figure}
 \section{Woche 4}
-\subsection{Verzögerungen}
+Am Ende der 4. Woche muss man Rückblickend sagen das der Implementierungsplan zwar von seiner Struktur und den generellen zeitlichen Abschätzung her gut war, der Arbeitsaufwand aber bei vielen Aufgabenbereichen stark unterschätzt wurde. Das lag häufig daran das im Entwurf gemachte Designentscheidungen vermutlich nicht tief genug durchdacht waren und im Laufe der Entwicklung angepasst oder komplett neu erdacht werden mussten. Diese Anpassungen haben an verschiedenen Stellen sehr viel Zeit in Anspruch genommen die nicht im Implementierungsplan vermerkt wurde. Die Verzögerungen spiegeln sich besonders in der flachen Fortschrittskurve in den ersten zwei Wochen dar und haben die gesamte Entwicklung zurückgeworfen hat.
