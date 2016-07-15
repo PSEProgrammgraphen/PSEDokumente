@@ -8,10 +8,6 @@
 \setcounter{cnr}{1}
 
 \begin{tabular}{llp{0.8\linewidth}}
-	\change	{Rename: GraphMLImporter -> GraphmlImporter} 
-			{Match Conventions (no more than 1 capital letter in abreviations)}
-	\change	{Added Generics to Raw-Types: VertexFilter and EdgeFilter} 
-			{Create more type-safety during compile-time.}
 	\change	{Moved method getGraphBuilder from IVertexBuilder to IGraphBuilder} 
 			{Better possibility to build hierarchical graphs dynamically}
 	\change	{Collabsable Graph Interface hinzugefügt} 
@@ -31,7 +27,9 @@
 	\change	{Added class DefaultDirectedEdge and changed DirectedEdge from class to interface. Changed occurences of DirectedEdge to DefaultDirectedEdge in most cases in whole project.} 
 			{There was a need of an interface of DirectedEdge (Jonas M)}
 	\change	{Get Color in Edge und Vertex hinzugefügt} 
-			{Die Farbe muss von der Edge/Vertex vorgegeben werden, damit die GUI verschiedene Farben vergeben kann, JOANA Edge und Vertex geben jeweils eine Farbe zurück die von ihrer jeweiligen KIND bestimmt wird.}		
+			{Die Farbe muss von der Edge/Vertex vorgegeben werden, damit die GUI verschiedene Farben vergeben kann, JOANA Edge und Vertex geben jeweils eine Farbe zurück die von ihrer jeweiligen KIND bestimmt wird.}
+	\change	{Aktuelle LayoutOption wird in GraphView gespeichert} 
+			{Um zu wissen welcher layoutalgorithmus gerade angewendet wurde un um ihm potentiell nochmals anzuwenden(Collapse/Expand, ändern der Properties...)}	
 \end{tabular}
 
 \section{Sugiyama}
