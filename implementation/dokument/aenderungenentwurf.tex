@@ -4,16 +4,16 @@
 \newcounter{cnr}
 \newcommand\change[2]{\textbf{\arabic{cnr}}\addtocounter{cnr}{1}. & \textbf{Aktion:} & #1 \\ & \textbf{Grund:} & #2 \\ [1ex] }
 	
-\section{Gerneral}
+\section{General}
 \setcounter{cnr}{1}
 
-\begin{tabular}{llp{0.8\linewidth}}
-	\change	{Moved method getGraphBuilder from IVertexBuilder to IGraphBuilder} 
-			{Better possibility to build hierarchical graphs dynamically}
+\begin{longtable}{llp{0.8\linewidth}}
+	\change	{Methode \textit{getGraphBuilder()} verschoben von \textit{IVertexBuilder} zu \textit{IGraphBuilder}.} 
+			{Dadurch können hierachische Graphen einfacher erstellt werden, da der \textit{IGraphBuilder} den \textit{IGraphModelBuilder} kennt.}
 	\change	{Collabsable Graph Interface hinzugefügt} 
 			{unterscheiden zwischen einem compoundgraph(z.B. FieldAccess) und einem normalen zusammengeklappten subgraphen}
-	\change	{JoanaBuilder Abhängigkeiten hinzugefügt} 
-			{Damit jeder Builder weiß von wem er erstellt wurde und sein Produkt bei diesem platzieren kann.}
+	\change	{Abhängigkeiten zwischen \textit{JoanaGraphModelBuilder}, \textit{JoanaGraphBuilder}, \textit{JoanaVertexBuilder} und \textit{JoanaEdgeBuilder} hinzugefügt.} 
+			{Jede Builder Klasse muss wissen von welchem Builder sie erstellt wurde, um das erstellte Produkt (z.B. \textit{JoanaVertex} oder \textit{JoanaEdge}) bei seiner Elternklasse abspeichern zu können. }
 	\change	{Added AbstractPluginBase} 
 			{Many functions in the concrete Plugins are nearly empty, but have to be overwritten. An AbstractPluginBase reduces identical code.}
 	\change	{Removed build() functions from IGraphBuilder, IVertexBuilder, IEdgeBuilder.} 
@@ -22,15 +22,15 @@
 			{All reason why using enum is better when possibility are known at compile-time.  (Lucas)}
 	\change	{Replaced edgeKind (String) field from JoanaEdge with enum. Adapted interface of JoanaEdge accordingly.} 
 			{All reason why using enum is better when possibility are known at compile-time.  (Lucas)}
-	\change	{SerializedGraph verschoben. Die View wird nun serialized und nicht das model} 
-			{View besitzt mehr Information über den Graphen wie Koordinaten -> wichtig für SvgExporter (Jonas F)}
+	\change	{\textit{SerializedGraph} verschoben. Die \textit{GraphViewGraphFactory} wird nun serialisiert und nicht das Model.} 
+			{Die \textit{GraphViewGraphFactory} besitzt mehr Information (z.B. die Größe der Knoten) über den Graphen als das Model. Diese Informationen sind vor allem für den \textit{SvgExporter} wichtig.}
 	\change	{Added class DefaultDirectedEdge and changed DirectedEdge from class to interface. Changed occurences of DirectedEdge to DefaultDirectedEdge in most cases in whole project.} 
 			{There was a need of an interface of DirectedEdge (Jonas M)}
-	\change	{Get Color in Edge und Vertex hinzugefügt} 
-			{Die Farbe muss von der Edge/Vertex vorgegeben werden, damit die GUI verschiedene Farben vergeben kann, JOANA Edge und Vertex geben jeweils eine Farbe zurück die von ihrer jeweiligen KIND bestimmt wird.}
-	\change	{Aktuelle LayoutOption wird in GraphView gespeichert} 
-			{Um zu wissen welcher layoutalgorithmus gerade angewendet wurde un um ihm potentiell nochmals anzuwenden(Collapse/Expand, ändern der Properties...)}	
-\end{tabular}
+	\change	{\textit{getColor()} in \textit{Edge} und \textit{Vertex} hinzugefügt} 
+			{Die Farbe muss von der \textit{Edge}/\textit{Vertex} vorgegeben werden, damit die GUI verschiedene Farben vergeben kann, \textit{JoanaEdge} und \textit{JoanaVertex} geben jeweils eine Farbe zurück, die von ihrem Typ bestimmt wird.}
+	\change	{Aktuelle \textit{LayoutOption} wird in \textit{GraphView} gespeichert} 
+			{Um zu wissen welcher Layoutalgorithmus zuletzt angewendet wurde und um diesen wiederholt anwenden zu können. Dies ist unter anderem bei der Collapse bzw. Expand Funktion und dem ändern der Properties nötig.}	
+\end{longtable}
 
 \section{Sugiyama}
 \label{sec:change_sugiyama}

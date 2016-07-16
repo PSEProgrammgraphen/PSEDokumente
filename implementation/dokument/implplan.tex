@@ -1,6 +1,6 @@
 \chapter{Implementierungsplan}
 \label{ch:implplan}
-Um einen Implementierungsplan aufzustellen wurde das Projekt zuerst anhand der einzelnen Plugins/Pakete und dann noch feiner in einzelne möglichst voneinander unabhängige Aufgaben unterteilt. Der benötigte Arbeitsaufwand zum Bearbeiten der Aufgaben wurden von allen Projektmitgliedern abgeschätzt und deren Mittelwert als geplante Bearbeitungsdauer zur Fertigstellung der Aufgabe angenommen. Anhand von bestehenden Abhängigkeiten der Aufgaben untereinander und der vorausgesetzten wöchentlichen Arbeitsleistung wurden die Aufgaben auf die einzelnen Wochen und Personen verteilt. \\
+Um einen Implementierungsplan aufzustellen, wurde das Projekt zuerst anhand der einzelnen Plugins/Pakete aufgeteilt. Danach wurden die Plugins/Pakete noch feiner unterteilt und es wurde versucht einzelne, möglichst voneinander unabhängige, Aufgaben zu finden. Der nötige Arbeitsaufwand zum Bearbeiten der einzelnen Aufgaben wurden von allen Projektmitgliedern abgeschätzt und der Mittelwert als geplante Bearbeitungsdauer festgesetzt. Anhand von den bestehenden Abhängigkeiten der Aufgaben untereinander und der vorausgesetzten wöchentlichen Arbeitsleistung, wurden die Aufgaben auf die einzelnen Wochen und Personen verteilt. \\
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=300pt]{week_zero_table.PNG}
@@ -9,9 +9,9 @@ Um einen Implementierungsplan aufzustellen wurde das Projekt zuerst anhand der e
 \end{figure}
 \newpage
 \section{Woche 1}
-In der ersten Woche wurde der zuerst erstellte Implementierungsplan komplett überarbeitet. Dies war nötig da im ersten Plan viele Abhängigkeiten zwischen den Aufgaben nicht berücksichtigt wurden. Zum Beispiel hing das restliche Projekt komplett von der Fertigstellung des Sugiyama ab und hätte ohne diese nicht getestet werden können. Um dieses Problem zu lösen wurden vorläufige Mockups für die einzelnen Phasen eingeplant. Die anderen Aufgaben wurden zusätzlich in der Abarbeitungsreihenfolge umsortiert, verfeinert und für die ersten zwei Wochen einzelnen Personen zugewiesen. Außerdem wurde eine Tabelle erstellt, die den bereits existierenden Plan, durch eine Fortschrittsspalte, in der die Entwickler ihren Prozentualen Fortschritt der ihnen zugeteilten Aufgaben eintragen, und eine visuelle Repräsentation des Soll- und Ist-Zustands des gesamten Projekt erweitert.\\
+In der ersten Woche wurde der zuerst erstellte Implementierungsplan jedoch komplett überarbeitet. Dies war nötig da im ersten Plan viele Abhängigkeiten zwischen den Aufgaben nicht berücksichtigt wurden. Zum Beispiel hing das restliche Projekt komplett von der Fertigstellung des Sugiyama ab und hätte ohne diesen nicht getestet werden können. Um dieses Problem zu lösen, wurden vorläufige Mockups für die einzelnen Phasen eingeplant. Die anderen Aufgaben wurden zusätzlich in der Abarbeitungsreihenfolge umsortiert, verfeinert und für die ersten zwei Wochen bereits einzelnen Personen zugewiesen. Außerdem wurde eine Excel Tabelle mit dem bereits existierenden Plan erstellt und durch eine Fortschrittsspalte erweitert. In der Fortschrittspalte sollten die Entwickler den prozentualen Fortschritt an den ihnen zugeteilten Aufgaben eintragen. Dadurch konnte ein Fortschrittsdiagram erstellt werden, welchen den aktuellen Soll- und Ist-Zustand des gesamten Projekt visualisiert.\\
 \\
-Zusätzlich zur Änderung des Plans wurde eine grobe Projektstruktur in Gradle aufgebaut und die bereits im Entwurf gemachten Interfaces in das Projekt überführt. Um die Gradle Projektkonfiguration zu testen wurde eine grobe GUI implementiert und die Entwicklung der allgemeinen genutzten Klassen aus dem Paket "graphmodel"  begonnen.
+Zusätzlich zur Änderung des Plans wurde eine grobe Projektstruktur in Gradle aufgebaut und die bereits im Entwurf erstellte Interfaces in das Projekt überführt. Um die Gradle Projektkonfiguration zu testen wurde eine grobe GUI implementiert und mit der Implementierung der Allgemein genutzten Klassen aus dem Paket "graphmodel"  begonnen.
 
 \begin{figure}[!htbp]
 	\centering
@@ -21,8 +21,8 @@ Zusätzlich zur Änderung des Plans wurde eine grobe Projektstruktur in Gradle a
 \end{figure}
 
 \subsection{Verzögerungen}
-Wie man in \ref{fig:week_one_diagram} sehen kann hing das Projekt nach der ersten Woche bereits ca. 35 Stunden hinter dem geplanten Zustand hinterher.
-Dies lag neben der Tatsache das die erste Hälfte der Woche, auf Grund von Erschöpfung aus der Entwurfsphase, weniger gearbeitet wurde, auch daran, dass das Team das für die Implementierung des Sugiyama-Layoutalgorithmus eingeteilt wurde relativ schnell auf konzeptionelle Probleme mit dem im Entwurf definierten Aufbau des SugiyamaGraphen und dessen Kanten/Knoten stieß(siehe \ref{sec:change_sugiyama}).
+Wie man in \ref{fig:week_one_diagram} sehen kann, hing das Projekt nach der ersten Woche bereits ca. 35 Stunden hinter dem geplanten Zustand hinterher.
+Dies lag neben der Tatsache, dass die erste Hälfte der Woche aufgrund von Erschöpfung aus der Entwurfsphase, weniger gearbeitet wurde, als auch daran, dass das Team, welches für die Implementierung des Sugiyama-Layoutalgorithmus eingeteilt wurde, relativ schnell auf konzeptionelle Probleme mit dem im Entwurf definierten Aufbau des SugiyamaGraphen und dessen Kanten/Knoten stieß(siehe \ref{sec:change_sugiyama}).
 
 \begin{figure}[!htbp]
 	\centering
@@ -33,7 +33,8 @@ Dies lag neben der Tatsache das die erste Hälfte der Woche, auf Grund von Ersch
 \newpage
 
 \section{Woche 2}
-In Woche 2 wurde vorrangig daran gearbeitet einen Graphen einzulesen, mit den im Sugiyama implementierten Klassen oder Mockups zu layouten und in der Anzeige darzustellen. Dazu wurde besonders auf die zeitnahe Fertigstellung des Imports und das funktionsfähig machen des JOANA-Graph-Plugins mit allen dazugehörigen Klassen geachtet. Zudem wurde auch in den Phasen des Sugiyama-Algorithmus große Fortschritte gemacht und manche sogar abgeschlossen. Dadurch entstand der, wie in \ref{fig:week_two_diagram} zu sehen ist, sprunghafte Anstieg des Fortschritts der Fast bis an den Soll-Wert heran reicht. 
+Das Ziel der Woche 2 war es, einen Graphen zu importieren und diesen, mithilfe von Mockups im Sugiyama-Algorithmus, in der Graphansicht anzuzeigen.
+Dazu wurde besonders auf die zeitnahe Fertigstellung des Imports und auf die grobe Implementierung des JOANA-Graph-Plugins mit allen dazugehörigen Klassen geachtet. Zudem wurde auch in den einzelnen Phasen des Sugiyama-Algorithmus große Fortschritte gemacht und einige wurden sogar abgeschlossen. Dadurch entstand der, wie in \ref{fig:week_two_diagram} zu sehen ist, sprunghafte Anstieg des Fortschritts, welcher fast den Soll-Wert erreichte. 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{week_two_table.PNG}
@@ -42,7 +43,7 @@ In Woche 2 wurde vorrangig daran gearbeitet einen Graphen einzulesen, mit den im
 \end{figure}
 \subsection{Verzögerungen}
 \label{sec:delay_week2}
-Aufgrund der im Entwurf definierten Generics im GraphModel entstanden häufig sehr unschöne Stellen im Code und Inkompatibilitäten. Diese zu reparieren oder funktionsfähig zu machen war häufig Grund für mehr oder weniger unschöne Workarounds die Teilweise viel Arbeit in Anspruch nahmen. Deshalb wurde im Laufe der folgenden Woche ein großes Refactoring vorgenommen welches die Generic-Struktur im GraphModel stark vereinfachte.
+Aufgrund der im Entwurf definierten Generics im GraphModel entstanden häufig sehr unschöne Stellen im Code und Inkompatibilitäten. Diese zu reparieren oder funktionsfähig zu machen war häufig der Grund für mehr oder weniger unschöne Workarounds, die teilweise viel Arbeit in Anspruch nahmen. Deshalb wurde für die folgende Woche ein großes Refactoring angesetzt, welches die Generic-Struktur im GraphModel stark vereinfachen soll.
 
 \begin{figure}[!htbp]
 	\centering
@@ -52,7 +53,7 @@ Aufgrund der im Entwurf definierten Generics im GraphModel entstanden häufig se
 \end{figure}
 
 \section{Woche 3}
-In Woche 3 wurde das in \ref{sec:delay_week2} beschriebene Refactoring vorgenommen. Dazu wurden die letzten zwei Phasen des Sugiyama benutzbar gemacht und die Oberfläche weiter verfeinert.
+In Woche 3 wurde das in \ref{sec:delay_week2} beschriebene Refactoring vorgenommen. Desweiteren wurden die letzten zwei Phasen des Sugiyama benutzbar gemacht und die Benutzbarkeit der Oberfläche weiter verbessert.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{week_three_table.PNG}
@@ -60,7 +61,7 @@ In Woche 3 wurde das in \ref{sec:delay_week2} beschriebene Refactoring vorgenomm
 	\label{fig:week_three_table}
 \end{figure}
 \subsection{Verzögerungen}
-Nach dem Sprint zum Ende der zweiten Woche wurde wie in \ref{fig:week_three_diagram} zu sehen ist zunächst weniger gearbeitet, ab Mitte der Woche wurde aber wieder der normale Arbeitsrythmus aufgenommen und es kam zu keinen Verzögerungen mehr.
+Nach dem Sprint zum Ende der zweiten Woche wurde, wie in \ref{fig:week_three_diagram} zu sehen ist, zunächst weniger gearbeitet. Ab Mitte der Woche wurde aber wieder der normale Arbeitsrythmus aufgenommen und es kam zu keinen weiteren Verzögerungen.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{resourcen/week_three_diagram.PNG}
@@ -68,4 +69,4 @@ Nach dem Sprint zum Ende der zweiten Woche wurde wie in \ref{fig:week_three_diag
 	\label{fig:week_three_diagram}
 \end{figure}
 \section{Woche 4}
-Am Ende der 4. Woche muss man Rückblickend sagen das der Implementierungsplan zwar von seiner Struktur und den generellen zeitlichen Abschätzung her gut war, der Arbeitsaufwand aber bei vielen Aufgabenbereichen stark unterschätzt wurde. Das lag häufig daran das im Entwurf gemachte Designentscheidungen vermutlich nicht tief genug durchdacht waren und im Laufe der Entwicklung angepasst oder komplett neu erdacht werden mussten. Diese Anpassungen haben an verschiedenen Stellen sehr viel Zeit in Anspruch genommen die nicht im Implementierungsplan vermerkt wurde. Die Verzögerungen spiegeln sich besonders in der flachen Fortschrittskurve in den ersten zwei Wochen dar und haben die gesamte Entwicklung zurückgeworfen hat.
+Am Ende der 4. Woche muss man Rückblickend sagen, dass der Implementierungsplan zwar von seiner Struktur und den generellen zeitlichen Abschätzungen gut war, der Arbeitsaufwand aber in vielen Aufgabenbereichen stark unterschätzt wurde. Der Grund war häufig, das im Entwurf gemachte Designentscheidungen vermutlich nicht tief genug durchdacht waren und im Laufe der Entwicklung angepasst oder komplett neu erdacht werden mussten. Solche Anpassungen haben an verschiedenen Stellen sehr viel Zeit in Anspruch genommen, die nicht im Implementierungsplan vermerkt wurde. Diese Verzögerungen spiegeln sich besonders in der flachen Fortschrittskurve in den ersten zwei Wochen dar und haben die gesamte Entwicklung zurückgeworfen.

@@ -5,17 +5,20 @@
 
 \subsection{Allgemein}
 \begin{itemize}
-	\item Hierarchisches Layout mit dem Sugiyama-Framework
-	\item Ein Callgraph-Layout, welches übersichtlich die Abhängigkeiten der Methoden darstellt
-	\item Ein Methodgraph-Layout, welches die Abhängigkeiten innerhalb einer Methode - mithilfe von vorgegebenen Constraints darstellt
-	\item Kollabieren und Ausklappen von Subgraphen
-	\item Informationsanzeige zu einzelnen Knoten und Kanten
-	\item Statistiken über den Graphen und Subgraphen
-	\item Filter für Knoten- und Kantentypen aus JOANA
-	\item Tabs für geöffnete Graphen
+	\item Hierarchisches Layout mit dem Sugiyama-Framework (/FA030/)
+	\item Ein Callgraph-Layout, welches übersichtlich die Abhängigkeiten der Methoden darstellt (/FA030/)
+	\item Ein Methodgraph-Layout, welches die Abhängigkeiten innerhalb einer Methode - mithilfe von vorgegebenen Constraints darstellt (/FA030/)
+	\item Kollabieren und Ausklappen von Subgraphen (/FA060/ und /FA070/)
+	\item Informationsanzeige zu einzelnen Knoten und Kanten (/FA270/)
+	\item Statistiken über den Graphen und Subgraphen (/FA280/)
+	\item Filter für Knoten- und Kantentypen aus JOANA (/FA040/)
+	\item Tabs für geöffnete Graphen (/FA260/)
 	\item Akzeptieren von Kommandozeilenargumenten zur Angabe von Graphdatei und Layoutalgorithmus für ein schnelles Starten
+	\begin{itemize}
+		\item Das Eingabeformat der Kommandozeilenargumente hat sich zum Pflichtenheft geändert, um ein einfacheres parsen der Parameter zu  ermöglichen. Argumente werden nun im folgenden Format eingegeben: \glqq--in=<datei>\grqq
+	\end{itemize}
 	\item Das Produkt wird unter einer freien Lizenz veröffentlicht
-	\item Die Anzeigesprache der GUI ist englisch. Ein Sprachwechsel soll aber leicht zu implementieren sein.
+	\item Die Anzeigesprache der GUI ist englisch. Ein Sprachwechsel soll aber leicht zu implementieren sein. (/NFA100/)
 	\begin{itemize}
 		\item JavaFX bietet bereits eine Möglichkeit verschiedene Sprachen zu verwenden und Oberflächenstrings anhand einer ID zu vergeben.
 	\end{itemize}
@@ -23,30 +26,30 @@
 
 \subsection{Input/Output}
 \begin{itemize}
-	\item Import von generischen Graphen im GraphML-Format
-	\item Export der visualisierten Graphen im SVG-Format
+	\item Import von generischen Graphen im GraphML-Format (/FA100/)
+	\item Export der visualisierten Graphen im SVG-Format (/FA110/)
 \end{itemize}
 
 \subsection{Steuerung}
 \begin{itemize}
-	\item Navigation mittels Zoom und Verschieben
+	\item Navigation mittels Zoom (/FA210/) und Verschieben (/FA200/)
 	\begin{itemize}
-		\item Die im Pflichtenheft definierte Maustastenbelegung kann von Java leider nicht unter jedem Betriebssystem realisiert werden. Im Fall von Windows 8.1 gibt es eine Funktionalität die auf den Klick des Mausrads reagiert. Aus diesem Grund wurde die Tastenbelegung leicht abgeändert:
-		\item Das Sichtfeld verschiebt man nun durch drücken von STRG und klicken und ziehen der rechten Maustaste.
+		\item Die im Pflichtenheft definierte Maustastenbelegung kann von Java leider nicht unter jedem Betriebssystem realisiert werden. Im Fall von Windows 8.1 gibt es eine Funktionalität, die auf den Klick des Mausrads reagiert. Aus diesem Grund wurde die Tastenbelegung leicht abgeändert:
+		\item Das Sichtfeld verschiebt man nun durch das Drücken von STRG und klicken und ziehen der rechten Maustaste.
 	\end{itemize}
-	\item Selektieren und Deselektieren von einzelnen oder mehreren Knoten
+	\item Selektieren (/FA220/) und Deselektieren (/FA230/) von einzelnen oder mehreren Knoten
 	\begin{itemize}
-		\item Um das Selektieren und Deselektieren benutzerfreundlicher zu gestalten, wurde die Tastenbelegung an die der gängigen Dateisystemexplorer angepasst:
-		\item Zum Hinzufügen oder Entfernen eines Knotens aus der Selektion muss beim Klicken STRG mit gedrückt werden, anders wird nur der angeklickte Knoten selektiert.
-		\item Ist eine Menge von Knoten selektiert, STRG gedrückt und man selektiert durch ziehen der Maus bereits selektierte Knoten, werden diese aus der Selektion entfernt und neue Knoten hinzugefügt.
+		\item Um das Selektieren und Deselektieren von Knoten benutzerfreundlicher zu gestalten, wurde die Tastenbelegung an die der gängigen Dateisystemexplorer angepasst:
+		\item Zum Hinzufügen oder Entfernen eines einzelnen Knotens aus der Selektion von mehreren Knoten muss beim Klicken STRG gehalten werden. Ansonsten wird die komplette Selektion aufgehoben und nur der angeklickte Knoten selektiert.
+		\item Ist eine Menge von Knoten selektiert, STRG gedrückt und man selektiert durch ziehen der Maus mehrere Knoten, werden bereits selektierte Knoten aus der Menge entfernt und nicht selektierte Knoten hinzugefügt.
 	\end{itemize}
 \end{itemize}
 
 \subsection{Plugins}
 \begin{itemize}
-	\item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten
-	\item Es gibt ein Pluginmanagement-System, welches externe Plugins laden und verwalten kann.
+	\item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten (Pflichtenheft Kapitel 7)
+	\item Es gibt ein Pluginmanagement-System, welches externe Plugins laden und verwalten kann. (Pflichtenheft Kapitel 7)
 \end{itemize}
 
 \section{Wunschkriterien}
-Aus den Wunschkriterien die im Pflichtenheft definiert wurden wurden keine Implementiert.
+Aus den Wunschkriterien die im Pflichtenheft definiert wurden, wurden keine Implementiert.
