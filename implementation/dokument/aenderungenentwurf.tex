@@ -29,7 +29,9 @@
 	\change	{\textit{getColor()} in \textit{Edge} und \textit{Vertex} hinzugefügt} 
 			{Die Farbe muss von der \textit{Edge}/\textit{Vertex} vorgegeben werden, damit die GUI verschiedene Farben vergeben kann, \textit{JoanaEdge} und \textit{JoanaVertex} geben jeweils eine Farbe zurück, die von ihrem Typ bestimmt wird.}
 	\change	{Aktuelle \textit{LayoutOption} wird in \textit{GraphView} gespeichert} 
-			{Um zu wissen welcher Layoutalgorithmus zuletzt angewendet wurde und um diesen wiederholt anwenden zu können. Dies ist unter anderem bei der Collapse bzw. Expand Funktion und dem ändern der Properties nötig.}	
+			{Um zu wissen welcher Layoutalgorithmus zuletzt angewendet wurde und um diesen wiederholt anwenden zu können. Dies ist unter anderem bei der Collapse bzw. Expand Funktion und dem ändern der Properties nötig.}
+	\change	{Die Realisierung von Gruppen wurde in die GUI verschoben und jede \textit{VertexShape} speichert ihren VertexStyle}
+			{Da Gruppen nicht direkt mit dem darunter liegenden Datenmodel zusammenhängen, werden sie komplett in der GUI realisiert. Dazu wird für eine bestimmte Untermenge der Knoten eine von JavaFX definierter Style, im CSS Format, gesetzt. Dieser wird in der \textit{VertexShape} gespeichert und mittels \textit{getVertexStyle()} und \textit{setVertexStyle()} zugegriffen.}
 \end{longtable}
 
 \section{Sugiyama}
