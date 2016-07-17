@@ -22,8 +22,10 @@
 			{All reason why using enum is better when possibility are known at compile-time.  (Lucas)}
 	\change	{Replaced edgeKind (String) field from JoanaEdge with enum. Adapted interface of JoanaEdge accordingly.} 
 			{All reason why using enum is better when possibility are known at compile-time.  (Lucas)}
-	\change	{\textit{SerializedGraph} verschoben. Die \textit{GraphViewGraphFactory} wird nun serialisiert und nicht das Model.} 
-			{Die \textit{GraphViewGraphFactory} besitzt mehr Information (z.B. die Größe der Knoten) über den Graphen als das Model. Diese Informationen sind vor allem für den \textit{SvgExporter} wichtig.}
+	\change	{Jede \textit{GraphView} besitzt ihre eigene \textit{GraphViewGraphFactory}.}
+			{Die \textit{GraphViewGraphFactory} bietet Zugriff mittels eines Mappings von GUI-Elementen auf die Modelelementen und auf den dargestellten Graph.}
+	\change	{\textit{SerializedGraph} verschoben. Der angezeigte Graph wird nun von der \textit{GraphViewGraphFactory} serialisiert und im Model.} 
+			{Die \textit{GraphViewGraphFactory} besitzt mehr Information (z.B. Farbe, Gruppe usw.) über den Graphen als das Model. Diese Informationen sind vor allem für den \textit{SvgExporter} wichtig.}
 	\change	{Added class DefaultDirectedEdge and changed DirectedEdge from class to interface. Changed occurences of DirectedEdge to DefaultDirectedEdge in most cases in whole project.} 
 			{There was a need of an interface of DirectedEdge (Jonas M)}
 	\change	{\textit{getColor()} in \textit{Edge} und \textit{Vertex} hinzugefügt} 
