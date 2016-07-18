@@ -1,2 +1,63 @@
 \chapter{Unit Tests}
 \label{ch:unittests}
+
+\newcounter{tnr}{1}
+\newcommand\test[2]{\textbf{\arabic{tnr}}\addtocounter{tnr}{1}. & \textbf{Test:} & #1 \\ & \textbf{Aufgabe:} & #2 \\ [1ex] }
+
+\section{Plugin}
+\subsection{PluginManagerTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{testPluginLoad()}{}
+\end{longtable}
+
+\section{Joana}
+\subsection{JoanaGraphTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{test()}{}
+	\test{collapseTest()}{}
+	\test{randomSymmetricCollapseTest()}{}
+	\test{randomMixedCollapseTest()}{}
+	\test{randomAssymmetricCollapseTest()}{}
+\end{longtable}
+
+\newpage
+
+\section{Sugiyama}
+\subsection{CycleRemoverTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{testSimpleCycle()}{}
+	\test{testDoubleCycle()}{}
+	\test{RandomGraphsTest()}{}
+	\test{SingleRandomTest()}{}
+\end{longtable}
+
+\subsection{LayerAssignerTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{singleRandomTest()}{}
+	\test{randomTests()}{}
+\end{longtable}
+
+\subsection{CrossMinimizerTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{singleRandomTest()}{}
+	\test{randomTests()}{}
+	\test{performanceTest()}{}
+	\test{hugeTest()}{}
+\end{longtable}
+
+\subsection{VertexPositionerTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{positionVertices()}{}
+\end{longtable}
+
+\subsection{EdgeDrawerTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{compileTest()}{}
+\end{longtable}

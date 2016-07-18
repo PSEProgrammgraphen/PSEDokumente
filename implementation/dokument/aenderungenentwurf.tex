@@ -8,20 +8,18 @@
 \setcounter{cnr}{1}
 
 \begin{longtable}{llp{0.8\linewidth}}
-	\change	{Methode \textit{getGraphBuilder()} verschoben von \textit{IVertexBuilder} zu \textit{IGraphBuilder}.} 
+	\change	{Methode \textit{getGraphBuilder()} von \textit{IVertexBuilder}  \textit{IGraphBuilder} verschoben.} 
 			{Dadurch können hierachische Graphen einfacher erstellt werden, da der \textit{IGraphBuilder} den \textit{IGraphModelBuilder} kennt.}
-	\change	{Collabsable Graph Interface hinzugefügt} 
-			{unterscheiden zwischen einem compoundgraph(z.B. FieldAccess) und einem normalen zusammengeklappten subgraphen}
+	\change	{Collabsable Graph Interface hinzugefügt.} 
+			{Zwischen einem zusammengeklappten Subgraphen und einer \textit{CompoundVertex}(z.B. FieldAccess) war nicht zu unterscheiden. Durch die \textit{CollapsedVertex} und ihre speziellen Subklassen ist die genaue Unterscheidung möglich.}
 	\change	{Abhängigkeiten zwischen \textit{JoanaGraphModelBuilder}, \textit{JoanaGraphBuilder}, \textit{JoanaVertexBuilder} und \textit{JoanaEdgeBuilder} hinzugefügt.} 
-			{Jede Builder Klasse muss wissen von welchem Builder sie erstellt wurde, um das erstellte Produkt (z.B. \textit{JoanaVertex} oder \textit{JoanaEdge}) bei seiner Elternklasse abspeichern zu können. }
-	\change	{Added AbstractPluginBase} 
-			{Many functions in the concrete Plugins are nearly empty, but have to be overwritten. An AbstractPluginBase reduces identical code.}
-	\change	{Removed build() functions from IGraphBuilder, IVertexBuilder, IEdgeBuilder.} 
-			{build() is now only called on IGraphModelBuilder, which then calls recursively the specific build functions of the concrete classes. (Lucas)}
-	\change	{Replaced nodeKind (String) field from JoanaVertex with enum. Adapted interface of JoanaVertex accordingly.} 
-			{All reason why using enum is better when possibility are known at compile-time.  (Lucas)}
-	\change	{Replaced edgeKind (String) field from JoanaEdge with enum. Adapted interface of JoanaEdge accordingly.} 
-			{All reason why using enum is better when possibility are known at compile-time.  (Lucas)}
+			{Jede Builder Klasse muss wissen von welchem Builder sie erstellt wurde, um das erstellte Produkt (z.B. \textit{JoanaVertex} oder \textit{JoanaEdge}) bei seiner Elternklasse abspeichern zu können.}
+	\change	{\textit{AbstractPluginBase} hinzugefügt.} 
+			{Die meisten Funktionen in den speziellen Plugins sind fast leer, müssen aber überschrieben werden. Die \textit{AbstractPluginBase} reduziert diesen redundanten Code.}
+	\change	{\textit{build()}-Funktionen aus \textit{IGraphBuilder}, \textit{IVertexBuilder} und \textit{IEdgeBuilder} entfernt.} 
+			{\textit{build()} wird nun nur auf den \textit{IGraphModelBuilder} aufgerufen, welcher die speziellen build-Funktionen der konkreten Klassen rekursiv aufruft.}
+	\change	{\textit{nodeKind}(String) aus \textit{JoanaVertex} und \textit{edgeKind}(String) aus \textit{JoanaEdge} durch jeweils einen Enum ersetzt und die Interfaces entsprechend angepasst.} 
+			{Die genauen Werte die \textit{nodeKind}/\textit{edgeKind} annehmen können sind zur Compile-Zeit festgelegt. Dadurch können bestimmte Werte, wie Farbe und potentiell maximale Breite von Knoten nun durch den Typen festgelegt werden.}
 	\change	{Jede \textit{GraphView} besitzt ihre eigene \textit{GraphViewGraphFactory}.}
 			{Die \textit{GraphViewGraphFactory} bietet Zugriff mittels eines Mappings von GUI-Elementen auf die Modelelementen und auf den dargestellten Graph.}
 	\change	{\textit{SerializedGraph} verschoben. Der angezeigte Graph wird nun von der \textit{GraphViewGraphFactory} serialisiert und im Model.} 
