@@ -29,26 +29,26 @@ Importiert eine größere Anzahl von GraphML Dateien und führt mehrere Tests au
 \subsection{CycleRemoverTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{testSimpleCycle()}{Baut einen einfachen Kreis aus drei Knoten und drei Kanten auf und testet nach Aufruf von \textit{removeCycles()} ob der Graph azyklisch ist.}
-	\test{testDoubleCycle()}{Baut einen doppelten Kreis aus vier Knoten und vier Kanten auf und testet nach Aufruf von \textit{removeCycles()} ob der Graph azyklisch ist.}
-	\test{RandomGraphsTest()}{Erstellt zwanzig immer größer und dichter werdende zufällige zyklische Graphen und testet bei jedem nach Aufruf von \textit{removeCycles()} ob der Graph azyklisch ist.}
-	\test{SingleRandomTest()}{Baut einen einzigen zufälligen zyklischen Graphen auf und testet nach Aufruf von \textit{removeCycles()} ob der Graph azyklisch ist.}
+	\test{testSimpleCycle()}{Erstellt einen Testgraphen aus drei Knoten die jeweils mit einem anderen Knoten über eine gerichtete Kante verbunden sind, sodass ein Kreis entsteht. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem Cycle remover \textit{removeCycles()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob der Graph azyklisch ist.}
+	\test{testDoubleCycle()}{Erstellt einen Testgraphen aus vier Knoten und fünf gerichteten Kanten. Die Kanten sind so miteinander verknüpft, dass zwei Zykel entstehen. Ein kleiner Zykel drei Knoten beinhaltender und ein großer Zykel, der alle vier Knoten und damit auch den kleineren Zykel enthaltenden. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem Cycle remover \textit{removeCycles()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob der Graph azyklisch ist.}
+	\test{RandomGraphsTest()}{Erstellt zwanzig zufällige, zyklische \textit{SugiyamaGraphen}. Diese bestehen beim n-ten Graphen aus aus 2n Knoten und haben eine Kantendichte von $0.95^{n}$. Dann ruft es auf dem Cycle remover \textit{removeCycles()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob der Graph azyklisch ist.}
+	\test{SelfLoopTest()}{Erstellt einen Testgraphen aus einem Knoten mit einer gerichteten Kante als Selbstschleife. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem Cycle remover \textit{removeCycles()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob diese Kante umgedreht wurde.}
 \end{longtable}
 
 \subsection{LayerAssignerTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{assignLayers()}{Baut einen simplen Graphen mit fünf Knoten und fünf Kanten auf und prüft nach Aufruf von \textit{assignLayers()} ob der Graph den richtigen Schichten zugewiesen wurde.}
-	\test{LayerAssignerTest2()}{Baut einen Graphen mit sieben Knoten und zehn Kanten auf und prüft nach Aufruf von \textit{assignLayers()} ob der Graph den richtigen Schichten zugewiesen wurde.}
+	\test{assignLayers()}{Erstellt einen azyklischen Testgraphen aus fünf Knoten, welche die korrekte Ebene für die Knoten angeben. Diese werden mit fünf Kanten verbunden. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem LayerAssigner \textit{assignLayers()} mit dem \textit{SugiyamaGraph} als Parameter und testet mithilfe der Labels, ob die Knoten den richtigen Schichten zugewiesen wurden.}
+	\test{LayerAssignerTest2()}{Erstellt einen azyklischen Testgraphen aus sieben Knoten, welche die korrekte Ebene für die Knoten angeben. Diese werden mit zehn Kanten verbunden. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem  LayerAssigner \textit{assignLayers()} mit dem \textit{SugiyamaGraph} als Parameter und testet mithilfe der Labels, ob die Knoten den richtigen Schichten zugewiesen wurden.}
 \end{longtable}
 
 \subsection{CrossMinimizerTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{singleRandomTest()}{Testet ob nach Aufruf von \textit{minimizeCrossings()} die Anzahl der Kantenkreuzungen verringert wurde.}
-	\test{randomTests()}{Testet für 30 verschiedene größer werdende Graphen ob sich jeweils nach Aufruf von \textit{minimizeCrossings()} die Anzahl der Kantenkreuzungen verringert hat.}
-	\test{performanceTest()}{Ruft 20 mal auf einen neuen zufälligen Graphen mit 75 Knoten mit jeweils zwischen 2 und 8 Kanten \textit{minimizeCrossings()} auf und prüft ob sich die Kantenkreuzungen verringert haben. Dabei geht es besonders um die Zeit die der Test benötigt.}
-	\test{hugeTest()}{Ruft auf einen zufälligen Graphen mit 250 Knoten mit jeweils zwischen 2 und 6 Kanten \textit{minimizeCrossings()} auf und prüft ob sich die Kantenkreuzungen verringert haben.}
+	\test{singleRandomTest()}{Erstellt einen zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Diese bestehen aus 20 Knoten, die jeweils 2-8 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt.}
+	\test{randomTests()}{Erstellt 20 zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Diese bestehen beim n-ten durchlauf aus ${n} + 10$ Knoten, die jeweils 3-4 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt.}
+	\test{performanceTest()}{Erstellt 20 zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Diese bestehen aus 75 Knoten, die jeweils 2-8 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt. Dabei geht es besonders um die Zeit die der Test benötigt.}
+	\test{hugeTest()}{Erstellt einen zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Dieser besteht aus 250 Knoten, die jeweils 2-6 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt. Dabei geht es besonders um die Zeit die der Test benötigt.}
 \end{longtable}
 
 \subsection{VertexPositionerTest}
