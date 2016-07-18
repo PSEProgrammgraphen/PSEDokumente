@@ -8,16 +8,17 @@
 \subsection{PluginManagerTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{testPluginLoad()}{}
+	\test{testPluginLoad()}{Testet ob der \textit{PluginManager} alle Plugins läd.}
 \end{longtable}
 
 \section{Joana}
 \subsection{JoanaGraphTest}
+Importiert eine größere Anzahl von GraphML Dateien und führt mehrere Tests auf die Menge von GraphModels aus.
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{test()}{}
-	\test{collapseTest()}{}
-	\test{randomSymmetricCollapseTest()}{}
+	\test{test()}{Testet ob in jedem Model, die Anzahl der Kanten im CallGraph der Anzahl der MethodenGraphen entspricht.}
+	\test{collapseTest()}{Testet für einen zufälligen MethodenGraphen das Kollabieren und Ausklappen von einer Knotenmenge.}
+	\test{randomSymmetricCollapseTest()}{Kollabiert in einem zufälligen MethodenGraphen mehrfach Knoten, klappt sie in umgekehrter Reihenfolge wieder aus und testet auf Gleichheit zum Beginn des Tests.}
 	\test{randomMixedCollapseTest()}{}
 	\test{randomAssymmetricCollapseTest()}{}
 \end{longtable}
@@ -28,36 +29,44 @@
 \subsection{CycleRemoverTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{testSimpleCycle()}{}
-	\test{testDoubleCycle()}{}
-	\test{RandomGraphsTest()}{}
-	\test{SingleRandomTest()}{}
+	\test{testSimpleCycle()}{Baut einen einfachen Kreis aus drei Knoten und drei Kanten auf und testet nach Aufruf von \textit{removeCycles()} ob der Graph azyklisch ist.}
+	\test{testDoubleCycle()}{Baut einen doppelten Kreis aus vier Knoten und vier Kanten auf und testet nach Aufruf von \textit{removeCycles()} ob der Graph azyklisch ist.}
+	\test{RandomGraphsTest()}{Erstellt zwanzig immer größer und dichter werdende zufällige zyklische Graphen und testet bei jedem nach Aufruf von \textit{removeCycles()} ob der Graph azyklisch ist.}
+	\test{SingleRandomTest()}{Baut einen einzigen zufälligen zyklischen Graphen auf und testet nach Aufruf von \textit{removeCycles()} ob der Graph azyklisch ist.}
 \end{longtable}
 
 \subsection{LayerAssignerTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{singleRandomTest()}{}
-	\test{randomTests()}{}
+	\test{assignLayers()}{Baut einen simplen Graphen mit fünf Knoten und fünf Kanten auf und prüft nach Aufruf von \textit{assignLayers()} ob der Graph den richtigen Schichten zugewiesen wurde.}
+	\test{LayerAssignerTest2()}{Baut einen Graphen mit sieben Knoten und zehn Kanten auf und prüft nach Aufruf von \textit{assignLayers()} ob der Graph den richtigen Schichten zugewiesen wurde.}
 \end{longtable}
 
 \subsection{CrossMinimizerTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{singleRandomTest()}{}
-	\test{randomTests()}{}
-	\test{performanceTest()}{}
-	\test{hugeTest()}{}
+	\test{singleRandomTest()}{Testet ob nach Aufruf von \textit{minimizeCrossings()} die Anzahl der Kantenkreuzungen verringert wurde.}
+	\test{randomTests()}{Testet für 30 verschiedene größer werdende Graphen ob sich jeweils nach Aufruf von \textit{minimizeCrossings()} die Anzahl der Kantenkreuzungen verringert hat.}
+	\test{performanceTest()}{Ruft 20 mal auf einen neuen zufälligen Graphen mit 75 Knoten mit jeweils zwischen 2 und 8 Kanten \textit{minimizeCrossings()} auf und prüft ob sich die Kantenkreuzungen verringert haben. Dabei geht es besonders um die Zeit die der Test benötigt.}
+	\test{hugeTest()}{Ruft auf einen zufälligen Graphen mit 250 Knoten mit jeweils zwischen 2 und 6 Kanten \textit{minimizeCrossings()} auf und prüft ob sich die Kantenkreuzungen verringert haben.}
 \end{longtable}
 
 \subsection{VertexPositionerTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{positionVertices()}{}
+	\test{positionVertices()}{Testet nichts...?!}
 \end{longtable}
 
 \subsection{EdgeDrawerTest}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
-	\test{compileTest()}{}
+	\test{compileTest()}{Testet nichts...?!}
+\end{longtable}
+
+\subsection{SugiyamaLayoutAlgorithmTest}
+Für jeden Test wird ein kompletter Sugiyama-Layout-Algorithmus angewendet.
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{testSmallGraph()}{Testet für einen Graphen mit vier Knoten und fünf Kanten ob der gesamte Algorithmus ohne Fehler durchläuft.}
+	\test{testRandomGraph()}{Testet für drei zufällige Graphen ob der gesamte Algorithmus ohne Fehler durchläuft.}
 \end{longtable}
