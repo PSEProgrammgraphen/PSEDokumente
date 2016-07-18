@@ -32,6 +32,9 @@
 			{Um zu wissen welcher Layoutalgorithmus zuletzt angewendet wurde und um diesen wiederholt anwenden zu können. Dies ist unter anderem bei der Collapse bzw. Expand Funktion und dem ändern der Properties nötig.}
 	\change	{Die Realisierung von Gruppen wurde in die GUI verschoben und jede \textit{VertexShape} speichert ihren VertexStyle}
 			{Da Gruppen nicht direkt mit dem darunter liegenden Datenmodel zusammenhängen, werden sie komplett in der GUI realisiert. Dazu wird für eine bestimmte Untermenge der Knoten eine von JavaFX definierter Style, im CSS Format, gesetzt. Dieser wird in der \textit{VertexShape} gespeichert und mittels \textit{getVertexStyle()} und \textit{setVertexStyle()} zugegriffen.}
+			
+	\change {Klasse \textit{Point} zu \textit{IntegerPoint} geändert, Klasse \textit{DoublePoint} hinzugefügt.}
+			{In vielen Fällen war ein Punkt mit double Argumenten nötig, daher wurde einer für Integer und einer für double gemacht.}
 \end{longtable}
 
 \section{Sugiyama}
@@ -39,13 +42,24 @@
 \setcounter{cnr}{1}
 
 \begin{tabular}{llp{0.8\linewidth}}
-	\change	{Changed method return type of reverseEdge(SugiyamaEdge edge) in ICycleRemoverGraph from Set<SugiyamaEdge> to void} 
-			{Not really necessary to know which edges have been turned, it can be queried from the edge throug an instance of a SugiyamaGraph (Jonas M)}
-	\change	{Added Interface ISugiyamaVertex and let SugiyamaVertex and DummyVertex implement it. Changed every occurence of SugiyamaVertex to ISugiyamaVertex in package sugiyama} 
-			{It's necessary to treat SugiyamaVertex and DummyVertex the same way in a common list (Jonas M)}
-	\change	{Moved class Point to from package sugiyama to package edu.kit.student.util} 
-			{For a better overview (Lucas)}
-	\change	{SupplementPath does not extends DirectedEdge anymore.} 
-			{?}
+	
+	\change {Interface \textit{ISugiyamaVertex} hinzugefügt. Außerdem implementieren \textit{SugiyamaVertex} und 
+			\textit{DummyVertex} dieses Interface.}
+			{Es war nötig, \textit{SugiyamaVertex} und \textit{DummyVertex} in einer Sammlung gleich zu behandeln.}
+			
+	\change {Interface \textit{ISugiyamaEdge} hinzugefügt. Außerdem implementieren \textit{SugiyamaEdge} und
+			\textit{SupplementEdge} dieses Interface.}
+			{Es war nötig, \textit{SugiyamaEdge} und \textit{SupplementEdge} in einer Sammlung gleich zu behandeln.}
+			
+	\change {Interface \textit{ISugiyamaStepGraph} hinzugefügt, welches das Interface \textit{LayeredGraph} erweitert.
+			Die Interfaces \textit{ILayerAssignerGraph}, \textit{ICrossMinimizerGraph}, \textit{IVertexPositionerGraph} und \textit{IEdgeDrawerGraph} erweitern nun \textit{ISugiyamaStepGraph} anstelle von \textit{LayeredGraph}.}
+			{Gibt den einzelnen Phasen mehr notwendige Zugriffe auf Funktionen im \textit{SugiyamaGraph}, da in vielen
+			Phasen für die Durchführung nötige Methodenzugriffe fehlten.}
+	
+	\change {Klasse \textit{Point} aus dem sugiyama-Paket in das Paket \textit{shared/src/main/java/edu.kit.student.util}
+			verschoben.}
+			{Nicht nur der Sugiyama braucht Punkte, daher wurde es in einen allgemeinnütziges Paket, der Übersichtlichkeit wegen,  verschoben.}
+
+			
 \end{tabular}
 
