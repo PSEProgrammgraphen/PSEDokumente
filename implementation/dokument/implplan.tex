@@ -17,7 +17,7 @@ Zusätzlich zur Änderung des Plans wurde eine grobe Projektstruktur in Gradle a
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{week_one_table.PNG}
-	\caption{Überarbeiteter Plan für Woche 1 mit Fortschritt}
+	\caption{Überarbeiteter Plan nach Woche 1 mit Fortschritt}
 	\label{fig:week_one_table}
 \end{figure}
 \subsection{Verzögerungen}
@@ -38,7 +38,7 @@ Dazu wurde besonders auf die zeitnahe Fertigstellung des Imports und auf die gro
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{week_two_table.PNG}
-	\caption{Implementierungsplan für Woche 1 und 2 mit Fortschritt}
+	\caption{Implementierungsplan nach Woche 1 und 2}
 	\label{fig:week_two_table}
 \end{figure}
 \subsection{Verzögerungen}
@@ -54,12 +54,12 @@ Aufgrund der im Entwurf definierten Generics im GraphModel entstanden häufig se
 \newpage
 
 \section{Woche 3}
-Da in Woche 3 die Oberfläche benutzbar war und man Graphen importieren und anzeigen konnte wurde neben dem in \ref{sec:delay_week2} beschriebene Refactoring, viele Bugfixes und Verbesserungen vorgenommen, die ohne eine Anzeige nicht sichtbar waren. Genau deshalb wurden in \ref{fig:week_three_table} zwar weniger Aufgaben vollständig abgeschlossen, dafür bei vielen aber ein deutlicher Fortschritt erzielt. \\
+Da in Woche 3 die Oberfläche benutzbar war und man Graphen importieren und anzeigen konnte wurde neben dem in \ref{sec:delay_week2} beschriebenen Refactoring, viele Bugfixes und Verbesserungen vorgenommen, die ohne eine Anzeige nicht sichtbar waren. Genau deshalb wurden in \ref{fig:week_three_table} zwar weniger Aufgaben vollständig abgeschlossen, dafür bei vielen aber ein deutlicher Fortschritt erzielt. \\
 In dieser Woche wurde auch die strikte Unterteilung in die Wochen 3 und 4 aufgehoben da es für das händische Testen von anderen Aufgabenteilen an der Oberfläche anbot diese Vorzuziehen.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{week_three_table.PNG}
-	\caption{}
+	\caption{Implementierungsplan nach Woche 3}
 	\label{fig:week_three_table}
 \end{figure}
 \subsection{Verzögerungen}
@@ -74,12 +74,17 @@ Nach dem Sprint zum Ende der zweiten Woche wurde, wie in \ref{fig:week_three_dia
 \newpage
 
 \section{Woche 4}
-Am Ende der 4. Woche steht rückblickend fest, dass der Implementierungsplan zwar von seiner Struktur und den generellen zeitlichen Abschätzungen gut war, der Arbeitsaufwand aber in vielen Aufgabenbereichen stark unterschätzt wurde. Der Grund war häufig, das im Entwurf gemachte Designentscheidungen nicht tief genug durchdacht waren und im Laufe der Entwicklung angepasst oder komplett neu erdacht werden mussten. Solche Anpassungen haben an verschiedenen Stellen sehr viel Zeit in Anspruch genommen, welche nicht im Implementierungsplan vermerkt wurde. Diese Verzögerungen spiegeln sich besonders in der flachen Fortschrittskurve in den ersten zwei Wochen dar und haben die gesamte Entwicklung zurückgeworfen. \\
-Man erkennt in \ref{fig:week_four_table} das die Ist-Kurve nach der ersten Woche fast genau so stark, manchmal sogar stärker, steigt als die Soll-Kurve. Trotzdem wurde durch die nötigen Anpassungen bedeutend mehr Zeit gebraucht als angegeben wurde. Deshalb waren auch die 16 wöchentlichen Arbeitsstunden pro Person, mit welchen die Soll-Kurve berechnet wurde, bei weitem nicht ausreichend um die Entwicklung in den vier Wochen möglichst vollständig abzuschließen. Es wurden auch die fünf Tage am Ende, die als zeitlicher Puffer eingeplant waren vollständig benötigt.
+In Woche 4 wurden die vielen in Woche 3 begonnenen Aufgaben fertiggestellt. Des weiteren wurden Aufgaben die noch nicht begonnen waren, wie Filter und Kommandozeilenparameter akzeptieren, schnellstmöglich eingebaut.
+Die Arbeit an den Filtern und dem Sugiyama-Algorithmus zog sich bis zum letzten Tag vor Fertigstellungstermin.
+\subsection{Verzögerungen}
+Die vielen weit fortgeschrittenen Aufgaben in Woche 3 die bereits in der Oberfläche benutzbar waren, zeigten verschiedene kleinere Fehler auf, die zuvor nicht sichtbar waren. Diese Fehler zu reparieren und die Tatsache das die Arbeit am Implementierungsheft begonnen wurde, sorgte für leichte Verzögerungen im Implementierungsfortschritt.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=380pt]{resourcen/week_four_diagram.PNG}
 	\caption{Fortschrittsdiagramm nach Woche 4}
-	\label{fig:week_four_table}
+	\label{fig:week_four_diagram}
 \end{figure}
 
+\section{Rückblick}
+Am Ende der 4. Woche steht rückblickend fest, dass der Implementierungsplan zwar von seiner Struktur und den generellen zeitlichen Abschätzungen gut war, der Arbeitsaufwand aber in vielen Aufgabenbereichen stark unterschätzt wurde. Der Grund war häufig, das im Entwurf gemachte Designentscheidungen nicht tief genug durchdacht waren und im Laufe der Entwicklung angepasst oder komplett neu erdacht werden mussten. Solche Anpassungen haben an verschiedenen Stellen sehr viel Zeit in Anspruch genommen, welche nicht im Implementierungsplan vermerkt wurde. Diese Verzögerungen spiegeln sich besonders in der flachen Fortschrittskurve in den ersten zwei Wochen dar und haben die gesamte Entwicklung zurückgeworfen. \\
+Man erkennt in \ref{fig:week_four_diagram} das die Ist-Kurve nach der ersten Woche fast genau so stark, manchmal sogar stärker, steigt als die Soll-Kurve. Trotzdem wurde durch die nötigen Anpassungen bedeutend mehr Zeit gebraucht als angegeben wurde. Deshalb waren auch die 16 wöchentlichen Arbeitsstunden pro Person, mit welchen die Soll-Kurve berechnet wurde, bei weitem nicht ausreichend um die Entwicklung in den vier Wochen möglichst vollständig abzuschließen. Es wurden auch die fünf Tage am Ende, die als zeitlicher Puffer eingeplant waren vollständig benötigt.
