@@ -89,13 +89,17 @@ An vielen Stellen war die Belegung der Parameter allerdings uninteressant, wesha
 			
 	\change {Interface \textit{ISugiyamaStepGraph} hinzugefügt, welches das Interface \textit{LayeredGraph} erweitert.
 			Die Interfaces \textit{ILayerAssignerGraph}, \textit{ICrossMinimizerGraph}, \textit{IVertexPositionerGraph} und \textit{IEdgeDrawerGraph} erweitern nun \textit{ISugiyamaStepGraph} anstelle von \textit{LayeredGraph}.}
-			{Bietet allen Funktionen nötige zugriffe auf Informationen über den Graphen, wie zum Beispiel Eingangs- und Ausgangsgrad, die Layernummer eines Knoten, eingehende- und ausgehende Knoten eines Knoten ...
+			{Bietet allen Funktionen nötige Zugriffe auf Informationen über den Graphen, wie zum Beispiel Eingangs- und Ausgangsgrad, die Layernummer eines Knoten, eingehende- und ausgehende Knoten eines Knoten ...
 			Somit werden Duplikate von Methoden mit dem gleichen Zweck in den einzelnen Graph-Interfaces für verschiedene Schritte vermieden.}
 	
 	\change {Klasse \textit{Point} aus dem sugiyama-Paket in das Paket \textit{shared/src/main/java/edu.kit.student.util}
 			verschoben.}
 			{Nicht nur der Sugiyama braucht Punkte, daher wurde es in einen allgemeinnütziges Paket, der Übersichtlichkeit wegen,  verschoben.}
 
+	\change {Methoden \textit{setMaxHeight(int height)} und \textit{setMaxWidth(int width)} aus dem 	
+			\textit{LayerAssigner} wurden nicht implementiert.}
+			{Sie waren bisher für den \textit{LayerAssigner} nicht notwendig, bei den meisten Graphen lieferte die Standartimplementierung des \textit{assignLayers} gute Ergebnisse.
+			Da ohnehin oftmals viele Kanten herausgefiltert werden sollen, ist der Graph oft nicht unnötig hoch oder breit. Oder es ist gewollt.}
 			
 \end{tabular}
 
