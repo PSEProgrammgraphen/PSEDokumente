@@ -65,6 +65,9 @@ An vielen Stellen war die Belegung der Parameter allerdings uninteressant, wesha
 	\change {\textit{DefaultDirectedGraph<V,E>} und 
 \textit{DefaultLayering<V>} als Datenstruktur für andere Graphen.}
 			{Um nicht durch das Entfernen der Vererbung von \textit{DefaultDirectedGraph} grundlegende Funktionen eines Graphen in jedem Graph neu implementieren zu müssen, wurde \inlineCode{DefaultDirectedGraph<V,E>} als Datenstruktur umfunktioniert, welcher in einer Komposition in anderen Graphen, wie JoanaGraph und SugiyamaGraph genutzt werden kann. Gleiches gilt bei \textit{DefaultLayering} für das Speichern von relativen Positionen in Graphen.}
+			
+	\change{Funktion \textit{getRegisteredLayout()}s und \textit{getDefaultLayout()}s wurde von dem Interface \textit{Graph} in \textit{ViewableGraph} verschoben}
+			{\textit{LayoutOption}s sind nur für \textit{ViewableGraph} verfügbar}
 \end{longtable}
 
 \section{Sugiyama}
