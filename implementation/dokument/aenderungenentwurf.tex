@@ -61,16 +61,22 @@ An vielen Stellen war die Belegung der Parameter allerdings uninteressant, wesha
 	
 	\change {Interface \textit{ISugiyamaVertex} hinzugefügt. Außerdem implementieren \textit{SugiyamaVertex} und 
 			\textit{DummyVertex} dieses Interface.}
-			{Es war nötig, \textit{SugiyamaVertex} und \textit{DummyVertex} in einer Sammlung gleich zu behandeln.}
+			{In vielen Schritten, vor allem im \textit{CycleRemover} war es nötig, \textit{SugiyamaVertex} und 
+			\textit{DummyVertex} zusammen in einem Set zu haben, was aufgrund der Vererbungshierarchie bislang
+			nicht möglich war. Weshalb beide nun das neue Interface implementieren, somit gemeinsam behandelt 
+			werden können und zusätzlich die Funktionalitäten anbieten können, die für die einzelnen Schritte von beiden Knotentypen notwendig sind.}
 			
 	\change {Interface \textit{ISugiyamaEdge} hinzugefügt. Außerdem implementieren \textit{SugiyamaEdge} und
 			\textit{SupplementEdge} dieses Interface.}
-			{Es war nötig, \textit{SugiyamaEdge} und \textit{SupplementEdge} in einer Sammlung gleich zu behandeln.}
+			{Aufgrund der Implementierungsentscheidung, die \textit{SupplementEdge}s anstelle der \textit{SupplementPath}s
+			zu den nicht durch \textit{Supplementpath}s ersetzten Kanten des Graphen zu speichern, war es nötig, 
+			\textit{SugiyamaEdge}s und \textit{SupplementEdge}s zusammen in einem Set zu haben.
+			Deswegen implementieren beide nun dasselbe Interface. Zudem können so auch einfacher gemeinsame Methoden der beiden verschiedenen Kanten definiert werden, welche von diesen für weitere Schritte unterstützt werden müssen.}
 			
 	\change {Interface \textit{ISugiyamaStepGraph} hinzugefügt, welches das Interface \textit{LayeredGraph} erweitert.
 			Die Interfaces \textit{ILayerAssignerGraph}, \textit{ICrossMinimizerGraph}, \textit{IVertexPositionerGraph} und \textit{IEdgeDrawerGraph} erweitern nun \textit{ISugiyamaStepGraph} anstelle von \textit{LayeredGraph}.}
-			{Gibt den einzelnen Phasen mehr notwendige Zugriffe auf Funktionen im \textit{SugiyamaGraph}, da in vielen
-			Phasen für die Durchführung nötige Methodenzugriffe fehlten.}
+			{Bietet allen Funktionen nötige zugriffe auf Informationen über den Graphen, wie zum Beispiel Eingangs- und Ausgangsgrad, die Layernummer eines Knoten, eingehende- und ausgehende Knoten eines Knoten ...
+			Somit werden Duplikate von Methoden mit dem gleichen Zweck in den einzelnen Graph-Interfaces für verschiedene Schritte vermieden.}
 	
 	\change {Klasse \textit{Point} aus dem sugiyama-Paket in das Paket \textit{shared/src/main/java/edu.kit.student.util}
 			verschoben.}
