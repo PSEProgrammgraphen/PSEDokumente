@@ -8,49 +8,63 @@
 \setcounter{cnr}{1}
 
 \begin{longtable}{llp{0.8\linewidth}}
-	\change	{Methode \textit{getGraphBuilder()} von \textit{IVertexBuilder}  \textit{IGraphBuilder} verschoben.} 
+	\change	{Methode \textit{getGraphBuilder()} von \textit{IVertexBuilder} nach  \textit{IGraphBuilder} verschoben.} 
 			{Dadurch können hierachische Graphen einfacher erstellt werden, da der \textit{IGraphBuilder} den \textit{IGraphModelBuilder} kennt.}
+			
 	\change	{Collabsable Graph Interface hinzugefügt.} 
 			{Zwischen einem zusammengeklappten Subgraphen und einer \textit{CompoundVertex}(z.B. FieldAccess) war nicht zu unterscheiden. Durch die \textit{CollapsedVertex} und ihre speziellen Subklassen ist die genaue Unterscheidung möglich.}
+			
 	\change	{Abhängigkeiten zwischen \textit{JoanaGraphModelBuilder}, \textit{JoanaGraphBuilder}, 
 			\textit{JoanaVertexBuilder} und \textit{JoanaEdgeBuilder} hinzugefügt.} 
 			{Jede Builder Klasse muss wissen von welchem Builder sie erstellt wurde, um das erstellte Produkt (z.B. \textit{JoanaVertex} oder \textit{JoanaEdge}) bei seiner Elternklasse abspeichern zu können.}
+	
 	\change	{\textit{AbstractPluginBase} hinzugefügt.} 
 			{Die meisten Funktionen in den speziellen Plugins sind fast leer, müssen aber überschrieben werden. Die \textit{AbstractPluginBase} reduziert diesen redundanten Code.}
+	
 	\change	{\textit{build()}-Funktionen aus \textit{IGraphBuilder}, \textit{IVertexBuilder} und \textit{IEdgeBuilder} 
 			entfernt.} 
 			{\textit{build()} wird nun nur auf den \textit{IGraphModelBuilder} aufgerufen, welcher die speziellen build-Funktionen der konkreten Klassen rekursiv aufruft.}
+	
 	\change	{\textit{nodeKind}(String) aus \textit{JoanaVertex} und \textit{edgeKind}(String) aus \textit{JoanaEdge} 
 			durch jeweils einen Enum ersetzt und die Interfaces entsprechend angepasst.} 
 			{Die genauen Werte die \textit{nodeKind}/\textit{edgeKind} annehmen können sind zur Compile-Zeit festgelegt. Dadurch können bestimmte Werte, wie Farbe und potentiell maximale Breite von Knoten nun durch den Typen festgelegt werden.}
+	
 	\change	{Jede \textit{GraphView} besitzt ihre eigene \textit{GraphViewGraphFactory}.}
 			{Die \textit{GraphViewGraphFactory} bietet Zugriff mittels eines Mappings von GUI-Elementen auf die Modelelementen und auf den dargestellten Graph.}
+	
 	\change	{\textit{SerializedGraph} verschoben. Der angezeigte Graph wird nun von der 
-			\textit{GraphViewGraphFactory} 		serialisiert und im Model.} 
+			\textit{GraphViewGraphFactory} serialisiert und nicht im Model.} 
 			{Die \textit{GraphViewGraphFactory} besitzt mehr Information (z.B. Farbe, Gruppe usw.) über den Graphen als das Model. Diese Informationen sind vor allem für den \textit{SvgExporter} wichtig.}
+	
 	\change {Klasse \textit{DefaultDirectedEdge} hinzugefügt, Klasse \textit{DirectedEdge} ist nun ein Interface.
 			Die Vorkommen von \textit{DirectedEdge} wurden, falls nötig, zu \textit{DefaultDirectedEdge} geändert.}
 			{Es war im Sinne von Erweiterungen nötig, ein Interface einer \textit{DirectedEdge} zu haben.}
-	\change	{\textit{getColor()} in \textit{Edge} und \textit{Vertex} hinzugefügt} 
+	
+	\change	{\textit{getColor()} in \textit{Edge} und \textit{Vertex} hinzugefügt.} 
 			{Die Farbe muss von der \textit{Edge}/\textit{Vertex} vorgegeben werden, damit die GUI verschiedene Farben vergeben kann, \textit{JoanaEdge} und \textit{JoanaVertex} geben jeweils eine Farbe zurück, die von ihrem Typ bestimmt wird.}
-	\change	{Aktuelle \textit{LayoutOption} wird in \textit{GraphView} gespeichert} 
-			{Um zu wissen welcher Layoutalgorithmus zuletzt angewendet wurde und um diesen wiederholt anwenden zu können. Dies ist unter anderem bei der Collapse bzw. Expand Funktion und dem ändern der Properties nötig.}
+
+	\change	{Aktuelle \textit{LayoutOption} wird in \textit{GraphView} gespeichert.} 
+			{Um zu wissen welcher Layoutalgorithmus zuletzt angewendet wurde und um diesen wiederholt anwenden zu können. Dies ist unter anderem bei der Collapse bzw. Expand Funktion und dem Ändern der Properties nötig.}
+	
 	\change	{Die Realisierung von Gruppen wurde in die GUI verschoben und jede \textit{VertexShape} speichert ihren 
-			VertexStyle}
+			VertexStyle.}
 			{Da Gruppen nicht direkt mit dem darunter liegenden Datenmodel zusammenhängen, werden sie komplett in der GUI realisiert. Dazu wird für eine bestimmte Untermenge der Knoten eine von JavaFX definierter Style, im CSS Format, gesetzt. Dieser wird in der \textit{VertexShape} gespeichert und mittels \textit{getVertexStyle()} und \textit{setVertexStyle()} zugegriffen.}
+	
 	\change {Klasse \textit{Point} zu \textit{IntegerPoint} geändert, Klasse \textit{DoublePoint} hinzugefügt.}
 			{In vielen Fällen war ein Punkt mit double Argumenten nötig, daher wurde einer für Integer und einer für double gemacht.}
-\change {Entfernen der generischen Parameter für Vertex und Edge in Graph sowie für Vertex in Edge}
-			{Zwischen den verschiedenen Hierarchie-Ebenen von Graphen und Vertex/Edge bestand eine kovariante Beziehung (z.B. Graph kann alle Typen von Vertex und Edge enthalten, DirectedGraph kann nur Typen von Vertex und DirectedEdge enthalten). Um im Allgemeinen alle Möglichkeiten zu unterstützen, musste diese Beziehungen in komplizierten und langen generischen Ausdrücken definiert werden. z.B:
+			
+\change {Entfernen der generischen Parameter für \textit{Vertex} und \textit{Edge} in \textit{Graph} sowie für \textit{Vertex} in \text{Edge}.}
+			{Zwischen den verschiedenen Hierarchie-Ebenen von Graphen und Vertex/Edge bestand eine kovariante Beziehung (z.B. \textit{Graph} kann alle Typen von \textit{Vertex} und \textit{Edge} enthalten, \textit{DirectedGraph} kann jedoch nur Typen von \textit{Vertex} und \textit{DirectedEdge enthalten}). Um im Allgemeinen alle Möglichkeiten zu unterstützen, mussten diese Beziehungen in komplizierten und langen generischen Ausdrücken definiert werden. Zum Beispiel:
 \inlineCode{LayoutAlgorithm<G extends DirectedGraph<V,E>, V extends Vertex, E extends DirectedEdge<V>}. \\ & &
-An vielen Stellen war die Belegung der Parameter allerdings uninteressant, weshalb oft Raw-Types als Alternative gewählt wurden, anstatt der langen, (zu) allgemeinen Parametriesierung:
+An vielen Stellen war die Belegung der Parameter allerdings uninteressant, weshalb oft Raw-Types als Alternative gewählt wurden, anstatt der langen, (zu) allgemeinen Parametrisierung:
 \inlineCode{Graph<? extends Vertex, ? extends Edge<?>.}}
 
-	\change {Entfernen der Vererbung JoanaGraph von DefaultDirectedGraph}
-			{Als Folge des Entfernens der Generics können von DefaultDirectedGraph erbende Graphen, welche auf die Implementation der Speicherung von Edges und Vertex in DefaultDirectedGraph zurückgriefen, dies nicht ohne einen Verlust des genauen Types der Edge/Vertex weiter tun.}
-	\change {\inlineCode{DefaultDirectedGraph<V,E>} und 
-\inlineCode{DefaultLayering<V>} als Datenstruktur für andere Graphen}
-			{Um nicht durch das Entfernen der Vererbung von DefaultDirectedGraph grundlegende Funktionen eines Graphen in jedem Graph neu implementieren zu müssen, wurde \inlineCode{DefaultDirectedGraph<V,E>} als Datenstruktur umfunktioniert welcher in einer Komposition in anderen Graphen, wie JoanaGraph und SugiyamaGraph genutzt werden kann. Gleiches gilt für DefaultLayering für das Speichern von relativen Positionen in Graphen.}
+	\change {Entfernen der Vererbung \textit{JoanaGraph} von \textit[{DefaultDirectedGraph}.}
+			{Als Folge des Entfernens der Generics konnten von \textit{DefaultDirectedGraph} erbende Graphen, welche auf die Implementation der Speicherung von Edges und Vertex in \textit{DefaultDirectedGraph} zurückgreifen, dies nicht weiterhin ohne einen Verlust des genauen Typs der Edge/Vertex tun.}
+			
+	\change {\textit{DefaultDirectedGraph<V,E>} und 
+\textit{DefaultLayering<V>} als Datenstruktur für andere Graphen.}
+			{Um nicht durch das Entfernen der Vererbung von \textit{DefaultDirectedGraph} grundlegende Funktionen eines Graphen in jedem Graph neu implementieren zu müssen, wurde \inlineCode{DefaultDirectedGraph<V,E>} als Datenstruktur umfunktioniert, welcher in einer Komposition in anderen Graphen, wie JoanaGraph und SugiyamaGraph genutzt werden kann. Gleiches gilt bei \textit{DefaultLayering} für das Speichern von relativen Positionen in Graphen.}
 \end{longtable}
 
 \section{Sugiyama}
