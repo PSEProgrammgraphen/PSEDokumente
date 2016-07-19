@@ -1,8 +1,15 @@
 \chapter{Einleitung}
 \label{ch:einleitung}
 
-Nachdem das Programm Graph von Ansicht bereits im Pflichtenheft definiert und der Programmaufbau in einem Entwurf ausgearbeitet wurde, ist der nächste Schritt das Implementieren des besagten Entwurfs.
-Dieses Dokument beschreibt die Planung und den Ablauf der Implementierung des Programms an dem in den vier Wochen vom 21.06.16 bis zum 19.07.16 gearbeitet wurde. \\
-Da sich manche Designentscheidungen oder Strukturen aus dem Entwurf erst während der Implementierung als eher unpraktisch oder nicht umsetzbar herausstellen, müssen diese abgeändert werden. Weil der Entwurf von Graph von Ansicht an manchen Stellen eher grob war und viele Änderungen gemacht wurden, wurden nur diese dokumentiert, die den Programmablauf oder den Sinn einer Klasse stark verändern. \\
-Im Pflichtenheft wurden Anforderungen und Kriterien beschrieben, welche im Programm umgesetzt werden müssen. ... ...\\
-Zusätzlich wurden Wunschkriterien beschrieben die im Entwurf berücksichtigt wurden und welche bei Möglichkeit oder übriger Zeit in das Programm übernommen werden sollen. Da die Zeit für Graph von Ansicht recht knapp bemessen war und die Kernfunktionalitäten mit priorität behandelt wurden, wurde keine der Wunschkriterien umgesetzt.
+Nachdem das Programm \glqq Graph von Ansicht\grqq{} bereits in einem Pflichtenheft definiert und der Programmaufbau in einem Entwurf ausgearbeitet wurde, war der nächste Schritt das Implementieren anhand des Entwurfes.
+Dieses Dokument beschreibt die Planung und den Ablauf der Implementierungphase, welche vom 21.06.16 bis zum 19.07.16 dauerte. Es zeigt insbesondere die Probleme bei der Implementierung auf und dokumentiert die resultierende Änderungen an dem Entwurf.\\
+\\
+Da sich manche Designentscheidungen und Strukturen aus dem Entwurf während der Implementierung als eher unpraktisch oder nicht umsetzbar herausstellten, mussten diese abgeändert werden. 
+Betroffen von diesen Änderungen waren vor allem das generisch entworfene Graphmodel und der Layoutalgorithmus, welcher auf dem Sugiyama Framework basiert.
+Dies lag daran, dass der Entwurf von \glqq Graph von Ansicht\grqq{} an manchen Stellen nicht genau definiert wurde und wichtige Implementierungsvorrausetzungen übersehen wurden. \\ 
+Da auch viele kleine Änderungen gemacht wurden (z.B das Ändern von Parametern in einer Methode) werden in diesem Dokument nur die Änderungen dokumentiert, welche den Programmablauf oder den Sinn einer Klasse stark verändern. \\
+\\
+Im Pflichtenheft wurden Anforderungen und Kriterien beschrieben, welche im Programm umgesetzt werden sollten. Dabei wurden jedoch einige kleine Änderungen an der Steuerung in der View (siehe Kapitel \ref{implkrit:steuerung}) und an dem Eingabeformat von Kommandozeilenparameter vorgenommen.  \\
+%TODO: Wurden auch welche nicht implementiert? was ist der Grund? 
+
+Zusätzlich wurden im Pflichtenheft auch Wunschkriterien beschrieben, die im Entwurf berücksichtigt wurden und welche bei Möglichkeit in das Programm übernommen werden sollten. Da jedoch die Zeit für die Implementierung von \glqq Graph von Ansicht\grqq{} recht knapp bemessen war, und die Pflichtkriterien natürlich mit Priorität behandelt wurden, wurde keine der Wunschkriterien aus dem Pflichtenheft umgesetzt.
