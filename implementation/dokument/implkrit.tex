@@ -8,25 +8,14 @@
 	\item Anzeige von Graphen (/FA010/)
 	\item Anzeige von geschachtelten Graphen (/FA020/)
 		\begin{itemize}
-			\item Öffnen eines geschachtelten Graphen über ein Kontextmenü eines Knoten wurde nicht implementiert (z.B. Callgraph)
-			\item Tastenkürzel existiert nicht
+			\item Tastenkürzel existieren nicht, da die meisten Steuerfunktionen sowieso über die Maus funktionieren müssen und deshalb einzelne Tastenkürzel nicht sinnvoll sind.
 		\end{itemize}
 	\item Graphen layouten (/FA030/)
-		\begin{itemize}
-			\item Constraints für den Methodengraphen werden gesetzt, jedoch nicht im Layout-Algorithmus beachtet.
-		\end{itemize}
 	\item Knoten und Kanten filtern (/FA040/)
 	\item Anwendung einer Arbeitsumgebung (/FA050/)
+	\item Kollabieren  (/FA060/) und Ausklappen (/FA070/) von Subgraphen
 		\begin{itemize}
-			\item CallgraphLayout wird nicht automatisch ausgewählt
-		\end{itemize}
-	\item Kollabieren von Subgraphen (/FA060/)
-		\begin{itemize}
-			\item Der Graph wird automatisch neugeladen und ist nicht optional
-		\end{itemize}
-	\item Ausklappen von kollabierten Subgraphen (/FA070/)
-		\begin{itemize}
-			\item Der Graph wird automatisch neugeladen und ist nicht optional
+			\item Der Graph wird automatisch neu gelayoutet, da die Positionierung des neuen Knoten durch den LayoutAlgorithmus geschehen muss.
 		\end{itemize}
 \end{itemize}
 
@@ -34,7 +23,7 @@
 \begin{itemize}
 	\item Graph aus Datei importieren (/FA100/)
 		\begin{itemize}
-			\item Werden auch generische GraphML Dateien importiert?
+			\item Generischen GraphML Dateien werden theoretisch vom Importer unterstützt können aber nicht geladen werden, da nur ein JOANA-Workspace existiert.
 		\end{itemize}
 	\item Export als Bilddatei (/FA110/)
 \end{itemize}
@@ -48,9 +37,6 @@
 			\item Das Sichtfeld verschiebt man nun durch das Drücken von STRG und klicken und ziehen der rechten Maustaste
 		\end{itemize}
 	\item Zoom-Grad ändern (/FA210/)
-		\begin{itemize}
-			\item Es existiert kein Fehlschlag (kein Maximum oder Minimum des Zooms
-		\end{itemize}
 	\item Knoten selektieren (/FA220/) und deselektieren (/FA230/)
 		\begin{itemize}
 			\item Um das Selektieren und Deselektieren von Knoten benutzerfreundlicher zu gestalten, wurde die Tastenbelegung an die der gängigen Dateisystemexplorer angepasst:
@@ -60,12 +46,12 @@
 	\item Knoten einer Gruppe hinzufügen (/FA240/)
 	\item Gruppe löschen
 		\begin{itemize}
-			\item Gruppe kann nicht über Kontextmenü gelöscht werden
+			\item Gruppe kann nicht über Kontextmenü gelöscht werden, da dies unhandlich wird falls ein Knoten in mehreren Gruppen ist.
 		\end{itemize}
 	\item Wechsel zwischen Graphen (/FA260/)
 	\item Informationsanzeige zu einzelnen Knoten und Kanten (/FA270/)
 		\begin{itemize}
-			\item Keine Informationsanzeige zu Kanten
+			\item Es existiert keine Informationsanzeige zu Kanten, weil diese wenige Informationen besitzen und eine Selektion nicht für weitere Operationen nötig ist
 		\end{itemize}
 	\item Statistiken zu Graphen (/FA280/)
 	\item Kontextmenü (/FA290/)
@@ -74,26 +60,36 @@
 %Eventuell anders reinbringen
 \subsection{Nichtfunktionale Anforderungen}
 \begin{itemize}
-	%TODO: richtige Formulierung? nicht dass Snelting wieder daran hängen bleibt
 	\item Es werden mindestens Graphen mit bis zu 1000 Knoten unterstützt (/NFA010/)
-	\item Es werden mindestens Graphdateien mit bis zu 100.000 Knoten insgesamt unterstützt (/NFA020/).. stimmt das?
-	\item Die maximale unterstützte Kantenanzahl pro Graph entspricht mindestens der 3-4 fachen Knotenzahl aus /NFA010/ und /NFA020/. (/NFA030/).. stimmt das?
+	\item Es werden mindestens Graphdateien mit bis zu 100.000 Knoten insgesamt unterstützt (/NFA020/)
+	\item Die maximale unterstützte Kantenanzahl pro Graph entspricht mindestens der 3-4 fachen Knotenzahl aus /NFA010/ und /NFA020/ (/NFA030/)
 	\item Der Algorithmus, welcher das Graphlayout berechnet ist einfach auswechselbar (/NFA040/)
-	%TODO: welche heuristische Methode?
-	\item Durch heuristische Methoden wird ein möglichst optimales Ergebnis bei der Einhaltung gegebener Constraints erreicht (/NFA050/) FALSCH!!!
+	\item Durch heuristische Methoden wird ein möglichst optimales Ergebnis bei der Einhaltung gegebener Constraints erreicht (/NFA050/)
+		\begin{itemize}
+			\item Da es keine benutzerdefinierte Constraints gibt, muss diese Einhaltung nicht beachtet werden
+		\end{itemize}
 	\item Ein einfacher Sprachwechsel der GUI soll möglich sein (/NFA100/)
 		\begin{itemize}
-			\item Da Nicolas schlecht implementiert hat ist das nicht möglich
+			\item Der einfache Sprachwechsel hatte eine niedrige Priorität und wurde deshalb aus Zeitgründen nicht implementiert
 		\end{itemize}
 	\item Falls das Programm mit falschen Parametern über die Kommandozeile gestartet wird, soll das Programm nicht abstürzen (/NFA110/)
 		\begin{itemize}
 			\item Abfangen des Errors wurde aus Zeitgründen in die Testphase verschoben
 		\end{itemize}
+	\item Die Berechnung eines Graphen von 1000 Knoten und 4000 Kanten soll nicht länger als 2 Min dauern (/NFA210/)
+		\begin{itemize}
+			\item Die Berechnung dauert länger, da der CrossMinimizer noch nicht optimiert ist. Diese Optimierung wurde aus Zeitgründen in die Testphase verschoben.
+		\end{itemize}
+	\item Kanten sollen nicht direkt übereinander liegen (/NFA220/)
+	\item Knoten dürfen sich nicht mit anderen Knoten überschneiden (/NFA230/)
+	\item Beschriftung von Knoten darf nicht unkenntlich sein (/NFA240/)
+	\item Die Anzahl der sich kreuzenden Kanten wird mittels der Barycenter Heuristik möglichst gering gehalten (/NFA250/)
 \end{itemize}
+
 
 \subsection{Plugins}
 \begin{itemize}
-	\item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten (Pflichtenheft Kapitel 7)
+	\item Schnittstellen für Plugins in den Bereichen Import, Export, Layoutalgorithmen, Filter für Knoten- und Kantentypen und weitere Operationen auf einzelne Knoten und Kanten. Die Schnittstelle für Darstellung wurde nicht implementiert, da diese im Entwurf nicht berücksichtigt wurde und eine Implementierung viele Änderungen erfordert hätte. (Pflichtenheft Kapitel 7)
 	\item Es gibt ein Pluginmanagement-System, welches externe Plugins laden und verwalten kann. (Pflichtenheft Kapitel 7)
 \end{itemize}
 
@@ -102,7 +98,7 @@
 \begin{itemize}
 	\item Gesetzte Einstellungen (z.B. Speicherort der zueltzt exportierten Datei oder Größe des Fensters) werden gespeichert
 		\begin{itemize}
-			\item Wurde nicht implementiert
+			\item Wurde aus Zeitgründen nicht implementiert
 		\end{itemize}
 	\item Akzeptieren von Kommandozeilenargumenten
 		\begin{itemize}
@@ -112,4 +108,4 @@
 \end{itemize}
 
 \section{Wunschkriterien}
-Aus den Wunschkriterien die im Pflichtenheft definiert wurden, wurden aus Zeitmangel keine Implementiert.
+Es wurden, aufgrund von Zeitmangel, keine Wunschkriterien aus dem Pflichtenheft implementiert, 
