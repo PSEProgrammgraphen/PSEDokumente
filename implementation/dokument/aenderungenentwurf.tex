@@ -3,7 +3,7 @@
 
 \newcounter{cnr}
 \newcommand\change[2]{\textbf{\arabic{cnr}}\addtocounter{cnr}{1}. & \textbf{Aktion:} & #1 \\ & \textbf{Grund:} & #2 \\ [1ex] }
-	
+\newcommand\inlineCode[1]{{\lstinline[basicstyle=\ttfamily\color{black}]|#1|}}
 \section{Gerneral}
 \setcounter{cnr}{1}
 
@@ -30,6 +30,19 @@
 			{Die Farbe muss von der Edge/Vertex vorgegeben werden, damit die GUI verschiedene Farben vergeben kann, JOANA Edge und Vertex geben jeweils eine Farbe zurück die von ihrer jeweiligen KIND bestimmt wird.}
 	\change	{Aktuelle LayoutOption wird in GraphView gespeichert} 
 			{Um zu wissen welcher layoutalgorithmus gerade angewendet wurde un um ihm potentiell nochmals anzuwenden(Collapse/Expand, ändern der Properties...)}	
+\end{tabular}
+\begin{tabular}{llp{0.8\linewidth}}
+	\change {Entfernen der Generischen Parameter für Vertex und Edge in Graph sowie für Vertex in Edge}
+			{Zwischen den verschiedenen Hierarchie-Ebenen von Graphen und Vertex/Edge bestand eine kovariante Beziehung (z.B. Graph kann alle Typen von Vertex und Edge enthalten, DirectedGraph kann nur Typen von Vertex und DirectedEdge enthalten). Um im Allgemeinen alle Möglichkeiten zu unterstützen, musste diese Beziehungen in komplizierten und langen generischen Ausdrücken definiert werden. z.B:
+\inlineCode{LayoutAlgorithm<G extends DirectedGraph<V,E>, V extends Vertex, E extends DirectedEdge<V>}. \\ & &
+An vielen Stellen war die Belegung der Parameter allerdings uninteressant, weshalb oft Raw-Types als Alternative gewählt wurden, anstatt der langen, (zu) allgemeinen Parametriesierung:
+\inlineCode{Graph<? extends Vertex, ? extends Edge<?>.}}
+
+	\change {Entfernen der Vererbung JoanaGraph von DefaultDirectedGraph}
+			{Als Folge der Entfernung der Generics können von DefaultDirectedGraph erbende Graphen, welche auf die Implementation der Speicherung von Edges und Vertex in DefaultDirectedGraph zurückgriefen, dies nicht ohne einen Verlust des genauen Types der Edge/Vertex weiter tun.}
+	\change {\inlineCode{DefaultDirectedGraph<V,E>} und 
+\inlineCode{DefaultLayering<V>} als Datenstruktur für andere Graphen}
+			{Um nicht durch das Entfernen der Vererbung von DefaultDirectedGraph grundlegende Funktionen eines Graphen in jedem Graph neu implementieren zu müssen, wurde \inlineCode{DefaultDirectedGraph<V,E>} als Datenstruktur umfunktioniert welcher in einer Komposition in anderen Graphen, wie JoanaGraph und SugiyamaGraph genutzt werden kann. Gleiches gilt für DefaultLayering für das Speichern von relativen Positionen in Graphen.}
 \end{tabular}
 
 \section{Sugiyama}
