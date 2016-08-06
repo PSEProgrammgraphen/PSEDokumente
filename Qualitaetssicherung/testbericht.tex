@@ -1,0 +1,104 @@
+\documentclass[a4paper]{scrreprt}
+
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[titletoc]{appendix}
+\usepackage{ae}
+\usepackage{enumitem}
+\usepackage[bookmarks,bookmarksnumbered]{hyperref}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{morefloats}
+\usepackage{calc}
+\usepackage{longtable}
+
+%Preambel texdoclet
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage{makeidx}
+\usepackage{ifpdf}
+\usepackage[headings]{fullpage}
+\usepackage{listings}
+\lstset{language=Java,breaklines=true}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+
+\newcommand{\entityintro}[3]{%
+  \hbox to \hsize{%
+    \vbox{%
+      \hbox to .2in{}%
+    }%
+    {\bf  #1}%
+    \dotfill \pageref{#2}%
+  }
+  \makebox[\hsize]{%
+    \parbox{.4in}{}%
+    \parbox[l]{5in}{%
+      \vspace{1mm}%
+      #3%
+      \vspace{1mm}%
+    }%
+  }%
+}
+\newcommand{\refdefined}[1]{
+\expandafter\ifx\csname r@#1\endcsname\relax
+\relax\else
+{$($in \ref{#1}, page \pageref{#1}$)$}\fi}
+%\date{null}
+\chardef\textbackslash=`\\
+%\makeindex
+
+\bibliographystyle{plain}
+\graphicspath{{resourcen/}}
+
+%Used for including MetaUML diagrams
+%\usepackage{emp}
+%\usepackage{ifpdf}
+%\ifpdf
+\DeclareGraphicsRule{.1}{mps}{*}{}
+%\fi
+
+\makeatletter
+\def\namedlabel#1#2{\begingroup
+   \def\@currentlabel{#2}%
+   \phantomsection#2\label{#1}\endgroup
+}
+\makeatother
+% Inhaltsverzeichnis Ebenen definieren, zB bis zu Subsection
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{1}
+
+\usepackage[toc,acronym]{glossaries}
+
+\usepackage{xparse}
+
+\makeatother
+\begin{document}
+
+\title{Implementierung\\
+Graph von Ansicht}
+\date{}
+\author{Nicolas Boltz   \\ uweaw@student.kit.edu
+  \and Jonas Fehrenbach \\ urdtk@student.kit.edu
+  \and Sven Kummetz     \\ kummetz.sven@gmail.com
+  \and Jonas Meier      \\ Meierjonas96@web.de
+  \and Lucas Steinmann  \\ ucemp@student.kit.edu
+}
+
+\titlehead{\includegraphics[width=150pt]{resourcen/GAns.png}}
+
+\maketitle
+
+% Same
+%\begin{abstract}
+%\end{abstract}
+{\small\tableofcontents}
+
+\input{einleitung}
+
+\input{bugsundreparatur}
+
+\clearpage
+
+%\bibliography{referenzen}
+\end{document}
