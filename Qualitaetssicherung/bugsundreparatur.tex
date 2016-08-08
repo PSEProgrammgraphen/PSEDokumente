@@ -15,6 +15,11 @@
 \bug{10}
        {Keine Informationen oder Warnung über falsch eingegebene Kommandozeilenparameter}
        {Keine explizite Überprüfung der Eingaben. Es wurde angenommen, dass der User alle Eingaben richtig macht.}
-       {Hinzufügen von expliziten Überprüfungen und anzeigen eines ErrorDialog mit hilfreicher Information.}
+       {Hinzufügen von expliziten Überprüfungen und Anzeigen von Fehlermeldungen mit hilfreicher Information.}
+
+\bug{24}
+       {Programm stürzt ab, falls der eingegebene Dateipfad über den Kommandozeilenparameter --in keinen Punkt enthält. }
+       {Falls Dateipfad keinen Punkt erhält gibt Java Methode lastIndexOf('.') als Ergebnis -1 zurück. Dieses Ergebniss wird bei substring() als ungültiger Index verwendet was zum Abstürz führt.}
+       {Vor Aufruf der Methode substring() wird überprüft ob der Dateipfad einen Punkt enthält. Falls nicht wird eine Fehlermeldung ausgegeben.}
 		
 \end{longtable}
