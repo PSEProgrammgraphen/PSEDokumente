@@ -28,8 +28,12 @@
        {Vor Aufruf der Methode substring() wird überprüft ob der Dateipfad einen Punkt enthält. Falls nicht wird eine Fehlermeldung ausgegeben.}
        
 \bug{27}
-       {Text in exportierter SVG-Datei ist größer als die Textboxen der Knoten}
+       {Text in exportierter SVG-Datei ist größer als die Textboxen der Knoten.}
        {Default Textgröße in SVG ist größer als Default Textgröße innerhalb der GUI. Die Größe der Textboxen richten sich jedoch nach der Textgröße der GUI.}
        {Hinzufügen einer expliziten Textgröße zur SVG-Datei, welche der Textgröße der GUI entspricht.}
 		
+\bug{30}
+		{Kanten laufen durch Knoten durch und manchmal von unten rein und verbinden sich dann oben auf dem Knoten.}
+		{Der Kantenzeichner ging davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet wurden.}
+		{Kanten zwischen Knoten auf dem selben layer werden nun gesondert gezeichnet, und zwar unterhalb des layers.}
 \end{longtable}
