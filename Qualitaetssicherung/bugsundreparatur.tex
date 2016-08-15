@@ -32,8 +32,19 @@
        {Default Textgröße in SVG ist größer als Default Textgröße innerhalb der GUI. Die Größe der Textboxen richten sich jedoch nach der Textgröße der GUI.}
        {Hinzufügen einer expliziten Textgröße zur SVG-Datei, welche der Textgröße der GUI entspricht.}
 		
+\bug{28}
+		{Kanten laufen ggf. aus der Box des Feldzugriffes hinaus.}
+		{Kantenläufe wurden bei der Berechnung der Größe der Box nicht berücksichtigt.}
+		{Kantenläufe werden nun bei der Berechnung der Größe der Box berücksichtigt.}
+
 \bug{30}
 		{Kanten laufen durch Knoten durch und manchmal von unten rein und verbinden sich dann oben auf dem Knoten.}
 		{Der Kantenzeichner ging davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet wurden.}
 		{Kanten zwischen Knoten auf dem selben layer werden nun gesondert gezeichnet, und zwar unterhalb des layers.}
+		
+		
+%		\bug{}
+%		{}
+%		{}
+%		{}
 \end{longtable}
