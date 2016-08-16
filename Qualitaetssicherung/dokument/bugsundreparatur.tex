@@ -6,6 +6,10 @@
 
 
 \begin{longtable}{llp{0.8\linewidth}}
+\bug{1}
+       {Graphische Hervorhebung von FieldAccessen durch eine farbige Box im Hintergrund wird nicht angezeigt.}
+       {Die Struktur im Hintergrund war leicht fehlerhaft und in der Erstellung der Box gab es einen Bug.}
+       {Die Struktur im Hintergrund wurde refactored und der Bug beim erstellen des Hintergrunds wurde behoben.}
 \bug{8}
 	   {Kollabierte Knoten in einem FieldAccessGraph verschwinden bei Ihrer Erstellung.}
 	   {Bei dem Layouten von MethodGraphen wurden alle FieldAccess betrachtet. Auch FAs die teilweise kollabiert wurden.}
@@ -24,10 +28,22 @@
        {Falls das Joana-Workspace für eine generische GraphML-Datei ausgewählt wird, kommt keine Warnung und es passiert nichts.}
        {Keine Überprüfung ob ein GraphBuilder für diesen Graphentyp existiert.}
        {Überprüfung ob GraphBuilder null ist.}
+\bug{12}
+       {Der Graph springt beim verschieben mit der Maus zu Beginn ein Stück nach unten.}
+       {Die Berechnung der Mausposition wurde die Position im Fenster genutzt.}
+       {Nutzen der Mausposition des Mausevents die das Ziehen einleitet.}
 \bug{17}
 	   {Das Filtern von Knoten bestimmten Types (z.B. EXPR) in MethodGraphLayout führt zu einer NullPointerException}
 	   {Für das Layouten der FAs und des ganzen MethodGraphen wurde der selbe Layoutalgorithmus, mit den selben Constraints gewählt.}
 	   {Separate Instanzen des SugiyamaAlgorithm für FAs und MethodGraph.}
+\bug{22}
+       {Die alte StrukturView kann nach Import einer neuen Datei nicht zurückgebracht werden.}
+       {Alte Graphen wurden nach einem neuen Import nicht geschlossen, obwohl die Anwendung nur eine einzelne Datei unterstützt.}
+       {Bereits offene Graphen werden nach erfolgreichem Import geschlossen.}
+\bug{23}
+       {Ähnlich wie in Bug #22 wird versucht nach einem Import über den noch offenen alten Callgraphen einen Methodengraphen zu öffnen.}
+       {Siehe #22}
+       {Siehe #22}
 \bug{24}
        {Programm stürzt ab, falls der eingegebene Dateipfad über den Kommandozeilenparameter --in keinen Punkt enthält.}
        {Falls Dateipfad keinen Punkt erhält gibt Java Methode lastIndexOf('.') als Ergebnis -1 zurück. Dieses Ergebniss wird bei substring() als ungültiger Index verwendet was zum Abstürz führt.}
@@ -47,6 +63,10 @@
 		{Kanten laufen durch Knoten durch und manchmal von unten rein und verbinden sich dann oben auf dem Knoten.}
 		{Der Kantenzeichner ging davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet wurden.}
 		{Kanten zwischen Knoten auf dem selben layer werden nun gesondert gezeichnet, und zwar unterhalb des layers.}
+\bug{31}
+        {Beim Zoomen wird nicht vom Mauszeiger weg oder zum Mauszeiger hin gezoomt. Der Fokus und Sichtbereich springt herum.}
+        {Die GraphView wurde durch das Zoomen vergrößert, dadurch gab es von den äußeren Oberflächenelementen, die um die GraphView gelegt waren, Interferenzen, die das Springen und unfokussierte Zoomen ausgelöst haben.}
+        {Die Ansicht des Graphen besteht nun aus 4 ineinander verschachtelten Panes, wobei das innerste die GraphView und das äußerste ein ScrollPane ist. Vergrößert wird beim Zoomen nun das Pane welches direkt um der GraphView liegt. Das Pane darum passt sich per Listener immer an die Größe der beiden inneren Panes an. Dadurch entstehen keinen Interferenzen mehr und anderes ungewolltes Verhalten tritt auch nicht mehr auf.}
 		
 %		\bug{}
 %		{}
