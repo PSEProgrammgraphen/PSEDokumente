@@ -1,0 +1,38 @@
+\chapter{Durchgeführte Tests}
+\label{ch:durchgefuehrtetests}
+
+\section{Globale Testfälle aus dem Pflichtenheft}
+
+\textbf{/T010/: }Import und Darstellung von einem JOANA Graphen\\
+\textbf{Anmerkungen: }-\\
+
+\textbf{/T020/: }Öffnen eines JOANA-Methodengraphen\\
+\textbf{Anmerkungen: }-\\
+
+\textbf{/T030/: }Selektieren mehrerer Knoten und Kanten\\
+\textbf{Anmerkungen: }Da es sich während der Implementierung als wenig nützlich erwiesen hat, wurde das selektieren von Kanten nicht implementiert. Deswegen ist es in diesem Test auch nicht möglich, Kanten zu selektieren.\\
+	Es werden außerdem bei mehreren ausgewählten Knoten weder eine Statistik noch eine Information zu diesen angezeigt. Lediglich von einem einzigen Knoten werden Informationen angezeigt.\\
+
+\textbf{/T040/: }Navigation\\
+\textbf{Anmerkungen: }Das Verschieben des Sichtfeldes geschieht nach der Implementierung nicht per Mittelmaus-klick halten und ziehen, sondern über Strg + Rechts-klick gedrückt halten und ziehen mit der Maus.\\
+
+\textbf{/T050/: }Constraint zu Knoten eines geladenen Graphen hinzufügen\\
+\textbf{Anmerkungen: }Durch Verschieben des Kriteriums der manuell hinzufügbaren Constraints zu Gruppen in die Wunschkriterien (siehe Pflichtenheft: 4.2 Wunschfunktionen, /FA300/ Constraints hinzufügen), wurde dies in der Implementierungsphase nicht hinzugefügt. Es ist daher hier lediglich möglich, Gruppen zu erstellen (bis einschließlich Punkt 4 des Tests).\\
+
+\textbf{/T060/: }Filtern von Kanten\\
+\textbf{Anmerkungen: }Die Menüführung zum Erreichen der Filter von Kanten ist "Other->Edit Filter", danach klick auf Edges und dann hinzufügen eines Haken zum filtern dieser Kante, anstatt "Editieren->Filter anpassen" mit anschließendem klick auf Joana und entfernen von Haken.\\
+
+\textbf{/T070/: }Export von einem geladenen JOANA-Graphen als SVG\\
+\textbf{Anmerkungen: }Die Menüführung zum exportieren des geladenen JOANA-Graphen gechieht über "File->Export", anstatt "Datei->Export->SVG". Da nur ein Export-Format zur Auswahl steht, wurde auf den letzten Schritt der geplanten Menüführung verzichtet.\\
+
+
+\section{JUnit Tests}
+%alle gemachten JUnit tests. Falls welche sich mit denne aus dem Implementierungsheft überschneiden, bzw. dieselben sind, dann Verweis auf den jeweiligen Eintrag im Implementierungsheft
+
+
+\section{Hallway Usability Testing}
+%hier die Einträge zu den Tests mit "unwissenden" leuten. ggf. Datum des testens und commithash des verwendeten Programmes beifügen. Format der Darstellung noch offen.
+
+
+\section{Monkey Testing}
+%Falls dahingehend etwas getan wurde
