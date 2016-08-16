@@ -1,0 +1,5 @@
+-Möglichst alle issues aus dem GitHub issue tracker beheben und im Testbericht hinzufügen.
+-Geschlossene Issues wenn möglich als Testfall im Programm hinzufpgen, um sicherzustellen, dass das Problem  dauerhaft gelöst wurde.
+-Monkeytests - Dazu nötig: eine Klasse, die gegeben einem File und Anweisungen das Programm automatisch testet.
+-Programmabläufe aus dem Pflichtenheft dann automatisch testen lassen.
+-Hallway Usability Testing: "zufällige/Fachfremde" Personen das Programm testen lassen, dann aufschreiben der  Befunde, wie benutzerfreundlichkeit, mögliche Fehler/Bugs, Verbesserungsvorschläge...(am besten mit Datum und  commithash der getesteten Programmversion).
