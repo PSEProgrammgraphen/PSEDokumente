@@ -67,6 +67,11 @@
         {Beim Zoomen wird nicht vom Mauszeiger weg oder zum Mauszeiger hin gezoomt. Der Fokus und Sichtbereich springt herum.}
         {Die GraphView wurde durch das Zoomen vergrößert, dadurch gab es von den äußeren Oberflächenelementen, die um die GraphView gelegt waren, Interferenzen, die das Springen und unfokussierte Zoomen ausgelöst haben.}
         {Die Ansicht des Graphen besteht nun aus 4 ineinander verschachtelten Panes, wobei das innerste die GraphView und das äußerste ein ScrollPane ist. Vergrößert wird beim Zoomen nun das Pane welches direkt um der GraphView liegt. Das Pane darum passt sich per Listener immer an die Größe der beiden inneren Panes an. Dadurch entstehen keinen Interferenzen mehr und anderes ungewolltes Verhalten tritt auch nicht mehr auf.}
+        
+\bug{40}
+        {Die Richtung mancher Kanten zwischen zwei Knoten änderte sich manchmal nach neuem importieren oder neuem layouten des Graphen.}
+        {Im Sugiyama werden notwendigerweise zuallererst Kanten gedreht, die Zykel im Graph verursachen. Der Kantenzeichner im letzten Schritt des Sugiyama hat nun nur die gedrehten Kanten, die sich über ein layer erstrecken in ihrer Richtung angepasst. Kanten,d ie über mehrere layer gingen wurden ignoriert, da diese in einem anderen Set lagen.}
+        {Der Kantenzeichner passt nun durch Berücksichtigung des Sets der sich über mehrere Layer erstreckenden Kanten, von diesen ehemals gedrehte Kanten in ihrer Richtung an.}
 		
 %		\bug{}
 %		{}
