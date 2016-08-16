@@ -6,7 +6,10 @@
 
 
 \begin{longtable}{llp{0.8\linewidth}}
-
+\bug{8}
+	   {Kollabierte Knoten in einem FieldAccessGraph verschwinden bei Ihrer Erstellung.}
+	   {Bei dem Layouten von MethodGraphen wurden alle FieldAccess betrachtet. Auch FAs die teilweise kollabiert wurden.}
+	   {Es werden nun nur noch FAs welche vollständig ausgeklappt sind im MethodGraphLayout betrachtet}
 \bug{9}
        {Beim Öffnen eines Graphens über die Kommandozeile wurde nicht das Default Layout des ausgewählten Workspace übernommen.}
        {Es wurde immer der LayoutSelectionDialog aufgerufen, obwohl ein workspace angegeben wurde.}
@@ -21,7 +24,10 @@
        {Falls das Joana-Workspace für eine generische GraphML-Datei ausgewählt wird, kommt keine Warnung und es passiert nichts.}
        {Keine Überprüfung ob ein GraphBuilder für diesen Graphentyp existiert.}
        {Überprüfung ob GraphBuilder null ist.}
-
+\bug{17}
+	   {Das Filtern von Knoten bestimmten Types (z.B. EXPR) in MethodGraphLayout führt zu einer NullPointerException}
+	   {Für das Layouten der FAs und des ganzen MethodGraphen wurde der selbe Layoutalgorithmus, mit den selben Constraints gewählt.}
+	   {Separate Instanzen des SugiyamaAlgorithm für FAs und MethodGraph.}
 \bug{24}
        {Programm stürzt ab, falls der eingegebene Dateipfad über den Kommandozeilenparameter --in keinen Punkt enthält.}
        {Falls Dateipfad keinen Punkt erhält gibt Java Methode lastIndexOf('.') als Ergebnis -1 zurück. Dieses Ergebniss wird bei substring() als ungültiger Index verwendet was zum Abstürz führt.}
