@@ -10,6 +10,14 @@
        {Graphische Hervorhebung von FieldAccessen durch eine farbige Box im Hintergrund wird nicht angezeigt.}
        {Die Struktur im Hintergrund war leicht fehlerhaft und in der Erstellung der Box gab es einen Bug.}
        {Die Struktur im Hintergrund wurde refactored und der Bug beim erstellen des Hintergrunds wurde behoben.}
+\bug{2}
+       {Einige Kanten werden übereinanderliegend gezeichnet.}
+       {Dummy Vertices werden übereinander platziert, da zum einen der Code zum überprüfen von Überlagerung von Kanten fehlerhaft ist und da die Kanten die mehrere Ebenen überdecken nicht immer genügend verschoben werden. Außerdem gibt es Mehrfachzuweisungen von Knoten zu zu begradigenden Abschnitten.}
+       {Die fehlerhafte Code zur Überprüfung von Kantenschnitten im Vertex Positioner wurde korrigiert, indem ein fehlerhafter Vergleich berichtigt wurde. Er kann nun auch mit 1 breiten Kanten arbeiten. Die Verschiebung der Kanten wird nun so oft ausgeführt, bis sich Kanten nicht mehr überdecken. Es wurde außerdem ein schwerwiegender Fehler der zu der Mehrfachzuweisung führte behoben. Hier hat ein rekursiver Teilalgorithmus ergebnisse verdoppelt.}
+\bug{7}
+       {Kanten, welche keine Ebene überspannen werden nie begradigt}
+       {Diese Kanten werden beim suchen nach Segmenten(Kantenketten, die im VertexPositioner später begradigt werden) nicht beachtet}
+       {Diese Kanten werden nun beim starten des VertexPositioner ebenfalls hinzugefügt. Im Zuge dieser Korrektur wurde es außerdem ermöglicht die Endknoten von Kanten, welche eine oder mehr Ebenen überspringen, zu den aus ihnen enstehenden Segmenten hinzuzufügen.}
 \bug{8}
 	   {Kollabierte Knoten in einem FieldAccessGraph verschwinden bei Ihrer Erstellung.}
 	   {Bei dem Layouten von MethodGraphen wurden alle FieldAccess betrachtet. Auch FAs die teilweise kollabiert wurden.}
@@ -32,6 +40,10 @@
        {Der Graph springt beim verschieben mit der Maus zu Beginn ein Stück nach unten.}
        {Die Berechnung der Mausposition wurde die Position im Fenster genutzt.}
        {Nutzen der Mausposition des Mausevents die das Ziehen einleitet.}
+\bug{13}
+       {Es gibt keine Option zur Einstellung ob eine Abbruchgrenze beim Kreuzungsminimieren in Abhängigkeit von den vorhandenen Kreuzungen gewählt werden soll.}
+       {Diese Option wird in den CrossMinimizer Einstellungen nicht bereitgestellt}
+       {Die Option wurde als Checkbox hinzugefügt und wird während der Kreuzungsminimierung beachtet.}
 \bug{17}
 	   {Das Filtern von Knoten bestimmten Types (z.B. EXPR) in MethodGraphLayout führt zu einer NullPointerException}
 	   {Für das Layouten der FAs und des ganzen MethodGraphen wurde der selbe Layoutalgorithmus, mit den selben Constraints gewählt.}
@@ -48,7 +60,10 @@
        {Programm stürzt ab, falls der eingegebene Dateipfad über den Kommandozeilenparameter --in keinen Punkt enthält.}
        {Falls Dateipfad keinen Punkt erhält gibt Java Methode lastIndexOf('.') als Ergebnis -1 zurück. Dieses Ergebniss wird bei substring() als ungültiger Index verwendet was zum Abstürz führt.}
        {Vor Aufruf der Methode substring() wird überprüft ob der Dateipfad einen Punkt enthält. Falls nicht wird eine Fehlermeldung ausgegeben.}
-       
+\bug{25}
+       {Es wird ein Fehler geworfen, wenn man die ENTR Knoten filtert.}
+       {Der VertexPositioner benötigt mindestens ein Vertex pro Graph.}
+       {Der VertexPositioner überprüft nun am Anfang, ob der Graph leer ist und läuft in diesem Fall nicht durch.}       
 \bug{27}
        {Text in exportierter SVG-Datei ist größer als die Textboxen der Knoten.}
        {Default Textgröße in SVG ist größer als Default Textgröße innerhalb der GUI. Die Größe der Textboxen richten sich jedoch nach der Textgröße der GUI.}
@@ -72,6 +87,7 @@
         {Die Richtung mancher Kanten zwischen zwei Knoten änderte sich manchmal nach neuem importieren oder neuem layouten des Graphen.}
         {Im Sugiyama werden notwendigerweise zuallererst Kanten gedreht, die Zykel im Graph verursachen. Der Kantenzeichner im letzten Schritt des Sugiyama hat nun nur die gedrehten Kanten, die sich über ein layer erstrecken in ihrer Richtung angepasst. Kanten, die über mehrere layer gingen wurden ignoriert, da diese in einem anderen Set lagen.}
         {Der Kantenzeichner passt nun durch Berücksichtigung des Sets der sich über mehrere Layer erstreckenden Kanten, von diesen ehemals gedrehte Kanten in ihrer Richtung an.}
+
 		
 %		\bug{}
 %		{}
