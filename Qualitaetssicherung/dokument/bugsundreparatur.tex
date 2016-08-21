@@ -14,6 +14,12 @@
        {Einige Kanten werden übereinanderliegend gezeichnet.}
        {Dummy Vertices werden übereinander platziert, da zum einen der Code zum überprüfen von Überlagerung von Kanten fehlerhaft ist und da die Kanten die mehrere Ebenen überdecken nicht immer genügend verschoben werden. Außerdem gibt es Mehrfachzuweisungen von Knoten zu zu begradigenden Abschnitten.}
        {Die fehlerhafte Code zur Überprüfung von Kantenschnitten im Vertex Positioner wurde korrigiert, indem ein fehlerhafter Vergleich berichtigt wurde. Er kann nun auch mit 1 breiten Kanten arbeiten. Die Verschiebung der Kanten wird nun so oft ausgeführt, bis sich Kanten nicht mehr überdecken. Es wurde außerdem ein schwerwiegender Fehler der zu der Mehrfachzuweisung führte behoben. Hier hat ein rekursiver Teilalgorithmus ergebnisse verdoppelt.}
+
+\bug{3}
+	{Kanten, die von außen in einen FieldAccess hinein oder von einem FieldAccess nach außen gehen, werden nur bis an die Box des FieldAccesses dran gezeichnet.}
+	{Nach dem Layouten des ganzen graphen werden die Kanten nicht von außen von der Box nach innen weiter gezeichnet.}
+	{Die Kanten innerhalb eines FieldAccesses werden nun komplett neu gezeichnet. Sowohl die alten, als auch die neuen. Nur die Positionen der Knoten bleiben gleich.}
+
 \bug{7}
        {Kanten, welche keine Ebene überspannen werden nie begradigt}
        {Diese Kanten werden beim suchen nach Segmenten(Kantenketten, die im VertexPositioner später begradigt werden) nicht beachtet}
@@ -87,6 +93,16 @@
         {Die Richtung mancher Kanten zwischen zwei Knoten änderte sich manchmal nach neuem importieren oder neuem layouten des Graphen.}
         {Im Sugiyama werden notwendigerweise zuallererst Kanten gedreht, die Zykel im Graph verursachen. Der Kantenzeichner im letzten Schritt des Sugiyama hat nun nur die gedrehten Kanten, die sich über ein layer erstrecken in ihrer Richtung angepasst. Kanten, die über mehrere layer gingen wurden ignoriert, da diese in einem anderen Set lagen.}
         {Der Kantenzeichner passt nun durch Berücksichtigung des Sets der sich über mehrere Layer erstreckenden Kanten, von diesen ehemals gedrehte Kanten in ihrer Richtung an.}
+
+\bug{42}
+	{Nach einem commit verschwand dieser Fehler und äußerte sich durch die selben Merkmale wie Bug 44, siehe daher 44.}
+	{siehe Bug 44}
+	{siehe Bug 44}
+
+\bug{44}
+	{Nach dem Filtern von NORM Knoten aus einem Graphen, tritt eine NullPointerException im EdgeDrawer auf.}
+	{Der Graph enthält nach dem Filtern einen isolierten Knoten.}
+	{Der EdgeDrawer schaut nun nach isolierten Knoten, bevor er auf Knoten zugreift.}
 
 \bug{45}
 	{FieldAccess Boxen werden in der exportierten SVG-Datei nicht angezeigt.}
