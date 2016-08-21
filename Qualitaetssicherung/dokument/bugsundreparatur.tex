@@ -88,6 +88,10 @@
         {Im Sugiyama werden notwendigerweise zuallererst Kanten gedreht, die Zykel im Graph verursachen. Der Kantenzeichner im letzten Schritt des Sugiyama hat nun nur die gedrehten Kanten, die sich über ein layer erstrecken in ihrer Richtung angepasst. Kanten, die über mehrere layer gingen wurden ignoriert, da diese in einem anderen Set lagen.}
         {Der Kantenzeichner passt nun durch Berücksichtigung des Sets der sich über mehrere Layer erstreckenden Kanten, von diesen ehemals gedrehte Kanten in ihrer Richtung an.}
 
+\bug{45}
+	{FieldAccess Boxen werden in der exportierten SVG-Datei nicht angezeigt.}
+	{Die FieldAccess Boxen werden nicht zum serialisierten Graphen hinzugefügt.}
+	{Die FieldAccess Boxen werden nun als zusätzliche Knoten im serialisierten Graphen gespeichert.}
 		
 %		\bug{}
 %		{}
