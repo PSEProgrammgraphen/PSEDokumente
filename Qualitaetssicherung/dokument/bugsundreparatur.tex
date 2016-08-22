@@ -104,6 +104,11 @@
         {Die Richtung mancher Kanten zwischen zwei Knoten ändert sich manchmal nach neuem Importieren oder neuem Layouten des Graphen.}
         {Im Sugiyama werden notwendigerweise zuallererst Kanten gedreht, die Zykel im Graph verursachen. Der Kantenzeichner im letzten Schritt des Sugiyama hat nun nur die gedrehten Kanten, die sich über ein Layer erstrecken in ihrer Richtung angepasst. Kanten, die über mehrere Layer gingen wurden ignoriert, da diese in einem anderen Set lagen.}
         {Der Kantenzeichner passt nun durch Berücksichtigung des Sets der sich über mehrere Layer erstreckenden Kanten, von diesen ehemals gedrehte Kanten in ihrer Richtung an.}
+        
+\bug{41}
+	{In den Javadoc Kommentare existieren veraltete Parameter.}
+	{Beim Ändern der Methodenparameter wurden die Javadoc Kommentare vernachlässigt.}
+	{Es wurde nach fehlerhaften Javadocs gesucht und diese aktualisiert.}
 
 \bug{42}
 	{ArrayIndexOutOfBoundsException im VertexPositioner nach dem Filtern von NORM Knoten und dann EXPR Knoten}
