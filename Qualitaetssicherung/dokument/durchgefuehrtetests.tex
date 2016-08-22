@@ -90,9 +90,91 @@ Zum anderen war das Graph verschieben mithilfe der Tastenkombination Strg + Reck
 Ebenso unschön wurde das Filtern von Kanten über das checken der checkboxes gefunden, sowie die Unwissenheit über momentan vorhandene Knoten und Kanten im Graphen. Man kann auch Knoten und Kanten filtern, die gar nicht im Graph vorhanden sind.\\
 
 
-
-
 \section{Manuelle Tests}
+\subsection{Genereller GUI Test}
+Um die GUI zu testen wurde, neben den Globalen Systemtests, ein Test formuliert, der händisch durchgeführt wird. Dabei werden die verschiedenen Funktionen grob in ihrer Funktionalität getestet und die Überdeckung des Codes überprüft. \\ \\
+Der Test besteht aus folgenden Schritten: \\
+\textbf{1:} Import der Datei Fibonacci.pdg.graphml beim Start per Kommandozeile. 
+
+\textbf{->} Graph von Ansicht wird geöffnet und der Callgraph der Fibonacci-Datei wird angezeigt.\\
+\textbf{2:} Import der Datei Fields.pdg.graphml über den Menüeintrag Import.
+
+\textbf{->} Der Callgraph von Fibonacci schließt sich und der Callgraph von Fields wird angezeigt.\\
+\textbf{3:} Selektieren des Graphen java.io.printStram.print() in der StrukturView.
+
+\textbf{->} InformationView zeigt Informationen über den Graphen.\\
+\textbf{4:} Öffnen des Graphen java.io.printStram.print() per Kontextmenü.
+
+\textbf{->} Der Methodgraph zu java.io.printStram.print() wird in einem neuen Tab geöffnet.\\
+\textbf{5:} Maximieren des Fensters, zoomen und Graph bewegen das er in die Ansicht passt.
+
+\textbf{->} Graph passt in die Ansicht, die Steuerung funktioniert wie definiert.\\
+\textbf{6:} Selektieren mehrerer Knoten und kollabieren über das Kontextmenü.
+
+\textbf{->} Selektierte Knoten sind zu einem Knoten kollabiert, der Graph wurde neu gelayouted.\\
+\textbf{7:} Selektieren mehrerer Knoten, hinzufügen zu einer Gruppe, Farbe der Gruppe ändern und schließen des Dialogs über Ok.
+
+\textbf{->} Die selektierten Knoten haben eine Umrandung in der ausgewählten Farbe.\\
+\textbf{8:} Erneut Knoten zu einer neuen Gruppe hinzufügen, ein Knoten der zuvor ausgewählt war mit auswählen.
+
+\textbf{->} Die selektierten Knoten haben eine Umrandung in der ausgewählten Farbe. Der zuvor bereits in einer Gruppe enthaltene Knoten ist in der Farbe der ersten Gruppe umrandet.\\
+\textbf{9:} Farben und Position beider Gruppen im Dialog ändern und Dialog per X schließen.
+
+\textbf{->} Ansicht bleibt gleich. Erneutes öffnen des Dialogs zeigt die gleichen Werte wie beim zuvorigen öffnen.\\
+\textbf{10:} Entfernen der ersten der beiden Gruppen über den Dialog.
+
+\textbf{->} Der Knoten der in zwei Gruppen war, wird nun in Farbe der zweiten Gruppe angezeigt.\\
+\textbf{11:} Öffnen des Graphen fields.t2() per Doppelklick in der StrukturView.
+
+\textbf{->} Der Methodengraph wurde in einem neuen Tab geöffnet.\\
+\textbf{12:} Öffnen des Preferences-Dialogs, ändern der Einstellungen und schließen über Ok.
+
+\textbf{->} Graph wird neu gelayouted angezeigt.\\
+\textbf{13:} Erneutes öffnen des Preferences-Dialogs, ändern der Einstellungen und schließen über X.
+
+\textbf{->} Erneutes öffnen des Dialogs zeigt die alten Einstellungen an.\\
+\textbf{14:} Anwenden eines neuen Methodgraph-Layouts, erhöhen der Einstellungen auf gechecked, 0,01 und 1500.
+
+\textbf{->} Der Graph wird neu gelayouted angezeigt. Öffnen des Preferences-Dialogs zeigt die gemachten Einstellungen.\\
+\textbf{15:} Exportieren von fields.t2() als .svg.
+
+\textbf{->} Datei wird am angegebenen Ort exportiert und enthält den passenden Graphen.\\
+\textbf{16:} Schließen des Tabs von fields.t2().
+
+\textbf{->} Tab wurde geschlossen. Ansicht ist wieder bei "java.io.printStram.print()".\\
+\textbf{17:} Wechseln zum Tab callgraph.
+
+\textbf{->} callgraph wird angezeigt.\\
+\textbf{18:} Doppelklick auf Graph java.io.printStram.print() in der StrukturView.
+
+\textbf{->} Automatischer Wechsel zum Tab von java.io.printStram.print().\\
+\textbf{19:} Öffnen des Filter Dialogs und Filtern von allen Vertex-Typen der ersten zwei Spalten. Dialog über Ok schließen.
+
+\textbf{->} Graph wird neu gelayouted und verschiedene Vertices sind nicht mehr vorhanden.\\
+\textbf{20:} Entfernen der Vertex-Filter und Dialog über Ok schließen.
+
+\textbf{->} Graph wird wieder neu gelayouted mit allen Vertices.\\
+\textbf{21:} Öffnen des Filter Dialogs und Filtern von allen Edge-Typen der ersten zwei Spalten.
+
+\textbf{->} Der Graph wird neu gelayouted und verschiedene Edges sind nicht mehr vorhanden.\\
+\textbf{22:} Entfernen der Edge-Filter und Dialog über Ok schließen.
+
+\textbf{->} Graph wird neu gelayoutetd und alle Edges werden wieder angezeigt.\\
+\textbf{23:} Export von java.io.printStram.print() als .svg.
+
+\textbf{->} Datei wird am angegebenen Ort exportiert und enthält den passenden Graphen.\\
+\textbf{24:} Schließen von Graph von Ansicht über den Menüeintrag Exit.
+
+\textbf{->} Graph von Ansicht schließt sich.\\
+\\
+\textbf{Überdeckung app: }86,4\%\\
+\textbf{Überdeckung graphml: }80,9\%\\
+\textbf{Überdeckung joana: }82,4\%\\
+\textbf{Überdeckung shared: }57,9\%\\
+\textbf{Überdeckung sugiyama: }84,2\%\\
+\textbf{Überdeckung svg: }89,9\%\\
+Die Werte können sich noch verbessern, da noch einiges an Code ungenutzt ist, aber in Zukunft noch genutzt werden könnte.
+
 
 \subsection{Randfalltests}
 Es wurden Randfälle des Programmverlaufes getestet, die entweder zu Fehlern führen könnten oder schon zu welchen geführt haben.\\
