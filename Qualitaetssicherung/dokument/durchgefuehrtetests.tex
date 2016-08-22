@@ -57,6 +57,13 @@
 	\test{hugeTest()}{Erstellt einen zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Dieser besteht aus 250 Knoten, die jeweils 2-6 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt. Dabei geht es besonders um die Zeit die der Test benötigt.}
 \end{longtable}
 
+\subsection{SVG-Export}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{fileEndingTest()}{Testet ob der \textit{SvgExporter} die untersützten Datei Formate korrekt zurückgibt.}
+	\test{exportSucessfullTest()}{Testet ob beim Exportieren eine Fehlermeldung geworfen wird.}
+\end{longtable}
+
 \section{Hallway Usability Testing}
 %hier die Einträge zu den Tests mit "unwissenden" leuten. ggf. Datum des testens und commithash des verwendeten Programmes beifügen. Format der Darstellung noch offen.
 Hier wird das Programm durch fachfremde Probanden, die das Programm nicht kennen, getestet.\\
