@@ -113,6 +113,11 @@
 	{Exportierte SVG-Datei wird in manchen SVG-Viewer nicht komplett angezeigt.}
 	{Einige SVG-Viewer können die Standard Größe 100\% einer SVG-Datei nicht korrekt interpretieren.}
 	{Die komplette Größe eines Graphens wird berechnet und als feste Werte in die SVG-Datei geschrieben.}
+
+\bug{57}
+	{Im Callgraph werden keine Schleifen (Kante, welche einen Knoten mit sich selbst verbindet) angezeigt.}
+	{Beim Import-Vorgang werden, beim Erstellen des Callgraphen, Schleifen ignoriert. Dies liegt daran, dass Source- und Target-Knoten einer Schleife im selben MethodGraph liegen und somit diese Kante zum MethodGraph hinzugefügt wird und nicht zum CallGraph. }
+	{Falls eine Kante vom \glqq{}EdgeKind CL\grqq{} ist (welche Call-Kanten definieren), wird diese zum CallGraph hinzugefügt. }
 		
 %		\bug{}
 %		{}
