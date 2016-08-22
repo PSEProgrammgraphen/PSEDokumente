@@ -92,22 +92,22 @@
 		
 \bug{30}
 	{Kanten laufen durch Knoten durch und manchmal von unten rein und verbinden sich dann oben auf dem Knoten.}
-	{Der Kantenzeichner ging davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet wurden.}
+	{Der Kantenzeichner geht davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet werden.}
 	{Kanten zwischen Knoten auf dem selben layer werden nun gesondert gezeichnet, und zwar unterhalb des layers.}
 		
 \bug{31}
         {Beim Zoomen wird nicht vom Mauszeiger weg oder zum Mauszeiger hin gezoomt. Der Fokus und Sichtbereich springt herum.}
-        {Die GraphView wurde durch das Zoomen vergrößert, dadurch gab es von den äußeren Oberflächenelementen, die um die GraphView gelegt waren, Interferenzen, die das Springen und unfokussierte Zoomen ausgelöst haben.}
+        {Die GraphView wird durch das Zoomen vergrößert, dadurch gibt es von den äußeren Oberflächenelementen, die um die GraphView gelegt sind, Interferenzen, welche das Springen und unfokussierte Zoomen ausgelöst haben.}
         {Die Ansicht des Graphen besteht nun aus 4 ineinander verschachtelten Panes, wobei das innerste die GraphView und das äußerste ein ScrollPane ist. Vergrößert wird beim Zoomen nun das Pane welches direkt um der GraphView liegt. Das Pane darum passt sich per Listener immer an die Größe der beiden inneren Panes an. Dadurch entstehen keinen Interferenzen mehr und anderes ungewolltes Verhalten tritt auch nicht mehr auf.}
         
 \bug{40}
-        {Die Richtung mancher Kanten zwischen zwei Knoten änderte sich manchmal nach neuem importieren oder neuem layouten des Graphen.}
-        {Im Sugiyama werden notwendigerweise zuallererst Kanten gedreht, die Zykel im Graph verursachen. Der Kantenzeichner im letzten Schritt des Sugiyama hat nun nur die gedrehten Kanten, die sich über ein layer erstrecken in ihrer Richtung angepasst. Kanten, die über mehrere layer gingen wurden ignoriert, da diese in einem anderen Set lagen.}
+        {Die Richtung mancher Kanten zwischen zwei Knoten ändert sich manchmal nach neuem Importieren oder neuem Layouten des Graphen.}
+        {Im Sugiyama werden notwendigerweise zuallererst Kanten gedreht, die Zykel im Graph verursachen. Der Kantenzeichner im letzten Schritt des Sugiyama hat nun nur die gedrehten Kanten, die sich über ein Layer erstrecken in ihrer Richtung angepasst. Kanten, die über mehrere Layer gingen wurden ignoriert, da diese in einem anderen Set lagen.}
         {Der Kantenzeichner passt nun durch Berücksichtigung des Sets der sich über mehrere Layer erstreckenden Kanten, von diesen ehemals gedrehte Kanten in ihrer Richtung an.}
 
 \bug{42}
+	{ArrayIndexOutOfBoundsException im VertexPositioner nach dem Filtern von NORM Knoten und dann EXPR Knoten}
 	{Nach einem commit verschwand dieser Fehler und äußert sich durch die selben Merkmale wie Bug 44, siehe daher 44.}
-	{siehe Bug 44}
 	{siehe Bug 44}
 
 \bug{44}
