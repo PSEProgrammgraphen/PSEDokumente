@@ -10,6 +10,10 @@
 		{Der Scrollbalken wird nicht richtig angepasst, wenn man mit Rechtsklick die Zeichenfläche zieht.}
 		{Das Berechnen der Position des Scrollbalken ist mit Berücksichtung des Zoomgrades schwieriger als zu Beginn gedacht. Es gibt keine Unterstützung des Frameworks.}
 		
+\openbug{33}
+		{Wenn Knoten aus einem FieldAccess kollabiert wird, wird eine Exception geworfen. Das Programm stürzt nicht ab, aber der Graph wird nicht neu gelayoutet.}
+		{Siehe issue 35.}
+		
 \openbug{35}
 		{Wenn Knoten, welche in einem FieldAccess vorhanden sind, gefiltert werden, stürzt der LayoutAlgorithmus ab.}
 		{Durch das späte Hinzufügen von Filtern und Berücksichtigung von FieldAccess als hervorgehobene SubGraphen entstanden viele im Nachhinein Korrelationen zwischen verschiedenen Programmteile, die nicht leicht gelöst werden konnten.}
