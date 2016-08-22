@@ -31,6 +31,38 @@
 
 \section{JUnit Tests}
 %alle gemachten JUnit tests. Falls welche sich mit denne aus dem Implementierungsheft überschneiden, bzw. dieselben sind, dann Verweis auf den jeweiligen Eintrag im Implementierungsheft
+\subsection{Graph von Ansicht}
+
+\subsubsection{FilterJoanaTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{filterCallGraphTest()}{Erhält einen zufälligen CallGraph aus den vorhandenen Testdateien. Wendet alle Filter darauf an und testet ob die die Anzahl an Knoten und Kanten zu den gefilterten Graphen passt.}
+	\test{filterMethodGraphTest()}{Testet für alle Methoden Graphen aus einer zufälligen Testdatei, ob die gefilterten Kanten und Knoten korrekt entfernt oder hinzugefügt werden.}
+\end{longtable}
+
+\subsubsection{JoanaGraphTester}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{callGraphSizeTest()}{Testet ob die Anzahl an CallGraph Knoten mit der Anzahl der MethodenGraphen übereinstimmt.}
+	\test{collapseTest()}{Kollabiert alle Knoten vom Knotentyp ACTI in einem zufälligen MethodGraph.}
+	\test{randomSymmetricCollapseTest()}{Kollabiert zufällig oft Knoten in einem MethodenGraph und expandiert diese danach symetrisch. Es wird überprüft ob die Struktur gleichgeblieben ist.}
+	\test{randomAssymetricCollapseTest()}{Kollabiert zufällig oft Knoten in einem MethodenGraph. Beim Expandieren werden die CollapsedVertices in einer zufälligen Reihenfolge ausgewählt. Es wird wieder die Struktur des Graphen überprüft.}
+	\test{randomMixedCollapseTest()}{Kollabiert und Expandiert Knoten in einer zufälligen Reihenfolge und zufällig oft. Danach wird wieder die Struktur überprüft.}
+\end{longtable}
+
+\subsubsection{LayoutJoanaGraphs}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{methodLayout()}{Es werden aus allen vorhandenen Testdateien alle MethodenGraphen, mit einer Knotenanzahl kleiner als 1000, der LayoutAlgorithmus aufgerufen.}
+	\test{callLayout()}{Alle vorhandenen CallGraphen werden gelayoutet.}
+\end{longtable}
+
+\subsubsection{PluginManagerTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{testPluginLoad()}{Alle Plugins werden geladen und es wird überprüft ob die Anzahl der geladenen Plugins stimmt.}
+\end{longtable}
+
 \subsection{Sugiyama Plugin}
 \subsubsection{CycleRemover}
 \setcounter{tnr}{1}
@@ -90,9 +122,91 @@ Zum anderen war das Graph verschieben mithilfe der Tastenkombination Strg + Reck
 Ebenso unschön wurde das Filtern von Kanten über das checken der checkboxes gefunden, sowie die Unwissenheit über momentan vorhandene Knoten und Kanten im Graphen. Man kann auch Knoten und Kanten filtern, die gar nicht im Graph vorhanden sind.\\
 
 
-
-
 \section{Manuelle Tests}
+\subsection{Genereller GUI Test}
+Um die GUI zu testen wurde, neben den Globalen Systemtests, ein Test formuliert, der händisch durchgeführt wird. Dabei werden die verschiedenen Funktionen grob in ihrer Funktionalität getestet und die Überdeckung des Codes überprüft. \\ \\
+Der Test besteht aus folgenden Schritten: \\
+\textbf{1:} Import der Datei Fibonacci.pdg.graphml beim Start per Kommandozeile. 
+
+\textbf{->} Graph von Ansicht wird geöffnet und der Callgraph der Fibonacci-Datei wird angezeigt.\\
+\textbf{2:} Import der Datei Fields.pdg.graphml über den Menüeintrag Import.
+
+\textbf{->} Der Callgraph von Fibonacci schließt sich und der Callgraph von Fields wird angezeigt.\\
+\textbf{3:} Selektieren des Graphen java.io.printStram.print() in der StrukturView.
+
+\textbf{->} InformationView zeigt Informationen über den Graphen.\\
+\textbf{4:} Öffnen des Graphen java.io.printStram.print() per Kontextmenü.
+
+\textbf{->} Der Methodgraph zu java.io.printStram.print() wird in einem neuen Tab geöffnet.\\
+\textbf{5:} Maximieren des Fensters, zoomen und Graph bewegen das er in die Ansicht passt.
+
+\textbf{->} Graph passt in die Ansicht, die Steuerung funktioniert wie definiert.\\
+\textbf{6:} Selektieren mehrerer Knoten und kollabieren über das Kontextmenü.
+
+\textbf{->} Selektierte Knoten sind zu einem Knoten kollabiert, der Graph wurde neu gelayouted.\\
+\textbf{7:} Selektieren mehrerer Knoten, hinzufügen zu einer Gruppe, Farbe der Gruppe ändern und schließen des Dialogs über Ok.
+
+\textbf{->} Die selektierten Knoten haben eine Umrandung in der ausgewählten Farbe.\\
+\textbf{8:} Erneut Knoten zu einer neuen Gruppe hinzufügen, ein Knoten der zuvor ausgewählt war mit auswählen.
+
+\textbf{->} Die selektierten Knoten haben eine Umrandung in der ausgewählten Farbe. Der zuvor bereits in einer Gruppe enthaltene Knoten ist in der Farbe der ersten Gruppe umrandet.\\
+\textbf{9:} Farben und Position beider Gruppen im Dialog ändern und Dialog per X schließen.
+
+\textbf{->} Ansicht bleibt gleich. Erneutes öffnen des Dialogs zeigt die gleichen Werte wie beim zuvorigen öffnen.\\
+\textbf{10:} Entfernen der ersten der beiden Gruppen über den Dialog.
+
+\textbf{->} Der Knoten der in zwei Gruppen war, wird nun in Farbe der zweiten Gruppe angezeigt.\\
+\textbf{11:} Öffnen des Graphen fields.t2() per Doppelklick in der StrukturView.
+
+\textbf{->} Der Methodengraph wurde in einem neuen Tab geöffnet.\\
+\textbf{12:} Öffnen des Preferences-Dialogs, ändern der Einstellungen und schließen über Ok.
+
+\textbf{->} Graph wird neu gelayouted angezeigt.\\
+\textbf{13:} Erneutes öffnen des Preferences-Dialogs, ändern der Einstellungen und schließen über X.
+
+\textbf{->} Erneutes öffnen des Dialogs zeigt die alten Einstellungen an.\\
+\textbf{14:} Anwenden eines neuen Methodgraph-Layouts, erhöhen der Einstellungen auf gechecked, 0,01 und 1500.
+
+\textbf{->} Der Graph wird neu gelayouted angezeigt. Öffnen des Preferences-Dialogs zeigt die gemachten Einstellungen.\\
+\textbf{15:} Exportieren von fields.t2() als .svg.
+
+\textbf{->} Datei wird am angegebenen Ort exportiert und enthält den passenden Graphen.\\
+\textbf{16:} Schließen des Tabs von fields.t2().
+
+\textbf{->} Tab wurde geschlossen. Ansicht ist wieder bei "java.io.printStram.print()".\\
+\textbf{17:} Wechseln zum Tab callgraph.
+
+\textbf{->} callgraph wird angezeigt.\\
+\textbf{18:} Doppelklick auf Graph java.io.printStram.print() in der StrukturView.
+
+\textbf{->} Automatischer Wechsel zum Tab von java.io.printStram.print().\\
+\textbf{19:} Öffnen des Filter Dialogs und Filtern von allen Vertex-Typen der ersten zwei Spalten. Dialog über Ok schließen.
+
+\textbf{->} Graph wird neu gelayouted und verschiedene Vertices sind nicht mehr vorhanden.\\
+\textbf{20:} Entfernen der Vertex-Filter und Dialog über Ok schließen.
+
+\textbf{->} Graph wird wieder neu gelayouted mit allen Vertices.\\
+\textbf{21:} Öffnen des Filter Dialogs und Filtern von allen Edge-Typen der ersten zwei Spalten.
+
+\textbf{->} Der Graph wird neu gelayouted und verschiedene Edges sind nicht mehr vorhanden.\\
+\textbf{22:} Entfernen der Edge-Filter und Dialog über Ok schließen.
+
+\textbf{->} Graph wird neu gelayoutetd und alle Edges werden wieder angezeigt.\\
+\textbf{23:} Export von java.io.printStram.print() als .svg.
+
+\textbf{->} Datei wird am angegebenen Ort exportiert und enthält den passenden Graphen.\\
+\textbf{24:} Schließen von Graph von Ansicht über den Menüeintrag Exit.
+
+\textbf{->} Graph von Ansicht schließt sich.\\
+\\
+\textbf{Überdeckung app: }86,4\%\\
+\textbf{Überdeckung graphml: }80,9\%\\
+\textbf{Überdeckung joana: }82,4\%\\
+\textbf{Überdeckung shared: }57,9\%\\
+\textbf{Überdeckung sugiyama: }84,2\%\\
+\textbf{Überdeckung svg: }89,9\%\\
+Die Werte können sich noch verbessern, da noch einiges an Code ungenutzt ist, aber in Zukunft noch genutzt werden könnte.
+
 
 \subsection{Randfalltests}
 Es wurden Randfälle des Programmverlaufes getestet, die entweder zu Fehlern führen könnten oder schon zu welchen geführt haben.\\
@@ -105,15 +219,24 @@ Im Layoutalgorithmus wurden Graphen mit isolierten Knoten, Knoten auf dem selben
 %hier alles wa sgetan wurde, um z.b. javadocs zu fixen, mögliche bugs mit werkzeug zu fixen, codequalität zu verbessern, etc. reinschreiben mit Beschreibung und Zweck 
 \subsection{Überdeckungstests}
 Es wurden Überdeckungstests sowohl über JUnit-Tests der einzelnen Projekte, als auch über alle Projekte während eines Programmlaufes mithilfe von EclEmma durchgeführt.\\
-Das Programm enthält folgende Projekte, die nach Möglichkeit einzeln getestet wurden und für die es auch, falls möglich, extra JUnit Tests gibt : app, Graph von Ansicht, graphml, joana, shared, sugiyama und svg.\\
-Im Projekt ''app'' befindet sich alles zu GUI gehörende, dieses Porjekt kann aufgrund der enom hohen Zahl an möglichen Interaktionen (Klick, Klick + ziehen, Rechtsklick, Graph verschieben, Knoten selektieren .....) nicht vollständig abgedeckt werden.\\
-''Graph von Ansicht'' enthält sowohl Testfälle, die einzelne Projekte und Klassen testen, als auch Testfälle, die zum Testen nacheinander ablaufender Prozesse genutzt werden\\
-In ''graphml'' befindet sich der GraphML-Importer.\\
-''joana'' enthält JOANA-spezifische Funktionalitäten und Strukturen (z.B. Call- und Methodengraph, FieldAccess...)\\
-''shared'' beinhaltet das Graphmodel und Graphbuilder-Interfaces.\\
-Im Porjekt ''sugiyama'' befindet sich alles zum Layoutalgorithmus Sugiyama-Layout gehörende und notwendige(z.B. die fünf Sugiyama-Schritte, SugiyamaGraph, SugiyamaLayoutAlgorithm...)\\
-''svg'' enthält den SVG-Exporter.\\
-Da ''Graph von Ansicht'' nur Testfälle beinhaltet, wird auf das Anzeigen einer Überdeckung über dieses Projekt verzichtet.\\
+Das Programm enthält folgende Projekte, die nach Möglichkeit einzeln getestet wurden und für die es auch, falls möglich, extra JUnit Tests gibt:\\
+
+\begin{longtable}{l p{0.8\linewidth}}
+	\textbf{app} & In diesem Projekt befindet sich die View und alles zu GUI gehörende. Aufgrund der enorm hohen Zahl an Userinteraktionen (Klick, Klick + Ziehen, Rechtsklick, Graph verschieben, Knoten selektieren...) gibt es keine expliziten JUnit Tests und es kann auch nicht vollständig abgedeckt werden. \\
+
+	\textbf{Graph von Ansicht} & Dieses Projekt verbindet die einzelne Plugins. Es existieren Testfälle die einzelne Projekte und Klassen testet, als auch Testfälle, welche komplette Prozesse und Programmabläufe automatisiert testen. \\
+	
+	\textbf{graphml} & Hier befindet sich der GraphML-Importer. Es existieren keine expliziten Testfälle, da zum Import die GraphBuilder Klassen benötigt werden, auf welche des graphml-Projekt keinen Zugriff besitzt. Die Testfälle hierzu liegen in \textbf{Graph von Ansicht}.\\
+	
+	\textbf{joana} & Dieses Projekt enthält JOANA-spezifische Funktionalitäten und Strukturen (z.B. Call- und Methodengraph, FieldAccess....)\\
+	
+	\textbf{shared} & Hier sind das allgemeine Graphmodel und die Graphbuilder-Interfaces vorhanden. Explizite Testfälle liegen keine vor, da keine große Algorithmen durchgeführt werden, sondern meist nur Getter- und Setter-Methoden oder Interfaces.\\
+	
+	\textbf{sugiyama} & In diesem Projekt befindet sich alles zum Layoutalgorithmus Sugiyama-Layout. Dazu gehören unter anderen die fünf Sugiyama-Schritte, SugiyamaGraph und der SugiyamaLayoutAlgorithm. Es existieren viele Testfälle da die einzelnen Schritte explizit getestet werden müssen. \\
+	
+	\textbf{svg} & Der SVG-Exporter wird explizit auf Exceptions getestet. \\
+
+\end{longtable}
 
 
 \subsubsection{Testfälle aus dem Pflichtenheft}
@@ -140,13 +263,19 @@ Auch hier können keine änderbaren Parameter verarbeitet werden, weil keine ges
 \textbf{Überdeckung svg: }90\%\\
 
 \subsubsection{Test über Programmdurchlauf}
+Es werden alle Method- und Callgraphen mit einer Knotenzahl von unter 1000 aus allen Dateien außer BigCG nacheinander importiert und gelayouted.\\
 
-\textbf{Überdeckung app: }\\
-\textbf{Überdeckung graphml: }\\
-\textbf{Überdeckung joana: }\\
-\textbf{Überdeckung shared: }\\
-\textbf{Überdeckung sugiyama: }\\
-\textbf{Überdeckung svg: }\\
+\textbf{Überdeckung app: }0\%\\
+Keine GUI Interaktionen.\\
+\textbf{Überdeckung graphml: }80.9\%\\
+\textbf{Überdeckung joana: }80.1\%\\
+\textbf{Überdeckung shared: }47.2\%\\
+Parameter werden nicht angepasst, FastGraphAccessor ist komplett unbenutzt.\\
+\textbf{Überdeckung sugiyama: }78.6\%\\
+SugiyamaGraph bietet manche unbenutzte Funktionalität, die nie benutzt wird.\\
+CrossMinimizer hat nur eine Überdeckung von 57.4\%, da dieser veränderte Parameter berücksichtigt, werden diese Abschnitte aufgrund von nicht veränderten Parametern nicht ausgeführt.\\
+\textbf{Überdeckung svg: }0.4\%\\
+Kein Export wird ausgeführt.\\
 
 \subsection{Performance Tests}
 Getestet wurden hier Methodengraphen aus erstellten Graphen des JOANA-Graph-Analyzer.\\
