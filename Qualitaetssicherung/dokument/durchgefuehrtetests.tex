@@ -86,7 +86,7 @@ Die Überdeckung über alle Projekte ist sehr stark abhängig von der importiert
 \textbf{Überdeckung shared: }54,2\%\\
 Es werden Parameter, die vor dem Layouten des Methodengraphen verändert werden können, durch diese Tests nicht abgedeckt.\\
 \textbf{Überdeckung sugiyama: }75,2\%\\
-Auch hier können keine änderbaren parameter verarbeitet werden, weil keine gesetzt wurden. Ebenso ist die Überdeckung aufgrund vieler assertions, die nicht ausgeführt werden, etwas geringer, als es sein sollte.\\
+Auch hier können keine änderbaren parameter verarbeitet werden, weil keine gesetzt wurden.\\
 \textbf{Überdeckung svg: }90\%\\
 \subsubsection{JUnit Tests}
 
@@ -109,12 +109,23 @@ Auch hier können keine änderbaren parameter verarbeitet werden, weil keine ges
 \subsection{Performance Tests}
 Getestet wurden hier Methodengraphen aus erstellten Graphen des JOANA-Graph-Analyzer.\\
 Gemessen wird die Zeit für das Berechnen des Layout des Methodengraphen, also von der Übergabe des Methodengraphen in interner Repräsentation nach dem Import an den Layoutalgorithmus bis dieser erst einen SuguyamaGraph erstellt und anschließend die fünf Sugiyama-Steps ausgeführt hat.\\
+Die benötigte Zeit zum Layouten ist nicht nur abhängig von der Anzahl der Knoten und Kanten eines Graphen, sondern auch von dessen Aufbau (Anzahl an logischen Layern, einzelne dichte Stellen im Graphen, ...).\\
+Ebenso hängt die benötigte Zeit stark von der Anzahl der Läufe des Kreuzungsminimierers bei der Kreuzungsminimierung zwischen zwei Layern ab. Die Anzahl an Läufen kann über den Menüpunkt ''Layout->Properties'' angepasst werden.\\
+Im folgenden werden Graphen mit einer Anzahl von 10 Läufen gelayouted.\\
 
-\textbf{Datei: }
-\textbf{Methodengraph: }
-\textbf{Information zum Graph: }
-\textbf{Programmeinstellungen: }
-\textbf{Zeit: }
+\textbf{Datei: }BigControl.pdg.graphml\\
+\textbf{Methodengraph: }BigControl.main()\\
+\textbf{Information zum Graph: }779 Knoten, 4917 Kanten, 1 FieldAccess\\
+\textbf{Programmeinstellungen: }CrossMinimizer runs: 10, use threshold: false\\
+\textbf{Zeit: }6.6s, 162.4s, 30.5s, 8.9s, 6.6s, 7.6s, 369.1s, 6.9s \\
+
+\textbf{Datei: }PhiMadness.pdg.graphml\\
+\textbf{Methodengraph: }PhiMadness.phiMadness()\\
+\textbf{Information zum Graph: }393 Knoten, 2937 Kanten, 25 FieldAccesses\\
+\textbf{Programmeinstellungen: }CrossMinimizer runs: 10, use threshold: false\\
+\textbf{Zeit: }44.5s, 79.6s, 46.6s, 58.3s, 51.7s, 38.3s, 43.4s, 45.1s\\
+
+%Hier Satz, warum Zeiten so extrem abweichen können, auch mit constraints und fieldaccesses argumentieren!
 
 
 
