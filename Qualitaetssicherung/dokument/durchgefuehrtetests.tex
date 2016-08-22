@@ -132,13 +132,19 @@ Auch hier können keine änderbaren Parameter verarbeitet werden, weil keine ges
 \textbf{Überdeckung svg: }90\%\\
 
 \subsubsection{Test über Programmdurchlauf}
+Es werden alle Method- und Callgraphen mit einer Knotenzahl von unter 1000 aus allen Dateien außer BigCG nacheinander importiert und gelayouted.\\
 
-\textbf{Überdeckung app: }\\
-\textbf{Überdeckung graphml: }\\
-\textbf{Überdeckung joana: }\\
-\textbf{Überdeckung shared: }\\
-\textbf{Überdeckung sugiyama: }\\
-\textbf{Überdeckung svg: }\\
+\textbf{Überdeckung app: }0\%\\
+Keine GUI Interaktionen.\\
+\textbf{Überdeckung graphml: }80.9\%\\
+\textbf{Überdeckung joana: }80.1\%\\
+\textbf{Überdeckung shared: }47.2\%\\
+Parameter werden nicht angepasst, FastGraphAccessor ist komplett unbenutzt.\\
+\textbf{Überdeckung sugiyama: }78.6\%\\
+SugiyamaGraph bietet manche unbenutzte Funktionalität, die nie benutzt wird.\\
+CrossMinimizer hat nur eine Überdeckung von 57.4\%, da dieser veränderte Parameter berücksichtigt, werden diese Abschnitte aufgrund von nicht veränderten Parametern nicht ausgeführt.\\
+\textbf{Überdeckung svg: }0.4\%\\
+Kein Export wird ausgeführt.\\
 
 \subsection{Performance Tests}
 Getestet wurden hier Methodengraphen aus erstellten Graphen des JOANA-Graph-Analyzer.\\
