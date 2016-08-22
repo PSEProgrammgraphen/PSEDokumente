@@ -1,6 +1,9 @@
 \chapter{Durchgeführte Tests}
 \label{ch:durchgefuehrtetests}
 
+\newcounter{tnr}
+\newcommand\test[2]{\textbf{\arabic{tnr}}\addtocounter{tnr}{1}. & \textbf{Test:} & #1 \\ & \textbf{Aufgabe:} & #2 \\ [1ex] }
+
 \section{Globale Testfälle aus dem Pflichtenheft}
 
 \textbf{/T010/: }Import und Darstellung von einem JOANA Graphen\\
@@ -28,7 +31,31 @@
 
 \section{JUnit Tests}
 %alle gemachten JUnit tests. Falls welche sich mit denne aus dem Implementierungsheft überschneiden, bzw. dieselben sind, dann Verweis auf den jeweiligen Eintrag im Implementierungsheft
+\subsection{Sugiyama Plugin}
+\subsubsection{CycleRemover}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{testSimpleCycle()}{Erstellt einen Testgraphen aus drei Knoten die jeweils mit einem anderen Knoten über eine gerichtete Kante verbunden sind, sodass ein Kreis entsteht. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem Cycle remover \textit{removeCycles()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob der Graph azyklisch ist.}
+	\test{testDoubleCycle()}{Erstellt einen Testgraphen aus vier Knoten und fünf gerichteten Kanten. Die Kanten sind so miteinander verknüpft, dass zwei Zykel entstehen. Ein kleiner Zykel drei Knoten beinhaltender und ein großer Zykel, der alle vier Knoten und damit auch den kleineren Zykel enthaltenden. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem Cycle remover \textit{removeCycles()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob der Graph azyklisch ist.}
+	\test{RandomGraphsTest()}{Erstellt zwanzig zufällige, zyklische \textit{SugiyamaGraphen}. Diese bestehen beim n-ten Graphen aus aus 2n Knoten und haben eine Kantendichte von $0.95^{n}$. Dann ruft es auf dem Cycle remover \textit{removeCycles()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob der Graph azyklisch ist.}
+	\test{SelfLoopTest()}{Erstellt einen Testgraphen aus einem Knoten mit einer gerichteten Kante als Selbstschleife. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem Cycle remover \textit{removeCycles()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob diese Kante umgedreht wurde.}
+\end{longtable}
 
+\subsubsection{LayerAssigner}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{assignLayers()}{Erstellt einen azyklischen Testgraphen aus fünf Knoten, welche die korrekte Ebene für die Knoten angeben. Diese werden mit fünf Kanten verbunden. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem LayerAssigner \textit{assignLayers()} mit dem \textit{SugiyamaGraph} als Parameter und testet mithilfe der Labels, ob die Knoten den richtigen Schichten zugewiesen wurden.}
+	\test{LayerAssignerTest2()}{Erstellt einen azyklischen Testgraphen aus sieben Knoten, welche die korrekte Ebene für die Knoten angeben. Diese werden mit zehn Kanten verbunden. Diesen übergibt es an einen \textit{SugiyamaGraph}. Dann ruft es auf dem  LayerAssigner \textit{assignLayers()} mit dem \textit{SugiyamaGraph} als Parameter und testet mithilfe der Labels, ob die Knoten den richtigen Schichten zugewiesen wurden.}
+\end{longtable}
+
+\subsubsection{CrossMinimizer}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{singleRandomTest()}{Erstellt einen zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Diese bestehen aus 20 Knoten, die jeweils 2-8 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt.}
+	\test{randomTests()}{Erstellt 20 zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Diese bestehen beim n-ten durchlauf aus ${n} + 10$ Knoten, die jeweils 3-4 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt.}
+	\test{performanceTest()}{Erstellt 20 zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Diese bestehen aus 75 Knoten, die jeweils 2-8 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt. Dabei geht es besonders um die Zeit die der Test benötigt.}
+	\test{hugeTest()}{Erstellt einen zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Dieser besteht aus 250 Knoten, die jeweils 2-6 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt. Dabei geht es besonders um die Zeit die der Test benötigt.}
+\end{longtable}
 
 \section{Hallway Usability Testing}
 %hier die Einträge zu den Tests mit "unwissenden" leuten. ggf. Datum des testens und commithash des verwendeten Programmes beifügen. Format der Darstellung noch offen.
