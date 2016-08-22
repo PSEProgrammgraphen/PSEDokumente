@@ -31,6 +31,38 @@
 
 \section{JUnit Tests}
 %alle gemachten JUnit tests. Falls welche sich mit denne aus dem Implementierungsheft überschneiden, bzw. dieselben sind, dann Verweis auf den jeweiligen Eintrag im Implementierungsheft
+\subsection{Graph von Ansicht}
+
+\subsubsection{FilterJoanaTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{filterCallGraphTest()}{Erhält einen zufälligen CallGraph aus den vorhandenen Testdateien. Wendet alle Filter darauf an und testet ob die die Anzahl an Knoten und Kanten zu den gefilterten Graphen passt.}
+	\test{filterMethodGraphTest()}{Testet für alle Methoden Graphen aus einer zufälligen Testdatei, ob die gefilterten Kanten und Knoten korrekt entfernt oder hinzugefügt werden.}
+\end{longtable}
+
+\subsubsection{JoanaGraphTester}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{callGraphSizeTest()}{Testet ob die Anzahl an CallGraph Knoten mit der Anzahl der MethodenGraphen übereinstimmt.}
+	\test{collapseTest()}{Kollabiert alle Knoten vom Knotentyp ACTI in einem zufälligen MethodGraph.}
+	\test{randomSymmetricCollapseTest()}{Kollabiert zufällig oft Knoten in einem MethodenGraph und expandiert diese danach symetrisch. Es wird überprüft ob sich die Struktur verändert hat.}
+	\test{randomAssymetricCollapseTest()}{Kollabiert zufällig oft Knoten in einem MethodenGraph. Beim Expandieren werden die CollapsedVertices in einer zufälligen Reihenfolge ausgewählt. Es wird wieder die Struktur des Graphen überprüft.}
+	\test{randomMixedCollapseTest()}{Kollabiert und Expandiert Knoten in einer zufälligen Reihenfolge und zufällig oft. Danach wird wieder die Struktur überprüft.}
+\end{longtable}
+
+\subsubsection{LayoutJoanaGraphs}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{methodLayout()}{Es werden aus allen vorhandenen Testdateien alle MethodenGraphen, mit einer Knotenanzahl kleiner als 1000, der LayoutAlgorithmus aufgerufen.}
+	\test{callLayout()}{Alle vorhandenen CallGraphen werden gelayoutet.}
+\end{longtable}
+
+\subsubsection{PluginManagerTest}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{testPluginLoad()}{Alle Plugins werden geladen und es wird überprüft ob die Anzahl der geladenen Plugins stimmt.}
+\end{longtable}
+
 \subsection{Sugiyama Plugin}
 \subsubsection{CycleRemover}
 \setcounter{tnr}{1}
