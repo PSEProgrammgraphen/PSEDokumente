@@ -19,7 +19,14 @@
  		{Aus zeitlichen Gründen wurde nicht implementiert, dass der Sugiyama-Algorithmus Constraints umsetzt, die einen festen Layerabstand zwischen zwei Knoten definiert. Für Call-Knoten wurde dies benötigt.}
 
 \openbug{43}
-       {Der Sugiyama-Algorithmus ohne Spezialisierung auf MethodGraph/CallGraph ist nicht auswählbar.}
-       {Es werden keine Verbesserungen bei der Benutzung des Sugiyama-Algorithmus ohnne Spezialisierung erwartet. Daher wurde dieses Feature zurückgestellt.}
+       		{Der Sugiyama-Algorithmus ohne Spezialisierung auf MethodGraph/CallGraph ist nicht auswählbar.}
+       		{Es werden keine Verbesserungen bei der Benutzung des Sugiyama-Algorithmus ohne Spezialisierung erwartet. Daher wurde dieses Feature zurückgestellt.}
        
+\openbug{54}
+ 		{Größe der FieldaccessBox ist nach dem Filtern falsch.}
+ 		{Auftreten einer NullPointerException nach einem Commit. Kann erst nach Bug 35 gefixt werden.}
+ 		
+\openbug{59}
+ 		{Gruppenfarbe von zwei nebeneinanderliegenden Knoten überlappen sich.}
+ 		{Wurde zurückgestellt da es schwerwiegendere Probleme gab und dies kein gravierender Fehler ist.}
 \end{longtable}
