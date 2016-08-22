@@ -32,11 +32,14 @@
 
 \section{Hallway Usability Testing}
 %hier die Einträge zu den Tests mit "unwissenden" leuten. ggf. Datum des testens und commithash des verwendeten Programmes beifügen. Format der Darstellung noch offen.
-Hier werden unwissende Probanden vor das Programm gesetzt, ihnen die Funktionsweise und Möglichkeiten der Funktionen des Programmes erläutert, sie dann teste lassen und Auffälligkeiten notiert. Auffälligkeiten können sowohl in der Benutzbarkeit des Programmes, also wie die Probanden zurechtkommen, vorkommen, aber auch in der Funktionsweise des Programmen, indem man selbst oder die Probanden mögliche unerwünschte Nebeneffekte oder Fehler im Programm sehen.\\
+Hier wird das Programm durch fachfremde Probanden, die das Programm nicht kennen, getestet.\\
+Es wird ihnen erst die Funktionsweise und des Programmes erläutert, anschließend dürfen sie frei testen.\\
+Alle hierbei auftretenden Auffälligkeiten, seien es mögliche Fehler oder Verbesserungsmöglichkeiten in der Bedienbarkeit, unerwünschte Nebeneffekte oder gar schwerwiegende Fehler, die das Programm abstürzen lassen, werden notiert.\\
 
 \textbf{Proband 1: } Datum 16.08.2016, commit hash: 6b06dd0\\
 \textbf{Auffälligkeiten: } Es traten keine unerwarteten Fehler im Programm auf.\\
 Es wurde vor allem mit collapse gearbeitet, den Menüpunkten zm Filtern, neu importieren, exportieren wurde kaum Aufmerksamkeit geschenkt.\\
+Der Proband war mit der Menüführung etwas überfordert, da es dort viele für ihn unbekannte Funktionen gab, welche er somit nur selten testete.
 
 \textbf{Proband 2:} Datum 16.08.2016, commit hash: 6b06dd0\\
 \textbf{Auffälligkeiten: } Auch hier traten keine unerwarteten Fehler im Programm auf.\\
@@ -48,10 +51,34 @@ Ebenso unschön wurde das Filtern von Kanten über das checken der checkboxes ge
 
 
 \section{Manuelle Tests}
-%Falls dahingehend etwas getan wurde
+
+\subsection{Randfalltests}
+Es wurden Randfälle des Programmverlaufes getestet, die entweder zu Fehlern führen könnten oder schon zu welchen geführt haben.\\
+Ausgeführt wurden Randfalltests zum Beispiel im Import, dem Layoutalgorithmus.\\
+Dem Importer wurden .graphml Dateien übergeben, welche nicht einen JOANA-Graphen darstellen\\
+Im Layoutalgorithmus wurden Graphen mit isolierten Knoten, Knoten auf dem selben Layer, Kanten die zumindest ein Layer überspringen und somit intern einen Pfad darstellen und Knoten mit Selbstzykel getestet. Diese Fälle müssen einzeln betrachtet werden, da davon ausgegangen wurde, dass das die Knotenstruktur auf dan Layer hierarchisch ist, also die Kanten nur von oben nach unten gehend.\\
+
 
 \section{Andere durchgeführte Tests}
 %hier alles wa sgetan wurde, um z.b. javadocs zu fixen, mögliche bugs mit werkzeug zu fixen, codequalität zu verbessern, etc. reinschreiben mit Beschreibung und Zweck 
 \subsection{Überdeckungstests}
 Es wurden Überdeckungstests sowohl über JUnit-Tests der einzelnen Projekte, als auch über alle Projekte während eines Programmlaufes mithilfe von EclEmma durchgeführt.
 %hier dann bilder der Überdeckungstests hinein
+
+\subsection{Performance Tests}
+Getestet wurden hier Methodengraphen aus erstellten Graphen des JOANA-Graph-Analyzer.\\
+Gemessen wird die Zeit für das Berechnen des Layout des Methodengraphen, also von der Übergabe des Methodengraphen in interner Repräsentation nach dem Import an den Layoutalgorithmus bis dieser erst einen SuguyamaGraph erstellt und anschließend die fünf Sugiyama-Steps ausgeführt hat.\\
+
+\textbf{Datei: }
+\textbf{Methodengraph: }
+\textbf{Information zum Graph: }
+\textbf{Programmeinstellungen: }
+\textbf{Zeit: }
+
+
+
+%\textbf{Datei: }
+%\textbf{Methodengraph: }
+%\textbf{Information zum Graph: }
+%\textbf{Programmeinstellungen: }
+%\textbf{Zeit: }
