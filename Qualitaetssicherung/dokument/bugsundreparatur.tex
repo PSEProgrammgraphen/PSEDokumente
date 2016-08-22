@@ -8,30 +8,32 @@
 \begin{longtable}{llp{0.8\linewidth}}
 \bug{1}
        {Graphische Hervorhebung von FieldAccessen durch eine farbige Box im Hintergrund wird nicht angezeigt.}
-       {Die Struktur im Hintergrund war leicht fehlerhaft und in der Erstellung der Box gab es einen Bug.}
-       {Die Struktur im Hintergrund wurde refactored und der Bug beim erstellen des Hintergrunds wurde behoben.}
+       {Die Struktur im Hintergrund ist leicht fehlerhaft und in der Erstellung der Box gab es einen Bug.}
+       {Die Struktur im Hintergrund ist erneuert worden und der Bug beim Erstellen des Hintergrunds ist behoben.}
 \bug{2}
        {Einige Kanten werden übereinanderliegend gezeichnet.}
-       {Dummy Vertices werden übereinander platziert, da zum einen der Code zum überprüfen von Überlagerung von Kanten fehlerhaft ist und da die Kanten die mehrere Ebenen überdecken nicht immer genügend verschoben werden. Außerdem gibt es Mehrfachzuweisungen von Knoten zu zu begradigenden Abschnitten.}
-       {Die fehlerhafte Code zur Überprüfung von Kantenschnitten im Vertex Positioner wurde korrigiert, indem ein fehlerhafter Vergleich berichtigt wurde. Er kann nun auch mit 1 breiten Kanten arbeiten. Die Verschiebung der Kanten wird nun so oft ausgeführt, bis sich Kanten nicht mehr überdecken. Es wurde außerdem ein schwerwiegender Fehler der zu der Mehrfachzuweisung führte behoben. Hier hat ein rekursiver Teilalgorithmus ergebnisse verdoppelt.}
+       {Dummy Vertices werden übereinander platziert, da der Codeabschnitt zur Überprüfung von Kantenüberlagerungen fehlerhaft ist. Außerdem werden die Kanten die mehrere Ebenen überdecken nicht immer weit genug verschoben. Auch Mehrfachzuweisungen von Knoten in zu begradigenden Abschnitten treten auf.}
+       {Ein fehlerhafter Vergleich bei der Überprüfung von Kantenschnitten im VertexPositioner worde korrigiert. Er kann nun auch mit 1 breiten Kanten arbeiten. Die Verschiebung der Kanten wird nun so oft ausgeführt, bis sich Kanten nicht mehr überdecken. Der schwerwiegender Fehler, welcher zu den Mehrfachzuweisungen führte wurde auch behoben. Hier hat ein rekursiver Teilalgorithmus die Ergebnisse verdoppelt.}
 
 \bug{3}
-	{Kanten, die von außen in einen FieldAccess hinein oder von einem FieldAccess nach außen gehen, werden nur bis an die Box des FieldAccesses dran gezeichnet.}
-	{Nach dem Layouten des ganzen graphen werden die Kanten nicht von außen von der Box nach innen weiter gezeichnet.}
-	{Die Kanten innerhalb eines FieldAccesses werden nun komplett neu gezeichnet. Sowohl die alten, als auch die neuen. Nur die Positionen der Knoten bleiben gleich.}
+	{Kanten, die von außen in einen FieldAccess hinein oder von einem FieldAccess nach außen gehen, werden nur bis an die Box des FieldAccesses gezeichnet, und nicht bis zu dem dazugehörigen Knoten.}
+	{Nach dem Layouten des kompletten Graphen werden die Kanten nicht von der Box nach innen weiter gezeichnet.}
+	{Alle Kanten innerhalb eines FieldAccesses werden nun nach dem Layouten des kompletten Graphen nochmals neu gezeichnet. Sowohl die alten, als auch die neuen. Die Positionen der Knoten und die außerhalb liegende Kanten bleiben dabei gleich.}
 
 \bug{7}
        {Kanten, welche keine Ebene überspannen werden nie begradigt}
-       {Diese Kanten werden beim suchen nach Segmenten(Kantenketten, die im VertexPositioner später begradigt werden) nicht beachtet}
-       {Diese Kanten werden nun beim starten des VertexPositioner ebenfalls hinzugefügt. Im Zuge dieser Korrektur wurde es außerdem ermöglicht die Endknoten von Kanten, welche eine oder mehr Ebenen überspringen, zu den aus ihnen enstehenden Segmenten hinzuzufügen.}
+       {Diese Kanten werden beim Suchen nach Segmenten (Kantenketten, die im VertexPositioner später begradigt werden) nicht beachtet}
+       {Diese Kanten werden nun beim Starten des VertexPositioner ebenfalls hinzugefügt. Im Zuge dieser Korrektur wurde es außerdem ermöglicht die Endpunkte von Kanten, welche eine oder mehr Ebenen überspringen, zu den aus ihnen enstehenden Segmenten hinzuzufügen.}
+       
 \bug{8}
 	   {Kollabierte Knoten in einem FieldAccessGraph verschwinden bei Ihrer Erstellung.}
-	   {Bei dem Layouten von MethodGraphen wurden alle FieldAccess betrachtet. Auch FAs die teilweise kollabiert wurden.}
-	   {Es werden nun nur noch FAs welche vollständig ausgeklappt sind im MethodGraphLayout betrachtet}
+	   {Bei dem Layouten von MethodGraphen werden alle FieldAccesse betrachtet. Auch FieldAccesse die teilweise kollabiert werden.}
+	   {Es werden nun nur noch FAs welche vollständig ausgeklappt sind im MethodGraphLayout betrachtet.}
+	   
 \bug{9}
-       {Beim Öffnen eines Graphens über die Kommandozeile wurde nicht das Default Layout des ausgewählten Workspace übernommen.}
-       {Es wurde immer der LayoutSelectionDialog aufgerufen, obwohl ein workspace angegeben wurde.}
-       {Aufruf gelöscht und das Default Layout aus dem Workspace angewendet.}
+       {Beim Öffnen eines Graphens über die Kommandozeile wird nicht das Default Layout des ausgewählten Workspace übernommen.}
+       {Es wird immer der LayoutSelectionDialog aufgerufen, obwohl ein Workspace als Kommandozeilenargument angegeben wurde.}
+       {Der Aufruf des Dialogs wurde gelöscht und das Default Layout aus dem Workspace wird angewendet.}
 
 \bug{10}
        {Keine Informationen oder Warnung über falsch eingegebene Kommandozeilenparameter.}
@@ -41,49 +43,58 @@
 \bug{11}
        {Falls das Joana-Workspace für eine generische GraphML-Datei ausgewählt wird, kommt keine Warnung und es passiert nichts.}
        {Keine Überprüfung ob ein GraphBuilder für diesen Graphentyp existiert.}
-       {Überprüfung ob GraphBuilder null ist.}
+       {Der Importer überprüft ob der GraphBuilder gesetzt wird. Falls nicht wird eine Fehlermeldung angezeigt.}
+       
 \bug{12}
-       {Der Graph springt beim verschieben mit der Maus zu Beginn ein Stück nach unten.}
-       {Die Berechnung der Mausposition wurde die Position im Fenster genutzt.}
-       {Nutzen der Mausposition des Mausevents die das Ziehen einleitet.}
+       {Der Graph springt beim verschieben mit der Maus in der Graphview zu Beginn ein Stück nach unten.}
+       {Für die Berechnung der Mausposition werden die Koordinaten des Fensters genutzt.}
+       {Die Mausposition wird nun direkt aus dem Mausevent, welches durch das Ziehen aufgerufen wird, berechnet.}
+       
 \bug{13}
        {Es gibt keine Option zur Einstellung ob eine Abbruchgrenze beim Kreuzungsminimieren in Abhängigkeit von den vorhandenen Kreuzungen gewählt werden soll.}
-       {Diese Option wird in den CrossMinimizer Einstellungen nicht bereitgestellt}
+       {Diese Option wird in den CrossMinimizer Einstellungen nicht bereitgestellt.}
        {Die Option wurde als Checkbox hinzugefügt und wird während der Kreuzungsminimierung beachtet.}
+       
 \bug{17}
-	   {Das Filtern von Knoten bestimmten Types (z.B. EXPR) in MethodGraphLayout führt zu einer NullPointerException}
-	   {Für das Layouten der FAs und des ganzen MethodGraphen wurde der selbe Layoutalgorithmus, mit den selben Constraints gewählt.}
-	   {Separate Instanzen des SugiyamaAlgorithm für FAs und MethodGraph.}
+	   {Das Filtern von Knoten bestimmten Types (z.B. EXPR) im MethodGraphLayout führt zu einer NullPointerException}
+	   {Für das Layouten der FieldAccesse und des ganzen MethodGraphen wurde der selbe Layoutalgorithmus, mit den selben Constraints gewählt.}
+	   {Separate Instanzen des SugiyamaAlgorithm für FieldAccesse und MethodGraphen.}
+	   
 \bug{22}
-       {Die alte StrukturView kann nach Import einer neuen Datei nicht zurückgebracht werden.}
-       {Alte Graphen wurden nach einem neuen Import nicht geschlossen, obwohl die Anwendung nur eine einzelne Datei unterstützt.}
-       {Bereits offene Graphen werden nach erfolgreichem Import geschlossen.}
+       {Die alte Strukturansicht kann nach dem Import einer neuen Datei nicht zurückgebracht werden.}
+       {Alte Graphen werden nach einem neuen Import nicht geschlossen, obwohl die Anwendung nur eine einzelne Datei unterstützt.}
+       {Bereits offene Graphen werden nach erfolgreichem Import nun geschlossen.}
+       
 \bug{23}
        {Ähnlich wie in Bug 22 wird versucht nach einem Import über den noch offenen alten Callgraphen einen Methodengraphen zu öffnen.}
        {Siehe Bug 22}
        {Siehe Bug 22}
+       
 \bug{24}
-       {Programm stürzt ab, falls der eingegebene Dateipfad über den Kommandozeilenparameter --in keinen Punkt enthält.}
+       {Programm stürzt ab, falls der eingegebene Dateipfad über den Kommandozeilenparameter -~-in keinen Punkt enthält.}
        {Falls Dateipfad keinen Punkt erhält gibt Java Methode lastIndexOf('.') als Ergebnis -1 zurück. Dieses Ergebniss wird bei substring() als ungültiger Index verwendet was zum Abstürz führt.}
        {Vor Aufruf der Methode substring() wird überprüft ob der Dateipfad einen Punkt enthält. Falls nicht wird eine Fehlermeldung ausgegeben.}
+       
 \bug{25}
        {Es wird ein Fehler geworfen, wenn man die ENTR Knoten filtert.}
        {Der VertexPositioner benötigt mindestens ein Vertex pro Graph.}
-       {Der VertexPositioner überprüft nun am Anfang, ob der Graph leer ist und läuft in diesem Fall nicht durch.}       
+       {Der VertexPositioner überprüft nun am Anfang, ob der Graph leer ist und läuft in diesem Fall nicht durch.}      
+        
 \bug{27}
        {Text in exportierter SVG-Datei ist größer als die Textboxen der Knoten.}
        {Default Textgröße in SVG ist größer als Default Textgröße innerhalb der GUI. Die Größe der Textboxen richten sich jedoch nach der Textgröße der GUI.}
        {Hinzufügen einer expliziten Textgröße zur SVG-Datei, welche der Textgröße der GUI entspricht.}
 		
 \bug{28}
-		{Kanten laufen ggf. aus der Box des Feldzugriffes hinaus.}
-		{Kantenläufe wurden bei der Berechnung der Größe der Box nicht berücksichtigt.}
-		{Kantenläufe werden nun bei der Berechnung der Größe der Box berücksichtigt.}
+	{Kanten innerhalb eines FieldAccess laufen ggf. aus der Box hinaus.}
+	{Kantenläufe werden bei der Berechnung der Größe der Box nicht berücksichtigt.}
+	{Kantenläufe werden nun bei der Berechnung der Größe der Box berücksichtigt.}
 		
 \bug{30}
-		{Kanten laufen durch Knoten durch und manchmal von unten rein und verbinden sich dann oben auf dem Knoten.}
-		{Der Kantenzeichner ging davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet wurden.}
-		{Kanten zwischen Knoten auf dem selben layer werden nun gesondert gezeichnet, und zwar unterhalb des layers.}
+	{Kanten laufen durch Knoten durch und manchmal von unten rein und verbinden sich dann oben auf dem Knoten.}
+	{Der Kantenzeichner ging davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet wurden.}
+	{Kanten zwischen Knoten auf dem selben layer werden nun gesondert gezeichnet, und zwar unterhalb des layers.}
+		
 \bug{31}
         {Beim Zoomen wird nicht vom Mauszeiger weg oder zum Mauszeiger hin gezoomt. Der Fokus und Sichtbereich springt herum.}
         {Die GraphView wurde durch das Zoomen vergrößert, dadurch gab es von den äußeren Oberflächenelementen, die um die GraphView gelegt waren, Interferenzen, die das Springen und unfokussierte Zoomen ausgelöst haben.}
@@ -114,10 +125,16 @@
 	{Einige SVG-Viewer können die Standard Größe 100\% einer SVG-Datei nicht korrekt interpretieren.}
 	{Die komplette Größe eines Graphens wird berechnet und als feste Werte in die SVG-Datei geschrieben.}
 
+\bug{53}
+	{Das Programm stürzt ab falls beim Import eines Joana Graphen ein falscher Knotentyp eingelesen wird.}
+	{Alle mögliche Joana Knotentypen werden in einem Enum gespeichert. Falls der Typ nicht im Enum existiert wird eine IllegalArgumentException geworfen.}
+	{Die Exception wird nun im Importer abgefangen und als Fehlermeldungen dem Nutzer angezeigt.}
+
 \bug{57}
 	{Im Callgraph werden keine Schleifen (Kante, welche einen Knoten mit sich selbst verbindet) angezeigt.}
 	{Beim Import-Vorgang werden, beim Erstellen des Callgraphen, Schleifen ignoriert. Dies liegt daran, dass Source- und Target-Knoten einer Schleife im selben MethodGraph liegen und somit diese Kante zum MethodGraph hinzugefügt wird und nicht zum CallGraph. }
 	{Falls eine Kante vom \glqq{}EdgeKind CL\grqq{} ist (welche Call-Kanten definieren), wird diese zum CallGraph hinzugefügt. }
+
 		
 %		\bug{}
 %		{}
