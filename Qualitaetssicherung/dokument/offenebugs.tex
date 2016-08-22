@@ -1,0 +1,25 @@
+\chapter{Offene Bugs}
+\label{ch:offenebugs}
+
+\newcommand{\openbug}[3]{\textbf{\##1} & \textbf{Fehlersymptom:} & #2 \\ & \textbf{Bemerkung} & #3 \\ [1ex] }
+
+
+\begin{longtable}{llp{0.7\linewidth}}
+
+\openbug{21}
+		{Der Scrollbalken wird nicht richtig angepasst, wenn man mit Rechtsklick die Zeichenfläche zieht.}
+		{Das Berechnen der Position des Scrollbalken ist mit Berücksichtung des Zoomgrades schwieriger als zu Beginn gedacht. Es gibt keine Unterstützung des Frameworks.}
+		
+\openbug{35}
+		{Wenn Knoten, welche in einem FieldAccess vorhanden sind, gefiltert werden, stürzt der LayoutAlgorithmus ab.}
+		{Durch das späte Hinzufügen von Filtern und Berücksichtigung von FieldAccess als hervorgehobene SubGraphen entstanden viele im Nachhinein Korrelationen zwischen verschiedenen Programmteile, die nicht leicht gelöst werden konnten.}
+		
+\openbug{36}
+ 		{Das Constraint, dass alle Parameter Knoten für Methoden Calls direkt unter dem Call-Knoten platziert werden, wird nicht eingehalten.}
+ 		{Aus zeitlichen Gründen wurde nicht implementiert, dass der Sugiyama-Algorithmus Constraints umsetzt, die einen festen Layerabstand zwischen zwei Knoten definiert. Für Call-Knoten wurde dies benötigt.}
+
+\openbug{43}
+       {Der Sugiyama-Algorithmus ohne Spezialisierung auf MethodGraph/CallGraph ist nicht auswählbar.}
+       {Es werden keine Verbesserungen bei der Benutzung des Sugiyama-Algorithmus ohnne Spezialisierung erwartet. Daher wurde dieses Feature zurückgestellt.}
+       
+\end{longtable}
