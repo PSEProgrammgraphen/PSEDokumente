@@ -125,6 +125,11 @@
 	{Einige SVG-Viewer können die Standard Größe 100\% einer SVG-Datei nicht korrekt interpretieren.}
 	{Die komplette Größe eines Graphens wird berechnet und als feste Werte in die SVG-Datei geschrieben.}
 
+\bug{47}
+  {Große Graphen werden sehr langsam gelayotet}
+  {Es fehlt eine Möglichkeit vom Benutzer Einfluss auf die Parameter des Layoutvorgangs zu nehmen.}
+  {Einige dieser Einstellungen sind nun vorhanden. So kann der Benutzer auswählen ob er eine prozentuale Verbesserungsgrenze verwenden möchte. Diese Einstellung kostet viel Berechnungszeit, kann aber zu besseren Ergebnissen führen. Diese Möglichkeit Einstellungen am Algorithmus vorzunehmen sollte nach dem Release noch erweitert werden.}
+
 \bug{51}
   {Vertices werden hinter anderen Vertices positioniert}
   {Der VertexPositioner positioniert Vertices, die auf einer Ebene liegen aber durch eine Kante verbunden sind fehlerhaft}
