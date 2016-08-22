@@ -62,8 +62,49 @@ Im Layoutalgorithmus wurden Graphen mit isolierten Knoten, Knoten auf dem selben
 \section{Andere durchgeführte Tests}
 %hier alles wa sgetan wurde, um z.b. javadocs zu fixen, mögliche bugs mit werkzeug zu fixen, codequalität zu verbessern, etc. reinschreiben mit Beschreibung und Zweck 
 \subsection{Überdeckungstests}
-Es wurden Überdeckungstests sowohl über JUnit-Tests der einzelnen Projekte, als auch über alle Projekte während eines Programmlaufes mithilfe von EclEmma durchgeführt.
-%hier dann bilder der Überdeckungstests hinein
+Es wurden Überdeckungstests sowohl über JUnit-Tests der einzelnen Projekte, als auch über alle Projekte während eines Programmlaufes mithilfe von EclEmma durchgeführt.\\
+Das Programm enthält folgende Projekte, die nach Möglichkeit einzeln getestet wurden und für die es auch, falls möglich, extra JUnit Tests gibt : app, Graph von Ansicht, graphml, joana, shared, sugiyama und svg.\\
+Im Projekt ''app'' befindet sich alles zu GUI gehörende, dieses Porjekt kann aufgrund der enom hohen Zahl an möglichen Interaktionen (Klick, Klick + ziehen, Rechtsklick, Graph verschieben, Knoten selektieren .....) nicht vollständig abgedeckt werden.\\
+''Graph von Ansicht'' enthält sowohl Testfälle, die einzelne Projekte und Klassen testen, als auch Testfälle, die zum Testen nacheinander ablaufender Prozesse genutzt werden\\
+In ''graphml'' befindet sich der GraphML-Importer.\\
+''joana'' enthält JOANA-spezifische Funktionalitäten und Strukturen (z.B. Call- und Methodengraph, FieldAccess...)\\
+''shared'' beinhaltet das Graphmodel und Graphbuilder-Interfaces.\\
+Im Porjekt ''sugiyama'' befindet sich alles zum Layoutalgorithmus Sugiyama-Layout gehörende und notwendige(z.B. die fünf Sugiyama-Schritte, SugiyamaGraph, SugiyamaLayoutAlgorithm...)\\
+''svg'' enthält den SVG-Exporter.\\
+Da ''Graph von Ansicht'' nur Testfälle beinhaltet, wird auf das Anzeigen einer Überdeckung über dieses Projekt verzichtet.\\
+
+
+\subsubsection{Testfälle aus dem Pflichtenheft}
+Alle Testfallszenarien aus dem Pflichtenheft werden direkt nacheinander ausgeführt.\\
+Die Überdeckung über alle Projekte ist sehr stark abhängig von der importierten Datei und dem benutzten Graphen dieser Datei, da diese Graphen zum Teil unterschiedliche Eigenschaften haben(selfloop, kanten auf dem selben layer...).\\
+
+\textbf{Datei: }Fibonacci.pdg.graphml\\
+\textbf{Graph: }Fibonacci.mult()\\
+\textbf{Überdeckung app: }72,1\%\\
+\textbf{Überdeckung graphml: }86,4\%\\
+\textbf{Überdeckung joana: }80,8\%\\
+\textbf{Überdeckung shared: }54,2\%\\
+Es werden Parameter, die vor dem Layouten des Methodengraphen verändert werden können, durch diese Tests nicht abgedeckt.\\
+\textbf{Überdeckung sugiyama: }75,2\%\\
+Auch hier können keine änderbaren parameter verarbeitet werden, weil keine gesetzt wurden. Ebenso ist die Überdeckung aufgrund vieler assertions, die nicht ausgeführt werden, etwas geringer, als es sein sollte.\\
+\textbf{Überdeckung svg: }90\%\\
+\subsubsection{JUnit Tests}
+
+\textbf{Überdeckung app: }
+\textbf{Überdeckung graphml: }
+\textbf{Überdeckung joana: }
+\textbf{Überdeckung shared: }
+\textbf{Überdeckung sugiyama: }
+\textbf{Überdeckung svg: }90\%\\
+
+\subsubsection{Test über Programmdurchlauf}
+
+\textbf{Überdeckung app: }
+\textbf{Überdeckung graphml: }
+\textbf{Überdeckung joana: }
+\textbf{Überdeckung shared: }
+\textbf{Überdeckung sugiyama: }
+\textbf{Überdeckung svg: }
 
 \subsection{Performance Tests}
 Getestet wurden hier Methodengraphen aus erstellten Graphen des JOANA-Graph-Analyzer.\\
