@@ -5,7 +5,7 @@
 \newcommand{\bug}[4]{\textbf{\##1} & \textbf{Fehlersymptom:} & #2 \\ & \textbf{Fehlergrund:} & #3 \\ & \textbf{Fehlerbehebung:} & #4 \\ [1ex] }
 
 
-\begin{longtable}{llp{0.8\linewidth}}
+\begin{longtable}{llp{0.7\linewidth}}
 \bug{1}
        {Graphische Hervorhebung von FieldAccessen durch eine farbige Box im Hintergrund wird nicht angezeigt.}
        {Die Struktur im Hintergrund ist leicht fehlerhaft und in der Erstellung der Box gab es einen Bug.}
@@ -27,7 +27,7 @@
        
 \bug{8}
 	   {Kollabierte Knoten in einem FieldAccessGraph verschwinden bei Ihrer Erstellung.}
-	   {Bei dem Layouten von MethodGraphen werden alle FieldAccesse betrachtet. Auch FieldAccesse die teilweise kollabiert werden.}
+	   {Bei dem Layouten von MethodGraphen werden alle FieldAccesse betrachtet. Unter anderem auch FieldAccesse die teilweise kollabiert wurden. Das führt dazu, dass Annahmen an den FieldAccess gemacht werden, welche nicht für teilweise kollabierte Knoten gilt. }
 	   {Es werden nun nur noch FAs welche vollständig ausgeklappt sind im MethodGraphLayout betrachtet.}
 	   
 \bug{9}
@@ -56,9 +56,9 @@
        {Die Option wurde als Checkbox hinzugefügt und wird während der Kreuzungsminimierung beachtet.}
        
 \bug{17}
-	   {Das Filtern von Knoten bestimmten Types (z.B. EXPR) im MethodGraphLayout führt zu einer NullPointerException}
-	   {Für das Layouten der FieldAccesse und des ganzen MethodGraphen wurde der selbe Layoutalgorithmus, mit den selben Constraints gewählt.}
-	   {Separate Instanzen des SugiyamaAlgorithm für FieldAccesse und MethodGraphen.}
+	   {Das Filtern von Knoten bestimmten Types (z.B. EXPR) im MethodGraphLayout führt zu einer NullPointerException.}
+	   {Für das Layouten der FieldAccesse und des ganzen MethodGraphen wurde der selbe Layoutalgorithmus, mit den selben Constraints gewählt. Diese Constraints enthielten auch die gefilterte Knoten, welche dann nicht für den SugiyamaAlgorithmus erreichbar waren.}
+	   {Separate Instanzen des SugiyamaAlgorithm für FieldAccesse und MethodGraphen werden benutzt. Die Instanzen für die FieldAccesse enthalten nicht die Constraints des MethodGraphen.}
 	   
 \bug{22}
        {Die alte Strukturansicht kann nach dem Import einer neuen Datei nicht zurückgebracht werden.}
@@ -78,8 +78,13 @@
 \bug{25}
        {Es wird ein Fehler geworfen, wenn man die ENTR Knoten filtert.}
        {Der VertexPositioner benötigt mindestens ein Vertex pro Graph.}
-       {Der VertexPositioner überprüft nun am Anfang, ob der Graph leer ist und läuft in diesem Fall nicht durch.}      
-        
+       {Der VertexPositioner überprüft nun am Anfang, ob der Graph leer ist und läuft in diesem Fall nicht durch.}   
+          
+\bug{26}
+	   {Das Layout beim erneuten Layouten des selben Graphen ist nicht stabil. Das heißt Knoten nehmen andere Positionen an und Kanten haben unterschiedliche Pfade, ohne dass es eine Änderung am Graphen vorgenommen wird. Dieses Ergebnis kann auf zwei verschiedene Weisen erzeugt werden: Entweder durch mehrmaliges Öffnen eines Graphen, oder durch Öffnen des Filterdialoges und Schließen ohne die Auswahl der Filter zu ändern.}
+	   {Das Programm stützt sich in den meisten Bereichen bei der Abspeicherung von Daten bzgl. der Graphen auf unsortierte Sets. Daher kann ein gleiches Layout bei mehrmaligem Layouten nicht garantiert werden, ohne ein größeres Refactoring vorzunehmen, welches eine Sortierung der Daten, wie z.B. Knoten nach deren ID vornimmt.}
+	   {Der Graph wird nicht erneut gelayoutet nachdem der Filterdialog geöffnet und wieder geschlossen wurde, ohne dass Änderungen an der Auswahl der Filter gemacht wurden.}
+
 \bug{27}
        {Text in exportierter SVG-Datei ist größer als die Textboxen der Knoten.}
        {Default Textgröße in SVG ist größer als Default Textgröße innerhalb der GUI. Die Größe der Textboxen richten sich jedoch nach der Textgröße der GUI.}
@@ -99,7 +104,17 @@
         {Beim Zoomen wird nicht vom Mauszeiger weg oder zum Mauszeiger hin gezoomt. Der Fokus und Sichtbereich springt herum.}
         {Die GraphView wird durch das Zoomen vergrößert, dadurch gibt es von den äußeren Oberflächenelementen, die um die GraphView gelegt sind, Interferenzen, welche das Springen und unfokussierte Zoomen ausgelöst haben.}
         {Die Ansicht des Graphen besteht nun aus 4 ineinander verschachtelten Panes, wobei das innerste die GraphView und das äußerste ein ScrollPane ist. Vergrößert wird beim Zoomen nun das Pane welches direkt um der GraphView liegt. Das Pane darum passt sich per Listener immer an die Größe der beiden inneren Panes an. Dadurch entstehen keinen Interferenzen mehr und anderes ungewolltes Verhalten tritt auch nicht mehr auf.}
-        
+    
+\bug{33}
+		{Wenn Knoten aus einem FieldAccess kollabiert wird, wird eine Exception geworfen. Das Programm stürzt nicht ab, aber der Graph wird nicht neu gelayoutet.}
+		{Beim Neu-Layouten der FieldAccesse wurden alle FieldAccesse und alle von ihnen enthaltenen Knoten betrachtet. Damit auch die FieldAccesse, die kollabiert wurden.}
+		{FieldAccesse, die nicht vollständig im Graphen enthalten sind, werden ignoriert.}
+		
+\bug{34}
+		{Wenn ein Knoten, der zu einem Constraint gehört, kollabiert wird, wird eine Exception geworfen. Das Programm stürzt nicht ab, aber der Graph wird nicht neu gelayoutet.}
+		{Die Constraints mit den kollabierten Knoten wurden dennoch erstellt. Wenn der SugiyamaAlgorithmus versucht den Knoten aus dem Graphen zu holen wird dieser nicht zurück gegeben, da er nicht vorhanden ist.}
+		{Es werden keine Constraints erstellt, welche Knoten enthalten die nicht im Graph enthalten sind. (Kollabiert oder gefiltert)}
+
 \bug{40}
         {Die Richtung mancher Kanten zwischen zwei Knoten ändert sich manchmal nach neuem Importieren oder neuem Layouten des Graphen.}
         {Im Sugiyama werden notwendigerweise zuallererst Kanten gedreht, die Zykel im Graph verursachen. Der Kantenzeichner im letzten Schritt des Sugiyama hat nun nur die gedrehten Kanten, die sich über ein Layer erstrecken in ihrer Richtung angepasst. Kanten, die über mehrere Layer gingen wurden ignoriert, da diese in einem anderen Set lagen.}
