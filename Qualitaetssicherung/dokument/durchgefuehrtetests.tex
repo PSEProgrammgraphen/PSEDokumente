@@ -105,15 +105,24 @@ Im Layoutalgorithmus wurden Graphen mit isolierten Knoten, Knoten auf dem selben
 %hier alles wa sgetan wurde, um z.b. javadocs zu fixen, mögliche bugs mit werkzeug zu fixen, codequalität zu verbessern, etc. reinschreiben mit Beschreibung und Zweck 
 \subsection{Überdeckungstests}
 Es wurden Überdeckungstests sowohl über JUnit-Tests der einzelnen Projekte, als auch über alle Projekte während eines Programmlaufes mithilfe von EclEmma durchgeführt.\\
-Das Programm enthält folgende Projekte, die nach Möglichkeit einzeln getestet wurden und für die es auch, falls möglich, extra JUnit Tests gibt : app, Graph von Ansicht, graphml, joana, shared, sugiyama und svg.\\
-Im Projekt ''app'' befindet sich alles zu GUI gehörende, dieses Porjekt kann aufgrund der enom hohen Zahl an möglichen Interaktionen (Klick, Klick + ziehen, Rechtsklick, Graph verschieben, Knoten selektieren .....) nicht vollständig abgedeckt werden.\\
-''Graph von Ansicht'' enthält sowohl Testfälle, die einzelne Projekte und Klassen testen, als auch Testfälle, die zum Testen nacheinander ablaufender Prozesse genutzt werden\\
-In ''graphml'' befindet sich der GraphML-Importer.\\
-''joana'' enthält JOANA-spezifische Funktionalitäten und Strukturen (z.B. Call- und Methodengraph, FieldAccess...)\\
-''shared'' beinhaltet das Graphmodel und Graphbuilder-Interfaces.\\
-Im Porjekt ''sugiyama'' befindet sich alles zum Layoutalgorithmus Sugiyama-Layout gehörende und notwendige(z.B. die fünf Sugiyama-Schritte, SugiyamaGraph, SugiyamaLayoutAlgorithm...)\\
-''svg'' enthält den SVG-Exporter.\\
-Da ''Graph von Ansicht'' nur Testfälle beinhaltet, wird auf das Anzeigen einer Überdeckung über dieses Projekt verzichtet.\\
+Das Programm enthält folgende Projekte, die nach Möglichkeit einzeln getestet wurden und für die es auch, falls möglich, extra JUnit Tests gibt:\\
+
+\begin{longtable}{l p{0.8\linewidth}}
+	\textbf{app} & In diesem Projekt befindet sich die View und alles zu GUI gehörende. Aufgrund der enorm hohen Zahl an Userinteraktionen (Klick, Klick + Ziehen, Rechtsklick, Graph verschieben, Knoten selektieren...) gibt es keine expliziten JUnit Tests und es kann auch nicht vollständig abgedeckt werden. \\
+
+	\textbf{Graph von Ansicht} & Dieses Projekt verbindet die einzelne Plugins. Es existieren Testfälle die einzelne Projekte und Klassen testet, als auch Testfälle, welche komplette Prozesse und Programmabläufe automatisiert testen. \\
+	
+	\textbf{graphml} & Hier befindet sich der GraphML-Importer. Es existieren keine expliziten Testfälle, da zum Import die GraphBuilder Klassen benötigt werden, auf welche des graphml-Projekt keinen Zugriff besitzt. Die Testfälle hierzu liegen in \textbf{Graph von Ansicht}.\\
+	
+	\textbf{joana} & Dieses Projekt enthält JOANA-spezifische Funktionalitäten und Strukturen (z.B. Call- und Methodengraph, FieldAccess....)\\
+	
+	\textbf{shared} & Hier sind das allgemeine Graphmodel und die Graphbuilder-Interfaces vorhanden. Explizite Testfälle liegen keine vor, da keine große Algorithmen durchgeführt werden, sondern meist nur Getter- und Setter-Methoden oder Interfaces.\\
+	
+	\textbf{sugiyama} & In diesem Projekt befindet sich alles zum Layoutalgorithmus Sugiyama-Layout. Dazu gehören unter anderen die fünf Sugiyama-Schritte, SugiyamaGraph und der SugiyamaLayoutAlgorithm. Es existieren viele Testfälle da die einzelnen Schritte explizit getestet werden müssen. \\
+	
+	\textbf{svg} & Der SVG-Exporter wird explizit auf Exceptions getestet. \\
+
+\end{longtable}
 
 
 \subsubsection{Testfälle aus dem Pflichtenheft}
