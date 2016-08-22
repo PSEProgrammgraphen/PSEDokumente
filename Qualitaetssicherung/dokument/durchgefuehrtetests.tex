@@ -241,7 +241,7 @@ Das Programm enthält folgende Projekte, die nach Möglichkeit einzeln getestet 
 
 \subsubsection{Testfälle aus dem Pflichtenheft}
 Alle Testfallszenarien aus dem Pflichtenheft werden direkt nacheinander ausgeführt.\\
-Die Überdeckung über alle Projekte ist sehr stark abhängig von der importierten Datei und dem benutzten Graphen dieser Datei, da diese Graphen zum Teil unterschiedliche Eigenschaften haben(selfloop, kanten auf dem selben layer...).\\
+Die Überdeckung über alle Projekte ist sehr stark abhängig von der importierten Datei und dem benutzten Graphen dieser Datei, da diese Graphen zum Teil unterschiedliche Eigenschaften haben(Selfloop, Kanten auf dem selben Layer...).\\
 
 \textbf{Datei: }Fibonacci.pdg.graphml\\
 \textbf{Graph: }Fibonacci.mult()\\
@@ -296,8 +296,8 @@ Im folgenden werden Graphen mit einer Anzahl von 10 Läufen gelayouted.\\
 \textbf{Programmeinstellungen: }CrossMinimizer runs: 10, use threshold: false\\
 \textbf{Zeit: }44.5s, 79.6s, 46.6s, 58.3s, 51.7s, 38.3s, 43.4s, 45.1s\\
 
-Teilweise ergeben sich bei den getesteten graphen starke Abweichungen in den Zeiten. Bei BigControl ist dies am deutlichsten. Dieser Unterschied ist stark darin begründet, dass beim Entfernen der Zyklen unterschiedliche Ergebnisse bei den Testläufen auftreten. Diese Ergebnisse haben teilweise starke Variationen, was die Länge des längsten Pfades betrifft. Je länger dieser längste Pfad ist, desto mehr Ebenen hat der resultierende Graph. Größere Ebenenzahlen beim Graphen führen wiederum zu einer wesentlich höheren Zahl an Dummieknoten, welche die Performance des Kreuzungsminimierers verschlechtert. Den Schritt des Zyklenentfernens noch auf eine Ebenenminimalszahl zu optimieren, könnte man als Update nach dem Release ausführen.
-Des weiteren ist die Differenz zwischen PhiMadness und BigControl zu beachten. Hier sieht man, dass PhiMadness im durchschnitt länger braucht, als das layouten eines nahezu doppelt so großen Graphen. Dies liegt an der Verwendung vieler FieldAccesse, welche die Performance belasten.
+Teilweise ergeben sich bei den getesteten Graphen starke Abweichungen in den Zeiten. Bei BigControl ist dies am deutlichsten. Dieser Unterschied ist stark darin begründet, dass beim Entfernen der Zyklen unterschiedliche Ergebnisse bei den Testläufen auftreten. Diese Ergebnisse haben teilweise starke Variationen, was die Länge des längsten Pfades betrifft. Je länger dieser längste Pfad ist, desto mehr Ebenen hat der resultierende Graph. Größere Ebenenzahlen beim Graphen führen wiederum zu einer wesentlich höheren Zahl an Dummieknoten, welche die Performance des Kreuzungsminimierers verschlechtert. Den Schritt des Zyklenentfernens noch auf eine Ebenenminimalszahl zu optimieren, könnte man als Update nach dem Release ausführen.
+Des weiteren ist die Differenz zwischen PhiMadness und BigControl zu beachten. Hier sieht man, dass PhiMadness im durchschnitt länger braucht, als das Layouten eines nahezu doppelt so großen Graphen. Dies liegt an der Verwendung vieler FieldAccesse, welche die Performance belasten.
 
 
 

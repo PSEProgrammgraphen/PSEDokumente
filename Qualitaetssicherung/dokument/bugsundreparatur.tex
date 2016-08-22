@@ -21,8 +21,8 @@
 	{Alle Kanten innerhalb eines FieldAccesses werden nun nach dem Layouten des kompletten Graphen nochmals neu gezeichnet. Sowohl die alten, als auch die neuen. Die Positionen der Knoten und die außerhalb liegende Kanten bleiben dabei gleich.}
 
 \bug{7}
-       {Kanten, welche keine Ebene überspannen werden nie begradigt}
-       {Diese Kanten werden beim Suchen nach Segmenten (Kantenketten, die im VertexPositioner später begradigt werden) nicht beachtet}
+       {Kanten, welche keine Ebene überspannen werden nie begradigt.}
+       {Diese Kanten werden beim Suchen nach Segmenten (Kantenketten, die im VertexPositioner später begradigt werden) nicht beachtet.}
        {Diese Kanten werden nun beim Starten des VertexPositioner ebenfalls hinzugefügt. Im Zuge dieser Korrektur wurde es außerdem ermöglicht die Endpunkte von Kanten, welche eine oder mehr Ebenen überspringen, zu den aus ihnen enstehenden Segmenten hinzuzufügen.}
        
 \bug{8}
@@ -97,8 +97,8 @@
 		
 \bug{30}
 	{Kanten laufen durch Knoten durch und manchmal von unten rein und verbinden sich dann oben auf dem Knoten.}
-	{Der Kantenzeichner geht davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet werden.}
-	{Kanten zwischen Knoten auf dem selben layer werden nun gesondert gezeichnet, und zwar unterhalb des layers.}
+	{Der Kantenzeichner geht davon aus, dass Kanten immer von oben nach unten verlaufen, also der source-Knoten sich immer oberhalb des target-Knoten befindet. Durch relative- und absolute-layer-constraints kann es aber vorkommen, dass miteinander verbundene Knoten auf dem selben Layer liegen, weswegen die Kanten teilweise unvorhersehbar durch Knoten gezeichnet werden.}
+	{Kanten zwischen Knoten auf dem selben Layer werden nun gesondert gezeichnet, und zwar unterhalb des Layers.}
 		
 \bug{31}
         {Beim Zoomen wird nicht vom Mauszeiger weg oder zum Mauszeiger hin gezoomt. Der Fokus und Sichtbereich springt herum.}
@@ -126,9 +126,9 @@
 	{Es wurde nach fehlerhaften Javadocs gesucht und diese aktualisiert.}
 
 \bug{42}
-	{ArrayIndexOutOfBoundsException im VertexPositioner nach dem Filtern von NORM Knoten und dann EXPR Knoten}
+	{ArrayIndexOutOfBoundsException im VertexPositioner nach dem Filtern von NORM Knoten und dann EXPR Knoten.}
 	{Nach einem commit verschwand dieser Fehler und äußert sich durch die selben Merkmale wie Bug 44, siehe daher 44.}
-	{siehe Bug 44}
+	{siehe Bug 44.}
 
 \bug{44}
 	{Nach dem Filtern von NORM Knoten aus einem Graphen, tritt eine NullPointerException im EdgeDrawer auf.}
@@ -146,17 +146,17 @@
 	{Die komplette Größe eines Graphens wird berechnet und als feste Werte in die SVG-Datei geschrieben.}
 
 \bug{47}
-  {Große Graphen werden sehr langsam gelayotet}
+  {Große Graphen werden sehr langsam gelayotet.}
   {Es fehlt eine Möglichkeit vom Benutzer Einfluss auf die Parameter des Layoutvorgangs zu nehmen.}
   {Einige dieser Einstellungen sind nun vorhanden. So kann der Benutzer auswählen ob er eine prozentuale Verbesserungsgrenze verwenden möchte. Diese Einstellung kostet viel Berechnungszeit, kann aber zu besseren Ergebnissen führen. Diese Möglichkeit Einstellungen am Algorithmus vorzunehmen sollte nach dem Release noch erweitert werden.}
 
 \bug{51}
-  {Vertices werden hinter anderen Vertices positioniert}
-  {Der VertexPositioner positioniert Vertices, die auf einer Ebene liegen aber durch eine Kante verbunden sind fehlerhaft}
+  {Vertices werden hinter anderen Vertices positioniert.}
+  {Der VertexPositioner positioniert Vertices, die auf einer Ebene liegen aber durch eine Kante verbunden sind fehlerhaft.}
   {Im VertexPositioner werden Vertices, welche auf einer Ebene liegen und durch eine Kante verbunden sind nun nicht mehr versucht auf eine Linie zu bringen.}
 
 \bug{52}
-  {Im Callgraph finden sich Kantenkreuzungen}
+  {Im Callgraph finden sich Kantenkreuzungen.}
   {Die Anzahl der CrossMinimizer durchläufe beim callgraph war zu gering. Dies liegt vor allem an einer prozentualen Verbesserungsgrenze für Callgraphen, diese macht es wahrscheinlich, dass nur ein einzelner Durchlauf des CrossMinimizers stattfindet.}
   {Der Callgraph wird nun per Default mindestens 10 mal durchgeführt. Einer prozentualen Grenze für die Verbesserung wird nun nicht mehr verwendet.}
 
@@ -167,7 +167,7 @@
 
 \bug{57}
 	{Im Callgraph werden keine Schleifen (Kante, welche einen Knoten mit sich selbst verbindet) angezeigt.}
-	{Beim Import-Vorgang werden, beim Erstellen des Callgraphen, Schleifen ignoriert. Dies liegt daran, dass Source- und Target-Knoten einer Schleife im selben MethodGraph liegen und somit diese Kante zum MethodGraph hinzugefügt wird und nicht zum CallGraph. }
+	{Beim Import-Vorgang werden, beim Erstellen des Callgraphen, Schleifen ignoriert. Dies liegt daran, dass Source- und Target-Knoten einer Schleife im selben MethodGraph liegen und somit diese Kante zum MethodGraph hinzugefügt wird und nicht zum CallGraph.}
 	{Falls eine Kante vom \glqq{}EdgeKind CL\grqq{} ist (welche Call-Kanten definieren), wird diese zum CallGraph hinzugefügt.}
 
 		
