@@ -19,6 +19,16 @@
 	{Kanten, die von außen in einen FieldAccess hinein oder von einem FieldAccess nach außen gehen, werden nur bis an die Box des FieldAccesses gezeichnet, und nicht bis zu dem dazugehörigen Knoten.}
 	{Nach dem Layouten des kompletten Graphen werden die Kanten nicht von der Box nach innen weiter gezeichnet.}
 	{Alle Kanten innerhalb eines FieldAccesses werden nun nach dem Layouten des kompletten Graphen nochmals neu gezeichnet. Sowohl die alten, als auch die neuen. Die Positionen der Knoten und die außerhalb liegende Kanten bleiben dabei gleich.}
+	
+\bug{4}
+	{Die GraphView wird ab einem bestimmten Punkt nicht mehr an die Größe des Fensters angepasst.}
+	{Das beinhaltende Layout dehnt sich nicht anhand der Größe der GraphView aus, nur bis zu einer Maximalgröße.}
+	{Das Layout orientiert sich bei der Größe nun immer an der Größe der GraphView.}
+	
+\bug{6}
+	{Beim Zoomen wird nicht zum Mauszeiger hin oder vom Mauszeiger weg gezoomt.}
+	{Die GraphView wird durch das Zoomen vergrößert, dadurch gibt es von den äußeren Oberflächenelementen, die um die GraphView gelegt sind, Interferenzen, welche das Springen und unfokussierte Zoomen ausgelöst haben.}
+	{Die Ansicht des Graphen besteht nun aus 4 ineinander verschachtelten Panes, wobei das innerste die GraphView und das äußerste ein ScrollPane ist. Vergrößert wird beim Zoomen nun das Pane welches direkt um der GraphView liegt. Das Pane darum passt sich per Listener immer an die Größe der beiden inneren Panes an. Dadurch entstehen keinen Interferenzen mehr und anderes ungewolltes Verhalten tritt auch nicht mehr auf.}
 
 \bug{7}
        {Kanten, welche keine Ebene überspannen werden nie begradigt.}
@@ -46,19 +56,34 @@
        {Der Importer überprüft ob der GraphBuilder gesetzt wird. Falls nicht wird eine Fehlermeldung angezeigt.}
        
 \bug{12}
-       {Der Graph springt beim verschieben mit der Maus in der Graphview zu Beginn ein Stück nach unten.}
-       {Für die Berechnung der Mausposition werden die Koordinaten des Fensters genutzt.}
-       {Die Mausposition wird nun direkt aus dem Mausevent, welches durch das Ziehen aufgerufen wird, berechnet.}
+	{Der Graph springt beim verschieben mit der Maus in der GraphView zu Beginn ein Stück nach unten.}
+	{Für die Berechnung der Mausposition werden die Koordinaten der gesamten GraphView, inklusive der Höhe der Tableiste, genutzt.}
+	{Die Mausposition wird nun direkt aus dem Mausevent, welches durch das Ziehen aufgerufen wird, berechnet.}
        
 \bug{13}
        {Es gibt keine Option zur Einstellung ob eine Abbruchgrenze beim Kreuzungsminimieren in Abhängigkeit von den vorhandenen Kreuzungen gewählt werden soll.}
        {Diese Option wird in den CrossMinimizer Einstellungen nicht bereitgestellt.}
        {Die Option wurde als Checkbox hinzugefügt und wird während der Kreuzungsminimierung beachtet.}
        
+\bug{15}
+	{Beim Ändern von Einstellungen aus Nachkommazahlen können durch den Spinner nur Ganzzahlen gewählt werden.}
+	{Der Spinner welcher Erstellt wird hat eine standardmäßige Schrittgröße von 1.}
+	{Spinner hat nun eine kleinere Schrittgröße, welche beim Erstellen des Parameters angegeben werden kann. Zusätzlich wird der Spinner über eine Factory erstellt und per Converter auf drei Nachkommastellen erweitert.}
+
+\bug{16}
+	{Layout-Einstellungen können nicht per Tastatur eingegeben werden.}
+	{Die Eingabeelemente sind als nicht editierbar eingestellt.}
+	{Die Eingabeelemente unterstützen Tastatureingaben. Diese werden von speziellen Convertern überprüft und richtig gehandhabt falls illegale Eingaben gemacht werden. Damit der geänderte Wert übernommen wird muss aber am Ende der Eingabe Enter gedrückt werden.}
+       
 \bug{17}
 	   {Das Filtern von Knoten bestimmten Types (z.B. EXPR) im MethodGraphLayout führt zu einer NullPointerException.}
 	   {Für das Layouten der FieldAccesse und des ganzen MethodGraphen wurde der selbe Layoutalgorithmus, mit den selben Constraints gewählt. Diese Constraints enthielten auch die gefilterte Knoten, welche dann nicht für den SugiyamaAlgorithmus erreichbar waren.}
 	   {Separate Instanzen des SugiyamaAlgorithm für FieldAccesse und MethodGraphen werden benutzt. Die Instanzen für die FieldAccesse enthalten nicht die Constraints des MethodGraphen.}
+	   
+\bug{20}
+	{Die Layout-Eigenschaften speichern ihre Werte nicht, sondern beinhalten immer die Standardwerte.}
+	{Die Eingabeelemente sind nicht mit den darunter liegenden Parametern verbunden. Zusätzlich wird beim Auswählen eines neuen Layouts, dieses nicht als aktuell angewandtes Layout gespeichert.}
+	{Parameter und Eingabeelemente sind über JavaFX-bindings miteinander verbunden, sodass Änderungen sofort übernommen werden. Wird der Dialog abgebrochen, werden die Werte zurückgesetzt. Neu angewandte Layouts werden richtigerweise als aktuelles Layout gespeichert.}
 	   
 \bug{22}
        {Die alte Strukturansicht kann nach dem Import einer neuen Datei nicht zurückgebracht werden.}
@@ -94,6 +119,11 @@
 	{Kanten innerhalb eines FieldAccess laufen ggf. aus der Box hinaus.}
 	{Kantenläufe werden bei der Berechnung der Größe der Box nicht berücksichtigt.}
 	{Kantenläufe werden nun bei der Berechnung der Größe der Box berücksichtigt.}
+	
+\bug{29}
+	{Anwenden eines Layouts lässt die Färbung der Knoten durch Gruppen verschwinden.}
+	{Alle Knoten und Kanten der Oberfläche werden verworfen und komplett neu erstellt wenn ein Graph neu gelayouted wird.}
+	{Knoten und Kanten werden nun nur aktualisiert, somit bleibt die Färbung erhalten.}
 		
 \bug{30}
 	{Kanten laufen durch Knoten durch und manchmal von unten rein und verbinden sich dann oben auf dem Knoten.}
@@ -101,9 +131,9 @@
 	{Kanten zwischen Knoten auf dem selben Layer werden nun gesondert gezeichnet, und zwar unterhalb des Layers.}
 		
 \bug{31}
-        {Beim Zoomen wird nicht vom Mauszeiger weg oder zum Mauszeiger hin gezoomt. Der Fokus und Sichtbereich springt herum.}
-        {Die GraphView wird durch das Zoomen vergrößert, dadurch gibt es von den äußeren Oberflächenelementen, die um die GraphView gelegt sind, Interferenzen, welche das Springen und unfokussierte Zoomen ausgelöst haben.}
-        {Die Ansicht des Graphen besteht nun aus 4 ineinander verschachtelten Panes, wobei das innerste die GraphView und das äußerste ein ScrollPane ist. Vergrößert wird beim Zoomen nun das Pane welches direkt um der GraphView liegt. Das Pane darum passt sich per Listener immer an die Größe der beiden inneren Panes an. Dadurch entstehen keinen Interferenzen mehr und anderes ungewolltes Verhalten tritt auch nicht mehr auf.}
+	{Beim Zoomen wird nicht vom Mauszeiger weg oder zum Mauszeiger hin gezoomt. Der Fokus und Sichtbereich springt herum.}
+	{Siehe Bug 6}
+	{Siehe Bug 6}
     
 \bug{33}
 		{Wenn Knoten aus einem FieldAccess kollabiert wird, wird eine Exception geworfen. Das Programm stürzt nicht ab, aber der Graph wird nicht neu gelayoutet.}
@@ -114,6 +144,11 @@
 		{Wenn ein Knoten, der zu einem Constraint gehört, kollabiert wird, wird eine Exception geworfen. Das Programm stürzt nicht ab, aber der Graph wird nicht neu gelayoutet.}
 		{Die Constraints mit den kollabierten Knoten wurden dennoch erstellt. Wenn der SugiyamaAlgorithmus versucht den Knoten aus dem Graphen zu holen wird dieser nicht zurück gegeben, da er nicht vorhanden ist.}
 		{Es werden keine Constraints erstellt, welche Knoten enthalten die nicht im Graph enthalten sind. (Kollabiert oder gefiltert)}
+		
+\bug{37}
+	{Die alte Informationsansicht einer selektierten Komponente wird nach dem Import einer neuen Datei noch angezeigt.}
+	{Die Informationsansicht wird beim Import nicht geleert.}
+	{Leeren der Informationsansicht bei erneutem Import einer Datei.}
 
 \bug{40}
         {Die Richtung mancher Kanten zwischen zwei Knoten ändert sich manchmal nach neuem Importieren oder neuem Layouten des Graphen.}
@@ -149,6 +184,16 @@
   {Große Graphen werden sehr langsam gelayotet.}
   {Es fehlt eine Möglichkeit vom Benutzer Einfluss auf die Parameter des Layoutvorgangs zu nehmen.}
   {Einige dieser Einstellungen sind nun vorhanden. So kann der Benutzer auswählen ob er eine prozentuale Verbesserungsgrenze verwenden möchte. Diese Einstellung kostet viel Berechnungszeit, kann aber zu besseren Ergebnissen führen. Diese Möglichkeit Einstellungen am Algorithmus vorzunehmen sollte nach dem Release noch erweitert werden.}
+  
+\bug{49}
+	{Wird eine Gruppe entfernt verlieren alle beinhalteten Knoten ihre Färbung, obwohl sie noch in einer anderen Gruppe enthalten sind.}
+	{Färbung der Knoten ist bestimmt über die zuletzt geänderte Gruppe}
+	{Gruppen werden nun in einer Liste priorisiert. Je höher die Gruppe in der Liste je höher ist deren Priorität. Die Gruppenfarben werden von unten nach oben angewandt, somit hängt die Färbung eines Knotens von der Gruppe mit der höchsten Priorität ab, die den Knoten enthält.}
+	
+\bug{50}
+	{Entfernen einer Gruppe wenn zwei Gruppen den selben Namen haben kann die falsche Gruppe entfernen.}
+	{Gruppen werden anhand ihres Namens identifiziert.}
+	{Eine einzigartige Id dient zur eindeutigen Identifikation der Gruppen.}
 
 \bug{51}
   {Vertices werden hinter anderen Vertices positioniert.}
@@ -169,6 +214,16 @@
 	{Im Callgraph werden keine Schleifen (Kante, welche einen Knoten mit sich selbst verbindet) angezeigt.}
 	{Beim Import-Vorgang werden, beim Erstellen des Callgraphen, Schleifen ignoriert. Dies liegt daran, dass Source- und Target-Knoten einer Schleife im selben MethodGraph liegen und somit diese Kante zum MethodGraph hinzugefügt wird und nicht zum CallGraph.}
 	{Falls eine Kante vom \glqq{}EdgeKind CL\grqq{} ist (welche Call-Kanten definieren), wird diese zum CallGraph hinzugefügt.}
+	
+\bug{61}
+	{Schließen des Gruppenmanagers über X speichert Änderungen, aber wendet diese nicht an.}
+	{Änderungen der Positionen, werden direkt in der Liste übernommen, welche die Listenansicht aufbaut. Änderungen an Farbe werden in den einzelnen ColorPickern gespeichert und aus diesen ausgelesen.}
+	{Position und Farbe werden vor dem öffnen des Dialogs gebackuped. Wird der Dialog nicht akzeptiert, wird der backup wiederhergestellt.}
+
+\bug{62}
+	{NumberFormatException wenn Buchstaben in den Ganzzahl-Spinnern für die Layout-Eigenschaften eingetragen werden.}
+	{Fehlerhaftes Parsen der Eingabe beim standardmäßigen Converter von Integern.}
+	{Integer werden nun von einem eigens angelegten Converter geparsed, welcher die Werte bei falschen Eingaben zusätzlich noch richtig zurücksetzt.}
 
 		
 %		\bug{}
