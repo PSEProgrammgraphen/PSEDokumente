@@ -125,6 +125,16 @@
 	{Einige SVG-Viewer können die Standard Größe 100\% einer SVG-Datei nicht korrekt interpretieren.}
 	{Die komplette Größe eines Graphens wird berechnet und als feste Werte in die SVG-Datei geschrieben.}
 
+\bug{51}
+  {Vertices werden hinter anderen Vertices positioniert}
+  {Der VertexPositioner positioniert Vertices, die auf einer Ebene liegen aber durch eine Kante verbunden sind fehlerhaft}
+  {Im VertexPositioner werden Vertices, welche auf einer Ebene liegen und durch eine Kante verbunden sind nun nicht mehr versucht auf eine Linie zu bringen.}
+
+\bug{52}
+  {Im Callgraph finden sich Kantenkreuzungen}
+  {Die Anzahl der CrossMinimizer durchläufe beim callgraph war zu gering. Dies liegt vor allem an einer prozentualen Verbesserungsgrenze für Callgraphen, diese macht es wahrscheinlich, dass nur ein einzelner Durchlauf des CrossMinimizers stattfindet.}
+  {Der Callgraph wird nun per Default mindestens 10 mal durchgeführt. Einer prozentualen Grenze für die Verbesserung wird nun nicht mehr verwendet.}
+
 \bug{53}
 	{Das Programm stürzt ab falls beim Import eines Joana Graphen ein falscher Knotentyp eingelesen wird.}
 	{Alle mögliche Joana Knotentypen werden in einem Enum gespeichert. Falls der Typ nicht im Enum existiert wird eine IllegalArgumentException geworfen.}
