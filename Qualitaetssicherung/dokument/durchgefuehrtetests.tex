@@ -57,6 +57,14 @@
 	\test{hugeTest()}{Erstellt einen zufälligen, zyklischen, topologisch gelayerten \textit{SugiyamaGraphen}. Dieser besteht aus 250 Knoten, die jeweils 2-6 Kanten haben. Dann ruft es auf dem CrossMinimizer \textit{minimizeCrossings()} mit dem \textit{SugiyamaGraph} als Parameter und testet danach ob die Anzahl der Kreuzungen verringert wurde oder zumindest gleich bleibt. Dabei geht es besonders um die Zeit die der Test benötigt.}
 \end{longtable}
 
+\subsubsection{SugiyamaLayoutAlgorithm}
+\setcounter{tnr}{1}
+\begin{longtable}{llp{0.8\linewidth}}
+	\test{testSmallGraph()}{Erstellt einen kleinen Graphen mit 4 Knoten und 5 Kanten, auf diesem wird dann der Sugiyama Algorithmus ausgeführt und überprüft ob dieser ohne Exceptions durchläuft.}
+	\test{testIsolatedGraph()}{Erstellt einen kleinen Graphen mit 4 Knoten und 2 Kanten, sodass zwei voneinander isolierte Teilgraphen entstehen. Auf diesem wird dann der Sugiyama Algorithmus ausgeführt und überprüft ob dieser ohne Exceptions durchläuft.}
+	\test{testRandomGraph()}{Erstellt 3 zufällige Graphen mit 100 Knoten und über 400 Kanten, der auch Selbstschleifen enthalten kann. Auf diesem wird dann der Sugiyama Algorithmus ausgeführt und überprüft ob dieser ohne Exceptions durchläuft. Dieser Test wird auch zum Performance überprüfen verwendet.}
+\end{longtable}
+
 \subsection{SVG-Export}
 \setcounter{tnr}{1}
 \begin{longtable}{llp{0.8\linewidth}}
