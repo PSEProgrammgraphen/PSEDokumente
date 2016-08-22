@@ -224,6 +224,11 @@
 	{NumberFormatException wenn Buchstaben in den Ganzzahl-Spinnern für die Layout-Eigenschaften eingetragen werden.}
 	{Fehlerhaftes Parsen der Eingabe beim standardmäßigen Converter von Integern.}
 	{Integer werden nun von einem eigens angelegten Converter geparsed, welcher die Werte bei falschen Eingaben zusätzlich noch richtig zurücksetzt.}
+	
+\bug{64}
+	{Nach commit b88ba80 kommt es zu Fehlern beim kollabieren von Knoten.}
+	{Die Graphelemente an der Oberfläche werden nicht mehr komplett neu erstellt, sondern nach dem neuen Layouten aktualisiert. Die durch kollabieren neu erstellten und entfernten Knoten werden dabei nicht berücksichtigt.}
+	{Erstellte und entfernte Knoten werden beim aktualisieren in die Menge der Elemente hinzugefügt oder entfernt.}
 
 		
 %		\bug{}
