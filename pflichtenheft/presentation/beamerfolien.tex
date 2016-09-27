@@ -39,7 +39,7 @@
 % for a custom logo on the front page, copy your file into the 'logos'
 % directory, insert the filename in the line below and uncomment it
 
-%\titlelogo{mylogo}
+\titlelogo{GAns}
 
 % (*.eps format if you use latex+dvips+ps2pdf,
 % *.jpg/*.png/*.pdf if you use pdflatex)
@@ -49,6 +49,7 @@
 % use these packages for PCM symbols and UML classes
 % \usepackage{templates/tikzkit}
 % \usepackage{templates/tikzuml}
+\usepackage{tikz}
 
 % the presentation starts here
 
@@ -77,123 +78,205 @@
 \end{frame}
 
 \author{Nicolas B., Jonas F., Sven K., Jonas M., Lucas S.}
-%table of contents
-\begin{frame}{Gliederung}
-\tableofcontents
-\end{frame}
 
 \section{Einleitung/Zielbestimmung}
 \begin{frame}{Ziele}
-\begin{itemize}
-\item anpassbare Visualisierung von Graphen
-\pause
-\item Betrachtung und Analyse visualisierter Graphen.
-\pause
-\item Erweiterbarkeit durch Plugins (Bsp Joana)
-\pause
-\item laden und Speichern gängiger Dateiformate (Bsph SVG und GML)
-\pause
-\item eine an Joana angepasste Visualisierung (als Plugin)
-\end{itemize}
+  \begin{itemize}
+    \item Programmabhängigkeitsgraphen anschaulich und strukturiert darzustellen
+    \pause
+    \pause
+    \pause
+    \item Heuristische Strategien zur Optimierungen von
+      \begin{itemize}
+        \item Kantenkreuzungen
+        \item Kantenlängen
+        \item Durchsetzung des hierarchischen Layouts (z.B. wenige Aufwärtskanten)
+      \end{itemize}
+      mit dem Framework von Sugiyama.
+    \pause
+    \item Mustererkennung für Subgraphen
+    \pause
+    \item intuitive Navigation
+  \end{itemize}
+  \only<2> {
+    \begin{tikzpicture}[remember picture,overlay]
+      \node at (current page.center) {\includegraphics[width=330pt]{resourcen/gegenbeispiel_b.jpg}};
+    \end{tikzpicture}
+  }
 \end{frame}
 
 \section{Benutzerschnittstellen}
 \begin{frame}{Benutzerschnittstellen}
-\begin{tabular}{cc}
+  \begin{tabular}[t]{cc}
 
-    \begin{minipage}{0.45\textwidth}
-    Kommandozeile \\
-    \raisebox{-.5\height}{\includegraphics[width=150pt]{resourcen/cmd.png}}
+      \begin{minipage}[t]{0.45\textwidth}
+      Kommandozeile \\
+      \raisebox{-.5\height}{\includegraphics[width=150pt]{resourcen/cmd.png}}
 
-    \begin{itemize}
-      \item schnelle Möglichkeit Graphen zu layouten
-      \pause
-      \item Massenverarbeitung von Dateien
-      \pause
-    \end{itemize}
-    
-    \end{minipage}
-  \pause
-  &
+      \begin{itemize}
+        \item schnelle Möglichkeit Graphen zu layouten
+        \item Massenverarbeitung von Dateien
+      \end{itemize}
+      \end{minipage}
+    \pause
+    &
 
-    \begin{minipage}{0.45\textwidth}
-     GUI \\
-    \raisebox{-.5\height}{\includegraphics[width=150pt]{resourcen/gui.png}}
+    \begin{minipage}[t]{0.45\textwidth}
+     \visible<2->{
+       GUI \\
+      \raisebox{-.5\height}{\includegraphics[width=150pt]{resourcen/gui.png}}
 
-    \begin{itemize}
-      \item interaktives Interface
-      \pause
-      \item Darstellung der Graphen
-      \pause
-      \item höhere Anpassbarkeit (ohne ein Plugin zu programmieren)
-      \pause
-    \end{itemize}
+      \begin{itemize}
+        \item Darstellung der Graphen
+        \item interaktives Interface zur Anpassung des Layouts
+      \end{itemize}
+      }
+      \end{minipage}
+    \\
+  \end{tabular}
+\end{frame}
 
-    \end{minipage}
-  \\
-
-\end{tabular}
+\begin{frame}{Komponenten}
+  \only<1>{\includegraphics[width=280pt]{resourcen/gui_view_treeview_a.png}}
+  \only<2>{\includegraphics[width=280pt]{resourcen/gui_view_treeview_b.png}}
+  \only<3>{\includegraphics[width=280pt]{resourcen/gui_view_treeview_c.png}}
+  \only<4>{\includegraphics[width=280pt]{resourcen/gui_view_treeview_d.png}}
 \end{frame}
 
 \section{Szenario}
 \begin{frame}{Szenario}
-\begin{itemize}
-	% Wissenschaftlicher Mitarbeiter möchte den Unterschied eines möglichen Informationslecks im Programmablauf
-	% zwischen zwei Änderungen in einem Programm visuell darstellen(Für Paper, Artikel, oder z.B. Lehre)
-	\item Importieren der JOANA-Datei %eines Programms das analysiert werden soll
-	\pause
-	\item Pfad im Callgraphen verfolgen und/oder Methodengraph öffnen
-	\pause
-	\item Anpassen der Ansicht des Graphen % Einklappen uninteressanter Knoten und Constraint zur übersichtlichen Darstellung der interessanten Knoten hinzufügen
-	\pause
-	\item Exportieren der Ansicht im SVG-Format
-	\pause
-	\item Informationsleck in der Anwendung schließen % und von JOANA analysieren lassen
-	\pause
-	\item Importieren und betrachten der gemachten Änderung % an dem zuvor betrachteten Aufruf oder Methode in Graph von Ansicht 
-	\pause
-	\item Anpassen der Ansicht des Graphen % Einklappen uninteressanter Knoten und Constraint zur übersichtlichen Darstellung der interessanten Knoten hinzufügen
-	\pause
-	\item Exportieren der Ansicht im SVG-Format
-	\pause
-	%Einfügen der Grafiken in ein Paper oder wissenschaftlichen Artikel zur Verdeutlichung eines bestimmten Problems und/oder dessen Lösung
-\end{itemize}	
+  \begin{tabular}[t]{cc}
+    \begin{minipage}[t]{0.55\textwidth}
+      \begin{itemize}
+        % Wissenschaftlicher Mitarbeiter möchte den Unterschied eines möglichen Informationslecks im Programmablauf
+        % zwischen zwei Änderungen in einem Programm visuell darstellen(Für Paper, Artikel, oder z.B. Lehre)
+        \item Importieren der JOANA-Datei %eines Programms das analysiert werden soll
+        \pause
+        \pause
+        \pause
+        \item Pfad im Callgraphen verfolgen und/oder Methodengraph öffnen
+        \pause
+        \pause
+        \item Anpassen der Ansicht des Graphen % Einklappen uninteressanter Knoten und Constraint zur übersichtlichen Darstellung der interessanten Knoten hinzufügen
+        \pause
+        \pause
+        \item Exportieren der Ansicht im SVG-Format
+        \pause
+        \item Informationsleck in der Anwendung schließen % und von JOANA analysieren lassen
+        %Einfügen der Grafiken in ein Paper oder wissenschaftlichen Artikel zur Verdeutlichung eines bestimmten Problems und/oder dessen Lösung
+      \end{itemize}
+  \end{minipage}
+    &
+    \begin{minipage}[t]{0.35\textwidth}
+      \visible<1> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/gui_view_filemenu.png}};
+        \end{tikzpicture}
+      }
+      \visible<2> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/gui_view_import.png}};
+        \end{tikzpicture}
+      }
+      \visible<3> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/gui_view_workspace.png}};
+        \end{tikzpicture}
+      }
+      \visible<4> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/callgraph.png}};
+        \end{tikzpicture}
+      }
+      \visible<5> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=80pt]{resourcen/structureview.png}};
+        \end{tikzpicture}
+      }
+      \visible<6> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] (pfeile) at (current page.east) {\includegraphics[width=40pt]{resourcen/verschieben.png}};
+          \node[anchor=east] at (pfeile.west) {\includegraphics[width=60pt]{resourcen/lupe.png}};
+        \end{tikzpicture}
+      }
+      \visible<7> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/leak.png}};
+        \end{tikzpicture}
+      }
+      \visible<8> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/gui_view_filemenu.png}};
+        \end{tikzpicture}
+      }
+    \end{minipage}
+    \\
+  \end{tabular}
+
 \end{frame}
 
 \section{Weitere Funktionen}
 \begin{frame}{Funktionsübersicht}
-\begin{itemize}
-\item Graph Visualisierung mittels Sugiyama Framework
-\pause
-\item Callgraph Layout
-\pause
-\item Navigation in der Darstellung des Graphen
-\pause
-\item anpassbare Einstellung der Darstellung
-\pause
-\item Graph Visualisierung mittels Sugiyama Framework
-\pause
-\item Informationsanzeige zu Knoten und Kanten
-\pause
-\item Statistiken des Graphen
-\pause
-\item filtern bestimmter Knoten und Kanten in der Ansicht
-\pause
-\item Mehrere Graphen gleichzeitig betrachtbar
-\pause
-\end{itemize}
+  \begin{tabular}[t]{cc}
+    \begin{minipage}[t]{0.55\textwidth}
+        \begin{itemize}
+        \item Parametriesierung des Layouts
+        \pause
+        \item Ein-/Ausklappen von Subgraphen
+        \pause
+        \pause
+        \item Informationsanzeige zu Knoten, Kanten, Graphen und Subgraphen
+        \pause
+        \item Mustererkennung von Subgraphen und einheitliche Darstellung
+        \pause
+        \pause
+        \item Filtern bestimmter Knoten- und Kantentypen in der Ansicht
+        \pause
+      \end{itemize}
+  \end{minipage}
+    &
+    \begin{minipage}[t]{0.35\textwidth}
+      \visible<1> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{gui_layoutsettings_settings.png}};
+        \end{tikzpicture}
+      }
+      \visible<2> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/selection.png}};
+        \end{tikzpicture}
+      }
+      \visible<3> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/contextmenu.png}};
+        \end{tikzpicture}
+      }
+      \visible<4> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/properties_node.png}};
+        \end{tikzpicture}
+      }
+      \visible<5> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/array_field_access.png}};
+        \end{tikzpicture}
+      }
+      \visible<6> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{gui_layoutsettings_constraints_new.png}};
+        \end{tikzpicture}
+      }
+      \visible<7> {
+        \begin{tikzpicture}[remember picture,overlay]
+          \node[anchor=east] at (current page.east) {\includegraphics[width=130pt]{resourcen/filters.png}};
+        \end{tikzpicture}
+      }
+    \end{minipage}
+    \\
+  \end{tabular}
+
 \end{frame}
 
-\section{Erweiterbarkeit}
-\begin{frame}{Pluginschnittstellen}
-\end{frame}
 \appendix
-\beginbackup
-
-\begin{frame}[allowframebreaks]{References}
-\bibliography{templates/example}
-\end{frame}
-
-\backupend
 
 \end{document}
